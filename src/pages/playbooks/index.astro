@@ -1,0 +1,163 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const title = "Marketing Playbooks for Vibe Coders & Developers | CodeToCash";
+const description = "Actionable, step-by-step marketing guides for developers. Learn to write landing pages, email sequences, ad campaigns, and more.";
+
+const playbooks = [
+  {
+    slug: "saas-landing-page",
+    icon: "🖥",
+    title: "How to Write a SaaS Landing Page That Converts",
+    description: "Step-by-step guide with templates and real examples for building a landing page that turns visitors into signups.",
+    difficulty: "Beginner",
+    time: "15 min",
+  },
+  {
+    slug: "email-launch-sequence",
+    icon: "📧",
+    title: "Email Launch Sequence for Developers",
+    description: "A 7-email sequence with copy templates you can customize for your next product launch.",
+    difficulty: "Beginner",
+    time: "12 min",
+  },
+  {
+    slug: "google-ads-100-budget",
+    icon: "📈",
+    title: "Your First Google Ad Campaign on a $100 Budget",
+    description: "Setup, targeting, ad copy, and optimization tactics for promoting dev tools on a shoestring budget.",
+    difficulty: "Intermediate",
+    time: "18 min",
+  },
+  {
+    slug: "copywriting-for-developers",
+    icon: "✍️",
+    title: "Writing Copy When You Hate Writing Copy",
+    description: "Frameworks that make copywriting mechanical, not creative. Fill in the blanks and ship.",
+    difficulty: "Beginner",
+    time: "10 min",
+  },
+  {
+    slug: "pricing-dev-product",
+    icon: "💰",
+    title: "Pricing Your Dev Product for Maximum Revenue",
+    description: "Pricing models, anchoring psychology, and real examples from successful indie dev products.",
+    difficulty: "Intermediate",
+    time: "14 min",
+  },
+  {
+    slug: "building-in-public",
+    icon: "🔨",
+    title: "Building in Public as a Marketing Strategy",
+    description: "How transparency on Twitter/X builds an audience that buys. The playbook for developer founders.",
+    difficulty: "Beginner",
+    time: "8 min",
+  },
+  {
+    slug: "ab-testing-guide",
+    icon: "🧪",
+    title: "The Developer's A/B Testing Guide",
+    description: "Tools, methodology, and the statistical basics you need to run meaningful marketing experiments.",
+    difficulty: "Intermediate",
+    time: "16 min",
+  },
+  {
+    slug: "cold-email-outreach",
+    icon: "🎯",
+    title: "Cold Email Outreach for Dev Tools",
+    description: "Templates and automation workflows for reaching potential customers without being spammy.",
+    difficulty: "Advanced",
+    time: "12 min",
+  },
+];
+
+const difficultyColors: Record<string, { bg: string; text: string; border: string }> = {
+  Beginner:     { bg: "bg-green-500/10", text: "text-green-400", border: "border-green-500/20" },
+  Intermediate: { bg: "bg-yellow-500/10", text: "text-yellow-400", border: "border-yellow-500/20" },
+  Advanced:     { bg: "bg-red-500/10", text: "text-red-400", border: "border-red-500/20" },
+};
+---
+
+<Layout title={title} description={description}>
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden py-20 md:py-28">
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute top-1/4 right-1/4 w-96 h-96 bg-coral/5 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-1/3 left-1/3 w-72 h-72 bg-deep-blue/20 rounded-full blur-3xl"></div>
+    </div>
+    <div class="relative max-w-3xl mx-auto px-6 text-center">
+      <p class="inline-block px-3 py-1 mb-6 rounded-full bg-coral/10 text-coral text-sm font-medium border border-coral/20">
+        {playbooks.length} Playbooks
+      </p>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
+        Marketing Playbooks for <span class="text-coral">Vibe Coders</span>
+      </h1>
+      <p class="text-xl md:text-2xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
+        Step-by-step tactical guides you can implement today. No theory — just actionable systems.
+      </p>
+    </div>
+  </section>
+
+  <!-- Playbook Grid -->
+  <section class="max-w-5xl mx-auto px-6 pb-12">
+    <div class="grid gap-6 md:grid-cols-2">
+      {playbooks.map((pb) => {
+        const colors = difficultyColors[pb.difficulty];
+        return (
+          <a
+            href={`/playbooks/${pb.slug}`}
+            class="group relative flex flex-col p-6 bg-navy-light border border-white/5 rounded-2xl hover:border-coral/20 hover:bg-white/[0.03] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-coral/5"
+          >
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <span class="flex items-center justify-center w-11 h-11 rounded-xl bg-white/5 text-xl shrink-0">
+                {pb.icon}
+              </span>
+              <div class="flex items-center gap-2">
+                <span class={`inline-flex items-center px-2 py-0.5 rounded-md text-xs font-medium ${colors.bg} ${colors.text} border ${colors.border}`}>
+                  {pb.difficulty}
+                </span>
+                <span class="inline-flex items-center gap-1 text-xs text-gray-500">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                  {pb.time}
+                </span>
+              </div>
+            </div>
+            <h2 class="text-lg font-semibold text-white group-hover:text-coral transition-colors mb-2 leading-snug">
+              {pb.title}
+            </h2>
+            <p class="text-sm text-gray-400 leading-relaxed flex-1">
+              {pb.description}
+            </p>
+            <div class="mt-4 pt-4 border-t border-white/5 flex items-center text-sm text-coral/70 group-hover:text-coral transition-colors">
+              Read playbook
+              <svg class="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+            </div>
+          </a>
+        );
+      })}
+    </div>
+  </section>
+
+  <!-- Bottom CTA -->
+  <section class="max-w-3xl mx-auto px-6 pb-24 pt-8">
+    <div class="p-8 md:p-10 bg-gradient-to-br from-deep-blue/60 to-navy-light border border-coral/20 rounded-2xl text-center">
+      <h3 class="text-2xl font-bold text-white mb-3">New Playbooks Every Month</h3>
+      <p class="text-gray-400 mb-6 max-w-md mx-auto">
+        Subscribe to get notified when we publish new tactical guides. No spam — just actionable marketing for developers.
+      </p>
+      <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-3">
+        <input
+          type="email"
+          placeholder="you@example.com"
+          class="flex-1 px-4 py-3 bg-navy border border-white/10 rounded-xl text-white placeholder:text-gray-500 focus:outline-none focus:border-coral/50 text-sm"
+        />
+        <button type="button" class="px-6 py-3 bg-coral hover:bg-coral/90 text-white font-semibold rounded-xl transition-colors text-sm whitespace-nowrap cursor-pointer">
+          Notify Me
+        </button>
+      </form>
+      <p class="text-gray-500 text-xs">Join 1,000+ developers. Unsubscribe anytime.</p>
+    </div>
+  </section>
+
+</Layout>
