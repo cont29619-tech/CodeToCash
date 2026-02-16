@@ -1,0 +1,1194 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = "DRM 101: Direct Response Marketing Guide for Developers & Vibe Coders";
+const description = "Learn direct response marketing from scratch. A step-by-step guide for vibe coders and indie developers who want to sell the products they build.";
+
+const chapters = [
+  { id: "what-is-drm", number: 1, title: "What Is Direct Response Marketing?" },
+  { id: "the-drm-funnel", number: 2, title: "The DRM Funnel — Your Sales Pipeline" },
+  { id: "irresistible-offer", number: 3, title: "Crafting an Irresistible Offer" },
+  { id: "copywriting", number: 4, title: "Copywriting for Developers Who Hate Writing" },
+  { id: "landing-pages", number: 5, title: "Landing Pages That Convert" },
+  { id: "email-marketing", number: 6, title: "Email Marketing for Developers" },
+  { id: "driving-traffic", number: 7, title: "Driving Traffic to Your Product" },
+  { id: "analytics", number: 8, title: "Analytics and Optimization" },
+];
+
+const lastUpdated = "February 2026";
+const readingTime = "45 min read";
+---
+
+<Layout title={title} description={description}>
+  <!-- Hero -->
+  <section class="relative overflow-hidden py-20 md:py-28">
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-coral/5 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-deep-blue/20 rounded-full blur-3xl"></div>
+    </div>
+    <div class="relative max-w-4xl mx-auto px-6 text-center">
+      <div class="flex items-center justify-center gap-3 mb-8">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-coral/10 text-coral text-sm font-medium border border-coral/20">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          {readingTime}
+        </span>
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 text-gray-400 text-sm font-medium border border-white/10">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+          Updated {lastUpdated}
+        </span>
+      </div>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
+        DRM 101: The Vibe Coder's Complete Guide to <span class="text-coral">Direct Response Marketing</span>
+      </h1>
+      <p class="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+        Everything you need to know to start selling what you build. No MBA required.
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Content Area -->
+  <div class="max-w-7xl mx-auto px-6 pb-24">
+    <div class="flex gap-12">
+
+      <!-- Sticky Sidebar TOC (Desktop) -->
+      <aside class="hidden lg:block w-64 shrink-0">
+        <nav id="toc-sidebar" class="sticky top-24">
+          <p class="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-4">Table of Contents</p>
+          <ol class="space-y-1 text-sm">
+            {chapters.map((ch) => (
+              <li>
+                <a
+                  href={`#${ch.id}`}
+                  class="toc-link flex items-start gap-2 px-3 py-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors"
+                  data-section={ch.id}
+                >
+                  <span class="text-coral/60 font-mono text-xs mt-0.5">{String(ch.number).padStart(2, '0')}</span>
+                  <span class="leading-snug">{ch.title}</span>
+                </a>
+              </li>
+            ))}
+          </ol>
+          <div class="mt-6 pt-6 border-t border-white/10">
+            <a href="#summary" class="toc-link flex items-center gap-2 px-3 py-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors text-sm" data-section="summary">
+              <span class="text-coral/60">&#9679;</span>
+              <span>Summary & Next Steps</span>
+            </a>
+          </div>
+        </nav>
+      </aside>
+
+      <!-- Mobile TOC -->
+      <div class="lg:hidden mb-10 w-full">
+        <button
+          id="mobile-toc-btn"
+          class="w-full flex items-center justify-between px-4 py-3 bg-navy-light border border-white/10 rounded-xl text-sm font-medium text-gray-300"
+        >
+          <span class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-coral" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            Table of Contents
+          </span>
+          <svg id="mobile-toc-arrow" class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </button>
+        <nav id="mobile-toc" class="hidden mt-2 p-4 bg-navy-light border border-white/10 rounded-xl">
+          <ol class="space-y-1 text-sm">
+            {chapters.map((ch) => (
+              <li>
+                <a href={`#${ch.id}`} class="mobile-toc-link flex items-start gap-2 px-3 py-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors" data-section={ch.id}>
+                  <span class="text-coral/60 font-mono text-xs mt-0.5">{String(ch.number).padStart(2, '0')}</span>
+                  <span class="leading-snug">{ch.title}</span>
+                </a>
+              </li>
+            ))}
+          </ol>
+        </nav>
+      </div>
+
+      <!-- Article Content -->
+      <article class="min-w-0 flex-1 max-w-[700px]">
+
+        <!-- Chapter 1 -->
+        <section id="what-is-drm" class="drm-chapter mb-20 scroll-mt-24">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">01</span>
+            <h2 class="text-2xl md:text-3xl font-bold">What Is Direct Response Marketing?</h2>
+          </div>
+
+          <p class="text-gray-300 leading-relaxed mb-6">
+            Direct response marketing (DRM) is a type of marketing designed to get an <strong class="text-white">immediate, measurable response</strong> from the person who sees it. That response might be signing up for a free trial, entering their email, clicking a buy button, or booking a demo. The key word is <em>direct</em> — every piece of marketing you create has one job, and you can measure whether it did that job or not.
+          </p>
+
+          <p class="text-gray-300 leading-relaxed mb-6">
+            Compare this to brand marketing — the kind you see from companies like Apple or Nike. Those Super Bowl ads aren't asking you to do anything specific right now. They're building a feeling, an association, a vibe. Over years and billions of dollars, that vibe translates into sales. Brand marketing is a luxury that works at scale. If you're an indie developer or a vibe coder shipping products from your apartment, you don't have years and you don't have billions. You need results now.
+          </p>
+
+          <div class="bg-navy-light border border-white/10 rounded-xl p-6 mb-6">
+            <p class="text-sm font-semibold text-coral mb-3">Developer Analogy</p>
+            <p class="text-gray-300 leading-relaxed">
+              Think of brand marketing like writing beautiful, comprehensive documentation and hoping someone stumbles across it, falls in love with your project, and eventually becomes a customer. It can work — but it's slow, unpredictable, and hard to measure. DRM is like building a well-designed API with a clear contract: <code class="text-coral bg-coral/10 px-1.5 py-0.5 rounded font-mono text-sm">visitor in → customer out</code>. You define the input, you define the expected output, and you can test whether the function works. If it doesn't, you debug it and ship a fix.
+            </p>
+          </div>
+
+          <h3 class="text-xl font-semibold text-white mb-4 mt-10">The Four Principles of DRM</h3>
+
+          <p class="text-gray-300 leading-relaxed mb-6">
+            Every piece of direct response marketing follows four core principles. If you remember nothing else from this guide, remember these:
+          </p>
+
+          <div class="space-y-4 mb-8">
+            <div class="flex items-start gap-4 p-4 rounded-xl bg-white/[0.03] border border-white/5">
+              <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-coral/10 text-coral font-mono font-bold text-xs shrink-0">1</span>
+              <div>
+                <p class="font-semibold text-white mb-1">Every piece has a clear call-to-action (CTA)</p>
+                <p class="text-gray-400 text-sm leading-relaxed">There's no ambiguity about what you want the reader to do next. Click this button. Enter your email. Start the free trial. One CTA per piece, stated clearly and often.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4 p-4 rounded-xl bg-white/[0.03] border border-white/5">
+              <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-coral/10 text-coral font-mono font-bold text-xs shrink-0">2</span>
+              <div>
+                <p class="font-semibold text-white mb-1">Every result is trackable</p>
+                <p class="text-gray-400 text-sm leading-relaxed">You know exactly how many people saw your landing page, how many clicked, how many signed up, and how many paid. No guessing, no "brand awareness" hand-waving. Numbers or it didn't happen.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4 p-4 rounded-xl bg-white/[0.03] border border-white/5">
+              <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-coral/10 text-coral font-mono font-bold text-xs shrink-0">3</span>
+              <div>
+                <p class="font-semibold text-white mb-1">Everything is testable</p>
+                <p class="text-gray-400 text-sm leading-relaxed">Headline A vs. Headline B. Red button vs. green button. $29/mo vs. $49/mo. DRM treats every marketing decision as a hypothesis you can validate with data, just like you'd write tests for your code.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4 p-4 rounded-xl bg-white/[0.03] border border-white/5">
+              <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-coral/10 text-coral font-mono font-bold text-xs shrink-0">4</span>
+              <div>
+                <p class="font-semibold text-white mb-1">Copy drives action, but data is the judge</p>
+                <p class="text-gray-400 text-sm leading-relaxed">You write compelling words to persuade people, but you never fall in love with your own copy. If version A converts at 3% and version B converts at 5%, version B wins — regardless of which one you think sounds better.</p>
+              </div>
+            </div>
+          </div>
+
+          <h3 class="text-xl font-semibold text-white mb-4 mt-10">Why DRM Is Perfect for Developers</h3>
+
+          <p class="text-gray-300 leading-relaxed mb-6">
+            Here's the good news: if you can think in systems, you can do DRM. In fact, developers are often <em>better</em> at DRM than traditional marketers because the core skill set transfers directly. You already think in inputs and outputs. You already debug things methodically. You already A/B test (you might call it feature flags). You already track metrics in dashboards.
+          </p>
+
+          <p class="text-gray-300 leading-relaxed mb-6">
+            DRM is not about being creative or charismatic or having a marketing degree. It's about building a system — a machine, really — where you put traffic in the top and revenue comes out the bottom. You measure each step, find the bottleneck, fix it, and repeat. That's engineering. That's what you already do.
+          </p>
+
+          <p class="text-gray-300 leading-relaxed mb-6">
+            The developers who struggle with marketing are usually the ones trying to do brand marketing on a startup budget. They redesign their homepage for the fifth time, obsess over their logo, and post vague tweets about their product. DRM gives you a different path: a step-by-step, measurable, improvable system for turning strangers into customers. It's marketing as engineering.
+          </p>
+
+          <div class="bg-gradient-to-r from-coral/10 to-transparent border-l-4 border-coral pl-6 py-4 mb-6 rounded-r-lg">
+            <p class="text-white font-medium leading-relaxed">
+              "The best part about DRM for developers? You don't need to be 'good at marketing.' You need to be good at building systems and reading data — skills you already have."
+            </p>
+          </div>
+
+          <p class="text-gray-300 leading-relaxed">
+            The rest of this guide will walk you through every component of the DRM system: the funnel, the offer, the copy, the landing page, the emails, the traffic, and the analytics. By the end, you'll have a complete mental model for marketing your product — and a set of concrete frameworks you can start applying today. Let's start with the big picture: the funnel.
+          </p>
+        </section>
+
+        <!-- CTA Block 1 -->
+        <div class="mb-20 p-8 bg-gradient-to-br from-deep-blue/60 to-navy-light border border-coral/20 rounded-2xl text-center">
+          <p class="text-lg font-semibold text-white mb-2">Want the quick-reference version?</p>
+          <p class="text-gray-400 mb-6">Download <strong class="text-coral">The Developer's DRM Cheatsheet</strong> — all the frameworks, formulas, and templates from this guide on a single page.</p>
+          <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+            <input
+              type="email"
+              placeholder="you@example.com"
+              class="flex-1 px-4 py-3 bg-navy border border-white/10 rounded-xl text-white placeholder:text-gray-500 focus:outline-none focus:border-coral/50 text-sm"
+            />
+            <button type="button" class="px-6 py-3 bg-coral hover:bg-coral/90 text-white font-semibold rounded-xl transition-colors text-sm whitespace-nowrap cursor-pointer">
+              Send Me the Cheatsheet
+            </button>
+          </form>
+        </div>
+
+        <!-- Chapter 2 -->
+        <section id="the-drm-funnel" class="drm-chapter mb-20 scroll-mt-24">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">02</span>
+            <h2 class="text-2xl md:text-3xl font-bold">The DRM Funnel — Your Sales Pipeline</h2>
+          </div>
+
+          <p class="text-gray-300 leading-relaxed mb-6">
+            A marketing funnel is just a model of the journey someone takes from "never heard of you" to "paying customer." It's called a funnel because you lose people at every step — lots of visitors at the top, fewer leads in the middle, and a smaller number of customers at the bottom. Your job is to make each step as efficient as possible.
+          </p>
+
+          <p class="text-gray-300 leading-relaxed mb-6">
+            If you've ever built a data pipeline or a CI/CD workflow, the concept is identical. Data flows through stages, gets transformed at each step, and you measure the throughput and drop-off at every stage. Let's map the DRM funnel to developer concepts you already understand.
+          </p>
+
+          <!-- Funnel Diagram -->
+          <div class="my-10 p-6 md:p-8 bg-navy-light border border-white/10 rounded-2xl">
+            <p class="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-6 text-center">The DRM Funnel → Developer Mental Model</p>
+            <div class="space-y-3 max-w-lg mx-auto">
+              <div class="relative">
+                <div class="bg-coral/15 border border-coral/30 rounded-xl px-5 py-4 text-center">
+                  <p class="font-mono text-coral text-sm font-bold">TRAFFIC</p>
+                  <p class="text-gray-400 text-xs mt-1">Your public API endpoint — how people find you</p>
+                </div>
+              </div>
+              <div class="flex justify-center text-coral/40">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+              </div>
+              <div class="relative mx-4">
+                <div class="bg-coral/10 border border-coral/20 rounded-xl px-5 py-4 text-center">
+                  <p class="font-mono text-coral text-sm font-bold">LANDING PAGE</p>
+                  <p class="text-gray-400 text-xs mt-1">Your conversion function — <code class="text-coral/80 text-xs">f(visitor) → lead</code></p>
+                </div>
+              </div>
+              <div class="flex justify-center text-coral/40">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+              </div>
+              <div class="relative mx-8">
+                <div class="bg-coral/8 border border-coral/15 rounded-xl px-5 py-4 text-center">
+                  <p class="font-mono text-coral text-sm font-bold">EMAIL SEQUENCE</p>
+                  <p class="text-gray-400 text-xs mt-1">Your async message queue — nurtures over time</p>
+                </div>
+              </div>
+              <div class="flex justify-center text-coral/40">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+              </div>
+              <div class="relative mx-12">
+                <div class="bg-coral/5 border border-coral/10 rounded-xl px-5 py-4 text-center">
+                  <p class="font-mono text-coral text-sm font-bold">OFFER / SALE</p>
+                  <p class="text-gray-400 text-xs mt-1">Your value proposition — the conversion event</p>
+                </div>
+              </div>
+              <div class="flex justify-center text-coral/40">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+              </div>
+              <div class="relative mx-16">
+                <div class="bg-white/[0.03] border border-white/10 rounded-xl px-5 py-4 text-center">
+                  <p class="font-mono text-coral text-sm font-bold">RETENTION</p>
+                  <p class="text-gray-400 text-xs mt-1">Your customer success loop — reduces churn</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <h3 class="text-xl font-semibold text-white mb-4 mt-10">Stage 1: Traffic — Your Public API Endpoint</h3>
+
+          <p class="text-gray-300 leading-relaxed mb-6">
+            Traffic is how people discover you exist. Just like an API that nobody knows about is useless, a product nobody can find is dead on arrival. Traffic sources include organic search (SEO), social media, paid ads, referrals, and communities like Hacker News, Reddit, or Product Hunt. We'll cover these in depth in Chapter 7.
+          </p>
+
+          <p class="text-gray-300 leading-relaxed mb-6">
+            The critical mistake most developers make is trying to drive traffic before anything else in the funnel is built. That's like deploying your API to production before writing any of the handlers. Traffic is the fuel, but you need the engine first.
+          </p>
+
+          <h3 class="text-xl font-semibold text-white mb-4 mt-10">Stage 2: Landing Page — Your Conversion Function</h3>
+
+          <p class="text-gray-300 leading-relaxed mb-6">
+            The landing page is where you convert a visitor into a lead (someone who gives you their email) or directly into a customer. Think of it as a pure function: it takes a visitor as input and returns a lead or a bounce. A good landing page has a single, clear purpose. It's not your homepage crammed with navigation links and a blog and an about section. It's one page, one offer, one CTA. We'll build the perfect landing page in Chapter 5.
+          </p>
+
+          <h3 class="text-xl font-semibold text-white mb-4 mt-10">Stage 3: Email Sequence — Your Async Message Queue</h3>
+
+          <p class="text-gray-300 leading-relaxed mb-6">
+            Most people don't buy the first time they see your product. They need nurturing. An email sequence is like an asynchronous message queue: you enqueue a series of messages that get delivered over time, each one moving the subscriber closer to a purchase decision. A typical welcome sequence might be 5-7 emails over two weeks, alternating between value (teaching something useful) and pitching (showing why your product solves their problem). Chapter 6 covers this in detail.
+          </p>
+
+          <h3 class="text-xl font-semibold text-white mb-4 mt-10">Stage 4: Offer — Your Value Proposition</h3>
+
+          <p class="text-gray-300 leading-relaxed mb-6">
+            The offer isn't just your product and its price. It's the complete package: what they get, what it costs, what guarantee you provide, and what bonuses you include. A weak offer with strong marketing will always underperform a strong offer with mediocre marketing. Think of it as the return type of your conversion function — it needs to be compelling enough that the caller actually wants to use it. Chapter 3 is entirely dedicated to crafting offers that sell.
+          </p>
+
+          <h3 class="text-xl font-semibold text-white mb-4 mt-10">Stage 5: Retention — Your Customer Success Loop</h3>
+
+          <p class="text-gray-300 leading-relaxed mb-6">
+            Getting a customer is expensive. Keeping a customer is cheap. If you're selling a SaaS product, reducing churn by even a few percentage points can double your revenue over time. Retention is about onboarding, support, continued value delivery, and building the kind of product people actually want to keep using. It's the <code class="text-coral bg-coral/10 px-1.5 py-0.5 rounded font-mono text-sm">while(true)</code> loop that keeps your business running.
+          </p>
+
+          <p class="text-gray-300 leading-relaxed mb-6">
+            For SaaS developers, think about retention as the difference between an app that users open once and forget about versus one that becomes part of their daily workflow. For template and one-time purchase products, retention means building a relationship where they buy your next product too. Either way, the funnel doesn't end at the sale — it loops back.
+          </p>
+
+          <div class="bg-gradient-to-r from-coral/10 to-transparent border-l-4 border-coral pl-6 py-4 mb-6 rounded-r-lg">
+            <p class="text-white font-medium leading-relaxed">
+              "Don't optimize the funnel from top to bottom. Start from the bottom. Fix your offer first, then your landing page, then your emails, then your traffic. A great funnel with no traffic can be fixed. Lots of traffic with a broken funnel is just expensive."
+            </p>
+          </div>
+        </section>
+
+        <!-- CTA Block 2 -->
+        <div class="mb-20 p-8 bg-gradient-to-br from-deep-blue/60 to-navy-light border border-coral/20 rounded-2xl text-center">
+          <p class="text-lg font-semibold text-white mb-2">Want the quick-reference version?</p>
+          <p class="text-gray-400 mb-6">Download <strong class="text-coral">The Developer's DRM Cheatsheet</strong> — all the frameworks, formulas, and templates from this guide on a single page.</p>
+          <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+            <input type="email" placeholder="you@example.com" class="flex-1 px-4 py-3 bg-navy border border-white/10 rounded-xl text-white placeholder:text-gray-500 focus:outline-none focus:border-coral/50 text-sm" />
+            <button type="button" class="px-6 py-3 bg-coral hover:bg-coral/90 text-white font-semibold rounded-xl transition-colors text-sm whitespace-nowrap cursor-pointer">Send Me the Cheatsheet</button>
+          </form>
+        </div>
+
+        <!-- Chapter 3 -->
+        <section id="irresistible-offer" class="drm-chapter mb-20 scroll-mt-24">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">03</span>
+            <h2 class="text-2xl md:text-3xl font-bold">Crafting an Irresistible Offer</h2>
+          </div>
+
+          <p class="text-gray-300 leading-relaxed mb-6">
+            Your offer is the single most important element in your marketing. Not your copy, not your design, not your traffic strategy — your <strong class="text-white">offer</strong>. A great offer with mediocre marketing will outsell a mediocre offer with great marketing every single time. The offer is what makes someone say "I'd be stupid NOT to buy this."
+          </p>
+
+          <p class="text-gray-300 leading-relaxed mb-6">
+            Most developers think their "offer" is just "my product at this price." But an offer is so much more. It's the complete package: the product, the price, the guarantee, the bonuses, the urgency, and the way you frame it all. Let's break down what makes an offer irresistible.
+          </p>
+
+          <h3 class="text-xl font-semibold text-white mb-4 mt-10">The Value Equation</h3>
+
+          <p class="text-gray-300 leading-relaxed mb-6">
+            Alex Hormozi popularized a formula that perfectly captures how people evaluate offers. This isn't abstract theory — it's the mental math every potential customer does (consciously or not) before deciding to buy:
+          </p>
+
+          <div class="my-8 p-6 bg-[#0d0d20] border border-white/10 rounded-xl font-mono">
+            <p class="text-gray-500 text-xs mb-3">// The Value Equation</p>
+            <p class="text-lg text-center py-4">
+              <span class="text-green-400">Perceived Value</span>
+              <span class="text-gray-500"> = </span>
+              <span class="text-coral">Dream Outcome</span>
+              <span class="text-gray-500"> × </span>
+              <span class="text-coral">Perceived Likelihood</span>
+              <span class="text-gray-500"> / </span>
+              <span class="text-yellow-400">Time Delay</span>
+              <span class="text-gray-500"> × </span>
+              <span class="text-yellow-400">Effort Required</span>
+            </p>
+            <div class="mt-4 pt-4 border-t border-white/5 text-sm text-gray-400 space-y-1">
+              <p><span class="text-coral">↑ Dream Outcome</span> — How big is the result they want? ("Make $10K MRR")</p>
+              <p><span class="text-coral">↑ Perceived Likelihood</span> — How likely do they believe they'll get it?</p>
+              <p><span class="text-yellow-400">↓ Time Delay</span> — How long until they see results?</p>
+              <p><span class="text-yellow-400">↓ Effort Required</span> — How much work do they need to put in?</p>
+            </div>
+          </div>
+
+          <p class="text-gray-300 leading-relaxed mb-6">
+            To increase perceived value, you can increase the numerator (make the dream outcome bigger, increase believability) or decrease the denominator (reduce time to results, reduce effort required). Every great offer pushes multiple levers at once.
+          </p>
+
+          <p class="text-gray-300 leading-relaxed mb-6">
+            For example, a SaaS boilerplate template like ShipFast doesn't just sell "a Next.js template." It sells: "Launch your SaaS in days, not weeks" (reduced time delay), "everything pre-configured so you just write your business logic" (reduced effort), "join 2,000+ developers who already shipped" (increased perceived likelihood), and "start generating revenue from your side project" (dream outcome).
+          </p>
+
+          <h3 class="text-xl font-semibold text-white mb-4 mt-10">Positioning Your Dev Product</h3>
+
+          <p class="text-gray-300 leading-relaxed mb-6">
+            Positioning is about what mental category your product occupies in someone's mind. You don't want to be "another React component library." You want to be "the component library that ships accessible, production-ready UI in minutes instead of days." Here are positioning angles that work well for developer products:
+          </p>
+
+          <div class="space-y-3 mb-8">
+            <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+              <span class="text-coral mt-1">&#9656;</span>
+              <p><strong class="text-white">Speed:</strong> "Deploy in 5 minutes." Time is the scarcest resource for developers. If your product saves time, lead with that.</p>
+            </div>
+            <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+              <span class="text-coral mt-1">&#9656;</span>
+              <p><strong class="text-white">Simplicity:</strong> "No config required." Developers are drowning in complexity. If your tool reduces it, that's your angle.</p>
+            </div>
+            <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+              <span class="text-coral mt-1">&#9656;</span>
+              <p><strong class="text-white">Specificity:</strong> "Built for Next.js 15 + Supabase teams." The more specific your positioning, the more it resonates with the right people.</p>
+            </div>
+            <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+              <span class="text-coral mt-1">&#9656;</span>
+              <p><strong class="text-white">Outcomes:</strong> "Ship your SaaS this weekend." Don't sell features, sell the result of using those features.</p>
+            </div>
+          </div>
+
+          <h3 class="text-xl font-semibold text-white mb-4 mt-10">Pricing Models for Dev Products</h3>
+
+          <p class="text-gray-300 leading-relaxed mb-6">
+            Your pricing model is part of your offer. The right model depends on your product type and your customer's expectations:
+          </p>
+
+          <div class="grid gap-4 mb-8">
+            <div class="p-4 bg-white/[0.03] border border-white/5 rounded-xl">
+              <p class="font-semibold text-white mb-1">Freemium</p>
+              <p class="text-gray-400 text-sm leading-relaxed">Free tier with limited features, paid for the full product. Great for developer tools where the free version acts as an extended trial. Examples: Supabase, Vercel, PlanetScale.</p>
+            </div>
+            <div class="p-4 bg-white/[0.03] border border-white/5 rounded-xl">
+              <p class="font-semibold text-white mb-1">Free Trial (Time-Limited)</p>
+              <p class="text-gray-400 text-sm leading-relaxed">Full access for 7-14 days, then paywall. Works well for SaaS where the value is clear once you're inside. Reduce friction by not requiring a credit card upfront.</p>
+            </div>
+            <div class="p-4 bg-white/[0.03] border border-white/5 rounded-xl">
+              <p class="font-semibold text-white mb-1">One-Time Purchase</p>
+              <p class="text-gray-400 text-sm leading-relaxed">Pay once, use forever. Perfect for templates, boilerplates, and digital products. Developers love this model because they own the code. Examples: Tailwind UI, ShipFast, Gravity.</p>
+            </div>
+            <div class="p-4 bg-white/[0.03] border border-white/5 rounded-xl">
+              <p class="font-semibold text-white mb-1">Subscription</p>
+              <p class="text-gray-400 text-sm leading-relaxed">Monthly or annual recurring revenue. Works for SaaS and tools with ongoing value delivery. Annual discounts (2 months free) help reduce churn and improve cash flow.</p>
+            </div>
+          </div>
+
+          <h3 class="text-xl font-semibold text-white mb-4 mt-10">Risk Reversal: Removing the Fear of Buying</h3>
+
+          <p class="text-gray-300 leading-relaxed mb-6">
+            Risk reversal means taking the risk off the buyer's shoulders and putting it on yours. If someone is 80% convinced but 20% worried it won't work, risk reversal closes that gap. Here's what works for dev products:
+          </p>
+
+          <div class="space-y-3 mb-8">
+            <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+              <span class="text-coral mt-1">&#9656;</span>
+              <p><strong class="text-white">Money-back guarantee:</strong> "30 days, no questions asked." Most developers won't abuse this, and the ones who were on the fence will buy.</p>
+            </div>
+            <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+              <span class="text-coral mt-1">&#9656;</span>
+              <p><strong class="text-white">Free tier or demo:</strong> Let them experience the value before paying. This is the lowest-risk option for buyers.</p>
+            </div>
+            <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+              <span class="text-coral mt-1">&#9656;</span>
+              <p><strong class="text-white">Results-based guarantee:</strong> "If you don't get X result in Y days, I'll refund you AND help you personally." This is aggressive but extremely effective.</p>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-r from-coral/10 to-transparent border-l-4 border-coral pl-6 py-4 rounded-r-lg">
+            <p class="text-white font-medium leading-relaxed">
+              "A strong guarantee doesn't increase refunds — it increases sales. The people who were going to refund would have never bought without the guarantee. And the vast majority who do buy? They never refund."
+            </p>
+          </div>
+        </section>
+
+        <!-- CTA Block 3 -->
+        <div class="mb-20 p-8 bg-gradient-to-br from-deep-blue/60 to-navy-light border border-coral/20 rounded-2xl text-center">
+          <p class="text-lg font-semibold text-white mb-2">Want the quick-reference version?</p>
+          <p class="text-gray-400 mb-6">Download <strong class="text-coral">The Developer's DRM Cheatsheet</strong> — all the frameworks, formulas, and templates from this guide on a single page.</p>
+          <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+            <input type="email" placeholder="you@example.com" class="flex-1 px-4 py-3 bg-navy border border-white/10 rounded-xl text-white placeholder:text-gray-500 focus:outline-none focus:border-coral/50 text-sm" />
+            <button type="button" class="px-6 py-3 bg-coral hover:bg-coral/90 text-white font-semibold rounded-xl transition-colors text-sm whitespace-nowrap cursor-pointer">Send Me the Cheatsheet</button>
+          </form>
+        </div>
+
+        <!-- Chapter 4 -->
+        <section id="copywriting" class="drm-chapter mb-20 scroll-mt-24">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">04</span>
+            <h2 class="text-2xl md:text-3xl font-bold">Copywriting for Developers Who Hate Writing</h2>
+          </div>
+
+          <p class="text-gray-300 leading-relaxed mb-6">
+            Let's be honest: most developers would rather refactor a 10,000-line legacy codebase than write marketing copy. The blank page feels paralyzing. What do you say? How do you say it? What if it sounds salesy and cringe?
+          </p>
+
+          <p class="text-gray-300 leading-relaxed mb-6">
+            Here's the secret: good copywriting isn't creative writing. It's <strong class="text-white">structured persuasion</strong>. And just like you use design patterns in code (MVC, Observer, Factory), there are proven copywriting frameworks that give you a template to follow. You don't need to be a wordsmith. You need to fill in the blanks.
+          </p>
+
+          <p class="text-gray-300 leading-relaxed mb-6">
+            Here are the four most powerful copywriting frameworks, translated into developer terms, with fill-in-the-blank templates you can use today.
+          </p>
+
+          <h3 class="text-xl font-semibold text-white mb-4 mt-10">Framework 1: AIDA (Attention → Interest → Desire → Action)</h3>
+
+          <p class="text-gray-300 leading-relaxed mb-4">
+            AIDA is the classic. It maps the psychological journey of a buyer from "what's this?" to "take my money." Think of it like a state machine with four transitions — each section moves the reader to the next state.
+          </p>
+
+          <div class="my-6 p-5 bg-[#0d0d20] border border-white/10 rounded-xl font-mono text-sm">
+            <p class="text-gray-500 mb-3">// AIDA Framework — the state machine of persuasion</p>
+            <p class="text-gray-500 mb-1">// Step 1: Attention — Stop the scroll</p>
+            <p class="text-coral mb-3">headline: "Stop Losing Customers to Broken Auth Flows"</p>
+            <p class="text-gray-500 mb-1">// Step 2: Interest — Make them lean in</p>
+            <p class="text-green-400 mb-3">hook: "87% of SaaS users abandon onboarding when authentication is confusing. You're probably losing revenue right now."</p>
+            <p class="text-gray-500 mb-1">// Step 3: Desire — Paint the outcome they want</p>
+            <p class="text-yellow-300 mb-3">value: "AuthKit gives you drop-in auth components that just work. Social login, MFA, and passwordless — in 15 minutes, not 15 days."</p>
+            <p class="text-gray-500 mb-1">// Step 4: Action — Tell them exactly what to do</p>
+            <p class="text-blue-400">cta: "Start free → npm install authkit"</p>
+          </div>
+
+          <div class="my-6 p-5 bg-white/[0.03] border border-white/5 rounded-xl">
+            <p class="text-xs font-semibold text-coral mb-3 uppercase tracking-wider">AIDA Template — Fill in the Blanks</p>
+            <div class="space-y-2 text-gray-300 text-sm font-mono leading-relaxed">
+              <p><span class="text-gray-500">attention:</span> "[Surprising stat or bold claim about their problem]"</p>
+              <p><span class="text-gray-500">interest:</span> "[Expand on the problem — why it matters, what it costs them]"</p>
+              <p><span class="text-gray-500">desire:</span> "[Your product + specific result + timeframe]"</p>
+              <p><span class="text-gray-500">action:</span> "[One clear next step — 'Start free trial' / 'Get the template']"</p>
+            </div>
+          </div>
+
+          <h3 class="text-xl font-semibold text-white mb-4 mt-10">Framework 2: PAS (Problem → Agitate → Solution)</h3>
+
+          <p class="text-gray-300 leading-relaxed mb-4">
+            PAS is the most effective framework for short-form copy: tweets, email subject lines, ad headlines, and landing page sections. It works because it activates the reader's pain before offering relief. Think of it as: find the bug, show how bad the bug is, then provide the fix.
+          </p>
+
+          <div class="my-6 p-5 bg-[#0d0d20] border border-white/10 rounded-xl font-mono text-sm">
+            <p class="text-gray-500 mb-3">// PAS Framework — find the bug, show the damage, ship the fix</p>
+            <p class="text-gray-500 mb-1">// Problem — Name their pain specifically</p>
+            <p class="text-coral mb-3">problem: "Setting up payments in your app takes weeks of Stripe API docs, webhook handlers, and edge case nightmares."</p>
+            <p class="text-gray-500 mb-1">// Agitate — Twist the knife (respectfully)</p>
+            <p class="text-yellow-300 mb-3">agitate: "Meanwhile, your competitor shipped last week using a pre-built solution. Every day you spend on billing code is a day you're not building features that matter."</p>
+            <p class="text-gray-500 mb-1">// Solution — Be the hero</p>
+            <p class="text-green-400">solution: "PayKit handles subscriptions, invoices, and webhooks out of the box. One npm install, five minutes of config, and your billing is done forever."</p>
+          </div>
+
+          <div class="my-6 p-5 bg-white/[0.03] border border-white/5 rounded-xl">
+            <p class="text-xs font-semibold text-coral mb-3 uppercase tracking-wider">PAS Template — Fill in the Blanks</p>
+            <div class="space-y-2 text-gray-300 text-sm font-mono leading-relaxed">
+              <p><span class="text-gray-500">problem:</span> "[Specific pain point your audience faces daily]"</p>
+              <p><span class="text-gray-500">agitate:</span> "[What happens if they don't fix it? What are they missing out on?]"</p>
+              <p><span class="text-gray-500">solution:</span> "[Your product + how it solves the problem + how fast/easy]"</p>
+            </div>
+          </div>
+
+          <h3 class="text-xl font-semibold text-white mb-4 mt-10">Framework 3: Before-After-Bridge</h3>
+
+          <p class="text-gray-300 leading-relaxed mb-4">
+            This framework paints a transformation. Show them where they are now (frustrated, wasting time), where they could be (shipping fast, making revenue), and how your product is the bridge between the two. It's the <code class="text-coral bg-coral/10 px-1.5 py-0.5 rounded font-mono text-sm">git diff</code> of copywriting — showing the before and after.
+          </p>
+
+          <div class="my-6 p-5 bg-[#0d0d20] border border-white/10 rounded-xl font-mono text-sm">
+            <p class="text-gray-500 mb-3">// Before-After-Bridge — the git diff of persuasion</p>
+            <p class="text-gray-500 mb-1">// Before — Current painful reality</p>
+            <p class="text-coral mb-3">before: "You spend every Sunday writing blog posts that get 50 views. You know content marketing works but you can't figure out what to write or how to rank."</p>
+            <p class="text-gray-500 mb-1">// After — Life with your product</p>
+            <p class="text-green-400 mb-3">after: "Imagine publishing one article a week that consistently ranks on page 1, drives 5,000 organic visitors, and converts 3% into trial signups — on autopilot."</p>
+            <p class="text-gray-500 mb-1">// Bridge — Your product connects the two</p>
+            <p class="text-blue-400">bridge: "ContentOS gives you AI-powered topic research, SEO-optimized outlines, and a publishing workflow built for developers. Go from blank page to published post in 30 minutes."</p>
+          </div>
+
+          <h3 class="text-xl font-semibold text-white mb-4 mt-10">Framework 4: Feature-Advantage-Benefit (FAB)</h3>
+
+          <p class="text-gray-300 leading-relaxed mb-4">
+            Developers love talking about features. "It uses Rust!" "It has WebSocket support!" "It's built on SQLite!" But features don't sell — benefits do. The FAB framework forces you to translate every feature into something the buyer actually cares about. Think of it as the difference between <code class="text-coral bg-coral/10 px-1.5 py-0.5 rounded font-mono text-sm">implementation details</code> and <code class="text-coral bg-coral/10 px-1.5 py-0.5 rounded font-mono text-sm">user-facing value</code>.
+          </p>
+
+          <div class="my-6 p-5 bg-[#0d0d20] border border-white/10 rounded-xl font-mono text-sm">
+            <p class="text-gray-500 mb-3">// FAB Framework — translate features to sales</p>
+            <p class="mb-2"><span class="text-gray-500">feature:</span>    <span class="text-coral">"Built-in edge caching"</span></p>
+            <p class="mb-2"><span class="text-gray-500">advantage:</span>  <span class="text-yellow-300">"Pages load in under 100ms globally"</span></p>
+            <p class="mb-4"><span class="text-gray-500">benefit:</span>    <span class="text-green-400">"Your users never wait, your bounce rate drops, and your conversion rate goes up"</span></p>
+            <p class="mb-2"><span class="text-gray-500">feature:</span>    <span class="text-coral">"One-click deploy to Vercel/Netlify"</span></p>
+            <p class="mb-2"><span class="text-gray-500">advantage:</span>  <span class="text-yellow-300">"Go from git push to live in 30 seconds"</span></p>
+            <p><span class="text-gray-500">benefit:</span>    <span class="text-green-400">"Stop wasting weekends on DevOps and ship features that make you money"</span></p>
+          </div>
+
+          <div class="bg-gradient-to-r from-coral/10 to-transparent border-l-4 border-coral pl-6 py-4 rounded-r-lg">
+            <p class="text-white font-medium leading-relaxed">
+              "Every time you write a feature, ask: 'So what?' The answer is the advantage. Ask 'So what?' again. That's the benefit. Keep asking until you get to something the buyer emotionally cares about — that's what goes on your landing page."
+            </p>
+          </div>
+        </section>
+
+        <!-- CTA Block 4 -->
+        <div class="mb-20 p-8 bg-gradient-to-br from-deep-blue/60 to-navy-light border border-coral/20 rounded-2xl text-center">
+          <p class="text-lg font-semibold text-white mb-2">Want the quick-reference version?</p>
+          <p class="text-gray-400 mb-6">Download <strong class="text-coral">The Developer's DRM Cheatsheet</strong> — all the frameworks, formulas, and templates from this guide on a single page.</p>
+          <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+            <input type="email" placeholder="you@example.com" class="flex-1 px-4 py-3 bg-navy border border-white/10 rounded-xl text-white placeholder:text-gray-500 focus:outline-none focus:border-coral/50 text-sm" />
+            <button type="button" class="px-6 py-3 bg-coral hover:bg-coral/90 text-white font-semibold rounded-xl transition-colors text-sm whitespace-nowrap cursor-pointer">Send Me the Cheatsheet</button>
+          </form>
+        </div>
+
+        <!-- Chapter 5 -->
+        <section id="landing-pages" class="drm-chapter mb-20 scroll-mt-24">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">05</span>
+            <h2 class="text-2xl md:text-3xl font-bold">Landing Pages That Convert</h2>
+          </div>
+
+          <p class="text-gray-300 leading-relaxed mb-6">
+            A landing page is the single most important page in your marketing stack. It's where traffic meets your offer. It's where visitors decide in seconds whether to stay or bounce. And for most indie developers, the landing page <em>is</em> the entire sales process — you don't have a sales team, demo calls, or enterprise contracts. The page does all the work.
+          </p>
+
+          <p class="text-gray-300 leading-relaxed mb-6">
+            A common mistake developers make is treating their landing page like a product documentation page. Docs explain how something works. A landing page explains <strong class="text-white">why someone should care</strong>. They're fundamentally different tasks.
+          </p>
+
+          <h3 class="text-xl font-semibold text-white mb-4 mt-10">Anatomy of a High-Converting Landing Page</h3>
+
+          <p class="text-gray-300 leading-relaxed mb-6">
+            Every high-converting landing page follows a predictable structure. Think of it as a component architecture — each section has a specific job, and together they form a complete page that persuades. Here's the layout, in order:
+          </p>
+
+          <div class="space-y-4 mb-8">
+            <div class="flex items-start gap-4 p-4 rounded-xl bg-white/[0.03] border border-white/5">
+              <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-coral/10 text-coral font-mono font-bold text-xs shrink-0">H1</span>
+              <div>
+                <p class="font-semibold text-white mb-1">Headline</p>
+                <p class="text-gray-400 text-sm leading-relaxed">The most important line on the page. It should communicate your value proposition in 10 words or fewer. Not what your product is — what it does for the customer. "Deploy serverless functions in 30 seconds" beats "A modern serverless platform built with Rust."</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4 p-4 rounded-xl bg-white/[0.03] border border-white/5">
+              <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-coral/10 text-coral font-mono font-bold text-xs shrink-0">H2</span>
+              <div>
+                <p class="font-semibold text-white mb-1">Subheadline</p>
+                <p class="text-gray-400 text-sm leading-relaxed">Expands on the headline. Adds specificity: who it's for, what technology it uses, or what makes it different. "The zero-config deployment platform for Next.js, Remix, and Astro developers."</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4 p-4 rounded-xl bg-white/[0.03] border border-white/5">
+              <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-coral/10 text-coral font-mono font-bold text-xs shrink-0">&#9654;</span>
+              <div>
+                <p class="font-semibold text-white mb-1">Hero Visual (Demo, Screenshot, or Video)</p>
+                <p class="text-gray-400 text-sm leading-relaxed">Show your product in action. For dev tools, an animated GIF of the CLI, a screenshot of the dashboard, or a short video demo works best. This builds credibility instantly — you actually built something.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4 p-4 rounded-xl bg-white/[0.03] border border-white/5">
+              <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-coral/10 text-coral font-mono font-bold text-xs shrink-0">&#10003;</span>
+              <div>
+                <p class="font-semibold text-white mb-1">Benefit Bullets (3-5)</p>
+                <p class="text-gray-400 text-sm leading-relaxed">Not feature bullets — benefit bullets. Use the FAB framework from Chapter 4. Each bullet should answer "what's in it for me?" from the buyer's perspective. Keep them scannable.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4 p-4 rounded-xl bg-white/[0.03] border border-white/5">
+              <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-coral/10 text-coral font-mono font-bold text-xs shrink-0">&#9733;</span>
+              <div>
+                <p class="font-semibold text-white mb-1">Social Proof</p>
+                <p class="text-gray-400 text-sm leading-relaxed">Testimonials, logos of companies using your product, GitHub stars, download counts, "used by X developers." Social proof is the third-party validation that your claim is real. Even small numbers work — "trusted by 200 developers" is better than no proof at all.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4 p-4 rounded-xl bg-white/[0.03] border border-white/5">
+              <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-coral/10 text-coral font-mono font-bold text-xs shrink-0">$</span>
+              <div>
+                <p class="font-semibold text-white mb-1">The Offer (Pricing + Guarantee)</p>
+                <p class="text-gray-400 text-sm leading-relaxed">Clear pricing, what's included, and your risk-reversal (guarantee, free tier, trial). Don't hide the price — developers hate having to "book a call" to see pricing.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4 p-4 rounded-xl bg-white/[0.03] border border-white/5">
+              <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-coral/10 text-coral font-mono font-bold text-xs shrink-0">&#10148;</span>
+              <div>
+                <p class="font-semibold text-white mb-1">Call to Action (CTA)</p>
+                <p class="text-gray-400 text-sm leading-relaxed">One primary CTA, repeated 2-3 times on the page. The button text should say what happens next: "Start Free Trial" is better than "Submit." "Get the Template — $49" is better than "Buy Now."</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4 p-4 rounded-xl bg-white/[0.03] border border-white/5">
+              <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-coral/10 text-coral font-mono font-bold text-xs shrink-0">?</span>
+              <div>
+                <p class="font-semibold text-white mb-1">FAQ Section</p>
+                <p class="text-gray-400 text-sm leading-relaxed">Answer the objections they haven't asked yet. "Does it work with my stack?" "Can I use it for commercial projects?" "What if I need help?" Every unanswered question is a reason not to buy.</p>
+              </div>
+            </div>
+          </div>
+
+          <h3 class="text-xl font-semibold text-white mb-4 mt-10">Developer-Specific Tips</h3>
+
+          <div class="space-y-3 mb-8">
+            <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+              <span class="text-coral mt-1">&#9656;</span>
+              <p><strong class="text-white">Show code snippets:</strong> Nothing builds trust with developers faster than seeing the actual API or integration code. A 3-line code example on your landing page says "this is real and it's simple."</p>
+            </div>
+            <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+              <span class="text-coral mt-1">&#9656;</span>
+              <p><strong class="text-white">Use technical credibility:</strong> If your product is fast, show benchmarks. If it's secure, mention your architecture. Developers respect specifics over buzzwords.</p>
+            </div>
+            <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+              <span class="text-coral mt-1">&#9656;</span>
+              <p><strong class="text-white">Transparent pricing always:</strong> "Contact Sales" is the death knell for indie dev products. Show your prices. Developers will respect you for it.</p>
+            </div>
+            <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+              <span class="text-coral mt-1">&#9656;</span>
+              <p><strong class="text-white">Link to docs and a GitHub repo:</strong> If applicable, having open-source components or public docs shows you have nothing to hide and builds enormous trust.</p>
+            </div>
+          </div>
+
+          <h3 class="text-xl font-semibold text-white mb-4 mt-10">Common Mistakes Developers Make</h3>
+
+          <div class="space-y-3 mb-6">
+            <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+              <span class="text-red-400 mt-1">&#10007;</span>
+              <p><strong class="text-white">Leading with technology instead of outcomes.</strong> Nobody cares that it's "built with Rust and WASM" unless you tell them why that matters to them (it's fast, it's reliable).</p>
+            </div>
+            <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+              <span class="text-red-400 mt-1">&#10007;</span>
+              <p><strong class="text-white">Too many CTAs.</strong> "Star on GitHub" + "Join Discord" + "Read Docs" + "Try for Free" = decision paralysis. Pick one primary action.</p>
+            </div>
+            <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+              <span class="text-red-400 mt-1">&#10007;</span>
+              <p><strong class="text-white">No social proof.</strong> Even if you just launched, find 3-5 beta users and get a quote. Social proof is non-negotiable.</p>
+            </div>
+            <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+              <span class="text-red-400 mt-1">&#10007;</span>
+              <p><strong class="text-white">Over-designing at the expense of copy.</strong> A beautiful page with weak copy will lose to an ugly page with strong copy. Get the words right first, then make it pretty.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- CTA Block 5 -->
+        <div class="mb-20 p-8 bg-gradient-to-br from-deep-blue/60 to-navy-light border border-coral/20 rounded-2xl text-center">
+          <p class="text-lg font-semibold text-white mb-2">Want the quick-reference version?</p>
+          <p class="text-gray-400 mb-6">Download <strong class="text-coral">The Developer's DRM Cheatsheet</strong> — all the frameworks, formulas, and templates from this guide on a single page.</p>
+          <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+            <input type="email" placeholder="you@example.com" class="flex-1 px-4 py-3 bg-navy border border-white/10 rounded-xl text-white placeholder:text-gray-500 focus:outline-none focus:border-coral/50 text-sm" />
+            <button type="button" class="px-6 py-3 bg-coral hover:bg-coral/90 text-white font-semibold rounded-xl transition-colors text-sm whitespace-nowrap cursor-pointer">Send Me the Cheatsheet</button>
+          </form>
+        </div>
+
+        <!-- Chapter 6 -->
+        <section id="email-marketing" class="drm-chapter mb-20 scroll-mt-24">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">06</span>
+            <h2 class="text-2xl md:text-3xl font-bold">Email Marketing for Developers</h2>
+          </div>
+
+          <p class="text-gray-300 leading-relaxed mb-6">
+            Email is the most underrated marketing channel for developers — and simultaneously the most profitable one. While everyone is chasing Twitter impressions and Hacker News front pages, email quietly delivers the highest ROI of any marketing channel: roughly $36 for every $1 spent, according to industry data. Why? Because email is the only channel you <strong class="text-white">own</strong>.
+          </p>
+
+          <p class="text-gray-300 leading-relaxed mb-6">
+            Your Twitter followers? Twitter controls whether they see your tweets (and the algorithm is not your friend). Your SEO traffic? Google can change an algorithm and cut your traffic overnight. Your email list? That's yours. No algorithm, no gatekeepers, no platform risk. Every subscriber explicitly asked to hear from you, and you can reach them directly whenever you want.
+          </p>
+
+          <div class="bg-navy-light border border-white/10 rounded-xl p-6 mb-6">
+            <p class="text-sm font-semibold text-coral mb-3">Developer Analogy</p>
+            <p class="text-gray-300 leading-relaxed">
+              Social media followers are like users of a third-party API — the platform can rate-limit you, change the contract, or shut down entirely. Your email list is like your own database: you control the data, the access patterns, and the uptime. Always build on infrastructure you own.
+            </p>
+          </div>
+
+          <h3 class="text-xl font-semibold text-white mb-4 mt-10">The Welcome Sequence: Your First 7 Emails</h3>
+
+          <p class="text-gray-300 leading-relaxed mb-6">
+            When someone subscribes to your list, the next 7 days are the most important. They just told you they're interested — that's peak attention. Don't waste it by going silent for two weeks. Here's a welcome sequence that works:
+          </p>
+
+          <div class="space-y-3 mb-8">
+            <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+              <p class="font-mono text-sm"><span class="text-coral">Email 1</span> <span class="text-gray-500">(Immediately)</span> — <span class="text-white">Deliver the Promise</span></p>
+              <p class="text-gray-400 text-xs mt-1">Deliver whatever they signed up for (lead magnet, resource, freebie). Introduce yourself in 2-3 sentences. Set expectations for what you'll send and how often.</p>
+            </div>
+            <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+              <p class="font-mono text-sm"><span class="text-coral">Email 2</span> <span class="text-gray-500">(Day 2)</span> — <span class="text-white">Your Story + Credibility</span></p>
+              <p class="text-gray-400 text-xs mt-1">Why did you build this? What problem are you solving? Share your "origin story" in 5-8 sentences. Developers respect authenticity and technical credibility.</p>
+            </div>
+            <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+              <p class="font-mono text-sm"><span class="text-coral">Email 3</span> <span class="text-gray-500">(Day 4)</span> — <span class="text-white">Quick Win / Value Bomb</span></p>
+              <p class="text-gray-400 text-xs mt-1">Teach them something genuinely useful in 200 words or less. A tip, a framework, a code snippet. Make them glad they subscribed. No pitch.</p>
+            </div>
+            <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+              <p class="font-mono text-sm"><span class="text-coral">Email 4</span> <span class="text-gray-500">(Day 6)</span> — <span class="text-white">The Problem Deep Dive</span></p>
+              <p class="text-gray-400 text-xs mt-1">Dig into the specific problem your product solves. Use the PAS framework. Help them feel the pain so they're primed for the solution.</p>
+            </div>
+            <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+              <p class="font-mono text-sm"><span class="text-coral">Email 5</span> <span class="text-gray-500">(Day 8)</span> — <span class="text-white">Soft Pitch</span></p>
+              <p class="text-gray-400 text-xs mt-1">Introduce your product as the natural solution to the problem from Email 4. Don't hard-sell — show how it works and who it's for. Link to your landing page.</p>
+            </div>
+            <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+              <p class="font-mono text-sm"><span class="text-coral">Email 6</span> <span class="text-gray-500">(Day 10)</span> — <span class="text-white">Social Proof / Case Study</span></p>
+              <p class="text-gray-400 text-xs mt-1">Share a customer story, testimonial, or result. "Developer X used our template and launched in 3 days." Third-party validation builds trust.</p>
+            </div>
+            <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+              <p class="font-mono text-sm"><span class="text-coral">Email 7</span> <span class="text-gray-500">(Day 12)</span> — <span class="text-white">Direct Pitch + FAQ</span></p>
+              <p class="text-gray-400 text-xs mt-1">Clear, direct pitch. Reiterate the offer, answer common objections, and include a strong CTA. This is where you ask for the sale.</p>
+            </div>
+          </div>
+
+          <h3 class="text-xl font-semibold text-white mb-4 mt-10">Subject Line Formulas That Get Opens</h3>
+
+          <p class="text-gray-300 leading-relaxed mb-4">
+            Your email is worthless if nobody opens it. Subject lines are the gatekeeper. Here are formulas that consistently get 30%+ open rates for developer audiences:
+          </p>
+
+          <div class="my-6 p-5 bg-[#0d0d20] border border-white/10 rounded-xl font-mono text-sm space-y-2">
+            <p class="text-gray-500">// Subject line formulas for dev audiences</p>
+            <p class="text-gray-300"><span class="text-coral">"How I [achieved result] in [timeframe]"</span></p>
+            <p class="text-gray-300"><span class="text-coral">"The [number] biggest mistakes in [topic]"</span></p>
+            <p class="text-gray-300"><span class="text-coral">"[Tool/resource] that changed how I [activity]"</span></p>
+            <p class="text-gray-300"><span class="text-coral">"Why your [thing] isn't [desired outcome]"</span></p>
+            <p class="text-gray-300"><span class="text-coral">"I built [product] — here's what I learned"</span></p>
+            <p class="text-gray-300"><span class="text-coral">"Quick question about [their pain point]"</span></p>
+          </div>
+
+          <h3 class="text-xl font-semibold text-white mb-4 mt-10">Frequency, Content, and Pitching</h3>
+
+          <p class="text-gray-300 leading-relaxed mb-6">
+            For developer audiences, 1-2 emails per week is the sweet spot. More than that feels spammy; less than that and they forget you exist. The content split should roughly follow the 80/20 rule: 80% pure value (tutorials, tips, insights, resources) and 20% pitching your product. But here's the nuance — when you do pitch, pitch confidently. Don't apologize for selling. If your product genuinely helps, telling people about it <em>is</em> providing value.
+          </p>
+
+          <p class="text-gray-300 leading-relaxed mb-6">
+            Write like you're emailing a friend who happens to be a developer. Use plain text or minimal HTML. Avoid image-heavy templates — developer audiences respond better to simple, text-focused emails that feel personal. Keep emails between 200-500 words. And always, always have one clear CTA per email — even if it's just "reply and tell me your biggest challenge."
+          </p>
+
+          <div class="bg-gradient-to-r from-coral/10 to-transparent border-l-4 border-coral pl-6 py-4 rounded-r-lg">
+            <p class="text-white font-medium leading-relaxed">
+              "The best email marketers write like a developer explaining something at a coffee shop — casual, knowledgeable, genuinely helpful, and not afraid to recommend something they believe in."
+            </p>
+          </div>
+        </section>
+
+        <!-- CTA Block 6 -->
+        <div class="mb-20 p-8 bg-gradient-to-br from-deep-blue/60 to-navy-light border border-coral/20 rounded-2xl text-center">
+          <p class="text-lg font-semibold text-white mb-2">Want the quick-reference version?</p>
+          <p class="text-gray-400 mb-6">Download <strong class="text-coral">The Developer's DRM Cheatsheet</strong> — all the frameworks, formulas, and templates from this guide on a single page.</p>
+          <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+            <input type="email" placeholder="you@example.com" class="flex-1 px-4 py-3 bg-navy border border-white/10 rounded-xl text-white placeholder:text-gray-500 focus:outline-none focus:border-coral/50 text-sm" />
+            <button type="button" class="px-6 py-3 bg-coral hover:bg-coral/90 text-white font-semibold rounded-xl transition-colors text-sm whitespace-nowrap cursor-pointer">Send Me the Cheatsheet</button>
+          </form>
+        </div>
+
+        <!-- Chapter 7 -->
+        <section id="driving-traffic" class="drm-chapter mb-20 scroll-mt-24">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">07</span>
+            <h2 class="text-2xl md:text-3xl font-bold">Driving Traffic to Your Product</h2>
+          </div>
+
+          <p class="text-gray-300 leading-relaxed mb-6">
+            You've built a great product, crafted an irresistible offer, written compelling copy, and built a landing page that converts. Now you need eyeballs. Traffic is the fuel that powers everything. Without it, even the best funnel sits idle. But not all traffic is equal, and the right strategy depends on your product, your audience, and your budget.
+          </p>
+
+          <p class="text-gray-300 leading-relaxed mb-6">
+            Let's walk through the major traffic channels that work for developer products, with honest assessments of what each requires and what you can expect.
+          </p>
+
+          <h3 class="text-xl font-semibold text-white mb-4 mt-10">Content Marketing & SEO</h3>
+
+          <p class="text-gray-300 leading-relaxed mb-6">
+            Content marketing means creating valuable content — blog posts, tutorials, guides (like this one) — that attracts people organically through search engines. It's the long game: it takes 3-6 months to see meaningful results, but once it's working, it's essentially free traffic on autopilot.
+          </p>
+
+          <p class="text-gray-300 leading-relaxed mb-6">
+            The strategy is straightforward: find the questions your potential customers are Googling, write the best answer on the internet, and optimize the page so Google ranks it. For a developer tool, that might be tutorials like "How to set up authentication in Next.js" or comparison posts like "Supabase vs. Firebase in 2026." Each article is a doorway that leads to your product.
+          </p>
+
+          <p class="text-gray-300 leading-relaxed mb-6">
+            The key principle is to create content that attracts your ideal customer, not just any developer. A post about "cool CSS tricks" might get traffic, but if you sell a backend deployment tool, those visitors won't convert. Every piece of content should target someone who could realistically need your product.
+          </p>
+
+          <h3 class="text-xl font-semibold text-white mb-4 mt-10">Twitter/X and Building in Public</h3>
+
+          <p class="text-gray-300 leading-relaxed mb-6">
+            Twitter is where developer culture lives. Building in public — sharing your progress, revenue numbers, challenges, and wins as you build your product — is one of the most effective ways to build an audience of potential customers. People love following a journey. They root for you. And when you launch, they buy.
+          </p>
+
+          <p class="text-gray-300 leading-relaxed mb-6">
+            The formula: share daily updates about what you're building and learning. Be generous with insights and transparent about struggles. Engage with others in your niche. Don't just broadcast — have conversations. Over 3-6 months, you can build an audience of 1,000-10,000 followers who genuinely care about what you're making. That's a warm audience you can sell to directly.
+          </p>
+
+          <p class="text-gray-300 leading-relaxed mb-6">
+            Practical tips: Use threads for long-form content (they get higher engagement). Post screenshots and demos of your product in progress. Share revenue numbers if you're comfortable (they perform extremely well). And pin a tweet that describes your product with a link to your landing page.
+          </p>
+
+          <h3 class="text-xl font-semibold text-white mb-4 mt-10">Reddit and Hacker News</h3>
+
+          <p class="text-gray-300 leading-relaxed mb-6">
+            Both platforms can drive enormous traffic spikes, but they're also allergic to marketing. The strategy is to provide genuine value first. On Reddit, find the subreddits where your potential customers hang out (r/SaaS, r/webdev, r/startups, r/indiehackers) and become a helpful, active member <em>before</em> you ever post about your product. Answer questions, share insights, be useful. After a few weeks, you can share your product in a "Show r/SaaS" style post, framed as something you built, not something you're selling.
+          </p>
+
+          <p class="text-gray-300 leading-relaxed mb-6">
+            Hacker News is similar but more technical. A "Show HN" post can drive thousands of visits in a single day, but the audience is skeptical and technically sophisticated. Make sure your product actually works, your landing page is fast, and you're ready to answer tough questions in the comments. Launch on a weekday morning (US time) for maximum visibility.
+          </p>
+
+          <h3 class="text-xl font-semibold text-white mb-4 mt-10">Product Hunt</h3>
+
+          <p class="text-gray-300 leading-relaxed mb-6">
+            Product Hunt launches can generate a burst of traffic, backlinks, and social proof. The key is preparation: build a hunter network, create compelling product page assets, schedule your launch for a Tuesday or Wednesday, and rally your existing audience to upvote in the first few hours. A good PH launch won't make your business, but it gives you a badge of credibility and a one-day traffic spike that can kickstart your funnel.
+          </p>
+
+          <h3 class="text-xl font-semibold text-white mb-4 mt-10">Paid Ads (When You're Ready)</h3>
+
+          <p class="text-gray-300 leading-relaxed mb-6">
+            Paid ads are a multiplier, not a starting point. Only spend money on ads after your funnel converts organic traffic profitably. If 100 free visitors turn into 2 customers, then you know your conversion rate and can calculate what you can afford to pay per click. Google Ads works well for "high intent" searches (people already looking for a solution). Twitter ads work for awareness and retargeting. Start with $10-20/day, test aggressively, and only scale what works.
+          </p>
+
+          <h3 class="text-xl font-semibold text-white mb-4 mt-10">Which Channel Works Best?</h3>
+
+          <div class="my-6 p-5 bg-[#0d0d20] border border-white/10 rounded-xl font-mono text-sm">
+            <p class="text-gray-500 mb-3">// channel → best_for</p>
+            <p class="text-gray-300 mb-1"><span class="text-coral">SEO/Content</span>     → SaaS, tools with search demand</p>
+            <p class="text-gray-300 mb-1"><span class="text-coral">Twitter/X</span>       → All dev products, especially B2D</p>
+            <p class="text-gray-300 mb-1"><span class="text-coral">Reddit</span>           → Niche tools, community-driven products</p>
+            <p class="text-gray-300 mb-1"><span class="text-coral">Hacker News</span>     → Innovative/technical products</p>
+            <p class="text-gray-300 mb-1"><span class="text-coral">Product Hunt</span>    → Consumer-facing, design-polished products</p>
+            <p class="text-gray-300"><span class="text-coral">Paid Ads</span>         → Established products with proven funnels</p>
+          </div>
+
+          <div class="bg-gradient-to-r from-coral/10 to-transparent border-l-4 border-coral pl-6 py-4 rounded-r-lg">
+            <p class="text-white font-medium leading-relaxed">
+              "Pick two channels and go deep. Trying all six at once means you'll do all of them poorly. Master content + Twitter first. Add the rest once those are working."
+            </p>
+          </div>
+        </section>
+
+        <!-- CTA Block 7 -->
+        <div class="mb-20 p-8 bg-gradient-to-br from-deep-blue/60 to-navy-light border border-coral/20 rounded-2xl text-center">
+          <p class="text-lg font-semibold text-white mb-2">Want the quick-reference version?</p>
+          <p class="text-gray-400 mb-6">Download <strong class="text-coral">The Developer's DRM Cheatsheet</strong> — all the frameworks, formulas, and templates from this guide on a single page.</p>
+          <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+            <input type="email" placeholder="you@example.com" class="flex-1 px-4 py-3 bg-navy border border-white/10 rounded-xl text-white placeholder:text-gray-500 focus:outline-none focus:border-coral/50 text-sm" />
+            <button type="button" class="px-6 py-3 bg-coral hover:bg-coral/90 text-white font-semibold rounded-xl transition-colors text-sm whitespace-nowrap cursor-pointer">Send Me the Cheatsheet</button>
+          </form>
+        </div>
+
+        <!-- Chapter 8 -->
+        <section id="analytics" class="drm-chapter mb-20 scroll-mt-24">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">08</span>
+            <h2 class="text-2xl md:text-3xl font-bold">Analytics and Optimization</h2>
+          </div>
+
+          <p class="text-gray-300 leading-relaxed mb-6">
+            If DRM is marketing-as-engineering, analytics is your monitoring and observability layer. You wouldn't deploy a production service without logging, metrics, and alerts. You shouldn't run marketing campaigns without tracking either. The entire point of DRM is that <strong class="text-white">everything is measurable</strong> — but you need to actually measure it.
+          </p>
+
+          <p class="text-gray-300 leading-relaxed mb-6">
+            This chapter covers the key metrics you need to track, the free tools to track them, and the mindset of continuous optimization that separates developers who sell from developers who just build.
+          </p>
+
+          <h3 class="text-xl font-semibold text-white mb-4 mt-10">The Key Metrics</h3>
+
+          <p class="text-gray-300 leading-relaxed mb-6">
+            You don't need to track everything. You need to track the right things. Here are the metrics that actually matter for a developer selling a product:
+          </p>
+
+          <div class="space-y-4 mb-8">
+            <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+              <div class="flex items-center gap-3 mb-2">
+                <code class="text-coral font-mono text-sm">CAC</code>
+                <p class="font-semibold text-white text-sm">Customer Acquisition Cost</p>
+              </div>
+              <p class="text-gray-400 text-sm leading-relaxed">Total marketing spend divided by number of new customers. If you spent $500 on ads and got 10 customers, your CAC is $50. You need this number to be lower than your LTV or you're losing money.</p>
+            </div>
+            <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+              <div class="flex items-center gap-3 mb-2">
+                <code class="text-coral font-mono text-sm">LTV</code>
+                <p class="font-semibold text-white text-sm">Lifetime Value</p>
+              </div>
+              <p class="text-gray-400 text-sm leading-relaxed">How much revenue a customer generates over their entire relationship with you. For a $29/mo SaaS with 8-month average retention, LTV = $232. For a $49 one-time purchase, LTV is $49 (unless they buy again). LTV must be significantly higher than CAC — a 3:1 ratio is healthy.</p>
+            </div>
+            <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+              <div class="flex items-center gap-3 mb-2">
+                <code class="text-coral font-mono text-sm">CVR</code>
+                <p class="font-semibold text-white text-sm">Conversion Rate</p>
+              </div>
+              <p class="text-gray-400 text-sm leading-relaxed">The percentage of visitors who take the desired action — sign up, start a trial, purchase. A good landing page converts at 3-10%. Anything under 1% means something is broken. Track this at every stage of your funnel.</p>
+            </div>
+            <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+              <div class="flex items-center gap-3 mb-2">
+                <code class="text-coral font-mono text-sm">CHURN</code>
+                <p class="font-semibold text-white text-sm">Churn Rate (SaaS)</p>
+              </div>
+              <p class="text-gray-400 text-sm leading-relaxed">The percentage of customers who cancel each month. For SaaS: 5% monthly churn means you lose half your customers in a year. Getting this under 3% should be a top priority. Even small improvements compound dramatically.</p>
+            </div>
+            <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+              <div class="flex items-center gap-3 mb-2">
+                <code class="text-coral font-mono text-sm">EMAIL</code>
+                <p class="font-semibold text-white text-sm">Email Open Rate & CTR</p>
+              </div>
+              <p class="text-gray-400 text-sm leading-relaxed">Open rates tell you if your subject lines work (target 30%+). Click-through rates tell you if your email content is compelling (target 3-5%+). Both are leading indicators of revenue from your email list.</p>
+            </div>
+          </div>
+
+          <h3 class="text-xl font-semibold text-white mb-4 mt-10">Free Tools for Tracking</h3>
+
+          <p class="text-gray-300 leading-relaxed mb-6">
+            You don't need expensive analytics suites. Here's a stack that covers everything a bootstrapped developer needs:
+          </p>
+
+          <div class="grid gap-4 mb-8 sm:grid-cols-2">
+            <div class="p-4 bg-white/[0.03] border border-white/5 rounded-xl">
+              <p class="font-semibold text-white mb-1">Plausible Analytics</p>
+              <p class="text-gray-400 text-xs leading-relaxed">Privacy-friendly, lightweight website analytics. No cookies, GDPR-compliant, and shows you everything you need: traffic sources, top pages, conversions. Paid but affordable; open-source self-hosted option.</p>
+            </div>
+            <div class="p-4 bg-white/[0.03] border border-white/5 rounded-xl">
+              <p class="font-semibold text-white mb-1">PostHog</p>
+              <p class="text-gray-400 text-xs leading-relaxed">Product analytics, session recordings, feature flags, and A/B testing in one platform. Generous free tier. Built for developers. The best all-in-one tool for indie devs.</p>
+            </div>
+            <div class="p-4 bg-white/[0.03] border border-white/5 rounded-xl">
+              <p class="font-semibold text-white mb-1">Google Analytics 4</p>
+              <p class="text-gray-400 text-xs leading-relaxed">Free and comprehensive. The learning curve is steeper than Plausible, but it integrates with Google Ads and Search Console. Good if you plan to run paid campaigns.</p>
+            </div>
+            <div class="p-4 bg-white/[0.03] border border-white/5 rounded-xl">
+              <p class="font-semibold text-white mb-1">Google Search Console</p>
+              <p class="text-gray-400 text-xs leading-relaxed">Free. Shows you what keywords people use to find your site, your ranking positions, and which pages get the most search traffic. Essential for SEO.</p>
+            </div>
+          </div>
+
+          <h3 class="text-xl font-semibold text-white mb-4 mt-10">A/B Testing: The Scientific Method for Marketing</h3>
+
+          <p class="text-gray-300 leading-relaxed mb-6">
+            A/B testing is the practice of comparing two versions of something to see which one performs better. It's the scientific method applied to marketing, and it's exactly the kind of data-driven approach that developers excel at. Here's how to do it practically:
+          </p>
+
+          <div class="space-y-3 mb-8">
+            <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+              <span class="text-coral mt-1 font-mono text-xs">01</span>
+              <p><strong class="text-white">Test one variable at a time.</strong> If you change the headline AND the button color AND the price, you won't know what caused the difference. Change one thing per test.</p>
+            </div>
+            <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+              <span class="text-coral mt-1 font-mono text-xs">02</span>
+              <p><strong class="text-white">Wait for statistical significance.</strong> Don't call a winner after 50 visitors. You need at least a few hundred data points per variation. Tools like PostHog handle the statistics for you.</p>
+            </div>
+            <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+              <span class="text-coral mt-1 font-mono text-xs">03</span>
+              <p><strong class="text-white">Start with the highest-impact elements.</strong> Headlines have more impact than button colors. Offers have more impact than font choices. Test the big things first.</p>
+            </div>
+            <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+              <span class="text-coral mt-1 font-mono text-xs">04</span>
+              <p><strong class="text-white">Keep a test log.</strong> Record what you tested, the hypothesis, the result, and what you learned. Over time, this becomes your playbook of what works for your specific audience.</p>
+            </div>
+          </div>
+
+          <h3 class="text-xl font-semibold text-white mb-4 mt-10">The Optimization Mindset</h3>
+
+          <p class="text-gray-300 leading-relaxed mb-6">
+            The developers who succeed with DRM treat marketing like code. They ship something, measure its performance, identify the weakest link, improve it, and ship again. It's an infinite loop of iteration:
+          </p>
+
+          <div class="my-6 p-5 bg-[#0d0d20] border border-white/10 rounded-xl font-mono text-sm">
+            <p class="text-gray-500 mb-2">// The DRM optimization loop</p>
+            <p class="text-blue-400">while</p><p class="text-gray-300"> (business.isRunning()) &#123;</p>
+            <p class="text-gray-300 pl-4"><span class="text-green-400">measure</span>(funnelMetrics);</p>
+            <p class="text-gray-300 pl-4"><span class="text-yellow-300">identify</span>(biggestBottleneck);</p>
+            <p class="text-gray-300 pl-4"><span class="text-coral">hypothesis</span> = formulate(improvement);</p>
+            <p class="text-gray-300 pl-4"><span class="text-blue-400">test</span>(hypothesis);</p>
+            <p class="text-gray-300 pl-4"><span class="text-green-400">if</span> (result.isSignificant()) &#123;</p>
+            <p class="text-gray-300 pl-8">implement(winner);</p>
+            <p class="text-gray-300 pl-4">&#125;</p>
+            <p class="text-gray-300">&#125;</p>
+          </div>
+
+          <p class="text-gray-300 leading-relaxed mb-6">
+            Don't aim for perfection on the first try. Aim for a functional funnel that you can improve over time. A landing page that converts at 2% today can become a 5% converter after three months of testing. A welcome email sequence that makes $500/month can become a $2,000/month engine with iteration.
+          </p>
+
+          <div class="bg-gradient-to-r from-coral/10 to-transparent border-l-4 border-coral pl-6 py-4 rounded-r-lg">
+            <p class="text-white font-medium leading-relaxed">
+              "Marketing is never done. It's a codebase that's always in development. Ship the MVP, read the metrics, fix the biggest bug, and repeat. The developers who win are the ones who keep iterating after everyone else quits."
+            </p>
+          </div>
+        </section>
+
+        <!-- Summary Section -->
+        <section id="summary" class="mb-20 scroll-mt-24">
+          <div class="flex items-center gap-3 mb-8">
+            <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">&#10003;</span>
+            <h2 class="text-2xl md:text-3xl font-bold">Summary: Key Takeaways</h2>
+          </div>
+
+          <div class="space-y-4 mb-12">
+            <div class="p-4 bg-white/[0.03] border border-white/5 rounded-xl flex items-start gap-3">
+              <span class="text-coral font-mono text-sm font-bold shrink-0 mt-0.5">Ch.1</span>
+              <p class="text-gray-300 text-sm leading-relaxed">DRM is marketing with a clear call-to-action, measurable results, and a testing mindset. It's the engineering approach to marketing — systematic, logical, and data-driven.</p>
+            </div>
+            <div class="p-4 bg-white/[0.03] border border-white/5 rounded-xl flex items-start gap-3">
+              <span class="text-coral font-mono text-sm font-bold shrink-0 mt-0.5">Ch.2</span>
+              <p class="text-gray-300 text-sm leading-relaxed">The marketing funnel is a pipeline: Traffic → Landing Page → Email Sequence → Offer → Retention. Optimize from the bottom up, not top down.</p>
+            </div>
+            <div class="p-4 bg-white/[0.03] border border-white/5 rounded-xl flex items-start gap-3">
+              <span class="text-coral font-mono text-sm font-bold shrink-0 mt-0.5">Ch.3</span>
+              <p class="text-gray-300 text-sm leading-relaxed">Your offer is everything. Use the Value Equation: maximize the dream outcome and perceived likelihood while minimizing time delay and effort. Add risk reversal to close the gap.</p>
+            </div>
+            <div class="p-4 bg-white/[0.03] border border-white/5 rounded-xl flex items-start gap-3">
+              <span class="text-coral font-mono text-sm font-bold shrink-0 mt-0.5">Ch.4</span>
+              <p class="text-gray-300 text-sm leading-relaxed">Copywriting is structured persuasion, not creative writing. Use AIDA, PAS, Before-After-Bridge, and FAB as fill-in-the-blank templates to write compelling copy without staring at a blank page.</p>
+            </div>
+            <div class="p-4 bg-white/[0.03] border border-white/5 rounded-xl flex items-start gap-3">
+              <span class="text-coral font-mono text-sm font-bold shrink-0 mt-0.5">Ch.5</span>
+              <p class="text-gray-300 text-sm leading-relaxed">A high-converting landing page follows a proven structure: headline, subheadline, hero visual, benefits, social proof, offer, CTA, and FAQ. One page, one purpose, one CTA.</p>
+            </div>
+            <div class="p-4 bg-white/[0.03] border border-white/5 rounded-xl flex items-start gap-3">
+              <span class="text-coral font-mono text-sm font-bold shrink-0 mt-0.5">Ch.6</span>
+              <p class="text-gray-300 text-sm leading-relaxed">Email is the highest-ROI marketing channel and the only one you truly own. Use a 7-email welcome sequence, follow the 80/20 value-to-pitch ratio, and write like a human.</p>
+            </div>
+            <div class="p-4 bg-white/[0.03] border border-white/5 rounded-xl flex items-start gap-3">
+              <span class="text-coral font-mono text-sm font-bold shrink-0 mt-0.5">Ch.7</span>
+              <p class="text-gray-300 text-sm leading-relaxed">Pick two traffic channels and go deep. Content + Twitter is the best starting combo for developers. Only add paid ads after your funnel converts organic traffic profitably.</p>
+            </div>
+            <div class="p-4 bg-white/[0.03] border border-white/5 rounded-xl flex items-start gap-3">
+              <span class="text-coral font-mono text-sm font-bold shrink-0 mt-0.5">Ch.8</span>
+              <p class="text-gray-300 text-sm leading-relaxed">Track CAC, LTV, conversion rate, churn, and email metrics. A/B test relentlessly. Treat marketing like code: ship, measure, iterate. The developers who keep optimizing are the ones who win.</p>
+            </div>
+          </div>
+
+          <!-- Final CTA -->
+          <div class="p-10 bg-gradient-to-br from-coral/15 to-deep-blue/30 border border-coral/20 rounded-2xl text-center mb-16">
+            <h3 class="text-2xl font-bold text-white mb-3">Start Applying These Frameworks Today</h3>
+            <p class="text-gray-400 mb-8 max-w-lg mx-auto">
+              Subscribe to the CodeToCash newsletter for weekly DRM tactics, real-world examples, and actionable strategies for developer entrepreneurs.
+            </p>
+            <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-4">
+              <input type="email" placeholder="you@example.com" class="flex-1 px-4 py-3 bg-navy border border-white/10 rounded-xl text-white placeholder:text-gray-500 focus:outline-none focus:border-coral/50 text-sm" />
+              <button type="button" class="px-6 py-3 bg-coral hover:bg-coral/90 text-white font-semibold rounded-xl transition-colors text-sm whitespace-nowrap cursor-pointer">Subscribe Free</button>
+            </form>
+            <p class="text-gray-500 text-xs">Join 1,000+ developers learning to sell. No spam, unsubscribe anytime.</p>
+          </div>
+
+          <!-- Related Playbooks -->
+          <div class="border-t border-white/10 pt-12">
+            <h3 class="text-xl font-bold text-white mb-6">Related Playbooks</h3>
+            <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              <a href="/playbooks" class="group p-5 bg-white/[0.03] border border-white/5 rounded-xl hover:border-coral/20 hover:bg-white/[0.05] transition-all">
+                <p class="font-semibold text-white group-hover:text-coral transition-colors mb-1">Launch Playbook</p>
+                <p class="text-gray-500 text-sm">Step-by-step guide to launching your dev product to your first 100 customers.</p>
+              </a>
+              <a href="/playbooks" class="group p-5 bg-white/[0.03] border border-white/5 rounded-xl hover:border-coral/20 hover:bg-white/[0.05] transition-all">
+                <p class="font-semibold text-white group-hover:text-coral transition-colors mb-1">Email Sequence Templates</p>
+                <p class="text-gray-500 text-sm">Copy-paste email sequences for welcome series, launches, and re-engagement.</p>
+              </a>
+              <a href="/playbooks" class="group p-5 bg-white/[0.03] border border-white/5 rounded-xl hover:border-coral/20 hover:bg-white/[0.05] transition-all">
+                <p class="font-semibold text-white group-hover:text-coral transition-colors mb-1">Landing Page Teardowns</p>
+                <p class="text-gray-500 text-sm">Breakdowns of high-converting landing pages from real indie dev products.</p>
+              </a>
+            </div>
+          </div>
+        </section>
+
+      </article>
+    </div>
+  </div>
+
+  <script>
+    // Mobile TOC toggle
+    const mobileTocBtn = document.getElementById('mobile-toc-btn');
+    const mobileToc = document.getElementById('mobile-toc');
+    const mobileTocArrow = document.getElementById('mobile-toc-arrow');
+
+    if (mobileTocBtn && mobileToc && mobileTocArrow) {
+      mobileTocBtn.addEventListener('click', () => {
+        mobileToc.classList.toggle('hidden');
+        mobileTocArrow.classList.toggle('rotate-180');
+      });
+
+      // Close mobile TOC when a link is clicked
+      mobileToc.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileToc.classList.add('hidden');
+          mobileTocArrow.classList.remove('rotate-180');
+        });
+      });
+    }
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = document.querySelector(anchor.getAttribute('href')!);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    // Active section highlighting in TOC
+    const sections = document.querySelectorAll('.drm-chapter, #summary');
+    const tocLinks = document.querySelectorAll('.toc-link');
+
+    const observerOptions = {
+      rootMargin: '-80px 0px -70% 0px',
+      threshold: 0,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+          tocLinks.forEach(link => {
+            if (link.getAttribute('data-section') === id) {
+              link.classList.add('bg-coral/10', 'text-coral', 'font-medium');
+              link.classList.remove('text-gray-400');
+            } else {
+              link.classList.remove('bg-coral/10', 'text-coral', 'font-medium');
+              link.classList.add('text-gray-400');
+            }
+          });
+        }
+      });
+    }, observerOptions);
+
+    sections.forEach(section => observer.observe(section));
+  </script>
+</Layout>
