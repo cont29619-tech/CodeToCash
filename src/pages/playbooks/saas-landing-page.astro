@@ -1,0 +1,725 @@
+---
+import PlaybookLayout from '../../layouts/PlaybookLayout.astro';
+
+const sections = [
+  { id: "why-not-converting", title: "Why Your Current Page Isn't Converting" },
+  { id: "blueprint", title: "The 10-Section Landing Page Blueprint" },
+  { id: "headline-formulas", title: "Headline Formulas That Work" },
+  { id: "cta-copy", title: "CTA Button Copy That Gets Clicks" },
+  { id: "teardowns", title: "Real Landing Page Teardowns" },
+  { id: "checklist", title: "Your Landing Page Checklist" },
+];
+---
+
+<PlaybookLayout
+  title="How to Write a SaaS Landing Page That Converts"
+  metaTitle="How to Write a SaaS Landing Page That Converts | CodeToCash"
+  metaDescription="Step-by-step guide to writing a high-converting SaaS landing page. Includes headline formulas, CTA templates, section blueprints, and real teardowns."
+  subtitle="Step-by-step guide with templates, formulas, and real teardowns you can apply today."
+  difficulty="Beginner"
+  readingTime="15 min read"
+  lastUpdated="February 2026"
+  sections={sections}
+  next={{ slug: "email-launch-sequence", title: "Email Launch Sequence for Developers" }}
+>
+
+  <!-- Section 1 -->
+  <section id="why-not-converting" class="playbook-section mb-16 scroll-mt-24">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">01</span>
+      <h2 class="text-2xl md:text-3xl font-bold">Why Your Current Landing Page Isn't Converting</h2>
+    </div>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      You spent weeks building a product, shipped it, made a landing page, posted it on Twitter, and got... crickets. A few visitors, zero signups. So you tweak the colors. Add more features to the list. Redesign the hero image. Still nothing.
+    </p>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      Here's the uncomfortable truth: the problem isn't your design and it isn't your product. It's almost certainly your <strong class="text-white">messaging</strong>. You're making the same mistakes that 90% of developer-founders make on their landing pages. Let's name them so you can fix them.
+    </p>
+
+    <h3 class="text-xl font-semibold text-white mb-4 mt-10">The Five Deadly Mistakes</h3>
+
+    <div class="space-y-4 mb-8">
+      <div class="flex items-start gap-4 p-4 rounded-xl bg-white/[0.03] border border-white/5">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-red-500/10 text-red-400 font-mono font-bold text-xs shrink-0">1</span>
+        <div>
+          <p class="font-semibold text-white mb-1">Leading with features instead of outcomes</p>
+          <p class="text-gray-400 text-sm leading-relaxed">Your headline says "Built with Rust, WASM, and edge functions" when it should say "Deploy in 30 seconds, globally." Nobody cares about your tech stack until they care about the result. The technology is <em>how</em> you deliver the result — it's not the result itself.</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-4 p-4 rounded-xl bg-white/[0.03] border border-white/5">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-red-500/10 text-red-400 font-mono font-bold text-xs shrink-0">2</span>
+        <div>
+          <p class="font-semibold text-white mb-1">No clear call-to-action</p>
+          <p class="text-gray-400 text-sm leading-relaxed">You have "Star on GitHub," "Join Discord," "Read Docs," "Watch Demo," and "Sign Up" all competing for attention. The visitor's brain freezes. One page, one primary action. Everything else is a distraction.</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-4 p-4 rounded-xl bg-white/[0.03] border border-white/5">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-red-500/10 text-red-400 font-mono font-bold text-xs shrink-0">3</span>
+        <div>
+          <p class="font-semibold text-white mb-1">Feature-dumping without context</p>
+          <p class="text-gray-400 text-sm leading-relaxed">A wall of 20 features in tiny cards tells visitors nothing about <em>why</em> any of them matter. Each feature needs to answer "so what?" — what does this mean for me? Feature-dumping is documentation, not marketing.</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-4 p-4 rounded-xl bg-white/[0.03] border border-white/5">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-red-500/10 text-red-400 font-mono font-bold text-xs shrink-0">4</span>
+        <div>
+          <p class="font-semibold text-white mb-1">Zero social proof</p>
+          <p class="text-gray-400 text-sm leading-relaxed">No testimonials, no user count, no logos, no GitHub stars — nothing that says "other people trust this." Social proof is the fastest shortcut to credibility. Without it, visitors have to take your word for everything.</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-4 p-4 rounded-xl bg-white/[0.03] border border-white/5">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-red-500/10 text-red-400 font-mono font-bold text-xs shrink-0">5</span>
+        <div>
+          <p class="font-semibold text-white mb-1">Confusing layout with no hierarchy</p>
+          <p class="text-gray-400 text-sm leading-relaxed">The eye doesn't know where to look. There's no visual flow guiding the visitor from headline → value → proof → action. Great landing pages are a controlled slide — every section leads to the next, and the whole page funnels toward the CTA.</p>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="text-xl font-semibold text-white mb-4 mt-10">The Developer Mindset Trap</h3>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      Developers fall into a specific trap: because <em>you</em> evaluate tools by their features, you assume your customers do too. So you list every feature, every integration, every technical detail. You think comprehensiveness equals persuasion.
+    </p>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      It doesn't. Even when selling to other developers, people don't buy features — they buy outcomes wrapped in confidence. They want to know: "Will this solve my problem? Can I trust it? How fast can I get the result?" Your landing page needs to answer those three questions, in that order, before getting into the technical details.
+    </p>
+
+    <div class="bg-navy-light border border-white/10 rounded-xl p-6 mb-6">
+      <p class="text-sm font-semibold text-coral mb-3">Developer Analogy</p>
+      <p class="text-gray-300 leading-relaxed">
+        Think of your landing page as a function with one job: <code class="text-coral bg-coral/10 px-1.5 py-0.5 rounded font-mono text-sm">convert(visitor) → signup</code>. If the function has too many parameters, unclear return types, and no documentation, nobody will use it. A good landing page is a clean, well-documented API with a single endpoint and a clear contract.
+      </p>
+    </div>
+
+    <p class="text-gray-300 leading-relaxed">
+      The rest of this playbook gives you the exact blueprint to rebuild your landing page — section by section, with templates for every piece of copy. Let's start with the full layout.
+    </p>
+  </section>
+
+  <!-- Section 2 -->
+  <section id="blueprint" class="playbook-section mb-16 scroll-mt-24">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">02</span>
+      <h2 class="text-2xl md:text-3xl font-bold">The 10-Section Landing Page Blueprint</h2>
+    </div>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      Every high-converting SaaS landing page follows a predictable structure. Not because marketers are uncreative — because it works. Visitors have expectations. They scroll top to bottom. Each section has a psychological job. Here's the complete blueprint, in order.
+    </p>
+
+    <!-- Section 1: Navigation -->
+    <div class="mb-10">
+      <div class="flex items-center gap-3 mb-3">
+        <span class="flex items-center justify-center w-7 h-7 rounded-md bg-coral/10 text-coral font-mono text-xs font-bold shrink-0">1</span>
+        <h3 class="text-lg font-semibold text-white">Navigation — Minimal, Not Maximal</h3>
+      </div>
+      <p class="text-gray-300 leading-relaxed mb-4">
+        Your landing page navigation should have: your logo on the left and a single CTA button on the right. That's it. No "Blog" link, no "About" page, no "Docs." Every link is an exit ramp that takes people away from your conversion goal. Some pages skip navigation entirely — and that's a valid choice.
+      </p>
+      <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl font-mono text-sm">
+        <p class="text-gray-500 mb-2">// Navigation structure</p>
+        <p class="text-gray-300"><span class="text-coral">[Logo]</span> ——————————————————— <span class="text-green-400">[Start Free Trial →]</span></p>
+      </div>
+    </div>
+
+    <!-- Section 2: Hero -->
+    <div class="mb-10">
+      <div class="flex items-center gap-3 mb-3">
+        <span class="flex items-center justify-center w-7 h-7 rounded-md bg-coral/10 text-coral font-mono text-xs font-bold shrink-0">2</span>
+        <h3 class="text-lg font-semibold text-white">Hero Section — Your 5-Second Pitch</h3>
+      </div>
+      <p class="text-gray-300 leading-relaxed mb-4">
+        The hero is the most important section on the page. Visitors decide in under 5 seconds whether to keep scrolling or bounce. You need four elements:
+      </p>
+      <div class="space-y-2 mb-4">
+        <div class="flex items-start gap-3 text-gray-300 text-sm">
+          <span class="text-coral mt-0.5">&#9656;</span>
+          <p><strong class="text-white">Headline:</strong> The #1 outcome your product delivers. Not a feature — a result. "Ship your SaaS this weekend" beats "Full-stack boilerplate template."</p>
+        </div>
+        <div class="flex items-start gap-3 text-gray-300 text-sm">
+          <span class="text-coral mt-0.5">&#9656;</span>
+          <p><strong class="text-white">Subheadline:</strong> How you deliver that outcome. Add specificity — who it's for, what makes it different.</p>
+        </div>
+        <div class="flex items-start gap-3 text-gray-300 text-sm">
+          <span class="text-coral mt-0.5">&#9656;</span>
+          <p><strong class="text-white">CTA button:</strong> One primary action. Use value-driven text, not "Submit."</p>
+        </div>
+        <div class="flex items-start gap-3 text-gray-300 text-sm">
+          <span class="text-coral mt-0.5">&#9656;</span>
+          <p><strong class="text-white">Product visual:</strong> A screenshot, animated demo, or short video. Proves your product exists and looks good.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 3: Social Proof Bar -->
+    <div class="mb-10">
+      <div class="flex items-center gap-3 mb-3">
+        <span class="flex items-center justify-center w-7 h-7 rounded-md bg-coral/10 text-coral font-mono text-xs font-bold shrink-0">3</span>
+        <h3 class="text-lg font-semibold text-white">Social Proof Bar — Instant Credibility</h3>
+      </div>
+      <p class="text-gray-300 leading-relaxed mb-4">
+        Right below the hero, add a thin strip of credibility signals: company logos, "Trusted by 2,500 developers," a row of star ratings, or a short testimonial snippet. This immediately tells the visitor "other people use this — it's safe." Even small numbers work. "Used by 150 developers" is infinitely better than nothing. If you have GitHub stars, use them. If you have a Product Hunt badge, show it.
+      </p>
+    </div>
+
+    <!-- Section 4: Problem -->
+    <div class="mb-10">
+      <div class="flex items-center gap-3 mb-3">
+        <span class="flex items-center justify-center w-7 h-7 rounded-md bg-coral/10 text-coral font-mono text-xs font-bold shrink-0">4</span>
+        <h3 class="text-lg font-semibold text-white">Problem Section — Name Their Pain</h3>
+      </div>
+      <p class="text-gray-300 leading-relaxed mb-4">
+        Before you pitch your solution, make the visitor feel the problem. Describe their current frustration in specific, relatable terms. "You spend hours configuring auth, fighting with token refresh, and debugging session management — instead of building the features that actually make you money." The more specific you are, the more the reader thinks "this person gets me." Use 2-3 bullet points that describe their daily pain.
+      </p>
+    </div>
+
+    <!-- Section 5: Solution -->
+    <div class="mb-10">
+      <div class="flex items-center gap-3 mb-3">
+        <span class="flex items-center justify-center w-7 h-7 rounded-md bg-coral/10 text-coral font-mono text-xs font-bold shrink-0">5</span>
+        <h3 class="text-lg font-semibold text-white">Solution Section — Introduce the Hero</h3>
+      </div>
+      <p class="text-gray-300 leading-relaxed mb-4">
+        Now introduce your product as the answer to the problem you just described. Use a transition like "There's a better way" or "What if you didn't have to?" Then explain your product in one or two sentences, focusing on the transformation: "AuthKit gives you drop-in authentication that just works — social login, MFA, and passwordless in 15 minutes. So you can get back to building what matters." Keep it brief. This isn't the feature section — it's the bridge from problem to solution.
+      </p>
+    </div>
+
+    <!-- Section 6: Features/Benefits -->
+    <div class="mb-10">
+      <div class="flex items-center gap-3 mb-3">
+        <span class="flex items-center justify-center w-7 h-7 rounded-md bg-coral/10 text-coral font-mono text-xs font-bold shrink-0">6</span>
+        <h3 class="text-lg font-semibold text-white">Features/Benefits — The FAB Section</h3>
+      </div>
+      <p class="text-gray-300 leading-relaxed mb-4">
+        Pick 3-4 of your most important features and translate each one into a benefit using the Feature → Advantage → Benefit framework. Display them in a grid or alternating layout with icons or small visuals. Each card should have a bold benefit headline, a one-sentence explanation, and optionally a small screenshot or icon.
+      </p>
+      <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl font-mono text-sm">
+        <p class="text-gray-500 mb-2">// Don't write this:</p>
+        <p class="text-red-400 mb-4">"Multi-region edge caching with 200+ PoPs"</p>
+        <p class="text-gray-500 mb-2">// Write this instead:</p>
+        <p class="text-green-400 mb-1">"Lightning-fast globally"</p>
+        <p class="text-gray-400 text-xs">Your app loads in under 100ms for every user, everywhere. Built on 200+ edge locations so speed is never a bottleneck.</p>
+      </div>
+    </div>
+
+    <!-- Section 7: How It Works -->
+    <div class="mb-10">
+      <div class="flex items-center gap-3 mb-3">
+        <span class="flex items-center justify-center w-7 h-7 rounded-md bg-coral/10 text-coral font-mono text-xs font-bold shrink-0">7</span>
+        <h3 class="text-lg font-semibold text-white">How It Works — The 3-Step Process</h3>
+      </div>
+      <p class="text-gray-300 leading-relaxed mb-4">
+        Reduce the complexity of your product to exactly three steps. Even if your product has 50 features and a complex setup, <em>simplify it for the landing page</em>. Three steps makes it feel achievable. The pattern is always: (1) Start/sign up, (2) Connect/configure, (3) Get the result. For example: "1. Install the package → 2. Add your API key → 3. Auth just works." Use numbered cards with a brief description and optional icon for each step.
+      </p>
+    </div>
+
+    <!-- Section 8: Testimonials -->
+    <div class="mb-10">
+      <div class="flex items-center gap-3 mb-3">
+        <span class="flex items-center justify-center w-7 h-7 rounded-md bg-coral/10 text-coral font-mono text-xs font-bold shrink-0">8</span>
+        <h3 class="text-lg font-semibold text-white">Testimonials — Let Others Sell for You</h3>
+      </div>
+      <p class="text-gray-300 leading-relaxed mb-4">
+        Full-length testimonials are one of the highest-converting elements on any landing page. Each testimonial should include: the person's name, their role/company, a photo (even a small avatar), and most importantly — a <strong class="text-white">specific result</strong>. "Great tool!" is useless. "We cut our onboarding time from 3 weeks to 2 days" is gold. If you don't have testimonials yet, reach out to 5 beta users and ask them one question: "What changed for you after using [product]?"
+      </p>
+    </div>
+
+    <!-- Section 9: Pricing -->
+    <div class="mb-10">
+      <div class="flex items-center gap-3 mb-3">
+        <span class="flex items-center justify-center w-7 h-7 rounded-md bg-coral/10 text-coral font-mono text-xs font-bold shrink-0">9</span>
+        <h3 class="text-lg font-semibold text-white">Pricing — Transparent and Simple</h3>
+      </div>
+      <p class="text-gray-300 leading-relaxed mb-4">
+        Developers hate hidden pricing. Show your plans clearly: a free tier (if you have one), one or two paid tiers, and visually highlight the recommended option with a colored border or "Most Popular" badge. Each tier should list what's included in short bullet points. If you offer annual billing, show the monthly equivalent with a savings badge. Include your guarantee or risk reversal directly in the pricing section — "30-day money-back guarantee" under the buy button removes the last objection.
+      </p>
+    </div>
+
+    <!-- Section 10: Final CTA -->
+    <div class="mb-10">
+      <div class="flex items-center gap-3 mb-3">
+        <span class="flex items-center justify-center w-7 h-7 rounded-md bg-coral/10 text-coral font-mono text-xs font-bold shrink-0">10</span>
+        <h3 class="text-lg font-semibold text-white">Final CTA — Close the Deal</h3>
+      </div>
+      <p class="text-gray-300 leading-relaxed mb-4">
+        Repeat your hero headline and CTA one more time at the bottom of the page. The visitor has now scrolled through your entire pitch — this is where they decide. Add a nudge: a guarantee reminder ("Risk-free for 30 days"), urgency ("Launch pricing ends Friday"), or a micro-testimonial. Keep this section clean: headline, one line of copy, and a big, prominent button.
+      </p>
+      <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl font-mono text-sm">
+        <p class="text-gray-500 mb-2">// Final CTA structure</p>
+        <p class="text-white mb-1">headline: "Ready to ship faster?"</p>
+        <p class="text-gray-400 mb-1">subtext:  "Join 2,500 developers. 30-day money-back guarantee."</p>
+        <p class="text-green-400">button:   "Start Building Free →"</p>
+      </div>
+    </div>
+
+    <div class="bg-gradient-to-r from-coral/10 to-transparent border-l-4 border-coral pl-6 py-4 rounded-r-lg">
+      <p class="text-white font-medium leading-relaxed">
+        "You don't need all 10 sections on day one. The minimum viable landing page is: Hero + Problem + Solution + CTA. Start there, measure, and add sections as you grow."
+      </p>
+    </div>
+  </section>
+
+  <!-- Section 3 -->
+  <section id="headline-formulas" class="playbook-section mb-16 scroll-mt-24">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">03</span>
+      <h2 class="text-2xl md:text-3xl font-bold">Headline Formulas That Work</h2>
+    </div>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      Your headline is the single most important line of copy on the entire page. According to advertising legend David Ogilvy, five times as many people read the headline as read the body copy. If your headline doesn't grab attention and communicate value, nothing else matters.
+    </p>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      The good news: you don't need to invent headlines from scratch. Every great headline follows a pattern. Here are 10 proven formulas with developer product examples you can adapt right now.
+    </p>
+
+    <div class="space-y-4 mb-8">
+      <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+        <p class="font-mono text-sm text-gray-500 mb-2">// Formula 1</p>
+        <p class="font-mono text-sm text-coral mb-2">"[Desired outcome] without [pain point]"</p>
+        <p class="text-gray-400 text-sm">Example: <span class="text-gray-200">"Ship production-ready auth without writing a single line of security code"</span></p>
+      </div>
+
+      <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+        <p class="font-mono text-sm text-gray-500 mb-2">// Formula 2</p>
+        <p class="font-mono text-sm text-coral mb-2">"The [adjective] way to [desired outcome]"</p>
+        <p class="text-gray-400 text-sm">Example: <span class="text-gray-200">"The fastest way to deploy full-stack apps"</span></p>
+      </div>
+
+      <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+        <p class="font-mono text-sm text-gray-500 mb-2">// Formula 3</p>
+        <p class="font-mono text-sm text-coral mb-2">"Stop [pain]. Start [desired outcome]."</p>
+        <p class="text-gray-400 text-sm">Example: <span class="text-gray-200">"Stop fighting CSS. Start shipping beautiful interfaces."</span></p>
+      </div>
+
+      <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+        <p class="font-mono text-sm text-gray-500 mb-2">// Formula 4</p>
+        <p class="font-mono text-sm text-coral mb-2">"[Do thing] in [timeframe], not [longer timeframe]"</p>
+        <p class="text-gray-400 text-sm">Example: <span class="text-gray-200">"Launch your SaaS in days, not months"</span></p>
+      </div>
+
+      <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+        <p class="font-mono text-sm text-gray-500 mb-2">// Formula 5</p>
+        <p class="font-mono text-sm text-coral mb-2">"[Number] [audience] use [product] to [outcome]"</p>
+        <p class="text-gray-400 text-sm">Example: <span class="text-gray-200">"12,000 developers use DeployBot to ship with zero downtime"</span></p>
+      </div>
+
+      <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+        <p class="font-mono text-sm text-gray-500 mb-2">// Formula 6</p>
+        <p class="font-mono text-sm text-coral mb-2">"[Verb] your [thing] like [aspirational comparison]"</p>
+        <p class="text-gray-400 text-sm">Example: <span class="text-gray-200">"Monitor your APIs like a Fortune 500 — at indie prices"</span></p>
+      </div>
+
+      <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+        <p class="font-mono text-sm text-gray-500 mb-2">// Formula 7</p>
+        <p class="font-mono text-sm text-coral mb-2">"What if [removing the pain] was as easy as [simple action]?"</p>
+        <p class="text-gray-400 text-sm">Example: <span class="text-gray-200">"What if setting up payments was as easy as npm install?"</span></p>
+      </div>
+
+      <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+        <p class="font-mono text-sm text-gray-500 mb-2">// Formula 8</p>
+        <p class="font-mono text-sm text-coral mb-2">"[Product]: [One-line value statement]"</p>
+        <p class="text-gray-400 text-sm">Example: <span class="text-gray-200">"FormKit: Build production forms in minutes, not hours"</span></p>
+      </div>
+
+      <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+        <p class="font-mono text-sm text-gray-500 mb-2">// Formula 9</p>
+        <p class="font-mono text-sm text-coral mb-2">"Finally, [thing they've been wanting]"</p>
+        <p class="text-gray-400 text-sm">Example: <span class="text-gray-200">"Finally, analytics that respect your users' privacy"</span></p>
+      </div>
+
+      <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+        <p class="font-mono text-sm text-gray-500 mb-2">// Formula 10</p>
+        <p class="font-mono text-sm text-coral mb-2">"Everything you need to [outcome]. Nothing you don't."</p>
+        <p class="text-gray-400 text-sm">Example: <span class="text-gray-200">"Everything you need to run your SaaS. Nothing you don't."</span></p>
+      </div>
+    </div>
+
+    <h3 class="text-xl font-semibold text-white mb-4 mt-10">How to Choose the Right Formula</h3>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      Pick the formula that matches your product's biggest strength. If your product is fast, use Formula 4 (timeframe comparison). If you have strong social proof, use Formula 5 (numbers). If you're entering a market full of complex alternatives, use Formula 10 (simplicity). Don't overthink it — write 3-5 variations using different formulas, then A/B test the top two on your live page.
+    </p>
+
+    <div class="bg-gradient-to-r from-coral/10 to-transparent border-l-4 border-coral pl-6 py-4 rounded-r-lg">
+      <p class="text-white font-medium leading-relaxed">
+        "Write 20 headlines before picking one. The first 10 are always obvious. The good ones come from 11-20, after you've exhausted the cliches and start getting specific."
+      </p>
+    </div>
+  </section>
+
+  <!-- Section 4 -->
+  <section id="cta-copy" class="playbook-section mb-16 scroll-mt-24">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">04</span>
+      <h2 class="text-2xl md:text-3xl font-bold">CTA Button Copy That Gets Clicks</h2>
+    </div>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      Your CTA button is where conversion literally happens. It's the one element every visitor either clicks or doesn't. Yet most developers throw "Submit" or "Sign Up" on their button and call it done. These are lazy CTAs that communicate nothing about what happens next or what the user gets.
+    </p>
+
+    <h3 class="text-xl font-semibold text-white mb-4 mt-10">Why "Submit" and "Sign Up" Fail</h3>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      "Submit" is the worst CTA in existence. It literally means "surrender." Nobody wants to submit anything. "Sign Up" is slightly better but still describes a chore, not a reward. These generic CTAs fail because they describe the <em>action the user takes</em> instead of the <em>value the user gets</em>. The fix is simple: make your button text about the outcome, not the process.
+    </p>
+
+    <h3 class="text-xl font-semibold text-white mb-4 mt-10">The CTA Formula</h3>
+
+    <div class="p-5 bg-[#0d0d20] border border-white/10 rounded-xl font-mono text-sm mb-8">
+      <p class="text-gray-500 mb-3">// The CTA formula</p>
+      <p class="text-coral text-lg mb-4">[Action Verb] + [Value/Outcome]</p>
+      <p class="text-gray-500 mb-2">// Examples:</p>
+      <p class="text-gray-300 mb-1"><span class="text-red-400 line-through">"Submit"</span>  →  <span class="text-green-400">"Start Building Free"</span></p>
+      <p class="text-gray-300"><span class="text-red-400 line-through">"Sign Up"</span>  →  <span class="text-green-400">"Get My Dashboard"</span></p>
+    </div>
+
+    <h3 class="text-xl font-semibold text-white mb-4">15 CTA Examples You Can Steal</h3>
+
+    <p class="text-gray-300 leading-relaxed mb-4">
+      Use these as starting points. Adapt the value to match what your product actually delivers.
+    </p>
+
+    <div class="grid gap-3 sm:grid-cols-2 mb-8">
+      <div class="p-3 bg-white/[0.03] border border-white/5 rounded-lg">
+        <p class="text-sm text-green-400 font-mono">"Start Building Free"</p>
+      </div>
+      <div class="p-3 bg-white/[0.03] border border-white/5 rounded-lg">
+        <p class="text-sm text-green-400 font-mono">"Get My Dashboard"</p>
+      </div>
+      <div class="p-3 bg-white/[0.03] border border-white/5 rounded-lg">
+        <p class="text-sm text-green-400 font-mono">"Launch My First Campaign"</p>
+      </div>
+      <div class="p-3 bg-white/[0.03] border border-white/5 rounded-lg">
+        <p class="text-sm text-green-400 font-mono">"Deploy in 30 Seconds"</p>
+      </div>
+      <div class="p-3 bg-white/[0.03] border border-white/5 rounded-lg">
+        <p class="text-sm text-green-400 font-mono">"Try It Free — No Card Required"</p>
+      </div>
+      <div class="p-3 bg-white/[0.03] border border-white/5 rounded-lg">
+        <p class="text-sm text-green-400 font-mono">"See My Analytics"</p>
+      </div>
+      <div class="p-3 bg-white/[0.03] border border-white/5 rounded-lg">
+        <p class="text-sm text-green-400 font-mono">"Create My First Form"</p>
+      </div>
+      <div class="p-3 bg-white/[0.03] border border-white/5 rounded-lg">
+        <p class="text-sm text-green-400 font-mono">"Get the Template — $49"</p>
+      </div>
+      <div class="p-3 bg-white/[0.03] border border-white/5 rounded-lg">
+        <p class="text-sm text-green-400 font-mono">"Start Monitoring Free"</p>
+      </div>
+      <div class="p-3 bg-white/[0.03] border border-white/5 rounded-lg">
+        <p class="text-sm text-green-400 font-mono">"Ship My First Email"</p>
+      </div>
+      <div class="p-3 bg-white/[0.03] border border-white/5 rounded-lg">
+        <p class="text-sm text-green-400 font-mono">"Generate My Report"</p>
+      </div>
+      <div class="p-3 bg-white/[0.03] border border-white/5 rounded-lg">
+        <p class="text-sm text-green-400 font-mono">"Claim My Free Tier"</p>
+      </div>
+      <div class="p-3 bg-white/[0.03] border border-white/5 rounded-lg">
+        <p class="text-sm text-green-400 font-mono">"Start My Free Trial →"</p>
+      </div>
+      <div class="p-3 bg-white/[0.03] border border-white/5 rounded-lg">
+        <p class="text-sm text-green-400 font-mono">"Connect My Repo"</p>
+      </div>
+      <div class="p-3 bg-white/[0.03] border border-white/5 rounded-lg">
+        <p class="text-sm text-green-400 font-mono">"Automate My Workflow"</p>
+      </div>
+    </div>
+
+    <h3 class="text-xl font-semibold text-white mb-4">CTA Best Practices</h3>
+
+    <div class="space-y-3 mb-6">
+      <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+        <span class="text-coral mt-0.5">&#9656;</span>
+        <p><strong class="text-white">Use first person "My" instead of "Your":</strong> "Start My Free Trial" slightly outperforms "Start Your Free Trial" in most tests. It feels more personal and ownership-oriented.</p>
+      </div>
+      <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+        <span class="text-coral mt-0.5">&#9656;</span>
+        <p><strong class="text-white">Add a friction reducer below the button:</strong> Small text like "No credit card required" or "Free forever for small teams" directly beneath the CTA reduces anxiety.</p>
+      </div>
+      <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+        <span class="text-coral mt-0.5">&#9656;</span>
+        <p><strong class="text-white">Make it visually dominant:</strong> Your CTA button should be the most visually prominent element in its section. High contrast, generous padding, clear typography.</p>
+      </div>
+      <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+        <span class="text-coral mt-0.5">&#9656;</span>
+        <p><strong class="text-white">Add an arrow or icon:</strong> A small arrow (→) at the end of your CTA text subtly communicates forward motion and progression.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5 -->
+  <section id="teardowns" class="playbook-section mb-16 scroll-mt-24">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">05</span>
+      <h2 class="text-2xl md:text-3xl font-bold">Real Landing Page Teardowns</h2>
+    </div>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      Theory is useful, but seeing how real products apply these principles is where it clicks. Let's break down three landing pages from well-known developer tools and analyze what they get right, what could be improved, and what lessons you can apply to your own page.
+    </p>
+
+    <!-- Teardown 1 -->
+    <div class="mb-12 p-6 bg-navy-light border border-white/10 rounded-2xl">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-blue-500/10 text-blue-400 font-mono text-xs font-bold shrink-0">A</span>
+        <h3 class="text-lg font-semibold text-white">A Popular Deployment Platform</h3>
+      </div>
+      <p class="text-gray-400 text-sm mb-4 italic">Think: one-click deploys, serverless functions, edge network. You know the one.</p>
+
+      <div class="mb-4">
+        <p class="text-xs font-semibold text-green-400 uppercase tracking-wider mb-2">What They Do Right</p>
+        <div class="space-y-2">
+          <div class="flex items-start gap-2 text-gray-300 text-sm">
+            <span class="text-green-400 mt-0.5">&#10003;</span>
+            <p><strong class="text-white">Outcome-first headline:</strong> Their headline talks about shipping and developer experience, not infrastructure specs. It immediately tells you what you'll get.</p>
+          </div>
+          <div class="flex items-start gap-2 text-gray-300 text-sm">
+            <span class="text-green-400 mt-0.5">&#10003;</span>
+            <p><strong class="text-white">Massive social proof:</strong> Logos of companies using the platform are everywhere. You see household names and think "if they trust it, I can too."</p>
+          </div>
+          <div class="flex items-start gap-2 text-gray-300 text-sm">
+            <span class="text-green-400 mt-0.5">&#10003;</span>
+            <p><strong class="text-white">Single dominant CTA:</strong> "Start Deploying" is the only action that matters. It repeats throughout the page. No distractions.</p>
+          </div>
+          <div class="flex items-start gap-2 text-gray-300 text-sm">
+            <span class="text-green-400 mt-0.5">&#10003;</span>
+            <p><strong class="text-white">Live demo in the hero:</strong> They show an actual deployment happening in real-time. Nothing builds trust faster than seeing the product work.</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p class="text-xs font-semibold text-yellow-400 uppercase tracking-wider mb-2">What Could Be Improved</p>
+        <div class="space-y-2">
+          <div class="flex items-start gap-2 text-gray-300 text-sm">
+            <span class="text-yellow-400 mt-0.5">&#9888;</span>
+            <p>Pricing page requires clicks to reach — putting even a simple "Free for hobby projects" on the landing page would reduce friction.</p>
+          </div>
+          <div class="flex items-start gap-2 text-gray-300 text-sm">
+            <span class="text-yellow-400 mt-0.5">&#9888;</span>
+            <p>The page is long and feature-heavy. For enterprise buyers that's fine, but indie developers might bounce before reaching the CTA.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Teardown 2 -->
+    <div class="mb-12 p-6 bg-navy-light border border-white/10 rounded-2xl">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-purple-500/10 text-purple-400 font-mono text-xs font-bold shrink-0">B</span>
+        <h3 class="text-lg font-semibold text-white">A Well-Known Open-Source Database Platform</h3>
+      </div>
+      <p class="text-gray-400 text-sm mb-4 italic">Think: Postgres, real-time subscriptions, auth, storage — all in one. The Firebase alternative.</p>
+
+      <div class="mb-4">
+        <p class="text-xs font-semibold text-green-400 uppercase tracking-wider mb-2">What They Do Right</p>
+        <div class="space-y-2">
+          <div class="flex items-start gap-2 text-gray-300 text-sm">
+            <span class="text-green-400 mt-0.5">&#10003;</span>
+            <p><strong class="text-white">Developer-native positioning:</strong> They position as "the open-source Firebase alternative" — instantly clear what it is and who it's for.</p>
+          </div>
+          <div class="flex items-start gap-2 text-gray-300 text-sm">
+            <span class="text-green-400 mt-0.5">&#10003;</span>
+            <p><strong class="text-white">Code snippets on the landing page:</strong> They show actual integration code. Developers can see themselves using it before they sign up.</p>
+          </div>
+          <div class="flex items-start gap-2 text-gray-300 text-sm">
+            <span class="text-green-400 mt-0.5">&#10003;</span>
+            <p><strong class="text-white">GitHub star count as social proof:</strong> Showing 50K+ stars is massive credibility in the developer world. It says "the community vetted this for you."</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p class="text-xs font-semibold text-yellow-400 uppercase tracking-wider mb-2">What Could Be Improved</p>
+        <div class="space-y-2">
+          <div class="flex items-start gap-2 text-gray-300 text-sm">
+            <span class="text-yellow-400 mt-0.5">&#9888;</span>
+            <p>The feature list is comprehensive but long. Grouping features into 3 clear use cases would help visitors self-qualify faster.</p>
+          </div>
+          <div class="flex items-start gap-2 text-gray-300 text-sm">
+            <span class="text-yellow-400 mt-0.5">&#9888;</span>
+            <p>Testimonials are present but generic. More specific results ("reduced our query time by 10x") would be more persuasive than general praise.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Teardown 3 -->
+    <div class="mb-8 p-6 bg-navy-light border border-white/10 rounded-2xl">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-coral/10 text-coral font-mono text-xs font-bold shrink-0">C</span>
+        <h3 class="text-lg font-semibold text-white">A Successful SaaS Boilerplate Template</h3>
+      </div>
+      <p class="text-gray-400 text-sm mb-4 italic">Think: one-time purchase, Next.js starter kit, "launch your SaaS in days." You've seen it on Twitter.</p>
+
+      <div class="mb-4">
+        <p class="text-xs font-semibold text-green-400 uppercase tracking-wider mb-2">What They Do Right</p>
+        <div class="space-y-2">
+          <div class="flex items-start gap-2 text-gray-300 text-sm">
+            <span class="text-green-400 mt-0.5">&#10003;</span>
+            <p><strong class="text-white">Urgency and scarcity:</strong> Limited-time pricing or "X copies sold" creates real urgency that drives faster decisions.</p>
+          </div>
+          <div class="flex items-start gap-2 text-gray-300 text-sm">
+            <span class="text-green-400 mt-0.5">&#10003;</span>
+            <p><strong class="text-white">Revenue social proof:</strong> Showing "Made $200K in revenue" from the template itself is the ultimate proof that the product works — it literally makes money.</p>
+          </div>
+          <div class="flex items-start gap-2 text-gray-300 text-sm">
+            <span class="text-green-400 mt-0.5">&#10003;</span>
+            <p><strong class="text-white">Time-saving headline:</strong> "Launch in days, not weeks" hits the value equation hard — reducing time delay is the primary selling point.</p>
+          </div>
+          <div class="flex items-start gap-2 text-gray-300 text-sm">
+            <span class="text-green-400 mt-0.5">&#10003;</span>
+            <p><strong class="text-white">Clear, simple pricing:</strong> One price, one package, no confusion. The buyer's decision is binary: yes or no. No plan comparison needed.</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p class="text-xs font-semibold text-yellow-400 uppercase tracking-wider mb-2">What Could Be Improved</p>
+        <div class="space-y-2">
+          <div class="flex items-start gap-2 text-gray-300 text-sm">
+            <span class="text-yellow-400 mt-0.5">&#9888;</span>
+            <p>The long feature list could be overwhelming for beginners. A "quick start" section showing the 3-step setup process would reduce perceived complexity.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="text-xl font-semibold text-white mb-4">Key Takeaways From All Three</h3>
+
+    <div class="space-y-3 mb-6">
+      <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+        <span class="text-coral mt-0.5 font-mono text-xs">01</span>
+        <p>Every successful page leads with outcomes, not technology. The tech comes later as supporting evidence.</p>
+      </div>
+      <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+        <span class="text-coral mt-0.5 font-mono text-xs">02</span>
+        <p>Social proof is always above the fold or immediately after the hero. It's treated as essential, not optional.</p>
+      </div>
+      <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+        <span class="text-coral mt-0.5 font-mono text-xs">03</span>
+        <p>Developer-specific trust signals (code snippets, GitHub stars, open source) outperform generic social proof for technical audiences.</p>
+      </div>
+      <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+        <span class="text-coral mt-0.5 font-mono text-xs">04</span>
+        <p>Simplicity wins. The best pages have one CTA, one offer, and a clear visual hierarchy. Complexity kills conversion.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 6 -->
+  <section id="checklist" class="playbook-section mb-16 scroll-mt-24">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">06</span>
+      <h2 class="text-2xl md:text-3xl font-bold">Your Landing Page Checklist</h2>
+    </div>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      Before you publish (or re-publish) your landing page, run through this checklist. Each item is something we covered in this playbook. If you can check every box, your page is in great shape. If not, you know exactly what to fix.
+    </p>
+
+    <div class="space-y-6">
+      <!-- Checklist Group: Structure -->
+      <div class="p-6 bg-navy-light border border-white/10 rounded-2xl">
+        <h3 class="text-sm font-semibold text-coral uppercase tracking-wider mb-4">Page Structure</h3>
+        <div class="space-y-3">
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Navigation is minimal — logo and one CTA button only</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Hero section has a clear outcome-based headline</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Subheadline explains how you deliver the outcome</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Product screenshot, demo, or video is visible in the hero</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Social proof appears near the top of the page</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Problem section clearly names the pain before the solution</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Checklist Group: Copy -->
+      <div class="p-6 bg-navy-light border border-white/10 rounded-2xl">
+        <h3 class="text-sm font-semibold text-coral uppercase tracking-wider mb-4">Copy & Messaging</h3>
+        <div class="space-y-3">
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Headline focuses on outcomes, not features or tech stack</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Features are translated into benefits (using the FAB framework)</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">CTA button uses an action verb + value (not "Submit" or "Sign Up")</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">There is only ONE primary CTA (repeated 2-3 times on the page)</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">"How it works" section simplifies the product to 3 steps</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Checklist Group: Trust -->
+      <div class="p-6 bg-navy-light border border-white/10 rounded-2xl">
+        <h3 class="text-sm font-semibold text-coral uppercase tracking-wider mb-4">Trust & Conversion</h3>
+        <div class="space-y-3">
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Testimonials include names, roles, and specific results</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Pricing is transparent and visible on the page</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Risk reversal is present (guarantee, free tier, trial)</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">FAQ section addresses top 3-5 objections</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Final CTA section repeats the hero offer at the bottom</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Page loads fast (under 3 seconds) and is mobile-responsive</span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-8 bg-gradient-to-r from-coral/10 to-transparent border-l-4 border-coral pl-6 py-4 rounded-r-lg">
+      <p class="text-white font-medium leading-relaxed">
+        "You don't need a perfect score to launch. Check the essentials — headline, CTA, social proof — and ship it. You can always iterate. A live page that converts at 2% is infinitely better than a perfect page that's still in Figma."
+      </p>
+    </div>
+  </section>
+
+</PlaybookLayout>
