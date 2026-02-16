@@ -146,13 +146,14 @@ const difficultyColors: Record<string, { bg: string; text: string; border: strin
       <p class="text-gray-400 mb-6 max-w-md mx-auto">
         Subscribe to get notified when we publish new tactical guides. No spam — just actionable marketing for developers.
       </p>
-      <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-3">
+      <form action="https://buttondown.com/api/emails/CodeToCash" method="post" target="_blank" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-3">
         <input
           type="email"
+          name="email"
           placeholder="you@example.com"
           class="flex-1 px-4 py-3 bg-navy border border-white/10 rounded-xl text-white placeholder:text-gray-500 focus:outline-none focus:border-coral/50 text-sm"
         />
-        <button type="button" class="px-6 py-3 bg-coral hover:bg-coral/90 text-white font-semibold rounded-xl transition-colors text-sm whitespace-nowrap cursor-pointer">
+        <button type="submit" class="px-6 py-3 bg-coral hover:bg-coral/90 text-white font-semibold rounded-xl transition-colors text-sm whitespace-nowrap cursor-pointer">
           Notify Me
         </button>
       </form>

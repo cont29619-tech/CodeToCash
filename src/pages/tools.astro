@@ -347,14 +347,15 @@ const stacks = [
       <p class="text-gray-400 mb-6 max-w-md mx-auto">
         Tell us what you're building and we'll recommend the right tools. Subscribe for weekly tool reviews and marketing tactics.
       </p>
-      <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-3">
+      <form action="https://buttondown.com/api/emails/CodeToCash" method="post" target="_blank" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-3">
         <input
           type="email"
+          name="email"
           placeholder="you@example.com"
           aria-label="Email address"
           class="flex-1 px-4 py-3 bg-navy border border-white/10 rounded-xl text-white placeholder:text-gray-500 focus:outline-none focus:border-coral/50 text-sm"
         />
-        <button type="button" class="px-6 py-3 bg-coral hover:bg-coral/90 text-white font-semibold rounded-xl transition-colors text-sm whitespace-nowrap cursor-pointer">
+        <button type="submit" class="px-6 py-3 bg-coral hover:bg-coral/90 text-white font-semibold rounded-xl transition-colors text-sm whitespace-nowrap cursor-pointer">
           Get Recommendations
         </button>
       </form>
