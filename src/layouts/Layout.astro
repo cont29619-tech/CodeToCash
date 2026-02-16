@@ -61,6 +61,13 @@ const ogImageURL = new URL('/og-default.png', Astro.site);
       onload="this.media='all'"
     />
 
+    <!-- Critical inline styles for instant first paint -->
+    <style>
+      body{background:#0A0A1A;color:#f3f4f6;font-family:Inter,ui-sans-serif,system-ui,sans-serif;-webkit-font-smoothing:antialiased;margin:0;min-height:100vh;display:flex;flex-direction:column}
+      nav.top-nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(10,10,26,.8);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.05);height:4rem}
+      main{flex:1;padding-top:4rem}
+    </style>
+
     {schema && <script type="application/ld+json" set:html={schema} />}
   </head>
   <body class="bg-navy text-gray-100 font-sans antialiased min-h-screen flex flex-col">

@@ -56,6 +56,16 @@ html {
   animation: fade-in-up 0.8s ease-out both;
 }
 
+/* Skip hero animations on mobile for faster LCP */
+@media (max-width: 767px) {
+  .animate-fade-in,
+  .animate-fade-in-up {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
 /* Scroll-triggered animations */
 .section-animate {
   opacity: 0;
