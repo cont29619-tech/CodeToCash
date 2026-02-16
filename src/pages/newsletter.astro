@@ -1,0 +1,400 @@
+---
+import '../styles/global.css';
+
+const title = 'Dev Marketing Newsletter for Vibe Coders | CodeToCash';
+const description = 'Weekly direct response marketing tactics for developers and vibe coders. Actionable frameworks, templates, and case studies. Subscribe free.';
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:site_name" content="CodeToCash.dev" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-navy text-gray-100 font-sans antialiased min-h-screen">
+
+    <!-- ============ MINIMAL NAV ============ -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-navy/80 backdrop-blur-md border-b border-white/[0.06]">
+      <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+        <a href="/" class="flex items-center gap-2 group">
+          <span class="text-lg font-bold text-white group-hover:text-coral transition-colors duration-200">
+            <span class="font-mono text-coral">&lt;</span>CodeToCash<span class="font-mono text-coral">/&gt;</span>
+          </span>
+        </a>
+        <a
+          href="#subscribe"
+          class="px-5 py-2 bg-coral text-white text-sm font-semibold rounded-lg hover:bg-coral/90 transition-all duration-200"
+        >
+          Subscribe Free
+        </a>
+      </div>
+    </nav>
+
+
+    <main class="pt-16">
+
+      <!-- ============ HERO SECTION ============ -->
+      <section id="subscribe" class="relative overflow-hidden min-h-[85vh] flex items-center justify-center px-4 py-24 sm:py-32">
+        <!-- Background glow -->
+        <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+          <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-coral/5 rounded-full blur-[120px] animate-pulse-slow"></div>
+          <div class="absolute top-1/3 left-1/4 w-[400px] h-[400px] bg-deep-blue/10 rounded-full blur-[100px] animate-pulse-slow animation-delay-2000"></div>
+        </div>
+
+        <div class="relative z-10 max-w-3xl mx-auto text-center">
+          <p class="inline-block text-sm font-mono text-coral uppercase tracking-widest mb-6 animate-fade-in">// weekly newsletter</p>
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-[1.1] tracking-tight animate-fade-in-up">
+            One DRM Tactic. Every Week.<br />
+            <span class="text-coral">Built for Vibe Coders.</span>
+          </h1>
+          <p class="mt-6 text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed animate-fade-in-up animation-delay-200">
+            Join developers who are learning to sell what they build. Get actionable direct response marketing tactics delivered to your inbox — no fluff, no guru vibes.
+          </p>
+
+          <form class="mt-10 flex flex-col sm:flex-row gap-3 max-w-xl mx-auto animate-fade-in-up animation-delay-400">
+            <input
+              type="email"
+              placeholder="you@email.com"
+              class="flex-1 min-w-0 px-5 py-4 bg-white/5 border border-white/10 rounded-lg text-white text-lg placeholder-gray-500 focus:outline-none focus:border-coral/50 focus:ring-2 focus:ring-coral/20 transition-all duration-200"
+            />
+            <button
+              type="submit"
+              class="px-8 py-4 bg-coral text-white text-lg font-semibold rounded-lg hover:bg-coral/90 hover:scale-[1.02] transition-all duration-200 shadow-lg shadow-coral/20 shrink-0 cursor-pointer"
+            >
+              Subscribe Free
+            </button>
+          </form>
+
+          <p class="mt-5 text-sm text-gray-500 animate-fade-in-up animation-delay-400">
+            Get <span class="text-gray-300 font-medium">The Developer's DRM Cheatsheet</span> free when you subscribe.
+          </p>
+        </div>
+      </section>
+
+
+      <!-- ============ WHAT YOU GET SECTION ============ -->
+      <section class="relative px-4 py-24 sm:py-32 bg-navy-light/50">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-16 section-animate">
+            <p class="text-sm font-mono text-coral uppercase tracking-widest mb-4">// what you get</p>
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight">
+              Here's What Hits Your Inbox<br />Every Week
+            </h2>
+          </div>
+
+          <div class="space-y-5 max-w-2xl mx-auto">
+            <!-- Benefit 1 -->
+            <div class="flex items-start gap-5 p-6 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-coral/20 hover:bg-white/[0.04] transition-all duration-300 section-animate">
+              <div class="w-12 h-12 rounded-xl bg-coral/10 flex items-center justify-center shrink-0">
+                <svg class="w-6 h-6 text-coral" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-white mb-1">One Actionable DRM Tactic</h3>
+                <p class="text-gray-400 leading-relaxed">Explained in developer terms. No MBA jargon — just clear frameworks you can implement the same day.</p>
+              </div>
+            </div>
+
+            <!-- Benefit 2 -->
+            <div class="flex items-start gap-5 p-6 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-coral/20 hover:bg-white/[0.04] transition-all duration-300 section-animate">
+              <div class="w-12 h-12 rounded-xl bg-coral/10 flex items-center justify-center shrink-0">
+                <svg class="w-6 h-6 text-coral" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z" /><path d="M14 2v6h6" /><path d="M16 13H8" /><path d="M16 17H8" /><path d="M10 9H8" /></svg>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-white mb-1">Fill-in-the-Blank Templates</h3>
+                <p class="text-gray-400 leading-relaxed">Headlines, email sequences, landing page copy — just fill in the blanks and ship. Use them immediately.</p>
+              </div>
+            </div>
+
+            <!-- Benefit 3 -->
+            <div class="flex items-start gap-5 p-6 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-coral/20 hover:bg-white/[0.04] transition-all duration-300 section-animate">
+              <div class="w-12 h-12 rounded-xl bg-coral/10 flex items-center justify-center shrink-0">
+                <svg class="w-6 h-6 text-coral" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" /></svg>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-white mb-1">Real Case Studies</h3>
+                <p class="text-gray-400 leading-relaxed">Stories of devs who turned code into cash. What worked, what didn't, and the exact numbers behind their growth.</p>
+              </div>
+            </div>
+
+            <!-- Benefit 4 -->
+            <div class="flex items-start gap-5 p-6 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-coral/20 hover:bg-white/[0.04] transition-all duration-300 section-animate">
+              <div class="w-12 h-12 rounded-xl bg-coral/10 flex items-center justify-center shrink-0">
+                <svg class="w-6 h-6 text-coral" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 6V2H8" /><path d="m8 18-4 4V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2Z" /></svg>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-white mb-1">Tool Recommendations & Stack Advice</h3>
+                <p class="text-gray-400 leading-relaxed">The best marketing tools for developers. Honest reviews, no affiliate pitches — just what actually works.</p>
+              </div>
+            </div>
+
+            <!-- Benefit 5 -->
+            <div class="flex items-start gap-5 p-6 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-coral/20 hover:bg-white/[0.04] transition-all duration-300 section-animate">
+              <div class="w-12 h-12 rounded-xl bg-green-500/10 flex items-center justify-center shrink-0">
+                <svg class="w-6 h-6 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><path d="m9 11 3 3L22 4" /></svg>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-white mb-1">No Spam. No Affiliate Pitches. Just Value.</h3>
+                <p class="text-gray-400 leading-relaxed">We respect your inbox. Every email earns its open. Unsubscribe in one click, anytime.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ============ SOCIAL PROOF SECTION ============ -->
+      <section class="relative px-4 py-24 sm:py-32">
+        <div class="max-w-5xl mx-auto">
+          <div class="text-center mb-16 section-animate">
+            <p class="text-sm font-mono text-coral uppercase tracking-widest mb-4">// social proof</p>
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight">
+              Join 2,000+ Vibe Coders and<br />Indie Developers
+            </h2>
+          </div>
+
+          <!-- Stats bar -->
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-16 mb-16 section-animate">
+            <div class="text-center">
+              <p class="text-4xl font-extrabold text-white">2,000+</p>
+              <p class="text-sm text-gray-500 mt-1">Subscribers</p>
+            </div>
+            <div class="hidden sm:block w-px h-12 bg-white/10"></div>
+            <div class="text-center">
+              <p class="text-4xl font-extrabold text-coral">68%</p>
+              <p class="text-sm text-gray-500 mt-1">Avg. Open Rate</p>
+            </div>
+            <div class="hidden sm:block w-px h-12 bg-white/10"></div>
+            <div class="text-center">
+              <p class="text-4xl font-extrabold text-white">52</p>
+              <p class="text-sm text-gray-500 mt-1">Issues Sent</p>
+            </div>
+          </div>
+
+          <p class="text-center text-gray-500 text-sm mb-10 section-animate">68% average open rate — because people actually read it.</p>
+
+          <!-- Testimonials -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] section-animate">
+              <div class="flex gap-1 mb-5">
+                <span class="text-coral">★</span><span class="text-coral">★</span><span class="text-coral">★</span><span class="text-coral">★</span><span class="text-coral">★</span>
+              </div>
+              <blockquote class="text-gray-300 leading-relaxed mb-6">
+                "This newsletter is the only marketing content I actually read. It's written like documentation — clear, practical, no fluff."
+              </blockquote>
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-coral/20 flex items-center justify-center text-coral font-bold text-sm">M</div>
+                <div>
+                  <p class="text-white font-medium text-sm">Marcus</p>
+                  <p class="text-gray-500 text-xs">Full-Stack Developer</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] section-animate">
+              <div class="flex gap-1 mb-5">
+                <span class="text-coral">★</span><span class="text-coral">★</span><span class="text-coral">★</span><span class="text-coral">★</span><span class="text-coral">★</span>
+              </div>
+              <blockquote class="text-gray-300 leading-relaxed mb-6">
+                "Used the landing page template from Issue #14 and doubled my conversion rate in a week. This stuff actually works."
+              </blockquote>
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-deep-blue/40 flex items-center justify-center text-blue-300 font-bold text-sm">R</div>
+                <div>
+                  <p class="text-white font-medium text-sm">Rachel</p>
+                  <p class="text-gray-500 text-xs">Indie SaaS Founder</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] section-animate">
+              <div class="flex gap-1 mb-5">
+                <span class="text-coral">★</span><span class="text-coral">★</span><span class="text-coral">★</span><span class="text-coral">★</span><span class="text-coral">★</span>
+              </div>
+              <blockquote class="text-gray-300 leading-relaxed mb-6">
+                "I look forward to this email every Tuesday. It's the one newsletter that makes me stop scrolling and actually take notes."
+              </blockquote>
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-coral/20 flex items-center justify-center text-coral font-bold text-sm">D</div>
+                <div>
+                  <p class="text-white font-medium text-sm">Dev</p>
+                  <p class="text-gray-500 text-xs">Vibe Coder & Creator</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ============ SAMPLE ISSUE SECTION ============ -->
+      <section class="relative px-4 py-24 sm:py-32 bg-navy-light/50">
+        <div class="max-w-3xl mx-auto">
+          <div class="text-center mb-16 section-animate">
+            <p class="text-sm font-mono text-coral uppercase tracking-widest mb-4">// sample issue</p>
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight">
+              Here's What It Looks Like
+            </h2>
+            <p class="mt-4 text-lg text-gray-400">A peek inside a real issue of the newsletter.</p>
+          </div>
+
+          <!-- Email preview mockup -->
+          <div class="rounded-2xl bg-white/[0.02] border border-white/[0.06] overflow-hidden section-animate">
+            <!-- Email client chrome -->
+            <div class="flex items-center gap-2 px-5 py-3 bg-white/[0.03] border-b border-white/[0.06]">
+              <span class="w-3 h-3 rounded-full bg-coral/60"></span>
+              <span class="w-3 h-3 rounded-full bg-yellow-500/60"></span>
+              <span class="w-3 h-3 rounded-full bg-green-500/60"></span>
+              <span class="ml-3 text-xs font-mono text-gray-500">Inbox — CodeToCash Weekly</span>
+            </div>
+
+            <!-- Email header -->
+            <div class="px-6 sm:px-10 pt-8 pb-6 border-b border-white/[0.06]">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 rounded-full bg-coral/20 flex items-center justify-center shrink-0">
+                  <span class="text-coral font-bold text-sm font-mono">&lt;/&gt;</span>
+                </div>
+                <div>
+                  <p class="text-white font-medium text-sm">CodeToCash Weekly</p>
+                  <p class="text-gray-500 text-xs">newsletter@codetocash.dev</p>
+                </div>
+              </div>
+              <h3 class="text-xl sm:text-2xl font-bold text-white leading-snug">
+                The one landing page change that doubled my conversion rate
+              </h3>
+              <p class="mt-2 text-sm text-gray-500">Issue #47 — 5 min read</p>
+            </div>
+
+            <!-- Email body -->
+            <div class="px-6 sm:px-10 py-8 space-y-5 text-[15px] leading-relaxed">
+              <p class="text-gray-300">Hey there,</p>
+              <p class="text-gray-300">
+                Last week I ran an A/B test on a client's SaaS landing page. One change. That's it. Conversions went from 2.1% to 4.7%.
+              </p>
+              <p class="text-gray-300">
+                The change? <span class="text-white font-medium">I moved the CTA above the fold and rewrote it from "Get Started" to "Start My Free Trial — No Credit Card."</span>
+              </p>
+              <p class="text-gray-300">
+                Here's why this works (and the psychology behind it):
+              </p>
+              <div class="pl-4 border-l-2 border-coral/40 space-y-3">
+                <p class="text-gray-300"><span class="text-white font-medium">1. Visibility bias:</span> If they can't see it, they can't click it. 60% of visitors never scroll past the hero.</p>
+                <p class="text-gray-300"><span class="text-white font-medium">2. Friction reduction:</span> "No credit card" removes the #1 objection before it forms in their mind.</p>
+                <p class="text-gray-300"><span class="text-white font-medium">3. Specificity:</span> "Start My Free Trial" is about them. "Get Started" is about nothing.</p>
+              </div>
+              <p class="text-gray-300">
+                Here's the template you can steal:
+              </p>
+              <div class="p-4 rounded-lg bg-white/[0.03] border border-white/[0.06] font-mono text-sm">
+                <p class="text-coral">[Action Verb] + [Desired Outcome] + [Objection Killer]</p>
+                <p class="text-gray-500 mt-2">Examples:</p>
+                <p class="text-gray-400">"Start My Free Trial — No Credit Card"</p>
+                <p class="text-gray-400">"Download the Guide — It's Free"</p>
+                <p class="text-gray-400">"Launch My Store — Setup Takes 5 Min"</p>
+              </div>
+              <p class="text-gray-300">
+                Try this on your landing page this week. Reply and tell me your results.
+              </p>
+              <p class="text-gray-400 mt-6">
+                Ship products, make money.<br />
+                <span class="text-white font-medium">— CodeToCash</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ============ FINAL CTA SECTION ============ -->
+      <section class="relative px-4 py-24 sm:py-32 overflow-hidden">
+        <!-- Gradient background -->
+        <div class="absolute inset-0 bg-gradient-to-br from-deep-blue/30 via-navy-light to-coral/5 pointer-events-none" aria-hidden="true"></div>
+        <div class="absolute inset-0 bg-navy-light/60 pointer-events-none" aria-hidden="true"></div>
+
+        <div class="relative z-10 max-w-2xl mx-auto text-center section-animate">
+          <p class="text-sm font-mono text-coral uppercase tracking-widest mb-4">// join us</p>
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight">
+            Start Getting Smarter About<br /><span class="text-coral">Selling What You Build</span>
+          </h2>
+          <p class="mt-6 text-lg text-gray-400 leading-relaxed">
+            One email per week. Unsubscribe in one click. No spam, ever.
+          </p>
+
+          <form class="mt-10 flex flex-col sm:flex-row gap-3 max-w-xl mx-auto">
+            <input
+              type="email"
+              placeholder="you@email.com"
+              class="flex-1 min-w-0 px-5 py-4 bg-white/5 border border-white/10 rounded-lg text-white text-lg placeholder-gray-500 focus:outline-none focus:border-coral/50 focus:ring-2 focus:ring-coral/20 transition-all duration-200"
+            />
+            <button
+              type="submit"
+              class="px-8 py-4 bg-coral text-white text-lg font-semibold rounded-lg hover:bg-coral/90 hover:scale-[1.02] transition-all duration-200 shadow-lg shadow-coral/20 shrink-0 cursor-pointer"
+            >
+              Subscribe Free
+            </button>
+          </form>
+
+          <p class="mt-5 text-sm text-gray-500">
+            Free forever. Unsubscribe in one click. No spam, ever.
+          </p>
+        </div>
+      </section>
+
+    </main>
+
+
+    <!-- ============ MINIMAL FOOTER ============ -->
+    <footer class="border-t border-white/[0.06] px-4 py-8">
+      <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-gray-500">
+        <a href="/" class="hover:text-coral transition-colors">
+          <span class="font-mono text-coral">&lt;</span>CodeToCash<span class="font-mono text-coral">/&gt;</span>
+        </a>
+        <p>&copy; 2026 CodeToCash.dev. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+            }
+          });
+        },
+        { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+      );
+
+      document.querySelectorAll('.section-animate').forEach((el) => {
+        observer.observe(el);
+      });
+    </script>
+  </body>
+</html>
