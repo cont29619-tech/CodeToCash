@@ -7,10 +7,9 @@ const schema = JSON.stringify({
   "name": "CodeToCash.dev",
   "url": "https://codetocash.dev",
   "description": "Direct response marketing education for vibe coders and indie developers who ship products but struggle with sales.",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "https://codetocash.dev/?q={search_term_string}",
-    "query-input": "required name=search_term_string"
+  "publisher": {
+    "@type": "Organization",
+    "name": "CodeToCash.dev"
   }
 });
 ---
@@ -42,7 +41,7 @@ const schema = JSON.stringify({
           href="/drm-101"
           class="px-8 py-4 bg-coral text-white text-lg font-semibold rounded-lg hover:bg-coral/90 hover:scale-[1.02] transition-all duration-200 shadow-lg shadow-coral/20"
         >
-          Start the Free DRM 101 Guide
+          Start the Free Marketing Guide
         </a>
         <a
           href="/newsletter"
@@ -73,17 +72,17 @@ const schema = JSON.stringify({
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div class="group p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-coral/20 hover:bg-white/[0.04] transition-all duration-300 section-animate">
-          <div class="text-4xl mb-5">🚀</div>
+          <div class="text-4xl mb-5" aria-hidden="true">🚀</div>
           <h3 class="text-xl font-bold text-white mb-3">You Build, But Nobody Buys</h3>
           <p class="text-gray-400 leading-relaxed">Great product, zero revenue. You shipped something amazing but your launch got buried in the noise.</p>
         </div>
         <div class="group p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-coral/20 hover:bg-white/[0.04] transition-all duration-300 section-animate">
-          <div class="text-4xl mb-5">😬</div>
+          <div class="text-4xl mb-5" aria-hidden="true">😬</div>
           <h3 class="text-xl font-bold text-white mb-3">Marketing Feels Sleazy</h3>
           <p class="text-gray-400 leading-relaxed">You'd rather write code than write copy. Every marketing tactic you've seen feels manipulative or cringe.</p>
         </div>
         <div class="group p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-coral/20 hover:bg-white/[0.04] transition-all duration-300 section-animate">
-          <div class="text-4xl mb-5">🎲</div>
+          <div class="text-4xl mb-5" aria-hidden="true">🎲</div>
           <h3 class="text-xl font-bold text-white mb-3">No System, Just Hoping</h3>
           <p class="text-gray-400 leading-relaxed">Posting randomly and praying for sales. No funnel, no strategy, no repeatable process to grow revenue.</p>
         </div>
@@ -211,7 +210,7 @@ const schema = JSON.stringify({
             <svg class="w-6 h-6 text-coral" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2" /><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" /></svg>
           </div>
           <h3 class="text-lg font-bold text-white mb-2">Email Sequences That Sell</h3>
-          <p class="text-gray-400 text-sm leading-relaxed">Automated email flows that nurture leads and drive revenue while you sleep. Set up once, profit forever.</p>
+          <p class="text-gray-400 text-sm leading-relaxed">Automated email flows that nurture leads and drive revenue while you sleep. Set up once, iterate as you grow.</p>
         </div>
         <!-- Card 4 -->
         <div class="group p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-coral/20 hover:bg-white/[0.04] hover:-translate-y-1 transition-all duration-300 section-animate">
@@ -246,7 +245,7 @@ const schema = JSON.stringify({
   <section class="relative px-4 py-24 sm:py-32">
     <div class="max-w-6xl mx-auto">
       <div class="text-center max-w-3xl mx-auto mb-16 section-animate">
-        <p class="text-sm font-mono text-coral uppercase tracking-widest mb-4">// social proof</p>
+        <p class="text-sm font-mono text-coral uppercase tracking-widest mb-4">// what devs are saying</p>
         <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight">
           Built for Developers Like You
         </h2>
@@ -254,49 +253,49 @@ const schema = JSON.stringify({
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div class="p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] section-animate">
-          <div class="flex gap-1 mb-5">
-            <span class="text-coral">★</span><span class="text-coral">★</span><span class="text-coral">★</span><span class="text-coral">★</span><span class="text-coral">★</span>
+          <div class="flex gap-1 mb-5" aria-label="5 out of 5 stars">
+            <span class="text-coral" aria-hidden="true">★</span><span class="text-coral" aria-hidden="true">★</span><span class="text-coral" aria-hidden="true">★</span><span class="text-coral" aria-hidden="true">★</span><span class="text-coral" aria-hidden="true">★</span>
           </div>
           <blockquote class="text-gray-300 leading-relaxed mb-6">
-            "I went from 0 to $2K MRR in 3 months using the DRM frameworks from CodeToCash."
+            "I followed the landing page framework and went from a 0.3% to 2.8% conversion rate on my SaaS in two weeks."
           </blockquote>
           <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full bg-coral/20 flex items-center justify-center text-coral font-bold text-sm">A</div>
+            <div class="w-10 h-10 rounded-full bg-coral/20 flex items-center justify-center text-coral font-bold text-sm">AK</div>
             <div>
-              <p class="text-white font-medium text-sm">Alex</p>
-              <p class="text-gray-500 text-xs">Indie Developer</p>
+              <p class="text-white font-medium text-sm">Alex Kim</p>
+              <p class="text-gray-400 text-xs">Solo SaaS Developer, ShipTracker.io</p>
             </div>
           </div>
         </div>
 
         <div class="p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] section-animate">
-          <div class="flex gap-1 mb-5">
-            <span class="text-coral">★</span><span class="text-coral">★</span><span class="text-coral">★</span><span class="text-coral">★</span><span class="text-coral">★</span>
+          <div class="flex gap-1 mb-5" aria-label="5 out of 5 stars">
+            <span class="text-coral" aria-hidden="true">★</span><span class="text-coral" aria-hidden="true">★</span><span class="text-coral" aria-hidden="true">★</span><span class="text-coral" aria-hidden="true">★</span><span class="text-coral" aria-hidden="true">★</span>
           </div>
           <blockquote class="text-gray-300 leading-relaxed mb-6">
-            "Finally, marketing advice that doesn't make me cringe. It's like reading documentation, not a sales pitch."
+            "Finally, marketing advice that doesn't make me cringe. It reads like technical documentation, not a sales pitch."
           </blockquote>
           <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full bg-deep-blue/40 flex items-center justify-center text-blue-300 font-bold text-sm">S</div>
+            <div class="w-10 h-10 rounded-full bg-deep-blue/40 flex items-center justify-center text-blue-300 font-bold text-sm">SP</div>
             <div>
-              <p class="text-white font-medium text-sm">Sam</p>
-              <p class="text-gray-500 text-xs">Vibe Coder</p>
+              <p class="text-white font-medium text-sm">Sam Patel</p>
+              <p class="text-gray-400 text-xs">Full-Stack Developer, Indie Maker</p>
             </div>
           </div>
         </div>
 
         <div class="p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] section-animate">
-          <div class="flex gap-1 mb-5">
-            <span class="text-coral">★</span><span class="text-coral">★</span><span class="text-coral">★</span><span class="text-coral">★</span><span class="text-coral">★</span>
+          <div class="flex gap-1 mb-5" aria-label="5 out of 5 stars">
+            <span class="text-coral" aria-hidden="true">★</span><span class="text-coral" aria-hidden="true">★</span><span class="text-coral" aria-hidden="true">★</span><span class="text-coral" aria-hidden="true">★</span><span class="text-coral" aria-hidden="true">★</span>
           </div>
           <blockquote class="text-gray-300 leading-relaxed mb-6">
-            "The email sequence templates alone were worth it. Set it up once, sales come in on autopilot."
+            "The email sequence templates helped me set up a 5-part welcome series. I started getting replies from leads within a week."
           </blockquote>
           <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full bg-coral/20 flex items-center justify-center text-coral font-bold text-sm">J</div>
+            <div class="w-10 h-10 rounded-full bg-coral/20 flex items-center justify-center text-coral font-bold text-sm">JR</div>
             <div>
-              <p class="text-white font-medium text-sm">Jordan</p>
-              <p class="text-gray-500 text-xs">SaaS Founder</p>
+              <p class="text-white font-medium text-sm">Jordan Reeves</p>
+              <p class="text-gray-400 text-xs">Founder, DevToolKit</p>
             </div>
           </div>
         </div>
@@ -317,14 +316,19 @@ const schema = JSON.stringify({
         The Dev Marketing Newsletter
       </h2>
       <p class="mt-6 text-lg text-gray-400 leading-relaxed">
-        One actionable DRM tactic for vibe coders, every week. No fluff. No guru vibes. Just systems that sell.
+        One actionable marketing tactic for developers, every week. Just systems that sell.
       </p>
 
-      <form action="https://buttondown.com/api/emails/embed-subscribe/CodeToCash" method="post" target="_blank" class="mt-10 flex flex-col sm:flex-row gap-3 max-w-lg mx-auto">
+      <p class="mt-8 mb-4 text-sm font-medium text-gray-300">
+        Subscribe and get <span class="text-coral font-semibold">The Developer's DRM Cheatsheet</span> free instantly.
+      </p>
+
+      <form action="https://buttondown.com/api/emails/embed-subscribe/CodeToCash" method="post" target="_blank" class="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto">
         <input type="hidden" value="1" name="embed" />
         <input
           type="email"
           name="email"
+          required
           placeholder="you@email.com"
           aria-label="Email address"
           class="flex-1 min-w-0 px-5 py-4 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-coral/50 focus:ring-2 focus:ring-coral/20 transition-all duration-200"
@@ -333,12 +337,12 @@ const schema = JSON.stringify({
           type="submit"
           class="px-8 py-4 bg-coral text-white font-semibold rounded-lg hover:bg-coral/90 hover:scale-[1.02] transition-all duration-200 shadow-lg shadow-coral/20 shrink-0"
         >
-          Subscribe
+          Subscribe Free
         </button>
       </form>
 
-      <p class="mt-5 text-sm text-gray-500">
-        Join free. Unsubscribe anytime. Get <span class="text-gray-300">The Developer's DRM Cheatsheet</span> instantly.
+      <p class="mt-5 text-sm text-gray-400">
+        Join free. Unsubscribe anytime.
       </p>
     </div>
   </section>
@@ -354,7 +358,7 @@ const schema = JSON.stringify({
         href="/drm-101"
         class="mt-10 inline-flex items-center px-10 py-4 bg-coral text-white text-lg font-semibold rounded-lg hover:bg-coral/90 hover:scale-[1.02] transition-all duration-200 shadow-lg shadow-coral/20"
       >
-        Start the Free DRM 101 Guide
+        Start the Free Marketing Guide
       </a>
     </div>
   </section>

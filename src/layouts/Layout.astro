@@ -91,15 +91,22 @@ const ogImageURL = new URL('/og-default.png', Astro.site);
 
     <script>
       const backToTop = document.getElementById('back-to-top')!;
+      let ticking = false;
       window.addEventListener('scroll', () => {
-        if (window.scrollY > 400) {
-          backToTop.classList.remove('opacity-0', 'pointer-events-none');
-          backToTop.classList.add('opacity-100', 'pointer-events-auto');
-        } else {
-          backToTop.classList.add('opacity-0', 'pointer-events-none');
-          backToTop.classList.remove('opacity-100', 'pointer-events-auto');
+        if (!ticking) {
+          requestAnimationFrame(() => {
+            if (window.scrollY > 400) {
+              backToTop.classList.remove('opacity-0', 'pointer-events-none');
+              backToTop.classList.add('opacity-100', 'pointer-events-auto');
+            } else {
+              backToTop.classList.add('opacity-0', 'pointer-events-none');
+              backToTop.classList.remove('opacity-100', 'pointer-events-auto');
+            }
+            ticking = false;
+          });
+          ticking = true;
         }
-      });
+      }, { passive: true });
       backToTop.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
