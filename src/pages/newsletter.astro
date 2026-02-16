@@ -92,7 +92,8 @@ const ogImageURL = new URL('/og-default.png', Astro.site);
             Join developers who are learning to sell what they build. Get actionable direct response marketing tactics delivered to your inbox — no fluff, no guru vibes.
           </p>
 
-          <form action="https://buttondown.com/api/emails/CodeToCash" method="post" target="_blank" class="mt-10 flex flex-col sm:flex-row gap-3 max-w-xl mx-auto animate-fade-in-up animation-delay-400">
+          <form action="https://buttondown.com/api/emails/embed-subscribe/CodeToCash" method="post" target="_blank" class="mt-10 flex flex-col sm:flex-row gap-3 max-w-xl mx-auto animate-fade-in-up animation-delay-400">
+            <input type="hidden" value="1" name="embed" />
             <input
               type="email"
               name="email"
@@ -362,7 +363,8 @@ const ogImageURL = new URL('/og-default.png', Astro.site);
             One email per week. Unsubscribe in one click. No spam, ever.
           </p>
 
-          <form action="https://buttondown.com/api/emails/CodeToCash" method="post" target="_blank" class="mt-10 flex flex-col sm:flex-row gap-3 max-w-xl mx-auto">
+          <form action="https://buttondown.com/api/emails/embed-subscribe/CodeToCash" method="post" target="_blank" class="mt-10 flex flex-col sm:flex-row gap-3 max-w-xl mx-auto">
+            <input type="hidden" value="1" name="embed" />
             <input
               type="email"
               name="email"
