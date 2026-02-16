@@ -1,0 +1,344 @@
+---
+import Layout from './Layout.astro';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  post: CollectionEntry<'blog'>;
+  headings: { depth: number; slug: string; text: string }[];
+  relatedPosts: CollectionEntry<'blog'>[];
+  prevPost?: CollectionEntry<'blog'>;
+  nextPost?: CollectionEntry<'blog'>;
+}
+
+const { post, headings, relatedPosts, prevPost, nextPost } = Astro.props;
+const { title, description, pubDate, updatedDate, author, category, readingTime } = post.data;
+
+const categoryLabels: Record<string, string> = {
+  fundamentals: 'Fundamentals',
+  copywriting: 'Copywriting',
+  email: 'Email',
+  ads: 'Ads',
+  analytics: 'Analytics',
+  strategy: 'Strategy',
+};
+
+const categoryColors: Record<string, { bg: string; text: string; border: string }> = {
+  fundamentals: { bg: 'bg-blue-500/10', text: 'text-blue-400', border: 'border-blue-500/20' },
+  copywriting:  { bg: 'bg-purple-500/10', text: 'text-purple-400', border: 'border-purple-500/20' },
+  email:        { bg: 'bg-green-500/10', text: 'text-green-400', border: 'border-green-500/20' },
+  ads:          { bg: 'bg-yellow-500/10', text: 'text-yellow-400', border: 'border-yellow-500/20' },
+  analytics:    { bg: 'bg-cyan-500/10', text: 'text-cyan-400', border: 'border-cyan-500/20' },
+  strategy:     { bg: 'bg-coral/10', text: 'text-coral', border: 'border-coral/20' },
+};
+
+const colors = categoryColors[category] || categoryColors.fundamentals;
+const formattedDate = pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+const tocHeadings = headings.filter(h => h.depth === 2);
+const currentUrl = Astro.url.href;
+---
+
+<Layout title={`${title} | CodeToCash`} description={description}>
+
+  <!-- Article Header -->
+  <section class="relative overflow-hidden pt-12 pb-10 md:pt-16 md:pb-14">
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute top-1/4 left-1/4 w-80 h-80 bg-coral/5 rounded-full blur-3xl"></div>
+    </div>
+    <div class="relative max-w-4xl mx-auto px-6">
+      <!-- Breadcrumb -->
+      <nav class="flex items-center gap-2 text-sm text-gray-500 mb-8">
+        <a href="/" class="hover:text-gray-300 transition-colors">Home</a>
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+        <a href="/blog" class="hover:text-gray-300 transition-colors">Blog</a>
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+        <span class="text-gray-400 truncate">{title}</span>
+      </nav>
+
+      <!-- Meta -->
+      <div class="flex flex-wrap items-center gap-3 mb-5">
+        <span class={`inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-medium ${colors.bg} ${colors.text} border ${colors.border}`}>
+          {categoryLabels[category]}
+        </span>
+        <span class="inline-flex items-center gap-1.5 text-xs text-gray-500">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+          {readingTime}
+        </span>
+        <span class="text-xs text-gray-500">{formattedDate}</span>
+        {updatedDate && <span class="text-xs text-gray-500">(Updated {updatedDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })})</span>}
+      </div>
+
+      <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight mb-5">{title}</h1>
+      <p class="text-lg text-gray-400 leading-relaxed mb-6 max-w-2xl">{description}</p>
+
+      <!-- Author -->
+      <div class="flex items-center gap-3">
+        <div class="flex items-center justify-center w-9 h-9 rounded-full bg-coral/10 text-coral text-sm font-bold border border-coral/20">C</div>
+        <div>
+          <p class="text-sm font-medium text-white">{author}</p>
+          <p class="text-xs text-gray-500">codetocash.dev</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <div class="max-w-7xl mx-auto px-6 pb-24">
+    <div class="flex flex-col lg:flex-row gap-12">
+
+      <!-- Sidebar -->
+      <aside class="hidden lg:block w-60 shrink-0 order-last">
+        <div class="sticky top-24 space-y-8">
+          <!-- TOC -->
+          {tocHeadings.length > 0 && (
+            <nav>
+              <p class="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-3">On This Page</p>
+              <ol class="space-y-1 text-sm">
+                {tocHeadings.map((h) => (
+                  <li>
+                    <a href={`#${h.slug}`} class="toc-link block px-3 py-1.5 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors leading-snug" data-section={h.slug}>
+                      {h.text}
+                    </a>
+                  </li>
+                ))}
+              </ol>
+            </nav>
+          )}
+
+          <!-- Newsletter Widget -->
+          <div class="p-5 bg-navy-light border border-white/10 rounded-xl">
+            <p class="text-sm font-semibold text-white mb-2">Stay in the loop</p>
+            <p class="text-xs text-gray-400 mb-3">Weekly DRM tactics for developers.</p>
+            <form class="space-y-2">
+              <input type="email" placeholder="you@example.com" class="w-full px-3 py-2 bg-navy border border-white/10 rounded-lg text-white placeholder:text-gray-500 focus:outline-none focus:border-coral/50 text-xs" />
+              <button type="button" class="w-full px-3 py-2 bg-coral hover:bg-coral/90 text-white font-semibold rounded-lg transition-colors text-xs cursor-pointer">Subscribe</button>
+            </form>
+          </div>
+
+          <!-- Related Posts -->
+          {relatedPosts.length > 0 && (
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-3">Related Posts</p>
+              <div class="space-y-3">
+                {relatedPosts.slice(0, 3).map((rp) => (
+                  <a href={`/blog/${rp.id}`} class="block text-sm text-gray-400 hover:text-coral transition-colors leading-snug">
+                    {rp.data.title}
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      </aside>
+
+      <!-- Article Body -->
+      <article class="min-w-0 flex-1 max-w-[700px]">
+        <div class="prose-blog">
+          <slot />
+        </div>
+
+        <!-- Share Buttons -->
+        <div class="mt-12 pt-8 border-t border-white/10">
+          <p class="text-sm font-semibold text-gray-400 mb-4">Share this article</p>
+          <div class="flex gap-3">
+            <a href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(currentUrl)}`} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-sm text-gray-300 hover:text-white hover:border-white/20 transition-all">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg>
+              Twitter
+            </a>
+            <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(currentUrl)}`} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-sm text-gray-300 hover:text-white hover:border-white/20 transition-all">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" /></svg>
+              LinkedIn
+            </a>
+            <button id="copy-link-btn" class="inline-flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-sm text-gray-300 hover:text-white hover:border-white/20 transition-all cursor-pointer">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" /></svg>
+              <span id="copy-link-text">Copy Link</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Related Posts Grid -->
+        {relatedPosts.length > 0 && (
+          <div class="mt-12 pt-8 border-t border-white/10">
+            <h3 class="text-xl font-bold text-white mb-6">Related Articles</h3>
+            <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {relatedPosts.slice(0, 3).map((rp) => {
+                const rpColors = categoryColors[rp.data.category] || categoryColors.fundamentals;
+                return (
+                  <a href={`/blog/${rp.id}`} class="group flex flex-col p-5 bg-navy-light border border-white/5 rounded-xl hover:border-coral/20 transition-all">
+                    <span class={`self-start inline-flex items-center px-2 py-0.5 rounded-md text-xs font-medium ${rpColors.bg} ${rpColors.text} border ${rpColors.border} mb-3`}>
+                      {categoryLabels[rp.data.category]}
+                    </span>
+                    <h4 class="text-sm font-semibold text-white group-hover:text-coral transition-colors leading-snug mb-2">{rp.data.title}</h4>
+                    <p class="text-xs text-gray-500">{rp.data.readingTime}</p>
+                  </a>
+                );
+              })}
+            </div>
+          </div>
+        )}
+
+        <!-- Newsletter CTA -->
+        <div class="mt-12 p-8 md:p-10 bg-gradient-to-br from-coral/15 to-deep-blue/30 border border-coral/20 rounded-2xl text-center">
+          <h3 class="text-2xl font-bold text-white mb-3">Want More Marketing Tactics?</h3>
+          <p class="text-gray-400 mb-6 max-w-lg mx-auto">
+            Subscribe to the CodeToCash newsletter for weekly articles, playbooks, and DRM strategies for developer entrepreneurs.
+          </p>
+          <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-3">
+            <input type="email" placeholder="you@example.com" class="flex-1 px-4 py-3 bg-navy border border-white/10 rounded-xl text-white placeholder:text-gray-500 focus:outline-none focus:border-coral/50 text-sm" />
+            <button type="button" class="px-6 py-3 bg-coral hover:bg-coral/90 text-white font-semibold rounded-xl transition-colors text-sm whitespace-nowrap cursor-pointer">Subscribe Free</button>
+          </form>
+          <p class="text-gray-500 text-xs">Join 1,000+ developers. No spam, unsubscribe anytime.</p>
+        </div>
+
+        <!-- Prev / Next -->
+        <nav class="mt-12 grid gap-4 sm:grid-cols-2">
+          {prevPost && (
+            <a href={`/blog/${prevPost.id}`} class="group flex flex-col p-5 bg-navy-light border border-white/5 rounded-xl hover:border-coral/20 transition-all">
+              <span class="text-xs text-gray-500 mb-1">Previous Article</span>
+              <span class="text-sm font-medium text-gray-300 group-hover:text-coral transition-colors leading-snug">{prevPost.data.title}</span>
+            </a>
+          )}
+          {nextPost && (
+            <a href={`/blog/${nextPost.id}`} class={`group flex flex-col p-5 bg-navy-light border border-white/5 rounded-xl hover:border-coral/20 transition-all ${!prevPost ? 'sm:col-start-2' : ''}`}>
+              <span class="text-xs text-gray-500 mb-1 sm:text-right">Next Article</span>
+              <span class="text-sm font-medium text-gray-300 group-hover:text-coral transition-colors leading-snug sm:text-right">{nextPost.data.title}</span>
+            </a>
+          )}
+        </nav>
+      </article>
+    </div>
+  </div>
+
+  <script>
+    // Copy link button
+    const copyBtn = document.getElementById('copy-link-btn');
+    const copyText = document.getElementById('copy-link-text');
+    if (copyBtn && copyText) {
+      copyBtn.addEventListener('click', async () => {
+        await navigator.clipboard.writeText(window.location.href);
+        copyText.textContent = 'Copied!';
+        setTimeout(() => { copyText.textContent = 'Copy Link'; }, 2000);
+      });
+    }
+
+    // TOC active highlighting
+    const tocLinks = document.querySelectorAll('.toc-link');
+    if (tocLinks.length > 0) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('id');
+            tocLinks.forEach(link => {
+              if (link.getAttribute('data-section') === id) {
+                link.classList.add('bg-coral/10', 'text-coral', 'font-medium');
+                link.classList.remove('text-gray-400');
+              } else {
+                link.classList.remove('bg-coral/10', 'text-coral', 'font-medium');
+                link.classList.add('text-gray-400');
+              }
+            });
+          }
+        });
+      }, { rootMargin: '-80px 0px -70% 0px', threshold: 0 });
+
+      document.querySelectorAll('article h2[id]').forEach(h => observer.observe(h));
+    }
+  </script>
+</Layout>
+
+<style is:global>
+  .prose-blog {
+    color: #d1d5db;
+    line-height: 1.8;
+    font-size: 1rem;
+  }
+  .prose-blog h2 {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    scroll-margin-top: 6rem;
+  }
+  .prose-blog h3 {
+    color: #fff;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+  }
+  .prose-blog p {
+    margin-bottom: 1.25rem;
+  }
+  .prose-blog a {
+    color: #E94560;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .prose-blog a:hover {
+    color: #ff6b81;
+  }
+  .prose-blog strong {
+    color: #fff;
+    font-weight: 600;
+  }
+  .prose-blog ul, .prose-blog ol {
+    margin-bottom: 1.25rem;
+    padding-left: 1.5rem;
+  }
+  .prose-blog li {
+    margin-bottom: 0.5rem;
+  }
+  .prose-blog ul li::marker {
+    color: #E94560;
+  }
+  .prose-blog ol li::marker {
+    color: #E94560;
+    font-weight: 600;
+  }
+  .prose-blog blockquote {
+    border-left: 4px solid #E94560;
+    background: linear-gradient(to right, rgba(233, 69, 96, 0.1), transparent);
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 0 0.75rem 0.75rem 0;
+    font-style: normal;
+  }
+  .prose-blog blockquote p {
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 0;
+  }
+  .prose-blog code {
+    color: #E94560;
+    background: rgba(233, 69, 96, 0.1);
+    padding: 0.15rem 0.4rem;
+    border-radius: 0.25rem;
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 0.875em;
+  }
+  .prose-blog pre {
+    background: #0d0d20;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.75rem;
+    padding: 1.25rem;
+    margin: 1.5rem 0;
+    overflow-x: auto;
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 0.875rem;
+    line-height: 1.6;
+  }
+  .prose-blog pre code {
+    background: none;
+    padding: 0;
+    color: #d1d5db;
+    font-size: inherit;
+  }
+  .prose-blog hr {
+    border-color: rgba(255, 255, 255, 0.1);
+    margin: 2rem 0;
+  }
+  .prose-blog img {
+    border-radius: 0.75rem;
+    margin: 1.5rem 0;
+  }
+</style>
