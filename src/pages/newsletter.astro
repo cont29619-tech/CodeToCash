@@ -4,6 +4,7 @@ import '../styles/global.css';
 const title = 'Dev Marketing Newsletter for Vibe Coders | CodeToCash';
 const description = 'Weekly direct response marketing tactics for developers and vibe coders. Actionable frameworks, templates, and case studies. Subscribe free.';
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImageURL = new URL('/og-default.png', Astro.site);
 ---
 
 <!doctype html>
@@ -25,11 +26,13 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:site_name" content="CodeToCash.dev" />
+    <meta property="og:image" content={ogImageURL} />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL} />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -40,9 +43,12 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     />
   </head>
   <body class="bg-navy text-gray-100 font-sans antialiased min-h-screen">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:px-4 focus:py-2 focus:bg-coral focus:text-white focus:rounded-lg focus:text-sm focus:font-semibold">
+      Skip to content
+    </a>
 
     <!-- ============ MINIMAL NAV ============ -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-navy/80 backdrop-blur-md border-b border-white/[0.06]">
+    <nav aria-label="Main navigation" class="fixed top-0 left-0 right-0 z-50 bg-navy/80 backdrop-blur-md border-b border-white/[0.06]">
       <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
         <a href="/" class="flex items-center gap-2 group">
           <span class="text-lg font-bold text-white group-hover:text-coral transition-colors duration-200">
@@ -59,7 +65,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     </nav>
 
 
-    <main class="pt-16">
+    <main id="main-content" class="pt-16">
 
       <!-- ============ HERO SECTION ============ -->
       <section id="subscribe" class="relative overflow-hidden min-h-[85vh] flex items-center justify-center px-4 py-24 sm:py-32">
@@ -83,6 +89,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
             <input
               type="email"
               placeholder="you@email.com"
+              aria-label="Email address"
               class="flex-1 min-w-0 px-5 py-4 bg-white/5 border border-white/10 rounded-lg text-white text-lg placeholder-gray-500 focus:outline-none focus:border-coral/50 focus:ring-2 focus:ring-coral/20 transition-all duration-200"
             />
             <button
@@ -204,7 +211,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div class="p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] section-animate">
               <div class="flex gap-1 mb-5">
-                <span class="text-coral">★</span><span class="text-coral">★</span><span class="text-coral">★</span><span class="text-coral">★</span><span class="text-coral">★</span>
+                <span class="text-coral">&#9733;</span><span class="text-coral">&#9733;</span><span class="text-coral">&#9733;</span><span class="text-coral">&#9733;</span><span class="text-coral">&#9733;</span>
               </div>
               <blockquote class="text-gray-300 leading-relaxed mb-6">
                 "This newsletter is the only marketing content I actually read. It's written like documentation — clear, practical, no fluff."
@@ -220,7 +227,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
             <div class="p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] section-animate">
               <div class="flex gap-1 mb-5">
-                <span class="text-coral">★</span><span class="text-coral">★</span><span class="text-coral">★</span><span class="text-coral">★</span><span class="text-coral">★</span>
+                <span class="text-coral">&#9733;</span><span class="text-coral">&#9733;</span><span class="text-coral">&#9733;</span><span class="text-coral">&#9733;</span><span class="text-coral">&#9733;</span>
               </div>
               <blockquote class="text-gray-300 leading-relaxed mb-6">
                 "Used the landing page template from Issue #14 and doubled my conversion rate in a week. This stuff actually works."
@@ -236,7 +243,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
             <div class="p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] section-animate">
               <div class="flex gap-1 mb-5">
-                <span class="text-coral">★</span><span class="text-coral">★</span><span class="text-coral">★</span><span class="text-coral">★</span><span class="text-coral">★</span>
+                <span class="text-coral">&#9733;</span><span class="text-coral">&#9733;</span><span class="text-coral">&#9733;</span><span class="text-coral">&#9733;</span><span class="text-coral">&#9733;</span>
               </div>
               <blockquote class="text-gray-300 leading-relaxed mb-6">
                 "I look forward to this email every Tuesday. It's the one newsletter that makes me stop scrolling and actually take notes."
@@ -351,6 +358,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
             <input
               type="email"
               placeholder="you@email.com"
+              aria-label="Email address"
               class="flex-1 min-w-0 px-5 py-4 bg-white/5 border border-white/10 rounded-lg text-white text-lg placeholder-gray-500 focus:outline-none focus:border-coral/50 focus:ring-2 focus:ring-coral/20 transition-all duration-200"
             />
             <button
@@ -380,6 +388,15 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       </div>
     </footer>
 
+    <!-- Back to Top Button -->
+    <button
+      id="back-to-top"
+      aria-label="Back to top"
+      class="fixed bottom-6 right-6 z-50 w-10 h-10 bg-coral/80 hover:bg-coral text-white rounded-full shadow-lg flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 cursor-pointer"
+    >
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" /></svg>
+    </button>
+
     <script>
       const observer = new IntersectionObserver(
         (entries) => {
@@ -394,6 +411,20 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
       document.querySelectorAll('.section-animate').forEach((el) => {
         observer.observe(el);
+      });
+
+      const backToTop = document.getElementById('back-to-top')!;
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) {
+          backToTop.classList.remove('opacity-0', 'pointer-events-none');
+          backToTop.classList.add('opacity-100', 'pointer-events-auto');
+        } else {
+          backToTop.classList.add('opacity-0', 'pointer-events-none');
+          backToTop.classList.remove('opacity-100', 'pointer-events-auto');
+        }
+      });
+      backToTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       });
     </script>
   </body>

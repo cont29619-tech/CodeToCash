@@ -1,6 +1,21 @@
 ---
 import PlaybookLayout from '../../layouts/PlaybookLayout.astro';
 
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Write a SaaS Landing Page That Converts",
+  "description": "Step-by-step guide to writing a high-converting SaaS landing page. Includes headline formulas, CTA templates, section blueprints, and real teardowns.",
+  "step": [
+    { "@type": "HowToStep", "name": "Identify why your current page isn't converting", "position": 1 },
+    { "@type": "HowToStep", "name": "Follow the 10-section landing page blueprint", "position": 2 },
+    { "@type": "HowToStep", "name": "Write headlines using proven formulas", "position": 3 },
+    { "@type": "HowToStep", "name": "Write CTA button copy that gets clicks", "position": 4 },
+    { "@type": "HowToStep", "name": "Study real landing page teardowns", "position": 5 },
+    { "@type": "HowToStep", "name": "Run through your landing page checklist", "position": 6 }
+  ]
+});
+
 const sections = [
   { id: "why-not-converting", title: "Why Your Current Page Isn't Converting" },
   { id: "blueprint", title: "The 10-Section Landing Page Blueprint" },
@@ -21,6 +36,7 @@ const sections = [
   lastUpdated="February 2026"
   sections={sections}
   next={{ slug: "email-launch-sequence", title: "Email Launch Sequence for Developers" }}
+  schema={schema}
 >
 
   <!-- Section 1 -->

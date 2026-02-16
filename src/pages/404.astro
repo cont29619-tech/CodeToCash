@@ -1,0 +1,50 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="404 — Page Not Found | CodeToCash" description="This page doesn't exist. Let's get you back on track.">
+  <section class="relative overflow-hidden min-h-[70vh] flex items-center justify-center px-4 py-24">
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-coral/5 rounded-full blur-[120px]"></div>
+    </div>
+
+    <div class="relative z-10 max-w-2xl mx-auto text-center">
+      <p class="font-mono text-coral text-sm uppercase tracking-widest mb-6">// 404 — page not found</p>
+
+      <div class="mb-8 p-6 rounded-2xl bg-white/[0.02] border border-white/[0.06] inline-block">
+        <pre class="font-mono text-sm sm:text-base text-left"><code><span class="text-purple-400">const</span> <span class="text-white">page</span> <span class="text-coral">=</span> <span class="text-yellow-300">findPage</span><span class="text-white">(url);</span>
+<span class="text-purple-400">if</span> <span class="text-white">(!page)</span> <span class="text-white">&#123;</span>
+  <span class="text-red-400">throw new</span> <span class="text-yellow-300">Error</span><span class="text-white">(</span><span class="text-green-400">"404: This page doesn't exist"</span><span class="text-white">);</span>
+<span class="text-white">&#125;</span></code></pre>
+      </div>
+
+      <h1 class="text-4xl sm:text-5xl font-extrabold text-white leading-tight mb-4">
+        Looks like this page<br /><span class="text-coral">wasn't shipped yet.</span>
+      </h1>
+      <p class="text-lg text-gray-400 mb-10 max-w-lg mx-auto leading-relaxed">
+        The page you're looking for doesn't exist, was moved, or maybe it was just a typo. Let's get you somewhere useful.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a
+          href="/"
+          class="px-8 py-4 bg-coral text-white text-lg font-semibold rounded-lg hover:bg-coral/90 hover:scale-[1.02] transition-all duration-200 shadow-lg shadow-coral/20"
+        >
+          Back to Home
+        </a>
+        <a
+          href="/blog"
+          class="px-8 py-4 border border-white/20 text-white text-lg font-medium rounded-lg hover:border-coral/50 hover:text-coral transition-all duration-200"
+        >
+          Read the Blog
+        </a>
+        <a
+          href="/drm-101"
+          class="px-8 py-4 border border-white/20 text-white text-lg font-medium rounded-lg hover:border-coral/50 hover:text-coral transition-all duration-200"
+        >
+          DRM 101 Guide
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

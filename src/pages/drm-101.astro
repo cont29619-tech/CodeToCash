@@ -17,9 +17,27 @@ const chapters = [
 
 const lastUpdated = "February 2026";
 const readingTime = "45 min read";
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": description,
+  "author": {
+    "@type": "Organization",
+    "name": "CodeToCash.dev",
+    "url": "https://codetocash.dev"
+  },
+  "datePublished": "2026-02-01",
+  "publisher": {
+    "@type": "Organization",
+    "name": "CodeToCash.dev",
+    "url": "https://codetocash.dev"
+  }
+});
 ---
 
-<Layout title={title} description={description}>
+<Layout title={title} description={description} schema={schema}>
   <!-- Hero -->
   <section class="relative overflow-hidden py-20 md:py-28">
     <div class="absolute inset-0 pointer-events-none">

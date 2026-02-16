@@ -6,14 +6,17 @@ import Footer from '../components/Footer.astro';
 interface Props {
   title?: string;
   description?: string;
+  schema?: string;
 }
 
 const {
   title = 'CodeToCash.dev — Direct Response Marketing for Vibe Coders',
   description = 'Learn direct response marketing to sell what you ship. Education for vibe coders and indie developers.',
+  schema,
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImageURL = new URL('/og-default.png', Astro.site);
 ---
 
 <!doctype html>
@@ -35,11 +38,13 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:site_name" content="CodeToCash.dev" />
+    <meta property="og:image" content={ogImageURL} />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL} />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -48,12 +53,42 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
+
+    {schema && <script type="application/ld+json" set:html={schema} />}
   </head>
   <body class="bg-navy text-gray-100 font-sans antialiased min-h-screen flex flex-col">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:px-4 focus:py-2 focus:bg-coral focus:text-white focus:rounded-lg focus:text-sm focus:font-semibold">
+      Skip to content
+    </a>
     <Navigation />
-    <main class="flex-1 pt-16">
+    <main id="main-content" class="flex-1 pt-16">
       <slot />
     </main>
     <Footer />
+
+    <!-- Back to Top Button -->
+    <button
+      id="back-to-top"
+      aria-label="Back to top"
+      class="fixed bottom-6 right-6 z-50 w-10 h-10 bg-coral/80 hover:bg-coral text-white rounded-full shadow-lg flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 cursor-pointer"
+    >
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" /></svg>
+    </button>
+
+    <script>
+      const backToTop = document.getElementById('back-to-top')!;
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) {
+          backToTop.classList.remove('opacity-0', 'pointer-events-none');
+          backToTop.classList.add('opacity-100', 'pointer-events-auto');
+        } else {
+          backToTop.classList.add('opacity-0', 'pointer-events-none');
+          backToTop.classList.remove('opacity-100', 'pointer-events-auto');
+        }
+      });
+      backToTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    </script>
   </body>
 </html>

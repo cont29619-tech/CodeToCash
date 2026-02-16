@@ -10,7 +10,7 @@ const resourceLinks = [
   { href: '/tools', label: 'Tools' },
   { href: '/newsletter', label: 'Newsletter' },
   { href: '/about', label: 'About' },
-  { href: '/contact', label: 'Contact' },
+  { href: 'mailto:hello@codetocash.dev', label: 'Contact' },
 ];
 ---
 
@@ -69,6 +69,7 @@ const resourceLinks = [
           <input
             type="email"
             placeholder="you@email.com"
+            aria-label="Email address"
             class="flex-1 min-w-0 px-3 py-2 bg-white/5 border border-white/10 rounded-lg text-sm text-white placeholder-gray-500 focus:outline-none focus:border-coral/50 focus:ring-1 focus:ring-coral/50 transition-colors duration-200"
           />
           <button
