@@ -1,0 +1,152 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = "You're In! Welcome to CodeToCash";
+const description = "Welcome to the CodeToCash newsletter. Download your free DRM Cheatsheet and see what's coming next.";
+---
+
+<Layout title={title} description={description}>
+
+  <!-- ============ HERO SECTION ============ -->
+  <section class="relative overflow-hidden min-h-[70vh] flex items-center justify-center px-4 py-24 sm:py-32">
+    <!-- Background glow -->
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-coral/5 rounded-full blur-[120px] animate-pulse-slow"></div>
+      <div class="absolute top-1/3 left-1/4 w-[400px] h-[400px] bg-deep-blue/10 rounded-full blur-[100px] animate-pulse-slow animation-delay-2000"></div>
+    </div>
+
+    <div class="relative z-10 max-w-2xl mx-auto text-center">
+      <div class="w-20 h-20 rounded-full bg-green-500/10 flex items-center justify-center mx-auto mb-8 section-animate">
+        <svg class="w-10 h-10 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><path d="m9 11 3 3L22 4" /></svg>
+      </div>
+
+      <p class="inline-block text-sm font-mono text-coral uppercase tracking-widest mb-6 section-animate">// you're in</p>
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-[1.1] tracking-tight section-animate">
+        You're in! Welcome to <span class="text-coral">CodeToCash.</span>
+      </h1>
+      <p class="mt-6 text-lg sm:text-xl text-gray-400 max-w-xl mx-auto leading-relaxed section-animate">
+        Check your inbox — your first email is on the way.
+      </p>
+      <p class="mt-4 text-gray-500 section-animate">
+        Didn't get it? Check your spam folder or promotions tab.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ============ CHEATSHEET DOWNLOAD SECTION ============ -->
+  <section class="relative px-4 py-24 sm:py-32 bg-navy-light/50">
+    <div class="max-w-2xl mx-auto text-center">
+      <div class="section-animate">
+        <p class="text-sm font-mono text-coral uppercase tracking-widest mb-4">// your free download</p>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight">
+          Grab Your Cheatsheet
+        </h2>
+        <p class="mt-4 text-lg text-gray-400 leading-relaxed">
+          Print it. Bookmark it. Tape it next to your monitor.
+        </p>
+      </div>
+
+      <a
+        href="/drm-cheatsheet.pdf"
+        download
+        class="inline-flex items-center gap-3 mt-10 px-8 py-4 bg-coral text-white text-lg font-semibold rounded-lg hover:bg-coral/90 hover:scale-[1.02] transition-all duration-200 shadow-lg shadow-coral/20 section-animate"
+      >
+        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><path d="m7 10 5 5 5-5" /><path d="M12 15V3" /></svg>
+        Download Your DRM Cheatsheet (PDF)
+      </a>
+    </div>
+  </section>
+
+
+  <!-- ============ WHAT'S NEXT SECTION ============ -->
+  <section class="relative px-4 py-24 sm:py-32">
+    <div class="max-w-2xl mx-auto">
+      <div class="text-center mb-12 section-animate">
+        <p class="text-sm font-mono text-coral uppercase tracking-widest mb-4">// what's next</p>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight">
+          Your Welcome Sequence
+        </h2>
+        <p class="mt-4 text-lg text-gray-400 leading-relaxed">
+          Over the next 11 days, you'll get 7 emails covering:
+        </p>
+      </div>
+
+      <div class="space-y-4 section-animate">
+        <div class="flex items-start gap-4 p-5 rounded-2xl bg-white/[0.02] border border-white/[0.06]">
+          <span class="w-8 h-8 rounded-lg bg-coral/10 flex items-center justify-center shrink-0 text-coral font-bold text-sm font-mono">1</span>
+          <p class="text-gray-300 leading-relaxed">What DRM actually is (and why it's the highest-leverage skill a developer can learn)</p>
+        </div>
+        <div class="flex items-start gap-4 p-5 rounded-2xl bg-white/[0.02] border border-white/[0.06]">
+          <span class="w-8 h-8 rounded-lg bg-coral/10 flex items-center justify-center shrink-0 text-coral font-bold text-sm font-mono">2</span>
+          <p class="text-gray-300 leading-relaxed">How to write headlines and CTAs that convert (with fill-in-the-blank templates)</p>
+        </div>
+        <div class="flex items-start gap-4 p-5 rounded-2xl bg-white/[0.02] border border-white/[0.06]">
+          <span class="w-8 h-8 rounded-lg bg-coral/10 flex items-center justify-center shrink-0 text-coral font-bold text-sm font-mono">3</span>
+          <p class="text-gray-300 leading-relaxed">The landing page framework that turns visitors into customers</p>
+        </div>
+        <div class="flex items-start gap-4 p-5 rounded-2xl bg-white/[0.02] border border-white/[0.06]">
+          <span class="w-8 h-8 rounded-lg bg-coral/10 flex items-center justify-center shrink-0 text-coral font-bold text-sm font-mono">4</span>
+          <p class="text-gray-300 leading-relaxed">Email sequences that sell — without feeling sleazy</p>
+        </div>
+        <div class="flex items-start gap-4 p-5 rounded-2xl bg-white/[0.02] border border-white/[0.06]">
+          <span class="w-8 h-8 rounded-lg bg-coral/10 flex items-center justify-center shrink-0 text-coral font-bold text-sm font-mono">5</span>
+          <p class="text-gray-300 leading-relaxed">How to build a marketing system you can run in 2 hours a week</p>
+        </div>
+      </div>
+
+      <p class="mt-8 text-center text-gray-400 leading-relaxed section-animate">
+        After that, you'll get one actionable DRM tactic every Tuesday.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ============ START HERE CTA SECTION ============ -->
+  <section class="relative px-4 py-24 sm:py-32 bg-navy-light/50">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-12 section-animate">
+        <p class="text-sm font-mono text-coral uppercase tracking-widest mb-4">// while you wait</p>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight">
+          Start Here
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <a href="/drm-101" class="group p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-coral/20 hover:bg-white/[0.04] transition-all duration-300 section-animate">
+          <div class="w-12 h-12 rounded-xl bg-coral/10 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-coral" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2 group-hover:text-coral transition-colors duration-200">Read the Free DRM 101 Guide</h3>
+          <p class="text-gray-400 leading-relaxed">The complete beginner's guide to direct response marketing for developers.</p>
+        </a>
+
+        <a href="/blog" class="group p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-coral/20 hover:bg-white/[0.04] transition-all duration-300 section-animate">
+          <div class="w-12 h-12 rounded-xl bg-coral/10 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-coral" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 20H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v1m2 13a2 2 0 0 1-2-2V7m2 13a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2" /></svg>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2 group-hover:text-coral transition-colors duration-200">Browse the Blog</h3>
+          <p class="text-gray-400 leading-relaxed">Tactics, case studies, and frameworks you can use right now.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    },
+    { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+  );
+
+  document.querySelectorAll('.section-animate').forEach((el) => {
+    observer.observe(el);
+  });
+</script>
