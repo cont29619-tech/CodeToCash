@@ -1,8 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import NewsletterForm from '../components/NewsletterForm.astro';
 
-const kitUrl = 'https://app.kit.com/forms/9097989/subscriptions';
 const title = 'Dev Marketing Newsletter for Vibe Coders | CodeToCash';
 const description = 'Weekly direct response marketing tactics for developers and vibe coders. Actionable frameworks, templates, and case studies. Subscribe free.';
 ---
@@ -31,9 +29,23 @@ const description = 'Weekly direct response marketing tactics for developers and
         Subscribe and get <span class="text-coral font-semibold">The Developer's DRM Cheatsheet</span> free instantly.
       </p>
 
-      <div class="animate-fade-in-up animation-delay-400">
-        <NewsletterForm actionUrl={kitUrl} />
-      </div>
+      <form id="subscribe-form-hero" class="flex flex-col sm:flex-row gap-3 max-w-xl mx-auto animate-fade-in-up animation-delay-400">
+        <input
+          type="email"
+          name="email"
+          required
+          placeholder="you@email.com"
+          aria-label="Email address"
+          class="flex-1 min-w-0 px-5 py-4 bg-white/5 border border-white/10 rounded-lg text-white text-lg placeholder-gray-500 focus:outline-none focus:border-coral/50 focus:ring-2 focus:ring-coral/20 transition-all duration-200"
+        />
+        <button
+          type="submit"
+          class="px-8 py-4 bg-coral text-white text-lg font-semibold rounded-lg hover:bg-coral/90 hover:scale-[1.02] transition-all duration-200 shadow-lg shadow-coral/20 shrink-0 cursor-pointer"
+        >
+          Subscribe &amp; Get the Cheatsheet
+        </button>
+      </form>
+      <p id="subscribe-error-hero" class="mt-3 text-red-400 text-sm hidden"></p>
     </div>
   </section>
 
@@ -265,9 +277,23 @@ const description = 'Weekly direct response marketing tactics for developers and
         One email per week. Unsubscribe in one click.
       </p>
 
-      <div class="mt-10">
-        <NewsletterForm actionUrl={kitUrl} />
-      </div>
+      <form id="subscribe-form-cta" class="mt-10 flex flex-col sm:flex-row gap-3 max-w-xl mx-auto">
+        <input
+          type="email"
+          name="email"
+          required
+          placeholder="you@email.com"
+          aria-label="Email address"
+          class="flex-1 min-w-0 px-5 py-4 bg-white/5 border border-white/10 rounded-lg text-white text-lg placeholder-gray-500 focus:outline-none focus:border-coral/50 focus:ring-2 focus:ring-coral/20 transition-all duration-200"
+        />
+        <button
+          type="submit"
+          class="px-8 py-4 bg-coral text-white text-lg font-semibold rounded-lg hover:bg-coral/90 hover:scale-[1.02] transition-all duration-200 shadow-lg shadow-coral/20 shrink-0 cursor-pointer"
+        >
+          Subscribe &amp; Get the Cheatsheet
+        </button>
+      </form>
+      <p id="subscribe-error-cta" class="mt-3 text-red-400 text-sm hidden"></p>
     </div>
   </section>
 
@@ -287,5 +313,50 @@ const description = 'Weekly direct response marketing tactics for developers and
 
   document.querySelectorAll('.section-animate').forEach((el) => {
     observer.observe(el);
+  });
+
+  const CONVERTKIT_FORM_ID = '9097989';
+  const CONVERTKIT_API_KEY = import.meta.env.PUBLIC_CONVERTKIT_API_KEY;
+
+  async function handleSubscribe(form: HTMLFormElement, errorEl: HTMLElement) {
+    const email = new FormData(form).get('email') as string;
+    const button = form.querySelector('button') as HTMLButtonElement;
+    const originalText = button.textContent;
+
+    errorEl.classList.add('hidden');
+    errorEl.textContent = '';
+    button.disabled = true;
+    button.textContent = 'Subscribing...';
+
+    try {
+      const res = await fetch(
+        `https://api.convertkit.com/v3/forms/${CONVERTKIT_FORM_ID}/subscribe`,
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ api_key: CONVERTKIT_API_KEY, email }),
+        }
+      );
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => null);
+        throw new Error(data?.message || 'Subscription failed. Please try again.');
+      }
+
+      window.location.href = '/welcome';
+    } catch (err) {
+      errorEl.textContent = err instanceof Error ? err.message : 'Something went wrong. Please try again.';
+      errorEl.classList.remove('hidden');
+      button.disabled = false;
+      button.textContent = originalText;
+    }
+  }
+
+  document.querySelectorAll<HTMLFormElement>('#subscribe-form-hero, #subscribe-form-cta').forEach((form) => {
+    const errorEl = form.nextElementSibling as HTMLElement;
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      handleSubscribe(form, errorEl);
+    });
   });
 </script>
