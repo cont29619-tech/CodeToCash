@@ -1,0 +1,28 @@
+---
+interface Props {
+  actionUrl: string;
+}
+
+const { actionUrl } = Astro.props;
+---
+
+<form
+  action={actionUrl}
+  method="post"
+  class="flex flex-col sm:flex-row gap-3 max-w-xl mx-auto"
+>
+  <input
+    type="email"
+    name="email_address"
+    required
+    placeholder="console.log('your_email')"
+    aria-label="Email address"
+    class="flex-1 min-w-0 px-5 py-4 bg-slate-800/80 border border-white/10 rounded-lg text-white text-lg font-mono placeholder-gray-500 focus:outline-none focus:border-green-400/50 focus:ring-2 focus:ring-green-400/20 transition-all duration-200"
+  />
+  <button
+    type="submit"
+    class="px-8 py-4 bg-green-500 text-black text-lg font-bold font-mono rounded-lg hover:bg-green-400 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 shadow-lg shadow-green-500/20 shrink-0 cursor-pointer"
+  >
+    Initialize Sequence
+  </button>
+</form>

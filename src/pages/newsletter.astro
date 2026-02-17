@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import NewsletterForm from '../components/NewsletterForm.astro';
 
+const kitUrl = 'https://app.kit.com/forms/9097989/subscriptions';
 const title = 'Dev Marketing Newsletter for Vibe Coders | CodeToCash';
 const description = 'Weekly direct response marketing tactics for developers and vibe coders. Actionable frameworks, templates, and case studies. Subscribe free.';
 ---
@@ -29,23 +31,9 @@ const description = 'Weekly direct response marketing tactics for developers and
         Subscribe and get <span class="text-coral font-semibold">The Developer's DRM Cheatsheet</span> free instantly.
       </p>
 
-      <form action="https://buttondown.com/api/emails/embed-subscribe/CodeToCash" method="post" target="_blank" class="flex flex-col sm:flex-row gap-3 max-w-xl mx-auto animate-fade-in-up animation-delay-400">
-        <input type="hidden" value="1" name="embed" />
-        <input
-          type="email"
-          name="email"
-          required
-          placeholder="you@email.com"
-          aria-label="Email address"
-          class="flex-1 min-w-0 px-5 py-4 bg-white/5 border border-white/10 rounded-lg text-white text-lg placeholder-gray-500 focus:outline-none focus:border-coral/50 focus:ring-2 focus:ring-coral/20 transition-all duration-200"
-        />
-        <button
-          type="submit"
-          class="px-8 py-4 bg-coral text-white text-lg font-semibold rounded-lg hover:bg-coral/90 hover:scale-[1.02] transition-all duration-200 shadow-lg shadow-coral/20 shrink-0 cursor-pointer"
-        >
-          Subscribe Free
-        </button>
-      </form>
+      <div class="animate-fade-in-up animation-delay-400">
+        <NewsletterForm actionUrl={kitUrl} />
+      </div>
     </div>
   </section>
 
@@ -277,23 +265,9 @@ const description = 'Weekly direct response marketing tactics for developers and
         One email per week. Unsubscribe in one click.
       </p>
 
-      <form action="https://buttondown.com/api/emails/embed-subscribe/CodeToCash" method="post" target="_blank" class="mt-10 flex flex-col sm:flex-row gap-3 max-w-xl mx-auto">
-        <input type="hidden" value="1" name="embed" />
-        <input
-          type="email"
-          name="email"
-          required
-          placeholder="you@email.com"
-          aria-label="Email address"
-          class="flex-1 min-w-0 px-5 py-4 bg-white/5 border border-white/10 rounded-lg text-white text-lg placeholder-gray-500 focus:outline-none focus:border-coral/50 focus:ring-2 focus:ring-coral/20 transition-all duration-200"
-        />
-        <button
-          type="submit"
-          class="px-8 py-4 bg-coral text-white text-lg font-semibold rounded-lg hover:bg-coral/90 hover:scale-[1.02] transition-all duration-200 shadow-lg shadow-coral/20 shrink-0 cursor-pointer"
-        >
-          Subscribe Free
-        </button>
-      </form>
+      <div class="mt-10">
+        <NewsletterForm actionUrl={kitUrl} />
+      </div>
     </div>
   </section>
 
