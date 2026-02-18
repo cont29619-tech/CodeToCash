@@ -323,8 +323,7 @@ const schema = JSON.stringify({
         Subscribe and get <span class="text-coral font-semibold">The Developer's DRM Cheatsheet</span> free instantly.
       </p>
 
-      <form action="https://buttondown.com/api/emails/embed-subscribe/CodeToCash" method="post" target="_blank" class="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto">
-        <input type="hidden" value="1" name="embed" />
+      <form class="ck-subscribe-form flex flex-col sm:flex-row gap-3 max-w-lg mx-auto">
         <input
           type="email"
           name="email"
@@ -340,6 +339,7 @@ const schema = JSON.stringify({
           Subscribe Free
         </button>
       </form>
+      <p class="ck-subscribe-error mt-3 text-red-400 text-sm hidden"></p>
 
       <p class="mt-5 text-sm text-gray-400">
         Join free. Unsubscribe anytime.

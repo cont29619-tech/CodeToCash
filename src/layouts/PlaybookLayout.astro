@@ -161,11 +161,11 @@ const colors = difficultyColors[difficulty];
           <p class="text-gray-400 mb-6 max-w-lg mx-auto">
             Subscribe to the CodeToCash newsletter for weekly playbooks, teardowns, and DRM tactics for developer entrepreneurs.
           </p>
-          <form action="https://buttondown.com/api/emails/embed-subscribe/CodeToCash" method="post" target="_blank" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-3">
-            <input type="hidden" value="1" name="embed" />
+          <form class="ck-subscribe-form flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-3">
             <input type="email" name="email" required placeholder="you@example.com" aria-label="Email address" class="flex-1 px-4 py-3 bg-navy border border-white/10 rounded-xl text-white placeholder:text-gray-500 focus:outline-none focus:border-coral/50 text-sm" />
             <button type="submit" class="px-6 py-3 bg-coral hover:bg-coral/90 text-white font-semibold rounded-xl transition-colors text-sm whitespace-nowrap cursor-pointer">Subscribe Free</button>
           </form>
+          <p class="ck-subscribe-error mt-2 text-red-400 text-sm hidden"></p>
           <p class="text-gray-400 text-xs">Join 1,000+ developers. No spam, unsubscribe anytime.</p>
         </div>
 

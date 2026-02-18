@@ -63,8 +63,7 @@ const resourceLinks = [
         </ul>
 
         <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-3">Stay in the loop</h3>
-        <form action="https://buttondown.com/api/emails/embed-subscribe/CodeToCash" method="post" target="_blank" class="flex gap-2">
-          <input type="hidden" value="1" name="embed" />
+        <form class="ck-subscribe-form flex gap-2">
           <input
             type="email"
             name="email"
@@ -80,6 +79,7 @@ const resourceLinks = [
             Join
           </button>
         </form>
+        <p class="ck-subscribe-error mt-2 text-red-400 text-xs hidden"></p>
       </div>
     </div>
   </div>

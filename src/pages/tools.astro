@@ -347,8 +347,7 @@ const stacks = [
       <p class="text-gray-400 mb-6 max-w-md mx-auto">
         Tell us what you're building and we'll recommend the right tools. Subscribe for weekly tool reviews and marketing tactics.
       </p>
-      <form action="https://buttondown.com/api/emails/embed-subscribe/CodeToCash" method="post" target="_blank" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-3">
-        <input type="hidden" value="1" name="embed" />
+      <form class="ck-subscribe-form flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-3">
         <input
           type="email"
           name="email"
@@ -361,6 +360,7 @@ const stacks = [
           Get Recommendations
         </button>
       </form>
+      <p class="ck-subscribe-error mt-2 text-red-400 text-sm hidden"></p>
       <p class="text-gray-500 text-xs">Join 1,000+ developers. No spam, unsubscribe anytime.</p>
     </div>
   </section>

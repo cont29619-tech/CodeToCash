@@ -90,6 +90,50 @@ const ogImageURL = new URL('/og-default.png', Astro.site);
     </button>
 
     <script>
+      // ConvertKit handler for all .ck-subscribe-form forms
+      const CK_FORM_ID = '9097989';
+      const CK_API_KEY = import.meta.env.PUBLIC_CONVERTKIT_API_KEY;
+
+      async function handleCkSubscribe(form: HTMLFormElement, errorEl: HTMLElement) {
+        const email = new FormData(form).get('email') as string;
+        const button = form.querySelector('button') as HTMLButtonElement;
+        const originalText = button.textContent;
+
+        errorEl.classList.add('hidden');
+        errorEl.textContent = '';
+        button.disabled = true;
+        button.textContent = 'Subscribing...';
+
+        try {
+          const res = await fetch(
+            `https://api.convertkit.com/v3/forms/${CK_FORM_ID}/subscribe`,
+            {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ api_key: CK_API_KEY, email }),
+            }
+          );
+          if (!res.ok) {
+            const data = await res.json().catch(() => null);
+            throw new Error(data?.message || 'Subscription failed. Please try again.');
+          }
+          window.location.href = '/welcome';
+        } catch (err) {
+          errorEl.textContent = err instanceof Error ? err.message : 'Something went wrong. Please try again.';
+          errorEl.classList.remove('hidden');
+          button.disabled = false;
+          button.textContent = originalText;
+        }
+      }
+
+      document.querySelectorAll<HTMLFormElement>('.ck-subscribe-form').forEach((form) => {
+        const errorEl = form.nextElementSibling as HTMLElement;
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          handleCkSubscribe(form, errorEl);
+        });
+      });
+
       const backToTop = document.getElementById('back-to-top')!;
       let ticking = false;
       window.addEventListener('scroll', () => {
