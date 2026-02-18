@@ -415,14 +415,22 @@ async function handleSubscribe(form, errorEl) {
 ```
 
 ### Where ConvertKit Is Used
-| File | Status |
-|---|---|
-| `newsletter.astro` | ✅ ConvertKit (2 forms: hero + CTA) |
-| `drm-101.astro` | ✅ ConvertKit (8 inline forms, class `drm-subscribe-form`) |
-| `Footer.astro` | ⚠️ Still Buttondown — needs migration |
-| `BlogLayout.astro` | ⚠️ Still Buttondown — needs migration |
-| `PlaybookLayout.astro` | ⚠️ Still Buttondown — needs migration |
-| `index.astro` | ⚠️ Needs verification |
+| File | Forms | Class |
+|---|---|---|
+| `newsletter.astro` | 2 (hero + CTA) | inline IDs (`subscribe-form-hero`, `subscribe-form-cta`) |
+| `drm-101.astro` | 8 inline CTAs | `drm-subscribe-form` |
+| `index.astro` | 1 newsletter section | `ck-subscribe-form` |
+| `Footer.astro` | 1 "Join" form | `ck-subscribe-form` |
+| `BlogLayout.astro` | 2 (sidebar widget + bottom CTA) | `ck-subscribe-form` |
+| `PlaybookLayout.astro` | 1 bottom CTA | `ck-subscribe-form` |
+| `tools.astro` | 1 "Get Recommendations" form | `ck-subscribe-form` |
+| `playbooks/index.astro` | 1 "Notify Me" form | `ck-subscribe-form` |
+
+**Zero Buttondown references remain in the codebase.**
+
+### Two form class conventions
+- **`ck-subscribe-form`** — used for all standard forms. Handler lives in `Layout.astro` (runs on every page), targets all `.ck-subscribe-form` elements. Error `<p class="ck-subscribe-error">` must be the immediate next sibling of the form.
+- **`drm-subscribe-form`** — used only in `drm-101.astro`. Handler defined in that page's own `<script>` tag. Error `<p class="drm-subscribe-error">` must be the immediate next sibling.
 
 ---
 
@@ -529,7 +537,7 @@ z.object({
 
 ## Known Issues / Tech Debt
 
-1. **Buttondown forms still exist** in `Footer.astro`, `BlogLayout.astro`, and `PlaybookLayout.astro` — these should be migrated to ConvertKit using the standard handler pattern above
+1. ~~**Buttondown forms**~~ — fully migrated to ConvertKit across all pages ✅
 2. **7 playbooks are planned but unbuilt** — only `saas-landing-page` exists
 3. **No analytics** — no Plausible or Google Analytics configured
 4. **README.md is the default Astro starter template** — not updated for this project
