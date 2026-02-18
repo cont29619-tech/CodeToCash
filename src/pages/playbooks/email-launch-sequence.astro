@@ -1,0 +1,822 @@
+---
+import PlaybookLayout from '../../layouts/PlaybookLayout.astro';
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Email Launch Sequence for Developers",
+  "description": "A 7-email launch sequence template for indie developers and vibe coders. Subject line formulas, copy templates, and automation setup included.",
+  "step": [
+    { "@type": "HowToStep", "name": "Understand why one-shot announcements fail", "position": 1 },
+    { "@type": "HowToStep", "name": "Build a 7-email launch sequence", "position": 2 },
+    { "@type": "HowToStep", "name": "Write subject lines that get opened", "position": 3 },
+    { "@type": "HowToStep", "name": "Segment your list for better results", "position": 4 },
+    { "@type": "HowToStep", "name": "Set up automation with ConvertKit or Loops", "position": 5 },
+    { "@type": "HowToStep", "name": "Run through the launch sequence checklist", "position": 6 }
+  ]
+});
+
+const sections = [
+  { id: "why-launches-flop", title: "Why Most Dev Product Launches Flop" },
+  { id: "seven-email-blueprint", title: "The 7-Email Launch Sequence Blueprint" },
+  { id: "subject-lines", title: "Subject Lines That Get Opened" },
+  { id: "segmenting-your-list", title: "Segmenting Your List for Better Results" },
+  { id: "tools-to-automate", title: "Tools to Automate the Sequence" },
+  { id: "launch-checklist", title: "Launch Sequence Checklist" },
+];
+---
+
+<PlaybookLayout
+  title="Email Launch Sequence for Developers"
+  metaTitle="Email Launch Sequence for Developers | CodeToCash"
+  metaDescription="A 7-email launch sequence template for indie developers and vibe coders. Subject line formulas, copy templates, and automation setup included."
+  subtitle="Seven emails, ten days, one launch that actually converts. Templates and automation setup included."
+  difficulty="Beginner"
+  readingTime="12 min read"
+  lastUpdated="February 2026"
+  sections={sections}
+  prev={{ slug: "saas-landing-page", title: "How to Write a SaaS Landing Page That Converts" }}
+  next={{ slug: "google-ads-100-budget", title: "Your First Google Ad Campaign on a $100 Budget" }}
+  schema={schema}
+>
+
+  <!-- Section 1 -->
+  <section id="why-launches-flop" class="playbook-section mb-16 scroll-mt-24">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">01</span>
+      <h2 class="text-2xl md:text-3xl font-bold">Why Most Dev Product Launches Flop</h2>
+    </div>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      You shipped. You posted on Twitter. You watched the likes roll in — 40, maybe 80 if you caught a good algorithm day. Then you refreshed your Stripe dashboard and saw: <strong class="text-white">$0</strong>. Two days later the post is buried and nobody's talking about it.
+    </p>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      This is the standard developer launch. It fails not because your product is bad, and not because your audience is too small. It fails because a one-shot announcement is structurally broken as a sales mechanism.
+    </p>
+
+    <h3 class="text-xl font-semibold text-white mb-4 mt-10">The One-Shot Announcement Problem</h3>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      Consumer psychology is well-studied here: people need between <strong class="text-white">5 and 12 touchpoints</strong> before they're ready to buy. A single tweet or Product Hunt post delivers one touchpoint. You're asking someone to go from "I've never heard of this" to "here's my credit card" in a single interaction. Most people aren't ready.
+    </p>
+
+    <div class="space-y-4 mb-8">
+      <div class="flex items-start gap-4 p-4 rounded-xl bg-white/[0.03] border border-white/5">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-red-500/10 text-red-400 font-mono font-bold text-xs shrink-0">1</span>
+        <div>
+          <p class="font-semibold text-white mb-1">Timing mismatch</p>
+          <p class="text-gray-400 text-sm leading-relaxed">Your announcement goes out Tuesday at noon. Your ideal customer is deep in a debugging session, skims the tweet, and thinks "interesting, I'll check it out later." Later never comes. They didn't buy — but they also didn't say no. They just forgot.</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-4 p-4 rounded-xl bg-white/[0.03] border border-white/5">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-red-500/10 text-red-400 font-mono font-bold text-xs shrink-0">2</span>
+        <div>
+          <p class="font-semibold text-white mb-1">No relationship, no trust</p>
+          <p class="text-gray-400 text-sm leading-relaxed">Would you buy software from a stranger who appeared in your feed once? The people who buy on launch day are your followers who've consumed months of your content. For everyone else, one post isn't enough relationship to justify spending money.</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-4 p-4 rounded-xl bg-white/[0.03] border border-white/5">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-red-500/10 text-red-400 font-mono font-bold text-xs shrink-0">3</span>
+        <div>
+          <p class="font-semibold text-white mb-1">No urgency to act now</p>
+          <p class="text-gray-400 text-sm leading-relaxed">If your product is available today, it'll be available tomorrow. Without a reason to buy right now — a deadline, a discount, a limited offer — people defer indefinitely. Deferring and not buying are functionally identical.</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-4 p-4 rounded-xl bg-white/[0.03] border border-white/5">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-red-500/10 text-red-400 font-mono font-bold text-xs shrink-0">4</span>
+        <div>
+          <p class="font-semibold text-white mb-1">Unanswered objections</p>
+          <p class="text-gray-400 text-sm leading-relaxed">A tweet can't answer "is this secure?", "does it work with my stack?", "what happens if I need support?", or "is this person going to maintain this in 6 months?" These objections kill sales silently — the person just doesn't buy and never tells you why.</p>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="text-xl font-semibold text-white mb-4 mt-10">How an Email Sequence Changes the Math</h3>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      An email sequence solves every one of these problems systematically. Instead of one announcement, you send seven emails over ten days. Each email does a specific job: building curiosity, establishing pain, telling your story, showing the product, making the offer, handling objections, and creating urgency to close.
+    </p>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      You're not announcing — you're <strong class="text-white">nurturing</strong>. You're giving people the time and context they need to go from "interested stranger" to "paying customer" at their own pace, but within a defined window.
+    </p>
+
+    <div class="bg-navy-light border border-white/10 rounded-xl p-6 mb-6">
+      <p class="text-sm font-semibold text-coral mb-3">The Developer Analogy</p>
+      <p class="text-gray-300 leading-relaxed">
+        A one-shot launch is like calling an API once and giving up if it returns a 202 Accepted instead of immediate data. An email sequence is like implementing proper polling — you check back at the right intervals, handle the state transitions, and close the loop when the job is done. You're not being pushy; you're being <code class="text-coral bg-coral/10 px-1.5 py-0.5 rounded font-mono text-sm">eventually consistent</code>.
+      </p>
+    </div>
+
+    <p class="text-gray-300 leading-relaxed">
+      The sequence below is designed for a list of any size. 50 subscribers or 5,000 — the logic works the same. Let's build it email by email.
+    </p>
+  </section>
+
+  <!-- Section 2 -->
+  <section id="seven-email-blueprint" class="playbook-section mb-16 scroll-mt-24">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">02</span>
+      <h2 class="text-2xl md:text-3xl font-bold">The 7-Email Launch Sequence Blueprint</h2>
+    </div>
+
+    <p class="text-gray-300 leading-relaxed mb-8">
+      Each email has one job. Don't combine them. Don't skip them. The order matters — you're walking someone through a psychological journey from curiosity to decision. Fill in the <code class="text-coral bg-coral/10 px-1.5 py-0.5 rounded font-mono text-sm">[brackets]</code> with your product's specifics.
+    </p>
+
+    <!-- Email 1 -->
+    <div class="mb-12">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="flex items-center justify-center w-9 h-9 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">E1</span>
+        <div>
+          <h3 class="text-lg font-semibold text-white">"The Heads Up" — Day -7</h3>
+          <p class="text-xs text-gray-500 font-mono">Purpose: announce something is coming · build curiosity</p>
+        </div>
+      </div>
+
+      <p class="text-gray-300 leading-relaxed mb-4">
+        Send this one week before launch. Don't reveal the product yet — just signal that something is coming. Curiosity is a more powerful motivator than information. People will open every subsequent email just to find out what you're building.
+      </p>
+
+      <div class="p-5 bg-[#0d0d20] border border-white/10 rounded-xl font-mono text-sm mb-4">
+        <p class="text-gray-500 mb-3">// Subject line formula</p>
+        <p class="text-coral mb-5">"Something I've been building for [timeframe]..."</p>
+        <p class="text-gray-500 mb-3">// Body template</p>
+        <p class="text-gray-300 mb-2">Hey [first name],</p>
+        <p class="text-gray-300 mb-2">I've been heads-down on something for the past [timeframe].</p>
+        <p class="text-gray-300 mb-2">I'm not ready to share everything yet — but I wanted to give you a heads up that it's almost done.</p>
+        <p class="text-gray-300 mb-2">It's [one honest sentence describing the category, not the product]. Something I wish had existed when I was [relatable situation].</p>
+        <p class="text-gray-300 mb-2">I'll tell you more in a few days. Keep an eye on your inbox.</p>
+        <p class="text-gray-300 mb-2">— [Your name]</p>
+        <p class="text-gray-500 mt-4">// P.S. — optional but effective:</p>
+        <p class="text-gray-300">P.S. Hit reply and tell me: what's your biggest struggle with [problem area]? I read every reply.</p>
+      </div>
+
+      <div class="flex items-start gap-3 p-4 rounded-xl bg-green-500/5 border border-green-500/15">
+        <svg class="w-4 h-4 text-green-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+        <p class="text-gray-400 text-sm">The P.S. reply request serves two purposes: it warms up your sender reputation (replies are a strong engagement signal), and the answers you get are free market research that sharpens your launch copy.</p>
+      </div>
+    </div>
+
+    <!-- Email 2 -->
+    <div class="mb-12">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="flex items-center justify-center w-9 h-9 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">E2</span>
+        <div>
+          <h3 class="text-lg font-semibold text-white">"The Problem" — Day -5</h3>
+          <p class="text-xs text-gray-500 font-mono">Purpose: describe the pain your product solves · no product mention yet</p>
+        </div>
+      </div>
+
+      <p class="text-gray-300 leading-relaxed mb-4">
+        Don't mention your product at all. This email is entirely about the reader's problem. The more specifically you describe their pain, the more they'll feel like you're reading their mind — and the more urgently they'll want whatever you're about to offer.
+      </p>
+
+      <div class="p-5 bg-[#0d0d20] border border-white/10 rounded-xl font-mono text-sm mb-4">
+        <p class="text-gray-500 mb-3">// Subject line formula</p>
+        <p class="text-coral mb-5">"The [adjective] problem with [common approach]"</p>
+        <p class="text-gray-500 mb-3">// Body template</p>
+        <p class="text-gray-300 mb-2">Hey [first name],</p>
+        <p class="text-gray-300 mb-2">Let me describe a scenario you might recognize.</p>
+        <p class="text-gray-300 mb-2">You've just finished [common task in your space]. You did it the way everyone does it — [describe standard approach]. And it took [longer than it should]. Again.</p>
+        <p class="text-gray-300 mb-2">The frustrating part? It's not that the tools are bad. It's that [specific friction point]. Every time. On every project.</p>
+        <p class="text-gray-300 mb-2">I've spent [timeframe] dealing with this exact problem. I've tried [alternative 1], [alternative 2], and [alternative 3]. None of them fully solved it because [root cause of the problem].</p>
+        <p class="text-gray-300 mb-2">If you know this feeling, keep an eye on your inbox. I've been working on something.</p>
+        <p class="text-gray-300 mb-2">More soon.</p>
+        <p class="text-gray-300">— [Your name]</p>
+      </div>
+
+      <div class="flex items-start gap-3 p-4 rounded-xl bg-green-500/5 border border-green-500/15">
+        <svg class="w-4 h-4 text-green-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+        <p class="text-gray-400 text-sm">The moment someone reads this and thinks "yes, that's exactly my problem" — they've emotionally committed to reading the next email. That's the only goal of Email 2.</p>
+      </div>
+    </div>
+
+    <!-- Email 3 -->
+    <div class="mb-12">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="flex items-center justify-center w-9 h-9 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">E3</span>
+        <div>
+          <h3 class="text-lg font-semibold text-white">"The Story" — Day -3</h3>
+          <p class="text-xs text-gray-500 font-mono">Purpose: how you built this and why · personal and authentic</p>
+        </div>
+      </div>
+
+      <p class="text-gray-300 leading-relaxed mb-4">
+        People buy from people, not companies. This email is the most personal one in the sequence. Tell the real story of why you built this: the frustration, the moment you decided to build it yourself, what the journey was like. Authenticity here is a competitive advantage that no enterprise can copy.
+      </p>
+
+      <div class="p-5 bg-[#0d0d20] border border-white/10 rounded-xl font-mono text-sm mb-4">
+        <p class="text-gray-500 mb-3">// Subject line formula</p>
+        <p class="text-coral mb-5">"Why I spent [timeframe] building [thing] instead of just using [alternative]"</p>
+        <p class="text-gray-500 mb-3">// Body template</p>
+        <p class="text-gray-300 mb-2">Hey [first name],</p>
+        <p class="text-gray-300 mb-2">Here's the honest version of why I built this.</p>
+        <p class="text-gray-300 mb-2">[Describe the specific moment of frustration that triggered the project. Be concrete: date, project, what went wrong.]</p>
+        <p class="text-gray-300 mb-2">I looked at what was available. [Existing option A] was [why it didn't work]. [Existing option B] was [why it didn't work]. I didn't want to pay [price] for something that still required [annoying manual step].</p>
+        <p class="text-gray-300 mb-2">So I built something for myself. Then a few developer friends started asking to use it. Then I realized I should probably clean it up and release it properly.</p>
+        <p class="text-gray-300 mb-2">That's what I've been doing for the past [timeframe]. Building the tool I wished existed.</p>
+        <p class="text-gray-300 mb-2">Tomorrow I'll show you exactly what it does.</p>
+        <p class="text-gray-300">— [Your name]</p>
+      </div>
+
+      <div class="flex items-start gap-3 p-4 rounded-xl bg-green-500/5 border border-green-500/15">
+        <svg class="w-4 h-4 text-green-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+        <p class="text-gray-400 text-sm">The "I built it for myself" origin story is extremely credible to developers. It means you understand the problem intimately because you lived it — and it means you'll actually maintain it, because you use it yourself.</p>
+      </div>
+    </div>
+
+    <!-- Email 4 -->
+    <div class="mb-12">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="flex items-center justify-center w-9 h-9 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">E4</span>
+        <div>
+          <h3 class="text-lg font-semibold text-white">"The Sneak Peek" — Day -1</h3>
+          <p class="text-xs text-gray-500 font-mono">Purpose: show the product · screenshots, demo, key features as benefits</p>
+        </div>
+      </div>
+
+      <p class="text-gray-300 leading-relaxed mb-4">
+        This is the first time you explicitly show the product. Include screenshots, a GIF, or a link to a short demo video. Don't just list features — frame everything as outcomes. "Automated [X]" becomes "No more manually [X]." The goal is to make them impatient for tomorrow.
+      </p>
+
+      <div class="p-5 bg-[#0d0d20] border border-white/10 rounded-xl font-mono text-sm mb-4">
+        <p class="text-gray-500 mb-3">// Subject line formula</p>
+        <p class="text-coral mb-5">"[Product name] goes live tomorrow — here's a first look"</p>
+        <p class="text-gray-500 mb-3">// Body template</p>
+        <p class="text-gray-300 mb-2">Hey [first name],</p>
+        <p class="text-gray-300 mb-2">Tomorrow's the day. Here's what [Product name] actually looks like.</p>
+        <p class="text-gray-300 mb-2">[Screenshot or GIF here — if email, link to a quick Loom or landing page preview]</p>
+        <p class="text-gray-300 mb-2">The three things I'm most proud of:</p>
+        <p class="text-gray-300 mb-1">→ [Feature A, framed as outcome]: "No more [painful manual thing]. [Product] handles it automatically."</p>
+        <p class="text-gray-300 mb-1">→ [Feature B, framed as outcome]: "You can [desirable action] in under [short timeframe]."</p>
+        <p class="text-gray-300 mb-2">→ [Feature C, framed as outcome]: "[Thing they've been wanting] — built in, no extra setup."</p>
+        <p class="text-gray-300 mb-2">It goes live tomorrow at [time] [timezone]. I'll send you the link then.</p>
+        <p class="text-gray-300 mb-2">Questions? Just hit reply. I read every one.</p>
+        <p class="text-gray-300">— [Your name]</p>
+      </div>
+
+      <div class="flex items-start gap-3 p-4 rounded-xl bg-green-500/5 border border-green-500/15">
+        <svg class="w-4 h-4 text-green-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+        <p class="text-gray-400 text-sm">Naming a specific launch time ("tomorrow at 9am ET") creates calendar-level anticipation. It also makes the launch feel like a real event, not just a post going live.</p>
+      </div>
+    </div>
+
+    <!-- Email 5 -->
+    <div class="mb-12">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="flex items-center justify-center w-9 h-9 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">E5</span>
+        <div>
+          <h3 class="text-lg font-semibold text-white">"Launch Day" — Day 0</h3>
+          <p class="text-xs text-gray-500 font-mono">Purpose: it's live · clear CTA, price, guarantee</p>
+        </div>
+      </div>
+
+      <p class="text-gray-300 leading-relaxed mb-4">
+        This is the most important email. Be direct. Lead with the link. State the price clearly. Include your guarantee. Don't make people scroll to find the CTA — put it early and repeat it at the bottom.
+      </p>
+
+      <div class="p-5 bg-[#0d0d20] border border-white/10 rounded-xl font-mono text-sm mb-4">
+        <p class="text-gray-500 mb-3">// Subject line formula</p>
+        <p class="text-coral mb-5">"[Product name] is live — [short punchy benefit]"</p>
+        <p class="text-gray-500 mb-3">// Body template</p>
+        <p class="text-gray-300 mb-2">Hey [first name],</p>
+        <p class="text-gray-300 mb-2">It's live.</p>
+        <p class="text-gray-300 mb-2">→ [Link to product/sales page]</p>
+        <p class="text-gray-300 mb-2">[Product name] is [one-sentence value proposition]. [Target audience] use it to [key outcome] without [main pain removed].</p>
+        <p class="text-gray-300 mb-2">Here's what you get:</p>
+        <p class="text-gray-300 mb-1">✓ [Core feature 1 as benefit]</p>
+        <p class="text-gray-300 mb-1">✓ [Core feature 2 as benefit]</p>
+        <p class="text-gray-300 mb-1">✓ [Core feature 3 as benefit]</p>
+        <p class="text-gray-300 mb-2">✓ [Bonus or differentiator]</p>
+        <p class="text-gray-300 mb-2">Launch price: [price]. [If applicable: This goes up to $X on [date].]</p>
+        <p class="text-gray-300 mb-2">And if it's not right for you: [guarantee — "30-day refund, no questions asked" / "cancel anytime" / "free tier forever"].</p>
+        <p class="text-gray-300 mb-2">→ [Link again — "Get [Product name] →"]</p>
+        <p class="text-gray-300">— [Your name]</p>
+      </div>
+
+      <div class="flex items-start gap-3 p-4 rounded-xl bg-green-500/5 border border-green-500/15">
+        <svg class="w-4 h-4 text-green-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+        <p class="text-gray-400 text-sm">Send this at the same time you named in Email 4. Consistency builds trust. Most of your sales from this sequence will come from this email and Email 7 — so make this one tight, clear, and direct.</p>
+      </div>
+    </div>
+
+    <!-- Email 6 -->
+    <div class="mb-12">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="flex items-center justify-center w-9 h-9 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">E6</span>
+        <div>
+          <h3 class="text-lg font-semibold text-white">"The FAQ" — Day +1</h3>
+          <p class="text-xs text-gray-500 font-mono">Purpose: answer the 5 most common objections</p>
+        </div>
+      </div>
+
+      <p class="text-gray-300 leading-relaxed mb-4">
+        The day after launch, people are on the fence. They liked what they saw, but they have questions. This email preemptively answers the 5 objections that keep people from buying. Don't guess — check your DMs, replies, and any support messages you've gotten from beta users.
+      </p>
+
+      <div class="p-5 bg-[#0d0d20] border border-white/10 rounded-xl font-mono text-sm mb-4">
+        <p class="text-gray-500 mb-3">// Subject line formula</p>
+        <p class="text-coral mb-5">"Questions about [Product name] — answered"</p>
+        <p class="text-gray-500 mb-3">// Body template</p>
+        <p class="text-gray-300 mb-2">Hey [first name],</p>
+        <p class="text-gray-300 mb-2">Since [Product name] launched yesterday, I've gotten a few questions. Let me answer the most common ones.</p>
+        <p class="text-gray-300 mb-2 mt-3"><span class="text-coral font-bold">Q: Does this work with [common tech stack]?</span></p>
+        <p class="text-gray-300 mb-3">A: [Direct answer. Be specific about what's supported and what's on the roadmap.]</p>
+        <p class="text-gray-300 mb-2"><span class="text-coral font-bold">Q: I'm just starting out — is this too advanced for me?</span></p>
+        <p class="text-gray-300 mb-3">A: [Reassure beginners or honestly scope who it's for.]</p>
+        <p class="text-gray-300 mb-2"><span class="text-coral font-bold">Q: What happens if I need support?</span></p>
+        <p class="text-gray-300 mb-3">A: [Describe your support channel: email, Discord, GitHub issues. Be honest about response times.]</p>
+        <p class="text-gray-300 mb-2"><span class="text-coral font-bold">Q: Is the [license / pricing / data handling] going to change?</span></p>
+        <p class="text-gray-300 mb-3">A: [Be clear and honest. Developers hate bait-and-switch.]</p>
+        <p class="text-gray-300 mb-2"><span class="text-coral font-bold">Q: What if it doesn't work for my use case?</span></p>
+        <p class="text-gray-300 mb-3">A: [Restate your guarantee clearly.]</p>
+        <p class="text-gray-300 mb-2">Any other questions? Reply to this email — I'll answer personally.</p>
+        <p class="text-gray-300 mb-2">→ [Link: "Get [Product name] →"]</p>
+        <p class="text-gray-300">— [Your name]</p>
+      </div>
+
+      <div class="flex items-start gap-3 p-4 rounded-xl bg-green-500/5 border border-green-500/15">
+        <svg class="w-4 h-4 text-green-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+        <p class="text-gray-400 text-sm">The FAQ email consistently converts fence-sitters. The "Q: What if it doesn't work?" objection with a clear refund policy is especially powerful — it eliminates perceived risk entirely.</p>
+      </div>
+    </div>
+
+    <!-- Email 7 -->
+    <div class="mb-8">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="flex items-center justify-center w-9 h-9 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">E7</span>
+        <div>
+          <h3 class="text-lg font-semibold text-white">"Last Chance" — Day +3</h3>
+          <p class="text-xs text-gray-500 font-mono">Purpose: urgency · close the launch window or end a discount</p>
+        </div>
+      </div>
+
+      <p class="text-gray-300 leading-relaxed mb-4">
+        This is your highest-converting email after Launch Day. Real deadlines are non-negotiable here — if you say the price goes up at midnight, it must go up at midnight. Don't manufacture fake urgency; create real urgency by actually closing a window or ending a discount.
+      </p>
+
+      <div class="p-5 bg-[#0d0d20] border border-white/10 rounded-xl font-mono text-sm mb-4">
+        <p class="text-gray-500 mb-3">// Subject line formula (pick one)</p>
+        <p class="text-coral mb-1">"[Product name] launch closes tonight"</p>
+        <p class="text-coral mb-1">"Last chance: [launch price] → [$higher price] at midnight"</p>
+        <p class="text-coral mb-5">"12 hours left to [get the deal / claim the bonus / join at launch price]"</p>
+        <p class="text-gray-500 mb-3">// Body template</p>
+        <p class="text-gray-300 mb-2">Hey [first name],</p>
+        <p class="text-gray-300 mb-2">Quick heads up: the [launch price / bonus / special offer] for [Product name] ends tonight at [time] [timezone].</p>
+        <p class="text-gray-300 mb-2">After that, [price goes up to $X / the bonus is removed / the cart closes until next quarter].</p>
+        <p class="text-gray-300 mb-2">If you've been thinking about it — this is the moment.</p>
+        <p class="text-gray-300 mb-2">Here's the short version of what you get:</p>
+        <p class="text-gray-300 mb-1">✓ [Core benefit 1]</p>
+        <p class="text-gray-300 mb-1">✓ [Core benefit 2]</p>
+        <p class="text-gray-300 mb-2">✓ [Guarantee reminder — "full refund if it's not right"]</p>
+        <p class="text-gray-300 mb-2">→ [Link: "Get [Product name] before tonight →"]</p>
+        <p class="text-gray-300 mb-2">If it's not for you, no worries — I appreciate you following along, and I'll keep sharing useful stuff either way.</p>
+        <p class="text-gray-300">— [Your name]</p>
+      </div>
+
+      <div class="flex items-start gap-3 p-4 rounded-xl bg-green-500/5 border border-green-500/15">
+        <svg class="w-4 h-4 text-green-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+        <p class="text-gray-400 text-sm">The last line ("if it's not for you, no worries") protects your relationship with non-buyers. These people will still be on your list after the launch — don't alienate them with aggressive sales copy. Respect goes a long way.</p>
+      </div>
+    </div>
+
+    <div class="bg-gradient-to-r from-coral/10 to-transparent border-l-4 border-coral pl-6 py-4 rounded-r-lg">
+      <p class="text-white font-medium leading-relaxed">
+        "Seven emails sounds like a lot. It's not. When spread over 10 days with clear, distinct purposes, they feel like a natural conversation — not a sales barrage. The developers who unsubscribe during a well-run launch sequence are a small fraction. Most people appreciate being kept in the loop."
+      </p>
+    </div>
+  </section>
+
+  <!-- Section 3 -->
+  <section id="subject-lines" class="playbook-section mb-16 scroll-mt-24">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">03</span>
+      <h2 class="text-2xl md:text-3xl font-bold">Subject Lines That Get Opened</h2>
+    </div>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      Your email sequence is useless if nobody opens the emails. Subject lines are the single highest-leverage variable in email marketing — a 20% improvement in open rate means 20% more people see your offer. Here's how to write them.
+    </p>
+
+    <h3 class="text-xl font-semibold text-white mb-4">The Curiosity Gap Formula</h3>
+
+    <p class="text-gray-300 leading-relaxed mb-4">
+      The most powerful subject line technique is the <strong class="text-white">curiosity gap</strong> — you give the reader just enough information to make them want more, but not enough to satisfy the question without opening. It's the cognitive equivalent of a cliffhanger.
+    </p>
+
+    <div class="p-5 bg-[#0d0d20] border border-white/10 rounded-xl font-mono text-sm mb-8">
+      <p class="text-gray-500 mb-3">// The curiosity gap formula</p>
+      <p class="text-coral mb-4">[Intriguing premise] + [incomplete information] + [implied payoff]</p>
+      <p class="text-gray-500 mb-2">// Examples:</p>
+      <p class="text-gray-300 mb-1">"The reason your launch emails don't convert (it's not what you think)"</p>
+      <p class="text-gray-300 mb-1">"Something I've been building for 3 months..."</p>
+      <p class="text-gray-300 mb-1">"Why I deleted my $5K/mo product and started over"</p>
+      <p class="text-gray-300">"The email that tripled my conversion rate"</p>
+    </div>
+
+    <h3 class="text-xl font-semibold text-white mb-4">Numbers and Specificity</h3>
+
+    <p class="text-gray-300 leading-relaxed mb-4">
+      Specific numbers outperform vague claims in subject lines because they signal credibility. "A few minutes" is weak. "11 minutes" is concrete and credible. The brain treats specificity as evidence of truth.
+    </p>
+
+    <div class="p-5 bg-[#0d0d20] border border-white/10 rounded-xl font-mono text-sm mb-8">
+      <p class="text-gray-500 mb-2">// Vague vs specific:</p>
+      <p class="text-gray-300 mb-1"><span class="text-red-400 line-through">"Launch emails that get more sales"</span></p>
+      <p class="text-gray-300 mb-3"><span class="text-green-400">"The 7 emails that generated $11,400 in 10 days"</span></p>
+      <p class="text-gray-300 mb-1"><span class="text-red-400 line-through">"Quick setup"</span></p>
+      <p class="text-gray-300"><span class="text-green-400">"5-minute setup, $340 MRR in week one"</span></p>
+    </div>
+
+    <h3 class="text-xl font-semibold text-white mb-6">20 Fill-in-the-Blank Subject Line Templates</h3>
+
+    <div class="mb-6">
+      <p class="text-xs font-semibold text-coral uppercase tracking-wider mb-3">Pre-Launch (Emails 1–3)</p>
+      <div class="space-y-2">
+        <div class="p-3 bg-[#0d0d20] border border-white/10 rounded-lg font-mono text-sm text-gray-300">"Something I've been building for [X weeks/months]..."</div>
+        <div class="p-3 bg-[#0d0d20] border border-white/10 rounded-lg font-mono text-sm text-gray-300">"Why I stopped using [common tool] for [task]"</div>
+        <div class="p-3 bg-[#0d0d20] border border-white/10 rounded-lg font-mono text-sm text-gray-300">"The [adjective] problem with [common approach]"</div>
+        <div class="p-3 bg-[#0d0d20] border border-white/10 rounded-lg font-mono text-sm text-gray-300">"I built [thing] because [relatable frustration]"</div>
+        <div class="p-3 bg-[#0d0d20] border border-white/10 rounded-lg font-mono text-sm text-gray-300">"[Number] months of [work/research] → something big coming"</div>
+        <div class="p-3 bg-[#0d0d20] border border-white/10 rounded-lg font-mono text-sm text-gray-300">"Be honest: how long does [painful task] take you?"</div>
+        <div class="p-3 bg-[#0d0d20] border border-white/10 rounded-lg font-mono text-sm text-gray-300">"[Product name] goes live on [day] — first look inside"</div>
+      </div>
+    </div>
+
+    <div class="mb-6">
+      <p class="text-xs font-semibold text-coral uppercase tracking-wider mb-3">Launch Day (Email 4–5)</p>
+      <div class="space-y-2">
+        <div class="p-3 bg-[#0d0d20] border border-white/10 rounded-lg font-mono text-sm text-gray-300">"[Product name] is live — [short punchy benefit]"</div>
+        <div class="p-3 bg-[#0d0d20] border border-white/10 rounded-lg font-mono text-sm text-gray-300">"It's live: [one-sentence pitch]"</div>
+        <div class="p-3 bg-[#0d0d20] border border-white/10 rounded-lg font-mono text-sm text-gray-300">"[Outcome] in [timeframe] — [Product name] launches today"</div>
+        <div class="p-3 bg-[#0d0d20] border border-white/10 rounded-lg font-mono text-sm text-gray-300">"Finally: [thing your audience has been waiting for]"</div>
+        <div class="p-3 bg-[#0d0d20] border border-white/10 rounded-lg font-mono text-sm text-gray-300">"Today only: [Product name] at launch pricing"</div>
+        <div class="p-3 bg-[#0d0d20] border border-white/10 rounded-lg font-mono text-sm text-gray-300">"[Product name] — [key benefit] for [target audience]"</div>
+      </div>
+    </div>
+
+    <div class="mb-8">
+      <p class="text-xs font-semibold text-coral uppercase tracking-wider mb-3">Follow-Up (Emails 6–7)</p>
+      <div class="space-y-2">
+        <div class="p-3 bg-[#0d0d20] border border-white/10 rounded-lg font-mono text-sm text-gray-300">"Questions about [Product name] — answered"</div>
+        <div class="p-3 bg-[#0d0d20] border border-white/10 rounded-lg font-mono text-sm text-gray-300">"Re: [Product name] — is it right for you?"</div>
+        <div class="p-3 bg-[#0d0d20] border border-white/10 rounded-lg font-mono text-sm text-gray-300">"[N] people asked this about [Product name]"</div>
+        <div class="p-3 bg-[#0d0d20] border border-white/10 rounded-lg font-mono text-sm text-gray-300">"Last chance: [product] closes tonight at [time]"</div>
+        <div class="p-3 bg-[#0d0d20] border border-white/10 rounded-lg font-mono text-sm text-gray-300">"[N] hours left at launch price — then it goes up"</div>
+        <div class="p-3 bg-[#0d0d20] border border-white/10 rounded-lg font-mono text-sm text-gray-300">"This is the last email about [Product name]"</div>
+      </div>
+    </div>
+
+    <div class="bg-gradient-to-r from-coral/10 to-transparent border-l-4 border-coral pl-6 py-4 rounded-r-lg">
+      <p class="text-white font-medium leading-relaxed">
+        "Write 5 subject lines for every email, then pick the best one. The ones you draft first are always the most obvious. Keep going until you write one that makes you slightly nervous to send — that's usually the one that performs best."
+      </p>
+    </div>
+  </section>
+
+  <!-- Section 4 -->
+  <section id="segmenting-your-list" class="playbook-section mb-16 scroll-mt-24">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">04</span>
+      <h2 class="text-2xl md:text-3xl font-bold">Segmenting Your List for Better Results</h2>
+    </div>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      Sending a launch sequence to your entire list is fine when you're starting out. But as your list grows, a blunt broadcast to everyone hurts deliverability and annoys subscribers who signed up for something different. Segmentation is the fix — and it's simpler than it sounds.
+    </p>
+
+    <h3 class="text-xl font-semibold text-white mb-4">How to Tag Subscribers by Interest</h3>
+
+    <p class="text-gray-300 leading-relaxed mb-4">
+      The easiest segmentation strategy: tag subscribers based on how they signed up and what they've clicked. Most email platforms support this natively.
+    </p>
+
+    <div class="space-y-4 mb-8">
+      <div class="p-5 bg-navy-light border border-white/10 rounded-xl">
+        <p class="text-sm font-semibold text-white mb-2">Signup source tags</p>
+        <p class="text-gray-400 text-sm leading-relaxed mb-3">Append a tag when someone subscribes via a specific form or lead magnet. If someone signed up for your "API monitoring checklist," tag them <code class="text-coral bg-coral/10 px-1 py-0.5 rounded font-mono text-xs">interest:api-tools</code>. When you launch an API monitoring product, send only to that segment.</p>
+        <div class="p-3 bg-[#0d0d20] border border-white/10 rounded-lg font-mono text-xs text-gray-400">
+          <span class="text-gray-500">// ConvertKit tag example</span><br/>
+          subscriber.tags = [<span class="text-coral">"interest:api-tools"</span>, <span class="text-coral">"lead-magnet:api-checklist"</span>]
+        </div>
+      </div>
+
+      <div class="p-5 bg-navy-light border border-white/10 rounded-xl">
+        <p class="text-sm font-semibold text-white mb-2">Click-based tags</p>
+        <p class="text-gray-400 text-sm leading-relaxed mb-3">In ConvertKit and most platforms, you can trigger automation when someone clicks a specific link. If you send a general newsletter and someone clicks the link about "pricing strategies," auto-tag them <code class="text-coral bg-coral/10 px-1 py-0.5 rounded font-mono text-xs">interest:pricing</code>. Over time these behavioral tags become your most valuable segments.</p>
+      </div>
+
+      <div class="p-5 bg-navy-light border border-white/10 rounded-xl">
+        <p class="text-sm font-semibold text-white mb-2">Explicit opt-in tags</p>
+        <p class="text-gray-400 text-sm leading-relaxed">Ask directly. Pre-launch, send an email: "I'm building something new — if you want early access and launch updates, click here." Everyone who clicks gets tagged <code class="text-coral bg-coral/10 px-1 py-0.5 rounded font-mono text-xs">launch:product-x-interested</code>. This self-selected segment is your hottest audience.</p>
+      </div>
+    </div>
+
+    <h3 class="text-xl font-semibold text-white mb-4">Sending Launch Emails Only to Relevant Segments</h3>
+
+    <p class="text-gray-300 leading-relaxed mb-4">
+      Once you have segments, use them. In ConvertKit: create a sequence, then set the audience filter to "subscribers with tag: <code class="text-coral bg-coral/10 px-1.5 py-0.5 rounded font-mono text-sm">launch:product-x-interested</code>" before activating. Only those subscribers get the launch sequence — everyone else continues receiving your regular content uninterrupted.
+    </p>
+
+    <div class="p-5 bg-[#0d0d20] border border-white/10 rounded-xl font-mono text-sm mb-8">
+      <p class="text-gray-500 mb-3">// Segment filtering logic (pseudocode)</p>
+      <p class="text-gray-300">launch_sequence.audience = subscribers.filter(<span class="text-coral">tag</span> == <span class="text-green-400">"launch:product-x"</span><br/>  OR <span class="text-coral">tag</span> == <span class="text-green-400">"interest:relevant-category"</span><br/>  AND <span class="text-coral">engagement</span> &gt;= <span class="text-green-400">"opened_email_last_90_days"</span>)</p>
+    </div>
+
+    <h3 class="text-xl font-semibold text-white mb-4">Re-Engagement Before a Launch</h3>
+
+    <p class="text-gray-300 leading-relaxed mb-4">
+      Cold subscribers (haven't opened in 90+ days) hurt your deliverability when you email them at launch. Run a re-engagement campaign 2-3 weeks before your launch sequence starts:
+    </p>
+
+    <div class="space-y-3 mb-8">
+      <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+        <span class="text-coral mt-0.5 font-mono text-xs shrink-0">01</span>
+        <p>Send one re-engagement email: "Still interested in [topic]? I'm about to share something big — click to stay subscribed." Anyone who clicks gets a <code class="text-coral bg-coral/10 px-1 py-0.5 rounded font-mono text-xs">re-engaged</code> tag.</p>
+      </div>
+      <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+        <span class="text-coral mt-0.5 font-mono text-xs shrink-0">02</span>
+        <p>Wait 3-5 days. If they didn't click or open: suppress them from the launch sequence. Don't delete them — just exclude them. You can try again in 6 months.</p>
+      </div>
+      <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+        <span class="text-coral mt-0.5 font-mono text-xs shrink-0">03</span>
+        <p>Send the launch sequence only to active subscribers + the re-engaged group. Your open rates will be higher, your spam complaints will be lower, and your sales conversion will improve.</p>
+      </div>
+    </div>
+
+    <div class="bg-navy-light border border-white/10 rounded-xl p-6 mb-6">
+      <p class="text-sm font-semibold text-coral mb-3">The Small List Reality</p>
+      <p class="text-gray-300 leading-relaxed text-sm">
+        If you have under 300 subscribers, skip most segmentation. You don't have enough data for it to be meaningful. Just send to your whole list and focus on writing good emails. Segmentation is a scale problem — solve it when it becomes one.
+      </p>
+    </div>
+  </section>
+
+  <!-- Section 5 -->
+  <section id="tools-to-automate" class="playbook-section mb-16 scroll-mt-24">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">05</span>
+      <h2 class="text-2xl md:text-3xl font-bold">Tools to Automate the Sequence</h2>
+    </div>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      You don't want to manually send seven emails over ten days. Set up the sequence once in your email platform, schedule the send times, and let it run while you focus on everything else that comes with a launch.
+    </p>
+
+    <!-- ConvertKit -->
+    <div class="mb-10 p-6 bg-navy-light border border-white/10 rounded-2xl">
+      <div class="flex items-center gap-3 mb-4">
+        <div class="flex items-center justify-center w-9 h-9 rounded-lg bg-coral/10 text-coral text-sm font-bold border border-coral/20 shrink-0">CK</div>
+        <div>
+          <h3 class="text-lg font-semibold text-white">ConvertKit — Recommended for Most Developers</h3>
+          <p class="text-xs text-gray-500">Best for: newsletter-first businesses · free tier up to 10,000 subscribers</p>
+        </div>
+      </div>
+
+      <p class="text-gray-300 leading-relaxed text-sm mb-4">
+        ConvertKit's visual sequence builder is the cleanest way to set up a timed email sequence. Here's the exact setup flow:
+      </p>
+
+      <div class="space-y-3 mb-4">
+        <div class="flex items-start gap-3 text-sm">
+          <span class="text-coral font-mono text-xs mt-0.5 shrink-0">01</span>
+          <p class="text-gray-300">In ConvertKit, go to <strong class="text-white">Sequences</strong> → <strong class="text-white">New Sequence</strong>. Name it "Product X Launch."</p>
+        </div>
+        <div class="flex items-start gap-3 text-sm">
+          <span class="text-coral font-mono text-xs mt-0.5 shrink-0">02</span>
+          <p class="text-gray-300">Add 7 emails. For each, set the <strong class="text-white">send day</strong> relative to subscription (Day 0, Day 2, Day 4, Day 6, Day 7, Day 8, Day 10). Set the send time to whatever your best open time is — typically Tuesday–Thursday, 9–11am in your audience's primary timezone.</p>
+        </div>
+        <div class="flex items-start gap-3 text-sm">
+          <span class="text-coral font-mono text-xs mt-0.5 shrink-0">03</span>
+          <p class="text-gray-300">Create a <strong class="text-white">Form</strong> or a <strong class="text-white">Tag</strong> as the trigger. When someone gets the tag <code class="text-coral bg-coral/10 px-1 py-0.5 rounded font-mono text-xs">launch:product-x</code>, they automatically enter the sequence.</p>
+        </div>
+        <div class="flex items-start gap-3 text-sm">
+          <span class="text-coral font-mono text-xs mt-0.5 shrink-0">04</span>
+          <p class="text-gray-300">Set up an <strong class="text-white">Automation</strong>: when a subscriber purchases (if using ConvertKit Commerce) or clicks a "bought it" confirmation link, add tag <code class="text-coral bg-coral/10 px-1 py-0.5 rounded font-mono text-xs">customer:product-x</code> and remove them from the launch sequence. Never pitch someone who already bought.</p>
+        </div>
+        <div class="flex items-start gap-3 text-sm">
+          <span class="text-coral font-mono text-xs mt-0.5 shrink-0">05</span>
+          <p class="text-gray-300">One week before your launch, bulk-tag your relevant subscribers to start them in the sequence. They'll each receive emails on the right days automatically.</p>
+        </div>
+      </div>
+
+      <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl font-mono text-xs text-gray-400">
+        <span class="text-gray-500">// Automation rule</span><br/>
+        <span class="text-coral">WHEN</span> subscriber.tag_added == <span class="text-green-400">"launch:product-x"</span><br/>
+        <span class="text-coral">DO</span> enter_sequence(<span class="text-green-400">"Product X Launch"</span>)<br/>
+        <span class="text-coral">STOP IF</span> subscriber.tag_added == <span class="text-green-400">"customer:product-x"</span>
+      </div>
+    </div>
+
+    <!-- Buttondown -->
+    <div class="mb-10 p-6 bg-navy-light border border-white/10 rounded-2xl">
+      <div class="flex items-center gap-3 mb-4">
+        <div class="flex items-center justify-center w-9 h-9 rounded-lg bg-blue-500/10 text-blue-400 text-sm font-bold border border-blue-500/20 shrink-0">BD</div>
+        <div>
+          <h3 class="text-lg font-semibold text-white">Buttondown — Great for Simplicity</h3>
+          <p class="text-xs text-gray-500">Best for: technical writers, minimal setup · automations on paid plans</p>
+        </div>
+      </div>
+
+      <p class="text-gray-300 leading-relaxed text-sm mb-4">
+        Buttondown is beloved by indie developers for its Markdown-first writing experience and developer-friendly API. Automations are available on the Standard plan ($29/mo+).
+      </p>
+
+      <div class="space-y-3">
+        <div class="flex items-start gap-3 text-sm">
+          <span class="text-coral font-mono text-xs mt-0.5 shrink-0">01</span>
+          <p class="text-gray-300">Go to <strong class="text-white">Automations</strong> → create a new automation triggered by a tag being applied or a custom field being set.</p>
+        </div>
+        <div class="flex items-start gap-3 text-sm">
+          <span class="text-coral font-mono text-xs mt-0.5 shrink-0">02</span>
+          <p class="text-gray-300">Write your 7 emails in Markdown. Buttondown's writing UX is the cleanest of any email platform for text-heavy sequences.</p>
+        </div>
+        <div class="flex items-start gap-3 text-sm">
+          <span class="text-coral font-mono text-xs mt-0.5 shrink-0">03</span>
+          <p class="text-gray-300">Use the Buttondown API to tag subscribers programmatically from your product's checkout webhook — cleaner than any UI-based approach.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Loops -->
+    <div class="mb-10 p-6 bg-navy-light border border-white/10 rounded-2xl">
+      <div class="flex items-center gap-3 mb-4">
+        <div class="flex items-center justify-center w-9 h-9 rounded-lg bg-purple-500/10 text-purple-400 text-sm font-bold border border-purple-500/20 shrink-0">LP</div>
+        <div>
+          <h3 class="text-lg font-semibold text-white">Loops — Best for SaaS Event-Based Triggers</h3>
+          <p class="text-xs text-gray-500">Best for: SaaS products with user events · developer-first API</p>
+        </div>
+      </div>
+
+      <p class="text-gray-300 leading-relaxed text-sm mb-4">
+        If your product is a SaaS app, Loops is purpose-built for event-triggered email sequences. Instead of day-based delays, you trigger emails based on user behavior in your app.
+      </p>
+
+      <div class="space-y-3">
+        <div class="flex items-start gap-3 text-sm">
+          <span class="text-coral font-mono text-xs mt-0.5 shrink-0">01</span>
+          <p class="text-gray-300">Fire events from your backend: <code class="text-coral bg-coral/10 px-1 py-0.5 rounded font-mono text-xs">loops.sendEvent(&#123; email, eventName: "launch_sequence_start" &#125;)</code>.</p>
+        </div>
+        <div class="flex items-start gap-3 text-sm">
+          <span class="text-coral font-mono text-xs mt-0.5 shrink-0">02</span>
+          <p class="text-gray-300">Build a "Launch Sequence" loop triggered by <code class="text-coral bg-coral/10 px-1 py-0.5 rounded font-mono text-xs">launch_sequence_start</code>. Each email step has a time delay. Stop the loop when <code class="text-coral bg-coral/10 px-1 py-0.5 rounded font-mono text-xs">purchase_completed</code> fires.</p>
+        </div>
+        <div class="flex items-start gap-3 text-sm">
+          <span class="text-coral font-mono text-xs mt-0.5 shrink-0">03</span>
+          <p class="text-gray-300">Use Loops' contact properties to personalize emails with real data from your app — plan tier, feature usage, company name — without any manual segmentation.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Under 100 subscribers -->
+    <div class="p-6 bg-gradient-to-br from-coral/10 to-deep-blue/20 border border-coral/20 rounded-2xl">
+      <h3 class="text-lg font-semibold text-white mb-3">Under 100 Subscribers? Send Manually. It's Fine.</h3>
+      <p class="text-gray-300 leading-relaxed text-sm mb-3">
+        If your list is small, don't spend time setting up automation — spend that time making the emails better. Schedule each email in your calendar, write it fresh each day using the templates above, and hit send. Small lists actually benefit from this: your emails will feel more personal, you can react to replies in real time, and you'll learn things about your audience that no automation reveals.
+      </p>
+      <p class="text-gray-300 leading-relaxed text-sm">
+        The threshold where automation saves more time than it costs to set up is around 200-300 subscribers. Below that, the cost of setup and testing exceeds the time saved.
+      </p>
+    </div>
+  </section>
+
+  <!-- Section 6 -->
+  <section id="launch-checklist" class="playbook-section mb-16 scroll-mt-24">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">06</span>
+      <h2 class="text-2xl md:text-3xl font-bold">Launch Sequence Checklist</h2>
+    </div>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      Run through this before every launch. If you can check every box, you're ready. If anything is missing, you know exactly what to fix.
+    </p>
+
+    <div class="space-y-6">
+
+      <!-- Pre-Launch Prep -->
+      <div class="p-6 bg-navy-light border border-white/10 rounded-2xl">
+        <h3 class="text-sm font-semibold text-coral uppercase tracking-wider mb-4">Pre-Launch Preparation</h3>
+        <div class="space-y-3">
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Launch date and time is locked in — send times for all 7 emails are scheduled</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Re-engagement campaign sent to cold subscribers at least 1 week before launch</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Relevant segments tagged and audience defined for the launch sequence</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Automation set up to remove buyers from the sequence after purchase</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">All landing page links have been tested and go to the right destination</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Checkout or purchase flow tested end-to-end with a real transaction</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Email Content -->
+      <div class="p-6 bg-navy-light border border-white/10 rounded-2xl">
+        <h3 class="text-sm font-semibold text-coral uppercase tracking-wider mb-4">Email Content</h3>
+        <div class="space-y-3">
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Email 1 (Day -7): builds curiosity, no product reveal, ends with a question</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Email 2 (Day -5): describes the problem specifically — no product mention</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Email 3 (Day -3): personal origin story, authentic, teases the reveal</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Email 4 (Day -1): first product reveal, features framed as outcomes, specific launch time named</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Email 5 (Day 0): clear offer, price stated, guarantee included, CTA appears twice</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Email 6 (Day +1): 5 real objections addressed, reply invite included</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Email 7 (Day +3): real deadline stated, urgency justified, closes with respectful opt-out</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Subject Lines -->
+      <div class="p-6 bg-navy-light border border-white/10 rounded-2xl">
+        <h3 class="text-sm font-semibold text-coral uppercase tracking-wider mb-4">Subject Lines</h3>
+        <div class="space-y-3">
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">All 7 subject lines written and reviewed — no generic "Update" or "Newsletter #12"</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Pre-launch subject lines use curiosity gaps, not product names</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Launch day subject line is direct — the product name and key benefit are in the subject</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Last chance subject line includes a specific time or deadline</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Post-Launch -->
+      <div class="p-6 bg-navy-light border border-white/10 rounded-2xl">
+        <h3 class="text-sm font-semibold text-coral uppercase tracking-wider mb-4">After the Launch</h3>
+        <div class="space-y-3">
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Record open rates, click rates, and revenue per email — you'll need this for the next launch</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Replied to every subscriber reply personally during the launch window</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Buyers tagged and removed from future launch sequences for this product</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Note the top 2-3 objections you received — update the FAQ email for next launch</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Resumed regular newsletter content within 1 week of launch close</span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-8 bg-gradient-to-r from-coral/10 to-transparent border-l-4 border-coral pl-6 py-4 rounded-r-lg">
+      <p class="text-white font-medium leading-relaxed">
+        "Your second launch will outperform your first by default — because you'll have data. After every launch, record which email had the highest open rate, which had the highest click rate, and which drove the most revenue. Optimize those three. Everything else is noise."
+      </p>
+    </div>
+  </section>
+
+</PlaybookLayout>
