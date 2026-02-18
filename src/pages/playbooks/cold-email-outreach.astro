@@ -1,0 +1,850 @@
+---
+import PlaybookLayout from '../../layouts/PlaybookLayout.astro';
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Cold Email Outreach for Developer Tools",
+  "description": "Templates, personalization tactics, and deliverability setup for cold email outreach for SaaS and dev tools. Includes 10 fill-in-the-blank email templates.",
+  "step": [
+    { "@type": "HowToStep", "name": "Understand when cold email makes sense for dev products", "position": 1 },
+    { "@type": "HowToStep", "name": "Build your prospect list", "position": 2 },
+    { "@type": "HowToStep", "name": "Write cold emails that get replies", "position": 3 },
+    { "@type": "HowToStep", "name": "Use fill-in-the-blank templates", "position": 4 },
+    { "@type": "HowToStep", "name": "Personalize at scale", "position": 5 },
+    { "@type": "HowToStep", "name": "Set up deliverability", "position": 6 },
+    { "@type": "HowToStep", "name": "Measure performance", "position": 7 },
+    { "@type": "HowToStep", "name": "Run the pre-send checklist", "position": 8 }
+  ]
+});
+
+const sections = [
+  { id: "when-cold-email-makes-sense", title: "When Cold Email Makes Sense for Dev Products" },
+  { id: "building-prospect-list", title: "Building Your Prospect List" },
+  { id: "anatomy-of-cold-email", title: "The Anatomy of a Cold Email That Gets Replies" },
+  { id: "email-templates", title: "10 Fill-in-the-Blank Cold Email Templates" },
+  { id: "personalization-at-scale", title: "Personalization at Scale" },
+  { id: "deliverability", title: "Deliverability: Getting Into the Inbox" },
+  { id: "measuring-performance", title: "Measuring Cold Email Performance" },
+  { id: "cold-email-checklist", title: "Cold Email Checklist" },
+];
+---
+
+<PlaybookLayout
+  title="Cold Email Outreach for Dev Tools"
+  metaTitle="Cold Email Outreach for Developer Tools | CodeToCash"
+  metaDescription="Templates, personalization tactics, and deliverability setup for cold email outreach for SaaS and dev tools. Includes 10 fill-in-the-blank email templates."
+  subtitle="The complete playbook for cold outreach that lands in inboxes, gets replies, and books meetings with your ideal customers."
+  difficulty="Advanced"
+  readingTime="12 min"
+  lastUpdated="February 2026"
+  sections={sections}
+  prev={{ slug: "ab-testing-guide", title: "The Developer's A/B Testing Guide" }}
+  next={undefined}
+  schema={schema}
+>
+
+  <!-- Section 1: When Cold Email Makes Sense -->
+  <section id="when-cold-email-makes-sense" class="playbook-section mb-16 scroll-mt-24">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">01</span>
+      <h2 class="text-2xl md:text-3xl font-bold">When Cold Email Makes Sense for Dev Products</h2>
+    </div>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      Cold email has a bad reputation because most people do it badly. They blast generic templates to purchased lists, use deceptive subject lines, and wonder why nobody replies. Done right, cold email is a precision tool for B2B growth. Done wrong, it's a fast track to spam folders and damaged domain reputation.
+    </p>
+
+    <h3 class="text-xl font-semibold text-white mb-4">When Cold Email Works</h3>
+
+    <div class="space-y-4 mb-8">
+      <div class="flex items-start gap-4 p-4 rounded-xl bg-green-500/5 border border-green-500/15">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-green-500/10 text-green-400 font-mono font-bold text-xs shrink-0">✓</span>
+        <div>
+          <p class="font-semibold text-white mb-1">You have a B2B product</p>
+          <p class="text-gray-400 text-sm leading-relaxed">Your customer is a business, not an individual consumer. They have a budget, a decision-making process, and a problem worth paying to solve.</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-4 p-4 rounded-xl bg-green-500/5 border border-green-500/15">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-green-500/10 text-green-400 font-mono font-bold text-xs shrink-0">✓</span>
+        <div>
+          <p class="font-semibold text-white mb-1">You have a clear target customer</p>
+          <p class="text-gray-400 text-sm leading-relaxed">You can define your ICP (Ideal Customer Profile) in specific terms: company size, tech stack, role titles, and trigger events that indicate need.</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-4 p-4 rounded-xl bg-green-500/5 border border-green-500/15">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-green-500/10 text-green-400 font-mono font-bold text-xs shrink-0">✓</span>
+        <div>
+          <p class="font-semibold text-white mb-1">You have a specific value proposition</p>
+          <p class="text-gray-400 text-sm leading-relaxed">You can articulate exactly what you do, for whom, and what outcome they get — in one sentence. Vague value props fail in cold email.</p>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="text-xl font-semibold text-white mb-4">When Cold Email Doesn't Work</h3>
+
+    <div class="space-y-4 mb-8">
+      <div class="flex items-start gap-4 p-4 rounded-xl bg-red-500/5 border border-red-500/15">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-red-500/10 text-red-400 font-mono font-bold text-xs shrink-0">✗</span>
+        <div>
+          <p class="font-semibold text-white mb-1">You're B2C</p>
+          <p class="text-gray-400 text-sm leading-relaxed">Cold email to consumers is legally restricted (CAN-SPAM, GDPR) and culturally unacceptable. Don't cold email individuals about consumer products.</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-4 p-4 rounded-xl bg-red-500/5 border border-red-500/15">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-red-500/10 text-red-400 font-mono font-bold text-xs shrink-0">✗</span>
+        <div>
+          <p class="font-semibold text-white mb-1">Your product is under $50</p>
+          <p class="text-gray-400 text-sm leading-relaxed">The economics don't work. Cold email is labor-intensive. You need either high ACV (Annual Contract Value) or high LTV to justify the effort.</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-4 p-4 rounded-xl bg-red-500/5 border border-red-500/15">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-red-500/10 text-red-400 font-mono font-bold text-xs shrink-0">✗</span>
+        <div>
+          <p class="font-semibold text-white mb-1">You don't know who you're targeting</p>
+          <p class="text-gray-400 text-sm leading-relaxed">"Developers" is not a target. "CTOs at Series A SaaS companies using Kubernetes" is. If you can't name the person you're reaching out to, you're not ready.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-navy-light border border-white/10 rounded-xl p-6 mb-6">
+      <p class="text-sm font-semibold text-coral mb-3">The Bar Is Higher Than It Used To Be</p>
+      <p class="text-gray-300 leading-relaxed">
+        Inboxes are more crowded. Spam filters are smarter. Buyers are more skeptical. Cold email in 2026 is only worth doing if you do it <strong class="text-white">well</strong>. That means high personalization, genuine value, and respect for the recipient's time. This playbook will show you how to meet that bar without spending hours on every email.
+      </p>
+    </div>
+  </section>
+
+  <!-- Section 2: Building Your Prospect List -->
+  <section id="building-prospect-list" class="playbook-section mb-16 scroll-mt-24">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">02</span>
+      <h2 class="text-2xl md:text-3xl font-bold">Building Your Prospect List</h2>
+    </div>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      The quality of your list determines 60% of your cold email success. A perfectly written email to the wrong person fails. A decent email to the right person at the right time gets a reply. Here's how to build a high-quality prospect list for dev tools.
+    </p>
+
+    <h3 class="text-xl font-semibold text-white mb-4">Where to Find Prospects</h3>
+
+    <div class="space-y-4 mb-8">
+      <div class="p-5 bg-navy-light border border-white/10 rounded-xl">
+        <p class="text-sm font-semibold text-white mb-2">LinkedIn</p>
+        <p class="text-gray-400 text-sm leading-relaxed">The default source for B2B prospecting. Search by job title, company size, and industry. Filter by "Posted on LinkedIn in past 30 days" to find active users. Best for finding decision-makers at target companies.</p>
+      </div>
+      <div class="p-5 bg-navy-light border border-white/10 rounded-xl">
+        <p class="text-sm font-semibold text-white mb-2">GitHub</p>
+        <p class="text-gray-400 text-sm leading-relaxed">Search for organizations using relevant technologies. If your tool is for React developers, find companies with public React repos. Look at contributors, then cross-reference with LinkedIn to find their work email.</p>
+      </div>
+      <div class="p-5 bg-navy-light border border-white/10 rounded-xl">
+        <p class="text-sm font-semibold text-white mb-2">Product Hunt</p>
+        <p class="text-gray-400 text-sm leading-relaxed">Company pages list team members. Companies that recently launched on Product Hunt are in growth mode and more likely to evaluate new tools. Check the "About" section for contact details.</p>
+      </div>
+      <div class="p-5 bg-navy-light border border-white/10 rounded-xl">
+        <p class="text-sm font-semibold text-white mb-2">Job Boards</p>
+        <p class="text-gray-400 text-sm leading-relaxed">Companies hiring for roles your tool serves are actively investing in that area. A company hiring DevOps engineers is evaluating DevOps tools. A company hiring data analysts needs data tooling.</p>
+      </div>
+    </div>
+
+    <h3 class="text-xl font-semibold text-white mb-4">Tools for List Building</h3>
+
+    <div class="grid md:grid-cols-3 gap-4 mb-8">
+      <div class="p-4 bg-navy-light border border-white/10 rounded-xl">
+        <p class="text-sm font-semibold text-coral mb-1">Apollo.io</p>
+        <p class="text-gray-400 text-xs leading-relaxed">Database of 200M+ contacts with email verification. Filter by tech stack, company size, job title. Built-in sequencing tools.</p>
+      </div>
+      <div class="p-4 bg-navy-light border border-white/10 rounded-xl">
+        <p class="text-sm font-semibold text-coral mb-1">Hunter.io</p>
+        <p class="text-gray-400 text-xs leading-relaxed">Email finder and verifier. Enter a company domain, get verified email addresses. Free tier: 25 searches/month.</p>
+      </div>
+      <div class="p-4 bg-navy-light border border-white/10 rounded-xl">
+        <p class="text-sm font-semibold text-coral mb-1">LinkedIn Sales Navigator</p>
+        <p class="text-gray-400 text-xs leading-relaxed">Advanced search filters, lead lists, and InMail credits. Essential for serious outbound. ~$80/month.</p>
+      </div>
+    </div>
+
+    <h3 class="text-xl font-semibold text-white mb-4">The Data You Need for Each Prospect</h3>
+
+    <div class="p-5 bg-[#0d0d20] border border-white/10 rounded-xl font-mono text-sm mb-6">
+      <p class="text-gray-500 mb-3">// Minimum viable prospect record</p>
+      <p class="text-gray-300 mb-1"><span class="text-coral">name</span>: "Sarah Chen"</p>
+      <p class="text-gray-300 mb-1"><span class="text-coral">email</span>: "sarah@company.com"</p>
+      <p class="text-gray-300 mb-1"><span class="text-coral">company</span>: "Vercel"</p>
+      <p class="text-gray-300 mb-1"><span class="text-coral">title</span>: "VP of Engineering"</p>
+      <p class="text-gray-300 mb-1"><span class="text-coral">trigger</span>: "Posted about hiring 3 SREs this week"</p>
+      <p class="text-gray-500 mt-4">// The trigger is why you're reaching out NOW</p>
+    </div>
+
+    <div class="bg-gradient-to-r from-coral/10 to-transparent border-l-4 border-coral pl-6 py-4 rounded-r-lg">
+      <p class="text-white font-medium leading-relaxed">
+        "List size reality check: 50 highly targeted prospects beats 500 random ones. If you can't write a specific reason why each person on your list might need your product right now, your list is too broad."
+      </p>
+    </div>
+  </section>
+
+  <!-- Section 3: The Anatomy of a Cold Email -->
+  <section id="anatomy-of-cold-email" class="playbook-section mb-16 scroll-mt-24">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">03</span>
+      <h2 class="text-2xl md:text-3xl font-bold">The Anatomy of a Cold Email That Gets Replies</h2>
+    </div>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      Every high-performing cold email follows the same structure. Master these five components and you'll consistently outperform 90% of cold outreach.
+    </p>
+
+    <div class="space-y-6 mb-8">
+      <div class="flex items-start gap-4 p-4 rounded-xl bg-white/[0.03] border border-white/5">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-coral/10 text-coral font-mono font-bold text-xs shrink-0">1</span>
+        <div>
+          <p class="font-semibold text-white mb-1">Subject line (under 50 characters, no clickbait)</p>
+          <p class="text-gray-400 text-sm leading-relaxed">Short, specific, and relevant. Avoid ALL CAPS, excessive punctuation!!!, or "Re:" tricks. Good subject lines look like internal emails.</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-4 p-4 rounded-xl bg-white/[0.03] border border-white/5">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-coral/10 text-coral font-mono font-bold text-xs shrink-0">2</span>
+        <div>
+          <p class="font-semibold text-white mb-1">Opening line (specific to them, not generic)</p>
+          <p class="text-gray-400 text-sm leading-relaxed">The first sentence proves this isn't a mass email. Mention something specific: their recent post, a company announcement, a mutual connection.</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-4 p-4 rounded-xl bg-white/[0.03] border border-white/5">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-coral/10 text-coral font-mono font-bold text-xs shrink-0">3</span>
+        <div>
+          <p class="font-semibold text-white mb-1">One-sentence value proposition</p>
+          <p class="text-gray-400 text-sm leading-relaxed">What you do, for whom, and the outcome. Not features — outcomes. "We help engineering teams reduce deploy failures by 60%."</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-4 p-4 rounded-xl bg-white/[0.03] border border-white/5">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-coral/10 text-coral font-mono font-bold text-xs shrink-0">4</span>
+        <div>
+          <p class="font-semibold text-white mb-1">Social proof (one line)</p>
+          <p class="text-gray-400 text-sm leading-relaxed">A customer, a metric, or a recognizable name. "Used by 200+ teams including Vercel and Linear." Or: "Just helped [Similar Company] cut their CI time in half."</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-4 p-4 rounded-xl bg-white/[0.03] border border-white/5">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-coral/10 text-coral font-mono font-bold text-xs shrink-0">5</span>
+        <div>
+          <p class="font-semibold text-white mb-1">Specific CTA (not "let me know if you're interested")</p>
+          <p class="text-gray-400 text-sm leading-relaxed">Ask for a specific low-friction action. "Worth a brief conversation?" or "Mind if I send over a 2-min demo?" Make saying yes easy.</p>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="text-xl font-semibold text-white mb-4">The Anatomy Template</h3>
+
+    <div class="p-5 bg-[#0d0d20] border border-white/10 rounded-xl font-mono text-sm mb-6">
+      <p class="text-gray-500 mb-3">// Subject: under 50 characters</p>
+      <p class="text-coral mb-5">Quick question about {{specific_company_thing}}</p>
+      
+      <p class="text-gray-500 mb-3">// Opening line: specific, researched</p>
+      <p class="text-gray-300 mb-2">Hey {{first_name}},</p>
+      <p class="text-gray-300 mb-4">Saw your post about {{specific_topic}} — {{genuine_reaction_or_observation}}.</p>
+      
+      <p class="text-gray-500 mb-3">// Value proposition: one sentence</p>
+      <p class="text-gray-300 mb-4">{{company_name}} helps {{target_audience}} {{achieve_specific_outcome}} without {{common_pain_point}}.</p>
+      
+      <p class="text-gray-500 mb-3">// Social proof: one line</p>
+      <p class="text-gray-300 mb-4">{{Social_proof_statement}}.</p>
+      
+      <p class="text-gray-500 mb-3">// CTA: specific, low friction</p>
+      <p class="text-gray-300 mb-2">Worth a brief conversation?</p>
+      <p class="text-gray-300">{{your_name}}</p>
+      
+      <p class="text-gray-500 mt-4">// Total: under 150 words</p>
+    </div>
+
+    <div class="flex items-start gap-3 p-4 rounded-xl bg-green-500/5 border border-green-500/15">
+      <svg class="w-4 h-4 text-green-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+      <p class="text-gray-400 text-sm">The golden rule: every word must earn its place. Read your email out loud. If anything sounds like marketing fluff, delete it. If you wouldn't send it to a friend, don't send it to a prospect.</p>
+    </div>
+  </section>
+
+  <!-- Section 4: 10 Email Templates -->
+  <section id="email-templates" class="playbook-section mb-16 scroll-mt-24">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">04</span>
+      <h2 class="text-2xl md:text-3xl font-bold">10 Fill-in-the-Blank Cold Email Templates</h2>
+    </div>
+
+    <p class="text-gray-300 leading-relaxed mb-8">
+      These templates cover the most common cold email scenarios for dev tools. Fill in the <code class="text-coral bg-coral/10 px-1.5 py-0.5 rounded font-mono text-sm">{{brackets}}</code> with your specifics. Don't send them as-is — always add your own research and voice.
+    </p>
+
+    <!-- Template 1 -->
+    <div class="mb-10">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="flex items-center justify-center w-9 h-9 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">01</span>
+        <h3 class="text-lg font-semibold text-white">Reaching Out to a Potential Customer Who Fits Your ICP</h3>
+      </div>
+      <div class="p-5 bg-[#0d0d20] border border-white/10 rounded-xl font-mono text-sm">
+        <p class="text-gray-500 mb-3">// Subject: {{company_name}} + {{your_product_category}}</p>
+        <p class="text-gray-300 mb-2">Hey {{first_name}},</p>
+        <p class="text-gray-300 mb-2">Been following {{company_name}} since {{milestone}} — impressive growth.</p>
+        <p class="text-gray-300 mb-2">Quick question: how's your team handling {{pain_point}} right now?</p>
+        <p class="text-gray-300 mb-2">We built {{product_name}} specifically for {{target_audience}} who want {{key_outcome}}. {{One_sentence_social_proof}}.</p>
+        <p class="text-gray-300 mb-2">Is this on your radar for Q{{quarter}}?</p>
+        <p class="text-gray-300">{{your_name}}</p>
+      </div>
+    </div>
+
+    <!-- Template 2 -->
+    <div class="mb-10">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="flex items-center justify-center w-9 h-9 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">02</span>
+        <h3 class="text-lg font-semibold text-white">Following Up on a Product Hunt Launch</h3>
+      </div>
+      <div class="p-5 bg-[#0d0d20] border border-white/10 rounded-xl font-mono text-sm">
+        <p class="text-gray-500 mb-3">// Subject: Saw {{company_name}} on Product Hunt</p>
+        <p class="text-gray-300 mb-2">Hey {{first_name}},</p>
+        <p class="text-gray-300 mb-2">Congrats on the Product Hunt launch — #{{position}} is solid. Loved the demo video.</p>
+        <p class="text-gray-300 mb-2">Noticed you're using {{tech_stack}}. We just helped {{similar_company}} optimize their {{relevant_workflow}} and cut {{metric}} by {{percentage}}.</p>
+        <p class="text-gray-300 mb-2">Worth exploring how this might apply to {{company_name}}?</p>
+        <p class="text-gray-300">{{your_name}}</p>
+      </div>
+    </div>
+
+    <!-- Template 3 -->
+    <div class="mb-10">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="flex items-center justify-center w-9 h-9 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">03</span>
+        <h3 class="text-lg font-semibold text-white">Reaching Out to Someone Who Visited Your Pricing Page</h3>
+      </div>
+      <div class="p-5 bg-[#0d0d20] border border-white/10 rounded-xl font-mono text-sm">
+        <p class="text-gray-500 mb-3">// Subject: Quick question about {{company_name}}</p>
+        <p class="text-gray-300 mb-2">Hey {{first_name}},</p>
+        <p class="text-gray-300 mb-2">Saw someone from {{company_name}} checking out our pricing page — figured I'd reach out directly.</p>
+        <p class="text-gray-300 mb-2">Most teams your size are dealing with {{common_pain_point}}. Is that true for you?</p>
+        <p class="text-gray-300 mb-2">If {{specific_use_case}} is on your roadmap, I'd love to show you how {{customer_similar_to_them}} solved it.</p>
+        <p class="text-gray-300 mb-2">Open to a brief call this week?</p>
+        <p class="text-gray-300">{{your_name}}</p>
+      </div>
+    </div>
+
+    <!-- Template 4 -->
+    <div class="mb-10">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="flex items-center justify-center w-9 h-9 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">04</span>
+        <h3 class="text-lg font-semibold text-white">Outreach to a Developer at a Company Using a Competing Tool</h3>
+      </div>
+      <div class="p-5 bg-[#0d0d20] border border-white/10 rounded-xl font-mono text-sm">
+        <p class="text-gray-500 mb-3">// Subject: {{competitor_name}} alternative?</p>
+        <p class="text-gray-300 mb-2">Hey {{first_name}},</p>
+        <p class="text-gray-300 mb-2">Noticed {{company_name}} is using {{competitor_tool}} for {{use_case}}.</p>
+        <p class="text-gray-300 mb-2">Curious: are you hitting any friction with {{specific_limitation}}? That's the #1 reason teams switch to us.</p>
+        <p class="text-gray-300 mb-2">{{product_name}} handles {{differentiating_feature}} natively — no workarounds needed. {{Social_proof_from_switcher}}.</p>
+        <p class="text-gray-300 mb-2">Worth a look?</p>
+        <p class="text-gray-300">{{your_name}}</p>
+      </div>
+    </div>
+
+    <!-- Template 5 -->
+    <div class="mb-10">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="flex items-center justify-center w-9 h-9 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">05</span>
+        <h3 class="text-lg font-semibold text-white">Partnership Outreach to a Complementary Tool</h3>
+      </div>
+      <div class="p-5 bg-[#0d0d20] border border-white/10 rounded-xl font-mono text-sm">
+        <p class="text-gray-500 mb-3">// Subject: Partnership idea: {{your_company}} × {{their_company}}</p>
+        <p class="text-gray-300 mb-2">Hey {{first_name}},</p>
+        <p class="text-gray-300 mb-2">Big fan of what you're building at {{their_company}}. We've got significant overlap in our user bases — our {{your_product}} complements {{their_product}} nicely.</p>
+        <p class="text-gray-300 mb-2">Quick thought: an integration or co-marketing push could be valuable for both our audiences. We've done similar with {{partner_example}} and saw {{result}}.</p>
+        <p class="text-gray-300 mb-2">Open to a 15-min chat to explore?</p>
+        <p class="text-gray-300">{{your_name}}</p>
+      </div>
+    </div>
+
+    <!-- Template 6 -->
+    <div class="mb-10">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="flex items-center justify-center w-9 h-9 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">06</span>
+        <h3 class="text-lg font-semibold text-white">Re-engaging Someone Who Signed Up But Never Converted</h3>
+      </div>
+      <div class="p-5 bg-[#0d0d20] border border-white/10 rounded-xl font-mono text-sm">
+        <p class="text-gray-500 mb-3">// Subject: What happened with {{product_name}}?</p>
+        <p class="text-gray-300 mb-2">Hey {{first_name}},</p>
+        <p class="text-gray-300 mb-2">You signed up for {{product_name}} a few weeks ago but didn't {{key_activation_action}}.</p>
+        <p class="text-gray-300 mb-2">Totally get it — onboarding can be a pain. Was it {{guessed_objection_1}}, or something else?</p>
+        <p class="text-gray-300 mb-2">Happy to jump on a quick screen share and get you set up properly. Takes 5 minutes, and most teams see {{specific_benefit}} within a day.</p>
+        <p class="text-gray-300 mb-2">What do you say?</p>
+        <p class="text-gray-300">{{your_name}}</p>
+      </div>
+    </div>
+
+    <!-- Template 7 -->
+    <div class="mb-10">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="flex items-center justify-center w-9 h-9 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">07</span>
+        <h3 class="text-lg font-semibold text-white">Outreach Based on a Job Posting</h3>
+      </div>
+      <div class="p-5 bg-[#0d0d20] border border-white/10 rounded-xl font-mono text-sm">
+        <p class="text-gray-500 mb-3">// Subject: Hiring for {{role}} — thought I'd reach out</p>
+        <p class="text-gray-300 mb-2">Hey {{first_name}},</p>
+        <p class="text-gray-300 mb-2">Saw {{company_name}} is hiring for {{role_title}}. Usually when teams are scaling {{department}}, they're also evaluating {{tool_category}}.</p>
+        <p class="text-gray-300 mb-2">{{product_name}} helps {{target_audience}} {{key_outcome}}. {{One_sentence_social_proof}}.</p>
+        <p class="text-gray-300 mb-2">Is {{tool_category}} something you're actively looking at, or should I check back after the hiring push?</p>
+        <p class="text-gray-300">{{your_name}}</p>
+      </div>
+    </div>
+
+    <!-- Template 8 -->
+    <div class="mb-10">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="flex items-center justify-center w-9 h-9 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">08</span>
+        <h3 class="text-lg font-semibold text-white">Following Up After No Response (Day 3)</h3>
+      </div>
+      <div class="p-5 bg-[#0d0d20] border border-white/10 rounded-xl font-mono text-sm">
+        <p class="text-gray-500 mb-3">// Subject: Re: {{original_subject_line}}</p>
+        <p class="text-gray-300 mb-2">Hey {{first_name}},</p>
+        <p class="text-gray-300 mb-2">Quick follow-up on my note about {{topic}}.</p>
+        <p class="text-gray-300 mb-2">I know inbox zero is a myth these days. Figured I'd try once more in case this got buried.</p>
+        <p class="text-gray-300 mb-2">If {{problem}} isn't a priority right now, totally understand. Just reply "not now" and I'll circle back in a few months.</p>
+        <p class="text-gray-300 mb-2">If it is — here's my calendar: {{calendar_link}}</p>
+        <p class="text-gray-300">{{your_name}}</p>
+      </div>
+    </div>
+
+    <!-- Template 9 -->
+    <div class="mb-10">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="flex items-center justify-center w-9 h-9 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">09</span>
+        <h3 class="text-lg font-semibold text-white">Final Follow-Up (Day 7, Closing the Loop)</h3>
+      </div>
+      <div class="p-5 bg-[#0d0d20] border border-white/10 rounded-xl font-mono text-sm">
+        <p class="text-gray-500 mb-3">// Subject: Permission to close your file?</p>
+        <p class="text-gray-300 mb-2">Hey {{first_name}},</p>
+        <p class="text-gray-300 mb-2">Tried reaching out a couple times about {{topic}} but haven't heard back.</p>
+        <p class="text-gray-300 mb-2">Going to assume this isn't a fit right now and close your file. No hard feelings — timing is everything.</p>
+        <p class="text-gray-300 mb-2">If {{problem}} becomes a priority down the road, feel free to ping me. Always happy to chat.</p>
+        <p class="text-gray-300 mb-2">Best of luck with {{company_initiative}}.</p>
+        <p class="text-gray-300">{{your_name}}</p>
+      </div>
+    </div>
+
+    <!-- Template 10 -->
+    <div class="mb-8">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="flex items-center justify-center w-9 h-9 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">10</span>
+        <h3 class="text-lg font-semibold text-white">Referral Request from an Existing Happy Customer</h3>
+      </div>
+      <div class="p-5 bg-[#0d0d20] border border-white/10 rounded-xl font-mono text-sm">
+        <p class="text-gray-500 mb-3">// Subject: Quick favor?</p>
+        <p class="text-gray-300 mb-2">Hey {{first_name}},</p>
+        <p class="text-gray-300 mb-2">You've been using {{product_name}} for {{time_period}} and the results have been great ({{specific_metric}}!).</p>
+        <p class="text-gray-300 mb-2">Quick ask: do you know anyone else at {{type_of_company}} who might be dealing with {{problem}}?</p>
+        <p class="text-gray-300 mb-2">I'd love to help them too. Happy to offer {{referral_incentive}} as a thank-you if they become a customer.</p>
+        <p class="text-gray-300 mb-2">No pressure if no one comes to mind — just thought I'd ask.</p>
+        <p class="text-gray-300">{{your_name}}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Personalization at Scale -->
+  <section id="personalization-at-scale" class="playbook-section mb-16 scroll-mt-24">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">05</span>
+      <h2 class="text-2xl md:text-3xl font-bold">Personalization at Scale</h2>
+    </div>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      The key to cold email at scale isn't sending more emails — it's sending better ones without spending 30 minutes on each. Here's how to balance personalization with volume.
+    </p>
+
+    <h3 class="text-xl font-semibold text-white mb-4">Merge-Field vs. Real Personalization</h3>
+
+    <div class="grid md:grid-cols-2 gap-4 mb-8">
+      <div class="p-5 bg-red-500/5 border border-red-500/15 rounded-xl">
+        <p class="text-sm font-semibold text-red-400 mb-3">✗ Merge-field "personalization"</p>
+        <p class="text-gray-400 text-sm leading-relaxed">"Hi {{first_name}}, I saw you're the {{title}} at {{company_name}}..."</p>
+        <p class="text-gray-500 text-xs mt-2">Everyone does this. Recipients can spot it instantly. Adds no value.</p>
+      </div>
+      <div class="p-5 bg-green-500/5 border border-green-500/15 rounded-xl">
+        <p class="text-sm font-semibold text-green-400 mb-3">✓ Real personalization</p>
+        <p class="text-gray-400 text-sm leading-relaxed">"Saw your thread on reducing CI costs — the $12K/month figure made me wince. We just helped Linear cut theirs by 40%."</p>
+        <p class="text-gray-500 text-xs mt-2">Specific, researched, relevant. Shows you actually know who they are.</p>
+      </div>
+    </div>
+
+    <h3 class="text-xl font-semibold text-white mb-4">The {{icebreaker}} Technique</h3>
+
+    <p class="text-gray-300 leading-relaxed mb-4">
+      The icebreaker is one specific sentence that proves you researched the recipient. It's not about them ("you're VP of Engineering") — it's about something they did, wrote, or announced. This single sentence transforms a cold email into a warm one.
+    </p>
+
+    <div class="p-5 bg-[#0d0d20] border border-white/10 rounded-xl font-mono text-sm mb-6">
+      <p class="text-gray-500 mb-3">// Good icebreaker examples</p>
+      <p class="text-gray-300 mb-2">"Your post on migrating to microservices hit home — we went through the same pain at my last company."</p>
+      <p class="text-gray-300 mb-2">"Congrats on the Series B. Usually when engineering teams 3x in a year, observability becomes the bottleneck."</p>
+      <p class="text-gray-300 mb-2">"Saw {{company_name}} open-sourced {{project}} — clever approach to {{technical_problem}}."</p>
+      <p class="text-gray-300">"Noticed you're hiring 5 platform engineers. Bet the backlog for internal tooling is stacking up."</p>
+    </div>
+
+    <h3 class="text-xl font-semibold text-white mb-4">The Spreadsheet + AI Personalization Method</h3>
+
+    <p class="text-gray-300 leading-relaxed mb-4">
+      For high-value outreach (ACV $5K+), write personalized first lines in batches using a simple workflow:
+    </p>
+
+    <div class="space-y-3 mb-8">
+      <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+        <span class="text-coral mt-0.5 font-mono text-xs shrink-0">01</span>
+        <p>Build your list with company name, prospect name, and one trigger (LinkedIn URL, recent post, company news).</p>
+      </div>
+      <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+        <span class="text-coral mt-0.5 font-mono text-xs shrink-0">02</span>
+        <p>Use ChatGPT/Claude with a prompt like: "Write a one-sentence cold email opener for {{name}} at {{company}}. They recently {{trigger}}. Keep it casual and specific."</p>
+      </div>
+      <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+        <span class="text-coral mt-0.5 font-mono text-xs shrink-0">03</span>
+        <p>Review and edit every AI-generated line. AI gives you a starting point; you make it human.</p>
+      </div>
+      <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+        <span class="text-coral mt-0.5 font-mono text-xs shrink-0">04</span>
+        <p>Import the icebreaker column into your sequencing tool as a custom variable.</p>
+      </div>
+    </div>
+
+    <h3 class="text-xl font-semibold text-white mb-4">Tools for Semi-Automated Personalization</h3>
+
+    <div class="grid md:grid-cols-3 gap-4 mb-6">
+      <div class="p-4 bg-navy-light border border-white/10 rounded-xl">
+        <p class="text-sm font-semibold text-coral mb-1">Clay</p>
+        <p class="text-gray-400 text-xs leading-relaxed">Data enrichment + AI personalization at scale. Pull LinkedIn data, company info, and generate custom icebreakers automatically.</p>
+      </div>
+      <div class="p-4 bg-navy-light border border-white/10 rounded-xl">
+        <p class="text-sm font-semibold text-coral mb-1">Smartlead</p>
+        <p class="text-gray-400 text-xs leading-relaxed">Cold email platform with built-in personalization variables, A/B testing, and deliverability optimization.</p>
+      </div>
+      <div class="p-4 bg-navy-light border border-white/10 rounded-xl">
+        <p class="text-sm font-semibold text-coral mb-1">Instantly</p>
+        <p class="text-gray-400 text-xs leading-relaxed">Unlimited email accounts, automated warm-up, and campaign management. Good for scaling volume.</p>
+      </div>
+    </div>
+
+    <div class="bg-gradient-to-r from-coral/10 to-transparent border-l-4 border-coral pl-6 py-4 rounded-r-lg">
+      <p class="text-white font-medium leading-relaxed">
+        "The 80/20 rule of personalization: spend 80% of your time on the first line, 20% on everything else. A great icebreaker gets read. A generic opener gets deleted, no matter how good the rest of the email is."
+      </p>
+    </div>
+  </section>
+
+  <!-- Section 6: Deliverability -->
+  <section id="deliverability" class="playbook-section mb-16 scroll-mt-24">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">06</span>
+      <h2 class="text-2xl md:text-3xl font-bold">Deliverability: Getting Into the Inbox</h2>
+    </div>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      The best cold email in the world is worthless if it hits the spam folder. Deliverability is technical, but the fundamentals are straightforward. Set these up once, then maintain them.
+    </p>
+
+    <h3 class="text-xl font-semibold text-white mb-4">Warm Up Your Domain Before Blasting</h3>
+
+    <p class="text-gray-300 leading-relaxed mb-4">
+      Never send cold email from your main domain. If it gets flagged, your entire company's email suffers. Use a subdomain like <code class="text-coral bg-coral/10 px-1.5 py-0.5 rounded font-mono text-sm">reach.yourcompany.com</code> or <code class="text-coral bg-coral/10 px-1.5 py-0.5 rounded font-mono text-sm">mail.yourcompany.com</code>.
+    </p>
+
+    <div class="p-5 bg-navy-light border border-white/10 rounded-xl mb-8">
+      <p class="text-sm font-semibold text-coral mb-3">4-Week Warm-Up Schedule</p>
+      <div class="space-y-2 text-sm">
+        <p class="text-gray-300">Week 1: 5 emails/day → 25 total</p>
+        <p class="text-gray-300">Week 2: 10 emails/day → 50 total</p>
+        <p class="text-gray-300">Week 3: 20 emails/day → 100 total</p>
+        <p class="text-gray-300">Week 4: 40 emails/day → 200 total</p>
+        <p class="text-gray-500 text-xs mt-2">After week 4: you can scale to your target volume (typically 50-100/day per mailbox)</p>
+      </div>
+    </div>
+
+    <h3 class="text-xl font-semibold text-white mb-4">SPF, DKIM, DMARC Setup</h3>
+
+    <p class="text-gray-300 leading-relaxed mb-4">
+      These DNS records prove you're authorized to send email from your domain. Without them, spam filters assume you're spoofing.
+    </p>
+
+    <div class="p-5 bg-[#0d0d20] border border-white/10 rounded-xl font-mono text-sm mb-8">
+      <p class="text-gray-500 mb-3">// DNS Records to add (example for Google Workspace)</p>
+      <p class="text-gray-300 mb-1"><span class="text-coral">Type:</span> TXT</p>
+      <p class="text-gray-300 mb-1"><span class="text-coral">Host:</span> @</p>
+      <p class="text-gray-300 mb-1"><span class="text-coral">Value:</span> "v=spf1 include:_spf.google.com ~all"</p>
+      <p class="text-gray-500 mt-4 mb-1">// DKIM (get from your email provider's admin panel)</p>
+      <p class="text-gray-300 mb-1"><span class="text-coral">Type:</span> TXT</p>
+      <p class="text-gray-300 mb-1"><span class="text-coral">Host:</span> google._domainkey</p>
+      <p class="text-gray-300 mb-1"><span class="text-coral">Value:</span> [long key from Google Admin]</p>
+      <p class="text-gray-500 mt-4 mb-1">// DMARC (start with reporting only)</p>
+      <p class="text-gray-300 mb-1"><span class="text-coral">Type:</span> TXT</p>
+      <p class="text-gray-300 mb-1"><span class="text-coral">Host:</span> _dmarc</p>
+      <p class="text-gray-300"><span class="text-coral">Value:</span> "v=DMARC1; p=none; rua=mailto:dmarc@yourcompany.com"</p>
+    </div>
+
+    <h3 class="text-xl font-semibold text-white mb-4">Sending Limits: Start Low, Ramp Up</h3>
+
+    <div class="space-y-4 mb-8">
+      <div class="flex items-start gap-4 p-4 rounded-xl bg-white/[0.03] border border-white/5">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-coral/10 text-coral font-mono font-bold text-xs shrink-0">20</span>
+        <div>
+          <p class="font-semibold text-white mb-1">Daily limit (week 1)</p>
+          <p class="text-gray-400 text-sm leading-relaxed">Start here even if your provider allows more. Mailbox providers watch new senders closely.</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-4 p-4 rounded-xl bg-white/[0.03] border border-white/5">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-coral/10 text-coral font-mono font-bold text-xs shrink-0">50</span>
+        <div>
+          <p class="font-semibold text-white mb-1">Daily limit (steady state)</p>
+          <p class="text-gray-400 text-sm leading-relaxed">Safe limit for a single Gmail/Workspace account with good reputation. Use multiple mailboxes to scale.</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-4 p-4 rounded-xl bg-white/[0.03] border border-white/5">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-coral/10 text-coral font-mono font-bold text-xs shrink-0">24h</span>
+        <div>
+          <p class="font-semibold text-white mb-1">Space out your sends</p>
+          <p class="text-gray-400 text-sm leading-relaxed">Don't send 50 emails at 9am. Spread them across the day. Tools like Smartlead do this automatically.</p>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="text-xl font-semibold text-white mb-4">Avoiding Spam Triggers</h3>
+
+    <div class="grid md:grid-cols-2 gap-4 mb-6">
+      <div class="p-4 bg-red-500/5 border border-red-500/15 rounded-xl">
+        <p class="text-sm font-semibold text-red-400 mb-2">Words to avoid</p>
+        <p class="text-gray-400 text-xs">Free, guaranteed, no obligation, act now, limited time, winner, credit card, urgent, congratulations, risk-free</p>
+      </div>
+      <div class="p-4 bg-yellow-500/5 border border-yellow-500/15 rounded-xl">
+        <p class="text-sm font-semibold text-yellow-400 mb-2">Format triggers</p>
+        <p class="text-gray-400 text-xs">ALL CAPS, excessive punctuation!!!, too many links (keep to 1), heavy images, attachment in first email</p>
+      </div>
+    </div>
+
+    <div class="p-4 bg-green-500/5 border border-green-500/15 rounded-xl mb-6">
+      <p class="text-sm font-semibold text-green-400 mb-2">✓ Plain text wins</p>
+      <p class="text-gray-400 text-sm">HTML emails with fancy templates scream "marketing." Plain text emails look personal. Use minimal formatting — bold for emphasis, maybe one link. That's it.</p>
+    </div>
+  </section>
+
+  <!-- Section 7: Measuring Performance -->
+  <section id="measuring-performance" class="playbook-section mb-16 scroll-mt-24">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">07</span>
+      <h2 class="text-2xl md:text-3xl font-bold">Measuring Cold Email Performance</h2>
+    </div>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      You can't improve what you don't measure. Track these three metrics to diagnose problems and optimize your campaigns.
+    </p>
+
+    <h3 class="text-xl font-semibold text-white mb-4">The Three Metrics That Matter</h3>
+
+    <div class="space-y-4 mb-8">
+      <div class="p-5 bg-navy-light border border-white/10 rounded-xl">
+        <div class="flex items-center justify-between mb-2">
+          <p class="text-sm font-semibold text-white">Open Rate</p>
+          <span class="text-xs px-2 py-0.5 rounded bg-green-500/10 text-green-400 border border-green-500/20">40%+ is good</span>
+        </div>
+        <p class="text-gray-400 text-sm leading-relaxed">Percentage of delivered emails that get opened. Measures subject line quality and sender reputation.</p>
+      </div>
+      <div class="p-5 bg-navy-light border border-white/10 rounded-xl">
+        <div class="flex items-center justify-between mb-2">
+          <p class="text-sm font-semibold text-white">Reply Rate</p>
+          <span class="text-xs px-2 py-0.5 rounded bg-green-500/10 text-green-400 border border-green-500/20">5%+ is good</span>
+        </div>
+        <p class="text-gray-400 text-sm leading-relaxed">Percentage of delivered emails that get replies (positive or negative). Measures email body quality and targeting.</p>
+      </div>
+      <div class="p-5 bg-navy-light border border-white/10 rounded-xl">
+        <div class="flex items-center justify-between mb-2">
+          <p class="text-sm font-semibold text-white">Meeting Booked Rate</p>
+          <span class="text-xs px-2 py-0.5 rounded bg-green-500/10 text-green-400 border border-green-500/20">1-2% is good</span>
+        </div>
+        <p class="text-gray-400 text-sm leading-relaxed">Percentage of delivered emails that result in a booked meeting. Measures overall campaign effectiveness.</p>
+      </div>
+    </div>
+
+    <h3 class="text-xl font-semibold text-white mb-4">Diagnosing Problems</h3>
+
+    <div class="space-y-4 mb-8">
+      <div class="p-5 bg-navy-light border border-white/10 rounded-xl">
+        <p class="text-sm font-semibold text-coral mb-2">Open rates are low (&lt;30%)</p>
+        <p class="text-gray-400 text-sm leading-relaxed mb-2">This is a subject line problem or a deliverability problem.</p>
+        <ul class="text-gray-400 text-sm space-y-1 list-disc list-inside">
+          <li>Check if emails are landing in spam (use a tool like Mail-Tester)</li>
+          <li>Test shorter, more specific subject lines</li>
+          <li>Avoid sales-y language in subjects</li>
+          <li>Warm up your domain more gradually</li>
+        </ul>
+      </div>
+      <div class="p-5 bg-navy-light border border-white/10 rounded-xl">
+        <p class="text-sm font-semibold text-coral mb-2">Reply rates are low (&lt;3%)</p>
+        <p class="text-gray-400 text-sm leading-relaxed mb-2">This is an offer problem or a targeting problem.</p>
+        <ul class="text-gray-400 text-sm space-y-1 list-disc list-inside">
+          <li>Your targeting might be off — are these people actually experiencing the pain?</li>
+          <li>Your value prop might be unclear — rewrite for outcomes, not features</li>
+          <li>Your ask might be too high — soften the CTA</li>
+          <li>Your personalization might be weak — add stronger icebreakers</li>
+        </ul>
+      </div>
+      <div class="p-5 bg-navy-light border border-white/10 rounded-xl">
+        <p class="text-sm font-semibold text-coral mb-2">Meetings aren't booking (&lt;1%)</p>
+        <p class="text-gray-400 text-sm leading-relaxed mb-2">This is a sales problem, not an email problem.</p>
+        <ul class="text-gray-400 text-sm space-y-1 list-disc list-inside">
+          <li>You're getting replies but they're saying no — objection handling needed</li>
+          <li>You're getting replies but they ghost — follow-up sequence needed</li>
+          <li>Your calendar link might be broken — test it</li>
+          <li>Your meeting pitch might be too demanding — ask for 15 mins, not 30</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="text-xl font-semibold text-white mb-4">Tools for Tracking</h3>
+
+    <div class="grid md:grid-cols-3 gap-4 mb-6">
+      <div class="p-4 bg-navy-light border border-white/10 rounded-xl">
+        <p class="text-sm font-semibold text-coral mb-1">Smartlead</p>
+        <p class="text-gray-400 text-xs leading-relaxed">Built-in analytics for opens, replies, bounces. A/B testing built in.</p>
+      </div>
+      <div class="p-4 bg-navy-light border border-white/10 rounded-xl">
+        <p class="text-sm font-semibold text-coral mb-1">Instantly</p>
+        <p class="text-gray-400 text-xs leading-relaxed">Campaign analytics across multiple mailboxes. Good for scaling.</p>
+      </div>
+      <div class="p-4 bg-navy-light border border-white/10 rounded-xl">
+        <p class="text-sm font-semibold text-coral mb-1">Google Sheets</p>
+        <p class="text-gray-400 text-xs leading-relaxed">For manual tracking: Date, Company, Contact, Status, Reply. Simple but effective at low volume.</p>
+      </div>
+    </div>
+
+    <div class="bg-gradient-to-r from-coral/10 to-transparent border-l-4 border-coral pl-6 py-4 rounded-r-lg">
+      <p class="text-white font-medium leading-relaxed">
+        "Don't optimize for opens at the expense of replies. A 60% open rate with 1% replies is worse than a 35% open rate with 8% replies. The goal is conversations, not vanity metrics."
+      </p>
+    </div>
+  </section>
+
+  <!-- Section 8: Checklist -->
+  <section id="cold-email-checklist" class="playbook-section mb-16 scroll-mt-24">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">08</span>
+      <h2 class="text-2xl md:text-3xl font-bold">Cold Email Checklist</h2>
+    </div>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      Run through this before every campaign. Skip these checks at your own risk.
+    </p>
+
+    <div class="space-y-6">
+      <!-- List Building -->
+      <div class="p-6 bg-navy-light border border-white/10 rounded-2xl">
+        <h3 class="text-sm font-semibold text-coral uppercase tracking-wider mb-4">List Building</h3>
+        <div class="space-y-3">
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Every prospect has a specific trigger for why I'm reaching out now</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">I've verified every email address (not guessed)</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">My list is under 100 prospects for the first test</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">I've removed competitors, existing customers, and unsubscribes</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Email Content -->
+      <div class="p-6 bg-navy-light border border-white/10 rounded-2xl">
+        <h3 class="text-sm font-semibold text-coral uppercase tracking-wider mb-4">Email Content</h3>
+        <div class="space-y-3">
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Subject line is under 50 characters and contains no spam words</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Opening line is specific to this person (not just their name and title)</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Value proposition is one sentence, focused on outcomes</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Social proof is specific and credible</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">CTA is specific, low-friction, and doesn't ask for too much</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Total word count is under 150 words</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">I've read the email out loud and it sounds human</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Technical Setup -->
+      <div class="p-6 bg-navy-light border border-white/10 rounded-2xl">
+        <h3 class="text-sm font-semibold text-coral uppercase tracking-wider mb-4">Technical Setup</h3>
+        <div class="space-y-3">
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Sending from a subdomain, not main domain</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">SPF, DKIM, and DMARC records are set up and verified</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Domain has been warmed up (or warm-up is active)</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Sending limit is set appropriately for domain age</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Unsubscribe link is included (or CAN-SPAM compliant footer)</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Follow-Up -->
+      <div class="p-6 bg-navy-light border border-white/10 rounded-2xl">
+        <h3 class="text-sm font-semibold text-coral uppercase tracking-wider mb-4">Follow-Up Sequence</h3>
+        <div class="space-y-3">
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Day 3 follow-up is written and scheduled</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Day 7 final follow-up is written and scheduled</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Replies will stop the sequence automatically</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">I have a system to respond to replies within 24 hours</span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-8 bg-gradient-to-r from-coral/10 to-transparent border-l-4 border-coral pl-6 py-4 rounded-r-lg">
+      <p class="text-white font-medium leading-relaxed">
+        "The best cold email campaigns are built one careful send at a time. Check these boxes, send your first 10 emails, read the replies, adjust, and repeat. Consistency beats intensity."
+      </p>
+    </div>
+  </section>
+
+</PlaybookLayout>
