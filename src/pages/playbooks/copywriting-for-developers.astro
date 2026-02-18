@@ -1,0 +1,870 @@
+---
+import PlaybookLayout from '../../layouts/PlaybookLayout.astro';
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Writing Copy When You Hate Writing Copy",
+  "description": "Frameworks, templates, and a systematic approach to writing sales copy for developers. No creativity required — just fill in the blanks.",
+  "step": [
+    { "@type": "HowToStep", "name": "Understand why copywriting is a system, not a skill", "position": 1 },
+    { "@type": "HowToStep", "name": "Learn the copy hierarchy and what to write first", "position": 2 },
+    { "@type": "HowToStep", "name": "Apply four fill-in-the-blank copywriting frameworks", "position": 3 },
+    { "@type": "HowToStep", "name": "Use the headline formula vault", "position": 4 },
+    { "@type": "HowToStep", "name": "Edit copy with the Hemingway Pass", "position": 5 },
+    { "@type": "HowToStep", "name": "Use AI to write and refine copy efficiently", "position": 6 },
+    { "@type": "HowToStep", "name": "Review copy against the final checklist", "position": 7 }
+  ]
+});
+
+const sections = [
+  { id: "why-developers-hate-copy", title: "Why Developers Hate Writing Copy" },
+  { id: "copy-hierarchy", title: "The Copy Hierarchy: What to Write First" },
+  { id: "four-frameworks", title: "Four Frameworks That Do the Thinking for You" },
+  { id: "headline-vault", title: "The Headline Formula Vault" },
+  { id: "hemingway-pass", title: "Editing Your Copy: The Hemingway Pass" },
+  { id: "ai-copy", title: "Using AI to Write Copy Without It Sounding Like AI" },
+  { id: "copy-checklist", title: "Copy Checklist" },
+];
+---
+
+<PlaybookLayout
+  title="Writing Copy When You Hate Writing Copy"
+  metaTitle="Copywriting for Developers Who Hate Writing | CodeToCash"
+  metaDescription="Frameworks, templates, and a systematic approach to writing sales copy for developers. No creativity required — just fill in the blanks."
+  subtitle="A systematic approach to sales copy: frameworks, templates, and fill-in-the-blank formulas that work even if you hate writing."
+  difficulty="Beginner"
+  readingTime="10 min read"
+  lastUpdated="February 2026"
+  sections={sections}
+  prev={{ slug: "google-ads-100-budget", title: "Your First Google Ad Campaign on a $100 Budget" }}
+  next={{ slug: "pricing-dev-product", title: "Pricing Your Dev Product for Maximum Revenue" }}
+  schema={schema}
+>
+
+  <!-- Section 1 -->
+  <section id="why-developers-hate-copy" class="playbook-section mb-16 scroll-mt-24">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">01</span>
+      <h2 class="text-2xl md:text-3xl font-bold">Why Developers Hate Writing Copy (And Why That's Fixable)</h2>
+    </div>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      You built something real. It solves a real problem. Now you need to write a landing page, and you open a blank document and sit there for 45 minutes staring at the cursor. Sound familiar?
+    </p>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      Developers aren't bad at writing. Most developers are excellent technical writers — READMEs, API docs, internal specs. The block isn't writing ability. It's a specific mismatch between how your brain is trained to communicate and what marketing copy actually requires.
+    </p>
+
+    <h3 class="text-xl font-semibold text-white mb-4 mt-10">The Developer Brain: Precision Over Persuasion</h3>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      When you write documentation, the goal is accuracy. You want to be complete, correct, and precise. Every edge case documented. Every parameter explained. Ambiguity is a bug.
+    </p>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      Sales copy feels like the opposite. It's vague, emotional, and incomplete on purpose. "Ship 10x faster" — that's not true in every case. "Your users will love it" — how do you know? The precision instinct kicks in and you start hedging: "In many common scenarios, you may experience performance improvements of varying magnitude..." Now you've written nothing anyone will read.
+    </p>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      There's also the "salesy" feeling. Developers are trained to distrust marketing. We skip ads, install uBlock, mute promotional emails. Writing copy feels like becoming the enemy — the slick marketer pushing something that doesn't deliver. It feels dishonest.
+    </p>
+
+    <h3 class="text-xl font-semibold text-white mb-4 mt-10">The Good News: Copy Is a System, Not a Talent</h3>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      Here's the reframe that makes everything easier: <strong class="text-white">DRM copywriting is systematic, not creative</strong>. The best direct response copy isn't poetic. It isn't clever. It doesn't require inspiration. It follows proven patterns that work reliably across products, audiences, and markets.
+    </p>
+
+    <div class="bg-navy-light border border-white/10 rounded-xl p-6 mb-6">
+      <p class="text-sm font-semibold text-coral mb-3">Developer Analogy</p>
+      <p class="text-gray-300 leading-relaxed">
+        Think of copywriting frameworks the way you think of design patterns. You don't reinvent a singleton or an observer from scratch every time. You recognize the pattern, apply it to your context, and move on. Copy frameworks are the same. You don't write a headline — you fill in the <code class="text-coral bg-coral/10 px-1.5 py-0.5 rounded font-mono text-sm">Headline</code> pattern with your product's specifics.
+      </p>
+    </div>
+
+    <h3 class="text-xl font-semibold text-white mb-4 mt-10">Reframe: Copy Is Documentation for Humans Who Need to Be Convinced</h3>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      Technical documentation informs. Sales copy convinces. That's the only difference. Your README tells a developer how to use your API. Your landing page tells a potential customer <em>why</em> they should bother learning how.
+    </p>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      You're not being dishonest. You're writing the README for the decision to buy. You're helping someone understand what changes for them, why that matters, and what to do next. That's not manipulation — it's useful communication.
+    </p>
+
+    <div class="bg-gradient-to-r from-coral/10 to-transparent border-l-4 border-coral pl-6 py-4 rounded-r-lg">
+      <p class="text-white font-medium leading-relaxed">
+        "The best copy doesn't sound like marketing — it sounds like a smart friend explaining why you should try something. Be that friend."
+      </p>
+    </div>
+  </section>
+
+  <!-- Section 2 -->
+  <section id="copy-hierarchy" class="playbook-section mb-16 scroll-mt-24">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">02</span>
+      <h2 class="text-2xl md:text-3xl font-bold">The Copy Hierarchy: What to Write First</h2>
+    </div>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      Most developers make the mistake of writing copy top to bottom: they start with the headline, get stuck, spend an hour tweaking it, then run out of energy before they reach the parts that actually convert. Wrong order.
+    </p>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      Copy has a hierarchy. Not all elements are equal. Some matter enormously. Some are almost irrelevant. Here's the order of impact, from highest to lowest — and the order you should actually write them.
+    </p>
+
+    <div class="space-y-4 mb-10">
+      <!-- 1: Headline -->
+      <div class="flex items-start gap-4 p-5 rounded-xl bg-white/[0.03] border border-coral/20">
+        <span class="flex items-center justify-center w-9 h-9 rounded-lg bg-coral/10 text-coral font-mono font-bold text-sm shrink-0">1</span>
+        <div>
+          <div class="flex items-center gap-3 mb-2">
+            <p class="font-semibold text-white">Headline</p>
+            <span class="px-2 py-0.5 rounded-full bg-coral/15 text-coral text-xs font-mono">highest leverage</span>
+          </div>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            The most important line you'll write. According to David Ogilvy, 5x more people read your headline than anything else on the page. If the headline doesn't work, nothing else matters. Every visitor makes their "keep reading or leave" decision here.
+          </p>
+        </div>
+      </div>
+
+      <!-- 2: Subheadline -->
+      <div class="flex items-start gap-4 p-5 rounded-xl bg-white/[0.03] border border-white/5">
+        <span class="flex items-center justify-center w-9 h-9 rounded-lg bg-white/5 text-gray-400 font-mono font-bold text-sm shrink-0">2</span>
+        <div>
+          <p class="font-semibold text-white mb-2">Subheadline</p>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            The subheadline is the second thing everyone reads. It buys the curious visitor a second longer and clarifies the promise. It answers: "For who? How? What makes it different?" Where the headline is broad and bold, the subheadline is specific and grounding.
+          </p>
+        </div>
+      </div>
+
+      <!-- 3: Benefits list -->
+      <div class="flex items-start gap-4 p-5 rounded-xl bg-white/[0.03] border border-white/5">
+        <span class="flex items-center justify-center w-9 h-9 rounded-lg bg-white/5 text-gray-400 font-mono font-bold text-sm shrink-0">3</span>
+        <div>
+          <p class="font-semibold text-white mb-2">Benefits List</p>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            Three to five outcomes the customer gets. Not features — what those features do for the customer's life. Written as bullets, they're scannable and concrete. This is where you turn "real-time sync" into "always up to date across every device, automatically."
+          </p>
+        </div>
+      </div>
+
+      <!-- 4: CTA -->
+      <div class="flex items-start gap-4 p-5 rounded-xl bg-white/[0.03] border border-white/5">
+        <span class="flex items-center justify-center w-9 h-9 rounded-lg bg-white/5 text-gray-400 font-mono font-bold text-sm shrink-0">4</span>
+        <div>
+          <p class="font-semibold text-white mb-2">CTA Button</p>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            The button text is where the conversion literally happens. It needs to describe what the visitor gets when they click — not what they're doing. "Start Building Free" beats "Sign Up" every time. Short, action-oriented, outcome-focused.
+          </p>
+        </div>
+      </div>
+
+      <!-- 5: Everything else -->
+      <div class="flex items-start gap-4 p-5 rounded-xl bg-white/[0.03] border border-white/5">
+        <span class="flex items-center justify-center w-9 h-9 rounded-lg bg-white/5 text-gray-400 font-mono font-bold text-sm shrink-0">5</span>
+        <div>
+          <p class="font-semibold text-white mb-2">Everything Else</p>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            Body copy, FAQ, testimonials, feature descriptions, footer copy. This all matters — but it matters far less than the elements above. Many visitors never reach it. Write it last and with the least effort per word.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="text-xl font-semibold text-white mb-4">Why Spending 80% of Your Time on the Headline Is Correct</h3>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      This sounds extreme. It isn't. A bad headline means most visitors never read your benefits list, your testimonials, or your CTA. You could have the best body copy ever written and it's invisible — because people already left.
+    </p>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      Experienced copywriters routinely write 25-50 headline variations before picking one. Not because writing is hard — because testing your assumptions against many options surfaces the real insight. The fifth headline is always better than the first. The fifteenth is usually the best.
+    </p>
+
+    <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl font-mono text-sm mb-6">
+      <p class="text-gray-500 mb-3">// Rough time allocation for a new landing page</p>
+      <p class="text-coral mb-1">Headline (including all variants):  ~40%</p>
+      <p class="text-white/70 mb-1">Subheadline + benefits:            ~20%</p>
+      <p class="text-white/70 mb-1">CTA + friction reducers:           ~15%</p>
+      <p class="text-white/70">Body copy (everything else):       ~25%</p>
+    </div>
+
+    <div class="bg-gradient-to-r from-coral/10 to-transparent border-l-4 border-coral pl-6 py-4 rounded-r-lg">
+      <p class="text-white font-medium leading-relaxed">
+        "Write the headline last — but spend the most time on it. Draft your benefits list and CTA first to understand what you're trying to say, then craft a headline that makes all of it irresistible."
+      </p>
+    </div>
+  </section>
+
+  <!-- Section 3 -->
+  <section id="four-frameworks" class="playbook-section mb-16 scroll-mt-24">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">03</span>
+      <h2 class="text-2xl md:text-3xl font-bold">Four Frameworks That Do the Thinking for You</h2>
+    </div>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      You don't need to stare at a blank page. You need a template and a real example. Here are four battle-tested frameworks used in direct response copy across every industry. For each one: what it is, the fill-in-the-blank template, and a developer product example.
+    </p>
+
+    <!-- Framework 1: PAS -->
+    <div class="mb-10">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-coral/10 text-coral font-mono text-xs font-bold shrink-0">PAS</span>
+        <h3 class="text-xl font-semibold text-white">Problem → Agitate → Solution</h3>
+      </div>
+
+      <p class="text-gray-300 leading-relaxed mb-4">
+        PAS is the most versatile framework in direct response. It works for landing pages, email subject lines, ads, and sales sequences. Name the problem, twist the knife to make the pain feel urgent, then present your product as the relief.
+      </p>
+
+      <div class="p-5 bg-[#0d0d20] border border-white/10 rounded-xl font-mono text-sm mb-4">
+        <p class="text-gray-500 mb-3">// Template</p>
+        <p class="text-coral mb-1">Problem:  "[Name the exact pain your customer feels every day]"</p>
+        <p class="text-yellow-400 mb-1">Agitate:  "[Show what happens if the problem isn't solved — the cost, the frustration, the risk]"</p>
+        <p class="text-green-400">Solution: "[Introduce your product as the direct fix]"</p>
+      </div>
+
+      <div class="p-5 bg-navy-light border border-white/10 rounded-xl">
+        <p class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">Developer Product Example — API monitoring tool</p>
+        <p class="text-gray-300 text-sm leading-relaxed mb-2">
+          <span class="text-coral font-semibold">Problem:</span> Your API goes down at 2am and you find out from an angry customer tweet six hours later.
+        </p>
+        <p class="text-gray-300 text-sm leading-relaxed mb-2">
+          <span class="text-yellow-400 font-semibold">Agitate:</span> Every minute of downtime costs you customers, reputation, and revenue — and you're always the last to know. By the time you're debugging, the damage is done.
+        </p>
+        <p class="text-gray-300 text-sm leading-relaxed">
+          <span class="text-green-400 font-semibold">Solution:</span> PingWatch monitors your endpoints every 30 seconds and texts you the moment something breaks — so you fix it before your users notice.
+        </p>
+      </div>
+    </div>
+
+    <!-- Framework 2: AIDA -->
+    <div class="mb-10">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-coral/10 text-coral font-mono text-xs font-bold shrink-0">AIDA</span>
+        <h3 class="text-xl font-semibold text-white">Attention → Interest → Desire → Action</h3>
+      </div>
+
+      <p class="text-gray-300 leading-relaxed mb-4">
+        AIDA is the classic persuasion arc. It mirrors the buyer journey from "never heard of you" to "shut up and take my money." Use it to structure a full page, an email, or even a long-form tweet thread.
+      </p>
+
+      <div class="p-5 bg-[#0d0d20] border border-white/10 rounded-xl font-mono text-sm mb-4">
+        <p class="text-gray-500 mb-3">// Template</p>
+        <p class="text-coral mb-1">Attention: "[Bold claim, shocking stat, or strong question that stops the scroll]"</p>
+        <p class="text-yellow-400 mb-1">Interest:  "[Explain the context and why this matters to them specifically]"</p>
+        <p class="text-blue-400 mb-1">Desire:    "[Paint the picture of life with your product — the outcome, the transformation]"</p>
+        <p class="text-green-400">Action:    "[Tell them exactly what to do and why right now]"</p>
+      </div>
+
+      <div class="p-5 bg-navy-light border border-white/10 rounded-xl">
+        <p class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">Developer Product Example — SaaS boilerplate</p>
+        <p class="text-gray-300 text-sm leading-relaxed mb-2">
+          <span class="text-coral font-semibold">Attention:</span> Most developer-founders waste their first month building auth, billing, and settings pages that have nothing to do with their actual product.
+        </p>
+        <p class="text-gray-300 text-sm leading-relaxed mb-2">
+          <span class="text-yellow-400 font-semibold">Interest:</span> That's 200+ hours of boilerplate standing between you and your first customer — work that's the same for every SaaS ever built.
+        </p>
+        <p class="text-gray-300 text-sm leading-relaxed mb-2">
+          <span class="text-blue-400 font-semibold">Desire:</span> Imagine opening a codebase Monday morning with auth, billing, email, and your dashboard already done — and spending your week on the thing only you can build.
+        </p>
+        <p class="text-gray-300 text-sm leading-relaxed">
+          <span class="text-green-400 font-semibold">Action:</span> Get the LaunchKit boilerplate and ship your SaaS this weekend — one-time payment, use it forever.
+        </p>
+      </div>
+    </div>
+
+    <!-- Framework 3: Before-After-Bridge -->
+    <div class="mb-10">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-coral/10 text-coral font-mono text-xs font-bold shrink-0">BAB</span>
+        <h3 class="text-xl font-semibold text-white">Before → After → Bridge</h3>
+      </div>
+
+      <p class="text-gray-300 leading-relaxed mb-4">
+        Before-After-Bridge shows the transformation your product creates. It's especially effective for landing page hero sections and testimonials because it tells a clear story with a beginning, middle, and end.
+      </p>
+
+      <div class="p-5 bg-[#0d0d20] border border-white/10 rounded-xl font-mono text-sm mb-4">
+        <p class="text-gray-500 mb-3">// Template</p>
+        <p class="text-red-400 mb-1">Before: "[The world without your product — what life looks like with the problem]"</p>
+        <p class="text-green-400 mb-1">After:  "[The world with your product — the specific outcome, the new reality]"</p>
+        <p class="text-coral">Bridge: "[Your product is how they get from Before to After]"</p>
+      </div>
+
+      <div class="p-5 bg-navy-light border border-white/10 rounded-xl">
+        <p class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">Developer Product Example — Error tracking tool</p>
+        <p class="text-gray-300 text-sm leading-relaxed mb-2">
+          <span class="text-red-400 font-semibold">Before:</span> You're shipping updates blind. Errors happen in production, users churn quietly, and you find out weeks later from a support ticket — with no idea what broke or when.
+        </p>
+        <p class="text-gray-300 text-sm leading-relaxed mb-2">
+          <span class="text-green-400 font-semibold">After:</span> Every error is caught, logged, and surfaced in real time. You see exactly which line of code broke, what the user was doing, and how many users are affected — before a single support ticket comes in.
+        </p>
+        <p class="text-gray-300 text-sm leading-relaxed">
+          <span class="text-coral font-semibold">Bridge:</span> ErrorLens is the 5-minute install that gives you full error visibility across your entire stack.
+        </p>
+      </div>
+    </div>
+
+    <!-- Framework 4: FAB -->
+    <div class="mb-6">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-coral/10 text-coral font-mono text-xs font-bold shrink-0">FAB</span>
+        <h3 class="text-xl font-semibold text-white">Feature → Advantage → Benefit</h3>
+      </div>
+
+      <p class="text-gray-300 leading-relaxed mb-4">
+        FAB solves the developer's hardest copywriting problem: turning technical features into things customers care about. Every feature card on your landing page should be written using FAB. It forces you to answer "so what?" at every step.
+      </p>
+
+      <div class="p-5 bg-[#0d0d20] border border-white/10 rounded-xl font-mono text-sm mb-4">
+        <p class="text-gray-500 mb-3">// Template</p>
+        <p class="text-blue-400 mb-1">Feature:    "[What the product has or does — the technical fact]"</p>
+        <p class="text-yellow-400 mb-1">Advantage:  "[What that feature allows or enables — the functional outcome]"</p>
+        <p class="text-green-400">Benefit:    "[What that means for the customer's life — the emotional payoff]"</p>
+      </div>
+
+      <div class="p-5 bg-navy-light border border-white/10 rounded-xl mb-6">
+        <p class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">Developer Product Example — Deployment platform</p>
+        <p class="text-gray-300 text-sm leading-relaxed mb-2">
+          <span class="text-blue-400 font-semibold">Feature:</span> One-click rollback to any previous deployment.
+        </p>
+        <p class="text-gray-300 text-sm leading-relaxed mb-2">
+          <span class="text-yellow-400 font-semibold">Advantage:</span> You can undo a bad deploy in seconds without touching your infrastructure or writing a single command.
+        </p>
+        <p class="text-gray-300 text-sm leading-relaxed">
+          <span class="text-green-400 font-semibold">Benefit:</span> Ship with confidence knowing that any mistake is reversible — no more 2am panic fixes.
+        </p>
+      </div>
+
+      <div class="bg-gradient-to-r from-coral/10 to-transparent border-l-4 border-coral pl-6 py-4 rounded-r-lg">
+        <p class="text-white font-medium leading-relaxed">
+          "You don't need to pick one framework. Often the best landing pages use PAS for the hero, FAB for the feature grid, and BAB for the testimonials. Use them as building blocks."
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4 -->
+  <section id="headline-vault" class="playbook-section mb-16 scroll-mt-24">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">04</span>
+      <h2 class="text-2xl md:text-3xl font-bold">The Headline Formula Vault</h2>
+    </div>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      Twenty-five fill-in-the-blank headline templates, organized by type. Read through these and you'll find at least five that fit your product. Take each one, plug in your specifics, and evaluate. The right headline is usually the one that makes you a little uncomfortable — because it's bold enough to actually work.
+    </p>
+
+    <!-- Outcome Headlines -->
+    <h3 class="text-lg font-semibold text-white mb-4 mt-8">Outcome Headlines</h3>
+    <p class="text-gray-400 text-sm mb-4">Lead with the result. No fluff, no features — just what they get.</p>
+
+    <div class="space-y-3 mb-10">
+      <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+        <p class="font-mono text-sm text-coral mb-2">"[Desired outcome] in [timeframe]"</p>
+        <p class="text-gray-400 text-sm">Example: <span class="text-gray-200">"Production-ready auth in under an hour"</span></p>
+      </div>
+      <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+        <p class="font-mono text-sm text-coral mb-2">"[Desired outcome] without [the painful alternative]"</p>
+        <p class="text-gray-400 text-sm">Example: <span class="text-gray-200">"Full-stack deployments without DevOps experience"</span></p>
+      </div>
+      <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+        <p class="font-mono text-sm text-coral mb-2">"Stop [wasting resource]. Start [getting outcome]."</p>
+        <p class="text-gray-400 text-sm">Example: <span class="text-gray-200">"Stop writing boilerplate. Start shipping products."</span></p>
+      </div>
+      <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+        <p class="font-mono text-sm text-coral mb-2">"[Do the hard thing] in [timeframe], not [the painful timeframe]"</p>
+        <p class="text-gray-400 text-sm">Example: <span class="text-gray-200">"Launch your SaaS in days, not months"</span></p>
+      </div>
+      <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+        <p class="font-mono text-sm text-coral mb-2">"Everything you need to [outcome]. Nothing you don't."</p>
+        <p class="text-gray-400 text-sm">Example: <span class="text-gray-200">"Everything you need to run your indie SaaS. Nothing you don't."</span></p>
+      </div>
+    </div>
+
+    <!-- Curiosity Headlines -->
+    <h3 class="text-lg font-semibold text-white mb-4">Curiosity Headlines</h3>
+    <p class="text-gray-400 text-sm mb-4">Create an information gap — the reader has to click to close it.</p>
+
+    <div class="space-y-3 mb-10">
+      <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+        <p class="font-mono text-sm text-coral mb-2">"What most [audience] don't know about [topic]"</p>
+        <p class="text-gray-400 text-sm">Example: <span class="text-gray-200">"What most indie devs don't know about pricing their first product"</span></p>
+      </div>
+      <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+        <p class="font-mono text-sm text-coral mb-2">"The [counterintuitive thing] about [familiar topic]"</p>
+        <p class="text-gray-400 text-sm">Example: <span class="text-gray-200">"The counterintuitive reason your landing page isn't converting"</span></p>
+      </div>
+      <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+        <p class="font-mono text-sm text-coral mb-2">"What if [removing the pain] was as easy as [familiar action]?"</p>
+        <p class="text-gray-400 text-sm">Example: <span class="text-gray-200">"What if setting up payments was as easy as npm install?"</span></p>
+      </div>
+      <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+        <p class="font-mono text-sm text-coral mb-2">"Why [most people] [do the wrong thing] — and what to do instead"</p>
+        <p class="text-gray-400 text-sm">Example: <span class="text-gray-200">"Why most developer tools fail at marketing — and what to do instead"</span></p>
+      </div>
+      <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+        <p class="font-mono text-sm text-coral mb-2">"The [simple thing] that changed how I [do big thing]"</p>
+        <p class="text-gray-400 text-sm">Example: <span class="text-gray-200">"The 5-minute deploy setup that changed how I ship products"</span></p>
+      </div>
+    </div>
+
+    <!-- How-To Headlines -->
+    <h3 class="text-lg font-semibold text-white mb-4">How-To Headlines</h3>
+    <p class="text-gray-400 text-sm mb-4">Concrete and instructional. Signals that the reader will learn something actionable.</p>
+
+    <div class="space-y-3 mb-10">
+      <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+        <p class="font-mono text-sm text-coral mb-2">"How to [desired outcome] in [timeframe]"</p>
+        <p class="text-gray-400 text-sm">Example: <span class="text-gray-200">"How to get your first 100 paying users in 90 days"</span></p>
+      </div>
+      <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+        <p class="font-mono text-sm text-coral mb-2">"How to [outcome] — even if [common objection]"</p>
+        <p class="text-gray-400 text-sm">Example: <span class="text-gray-200">"How to write a landing page that converts — even if you hate writing"</span></p>
+      </div>
+      <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+        <p class="font-mono text-sm text-coral mb-2">"How [audience] [achieve outcome] without [painful thing]"</p>
+        <p class="text-gray-400 text-sm">Example: <span class="text-gray-200">"How indie devs get enterprise customers without a sales team"</span></p>
+      </div>
+      <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+        <p class="font-mono text-sm text-coral mb-2">"[Number] ways to [desired outcome] faster"</p>
+        <p class="text-gray-400 text-sm">Example: <span class="text-gray-200">"7 ways to cut your SaaS onboarding time in half"</span></p>
+      </div>
+      <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+        <p class="font-mono text-sm text-coral mb-2">"The [timeframe] guide to [outcome]"</p>
+        <p class="text-gray-400 text-sm">Example: <span class="text-gray-200">"The 30-minute guide to your first profitable ad campaign"</span></p>
+      </div>
+    </div>
+
+    <!-- Social Proof Headlines -->
+    <h3 class="text-lg font-semibold text-white mb-4">Social Proof Headlines</h3>
+    <p class="text-gray-400 text-sm mb-4">Let the numbers and other people do the selling for you.</p>
+
+    <div class="space-y-3 mb-10">
+      <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+        <p class="font-mono text-sm text-coral mb-2">"[Number] [audience] use [product] to [outcome]"</p>
+        <p class="text-gray-400 text-sm">Example: <span class="text-gray-200">"3,200 developers use DeployBot to ship with zero downtime"</span></p>
+      </div>
+      <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+        <p class="font-mono text-sm text-coral mb-2">"Join [number] [audience] who [achieved outcome]"</p>
+        <p class="text-gray-400 text-sm">Example: <span class="text-gray-200">"Join 8,000 indie developers who turned their tools into income"</span></p>
+      </div>
+      <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+        <p class="font-mono text-sm text-coral mb-2">"The [adjective] [product type] trusted by [credible group]"</p>
+        <p class="text-gray-400 text-sm">Example: <span class="text-gray-200">"The lightweight analytics tool trusted by 500+ bootstrapped SaaS founders"</span></p>
+      </div>
+      <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+        <p class="font-mono text-sm text-coral mb-2">"From [before state] to [after state] — [customer name]'s story"</p>
+        <p class="text-gray-400 text-sm">Example: <span class="text-gray-200">"From 0 to $8K MRR in 4 months — how Marcus built his first SaaS"</span></p>
+      </div>
+      <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+        <p class="font-mono text-sm text-coral mb-2">"Finally, a [product type] that [specific thing your customers keep asking for]"</p>
+        <p class="text-gray-400 text-sm">Example: <span class="text-gray-200">"Finally, an email tool that doesn't require a marketing degree to use"</span></p>
+      </div>
+    </div>
+
+    <!-- Objection-Busting Headlines -->
+    <h3 class="text-lg font-semibold text-white mb-4">Objection-Busting Headlines</h3>
+    <p class="text-gray-400 text-sm mb-4">Preemptively address skepticism. Best for audiences who have been burned before.</p>
+
+    <div class="space-y-3 mb-6">
+      <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+        <p class="font-mono text-sm text-coral mb-2">"[Desired outcome] — no [objection] required"</p>
+        <p class="text-gray-400 text-sm">Example: <span class="text-gray-200">"Launch your first ad campaign — no marketing experience required"</span></p>
+      </div>
+      <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+        <p class="font-mono text-sm text-coral mb-2">"[Outcome] even if [biggest common objection]"</p>
+        <p class="text-gray-400 text-sm">Example: <span class="text-gray-200">"Grow your audience even if you have zero followers and hate social media"</span></p>
+      </div>
+      <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+        <p class="font-mono text-sm text-coral mb-2">"You don't need [what they think they need] to [outcome]"</p>
+        <p class="text-gray-400 text-sm">Example: <span class="text-gray-200">"You don't need a big following to get your first 100 customers"</span></p>
+      </div>
+      <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+        <p class="font-mono text-sm text-coral mb-2">"Forget [discredited approach]. Here's what actually works."</p>
+        <p class="text-gray-400 text-sm">Example: <span class="text-gray-200">"Forget growth hacking. Here's how bootstrapped devs actually get customers."</span></p>
+      </div>
+      <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+        <p class="font-mono text-sm text-coral mb-2">"[Product] for people who [don't think they belong in this category]"</p>
+        <p class="text-gray-400 text-sm">Example: <span class="text-gray-200">"Email marketing for developers who swore they'd never do email marketing"</span></p>
+      </div>
+    </div>
+
+    <div class="bg-gradient-to-r from-coral/10 to-transparent border-l-4 border-coral pl-6 py-4 rounded-r-lg">
+      <p class="text-white font-medium leading-relaxed">
+        "Take 10 of these templates, plug in your product's specifics, and pick the 3 that feel most uncomfortable to publish. Those are usually the ones that work."
+      </p>
+    </div>
+  </section>
+
+  <!-- Section 5 -->
+  <section id="hemingway-pass" class="playbook-section mb-16 scroll-mt-24">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">05</span>
+      <h2 class="text-2xl md:text-3xl font-bold">Editing Your Copy: The Hemingway Pass</h2>
+    </div>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      "The first draft of anything is shit." That's Hemingway's rule, and it applies directly to copy. The frameworks and templates give you a solid rough draft. Editing is where copy becomes sharp. The goal of the Hemingway Pass is to cut everything that doesn't earn its place.
+    </p>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      Run through each of these passes in order. Each one targets a different class of weakness.
+    </p>
+
+    <!-- Pass 1: Cut -->
+    <div class="mb-8">
+      <h3 class="text-lg font-semibold text-white mb-3">Pass 1: Cut Every Word That Doesn't Earn Its Place</h3>
+      <p class="text-gray-300 leading-relaxed mb-4">
+        Read each sentence and ask: does this word add meaning or does it fill space? Filler words are the enemy of impact. Common offenders: "very," "really," "just," "quite," "a bit," "in order to," "the fact that," "it is worth noting."
+      </p>
+      <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl font-mono text-sm">
+        <p class="text-gray-500 mb-2">// Before</p>
+        <p class="text-red-400 mb-4">"In order to really get the most out of the platform, it is worth noting that you should quite carefully configure your settings."</p>
+        <p class="text-gray-500 mb-2">// After</p>
+        <p class="text-green-400">"Configure your settings to get the most from the platform."</p>
+      </div>
+    </div>
+
+    <!-- Pass 2: Active voice -->
+    <div class="mb-8">
+      <h3 class="text-lg font-semibold text-white mb-3">Pass 2: Replace Passive Voice with Active</h3>
+      <p class="text-gray-300 leading-relaxed mb-4">
+        Passive voice hides the actor and weakens the verb. Active voice is direct, confident, and shorter. Your product should be doing things, not having things happen to it.
+      </p>
+      <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl font-mono text-sm">
+        <p class="text-gray-500 mb-2">// Passive (weak)</p>
+        <p class="text-red-400 mb-4">"Errors are caught automatically and a notification is sent to your team."</p>
+        <p class="text-gray-500 mb-2">// Active (strong)</p>
+        <p class="text-green-400">"We catch every error automatically and alert your team instantly."</p>
+      </div>
+    </div>
+
+    <!-- Pass 3: Replace vague with specific -->
+    <div class="mb-8">
+      <h3 class="text-lg font-semibold text-white mb-3">Pass 3: Replace Vague Words with Specifics</h3>
+      <p class="text-gray-300 leading-relaxed mb-4">
+        Words like "powerful," "fast," "better," "improved," "robust," and "seamless" mean nothing without a reference point. They've been used so often they no longer register. Replace every vague adjective with a specific number, comparison, or example.
+      </p>
+      <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl font-mono text-sm">
+        <p class="text-gray-500 mb-2">// Vague</p>
+        <p class="text-red-400 mb-4">"Powerful search that's faster and more accurate."</p>
+        <p class="text-gray-500 mb-2">// Specific</p>
+        <p class="text-green-400">"Full-text search across 1M records in under 50ms."</p>
+      </div>
+    </div>
+
+    <!-- Pass 4: The So What test -->
+    <div class="mb-8">
+      <h3 class="text-lg font-semibold text-white mb-3">Pass 4: The "So What?" Test</h3>
+      <p class="text-gray-300 leading-relaxed mb-4">
+        After every sentence in your copy, ask: "So what does that mean for me?" If you can hear a customer asking that question, your sentence is incomplete. Keep adding context until the "so what" is answered.
+      </p>
+      <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl font-mono text-sm">
+        <p class="text-gray-500 mb-2">// Failing the "so what?" test</p>
+        <p class="text-red-400 mb-1">"Supports multi-region deployments."</p>
+        <p class="text-gray-500 mb-1 text-xs">→ So what?</p>
+        <p class="text-yellow-400 mb-1">"Your app runs close to every user, no matter where they are."</p>
+        <p class="text-gray-500 mb-1 text-xs">→ So what?</p>
+        <p class="text-green-400">"Users in Tokyo get the same &lt;100ms load time as users in New York — no configuration needed."</p>
+      </div>
+    </div>
+
+    <!-- Before/After examples -->
+    <h3 class="text-xl font-semibold text-white mb-4 mt-10">Before / After: Weak vs. Strong Developer Product Copy</h3>
+
+    <div class="space-y-6">
+      <div class="p-5 bg-navy-light border border-white/10 rounded-xl">
+        <p class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">Landing Page Hero — Before</p>
+        <div class="p-4 bg-red-500/5 border border-red-500/15 rounded-lg mb-3">
+          <p class="text-red-300 text-sm font-semibold mb-1">"A powerful, flexible platform for modern development teams."</p>
+          <p class="text-gray-500 text-xs">Vague adjectives. No outcome. Doesn't say what it does. Audiences: everyone = no one.</p>
+        </div>
+        <p class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">After</p>
+        <div class="p-4 bg-green-500/5 border border-green-500/15 rounded-lg">
+          <p class="text-green-300 text-sm font-semibold mb-1">"Deploy any app in 30 seconds. Roll back in 5."</p>
+          <p class="text-gray-500 text-xs">Specific numbers. Two outcomes. Implies what it does by showing the result.</p>
+        </div>
+      </div>
+
+      <div class="p-5 bg-navy-light border border-white/10 rounded-xl">
+        <p class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">Feature Description — Before</p>
+        <div class="p-4 bg-red-500/5 border border-red-500/15 rounded-lg mb-3">
+          <p class="text-red-300 text-sm font-semibold mb-1">"Our robust analytics engine provides comprehensive insights into your application's performance metrics."</p>
+          <p class="text-gray-500 text-xs">Passive, vague, no specifics, reads like a press release nobody asked for.</p>
+        </div>
+        <p class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">After</p>
+        <div class="p-4 bg-green-500/5 border border-green-500/15 rounded-lg">
+          <p class="text-green-300 text-sm font-semibold mb-1">"See exactly which pages are slow and why — with query-level breakdowns, no APM expertise required."</p>
+          <p class="text-gray-500 text-xs">Active, specific, outcome-focused, addresses a real developer concern.</p>
+        </div>
+      </div>
+
+      <div class="p-5 bg-navy-light border border-white/10 rounded-xl">
+        <p class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">Email Subject Line — Before</p>
+        <div class="p-4 bg-red-500/5 border border-red-500/15 rounded-lg mb-3">
+          <p class="text-red-300 text-sm font-semibold mb-1">"Exciting new features in v2.0!"</p>
+          <p class="text-gray-500 text-xs">About the product, not the reader. "Exciting" is self-declared hype. Generic.</p>
+        </div>
+        <p class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">After</p>
+        <div class="p-4 bg-green-500/5 border border-green-500/15 rounded-lg">
+          <p class="text-green-300 text-sm font-semibold mb-1">"v2.0 cuts deploy time by 60% (here's how)"</p>
+          <p class="text-gray-500 text-xs">Specific number, reader benefit first, curiosity hook at the end.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 6 -->
+  <section id="ai-copy" class="playbook-section mb-16 scroll-mt-24">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">06</span>
+      <h2 class="text-2xl md:text-3xl font-bold">Using AI to Write Copy Without It Sounding Like AI</h2>
+    </div>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      AI is an excellent first-draft machine. It's bad at knowing your customer. The winning move is to use AI to fill in your frameworks quickly, then edit the output with what only you know: your customer's exact language, specific results, and the insider details that make copy feel real.
+    </p>
+
+    <h3 class="text-xl font-semibold text-white mb-4">Prompting Effectively for Copy</h3>
+
+    <p class="text-gray-300 leading-relaxed mb-4">
+      Generic prompts produce generic copy. The more context you give, the better the output. Always include: (1) who the customer is, (2) what the product does, (3) the single most important outcome, and (4) the framework you want to use.
+    </p>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      Here are five prompts you can use right now. Copy and adapt — replace the bracketed sections with your product's specifics.
+    </p>
+
+    <!-- Prompt 1 -->
+    <div class="mb-6">
+      <p class="text-sm font-semibold text-coral mb-2">Prompt 1 — PAS Copy Block</p>
+      <div class="p-5 bg-[#0d0d20] border border-white/10 rounded-xl font-mono text-sm leading-relaxed">
+        <p class="text-gray-300">Write a short PAS (Problem-Agitate-Solution) copy block for a landing page. Product: [your product]. Customer: [solo developers / indie hackers / SaaS founders]. Problem they face: [specific problem]. Solution: [what your product does to fix it]. Keep each part to 2-3 sentences. Be specific — use numbers where possible. Do not use generic phrases like "powerful," "seamless," or "robust."</p>
+      </div>
+    </div>
+
+    <!-- Prompt 2 -->
+    <div class="mb-6">
+      <p class="text-sm font-semibold text-coral mb-2">Prompt 2 — Headline Variations</p>
+      <div class="p-5 bg-[#0d0d20] border border-white/10 rounded-xl font-mono text-sm leading-relaxed">
+        <p class="text-gray-300">Generate 10 landing page headline variations for [product]. The main outcome is [specific outcome]. The audience is [target audience]. Use these headline formulas: (1) "[outcome] without [pain]", (2) "[outcome] in [timeframe]", (3) "Stop [pain]. Start [outcome].", (4) "The [adjective] way to [outcome]", (5) "[number] [audience] use [product] to [outcome]". Write two variants per formula. Be specific and avoid generic marketing language.</p>
+      </div>
+    </div>
+
+    <!-- Prompt 3 -->
+    <div class="mb-6">
+      <p class="text-sm font-semibold text-coral mb-2">Prompt 3 — FAB Feature Cards</p>
+      <div class="p-5 bg-[#0d0d20] border border-white/10 rounded-xl font-mono text-sm leading-relaxed">
+        <p class="text-gray-300">Rewrite these product features as Feature-Advantage-Benefit (FAB) copy for a landing page feature grid. For each, write: a bold benefit headline (under 8 words), one sentence for the advantage, one sentence for the emotional payoff. Features to convert: [paste your feature list here]. Audience: [target audience].</p>
+      </div>
+    </div>
+
+    <!-- Prompt 4 -->
+    <div class="mb-6">
+      <p class="text-sm font-semibold text-coral mb-2">Prompt 4 — Email Subject Lines</p>
+      <div class="p-5 bg-[#0d0d20] border border-white/10 rounded-xl font-mono text-sm leading-relaxed">
+        <p class="text-gray-300">Write 10 email subject lines for [type of email: welcome / launch / re-engagement / feature announcement]. Product: [product]. Audience: [audience]. Goal: [what you want them to do]. Include: 3 curiosity-based, 3 benefit-focused, 2 with specific numbers, and 2 that address a common objection. Keep all under 50 characters. No emojis.</p>
+      </div>
+    </div>
+
+    <!-- Prompt 5 -->
+    <div class="mb-8">
+      <p class="text-sm font-semibold text-coral mb-2">Prompt 5 — Hemingway Editing Pass</p>
+      <div class="p-5 bg-[#0d0d20] border border-white/10 rounded-xl font-mono text-sm leading-relaxed">
+        <p class="text-gray-300">Edit this copy using the Hemingway rules: (1) cut every word that doesn't add meaning, (2) replace passive voice with active, (3) replace vague adjectives like "powerful," "fast," "better" with specific numbers or comparisons, (4) after each sentence, ask "so what?" and expand if the benefit isn't clear. Return the edited version and a brief note on what you changed. Copy: [paste your copy here]</p>
+      </div>
+    </div>
+
+    <h3 class="text-xl font-semibold text-white mb-4">How to Edit AI Output to Sound Human</h3>
+
+    <p class="text-gray-300 leading-relaxed mb-4">
+      AI copy is usually grammatically correct and structurally sound — and unmistakably bland. After you get output, do these three things:
+    </p>
+
+    <div class="space-y-4 mb-8">
+      <div class="flex items-start gap-4 p-4 rounded-xl bg-white/[0.03] border border-white/5">
+        <span class="text-coral font-mono text-sm shrink-0 mt-0.5">01</span>
+        <div>
+          <p class="font-semibold text-white mb-1">Replace the generic with the specific</p>
+          <p class="text-gray-400 text-sm leading-relaxed">AI writes "significantly reduce time" — you know it's "save 4 hours per deploy." AI writes "many developers" — you know it's "indie hackers shipping their first SaaS." Every generic phrase is a slot to fill with your real knowledge.</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-4 p-4 rounded-xl bg-white/[0.03] border border-white/5">
+        <span class="text-coral font-mono text-sm shrink-0 mt-0.5">02</span>
+        <div>
+          <p class="font-semibold text-white mb-1">Read it out loud</p>
+          <p class="text-gray-400 text-sm leading-relaxed">If you stumble or it sounds weird spoken, it'll read weird on the page. AI tends toward formal. Your copy should sound like a smart person talking. If you wouldn't say it at a meetup, rewrite it.</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-4 p-4 rounded-xl bg-white/[0.03] border border-white/5">
+        <span class="text-coral font-mono text-sm shrink-0 mt-0.5">03</span>
+        <div>
+          <p class="font-semibold text-white mb-1">Add one thing only you know</p>
+          <p class="text-gray-400 text-sm leading-relaxed">An insider detail from your beta, a weird edge case that turns out to be the most common use case, the exact phrase your first customer used to describe their problem. AI can't know these. One real insight makes AI copy feel completely authentic.</p>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="text-xl font-semibold text-white mb-4">The One Thing AI Can't Do: Know Your Customer's Exact Language</h3>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      The single most powerful thing in sales copy is using the customer's own words back at them. Not paraphrased — <em>verbatim</em>. When someone reads their exact inner monologue in your copy, the feeling is "this product is made for me."
+    </p>
+
+    <p class="text-gray-300 leading-relaxed mb-4">
+      AI can approximate. But it can't know that your users say "I hate waiting for Vercel to finish building" instead of "deployment speed is a concern." Or that they describe the pain as "feels like I'm flying blind" not "lacks observability."
+    </p>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      To get this language: talk to your first 10 users. Read your support tickets. Search Reddit and Hacker News for threads about your problem space. Read the 1-star reviews of your competitors on G2 or Product Hunt. The exact words people use when venting are the exact words that should be in your copy.
+    </p>
+
+    <div class="bg-gradient-to-r from-coral/10 to-transparent border-l-4 border-coral pl-6 py-4 rounded-r-lg">
+      <p class="text-white font-medium leading-relaxed">
+        "Your job is not to write copy — it's to collect your customer's language and arrange it in a persuasive order. AI handles the arrangement. Only you can collect the language."
+      </p>
+    </div>
+  </section>
+
+  <!-- Section 7 -->
+  <section id="copy-checklist" class="playbook-section mb-16 scroll-mt-24">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">07</span>
+      <h2 class="text-2xl md:text-3xl font-bold">Copy Checklist</h2>
+    </div>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      Run every piece of copy through this checklist before it goes live. It covers everything from this playbook. If you can check every box, your copy is ready. If not, you know exactly what to fix.
+    </p>
+
+    <div class="space-y-6">
+
+      <!-- Group 1: Fundamentals -->
+      <div class="p-6 bg-navy-light border border-white/10 rounded-2xl">
+        <h3 class="text-sm font-semibold text-coral uppercase tracking-wider mb-4">Fundamentals</h3>
+        <div class="space-y-3">
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">You know who you're writing for — one specific audience, not "anyone who might want this"</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">The #1 outcome (not feature) is stated clearly in the first thing the reader sees</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">The copy follows a recognizable framework (PAS, AIDA, BAB, or FAB)</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">There is one and only one primary call to action</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Group 2: Headline -->
+      <div class="p-6 bg-navy-light border border-white/10 rounded-2xl">
+        <h3 class="text-sm font-semibold text-coral uppercase tracking-wider mb-4">Headline</h3>
+        <div class="space-y-3">
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">You wrote at least 10 headline variants before choosing this one</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">The headline is outcome-focused, not feature- or tech-focused</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">The headline is specific enough that it couldn't describe a competitor's product</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">The subheadline adds specifics: who it's for, how it works, or what makes it different</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Group 3: Copy Quality -->
+      <div class="p-6 bg-navy-light border border-white/10 rounded-2xl">
+        <h3 class="text-sm font-semibold text-coral uppercase tracking-wider mb-4">Copy Quality</h3>
+        <div class="space-y-3">
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Vague words (powerful, robust, seamless, better) have been replaced with specific claims</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Passive voice has been replaced with active voice throughout</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Every sentence passes the "so what?" test — the benefit is explicit, not implied</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Filler words have been cut (very, really, just, quite, in order to)</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">You read it out loud and it sounded like a person talking, not a press release</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Group 4: Language & Voice -->
+      <div class="p-6 bg-navy-light border border-white/10 rounded-2xl">
+        <h3 class="text-sm font-semibold text-coral uppercase tracking-wider mb-4">Language & Voice</h3>
+        <div class="space-y-3">
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">At least one phrase uses the customer's exact language (from support, interviews, or reviews)</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">The copy talks about the customer more than it talks about the product</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">If AI was used, the output has been edited with at least one specific detail AI couldn't know</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Group 5: CTA -->
+      <div class="p-6 bg-navy-light border border-white/10 rounded-2xl">
+        <h3 class="text-sm font-semibold text-coral uppercase tracking-wider mb-4">Call to Action</h3>
+        <div class="space-y-3">
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">CTA button text describes what the user gets, not what they do ("Start Building Free" not "Sign Up")</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">There is a friction reducer near the CTA ("No credit card required," "Free forever for solo devs")</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">The biggest objection a customer might have is addressed somewhere on the page</span>
+          </label>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="mt-8 bg-gradient-to-r from-coral/10 to-transparent border-l-4 border-coral pl-6 py-4 rounded-r-lg">
+      <p class="text-white font-medium leading-relaxed">
+        "Copy is never done — it's shipped. Check the essentials, publish, and let real click-through rates and conversions tell you what to improve. A live page that converts at 3% beats a perfect draft sitting in Notion."
+      </p>
+    </div>
+  </section>
+
+</PlaybookLayout>
