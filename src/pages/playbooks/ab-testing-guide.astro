@@ -1,0 +1,862 @@
+---
+import PlaybookLayout from '../../layouts/PlaybookLayout.astro';
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "The Developer's A/B Testing Guide",
+  "description": "How to run valid A/B tests on your landing page and emails. Tools, statistical basics, and the first 5 tests every developer should run.",
+  "step": [
+    { "@type": "HowToStep", "name": "Understand A/B testing as a controlled experiment", "position": 1 },
+    { "@type": "HowToStep", "name": "Prioritize what to test using the ICE framework", "position": 2 },
+    { "@type": "HowToStep", "name": "Run a valid A/B test with proper methodology", "position": 3 },
+    { "@type": "HowToStep", "name": "Choose developer-friendly A/B testing tools", "position": 4 },
+    { "@type": "HowToStep", "name": "Read results without fooling yourself", "position": 5 },
+    { "@type": "HowToStep", "name": "Run your first 5 A/B tests in order", "position": 6 },
+    { "@type": "HowToStep", "name": "Follow the pre-test, during-test, and post-test checklist", "position": 7 }
+  ]
+});
+
+const sections = [
+  { id: "controlled-experiment", title: "A/B Testing Is Just a Controlled Experiment" },
+  { id: "what-to-test", title: "What to Test (Prioritized)" },
+  { id: "valid-test", title: "How to Run a Valid A/B Test" },
+  { id: "tools", title: "Tools for Developer-Friendly A/B Testing" },
+  { id: "reading-results", title: "Reading Your Results Without Fooling Yourself" },
+  { id: "first-five-tests", title: "Your First 5 A/B Tests (In Order)" },
+  { id: "checklist", title: "A/B Testing Checklist" },
+];
+---
+
+<PlaybookLayout
+  title="The Developer's A/B Testing Guide"
+  metaTitle="A/B Testing Guide for Developers | CodeToCash"
+  metaDescription="How to run valid A/B tests on your landing page and emails. Tools, statistical basics, and the first 5 tests every developer should run."
+  subtitle="Stop guessing. Start measuring. A developer's guide to running experiments that actually move the needle."
+  difficulty="Intermediate"
+  readingTime="16 min"
+  lastUpdated="February 2026"
+  sections={sections}
+  prev={{ slug: "building-in-public", title: "Building in Public as a Marketing Strategy" }}
+  next={{ slug: "cold-email-outreach", title: "Cold Email Outreach for Dev Tools" }}
+  schema={schema}
+>
+
+  <!-- Section 1 -->
+  <section id="controlled-experiment" class="playbook-section mb-16 scroll-mt-24">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">01</span>
+      <h2 class="text-2xl md:text-3xl font-bold">A/B Testing Is Just a Controlled Experiment</h2>
+    </div>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      You already understand A/B testing — you just don't know it yet. As a developer, you run experiments every day. You write a function (hypothesis), deploy it (test), check the logs (measure), then refactor (iterate). A/B testing is the same scientific method, applied to your marketing instead of your code.
+    </p>
+
+    <div class="p-5 bg-[#0d0d20] border border-white/10 rounded-xl font-mono text-sm mb-8">
+      <p class="text-gray-500 mb-3">// The A/B testing loop (looks familiar?)</p>
+      <p class="text-gray-300 mb-1"><span class="text-coral">hypothesis</span>: "Changing the CTA to first person will increase clicks"</p>
+      <p class="text-gray-300 mb-1"><span class="text-coral">test</span>:        Show variant A to 50%, variant B to 50%</p>
+      <p class="text-gray-300 mb-1"><span class="text-coral">measure</span>:     Track click-through rate for 2 weeks</p>
+      <p class="text-gray-300"><span class="text-coral">iterate</span>:     Deploy winner, form new hypothesis</p>
+    </div>
+
+    <h3 class="text-xl font-semibold text-white mb-4 mt-10">Why Most Developers Skip Testing (And Why That's Costing Them Money)</h3>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      Developers are trained to trust their own judgment. You architect systems, solve complex problems, and ship working code based on your expertise. So when it comes to landing pages, emails, or pricing, you trust your gut. "I know what good copy looks like." "I wouldn't click that button, so nobody will."
+    </p>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      This confidence is a liability in marketing. Your users aren't you. They're not technical. They don't know your product yet. They have different anxieties, different vocabulary, and different triggers. What looks clever to you might confuse them. What feels "salesy" to you might be exactly the clarity they need.
+    </p>
+
+    <div class="bg-navy-light border border-white/10 rounded-xl p-6 mb-6">
+      <p class="text-sm font-semibold text-coral mb-3">Real-World Example</p>
+      <p class="text-gray-300 leading-relaxed mb-4">
+        A developer founder we worked with insisted that "Get Started Free" would outperform "Start Building Free" because it was shorter and "cleaner." His intuition said minimalism wins.
+      </p>
+      <p class="text-gray-300 leading-relaxed">
+        The A/B test showed <strong class="text-white">"Start Building Free" increased signups by 34%</strong>. Why? "Get Started" feels like work. "Start Building" promises the outcome. His intuition was wrong, but the data was right.
+      </p>
+    </div>
+
+    <h3 class="text-xl font-semibold text-white mb-4 mt-10">The Mindset Shift: Your Opinion Doesn't Matter, The Data Does</h3>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      This is the hardest pill for developers to swallow: <strong class="text-white">your preferences are irrelevant</strong>. You are not your user. The only thing that matters is what converts. You might hate the color orange, but if an orange CTA button gets more clicks, you ship the orange button.
+    </p>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      A/B testing removes ego from decision-making. It turns marketing from an opinion contest into a science experiment. When someone on your team says "I think we should...", you can respond with "Let's test it." No more debates. Just experiments.
+    </p>
+
+    <div class="bg-gradient-to-r from-coral/10 to-transparent border-l-4 border-coral pl-6 py-4 rounded-r-lg">
+      <p class="text-white font-medium leading-relaxed">
+        "The most dangerous phrase in marketing is 'I think.' The safest phrase is 'We tested.' Testing doesn't care about your seniority, your design degree, or your gut feeling. Testing only cares about what actually works."
+      </p>
+    </div>
+  </section>
+
+  <!-- Section 2 -->
+  <section id="what-to-test" class="playbook-section mb-16 scroll-mt-24">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">02</span>
+      <h2 class="text-2xl md:text-3xl font-bold">What to Test (Prioritized)</h2>
+    </div>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      You can't test everything. Your time is limited, your traffic is finite, and you need to show results. The key is prioritization — testing the elements that will have the biggest impact on your bottom line first. Enter the ICE framework.
+    </p>
+
+    <h3 class="text-xl font-semibold text-white mb-4 mt-10">The ICE Framework: Impact, Confidence, Ease</h3>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      ICE scoring helps you rank test ideas objectively. Score each potential test on a scale of 1-10 for each factor, then add them up. Higher scores get priority.
+    </p>
+
+    <div class="space-y-4 mb-8">
+      <div class="p-5 bg-navy-light border border-white/10 rounded-xl">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-coral/10 text-coral font-mono text-sm font-bold">I</span>
+          <h4 class="text-lg font-semibold text-white">Impact</h4>
+        </div>
+        <p class="text-gray-400 text-sm leading-relaxed">
+          How much will this change affect your key metric? Testing your headline affects 100% of visitors. Testing your footer copy affects maybe 5%. Headline = high impact. Footer = low impact.
+        </p>
+      </div>
+      <div class="p-5 bg-navy-light border border-white/10 rounded-xl">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-coral/10 text-coral font-mono text-sm font-bold">C</span>
+          <h4 class="text-lg font-semibold text-white">Confidence</h4>
+        </div>
+        <p class="text-gray-400 text-sm leading-relaxed">
+          How sure are you this will work? If you have data showing users drop off at your pricing page, you're confident pricing tests matter. If you're just guessing "maybe people like blue more," confidence is low.
+        </p>
+      </div>
+      <div class="p-5 bg-navy-light border border-white/10 rounded-xl">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-coral/10 text-coral font-mono text-sm font-bold">E</span>
+          <h4 class="text-lg font-semibold text-white">Ease</h4>
+        </div>
+        <p class="text-gray-400 text-sm leading-relaxed">
+          How easy is this to implement? Changing button text takes 5 minutes. Rebuilding your entire signup flow takes weeks. Start with high-ease tests while your traffic is low.
+        </p>
+      </div>
+    </div>
+
+    <h3 class="text-xl font-semibold text-white mb-4 mt-10">Highest Leverage Tests (Test These First)</h3>
+
+    <p class="text-gray-300 leading-relaxed mb-4">
+      These elements have the biggest impact on conversion. Test them before anything else.
+    </p>
+
+    <div class="space-y-3 mb-8">
+      <div class="flex items-start gap-4 p-4 rounded-xl bg-green-500/5 border border-green-500/20">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-green-500/10 text-green-400 font-mono font-bold text-xs shrink-0">1</span>
+        <div>
+          <p class="font-semibold text-white mb-1">Headline</p>
+          <p class="text-gray-400 text-sm leading-relaxed">Every visitor sees it. It frames their entire experience. Small changes here cascade through everything else.</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-4 p-4 rounded-xl bg-green-500/5 border border-green-500/20">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-green-500/10 text-green-400 font-mono font-bold text-xs shrink-0">2</span>
+        <div>
+          <p class="font-semibold text-white mb-1">CTA Button Copy</p>
+          <p class="text-gray-400 text-sm leading-relaxed">This is literally where conversion happens. "Sign Up" vs. "Start Building Free" can swing conversions 20-40%.</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-4 p-4 rounded-xl bg-green-500/5 border border-green-500/20">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-green-500/10 text-green-400 font-mono font-bold text-xs shrink-0">3</span>
+        <div>
+          <p class="font-semibold text-white mb-1">Pricing Page Structure</p>
+          <p class="text-gray-400 text-sm leading-relaxed">Plan names, price anchoring, what's included, and the order of tiers. This directly affects revenue per user.</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-4 p-4 rounded-xl bg-green-500/5 border border-green-500/20">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-green-500/10 text-green-400 font-mono font-bold text-xs shrink-0">4</span>
+        <div>
+          <p class="font-semibold text-white mb-1">Hero Image or Demo</p>
+          <p class="text-gray-400 text-sm leading-relaxed">Screenshot vs. animation vs. video. Product-focused vs. lifestyle-focused. This sets expectations immediately.</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-4 p-4 rounded-xl bg-green-500/5 border border-green-500/20">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-green-500/10 text-green-400 font-mono font-bold text-xs shrink-0">5</span>
+        <div>
+          <p class="font-semibold text-white mb-1">Social Proof Placement</p>
+          <p class="text-gray-400 text-sm leading-relaxed">Above the fold vs. below. Logo bar vs. testimonials. Social proof reduces anxiety — placement matters.</p>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="text-xl font-semibold text-white mb-4 mt-10">Medium Leverage (Test These Second)</h3>
+
+    <div class="space-y-3 mb-8">
+      <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+        <span class="text-coral mt-0.5">&#9656;</span>
+        <p><strong class="text-white">Form length:</strong> Number of fields in your signup form. Fewer fields usually convert better, but test to find the sweet spot.</p>
+      </div>
+      <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+        <span class="text-coral mt-0.5">&#9656;</span>
+        <p><strong class="text-white">Page layout:</strong> Single column vs. two-column. Feature section order. Amount of whitespace.</p>
+      </div>
+      <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+        <span class="text-coral mt-0.5">&#9656;</span>
+        <p><strong class="text-white">Color of CTA button:</strong> Yes, it matters, but much less than the copy on the button. Test contrast, not preference.</p>
+      </div>
+      <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+        <span class="text-coral mt-0.5">&#9656;</span>
+        <p><strong class="text-white">Email subject lines:</strong> For onboarding sequences, feature announcements, and newsletters.</p>
+      </div>
+    </div>
+
+    <h3 class="text-xl font-semibold text-white mb-4 mt-10">Low Leverage (Skip These Until Everything Else Is Tested)</h3>
+
+    <div class="space-y-3 mb-8">
+      <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+        <span class="text-yellow-400 mt-0.5">&#9888;</span>
+        <p><strong class="text-white">Font choices:</strong> Unless your font is truly illegible, changing from Inter to Roboto won't move the needle.</p>
+      </div>
+      <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+        <span class="text-yellow-400 mt-0.5">&#9888;</span>
+        <p><strong class="text-white">Footer content:</strong> Almost no one reads the footer. Don't waste your limited traffic testing it.</p>
+      </div>
+      <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+        <span class="text-yellow-400 mt-0.5">&#9888;</span>
+        <p><strong class="text-white">Minor copy tweaks:</strong> Changing "amazing" to "incredible" won't change behavior. Test big swings, not synonyms.</p>
+      </div>
+    </div>
+
+    <div class="bg-gradient-to-r from-coral/10 to-transparent border-l-4 border-coral pl-6 py-4 rounded-r-lg">
+      <p class="text-white font-medium leading-relaxed">
+        "The Golden Rule: Always test high-traffic, high-impact elements first. If only 50 people see your pricing page per month, don't test pricing yet — test your headline that 1,000 people see instead."
+      </p>
+    </div>
+  </section>
+
+  <!-- Section 3 -->
+  <section id="valid-test" class="playbook-section mb-16 scroll-mt-24">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">03</span>
+      <h2 class="text-2xl md:text-3xl font-bold">How to Run a Valid A/B Test</h2>
+    </div>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      Most A/B tests are invalid. Not because the tool is broken, but because the methodology is flawed. Running a bad test is worse than running no test — it gives you false confidence in the wrong answer. Here's how to do it right.
+    </p>
+
+    <h3 class="text-xl font-semibold text-white mb-4 mt-10">Statistical Significance Explained Simply</h3>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      Statistical significance answers one question: <strong class="text-white">"Is this result real, or just random chance?"</strong> If variant B converts at 5% and variant A converts at 3%, that looks like a winner. But if you only had 100 visitors in each group, that difference might be pure luck.
+    </p>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      Think of it like flipping a coin. Flip it 10 times, you might get 7 heads. That doesn't mean it's a biased coin — you just haven't flipped enough. Flip it 1,000 times, and you'll see it's roughly 50/50. A/B tests work the same way. You need enough "flips" (visitors) to trust the result.
+    </p>
+
+    <div class="bg-navy-light border border-white/10 rounded-xl p-6 mb-6">
+      <p class="text-sm font-semibold text-coral mb-3">The Rule of Thumb</p>
+      <p class="text-gray-300 leading-relaxed mb-4">
+        Aim for <strong class="text-white">95% statistical significance</strong> (or p-value less than 0.05). This means there's only a 5% chance your result is due to randomness.
+      </p>
+      <p class="text-gray-300 leading-relaxed">
+        Most A/B testing tools calculate this for you. Don't declare a winner until you hit 95% confidence.
+      </p>
+    </div>
+
+    <h3 class="text-xl font-semibold text-white mb-4 mt-10">Sample Size Calculator: How Many Visitors You Need</h3>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      Before you start a test, calculate your required sample size. Testing with too few visitors leads to false positives. Here's a simplified calculator approach:
+    </p>
+
+    <div class="p-5 bg-[#0d0d20] border border-white/10 rounded-xl font-mono text-sm mb-8">
+      <p class="text-gray-500 mb-3">// Sample size formula (simplified)</p>
+      <p class="text-gray-300 mb-4">required_visitors = 16 x (conversion_rate / minimum_detectable_effect) squared</p>
+      <p class="text-gray-500 mb-2">// Example:</p>
+      <p class="text-gray-300 mb-1">baseline_rate = 3% (0.03)</p>
+      <p class="text-gray-300 mb-1">desired_lift = 20% relative (to 3.6%)</p>
+      <p class="text-gray-300 mb-1">mde = 0.006 (0.6 percentage points)</p>
+      <p class="text-gray-300 mb-3">required = 16 x (0.03 / 0.006) squared = <span class="text-green-400">400 visitors per variant</span></p>
+      <p class="text-gray-500">// Use an online calculator for production tests</p>
+    </div>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      For quick reference: if your baseline conversion rate is 2-5%, you typically need <strong class="text-white">500-2,000 visitors per variant</strong> to detect a 20-30% improvement. Lower traffic? You'll need to run tests longer or test bigger changes.
+    </p>
+
+    <h3 class="text-xl font-semibold text-white mb-4 mt-10">Test Duration: Why You Need At Least 2 Weeks</h3>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      Even if you hit your sample size in 3 days, keep the test running. Why? Because user behavior varies by day of week, time of day, and external events. Weekend visitors behave differently from weekday visitors. A test that runs for only a few days might capture an unrepresentative slice of your traffic.
+    </p>
+
+    <div class="space-y-3 mb-8">
+      <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+        <span class="text-red-400 mt-0.5">&#10007;</span>
+        <p><strong class="text-white">Don't:</strong> Run a test from Monday to Wednesday and call it done.</p>
+      </div>
+      <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+        <span class="text-green-400 mt-0.5">&#10003;</span>
+        <p><strong class="text-white">Do:</strong> Run for at least 2 full weeks, including weekends.</p>
+      </div>
+    </div>
+
+    <h3 class="text-xl font-semibold text-white mb-4 mt-10">One Variable at a Time</h3>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      This is the most common mistake in A/B testing. You change the headline, the button color, and the image all at once. Variant B wins. Great — but <em>which</em> change caused the improvement? You don't know. You learned nothing you can apply elsewhere.
+    </p>
+
+    <div class="p-5 bg-[#0d0d20] border border-white/10 rounded-xl font-mono text-sm mb-8">
+      <p class="text-gray-500 mb-3">// BAD: Multiple variables</p>
+      <p class="text-red-400 mb-4">Variant A: Headline A + Blue Button + Image A<br/>Variant B: Headline B + Orange Button + Image B</p>
+      <p class="text-gray-500 mb-3">// GOOD: Single variable</p>
+      <p class="text-green-400">Variant A: Headline A + Blue Button + Image A<br/>Variant B: Headline B + Blue Button + Image A</p>
+    </div>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      Exception: If you're doing a complete page redesign, treat it as one "variable" — the entire experience. But for iterative improvements, test one element at a time.
+    </p>
+
+    <h3 class="text-xl font-semibold text-white mb-4 mt-10">Control vs. Variant: How to Set It Up</h3>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      Your <strong class="text-white">control</strong> is the current version (A). Your <strong class="text-white">variant</strong> is the new version you're testing (B). The split should be 50/50 — equal traffic to each. Some tools offer multi-variant tests (A/B/C/D), but start simple: one change, two versions.
+    </p>
+
+    <div class="space-y-3 mb-6">
+      <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+        <span class="text-coral mt-0.5">&#9656;</span>
+        <p><strong class="text-white">Random assignment:</strong> Each visitor gets randomly assigned to A or B when they first arrive. They should stay in that group for the entire test.</p>
+      </div>
+      <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+        <span class="text-coral mt-0.5">&#9656;</span>
+        <p><strong class="text-white">Consistent experience:</strong> If a visitor sees variant B, they should keep seeing B on return visits. Most tools handle this with cookies.</p>
+      </div>
+      <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+        <span class="text-coral mt-0.5">&#9656;</span>
+        <p><strong class="text-white">One metric:</strong> Define your primary success metric before starting. Usually conversion rate, but could be revenue per visitor, time on page, etc.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4 -->
+  <section id="tools" class="playbook-section mb-16 scroll-mt-24">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">04</span>
+      <h2 class="text-2xl md:text-3xl font-bold">Tools for Developer-Friendly A/B Testing</h2>
+    </div>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      You don't need enterprise software to run valid A/B tests. Here are the tools that fit a developer's workflow — from fully-managed to DIY implementations.
+    </p>
+
+    <h3 class="text-xl font-semibold text-white mb-4 mt-10">PostHog Experiments (Recommended)</h3>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      PostHog is an open-source product analytics platform with built-in A/B testing. It's free for small teams, self-hostable, and designed with developers in mind. You get analytics, session recordings, feature flags, and experiments in one tool.
+    </p>
+
+    <div class="p-5 bg-[#0d0d20] border border-white/10 rounded-xl font-mono text-sm mb-6">
+      <p class="text-gray-500 mb-3">// PostHog A/B test setup (JavaScript)</p>
+      <p class="text-gray-300 mb-1"><span class="text-purple-400">import</span> posthog <span class="text-purple-400">from</span> <span class="text-green-400">'posthog-js'</span>;</p>
+      <p class="text-gray-300 mb-1"></p>
+      <p class="text-gray-300 mb-1"><span class="text-coral">// Initialize</span></p>
+      <p class="text-gray-300 mb-1">posthog.init(<span class="text-green-400">'your-api-key'</span>, {'{'}</p>
+      <p class="text-gray-300 mb-1">  <span class="text-white">api_host</span>: <span class="text-green-400">'https://app.posthog.com'</span></p>
+      <p class="text-gray-300 mb-1">{'}'});</p>
+      <p class="text-gray-300 mb-1"></p>
+      <p class="text-gray-300 mb-1"><span class="text-coral">// In your component</span></p>
+      <p class="text-gray-300 mb-1"><span class="text-purple-400">const</span> variant = posthog.getFeatureFlag(<span class="text-green-400">'cta-button-test'</span>);</p>
+      <p class="text-gray-300 mb-1"></p>
+      <p class="text-gray-300 mb-1">{'{'}variant === <span class="text-green-400">'start-building'</span> ? (</p>
+      <p class="text-gray-300 mb-1">  <span class="text-white">&lt;Button&gt;Start Building Free&lt;/Button&gt;</span></p>
+      <p class="text-gray-300 mb-1">) : (</p>
+      <p class="text-gray-300 mb-1">  <span class="text-white">&lt;Button&gt;Sign Up&lt;/Button&gt;</span></p>
+      <p class="text-gray-300 mb-1">){'}'}</p>
+    </div>
+
+    <div class="space-y-3 mb-8">
+      <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+        <span class="text-green-400 mt-0.5">&#10003;</span>
+        <p>Free tier: 1 million events/month</p>
+      </div>
+      <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+        <span class="text-green-400 mt-0.5">&#10003;</span>
+        <p>Open source — self-host if you want</p>
+      </div>
+      <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+        <span class="text-green-400 mt-0.5">&#10003;</span>
+        <p>Built-in statistical significance calculator</p>
+      </div>
+      <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+        <span class="text-green-400 mt-0.5">&#10003;</span>
+        <p>Works with React, Vue, vanilla JS, and more</p>
+      </div>
+    </div>
+
+    <h3 class="text-xl font-semibold text-white mb-4 mt-10">Google Optimize Is Gone — What to Use Instead</h3>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      Google Optimize (the free A/B testing tool) was sunset in 2023. Many developers are still looking for alternatives. Here are your options:
+    </p>
+
+    <div class="space-y-4 mb-8">
+      <div class="p-4 bg-navy-light border border-white/10 rounded-xl">
+        <p class="font-semibold text-white mb-1">Google Optimize 360 (Paid)</p>
+        <p class="text-gray-400 text-sm">The enterprise version still exists, but starts at $50K+/year. Overkill for most indie developers.</p>
+      </div>
+      <div class="p-4 bg-navy-light border border-white/10 rounded-xl">
+        <p class="font-semibold text-white mb-1">VWO (Visual Website Optimizer)</p>
+        <p class="text-gray-400 text-sm">Popular alternative with a visual editor. Paid plans start around $100/month. Good for marketers, less developer-friendly.</p>
+      </div>
+      <div class="p-4 bg-navy-light border border-white/10 rounded-xl">
+        <p class="font-semibold text-white mb-1">Optimizely</p>
+        <p class="text-gray-400 text-sm">Enterprise-grade, very expensive. Only consider if you have serious traffic (100K+ visitors/month).</p>
+      </div>
+    </div>
+
+    <h3 class="text-xl font-semibold text-white mb-4 mt-10">LaunchDarkly: Feature Flags as A/B Tests</h3>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      LaunchDarkly is primarily a feature flagging platform, but its flag system doubles as an A/B testing framework. You define variations in your code, control traffic splits from the dashboard, and track metrics.
+    </p>
+
+    <div class="p-5 bg-[#0d0d20] border border-white/10 rounded-xl font-mono text-sm mb-6">
+      <p class="text-gray-500 mb-3">// LaunchDarkly example</p>
+      <p class="text-gray-300 mb-1"><span class="text-purple-400">const</span> client = LaunchDarkly.init(<span class="text-green-400">'sdk-key'</span>);</p>
+      <p class="text-gray-300 mb-1"><span class="text-purple-400">const</span> user = {'{'} <span class="text-white">key</span>: <span class="text-green-400">'user-123'</span> {'}'};</p>
+      <p class="text-gray-300 mb-1"><span class="text-purple-400">const</span> headline = <span class="text-purple-400">await</span> client.variation(</p>
+      <p class="text-gray-300 mb-1">  <span class="text-green-400">'homepage-headline'</span>,</p>
+      <p class="text-gray-300 mb-1">  user,</p>
+      <p class="text-gray-300 mb-1">  <span class="text-green-400">'default-headline'</span> <span class="text-coral">// fallback</span></p>
+      <p class="text-gray-300 mb-1">);</p>
+    </div>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      Best for: Teams already using feature flags, or products with complex rollout needs. Pricing starts at $10/seat/month.
+    </p>
+
+    <h3 class="text-xl font-semibold text-white mb-4 mt-10">Manual Testing with Feature Flags</h3>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      Don't want another SaaS tool? Build your own A/B testing system with a simple feature flag implementation. Store flags in your database, Redis, or environment variables.
+    </p>
+
+    <div class="p-5 bg-[#0d0d20] border border-white/10 rounded-xl font-mono text-sm mb-6">
+      <p class="text-gray-500 mb-3">// Simple DIY A/B test with user ID hash</p>
+      <p class="text-gray-300 mb-1"><span class="text-purple-400">function</span> <span class="text-yellow-400">getABVariant</span>(userId, testName, variants = [<span class="text-green-400">'A'</span>, <span class="text-green-400">'B'</span>]) {'{'}</p>
+      <p class="text-gray-300 mb-1">  <span class="text-coral">// Simple hash function</span></p>
+      <p class="text-gray-300 mb-1">  <span class="text-purple-400">let</span> hash = <span class="text-blue-400">0</span>;</p>
+      <p class="text-gray-300 mb-1">  <span class="text-purple-400">const</span> str = userId + testName;</p>
+      <p class="text-gray-300 mb-1">  <span class="text-purple-400">for</span> (<span class="text-purple-400">let</span> i = <span class="text-blue-400">0</span>; i &lt; str.length; i++) {'{'}</p>
+      <p class="text-gray-300 mb-1">    hash = ((hash &lt;&lt; <span class="text-blue-400">5</span>) - hash) + str.charCodeAt(i);</p>
+      <p class="text-gray-300 mb-1">    hash |= <span class="text-blue-400">0</span>;</p>
+      <p class="text-gray-300 mb-1">  {'}'}</p>
+      <p class="text-gray-300 mb-1">  <span class="text-purple-400">const</span> index = Math.abs(hash) % variants.length;</p>
+      <p class="text-gray-300 mb-1">  <span class="text-purple-400">return</span> variants[index];</p>
+      <p class="text-gray-300 mb-1">{'}'}</p>
+      <p class="text-gray-300 mb-1"></p>
+      <p class="text-gray-300 mb-1"><span class="text-coral">// Usage</span></p>
+      <p class="text-gray-300"><span class="text-purple-400">const</span> variant = getABVariant(user.id, <span class="text-green-400">'cta-test'</span>);</p>
+    </div>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      Track results by logging events to your analytics. More work upfront, but you own everything and pay nothing.
+    </p>
+
+    <h3 class="text-xl font-semibold text-white mb-4 mt-10">Vercel Edge Config for Simple Flag-Based Tests</h3>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      If you're hosting on Vercel, Edge Config provides a fast, globally distributed key-value store perfect for feature flags and simple A/B tests.
+    </p>
+
+    <div class="p-5 bg-[#0d0d20] border border-white/10 rounded-xl font-mono text-sm mb-6">
+      <p class="text-gray-500 mb-3">// Vercel Edge Config A/B test</p>
+      <p class="text-gray-300 mb-1"><span class="text-purple-400">import</span> {'{'} get {'}'} <span class="text-purple-400">from</span> <span class="text-green-400">'@vercel/edge-config'</span>;</p>
+      <p class="text-gray-300 mb-1"></p>
+      <p class="text-gray-300 mb-1"><span class="text-purple-400">export async function</span> <span class="text-yellow-400">middleware</span>(request) {'{'}</p>
+      <p class="text-gray-300 mb-1">  <span class="text-purple-400">const</span> flags = <span class="text-purple-400">await</span> get(<span class="text-green-400">'feature-flags'</span>);</p>
+      <p class="text-gray-300 mb-1">  <span class="text-purple-400">const</span> userId = request.cookies.get(<span class="text-green-400">'user-id'</span>);</p>
+      <p class="text-gray-300 mb-1">  <span class="text-purple-400">const</span> variant = assignVariant(userId, flags.ctaTest);</p>
+      <p class="text-gray-300 mb-1">  </p>
+      <p class="text-gray-300 mb-1">  request.headers.set(<span class="text-green-400">'x-test-variant'</span>, variant);</p>
+      <p class="text-gray-300 mb-1">  <span class="text-purple-400">return</span> NextResponse.next();</p>
+      <p class="text-gray-300">{'}'}</p>
+    </div>
+
+    <div class="bg-navy-light border border-white/10 rounded-xl p-6 mb-6">
+      <p class="text-sm font-semibold text-coral mb-3">Tool Selection Guide</p>
+      <div class="space-y-2 text-sm">
+        <p class="text-gray-300"><strong class="text-white">Just starting:</strong> PostHog (free tier covers you)</p>
+        <p class="text-gray-300"><strong class="text-white">Already using feature flags:</strong> LaunchDarkly</p>
+        <p class="text-gray-300"><strong class="text-white">Want full control:</strong> DIY with user ID hashing</p>
+        <p class="text-gray-300"><strong class="text-white">On Vercel:</strong> Edge Config for simple tests</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5 -->
+  <section id="reading-results" class="playbook-section mb-16 scroll-mt-24">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">05</span>
+      <h2 class="text-2xl md:text-3xl font-bold">Reading Your Results Without Fooling Yourself</h2>
+    </div>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      Running the test is the easy part. Interpreting the results correctly is where most people fail. Statistics is full of traps that make losers look like winners and winners look like noise. Here's how to avoid them.
+    </p>
+
+    <h3 class="text-xl font-semibold text-white mb-4 mt-10">P-Value and Confidence Intervals in Plain English</h3>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      The <strong class="text-white">p-value</strong> tells you how likely it is that your results happened by chance. A p-value of 0.05 means there's a 5% chance the difference between A and B is just random luck. Lower is better. Most tools show this as "statistical significance" — aim for 95% (p less than 0.05) or higher.
+    </p>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      The <strong class="text-white">confidence interval</strong> shows the range where the true effect probably lives. If your test shows a 20% lift with a confidence interval of 5% to 35%, the real improvement is likely somewhere in that range. If the interval includes 0% (or goes negative), you don't have a clear winner yet.
+    </p>
+
+    <div class="p-5 bg-[#0d0d20] border border-white/10 rounded-xl font-mono text-sm mb-8">
+      <p class="text-gray-500 mb-3">// How to read results</p>
+      <p class="text-gray-300 mb-1">Conversion A: 3.0%</p>
+      <p class="text-gray-300 mb-1">Conversion B: 3.6% (+20% relative lift)</p>
+      <p class="text-gray-300 mb-1">P-value: 0.03 (97% significance) ✓</p>
+      <p class="text-gray-300 mb-3">Confidence interval: +8% to +32%</p>
+      <p class="text-green-400">→ Clear winner. Deploy B.</p>
+    </div>
+
+    <h3 class="text-xl font-semibold text-white mb-4 mt-10">The Peeking Problem: Why Checking Results Too Early Leads to Wrong Conclusions</h3>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      This is the #1 mistake in A/B testing. You launch a test, check the results after 2 days, and see variant B is winning with 98% significance. You call the test and deploy B. Two weeks later, your conversion rate is back to baseline. What happened?
+    </p>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      You fell victim to the <strong class="text-white">peeking problem</strong>. When you check results multiple times and stop as soon as you see significance, you're essentially running multiple tests. Each peek increases your chance of a false positive. It's like flipping a coin, checking after every flip, and stopping the moment you get 7 heads out of 10 — you'll find "significance" that isn't real.
+    </p>
+
+    <div class="bg-red-500/5 border border-red-500/20 rounded-xl p-6 mb-8">
+      <p class="text-sm font-semibold text-red-400 mb-3">The Golden Rule</p>
+      <p class="text-gray-300 leading-relaxed">
+        <strong class="text-white">Do not check results until you've reached your pre-calculated sample size AND your minimum test duration (2+ weeks).</strong> Set a calendar reminder. Ignore the dashboard until then. Your future self will thank you.
+      </p>
+    </div>
+
+    <h3 class="text-xl font-semibold text-white mb-4 mt-10">What a "Winner" Actually Means (And When to Keep Testing)</h3>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      A "winning" variant with 95% significance doesn't mean you're 95% sure it will improve conversions forever. It means you're 95% sure it performed better <em>during the test period</em> with <em>that specific audience</em>. External factors matter: seasonality, traffic sources, economic conditions.
+    </p>
+
+    <div class="space-y-3 mb-8">
+      <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+        <span class="text-coral mt-0.5">&#9656;</span>
+        <p><strong class="text-white">Validate with a follow-up test:</strong> Run the winner as a new control against another variant to confirm.</p>
+      </div>
+      <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+        <span class="text-coral mt-0.5">&#9656;</span>
+        <p><strong class="text-white">Segment your results:</strong> The winner might only work for mobile users, or only for traffic from Google ads. Check subgroups.</p>
+      </div>
+      <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+        <span class="text-coral mt-0.5">&#9656;</span>
+        <p><strong class="text-white">Monitor after deployment:</strong> Watch your metrics for 2-4 weeks after deploying a winner. Sometimes the effect disappears.</p>
+      </div>
+    </div>
+
+    <h3 class="text-xl font-semibold text-white mb-4 mt-10">When to Stop a Test Early (Rare)</h3>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      There are only two valid reasons to stop a test before your planned end date:
+    </p>
+
+    <div class="space-y-4 mb-8">
+      <div class="p-4 bg-red-500/5 border border-red-500/20 rounded-xl">
+        <p class="font-semibold text-white mb-1">1. Harm Detection</p>
+        <p class="text-gray-400 text-sm">If a variant is clearly tanking your conversion rate (50%+ drop) or causing errors, stop immediately. Don't wait for statistical significance to protect your business.</p>
+      </div>
+      <div class="p-4 bg-yellow-500/5 border border-yellow-500/20 rounded-xl">
+        <p class="font-semibold text-white mb-1">2. External Events</p>
+        <p class="text-gray-400 text-sm">If a major external event makes your test irrelevant (your site goes down, a competitor launches, news breaks), it may be better to restart than continue.</p>
+      </div>
+    </div>
+
+    <p class="text-gray-300 leading-relaxed">
+      Otherwise, <strong class="text-white">always</strong> run to your predetermined sample size and duration. Patience is a statistical virtue.
+    </p>
+  </section>
+
+  <!-- Section 6 -->
+  <section id="first-five-tests" class="playbook-section mb-16 scroll-mt-24">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">06</span>
+      <h2 class="text-2xl md:text-3xl font-bold">Your First 5 A/B Tests (In Order)</h2>
+    </div>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      Don't waste time figuring out what to test first. Run these five tests in order. They're proven to move the needle for developer products, ordered from highest to lowest impact.
+    </p>
+
+    <!-- Test 1 -->
+    <div class="p-6 bg-navy-light border border-white/10 rounded-2xl mb-6">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-coral/10 text-coral font-mono font-bold text-lg border border-coral/20">1</span>
+        <h3 class="text-xl font-bold text-white">Headline Value Proposition</h3>
+      </div>
+      
+      <div class="space-y-4">
+        <div>
+          <p class="text-xs font-semibold text-coral uppercase tracking-wider mb-1">Hypothesis</p>
+          <p class="text-gray-300 text-sm leading-relaxed">Leading with the outcome (what users get) will convert better than leading with the mechanism (how it works).</p>
+        </div>
+        <div>
+          <p class="text-xs font-semibold text-coral uppercase tracking-wider mb-1">What to Change</p>
+          <div class="p-3 bg-[#0d0d20] rounded-lg font-mono text-sm">
+            <p class="text-red-400 mb-1">Control: "Built with Rust, WebAssembly, and Edge Functions"</p>
+            <p class="text-green-400">Variant: "Deploy globally in 30 seconds"</p>
+          </div>
+        </div>
+        <div>
+          <p class="text-xs font-semibold text-coral uppercase tracking-wider mb-1">Success Metric</p>
+          <p class="text-gray-300 text-sm">Scroll depth and primary CTA click-through rate</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Test 2 -->
+    <div class="p-6 bg-navy-light border border-white/10 rounded-2xl mb-6">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-coral/10 text-coral font-mono font-bold text-lg border border-coral/20">2</span>
+        <h3 class="text-xl font-bold text-white">CTA Button Copy</h3>
+      </div>
+      
+      <div class="space-y-4">
+        <div>
+          <p class="text-xs font-semibold text-coral uppercase tracking-wider mb-1">Hypothesis</p>
+          <p class="text-gray-300 text-sm leading-relaxed">First-person, outcome-focused CTAs will outperform generic action verbs.</p>
+        </div>
+        <div>
+          <p class="text-xs font-semibold text-coral uppercase tracking-wider mb-1">What to Change</p>
+          <div class="p-3 bg-[#0d0d20] rounded-lg font-mono text-sm">
+            <p class="text-red-400 mb-1">Control: "Sign Up"</p>
+            <p class="text-green-400">Variant: "Start Building Free →"</p>
+          </div>
+        </div>
+        <div>
+          <p class="text-xs font-semibold text-coral uppercase tracking-wider mb-1">Success Metric</p>
+          <p class="text-gray-300 text-sm">Button click-through rate to signup page</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Test 3 -->
+    <div class="p-6 bg-navy-light border border-white/10 rounded-2xl mb-6">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-coral/10 text-coral font-mono font-bold text-lg border border-coral/20">3</span>
+        <h3 class="text-xl font-bold text-white">Social Proof Placement</h3>
+      </div>
+      
+      <div class="space-y-4">
+        <div>
+          <p class="text-xs font-semibold text-coral uppercase tracking-wider mb-1">Hypothesis</p>
+          <p class="text-gray-300 text-sm leading-relaxed">Placing social proof immediately below the hero (above the fold) will increase trust and conversion more than placing it lower on the page.</p>
+        </div>
+        <div>
+          <p class="text-xs font-semibold text-coral uppercase tracking-wider mb-1">What to Change</p>
+          <div class="p-3 bg-[#0d0d20] rounded-lg font-mono text-sm">
+            <p class="text-red-400 mb-1">Control: Logo bar at bottom of page</p>
+            <p class="text-green-400">Variant: "Trusted by X developers" strip right below hero CTA</p>
+          </div>
+        </div>
+        <div>
+          <p class="text-xs font-semibold text-coral uppercase tracking-wider mb-1">Success Metric</p>
+          <p class="text-gray-300 text-sm">Signup conversion rate (visitors → accounts created)</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Test 4 -->
+    <div class="p-6 bg-navy-light border border-white/10 rounded-2xl mb-6">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-coral/10 text-coral font-mono font-bold text-lg border border-coral/20">4</span>
+        <h3 class="text-xl font-bold text-white">Pricing Page: Annual vs. Monthly Default</h3>
+      </div>
+      
+      <div class="space-y-4">
+        <div>
+          <p class="text-xs font-semibold text-coral uppercase tracking-wider mb-1">Hypothesis</p>
+          <p class="text-gray-300 text-sm leading-relaxed">Defaulting to annual billing (with the monthly savings highlighted) will increase average revenue per user without reducing conversion.</p>
+        </div>
+        <div>
+          <p class="text-xs font-semibold text-coral uppercase tracking-wider mb-1">What to Change</p>
+          <div class="p-3 bg-[#0d0d20] rounded-lg font-mono text-sm">
+            <p class="text-red-400 mb-1">Control: Monthly billing selected by default</p>
+            <p class="text-green-400">Variant: Annual billing selected, "Save 20%" badge visible</p>
+          </div>
+        </div>
+        <div>
+          <p class="text-xs font-semibold text-coral uppercase tracking-wider mb-1">Success Metric</p>
+          <p class="text-gray-300 text-sm">Revenue per trial signup and annual plan selection rate</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Test 5 -->
+    <div class="p-6 bg-navy-light border border-white/10 rounded-2xl mb-6">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-coral/10 text-coral font-mono font-bold text-lg border border-coral/20">5</span>
+        <h3 class="text-xl font-bold text-white">Signup Form Friction</h3>
+      </div>
+      
+      <div class="space-y-4">
+        <div>
+          <p class="text-xs font-semibold text-coral uppercase tracking-wider mb-1">Hypothesis</p>
+          <p class="text-gray-300 text-sm leading-relaxed">Reducing form fields from 4 to 2 (email + password only) will increase signup completion without reducing lead quality.</p>
+        </div>
+        <div>
+          <p class="text-xs font-semibold text-coral uppercase tracking-wider mb-1">What to Change</p>
+          <div class="p-3 bg-[#0d0d20] rounded-lg font-mono text-sm">
+            <p class="text-red-400 mb-1">Control: Name, Email, Password, Company, Role</p>
+            <p class="text-green-400">Variant: Email, Password (collect rest during onboarding)</p>
+          </div>
+        </div>
+        <div>
+          <p class="text-xs font-semibold text-coral uppercase tracking-wider mb-1">Success Metric</p>
+          <p class="text-gray-300 text-sm">Signup completion rate and 7-day retention</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-gradient-to-r from-coral/10 to-transparent border-l-4 border-coral pl-6 py-4 rounded-r-lg">
+      <p class="text-white font-medium leading-relaxed">
+        "Run these five tests in order. Don't skip ahead. Each test builds on the previous one, and each teaches you something about your audience. By test #5, you'll understand what makes your users convert better than 99% of your competitors."
+      </p>
+    </div>
+  </section>
+
+  <!-- Section 7 -->
+  <section id="checklist" class="playbook-section mb-16 scroll-mt-24">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">07</span>
+      <h2 class="text-2xl md:text-3xl font-bold">A/B Testing Checklist</h2>
+    </div>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      Print this checklist. Use it for every test. Skipping steps is how you end up with false results and bad decisions.
+    </p>
+
+    <!-- Pre-test Checklist -->
+    <div class="p-6 bg-navy-light border border-white/10 rounded-2xl mb-6">
+      <h3 class="text-sm font-semibold text-coral uppercase tracking-wider mb-4">Pre-Test Checklist</h3>
+      <div class="space-y-3">
+        <label class="flex items-start gap-3 cursor-pointer group">
+          <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+          <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Written hypothesis: "If [change], then [metric] will [increase/decrease] because [reason]"</span>
+        </label>
+        <label class="flex items-start gap-3 cursor-pointer group">
+          <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+          <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Primary metric defined and instrumented</span>
+        </label>
+        <label class="flex items-start gap-3 cursor-pointer group">
+          <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+          <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Baseline conversion rate documented</span>
+        </label>
+        <label class="flex items-start gap-3 cursor-pointer group">
+          <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+          <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Sample size calculated (use a calculator)</span>
+        </label>
+        <label class="flex items-start gap-3 cursor-pointer group">
+          <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+          <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Test duration set (minimum 2 weeks)</span>
+        </label>
+        <label class="flex items-start gap-3 cursor-pointer group">
+          <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+          <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Only ONE variable differs between variants</span>
+        </label>
+        <label class="flex items-start gap-3 cursor-pointer group">
+          <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+          <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Calendar reminder set for earliest analysis date</span>
+        </label>
+        <label class="flex items-start gap-3 cursor-pointer group">
+          <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+          <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Variants render correctly on mobile and desktop</span>
+        </label>
+      </div>
+    </div>
+
+    <!-- During-test Checklist -->
+    <div class="p-6 bg-navy-light border border-white/10 rounded-2xl mb-6">
+      <h3 class="text-sm font-semibold text-coral uppercase tracking-wider mb-4">During-Test Checklist</h3>
+      <div class="space-y-3">
+        <label class="flex items-start gap-3 cursor-pointer group">
+          <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+          <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Traffic split is roughly 50/50 (check after 24 hours)</span>
+        </label>
+        <label class="flex items-start gap-3 cursor-pointer group">
+          <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+          <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">No major external events affecting traffic (holidays, launches, outages)</span>
+        </label>
+        <label class="flex items-start gap-3 cursor-pointer group">
+          <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+          <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">No peeking at results until end date</span>
+        </label>
+        <label class="flex items-start gap-3 cursor-pointer group">
+          <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+          <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Track any bugs or issues that arise (don't let them bias results)</span>
+        </label>
+        <label class="flex items-start gap-3 cursor-pointer group">
+          <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+          <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Monitor for extreme negative impact (harm detection)</span>
+        </label>
+      </div>
+    </div>
+
+    <!-- Post-test Checklist -->
+    <div class="p-6 bg-navy-light border border-white/10 rounded-2xl mb-6">
+      <h3 class="text-sm font-semibold text-coral uppercase tracking-wider mb-4">Post-Test Checklist</h3>
+      <div class="space-y-3">
+        <label class="flex items-start gap-3 cursor-pointer group">
+          <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+          <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Reached target sample size</span>
+        </label>
+        <label class="flex items-start gap-3 cursor-pointer group">
+          <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+          <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Ran for minimum 2 full weeks</span>
+        </label>
+        <label class="flex items-start gap-3 cursor-pointer group">
+          <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+          <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Achieved 95%+ statistical significance</span>
+        </label>
+        <label class="flex items-start gap-3 cursor-pointer group">
+          <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+          <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Confidence interval doesn't include 0%</span>
+        </label>
+        <label class="flex items-start gap-3 cursor-pointer group">
+          <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+          <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Segmented results by device, traffic source, and user type</span>
+        </label>
+        <label class="flex items-start gap-3 cursor-pointer group">
+          <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+          <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Documented the winner and the learnings</span>
+        </label>
+        <label class="flex items-start gap-3 cursor-pointer group">
+          <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+          <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Deployed the winner to 100% of traffic</span>
+        </label>
+        <label class="flex items-start gap-3 cursor-pointer group">
+          <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+          <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Monitoring metrics post-deployment for regression</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="bg-gradient-to-r from-coral/10 to-transparent border-l-4 border-coral pl-6 py-4 rounded-r-lg">
+      <p class="text-white font-medium leading-relaxed">
+        "The checklist is your insurance policy against bad decisions. A test without a checklist is just guessing with extra steps."
+      </p>
+    </div>
+  </section>
+
+</PlaybookLayout>
