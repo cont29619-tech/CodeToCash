@@ -1,0 +1,1049 @@
+---
+import PlaybookLayout from '../../layouts/PlaybookLayout.astro';
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Your First Google Ad Campaign on a $100 Budget",
+  "description": "Step-by-step guide to running your first Google Ads campaign for a developer product. Keywords, ad copy, landing pages, and optimization on a small budget.",
+  "step": [
+    { "@type": "HowToStep", "name": "Decide if Google Ads makes sense for your product", "position": 1 },
+    { "@type": "HowToStep", "name": "Set up your campaign with the right settings", "position": 2 },
+    { "@type": "HowToStep", "name": "Research and select keywords with commercial intent", "position": 3 },
+    { "@type": "HowToStep", "name": "Write ads that earn clicks from the right buyers", "position": 4 },
+    { "@type": "HowToStep", "name": "Align your landing page with your ad messaging", "position": 5 },
+    { "@type": "HowToStep", "name": "Set up conversion tracking and measure results", "position": 6 },
+    { "@type": "HowToStep", "name": "Follow the day-by-day $100 spending plan", "position": 7 },
+    { "@type": "HowToStep", "name": "Run through the Google Ads checklist before launch", "position": 8 },
+  ]
+});
+
+const sections = [
+  { id: "should-you-run-ads",   title: "Should You Even Run Google Ads?" },
+  { id: "campaign-setup",       title: "Campaign Setup Step by Step" },
+  { id: "keyword-strategy",     title: "Keyword Strategy for Dev Products" },
+  { id: "writing-ads",          title: "Writing Ads That Get Clicks" },
+  { id: "landing-page-match",   title: "Your Landing Page Must Match the Ad" },
+  { id: "measuring-optimizing", title: "Measuring and Optimizing Your $100" },
+  { id: "budget-plan",          title: "Your $100 Budget Plan" },
+  { id: "ads-checklist",        title: "Google Ads Checklist" },
+];
+---
+
+<PlaybookLayout
+  title="Your First Google Ad Campaign on a $100 Budget"
+  metaTitle="Google Ads for Developers on a $100 Budget | CodeToCash"
+  metaDescription="Step-by-step guide to running your first Google Ads campaign for a developer product. Keywords, ad copy, landing pages, and optimization on a small budget."
+  subtitle="Run a real, data-producing Google Ads campaign on $100 — without wasting money on the wrong keywords, wrong audiences, or the wrong campaign type."
+  difficulty="Intermediate"
+  readingTime="18 min read"
+  lastUpdated="February 2026"
+  sections={sections}
+  prev={{ slug: "email-launch-sequence", title: "Email Launch Sequence for Developers" }}
+  next={{ slug: "copywriting-for-developers", title: "Writing Copy When You Hate Writing Copy" }}
+  schema={schema}
+>
+
+  <!-- Section 1 -->
+  <section id="should-you-run-ads" class="playbook-section mb-16 scroll-mt-24">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">01</span>
+      <h2 class="text-2xl md:text-3xl font-bold">Should You Even Run Google Ads?</h2>
+    </div>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      Before you hand Google a credit card, answer an honest question: does anyone search for what you've built? Google Ads is a demand-capture channel. It intercepts people who already know they have a problem and are actively looking for a solution. If nobody is typing queries related to your product category, you'll burn $100 and have nothing to show for it.
+    </p>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      That's the fundamental difference between Google Ads and social ads. Facebook and Twitter create demand — you interrupt people and make them want something they weren't thinking about. Google captures demand that already exists. Both have their place, but they work completely differently. This playbook is about the latter.
+    </p>
+
+    <h3 class="text-xl font-semibold text-white mb-4 mt-10">When Google Ads Makes Sense for a Dev Product</h3>
+
+    <div class="space-y-4 mb-8">
+      <div class="flex items-start gap-4 p-4 rounded-xl bg-white/[0.03] border border-white/5">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-green-500/10 text-green-400 font-mono font-bold text-xs shrink-0">&#10003;</span>
+        <div>
+          <p class="font-semibold text-white mb-1">There's measurable search volume for your category</p>
+          <p class="text-gray-400 text-sm leading-relaxed">Tools like "API monitoring," "uptime monitoring for developers," "SaaS boilerplate," or "form builder for React" get thousands of monthly searches. If Google Keyword Planner shows volume, there's an audience to capture.</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-4 p-4 rounded-xl bg-white/[0.03] border border-white/5">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-green-500/10 text-green-400 font-mono font-bold text-xs shrink-0">&#10003;</span>
+        <div>
+          <p class="font-semibold text-white mb-1">You have a proven offer with some conversion data</p>
+          <p class="text-gray-400 text-sm leading-relaxed">You don't need to be profitable yet, but you should know your landing page converts at some measurable rate — even 0.5%. Sending paid traffic to an untested page is like deploying to production without any tests: expensive mistakes ahead.</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-4 p-4 rounded-xl bg-white/[0.03] border border-white/5">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-green-500/10 text-green-400 font-mono font-bold text-xs shrink-0">&#10003;</span>
+        <div>
+          <p class="font-semibold text-white mb-1">Your product has a clear value proposition and target customer</p>
+          <p class="text-gray-400 text-sm leading-relaxed">You know who you're selling to and what problem you solve. Vague products generate vague keyword lists and vague ads — which generate clicks from the wrong people and no conversions.</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-4 p-4 rounded-xl bg-white/[0.03] border border-white/5">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-green-500/10 text-green-400 font-mono font-bold text-xs shrink-0">&#10003;</span>
+        <div>
+          <p class="font-semibold text-white mb-1">Your competitors are running ads on your category keywords</p>
+          <p class="text-gray-400 text-sm leading-relaxed">If you Google your category and see a row of ads above the organic results, that's a signal people are buying via this channel. Competitors spending money on ads means the economics work for someone — and they can work for you too.</p>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="text-xl font-semibold text-white mb-4 mt-10">When Google Ads Doesn't Make Sense</h3>
+
+    <div class="space-y-4 mb-8">
+      <div class="flex items-start gap-4 p-4 rounded-xl bg-white/[0.03] border border-white/5">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-red-500/10 text-red-400 font-mono font-bold text-xs shrink-0">✕</span>
+        <div>
+          <p class="font-semibold text-white mb-1">Your product is in a category nobody searches for yet</p>
+          <p class="text-gray-400 text-sm leading-relaxed">If you've invented a genuinely new category — something people don't have a name for — there are no search queries to capture. You need demand-generation channels (content marketing, social, communities) before paid search makes sense.</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-4 p-4 rounded-xl bg-white/[0.03] border border-white/5">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-red-500/10 text-red-400 font-mono font-bold text-xs shrink-0">✕</span>
+        <div>
+          <p class="font-semibold text-white mb-1">You're pre-revenue with no landing page or pricing</p>
+          <p class="text-gray-400 text-sm leading-relaxed">Running ads before you have a conversion mechanism is burning money for vanity metrics. Build the funnel first. Ads are an accelerant, not a starting point.</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-4 p-4 rounded-xl bg-white/[0.03] border border-white/5">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-red-500/10 text-red-400 font-mono font-bold text-xs shrink-0">✕</span>
+        <div>
+          <p class="font-semibold text-white mb-1">The keyword CPCs are $30–$50+ and your LTV can't support them</p>
+          <p class="text-gray-400 text-sm leading-relaxed">Some developer categories — enterprise security tools, legal SaaS, financial APIs — have brutally expensive clicks. Check CPCs before committing. If a click costs $40 and you convert at 1%, you need a $4,000 LTV to break even.</p>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="text-xl font-semibold text-white mb-4 mt-10">The Mindset Shift: $100 is a Learning Budget</h3>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      This is the most important reframe in this entire playbook. Your first $100 on Google Ads is not a growth investment. It's market research you pay for. You are buying data: which keywords attract buyers, which ad copy gets clicks, what your actual conversion rate is when someone arrives with purchase intent. That data is worth far more than $100 if you use it correctly.
+    </p>
+
+    <div class="bg-navy-light border border-white/10 rounded-xl p-6 mb-6">
+      <p class="text-sm font-semibold text-coral mb-3">Developer Analogy</p>
+      <p class="text-gray-300 leading-relaxed">
+        Think of $100 in ads like running a load test on your funnel. You're not trying to handle 100,000 requests — you're stress-testing the system with controlled traffic to find where it breaks. The test itself is the value, not the traffic. <code class="text-coral bg-coral/10 px-1.5 py-0.5 rounded font-mono text-sm">runLoadTest(budget: 100)</code> returns <code class="text-coral bg-coral/10 px-1.5 py-0.5 rounded font-mono text-sm">BottleneckReport</code>, not revenue.
+      </p>
+    </div>
+
+    <p class="text-gray-300 leading-relaxed">
+      Go in expecting to learn, not to profit. If you happen to get signups or sales along the way, great. But the real output is a validated keyword list, a winning ad variant, and a measured conversion rate. Those are the building blocks of a scalable paid channel.
+    </p>
+  </section>
+
+  <!-- Section 2 -->
+  <section id="campaign-setup" class="playbook-section mb-16 scroll-mt-24">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">02</span>
+      <h2 class="text-2xl md:text-3xl font-bold">Campaign Setup Step by Step</h2>
+    </div>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      Google Ads has a talent for nudging you toward settings that waste your money — usually toward broader targeting, higher budgets, and automated campaign types that give Google more control over your spend. This section tells you exactly what to click and what to ignore.
+    </p>
+
+    <h3 class="text-xl font-semibold text-white mb-4 mt-10">Creating Your Google Ads Account</h3>
+
+    <p class="text-gray-300 leading-relaxed mb-4">
+      Go to ads.google.com and sign in with a Google account you own. When prompted to create your first campaign immediately, click "Switch to Expert Mode" — it appears as a small link at the bottom. This skips the dumbed-down setup flow that locks you into Smart campaigns (avoid these). You'll land in the full campaign manager where you have actual control.
+    </p>
+
+    <div class="p-5 bg-[#0d0d20] border border-white/10 rounded-xl font-mono text-sm mb-8">
+      <p class="text-gray-500 mb-3">// Account setup sequence</p>
+      <p class="text-gray-300 mb-1">1. ads.google.com → Sign in</p>
+      <p class="text-gray-300 mb-1">2. "Create your first campaign" prompt appears</p>
+      <p class="text-gray-300 mb-1">3. <span class="text-coral">Click "Switch to Expert Mode"</span> (bottom of screen)</p>
+      <p class="text-gray-300 mb-1">4. Select "Create a campaign without a goal's guidance"</p>
+      <p class="text-gray-300">5. Select campaign type: <span class="text-green-400">Search</span></p>
+    </div>
+
+    <h3 class="text-xl font-semibold text-white mb-4 mt-10">Why Search Campaigns — and Not the Others</h3>
+
+    <p class="text-gray-300 leading-relaxed mb-4">
+      Google offers several campaign types. For a developer product on a $100 test budget, only one is right:
+    </p>
+
+    <div class="space-y-3 mb-8">
+      <div class="flex items-start gap-4 p-4 rounded-xl bg-white/[0.03] border border-white/5">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-green-500/10 text-green-400 font-mono font-bold text-xs shrink-0">✓</span>
+        <div>
+          <p class="font-semibold text-white mb-1">Search Campaigns — use this</p>
+          <p class="text-gray-400 text-sm leading-relaxed">Text ads shown when someone types a specific query. High intent. You only pay when someone clicks. You control which keywords trigger your ad. This is the only campaign type where you can precisely target people actively looking for your solution.</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-4 p-4 rounded-xl bg-white/[0.03] border border-white/5">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-red-500/10 text-red-400 font-mono font-bold text-xs shrink-0">✕</span>
+        <div>
+          <p class="font-semibold text-white mb-1">Display Campaigns — skip for now</p>
+          <p class="text-gray-400 text-sm leading-relaxed">Banner ads shown across millions of websites. Low intent — people aren't searching for anything. CPCs are cheap but click quality is terrible. Useful for retargeting later, not for your first $100.</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-4 p-4 rounded-xl bg-white/[0.03] border border-white/5">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-red-500/10 text-red-400 font-mono font-bold text-xs shrink-0">✕</span>
+        <div>
+          <p class="font-semibold text-white mb-1">Performance Max — absolutely skip this</p>
+          <p class="text-gray-400 text-sm leading-relaxed">Google's fully automated campaign type that runs across all their channels simultaneously. Sounds convenient, but you have almost no control over where your ads appear, who sees them, or what keywords trigger them. Google optimizes for conversions — but if you have no conversion data yet, it's essentially random. Small budgets get wasted fast.</p>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="text-xl font-semibold text-white mb-4 mt-10">Budget: $5/Day and Why to Start Small</h3>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      Set your daily budget to $5. Not $20, not $50 — $5. Here's why: Google's algorithm needs time to learn which clicks lead to conversions. During the learning phase (the first 1–2 weeks), performance is unpredictable and often worse than it will eventually be. Spending $50/day during the learning phase burns money before you have enough data to make good decisions. At $5/day, your $100 lasts 20 days — long enough to gather meaningful data and make optimization decisions.
+    </p>
+
+    <div class="bg-gradient-to-r from-coral/10 to-transparent border-l-4 border-coral pl-6 py-4 rounded-r-lg mb-8">
+      <p class="text-white font-medium leading-relaxed">
+        "Start with $5/day. After two weeks, you'll know which 3 keywords actually convert. Then you can confidently increase budget on those specific keywords — rather than blindly funding the whole account."
+      </p>
+    </div>
+
+    <h3 class="text-xl font-semibold text-white mb-4 mt-10">Location, Language, and Schedule Settings</h3>
+
+    <p class="text-gray-300 leading-relaxed mb-4">
+      These settings seem minor but directly affect your budget efficiency. Here's what to configure for a developer tool:
+    </p>
+
+    <div class="space-y-4 mb-6">
+      <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+        <p class="font-mono text-xs text-gray-500 mb-2">// Location targeting</p>
+        <p class="text-white text-sm font-medium mb-2">Target: United States, Canada, United Kingdom, Australia</p>
+        <p class="text-gray-400 text-sm">These four English-speaking markets have the highest developer density and purchasing power. Unless your product is region-specific, start here. Avoid targeting every country — CPCs and quality vary wildly and your $5/day disappears fast across 50 countries.</p>
+      </div>
+      <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+        <p class="font-mono text-xs text-gray-500 mb-2">// Location options (important)</p>
+        <p class="text-white text-sm font-medium mb-2">Set to "Presence: People in or regularly in your targeted locations"</p>
+        <p class="text-gray-400 text-sm">By default Google shows ads to people interested in your location too. Uncheck the interest-based option to only show to people physically in your target countries.</p>
+      </div>
+      <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+        <p class="font-mono text-xs text-gray-500 mb-2">// Ad schedule</p>
+        <p class="text-white text-sm font-medium mb-2">Start with: All days, all hours</p>
+        <p class="text-gray-400 text-sm">Developers search at all hours — many in off-hours when they're deep in a project. After two weeks of data, check your hour-of-day report to see if any time windows perform unusually well or poorly, then adjust.</p>
+      </div>
+      <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+        <p class="font-mono text-xs text-gray-500 mb-2">// Bidding strategy</p>
+        <p class="text-white text-sm font-medium mb-2">Use: Manual CPC (with Enhanced CPC disabled)</p>
+        <p class="text-gray-400 text-sm">Automated bidding strategies like Target CPA and Maximize Conversions need historical conversion data to work well. Start manual so you control exactly how much you bid per keyword. Once you have 30+ conversions in a month, switch to automated.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3 -->
+  <section id="keyword-strategy" class="playbook-section mb-16 scroll-mt-24">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">03</span>
+      <h2 class="text-2xl md:text-3xl font-bold">Keyword Strategy for Dev Products</h2>
+    </div>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      Keywords are where most first-time advertisers waste their money. They target keywords that have high volume but low commercial intent — people researching, not buying. The goal here isn't to get the most clicks. It's to get clicks from people who are ready to pay for a solution.
+    </p>
+
+    <h3 class="text-xl font-semibold text-white mb-4 mt-10">Commercial Intent vs. Informational Intent</h3>
+
+    <p class="text-gray-300 leading-relaxed mb-4">
+      Every search query falls on a spectrum from pure research to purchase-ready. For a $100 test budget, only bid on keywords at the commercial end of that spectrum.
+    </p>
+
+    <div class="p-5 bg-[#0d0d20] border border-white/10 rounded-xl font-mono text-sm mb-8">
+      <p class="text-gray-500 mb-3">// Intent signals in keywords</p>
+      <div class="space-y-2">
+        <p class="text-red-400">// ✕ Informational (skip these)</p>
+        <p class="text-gray-400 mb-3">"what is uptime monitoring"<br />"how to monitor api performance"<br />"uptime monitoring tutorial"</p>
+        <p class="text-yellow-400">// ~ Consideration (maybe, if budget allows)</p>
+        <p class="text-gray-400 mb-3">"best uptime monitoring tools"<br />"uptime monitoring comparison"<br />"uptime monitoring alternatives"</p>
+        <p class="text-green-400">// ✓ Commercial intent (target these first)</p>
+        <p class="text-gray-300">"uptime monitoring software"<br />"uptime monitoring service"<br />"uptime monitoring for developers"<br />"buy uptime monitoring"</p>
+      </div>
+    </div>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      Commercial intent keywords often include words like: <span class="text-white font-medium">software, tool, service, platform, solution, pricing, plans, free trial, alternative to [competitor]</span>. Informational intent keywords often include: <span class="text-white font-medium">how to, what is, tutorial, guide, learn, free</span>. Informational keywords may eventually be worth targeting, but not with a $100 test budget.
+    </p>
+
+    <h3 class="text-xl font-semibold text-white mb-4 mt-10">Using Google Keyword Planner</h3>
+
+    <p class="text-gray-300 leading-relaxed mb-4">
+      Keyword Planner is free inside Google Ads. Use it to validate search volume and estimated CPCs before you commit to keywords. Here's the workflow:
+    </p>
+
+    <div class="space-y-3 mb-8">
+      <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+        <span class="text-coral font-mono text-xs mt-0.5">01</span>
+        <p>In Google Ads, go to <strong class="text-white">Tools → Keyword Planner → Discover new keywords</strong></p>
+      </div>
+      <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+        <span class="text-coral font-mono text-xs mt-0.5">02</span>
+        <p>Enter 3–5 seed terms that describe what your product does — not the brand name, the <em>category</em>. E.g. for an uptime monitoring tool: "uptime monitoring," "website monitoring service," "server monitoring software"</p>
+      </div>
+      <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+        <span class="text-coral font-mono text-xs mt-0.5">03</span>
+        <p>Set location to your target countries. Click "Get results."</p>
+      </div>
+      <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+        <span class="text-coral font-mono text-xs mt-0.5">04</span>
+        <p>Sort by <strong class="text-white">Average monthly searches</strong>. Look for keywords with 100–10,000 searches/month. Under 100 means tiny audience; over 10,000 usually means too broad and expensive.</p>
+      </div>
+      <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+        <span class="text-coral font-mono text-xs mt-0.5">05</span>
+        <p>Check the <strong class="text-white">Top of page bid (high range)</strong> column. This is what you'd need to pay to appear in position 1–3. If bids are above $15–$20, be cautious — your $100 disappears in 5–10 clicks.</p>
+      </div>
+      <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+        <span class="text-coral font-mono text-xs mt-0.5">06</span>
+        <p>Pick 8–12 keywords with commercial intent, reasonable volume, and CPCs under $10. Export or save them.</p>
+      </div>
+    </div>
+
+    <h3 class="text-xl font-semibold text-white mb-4 mt-10">Match Types Explained</h3>
+
+    <p class="text-gray-300 leading-relaxed mb-4">
+      Match types control how closely a search query must match your keyword before your ad shows. Choosing the wrong match type is one of the most common ways to waste money.
+    </p>
+
+    <div class="space-y-4 mb-8">
+      <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+        <p class="font-mono text-sm text-coral mb-2">Broad Match — keyword</p>
+        <p class="text-gray-400 text-sm leading-relaxed mb-2">Shows your ad for any query Google thinks is related to your keyword. This includes synonyms, related topics, and wildly off-topic searches. "uptime monitoring" in broad match could trigger for "how do I check if my site is down" — informational, no buying intent.</p>
+        <p class="text-yellow-400 text-xs font-mono">Verdict: Avoid on a small budget. Too broad, too expensive.</p>
+      </div>
+      <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+        <p class="font-mono text-sm text-coral mb-2">Phrase Match — "keyword"</p>
+        <p class="text-gray-400 text-sm leading-relaxed mb-2">Shows your ad when the query contains your keyword phrase (in any order, with other words around it). "uptime monitoring" in phrase match catches "affordable uptime monitoring service" and "uptime monitoring for small business" — still relevant. Gives you control with some flexibility.</p>
+        <p class="text-green-400 text-xs font-mono">Verdict: Your primary match type for this $100 test.</p>
+      </div>
+      <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+        <p class="font-mono text-sm text-coral mb-2">Exact Match — [keyword]</p>
+        <p class="text-gray-400 text-sm leading-relaxed mb-2">Shows your ad only for queries that match your keyword extremely closely. [uptime monitoring] catches "uptime monitoring" and very close variants like "uptime monitor." Very precise, very controlled, lower volume.</p>
+        <p class="text-green-400 text-xs font-mono">Verdict: Use for your highest-value, highest-intent keywords alongside phrase match.</p>
+      </div>
+    </div>
+
+    <h3 class="text-xl font-semibold text-white mb-4 mt-10">Negative Keywords: The Most Underrated Setting</h3>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      Negative keywords prevent your ad from showing for irrelevant queries. They are arguably more important than your positive keyword list, especially with a tight budget. Every click from an irrelevant query is money you can't get back.
+    </p>
+
+    <p class="text-gray-300 leading-relaxed mb-4">
+      Add these as negative keywords before you launch. They prevent your ad from showing to people in pure research mode:
+    </p>
+
+    <div class="p-5 bg-[#0d0d20] border border-white/10 rounded-xl font-mono text-sm mb-8">
+      <p class="text-gray-500 mb-3">// Negative keywords to add immediately</p>
+      <p class="text-red-400 mb-1">"free" (unless you have a free tier)</p>
+      <p class="text-red-400 mb-1">"open source"</p>
+      <p class="text-red-400 mb-1">"tutorial"</p>
+      <p class="text-red-400 mb-1">"how to"</p>
+      <p class="text-red-400 mb-1">"what is"</p>
+      <p class="text-red-400 mb-1">"course"</p>
+      <p class="text-red-400 mb-1">"certification"</p>
+      <p class="text-red-400 mb-1">"jobs" / "career" / "salary"</p>
+      <p class="text-red-400 mb-1">"github"</p>
+      <p class="text-red-400">"reddit"</p>
+    </div>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      After your campaign runs for a few days, check the <strong class="text-white">Search Terms report</strong> (Keywords → Search Terms). This shows you the actual queries that triggered your ads. Scan it daily during your $100 test and add any irrelevant terms as negatives. This is the single highest-leverage optimization you can make.
+    </p>
+
+    <h3 class="text-xl font-semibold text-white mb-4 mt-10">20 Example Keywords by Product Category</h3>
+
+    <p class="text-gray-300 leading-relaxed mb-4">
+      These are phrase-match keyword examples you can adapt. Replace the category with your specific product type.
+    </p>
+
+    <div class="grid gap-3 sm:grid-cols-2 mb-8">
+      <div class="p-4 bg-white/[0.02] border border-white/5 rounded-xl">
+        <p class="text-xs font-semibold text-coral uppercase tracking-wider mb-3">SaaS Tools</p>
+        <ul class="space-y-1 text-sm text-gray-400 font-mono">
+          <li>"project management software developers"</li>
+          <li>"saas analytics platform"</li>
+          <li>"developer productivity tool"</li>
+          <li>"team collaboration software engineers"</li>
+          <li>"saas dashboard builder"</li>
+        </ul>
+      </div>
+      <div class="p-4 bg-white/[0.02] border border-white/5 rounded-xl">
+        <p class="text-xs font-semibold text-coral uppercase tracking-wider mb-3">Developer APIs</p>
+        <ul class="space-y-1 text-sm text-gray-400 font-mono">
+          <li>"email api for developers"</li>
+          <li>"sms api service"</li>
+          <li>"payment api integration"</li>
+          <li>"authentication api saas"</li>
+          <li>"pdf generation api"</li>
+        </ul>
+      </div>
+      <div class="p-4 bg-white/[0.02] border border-white/5 rounded-xl">
+        <p class="text-xs font-semibold text-coral uppercase tracking-wider mb-3">Templates & Boilerplates</p>
+        <ul class="space-y-1 text-sm text-gray-400 font-mono">
+          <li>"nextjs saas boilerplate"</li>
+          <li>"react dashboard template"</li>
+          <li>"saas starter kit"</li>
+          <li>"landing page template developer"</li>
+          <li>"email template developer"</li>
+        </ul>
+      </div>
+      <div class="p-4 bg-white/[0.02] border border-white/5 rounded-xl">
+        <p class="text-xs font-semibold text-coral uppercase tracking-wider mb-3">Infra & Monitoring</p>
+        <ul class="space-y-1 text-sm text-gray-400 font-mono">
+          <li>"uptime monitoring service"</li>
+          <li>"api monitoring tool"</li>
+          <li>"error tracking software"</li>
+          <li>"log management saas"</li>
+          <li>"server monitoring platform"</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4 -->
+  <section id="writing-ads" class="playbook-section mb-16 scroll-mt-24">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">04</span>
+      <h2 class="text-2xl md:text-3xl font-bold">Writing Ads That Get Clicks</h2>
+    </div>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      Your ad is the only thing standing between a searcher and your landing page. It has to earn the click in about 2 seconds — competing against 3–5 other ads at the top of the results page. Bad ad copy gets ignored. Good ad copy not only gets clicks but pre-qualifies visitors so the people who arrive are likely to convert.
+    </p>
+
+    <h3 class="text-xl font-semibold text-white mb-4 mt-10">Anatomy of a Google Search Ad</h3>
+
+    <p class="text-gray-300 leading-relaxed mb-4">
+      A Responsive Search Ad (RSA) — the current standard format — is built from up to 15 headlines and 4 descriptions. Google rotates and tests combinations to find the best performers. Here's what each element is:
+    </p>
+
+    <div class="p-5 bg-[#0d0d20] border border-white/10 rounded-xl font-mono text-sm mb-8">
+      <p class="text-gray-500 mb-3">// Anatomy of a search ad</p>
+      <p class="text-blue-400 text-base mb-1">Your Product Name | Start Free Today | No Credit Card</p>
+      <p class="text-green-400 text-xs mb-1">yourproduct.com › features › pricing</p>
+      <p class="text-gray-300 text-xs leading-relaxed">Ship production-ready auth in 15 minutes. Drop-in login, social OAuth, and MFA — built for developers who want to move fast. Try free.</p>
+      <div class="mt-3 pt-3 border-t border-white/10 space-y-1">
+        <p class="text-gray-500 text-xs">Headlines: 30 chars max each (shown in blue above)</p>
+        <p class="text-gray-500 text-xs">Display URL: yourproduct.com + path fields</p>
+        <p class="text-gray-500 text-xs">Descriptions: 90 chars max each (2 shown at a time)</p>
+      </div>
+    </div>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      Provide all 15 headline slots and all 4 description slots. More variety gives Google more to test, which means faster optimization to a winning combination. Google will rate each ad's "strength" — aim for Good or Excellent by filling in all slots with varied, non-repetitive copy.
+    </p>
+
+    <h3 class="text-xl font-semibold text-white mb-4 mt-10">15 Headline Formulas for Developer Products</h3>
+
+    <p class="text-gray-300 leading-relaxed mb-4">
+      Each headline must be under 30 characters and standalone — Google can show any 3 headlines in any order. Write each one so it works independently.
+    </p>
+
+    <div class="space-y-3 mb-8">
+      <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+        <p class="font-mono text-xs text-gray-500 mb-1">// Formula: Outcome-first</p>
+        <p class="font-mono text-sm text-coral">"Ship Auth in 15 Minutes"</p>
+      </div>
+      <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+        <p class="font-mono text-xs text-gray-500 mb-1">// Formula: Include keyword naturally</p>
+        <p class="font-mono text-sm text-coral">"Best [Category] for Developers"</p>
+      </div>
+      <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+        <p class="font-mono text-xs text-gray-500 mb-1">// Formula: Brand + CTA</p>
+        <p class="font-mono text-sm text-coral">"[ProductName] — Start Free"</p>
+      </div>
+      <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+        <p class="font-mono text-xs text-gray-500 mb-1">// Formula: Social proof number</p>
+        <p class="font-mono text-sm text-coral">"10,000 Devs Trust [Product]"</p>
+      </div>
+      <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+        <p class="font-mono text-xs text-gray-500 mb-1">// Formula: Competitor alternative</p>
+        <p class="font-mono text-sm text-coral">"Better Than [Competitor]"</p>
+      </div>
+      <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+        <p class="font-mono text-xs text-gray-500 mb-1">// Formula: Time-saving</p>
+        <p class="font-mono text-sm text-coral">"Save 20+ Hours Per Sprint"</p>
+      </div>
+      <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+        <p class="font-mono text-xs text-gray-500 mb-1">// Formula: Risk reversal</p>
+        <p class="font-mono text-sm text-coral">"Free 14-Day Trial — No Card"</p>
+      </div>
+      <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+        <p class="font-mono text-xs text-gray-500 mb-1">// Formula: Specificity</p>
+        <p class="font-mono text-sm text-coral">"Deploy in 1 Command"</p>
+      </div>
+      <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+        <p class="font-mono text-xs text-gray-500 mb-1">// Formula: Pain removal</p>
+        <p class="font-mono text-sm text-coral">"Stop Fighting Config Files"</p>
+      </div>
+      <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+        <p class="font-mono text-xs text-gray-500 mb-1">// Formula: Simplicity claim</p>
+        <p class="font-mono text-sm text-coral">"Auth That Just Works"</p>
+      </div>
+      <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+        <p class="font-mono text-xs text-gray-500 mb-1">// Formula: Pricing anchor</p>
+        <p class="font-mono text-sm text-coral">"Starts at $9/Month"</p>
+      </div>
+      <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+        <p class="font-mono text-xs text-gray-500 mb-1">// Formula: Category + audience</p>
+        <p class="font-mono text-sm text-coral">"API Monitoring for Teams"</p>
+      </div>
+      <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+        <p class="font-mono text-xs text-gray-500 mb-1">// Formula: Guarantee</p>
+        <p class="font-mono text-sm text-coral">"30-Day Money-Back Guarantee"</p>
+      </div>
+      <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+        <p class="font-mono text-xs text-gray-500 mb-1">// Formula: Integration</p>
+        <p class="font-mono text-sm text-coral">"Works With Your Stack"</p>
+      </div>
+      <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+        <p class="font-mono text-xs text-gray-500 mb-1">// Formula: Speed proof</p>
+        <p class="font-mono text-sm text-coral">"Up in 60 Seconds Flat"</p>
+      </div>
+    </div>
+
+    <h3 class="text-xl font-semibold text-white mb-4 mt-10">Description Copy Templates</h3>
+
+    <p class="text-gray-300 leading-relaxed mb-4">
+      Descriptions expand on your headline. You get 90 characters. Don't waste them restating the headline — use descriptions to add proof, handle an objection, or include a call to action.
+    </p>
+
+    <div class="space-y-3 mb-8">
+      <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+        <p class="font-mono text-xs text-gray-500 mb-1">// Description 1: Proof + CTA</p>
+        <p class="text-gray-300 text-sm">"Trusted by 5,000+ developers. Drop-in SDK, full docs, 5-min setup. Start your free trial today."</p>
+      </div>
+      <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+        <p class="font-mono text-xs text-gray-500 mb-1">// Description 2: Problem + solution</p>
+        <p class="text-gray-300 text-sm">"Stop rebuilding auth from scratch. Get social login, MFA & magic links out of the box. No card needed."</p>
+      </div>
+      <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+        <p class="font-mono text-xs text-gray-500 mb-1">// Description 3: Features + value</p>
+        <p class="text-gray-300 text-sm">"One API for uptime, latency & error alerts. Slack, PagerDuty & webhooks built in. $0 to start."</p>
+      </div>
+      <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+        <p class="font-mono text-xs text-gray-500 mb-1">// Description 4: Urgency + offer</p>
+        <p class="text-gray-300 text-sm">"14 days free — no credit card, no lock-in. Cancel anytime. Set up in minutes, not days."</p>
+      </div>
+    </div>
+
+    <h3 class="text-xl font-semibold text-white mb-4 mt-10">Ad Extensions: Set These Up Before Launch</h3>
+
+    <p class="text-gray-300 leading-relaxed mb-4">
+      Extensions are free additional content shown with your ad — they increase your ad's size and click-through rate at no extra cost. These three are the most valuable for developer products:
+    </p>
+
+    <div class="space-y-4 mb-6">
+      <div class="p-4 rounded-xl bg-white/[0.03] border border-white/5">
+        <p class="font-semibold text-white mb-2">Sitelink Extensions</p>
+        <p class="text-gray-400 text-sm leading-relaxed mb-2">Additional links below your main ad. Add 4–6 sitelinks pointing to your key landing pages: Pricing, Documentation, Features, Free Trial. Each sitelink gets its own headline (25 chars) and description (35 chars).</p>
+        <p class="font-mono text-xs text-coral">Examples: "View Pricing" · "Read the Docs" · "Start Free Trial" · "See All Features"</p>
+      </div>
+      <div class="p-4 rounded-xl bg-white/[0.03] border border-white/5">
+        <p class="font-semibold text-white mb-2">Callout Extensions</p>
+        <p class="text-gray-400 text-sm leading-relaxed mb-2">Short (25 char) bullet-point style text snippets that highlight key benefits. They appear below your main ad copy and make your ad taller and more prominent in the results.</p>
+        <p class="font-mono text-xs text-coral">Examples: "No Credit Card" · "14-Day Free Trial" · "REST & GraphQL" · "99.9% Uptime SLA" · "Cancel Anytime"</p>
+      </div>
+      <div class="p-4 rounded-xl bg-white/[0.03] border border-white/5">
+        <p class="font-semibold text-white mb-2">Structured Snippet Extensions</p>
+        <p class="text-gray-400 text-sm leading-relaxed mb-2">Predefined categories that list specific features. Use the "Services" or "Features" header and list what your product offers. These reinforce that your product does exactly what the searcher needs.</p>
+        <p class="font-mono text-xs text-coral">Example header: "Features:" · Values: "REST API, Webhooks, Slack Integration, Multi-region"</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5 -->
+  <section id="landing-page-match" class="playbook-section mb-16 scroll-mt-24">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">05</span>
+      <h2 class="text-2xl md:text-3xl font-bold">Your Landing Page Must Match the Ad</h2>
+    </div>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      You can write perfect ad copy and select perfect keywords, and still lose money — if your landing page doesn't deliver on the promise your ad made. The click is a moment of intent. The landing page is where you either fulfill or break that intent. Mismatches between ad and page are the #1 conversion killer in paid search.
+    </p>
+
+    <h3 class="text-xl font-semibold text-white mb-4 mt-10">Message Match: Headline to Headline</h3>
+
+    <p class="text-gray-300 leading-relaxed mb-4">
+      The most direct form of message match: your ad headline and your landing page headline should reinforce the same core promise. They don't need to be identical — but the visitor should feel a continuous thread of meaning from the ad to the page.
+    </p>
+
+    <div class="p-5 bg-[#0d0d20] border border-white/10 rounded-xl font-mono text-sm mb-6">
+      <p class="text-gray-500 mb-3">// Message match examples</p>
+      <p class="text-gray-500 mb-1">Ad headline:</p>
+      <p class="text-coral mb-3">"Uptime Monitoring for Developers"</p>
+
+      <p class="text-red-400 mb-1">✕ Landing page headline (mismatch):</p>
+      <p class="text-gray-400 mb-3">"Welcome to ServerWatch — The Complete Infrastructure Platform"</p>
+
+      <p class="text-green-400 mb-1">✓ Landing page headline (match):</p>
+      <p class="text-gray-300">"Uptime Monitoring Built for Developer Teams"</p>
+    </div>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      If your ad targets the keyword "saas authentication api" and your landing page opens with "Everything You Need to Build Great Products" — that's a mismatch. The visitor clicked for authentication specifically. They're not going to hunt your page to find out if it applies to them. They'll bounce in 3 seconds.
+    </p>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      For high-value keyword groups, consider creating dedicated landing pages that mirror the ad's exact message. A "saas boilerplate" ad pointing to a /saas-boilerplate landing page with a headline about SaaS boilerplates will dramatically outperform the same ad pointing to your generic homepage.
+    </p>
+
+    <h3 class="text-xl font-semibold text-white mb-4 mt-10">Quality Score Explained</h3>
+
+    <p class="text-gray-300 leading-relaxed mb-4">
+      Quality Score is Google's 1–10 rating of the relevance and quality of your keyword, ad, and landing page combination. It directly affects two things: how often your ad shows (Ad Rank) and how much you pay per click. A higher Quality Score means lower CPCs for the same position.
+    </p>
+
+    <div class="p-5 bg-[#0d0d20] border border-white/10 rounded-xl font-mono text-sm mb-8">
+      <p class="text-gray-500 mb-3">// How Quality Score affects your CPC</p>
+      <p class="text-gray-300 mb-1">Competitor bid: $5.00 · Quality Score: 4</p>
+      <p class="text-gray-300 mb-3">Your bid: $4.00 · Quality Score: 8</p>
+      <p class="text-gray-500 mb-1">// Ad Rank = bid × Quality Score</p>
+      <p class="text-gray-300 mb-1">Competitor Ad Rank: 5.00 × 4 = <span class="text-red-400">20</span></p>
+      <p class="text-gray-300 mb-3">Your Ad Rank: 4.00 × 8 = <span class="text-green-400">32</span></p>
+      <p class="text-green-400">You rank higher and pay less per click.</p>
+    </div>
+
+    <p class="text-gray-300 leading-relaxed mb-4">
+      Quality Score has three components: <strong class="text-white">Expected Click-Through Rate</strong> (does your ad get clicked for this keyword?), <strong class="text-white">Ad Relevance</strong> (does your ad match the search intent?), and <strong class="text-white">Landing Page Experience</strong> (is your landing page relevant, fast, and easy to navigate?).
+    </p>
+
+    <h3 class="text-xl font-semibold text-white mb-4 mt-10">The One Change That Most Improves Quality Score</h3>
+
+    <div class="bg-gradient-to-r from-coral/10 to-transparent border-l-4 border-coral pl-6 py-4 rounded-r-lg mb-6">
+      <p class="text-white font-medium leading-relaxed">
+        Include your target keyword in your ad headline AND in your landing page headline. This single change raises Ad Relevance and Landing Page Experience simultaneously — the two factors that most drag Quality Score down for new campaigns.
+      </p>
+    </div>
+
+    <p class="text-gray-300 leading-relaxed">
+      If someone searches "uptime monitoring software," your ad headline should include "Uptime Monitoring Software" and your landing page H1 should include the same phrase. This creates the relevance signal Google needs to see across all three Quality Score components. You'll pay less, rank higher, and convert more — all from one focused change.
+    </p>
+  </section>
+
+  <!-- Section 6 -->
+  <section id="measuring-optimizing" class="playbook-section mb-16 scroll-mt-24">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">06</span>
+      <h2 class="text-2xl md:text-3xl font-bold">Measuring and Optimizing Your $100</h2>
+    </div>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      Running ads without conversion tracking is the equivalent of deploying code with no logging. You're flying blind. You might be getting signups — or burning money on visitors who bounce immediately. You genuinely cannot tell without tracking set up. This section covers what to measure and how to use the data.
+    </p>
+
+    <h3 class="text-xl font-semibold text-white mb-4 mt-10">What Conversions to Track</h3>
+
+    <p class="text-gray-300 leading-relaxed mb-4">
+      Track one primary conversion that represents real value — the closest thing you have to revenue:
+    </p>
+
+    <div class="space-y-3 mb-8">
+      <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+        <span class="text-coral mt-0.5">&#9656;</span>
+        <p><strong class="text-white">Free trial signups</strong> — if your product has a trial, this is your primary conversion. Someone in your trial is a potential paying customer.</p>
+      </div>
+      <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+        <span class="text-coral mt-0.5">&#9656;</span>
+        <p><strong class="text-white">Purchases</strong> — if you have a one-time product (template, course, tool), track direct purchases.</p>
+      </div>
+      <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+        <span class="text-coral mt-0.5">&#9656;</span>
+        <p><strong class="text-white">Account creations / signups</strong> — for freemium products, a signup is a meaningful conversion even without a trial.</p>
+      </div>
+      <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+        <span class="text-coral mt-0.5">&#9656;</span>
+        <p><strong class="text-white">Email signups</strong> — acceptable as a secondary conversion, especially if your list is your monetization path. Don't use this as your only conversion metric though — it's too soft to optimize toward.</p>
+      </div>
+    </div>
+
+    <h3 class="text-xl font-semibold text-white mb-4 mt-10">Setting Up Conversion Tracking</h3>
+
+    <div class="space-y-3 mb-8">
+      <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+        <span class="text-coral font-mono text-xs mt-0.5">01</span>
+        <p>In Google Ads, go to <strong class="text-white">Goals → Conversions → New conversion action</strong></p>
+      </div>
+      <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+        <span class="text-coral font-mono text-xs mt-0.5">02</span>
+        <p>Select <strong class="text-white">"Website"</strong> as the conversion source</p>
+      </div>
+      <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+        <span class="text-coral font-mono text-xs mt-0.5">03</span>
+        <p>Choose <strong class="text-white">"Page load"</strong> — fire the conversion when the user lands on your thank-you or success page (e.g., /welcome, /signup/success)</p>
+      </div>
+      <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+        <span class="text-coral font-mono text-xs mt-0.5">04</span>
+        <p>Install the Google Ads tag on your site (via Google Tag Manager or a script tag), then add the conversion event snippet to your success page only</p>
+      </div>
+      <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+        <span class="text-coral font-mono text-xs mt-0.5">05</span>
+        <p>Verify the tag is firing correctly using Google Tag Assistant browser extension before spending any budget</p>
+      </div>
+    </div>
+
+    <h3 class="text-xl font-semibold text-white mb-4 mt-10">Key Metrics to Watch</h3>
+
+    <div class="grid gap-4 sm:grid-cols-2 mb-8">
+      <div class="p-4 bg-white/[0.02] border border-white/5 rounded-xl">
+        <p class="text-sm font-semibold text-white mb-1">CTR (Click-Through Rate)</p>
+        <p class="text-gray-400 text-xs leading-relaxed mb-2">How often your ad gets clicked when shown. A healthy CTR for developer product search ads is 3–8%. Below 2% means your ad copy isn't resonating with searchers.</p>
+        <p class="font-mono text-xs text-coral">CTR = Clicks ÷ Impressions × 100</p>
+      </div>
+      <div class="p-4 bg-white/[0.02] border border-white/5 rounded-xl">
+        <p class="text-sm font-semibold text-white mb-1">CPC (Cost Per Click)</p>
+        <p class="text-gray-400 text-xs leading-relaxed mb-2">Average amount paid per click. Watch this against your keyword bids. Significant variance from your bids indicates Quality Score effects or auction fluctuations.</p>
+        <p class="font-mono text-xs text-coral">CPC = Total Spend ÷ Clicks</p>
+      </div>
+      <div class="p-4 bg-white/[0.02] border border-white/5 rounded-xl">
+        <p class="text-sm font-semibold text-white mb-1">Conversion Rate</p>
+        <p class="text-gray-400 text-xs leading-relaxed mb-2">Percentage of clicks that result in your conversion action. This is your landing page's grade. 1–3% is typical; above 5% is excellent for paid traffic. Below 0.5% means a landing page problem.</p>
+        <p class="font-mono text-xs text-coral">CVR = Conversions ÷ Clicks × 100</p>
+      </div>
+      <div class="p-4 bg-white/[0.02] border border-white/5 rounded-xl">
+        <p class="text-sm font-semibold text-white mb-1">Cost Per Conversion</p>
+        <p class="text-gray-400 text-xs leading-relaxed mb-2">How much you pay per signup, trial, or purchase. The single most important business metric. Compare this to your customer LTV to know if the channel is viable.</p>
+        <p class="font-mono text-xs text-coral">CPC = Total Spend ÷ Conversions</p>
+      </div>
+    </div>
+
+    <h3 class="text-xl font-semibold text-white mb-4 mt-10">When to Pause a Keyword vs. Give It More Time</h3>
+
+    <p class="text-gray-300 leading-relaxed mb-4">
+      This is where new advertisers get paralyzed — acting too early on too little data, or letting bad keywords drain the budget while waiting for data that never comes. Use this framework:
+    </p>
+
+    <div class="space-y-4 mb-8">
+      <div class="flex items-start gap-4 p-4 rounded-xl bg-white/[0.03] border border-white/5">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-red-500/10 text-red-400 font-mono font-bold text-xs shrink-0">⏸</span>
+        <div>
+          <p class="font-semibold text-white mb-1">Pause immediately</p>
+          <p class="text-gray-400 text-sm leading-relaxed">Any keyword that has spent more than 3× your target cost-per-conversion with zero conversions. If your goal is a $15 signup, pause any keyword that's spent $45+ with no conversion — regardless of click count.</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-4 p-4 rounded-xl bg-white/[0.03] border border-white/5">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-yellow-500/10 text-yellow-400 font-mono font-bold text-xs shrink-0">⏳</span>
+        <div>
+          <p class="font-semibold text-white mb-1">Give more time</p>
+          <p class="text-gray-400 text-sm leading-relaxed">Keywords with 5–20 clicks and no conversions — too early to conclude anything. Let them reach at least 30 clicks before making a decision. Conversion events are statistically noisy at low volumes.</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-4 p-4 rounded-xl bg-white/[0.03] border border-white/5">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-green-500/10 text-green-400 font-mono font-bold text-xs shrink-0">↑</span>
+        <div>
+          <p class="font-semibold text-white mb-1">Increase bids</p>
+          <p class="text-gray-400 text-sm leading-relaxed">Keywords that have converted at or below your target cost-per-conversion. These are working. Raise the bid to capture more impressions and more conversions from a proven source.</p>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="text-xl font-semibold text-white mb-4 mt-10">How to Know if Your Campaign is Working After $100</h3>
+
+    <p class="text-gray-300 leading-relaxed mb-4">
+      After spending $100, you should have enough data to answer three questions:
+    </p>
+
+    <div class="space-y-3 mb-6">
+      <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+        <span class="text-coral font-mono text-xs mt-0.5">1.</span>
+        <p><strong class="text-white">Is there viable search demand?</strong> Did you get at least 50–100 clicks across your keywords? If you spent $100 and got 5 clicks, your keywords either have no volume or your bids are too low.</p>
+      </div>
+      <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+        <span class="text-coral font-mono text-xs mt-0.5">2.</span>
+        <p><strong class="text-white">Did any keywords convert?</strong> Even 1–2 conversions on $100 is a signal worth investigating. Identify the exact keyword and query that drove it. That's your winner to scale.</p>
+      </div>
+      <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+        <span class="text-coral font-mono text-xs mt-0.5">3.</span>
+        <p><strong class="text-white">Is cost-per-conversion economically viable?</strong> If you paid $100 for 2 signups, your CAC is $50. Is that acceptable given your product's pricing and LTV? If yes, scale up. If no, focus on improving landing page conversion rate before spending more.</p>
+      </div>
+    </div>
+
+    <div class="bg-gradient-to-r from-coral/10 to-transparent border-l-4 border-coral pl-6 py-4 rounded-r-lg">
+      <p class="text-white font-medium leading-relaxed">
+        "Zero conversions from $100 doesn't mean Google Ads doesn't work. It means one of these is broken: keywords (wrong intent), ad copy (wrong message), landing page (wrong offer), or all three. Diagnose which layer failed before you conclude anything."
+      </p>
+    </div>
+  </section>
+
+  <!-- Section 7 -->
+  <section id="budget-plan" class="playbook-section mb-16 scroll-mt-24">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">07</span>
+      <h2 class="text-2xl md:text-3xl font-bold">Your $100 Budget Plan</h2>
+    </div>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      Here's how to allocate and manage your $100 test budget day by day, with specific actions tied to specific data milestones. This is a 20-day plan at $5/day — adjust the timeline if your CPCs are higher (you'll run out faster) or lower (it'll stretch longer).
+    </p>
+
+    <h3 class="text-xl font-semibold text-white mb-4 mt-10">Day-by-Day Breakdown</h3>
+
+    <div class="space-y-4 mb-10">
+      <div class="p-5 bg-navy-light border border-white/10 rounded-xl">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-coral/10 text-coral font-mono text-xs font-bold shrink-0">D1–2</span>
+          <p class="font-semibold text-white">Before spend: Setup day ($0 spent)</p>
+        </div>
+        <ul class="space-y-1 text-sm text-gray-400 pl-11">
+          <li>&#9656; Create account, choose Search campaign, set $5/day budget</li>
+          <li>&#9656; Research and add 8–12 phrase-match keywords</li>
+          <li>&#9656; Add negative keywords list (free, tutorial, how to, etc.)</li>
+          <li>&#9656; Write your RSA — 15 headlines, 4 descriptions</li>
+          <li>&#9656; Add sitelinks, callouts, structured snippets</li>
+          <li>&#9656; Install conversion tracking and verify it fires</li>
+          <li>&#9656; Set campaign live</li>
+        </ul>
+      </div>
+
+      <div class="p-5 bg-navy-light border border-white/10 rounded-xl">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-coral/10 text-coral font-mono text-xs font-bold shrink-0">D3–5</span>
+          <p class="font-semibold text-white">Days 3–5: Watch and add negatives ($15 spent)</p>
+        </div>
+        <ul class="space-y-1 text-sm text-gray-400 pl-11">
+          <li>&#9656; Check Search Terms report daily — add irrelevant queries as negatives</li>
+          <li>&#9656; Don't change bids yet — let the algorithm gather baseline data</li>
+          <li>&#9656; Check Quality Scores — anything below 5 needs attention</li>
+          <li>&#9656; Verify conversion tracking is recording correctly</li>
+        </ul>
+      </div>
+
+      <div class="p-5 bg-navy-light border border-white/10 rounded-xl">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-coral/10 text-coral font-mono text-xs font-bold shrink-0">D6–10</span>
+          <p class="font-semibold text-white">Days 6–10: First optimization pass ($50 spent)</p>
+        </div>
+        <ul class="space-y-1 text-sm text-gray-400 pl-11">
+          <li>&#9656; Sort keywords by spend — identify the top 3 spending the most</li>
+          <li>&#9656; For high-spend keywords with no conversions: lower bids by 20%</li>
+          <li>&#9656; Check ad performance — remove any headline combinations with 0 clicks</li>
+          <li>&#9656; Add 5–10 more negative keywords from the Search Terms report</li>
+          <li>&#9656; Note landing page bounce rate if you have analytics — above 80% signals a mismatch</li>
+        </ul>
+      </div>
+
+      <div class="p-5 bg-navy-light border border-white/10 rounded-xl">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-coral/10 text-coral font-mono text-xs font-bold shrink-0">D11–15</span>
+          <p class="font-semibold text-white">Days 11–15: Identify winners and losers ($75 spent)</p>
+        </div>
+        <ul class="space-y-1 text-sm text-gray-400 pl-11">
+          <li>&#9656; Keywords with 30+ clicks and no conversions → pause</li>
+          <li>&#9656; Keywords with any conversions → raise bids 15–20%</li>
+          <li>&#9656; Check impression share — if below 40%, you may be losing to higher bids</li>
+          <li>&#9656; Review hour-of-day data: are weekday business hours performing differently than evenings?</li>
+        </ul>
+      </div>
+
+      <div class="p-5 bg-navy-light border border-white/10 rounded-xl">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-coral/10 text-coral font-mono text-xs font-bold shrink-0">D16–20</span>
+          <p class="font-semibold text-white">Days 16–20: Final assessment ($100 spent)</p>
+        </div>
+        <ul class="space-y-1 text-sm text-gray-400 pl-11">
+          <li>&#9656; Export final keyword performance report</li>
+          <li>&#9656; Calculate cost-per-conversion for each keyword that converted</li>
+          <li>&#9656; Document: which 2–3 keywords drove all conversions</li>
+          <li>&#9656; Make the go/no-go decision using the decision tree below</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="text-xl font-semibold text-white mb-4 mt-10">Decision Tree: What to Do After Week 1</h3>
+
+    <div class="space-y-4 mb-6">
+      <div class="p-5 bg-navy-light border border-white/10 rounded-2xl">
+        <p class="font-semibold text-white mb-3">If you got conversions at an acceptable CAC:</p>
+        <div class="space-y-2 pl-4 text-sm text-gray-300">
+          <p>→ Pause the non-converting keywords</p>
+          <p>→ Increase budget to $10–$15/day on converting keywords only</p>
+          <p>→ Add exact-match versions of your converting keywords</p>
+          <p>→ Start building a negative keyword list from Search Terms report</p>
+          <p>→ <span class="text-green-400 font-medium">You have a working channel. Now optimize and scale slowly.</span></p>
+        </div>
+      </div>
+      <div class="p-5 bg-navy-light border border-white/10 rounded-2xl">
+        <p class="font-semibold text-white mb-3">If you got clicks but zero conversions:</p>
+        <div class="space-y-2 pl-4 text-sm text-gray-300">
+          <p>→ Check bounce rate — if it's very high, the landing page is the issue</p>
+          <p>→ Improve landing page message match with your ad's keyword</p>
+          <p>→ Add an A/B test to landing page headline</p>
+          <p>→ Verify conversion tracking is set up correctly</p>
+          <p>→ <span class="text-yellow-400 font-medium">Don't spend more until you've fixed the funnel bottleneck.</span></p>
+        </div>
+      </div>
+      <div class="p-5 bg-navy-light border border-white/10 rounded-2xl">
+        <p class="font-semibold text-white mb-3">If you got few or no clicks:</p>
+        <div class="space-y-2 pl-4 text-sm text-gray-300">
+          <p>→ Check impression share — if it's under 20%, your bids are too low</p>
+          <p>→ Raise bids to at least the suggested top-of-page bid</p>
+          <p>→ Check if your keywords are too narrow — try phrase match on broader category terms</p>
+          <p>→ <span class="text-coral font-medium">This may indicate low search volume for your category — evaluate alternatives.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 8 -->
+  <section id="ads-checklist" class="playbook-section mb-16 scroll-mt-24">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">08</span>
+      <h2 class="text-2xl md:text-3xl font-bold">Google Ads Checklist</h2>
+    </div>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      Run through this checklist before you launch your campaign. Every item maps to a section of this playbook. Green-light your campaign only when you can check every box.
+    </p>
+
+    <div class="space-y-6">
+      <!-- Checklist: Account & Campaign Setup -->
+      <div class="p-6 bg-navy-light border border-white/10 rounded-2xl">
+        <h3 class="text-sm font-semibold text-coral uppercase tracking-wider mb-4">Account & Campaign Setup</h3>
+        <div class="space-y-3">
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Campaign type is set to Search (not Display or Performance Max)</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Daily budget is $5 and bidding strategy is Manual CPC</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Location targeting is set to US, CA, UK, AU with "presence only" selected</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Language targeting is set to English</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Search partners and Display Network expansion are both disabled</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Checklist: Keywords -->
+      <div class="p-6 bg-navy-light border border-white/10 rounded-2xl">
+        <h3 class="text-sm font-semibold text-coral uppercase tracking-wider mb-4">Keywords</h3>
+        <div class="space-y-3">
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">All keywords have commercial intent (not informational or research-stage)</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Keywords are set to phrase match or exact match (no broad match)</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Negative keyword list includes: free, tutorial, how to, what is, open source, jobs, github, reddit</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Keywords have been validated in Keyword Planner with meaningful search volume (100+/mo)</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Estimated CPCs are under $15 and affordable within your $5/day budget</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Checklist: Ad Copy -->
+      <div class="p-6 bg-navy-light border border-white/10 rounded-2xl">
+        <h3 class="text-sm font-semibold text-coral uppercase tracking-wider mb-4">Ad Copy & Extensions</h3>
+        <div class="space-y-3">
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">RSA has 15 unique headlines (all slots filled with varied copy)</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">RSA has 4 descriptions that don't repeat the same message</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Target keyword appears naturally in at least 2–3 headlines</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Ad Strength rating is "Good" or "Excellent" in Google Ads editor</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Sitelink extensions are configured (at least 4 links with descriptions)</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Callout extensions are added (at least 4 short benefit phrases)</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Checklist: Landing Page -->
+      <div class="p-6 bg-navy-light border border-white/10 rounded-2xl">
+        <h3 class="text-sm font-semibold text-coral uppercase tracking-wider mb-4">Landing Page</h3>
+        <div class="space-y-3">
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Landing page headline includes the primary keyword from your ads</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Message match: ad promise and landing page promise are aligned</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Landing page has a single clear CTA (not competing actions)</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Page loads in under 3 seconds (test with PageSpeed Insights)</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Page is fully mobile-responsive</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Checklist: Tracking -->
+      <div class="p-6 bg-navy-light border border-white/10 rounded-2xl">
+        <h3 class="text-sm font-semibold text-coral uppercase tracking-wider mb-4">Tracking & Measurement</h3>
+        <div class="space-y-3">
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Google Ads conversion tracking is installed and verified firing on success page</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Conversion action is tracking the right goal (signup, purchase, or trial)</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">You have a reminder to check the Search Terms report every 2–3 days</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">You know your target cost-per-conversion and will pause keywords that exceed 3× that figure</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">You have a plan for what to do after $100 is spent — regardless of the result</span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-8 bg-gradient-to-r from-coral/10 to-transparent border-l-4 border-coral pl-6 py-4 rounded-r-lg">
+      <p class="text-white font-medium leading-relaxed">
+        "Google Ads rewards discipline more than creativity. Set up correctly, add negatives aggressively, let data accumulate before making decisions, and double down only on what's already working. Your $100 is a bet on your own funnel. Make it a smart one."
+      </p>
+    </div>
+  </section>
+
+</PlaybookLayout>
