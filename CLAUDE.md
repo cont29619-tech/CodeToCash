@@ -467,7 +467,7 @@ z.object({
 | `google-ads-100-budget` | "Your First Google Ad Campaign on a $100 Budget" | 🔒 Not built |
 | `copywriting-for-developers` | "Writing Copy When You Hate Writing Copy" | 🔒 Not built |
 | `pricing-dev-product` | "Pricing Your Dev Product for Maximum Revenue" | 🔒 Not built |
-| `building-in-public` | "Building in Public as a Marketing Strategy" | 🔒 Not built |
+| `building-in-public` | "Building in Public as a Marketing Strategy" | ✅ Live |
 | `ab-testing-guide` | "The Developer's A/B Testing Guide" | 🔒 Not built |
 | `cold-email-outreach` | "Cold Email Outreach for Dev Tools" | 🔒 Not built |
 
@@ -538,7 +538,7 @@ z.object({
 ## Known Issues / Tech Debt
 
 1. ~~**Buttondown forms**~~ — fully migrated to ConvertKit across all pages ✅
-2. **7 playbooks are planned but unbuilt** — only `saas-landing-page` exists
+2. **6 playbooks are planned but unbuilt** — `saas-landing-page` and `building-in-public` are live
 3. **No analytics** — no Plausible or Google Analytics configured
 4. **README.md is the default Astro starter template** — not updated for this project
 5. **No linter or formatter** — no ESLint/Prettier configured

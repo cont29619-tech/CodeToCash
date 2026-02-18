@@ -1,0 +1,907 @@
+---
+import PlaybookLayout from '../../layouts/PlaybookLayout.astro';
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Building in Public as a Marketing Strategy",
+  "description": "How indie developers and vibe coders use transparency on Twitter and Indie Hackers to build audiences and drive product sales.",
+  "step": [
+    { "@type": "HowToStep", "name": "Understand what building in public actually means", "position": 1 },
+    { "@type": "HowToStep", "name": "Decide what to share and what to keep private", "position": 2 },
+    { "@type": "HowToStep", "name": "Choose the right platforms for your audience", "position": 3 },
+    { "@type": "HowToStep", "name": "Implement the weekly content system", "position": 4 },
+    { "@type": "HowToStep", "name": "Convert followers into customers", "position": 5 },
+    { "@type": "HowToStep", "name": "Learn from real-world examples", "position": 6 },
+    { "@type": "HowToStep", "name": "Use the getting started checklist", "position": 7 }
+  ]
+});
+
+const sections = [
+  { id: "what-it-means", title: "What Building in Public Actually Means" },
+  { id: "what-to-share", title: "What to Share (And What to Keep Private)" },
+  { id: "platforms", title: "The Platforms and How to Use Each" },
+  { id: "weekly-system", title: "The Weekly Content System" },
+  { id: "followers-to-customers", title: "Turning Followers into Customers" },
+  { id: "real-examples", title: "Real Examples of Build-in-Public That Drove Revenue" },
+  { id: "checklist", title: "Build in Public Checklist" },
+];
+---
+
+<PlaybookLayout
+  title="Building in Public as a Marketing Strategy"
+  metaTitle="Building in Public as a Marketing Strategy | CodeToCash"
+  metaDescription="How indie developers and vibe coders use transparency on Twitter and Indie Hackers to build audiences and drive product sales."
+  subtitle="How transparency on Twitter/X and Indie Hackers builds trust, grows audiences, and drives product sales for developer founders."
+  difficulty="Beginner"
+  readingTime="8 min read"
+  lastUpdated="February 2026"
+  sections={sections}
+  prev={{ slug: "pricing-dev-product", title: "Pricing Your Dev Product for Maximum Revenue" }}
+  next={{ slug: "ab-testing-guide", title: "The Developer's A/B Testing Guide" }}
+  schema={schema}
+>
+
+  <!-- Section 1 -->
+  <section id="what-it-means" class="playbook-section mb-16 scroll-mt-24">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">01</span>
+      <h2 class="text-2xl md:text-3xl font-bold">What Building in Public Actually Means</h2>
+    </div>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      Building in public is not just tweeting your MRR numbers every month. It's not a single "launched on Product Hunt" post. It's not humble-bragging about your $10K month while pretending you're struggling. Real building in public is a systematic approach to transparency that creates value for others while building trust in you.
+    </p>
+
+    <h3 class="text-xl font-semibold text-white mb-4 mt-10">The Spectrum of Transparency</h3>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      There's a full spectrum between fully private and fully transparent. Most founders oscillate between the extremes — either sharing nothing or oversharing everything — without being strategic about it. Here's how to think about the levels:
+    </p>
+
+    <div class="space-y-4 mb-8">
+      <div class="flex items-start gap-4 p-4 rounded-xl bg-white/[0.03] border border-white/5">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-gray-500/10 text-gray-400 font-mono font-bold text-xs shrink-0">0</span>
+        <div>
+          <p class="font-semibold text-white mb-1">Fully Private</p>
+          <p class="text-gray-400 text-sm leading-relaxed">You build in silence. Nobody knows what you're working on until launch day. This is the default mode for most developers — and it's a massive missed opportunity.</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-4 p-4 rounded-xl bg-white/[0.03] border border-white/5">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-yellow-500/10 text-yellow-400 font-mono font-bold text-xs shrink-0">1</span>
+        <div>
+          <p class="font-semibold text-white mb-1">Launch-Only Updates</p>
+          <p class="text-gray-400 text-sm leading-relaxed">You post when you ship something major. V1, V2, big feature releases. Your audience knows you exist but doesn't feel connected to your journey.</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-4 p-4 rounded-xl bg-white/[0.03] border border-white/5">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-coral/10 text-coral font-mono font-bold text-xs shrink-0">2</span>
+        <div>
+          <p class="font-semibold text-white mb-1">Milestones + Metrics</p>
+          <p class="text-gray-400 text-sm leading-relaxed">You share revenue milestones, user counts, and growth charts. This is what most people think "building in public" means. It's good, but it's not enough.</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-4 p-4 rounded-xl bg-white/[0.03] border border-white/5">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-green-500/10 text-green-400 font-mono font-bold text-xs shrink-0">3</span>
+        <div>
+          <p class="font-semibold text-white mb-1">Process + Learnings</p>
+          <p class="text-gray-400 text-sm leading-relaxed">You share how you make decisions, what you're learning, what failed, and why. This is where trust compounds. People buy from people they understand.</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-4 p-4 rounded-xl bg-white/[0.03] border border-white/5">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-blue-500/10 text-blue-400 font-mono font-bold text-xs shrink-0">4</span>
+        <div>
+          <p class="font-semibold text-white mb-1">Fully Transparent</p>
+          <p class="text-gray-400 text-sm leading-relaxed">Everything is public: revenue, expenses, code, decisions, failures. Only a few founders operate here. It's powerful but not required for success.</p>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="text-xl font-semibold text-white mb-4 mt-10">Why Transparency Builds Trust Faster</h3>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      People buy from people they trust. In the absence of a brand name like Google or Apple, trust is your only competitive advantage as an indie developer. And nothing builds trust faster than transparency.
+    </p>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      When you share your process — the struggles, the pivots, the late nights, the small wins — you become a real person instead of a faceless product. Your audience starts rooting for you. They want you to succeed. And when you finally launch (or re-launch), they're already invested in your story.
+    </p>
+
+    <div class="bg-navy-light border border-white/10 rounded-xl p-6 mb-6">
+      <p class="text-sm font-semibold text-coral mb-3">The DRM Angle</p>
+      <p class="text-gray-300 leading-relaxed">
+        Building in public is a long-form content strategy that compounds. Every post is an asset that continues working for you. A Twitter thread from six months ago can still bring traffic today. An Indie Hackers post can rank in Google for years. Unlike paid ads that stop working when you stop paying, build-in-public content is an investment with compounding returns. It's direct response marketing at the speed of trust.
+      </p>
+    </div>
+
+    <p class="text-gray-300 leading-relaxed">
+      The key insight: you're not just building a product. You're building an audience while you build the product. And that audience becomes your first customers, your beta testers, your word-of-mouth engine, and your safety net when things go wrong.
+    </p>
+  </section>
+
+  <!-- Section 2 -->
+  <section id="what-to-share" class="playbook-section mb-16 scroll-mt-24">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">02</span>
+      <h2 class="text-2xl md:text-3xl font-bold">What to Share (And What to Keep Private)</h2>
+    </div>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      The biggest objection to building in public: "But what if my competitors see this? What if I look stupid? What if I share something I shouldn't?" These are valid concerns. Here's how to navigate them.
+    </p>
+
+    <h3 class="text-xl font-semibold text-white mb-4 mt-10">What to Share</h3>
+
+    <div class="grid gap-4 sm:grid-cols-2 mb-8">
+      <div class="p-4 bg-white/[0.03] border border-white/5 rounded-xl">
+        <p class="font-semibold text-white mb-2 flex items-center gap-2">
+          <span class="text-green-400">&#10003;</span> Process
+        </p>
+        <p class="text-gray-400 text-sm">How you work, your tools, your workflow, your daily/weekly rhythm. "Here's how I structure my dev sprints."</p>
+      </div>
+      <div class="p-4 bg-white/[0.03] border border-white/5 rounded-xl">
+        <p class="font-semibold text-white mb-2 flex items-center gap-2">
+          <span class="text-green-400">&#10003;</span> Struggles
+        </p>
+        <p class="text-gray-400 text-sm">What's hard, what's broken, what you're figuring out. "Been stuck on this auth issue for three days."</p>
+      </div>
+      <div class="p-4 bg-white/[0.03] border border-white/5 rounded-xl">
+        <p class="font-semibold text-white mb-2 flex items-center gap-2">
+          <span class="text-green-400">&#10003;</span> Learnings
+        </p>
+        <p class="text-gray-400 text-sm">What you discovered, what surprised you, what you'd do differently. "Just learned that pricing page copy matters more than I thought."</p>
+      </div>
+      <div class="p-4 bg-white/[0.03] border border-white/5 rounded-xl">
+        <p class="font-semibold text-white mb-2 flex items-center gap-2">
+          <span class="text-green-400">&#10003;</span> Milestones
+        </p>
+        <p class="text-gray-400 text-sm">First user, first $100, first 100 users, first feature shipped. Celebrate publicly.</p>
+      </div>
+      <div class="p-4 bg-white/[0.03] border border-white/5 rounded-xl">
+        <p class="font-semibold text-white mb-2 flex items-center gap-2">
+          <span class="text-green-400">&#10003;</span> Decisions
+        </p>
+        <p class="text-gray-400 text-sm">Why you chose X over Y, why you pivoted, why you said no to a feature. "Why I'm not adding AI to my product (yet)."</p>
+      </div>
+      <div class="p-4 bg-white/[0.03] border border-white/5 rounded-xl">
+        <p class="font-semibold text-white mb-2 flex items-center gap-2">
+          <span class="text-green-400">&#10003;</span> Behind-the-Scenes
+        </p>
+        <p class="text-gray-400 text-sm">Screenshots of your code, your desk, your process. The messy reality is more interesting than polished perfection.</p>
+      </div>
+    </div>
+
+    <h3 class="text-xl font-semibold text-white mb-4 mt-10">What to Keep Private</h3>
+
+    <div class="space-y-4 mb-8">
+      <div class="flex items-start gap-4 p-4 rounded-xl bg-red-500/5 border border-red-500/10">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-red-500/10 text-red-400 font-mono font-bold text-xs shrink-0">&#10005;</span>
+        <div>
+          <p class="font-semibold text-white mb-1">Customer Data</p>
+          <p class="text-gray-400 text-sm leading-relaxed">Never share identifiable customer information, usage data, or anything that could violate privacy. Even "anonymized" data can sometimes be traced back.</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-4 p-4 rounded-xl bg-red-500/5 border border-red-500/10">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-red-500/10 text-red-400 font-mono font-bold text-xs shrink-0">&#10005;</span>
+        <div>
+          <p class="font-semibold text-white mb-1">Sensitive Financials (Optional)</p>
+          <p class="text-gray-400 text-sm leading-relaxed">Revenue is fine to share. Expenses, profit margins, and salary details are up to you. Some founders share everything; others keep costs private. There's no wrong answer.</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-4 p-4 rounded-xl bg-red-500/5 border border-red-500/10">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-red-500/10 text-red-400 font-mono font-bold text-xs shrink-0">&#10005;</span>
+        <div>
+          <p class="font-semibold text-white mb-1">Information That Could Harm Customers</p>
+          <p class="text-gray-400 text-sm leading-relaxed">Security vulnerabilities, unpatched bugs, or any information that could put your users at risk if made public. Fix first, share later (if at all).</p>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="text-xl font-semibold text-white mb-4 mt-10">The "Would This Help Someone?" Test</h3>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      Before posting anything, ask yourself: "Would this help someone else?" If the answer is yes, share it. If it's purely self-congratulatory or vague, reconsider. The best build-in-public content teaches, inspires, or connects. It doesn't just announce.
+    </p>
+
+    <div class="bg-gradient-to-r from-coral/10 to-transparent border-l-4 border-coral pl-6 py-4 rounded-r-lg mb-8">
+      <p class="text-white font-medium leading-relaxed">
+        "Your competitors aren't watching your Twitter feed waiting to steal your ideas. They're busy with their own products. And even if they see what you're doing, execution matters more than ideas. Share generously."</p>
+    </div>
+
+    <h3 class="text-xl font-semibold text-white mb-4 mt-10">20 Content Ideas for Building in Public</h3>
+
+    <div class="p-5 bg-[#0d0d20] border border-white/10 rounded-xl font-mono text-sm mb-6">
+      <p class="text-gray-500 mb-3">// 20 Build-in-Public Content Ideas</p>
+      <p class="text-gray-400 mb-1">01. The story of why you started this project</p>
+      <p class="text-gray-400 mb-1">02. A screenshot of your code editor with work in progress</p>
+      <p class="text-gray-400 mb-1">03. What you shipped this week (even if it's small)</p>
+      <p class="text-gray-400 mb-1">04. A bug you fixed and how you found it</p>
+      <p class="text-gray-400 mb-1">05. Why you chose your tech stack</p>
+      <p class="text-gray-400 mb-1">06. A feature you decided NOT to build (and why)</p>
+      <p class="text-gray-400 mb-1">07. Your revenue milestone and what led to it</p>
+      <p class="text-gray-400 mb-1">08. A mistake you made and what you learned</p>
+      <p class="text-gray-400 mb-1">09. Your daily/weekly work routine</p>
+      <p class="text-gray-400 mb-1">10. A customer conversation that changed your thinking</p>
+      <p class="text-gray-400 mb-1">11. Before and after screenshots of your product</p>
+      <p class="text-gray-400 mb-1">12. The tools you use and why</p>
+      <p class="text-gray-400 mb-1">13. A challenge you're currently facing (ask for help)</p>
+      <p class="text-gray-400 mb-1">14. What your competitors do well (give credit)</p>
+      <p class="text-gray-400 mb-1">15. A tutorial based on something you just learned</p>
+      <p class="text-gray-400 mb-1">16. Your pricing decision and the reasoning behind it</p>
+      <p class="text-gray-400 mb-1">17. A poll asking your audience for input on a decision</p>
+      <p class="text-gray-400 mb-1">18. How you onboarded your first 10 users</p>
+      <p class="text-gray-400 mb-1">19. A breakdown of your marketing numbers (conversion rates, etc.)</p>
+      <p class="text-gray-400 mb-1">20. Your goals for next month and how you'll get there</p>
+    </div>
+  </section>
+
+  <!-- Section 3 -->
+  <section id="platforms" class="playbook-section mb-16 scroll-mt-24">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">03</span>
+      <h2 class="text-2xl md:text-3xl font-bold">The Platforms and How to Use Each</h2>
+    </div>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      You don't need to be everywhere. Pick 1-2 platforms that match your audience and your content style. Here's how to think about each major platform for building in public.
+    </p>
+
+    <!-- Twitter/X -->
+    <div class="mb-10 p-6 bg-navy-light border border-white/10 rounded-2xl">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-blue-500/10 text-blue-400 text-xl">𝕏</span>
+        <div>
+          <h3 class="text-lg font-semibold text-white">Twitter/X</h3>
+          <p class="text-gray-400 text-sm">The primary home of build-in-public</p>
+        </div>
+      </div>
+
+      <p class="text-gray-300 leading-relaxed mb-4">
+        Twitter is where the build-in-public movement was born. It's fast, conversational, and has the largest audience of developers and indie hackers. If you only pick one platform, make it Twitter.
+      </p>
+
+      <div class="space-y-3 mb-4">
+        <div class="flex items-start gap-3 text-gray-300 text-sm">
+          <span class="text-coral mt-0.5">&#9656;</span>
+          <p><strong class="text-white">Thread format:</strong> Use threads (5-10 tweets) for deeper dives. Start with a hook, deliver value in the middle tweets, end with a CTA or question.</p>
+        </div>
+        <div class="flex items-start gap-3 text-gray-300 text-sm">
+          <span class="text-coral mt-0.5">&#9656;</span>
+          <p><strong class="text-white">Milestone posts:</strong> Single tweets celebrating wins. Include numbers, lessons learned, and a screenshot for visual proof.</p>
+        </div>
+        <div class="flex items-start gap-3 text-gray-300 text-sm">
+          <span class="text-coral mt-0.5">&#9656;</span>
+          <p><strong class="text-white">Polls:</strong> Ask your audience for input on decisions. "Should I add a free tier?" gets engagement and useful data.</p>
+        </div>
+      </div>
+
+      <div class="p-3 bg-[#0d0d20] border border-white/10 rounded-lg font-mono text-xs">
+        <p class="text-gray-500">// Twitter posting rhythm</p>
+        <p class="text-gray-400">3-5 tweets per day: 1 value post, 1 update/milestone, 1 engagement (reply/comment), 1-2 casual/personal</p>
+      </div>
+    </div>
+
+    <!-- Indie Hackers -->
+    <div class="mb-10 p-6 bg-navy-light border border-white/10 rounded-2xl">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-green-500/10 text-green-400 text-xl">&#128161;</span>
+        <div>
+          <h3 class="text-lg font-semibold text-white">Indie Hackers</h3>
+          <p class="text-gray-400 text-sm">Longer-form updates, community engagement</p>
+        </div>
+      </div>
+
+      <p class="text-gray-300 leading-relaxed mb-4">
+        Indie Hackers is a community of founders, not just an audience. The format encourages longer posts and deeper discussions. Your updates here tend to have longer shelf lives than Twitter posts.
+      </p>
+
+      <div class="space-y-3 mb-4">
+        <div class="flex items-start gap-3 text-gray-300 text-sm">
+          <span class="text-coral mt-0.5">&#9656;</span>
+          <p><strong class="text-white">Milestone posts:</strong> The platform is built for milestone updates. Use their milestone feature to track revenue, user growth, and major launches.</p>
+        </div>
+        <div class="flex items-start gap-3 text-gray-300 text-sm">
+          <span class="text-coral mt-0.5">&#9656;</span>
+          <p><strong class="text-white">Discussion posts:</strong> Ask questions, share lessons learned, or start debates. The comment threads often yield better insights than the original post.</p>
+        </div>
+        <div class="flex items-start gap-3 text-gray-300 text-sm">
+          <span class="text-coral mt-0.5">&#9656;</span>
+          <p><strong class="text-white">Community engagement:</strong> Comment on other founders' posts. The Indie Hackers community rewards participation.</p>
+        </div>
+      </div>
+
+      <div class="p-3 bg-[#0d0d20] border border-white/10 rounded-lg font-mono text-xs">
+        <p class="text-gray-500">// Indie Hackers posting rhythm</p>
+        <p class="text-gray-400">1-2 posts per week: 1 milestone update, 1 discussion post or thoughtful comment on someone else's thread</p>
+      </div>
+    </div>
+
+    <!-- LinkedIn -->
+    <div class="mb-10 p-6 bg-navy-light border border-white/10 rounded-2xl">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-blue-600/10 text-blue-400 text-xl font-bold">in</span>
+        <div>
+          <h3 class="text-lg font-semibold text-white">LinkedIn</h3>
+          <p class="text-gray-400 text-sm">Underused by developers, high reach for professional audiences</p>
+        </div>
+      </div>
+
+      <p class="text-gray-300 leading-relaxed mb-4">
+        LinkedIn is the sleeping giant for developer founders. Most developers ignore it, which means less competition and higher organic reach. If your product targets professionals, B2B customers, or enterprise, LinkedIn should be in your mix.
+      </p>
+
+      <div class="space-y-3 mb-4">
+        <div class="flex items-start gap-3 text-gray-300 text-sm">
+          <span class="text-coral mt-0.5">&#9656;</span>
+          <p><strong class="text-white">Story format:</strong> LinkedIn favors narrative posts. Start with a hook, tell a story with a beginning/middle/end, end with a lesson.</p>
+        </div>
+        <div class="flex items-start gap-3 text-gray-300 text-sm">
+          <span class="text-coral mt-0.5">&#9656;</span>
+          <p><strong class="text-white">Professional angle:</strong> Frame your journey in professional development terms. "What building a SaaS taught me about project management."</p>
+        </div>
+        <div class="flex items-start gap-3 text-gray-300 text-sm">
+          <span class="text-coral mt-0.5">&#9656;</span>
+          <p><strong class="text-white">Document don't create:</strong> Share your actual work. Screenshots of dashboards, code snippets (sanitized), product mockups.</p>
+        </div>
+      </div>
+
+      <div class="p-3 bg-[#0d0d20] border border-white/10 rounded-lg font-mono text-xs">
+        <p class="text-gray-500">// LinkedIn posting rhythm</p>
+        <p class="text-gray-400">3-5 posts per week: 2-3 story/lesson posts, 1 milestone update, 1 product update with visual</p>
+      </div>
+    </div>
+
+    <!-- YouTube / Loom -->
+    <div class="mb-10 p-6 bg-navy-light border border-white/10 rounded-2xl">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-red-500/10 text-red-400 text-xl">&#9654;</span>
+        <div>
+          <h3 class="text-lg font-semibold text-white">YouTube / Loom</h3>
+          <p class="text-gray-400 text-sm">Showing your product in progress (high trust, high effort)</p>
+        </div>
+      </div>
+
+      <p class="text-gray-300 leading-relaxed mb-4">
+        Video builds trust faster than text. When people see your face, hear your voice, and watch you demo your product, the relationship accelerates. The tradeoff is effort — video takes more time to produce.
+      </p>
+
+      <div class="space-y-3 mb-4">
+        <div class="flex items-start gap-3 text-gray-300 text-sm">
+          <span class="text-coral mt-0.5">&#9656;</span>
+          <p><strong class="text-white">YouTube:</strong> Long-form build logs, tutorials, and behind-the-scenes. Best for educational content that ranks in search.</p>
+        </div>
+        <div class="flex items-start gap-3 text-gray-300 text-sm">
+          <span class="text-coral mt-0.5">&#9656;</span>
+          <p><strong class="text-white">Loom:</strong> Quick, unpolished screen recordings. Perfect for showing new features, explaining decisions, or sharing quick wins.</p>
+        </div>
+      </div>
+
+      <div class="p-3 bg-[#0d0d20] border border-white/10 rounded-lg font-mono text-xs">
+        <p class="text-gray-500">// Video posting rhythm</p>
+        <p class="text-gray-400">YouTube: 1 video per week or 2 per month. Loom: Share as needed, no fixed schedule required.</p>
+      </div>
+    </div>
+
+    <!-- Newsletter -->
+    <div class="mb-8 p-6 bg-navy-light border border-white/10 rounded-2xl">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-purple-500/10 text-purple-400 text-xl">&#9993;</span>
+        <div>
+          <h3 class="text-lg font-semibold text-white">Newsletter</h3>
+          <p class="text-gray-400 text-sm">The owned channel — turn your build-in-public updates into weekly emails</p>
+        </div>
+      </div>
+
+      <p class="text-gray-300 leading-relaxed mb-4">
+        Your newsletter is the only platform you truly own. Twitter can ban you. LinkedIn can throttle your reach. But your email list is yours. The newsletter is where your build-in-public content converts from attention into an asset.
+      </p>
+
+      <div class="space-y-3 mb-4">
+        <div class="flex items-start gap-3 text-gray-300 text-sm">
+          <span class="text-coral mt-0.5">&#9656;</span>
+          <p><strong class="text-white">Weekly recap format:</strong> "What I built this week, what I learned, what's next." Compile your social posts into a cohesive narrative.</p>
+        </div>
+        <div class="flex items-start gap-3 text-gray-300 text-sm">
+          <span class="text-coral mt-0.5">&#9656;</span>
+          <p><strong class="text-white">Deeper dives:</strong> Expand on topics that got engagement on social. Your newsletter can go deeper than a Twitter thread.</p>
+        </div>
+        <div class="flex items-start gap-3 text-gray-300 text-sm">
+          <span class="text-coral mt-0.5">&#9656;</span>
+          <p><strong class="text-white">Direct access:</strong> Email lands in their inbox. No algorithm. No fighting for attention in a feed.</p>
+        </div>
+      </div>
+
+      <div class="p-3 bg-[#0d0d20] border border-white/10 rounded-lg font-mono text-xs">
+        <p class="text-gray-500">// Newsletter rhythm</p>
+        <p class="text-gray-400">Weekly is ideal. Bi-weekly is acceptable. Monthly is the minimum to stay top-of-mind.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4 -->
+  <section id="weekly-system" class="playbook-section mb-16 scroll-mt-24">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">04</span>
+      <h2 class="text-2xl md:text-3xl font-bold">The Weekly Content System</h2>
+    </div>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      The key to building in public consistently is having a system. Without a system, you'll post sporadically when inspiration strikes — which means you'll barely post at all. Here's a repeatable weekly rhythm that works.
+    </p>
+
+    <h3 class="text-xl font-semibold text-white mb-4 mt-10">The Monday-Wednesday-Friday Rhythm</h3>
+
+    <div class="space-y-6 mb-10">
+      <!-- Monday -->
+      <div class="p-6 bg-navy-light border border-white/10 rounded-2xl">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-blue-500/10 text-blue-400 font-mono text-xs font-bold">MON</span>
+          <h4 class="text-lg font-semibold text-white">What You're Working On This Week</h4>
+        </div>
+        <p class="text-gray-400 text-sm mb-4">
+          Set the stage for the week. Share your goals, your priorities, and what you're building toward. This creates accountability and gives your audience something to follow along with.
+        </p>
+        <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl font-mono text-sm">
+          <p class="text-gray-500 mb-2">// Monday Post Template</p>
+          <p class="text-coral mb-2">This week I'm focused on: [specific goal]</p>
+          <p class="text-gray-400 mb-1">&#8226; Building [feature] to solve [problem]</p>
+          <p class="text-gray-400 mb-1">&#8226; Talking to [N] users about [topic]</p>
+          <p class="text-gray-400 mb-1">&#8226; Fixing [specific issue] that's been bugging me</p>
+          <p class="text-gray-400 mt-2">What are you working on this week?</p>
+        </div>
+      </div>
+
+      <!-- Wednesday -->
+      <div class="p-6 bg-navy-light border border-white/10 rounded-2xl">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-yellow-500/10 text-yellow-400 font-mono text-xs font-bold">WED</span>
+          <h4 class="text-lg font-semibold text-white">A Learning or Observation Mid-Week</h4>
+        </div>
+        <p class="text-gray-400 text-sm mb-4">
+          Share something you learned, an insight from a customer conversation, or an observation about your market. This is the "value content" that builds authority.
+        </p>
+        <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl font-mono text-sm">
+          <p class="text-gray-500 mb-2">// Wednesday Post Template</p>
+          <p class="text-coral mb-2">[Surprising observation] after [action taken]:</p>
+          <p class="text-gray-400 mb-1">I expected [X] to happen.</p>
+          <p class="text-gray-400 mb-1">Instead, [Y] happened.</p>
+          <p class="text-gray-400 mb-1">Here's what I learned: [lesson]</p>
+          <p class="text-gray-400 mt-2">[Optional: Thread with 3-5 more insights]</p>
+        </div>
+      </div>
+
+      <!-- Friday -->
+      <div class="p-6 bg-navy-light border border-white/10 rounded-2xl">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-green-500/10 text-green-400 font-mono text-xs font-bold">FRI</span>
+          <h4 class="text-lg font-semibold text-white">Weekly Recap — What Shipped, What You Learned, What's Next</h4>
+        </div>
+        <p class="text-gray-400 text-sm mb-4">
+          Close the loop on the week. Show what you actually accomplished (even if it's less than you planned), share lessons, and preview next week. This format is highly engaging because it creates a narrative arc.
+        </p>
+        <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl font-mono text-sm">
+          <p class="text-gray-500 mb-2">// Friday Post Template</p>
+          <p class="text-coral mb-2">Week [N] building [product name]:</p>
+          <p class="text-gray-400 mb-1">&#9989; Shipped: [feature/update accomplished]</p>
+          <p class="text-gray-400 mb-1">&#128200; Numbers: [revenue/users/metric updated]</p>
+          <p class="text-gray-400 mb-1">&#128161; Learned: [key insight from the week]</p>
+          <p class="text-gray-400 mb-1">&#10060; Didn't get to: [what you planned but missed]</p>
+          <p class="text-gray-400 mt-2">Next week: [preview of Monday's goals]</p>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="text-xl font-semibold text-white mb-4 mt-10">Filling the Gaps</h3>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      Three posts a week is the foundation. On Tuesday and Thursday, fill in with:
+    </p>
+
+    <div class="grid gap-3 sm:grid-cols-2 mb-8">
+      <div class="p-4 bg-white/[0.03] border border-white/5 rounded-lg">
+        <p class="font-semibold text-white mb-1">Engagement content</p>
+        <p class="text-gray-400 text-sm">Reply to other founders' posts, join conversations, ask questions.</p>
+      </div>
+      <div class="p-4 bg-white/[0.03] border border-white/5 rounded-lg">
+        <p class="font-semibold text-white mb-1">Quick wins</p>
+        <p class="text-gray-400 text-sm">Small updates, bug fixes, "just shipped this" announcements.</p>
+      </div>
+      <div class="p-4 bg-white/[0.03] border border-white/5 rounded-lg">
+        <p class="font-semibold text-white mb-1">Behind-the-scenes</p>
+        <p class="text-gray-400 text-sm">Screenshots, workspace photos, "how I work" glimpses.</p>
+      </div>
+      <div class="p-4 bg-white/[0.03] border border-white/5 rounded-lg">
+        <p class="font-semibold text-white mb-1">Personal content</p>
+        <p class="text-gray-400 text-sm">You're a human, not a product. Share non-work stuff occasionally.</p>
+      </div>
+    </div>
+
+    <div class="bg-gradient-to-r from-coral/10 to-transparent border-l-4 border-coral pl-6 py-4 rounded-r-lg">
+      <p class="text-white font-medium leading-relaxed">
+        "The system matters more than the individual posts. Posting consistently for 6 months with mediocre content beats posting amazing content sporadically. Compound interest applies to audiences too."
+      </p>
+    </div>
+  </section>
+
+  <!-- Section 5 -->
+  <section id="followers-to-customers" class="playbook-section mb-16 scroll-mt-24">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">05</span>
+      <h2 class="text-2xl md:text-3xl font-bold">Turning Followers into Customers</h2>
+    </div>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      The most common mistake in building in public: you build an audience but never sell to them. You post for months, gain thousands of followers, launch your product... and hear crickets. Here's how to avoid that trap.
+    </p>
+
+    <h3 class="text-xl font-semibold text-white mb-4 mt-10">The Audience-First Mistake</h3>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      Followers are not customers. Someone who likes your tweets is not the same as someone who will pay for your product. The gap between audience and customers is where most build-in-public efforts die.
+    </p>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      The fix: sell from day one. Not aggressively. Not constantly. But make it clear that you're building a business, not just a following. Mention your product. Share your pricing decisions. Talk about your business model. The people who are interested in buying will self-select.
+    </p>
+
+    <h3 class="text-xl font-semibold text-white mb-4 mt-10">The Soft Pitch</h3>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      You don't need to be salesy to sell. The soft pitch is about mentioning your product naturally in the context of sharing your journey. Instead of "Buy my product," it's "Here's what I learned building this feature for [product name]."
+    </p>
+
+    <div class="space-y-4 mb-8">
+      <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+        <p class="text-gray-500 mb-2">&#10060; Too salesy:</p>
+        <p class="text-red-400">"My product is the best tool for X. Buy it now at 20% off!"</p>
+      </div>
+      <div class="p-4 bg-[#0d0d20] border border-white/10 rounded-xl">
+        <p class="text-gray-500 mb-2">&#9989; Soft pitch:</p>
+        <p class="text-green-400">"I've been using [product name] to solve [problem] for my users. The biggest lesson? [Insight]. If you're dealing with [problem], this might help: [link]"</p>
+      </div>
+    </div>
+
+    <h3 class="text-xl font-semibold text-white mb-4 mt-10">The Launch Moment</h3>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      Building in public sets up your product launch perfectly. Your audience has watched you build it. They've given feedback. They feel invested in your success. When you finally say "It's live," they're ready to buy.
+    </p>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      But you have to ask. The launch post needs a clear CTA. "It's live" is not enough. "It's live, here's the link, and here's why you should try it" is what converts.
+    </p>
+
+    <div class="p-5 bg-[#0d0d20] border border-white/10 rounded-xl font-mono text-sm mb-8">
+      <p class="text-gray-500 mb-3">// Launch Post Structure</p>
+      <p class="text-coral mb-2">[Product name] is now live &#127881;</p>
+      <p class="text-gray-400 mb-1">After [time period] building in public, I'm excited to finally share this.</p>
+      <p class="text-gray-400 mb-1">&#8226; What it does: [one-sentence value prop]</p>
+      <p class="text-gray-400 mb-1">&#8226; Who it's for: [specific audience]</p>
+      <p class="text-gray-400 mb-1">&#8226; Launch pricing: [special offer for early supporters]</p>
+      <p class="text-gray-400 mt-2">Try it here: [link]</p>
+      <p class="text-gray-400 mt-1">And thank you to everyone who followed along and gave feedback &#129305;</p>
+    </div>
+
+    <h3 class="text-xl font-semibold text-white mb-4 mt-10">Email Capture: The Owned Asset</h3>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      Twitter followers can disappear overnight. The algorithm can change. Your account can be suspended. But your email list is yours forever.
+    </p>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      From day one, you should be capturing emails. Not buying lists or scraping — genuinely inviting your followers to join your newsletter. "I share deeper dives and early access in my weekly newsletter" is a soft sell that works.
+    </p>
+
+    <div class="space-y-3 mb-6">
+      <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+        <span class="text-coral mt-0.5">&#9656;</span>
+        <p><strong class="text-white">Link in bio:</strong> Your newsletter signup should be the primary link everywhere.</p>
+      </div>
+      <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+        <span class="text-coral mt-0.5">&#9656;</span>
+        <p><strong class="text-white">Lead magnet:</strong> Offer something valuable for email signups: a guide, a template, early access.</p>
+      </div>
+      <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+        <span class="text-coral mt-0.5">&#9656;</span>
+        <p><strong class="text-white">Regular invitations:</strong> Every few weeks, post about your newsletter and why people should join.</p>
+      </div>
+    </div>
+
+    <div class="bg-navy-light border border-white/10 rounded-xl p-6">
+      <p class="text-sm font-semibold text-coral mb-3">The Conversion Funnel</p>
+      <p class="text-gray-300 leading-relaxed">
+        Follower &#8594; Email Subscriber &#8594; Trial User &#8594; Paying Customer. Each step is a filter. Your job is to make each transition as easy as possible. Building in public fills the top of the funnel. Your product and follow-up do the rest.
+      </p>
+    </div>
+  </section>
+
+  <!-- Section 6 -->
+  <section id="real-examples" class="playbook-section mb-16 scroll-mt-24">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">06</span>
+      <h2 class="text-2xl md:text-3xl font-bold">Real Examples of Build-in-Public That Drove Revenue</h2>
+    </div>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      Theory is useful, but real examples are proof. Here are four case studies of developers who used transparency to build audiences and drive product sales. Names are anonymized, but the strategies and results are real.
+    </p>
+
+    <!-- Case Study 1 -->
+    <div class="mb-10 p-6 bg-navy-light border border-white/10 rounded-2xl">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-blue-500/10 text-blue-400 font-mono text-xs font-bold">01</span>
+        <h3 class="text-lg font-semibold text-white">The SaaS Starter Kit Founder</h3>
+      </div>
+
+      <p class="text-gray-400 text-sm mb-4 italic">Product: Next.js boilerplate for SaaS founders | Audience: Indie developers</p>
+
+      <div class="mb-4">
+        <p class="text-xs font-semibold text-coral uppercase tracking-wider mb-2">The Strategy</p>
+        <p class="text-gray-300 text-sm leading-relaxed">
+          Started tweeting daily about building the boilerplate from zero. Shared every feature, every pricing decision, every line of code. Posted revenue milestones publicly: "$1K in a day," "$10K in a month." Built an audience of 15K+ developers before launching paid tiers.
+        </p>
+      </div>
+
+      <div class="mb-4">
+        <p class="text-xs font-semibold text-coral uppercase tracking-wider mb-2">What They Shared</p>
+        <div class="space-y-1 text-gray-300 text-sm">
+          <p>&#8226; Daily build logs with screenshots</p>
+          <p>&#8226; Revenue milestones and the journey to each one</p>
+          <p>&#8226; Failed experiments (features that didn't sell)</p>
+          <p>&#8226; Customer conversations and feedback</p>
+        </div>
+      </div>
+
+      <div>
+        <p class="text-xs font-semibold text-green-400 uppercase tracking-wider mb-2">The Results</p>
+        <p class="text-gray-300 text-sm leading-relaxed">
+          First launch: $30K in 48 hours from Twitter audience alone. Continues to drive 70% of sales through organic social. Email list of 8,000+ subscribers from Twitter CTA. The audience trusts him because they watched him build it.
+        </p>
+      </div>
+    </div>
+
+    <!-- Case Study 2 -->
+    <div class="mb-10 p-6 bg-navy-light border border-white/10 rounded-2xl">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-purple-500/10 text-purple-400 font-mono text-xs font-bold">02</span>
+        <h3 class="text-lg font-semibold text-white">The AI Tools Developer</h3>
+      </div>
+
+      <p class="text-gray-400 text-sm mb-4 italic">Product: AI writing assistant for developers | Audience: Technical content creators</p>
+
+      <div class="mb-4">
+        <p class="text-xs font-semibold text-coral uppercase tracking-wider mb-2">The Strategy</p>
+        <p class="text-gray-300 text-sm leading-relaxed">
+          Built the product live on Twitch and YouTube. Streamed coding sessions 3x per week. Shared failures openly: "This model choice was wrong, here's why." Created tutorials from his own learnings, which drove search traffic.
+        </p>
+      </div>
+
+      <div class="mb-4">
+        <p class="text-xs font-semibold text-coral uppercase tracking-wider mb-2">What They Shared</p>
+        <div class="space-y-1 text-gray-300 text-sm">
+          <p>&#8226; Live coding sessions on Twitch/YouTube</p>
+          <p>&#8226; Tutorial content based on real problems solved</p>
+          <p>&#8226; Honest assessments of what worked and what didn't</p>
+          <p>&#8226; User metrics and growth charts</p>
+        </div>
+      </div>
+
+      <div>
+        <p class="text-xs font-semibold text-green-400 uppercase tracking-wider mb-2">The Results</p>
+        <p class="text-gray-300 text-sm leading-relaxed">
+          YouTube channel grew to 25K subscribers in 8 months. Tutorial videos rank on Google for key terms. Product beta had 2,000 signups before launch. First paid tier: $15K MRR within 3 months of launch.
+        </p>
+      </div>
+    </div>
+
+    <!-- Case Study 3 -->
+    <div class="mb-10 p-6 bg-navy-light border border-white/10 rounded-2xl">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-green-500/10 text-green-400 font-mono text-xs font-bold">03</span>
+        <h3 class="text-lg font-semibold text-white">The Newsletter Tool Founder</h3>
+      </div>
+
+      <p class="text-gray-400 text-sm mb-4 italic">Product: Email newsletter platform for creators | Audience: Newsletter writers</p>
+
+      <div class="mb-4">
+        <p class="text-xs font-semibold text-coral uppercase tracking-wider mb-2">The Strategy</p>
+        <p class="text-gray-300 text-sm leading-relaxed">
+          Built in public exclusively on Indie Hackers for the first 6 months. Posted weekly updates with metrics, decisions, and challenges. Engaged deeply in the community — commenting on others' posts daily. Transparency became his differentiator in a crowded market.
+        </p>
+      </div>
+
+      <div class="mb-4">
+        <p class="text-xs font-semibold text-coral uppercase tracking-wider mb-2">What They Shared</p>
+        <div class="space-y-1 text-gray-300 text-sm">
+          <p>&#8226; Weekly "what I shipped" posts on Indie Hackers</p>
+          <p>&#8226; Revenue and user growth milestones</p>
+          <p>&#8226; Technical challenges and how they were solved</p>
+          <p>&#8226; Competitive analysis and positioning decisions</p>
+        </div>
+      </div>
+
+      <div>
+        <p class="text-xs font-semibold text-green-400 uppercase tracking-wider mb-2">The Results</p>
+        <p class="text-gray-300 text-sm leading-relaxed">
+          First 100 paying customers came directly from Indie Hackers community. Featured in Indie Hackers newsletter, driving 500+ signups. Now at $40K MRR with minimal paid acquisition. The transparency built trust that competitors couldn't match.
+        </p>
+      </div>
+    </div>
+
+    <!-- Case Study 4 -->
+    <div class="mb-8 p-6 bg-navy-light border border-white/10 rounded-2xl">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-yellow-500/10 text-yellow-400 font-mono text-xs font-bold">04</span>
+        <h3 class="text-lg font-semibold text-white">The Developer Educator</h3>
+      </div>
+
+      <p class="text-gray-400 text-sm mb-4 italic">Product: Paid courses and templates for developers | Audience: Junior to mid-level devs</p>
+
+      <div class="mb-4">
+        <p class="text-xs font-semibold text-coral uppercase tracking-wider mb-2">The Strategy</p>
+        <p class="text-gray-300 text-sm leading-relaxed">
+          Used LinkedIn as the primary platform (unusual for this niche). Posted daily about learning to code, career growth, and building side projects. Built a personal brand as a "developer who helps developers." Course sales came naturally from the audience.
+        </p>
+      </div>
+
+      <div class="mb-4">
+        <p class="text-xs font-semibold text-coral uppercase tracking-wider mb-2">What They Shared</p>
+        <div class="space-y-1 text-gray-300 text-sm">
+          <p>&#8226; Career lessons and "what I wish I knew" posts</p>
+          <p>&#8226; Behind-the-scenes of course creation</p>
+          <p>&#8226; Student success stories (with permission)</p>
+          <p>&#8226; Personal journey from junior to senior dev</p>
+        </div>
+      </div>
+
+      <div>
+        <p class="text-xs font-semibold text-green-400 uppercase tracking-wider mb-2">The Results</p>
+        <p class="text-gray-300 text-sm leading-relaxed">
+          LinkedIn following grew from 500 to 50K in 12 months. First course launch: $25K in 5 days. Now runs a 6-figure education business with 80%+ of customers coming from LinkedIn organic. The personal brand is the moat.
+        </p>
+      </div>
+    </div>
+
+    <h3 class="text-xl font-semibold text-white mb-4">Common Threads Across All Four</h3>
+
+    <div class="space-y-3 mb-6">
+      <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+        <span class="text-coral mt-0.5 font-mono text-xs">01</span>
+        <p><strong class="text-white">Consistency beat quality:</strong> All posted regularly (daily or weekly) for months before seeing major results.</p>
+      </div>
+      <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+        <span class="text-coral mt-0.5 font-mono text-xs">02</span>
+        <p><strong class="text-white">Transparency built trust:</strong> Sharing numbers, failures, and process created a relationship with the audience.</p>
+      </div>
+      <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+        <span class="text-coral mt-0.5 font-mono text-xs">03</span>
+        <p><strong class="text-white">They asked for the sale:</strong> None were shy about promoting their product when it was ready.</p>
+      </div>
+      <div class="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+        <span class="text-coral mt-0.5 font-mono text-xs">04</span>
+        <p><strong class="text-white">Email was the bridge:</strong> All captured emails and nurtured subscribers before major launches.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 7 -->
+  <section id="checklist" class="playbook-section mb-16 scroll-mt-24">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">07</span>
+      <h2 class="text-2xl md:text-3xl font-bold">Build in Public Checklist</h2>
+    </div>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+      Ready to start building in public? Here's your getting-started checklist for the first 30 days. Check these off one by one to build momentum.
+    </p>
+
+    <div class="space-y-6">
+      <!-- Week 1 -->
+      <div class="p-6 bg-navy-light border border-white/10 rounded-2xl">
+        <h3 class="text-sm font-semibold text-coral uppercase tracking-wider mb-4">Week 1: Foundation</h3>
+        <div class="space-y-3">
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Choose your primary platform (Twitter, LinkedIn, or Indie Hackers)</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Optimize your profile: clear bio, link to your product/newsletter, professional photo</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Post your "origin story" — why you're building what you're building</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Set up email capture: create a newsletter or lead magnet</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Follow 20-30 people in your niche and start engaging with their content</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Week 2 -->
+      <div class="p-6 bg-navy-light border border-white/10 rounded-2xl">
+        <h3 class="text-sm font-semibold text-coral uppercase tracking-wider mb-4">Week 2: Consistency</h3>
+        <div class="space-y-3">
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Post at least once per day (use the content ideas list from Section 2)</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Reply to 5-10 other posts per day (engagement is as important as posting)</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Share a screenshot of your work in progress</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Post one "learning" or "insight" from your current work</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Week 3 -->
+      <div class="p-6 bg-navy-light border border-white/10 rounded-2xl">
+        <h3 class="text-sm font-semibold text-coral uppercase tracking-wider mb-4">Week 3: Depth</h3>
+        <div class="space-y-3">
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Write one longer-form post (thread, LinkedIn article, or Indie Hackers post)</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Share a failure or something that didn't go as planned</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Ask your audience a question (poll or open-ended)</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Mention your product naturally in at least one post</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Week 4 -->
+      <div class="p-6 bg-navy-light border border-white/10 rounded-2xl">
+        <h3 class="text-sm font-semibold text-coral uppercase tracking-wider mb-4">Week 4: System</h3>
+        <div class="space-y-3">
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Implement the Monday-Wednesday-Friday posting system</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Create a content calendar or idea bank for future posts</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Send your first newsletter email to subscribers</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Review your analytics: what content got the most engagement?</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input type="checkbox" class="mt-1 accent-coral w-4 h-4 rounded shrink-0" />
+            <span class="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">Commit to 30 more days of consistent posting</span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-8 bg-gradient-to-r from-coral/10 to-transparent border-l-4 border-coral pl-6 py-4 rounded-r-lg">
+      <p class="text-white font-medium leading-relaxed">
+        "The first 30 days are the hardest. Nobody knows you yet. Your posts get little engagement. It feels like shouting into the void. Keep going. The founders who win are the ones who show up consistently when nobody's watching. By day 90, you'll have momentum. By day 180, you'll have an asset. By day 365, you'll have a business advantage that competitors can't buy."
+      </p>
+    </div>
+  </section>
+
+</PlaybookLayout>
