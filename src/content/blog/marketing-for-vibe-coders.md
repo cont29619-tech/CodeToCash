@@ -43,7 +43,7 @@ Your offer is not "my product at this price." Your offer is the **complete packa
 
 A weak offer: "A Next.js boilerplate for $49."
 
-A strong offer: "Launch your SaaS this weekend. Pre-built auth, payments, and dashboard. 2,500+ developers already shipped. $49 one-time — 30-day money-back guarantee."
+A strong offer: "Launch your SaaS this weekend. Pre-built auth, payments, and dashboard. Join [number] developers who already shipped. $49 one-time — 30-day money-back guarantee."
 
 Same product. Wildly different offer. The strong version hits the value equation: big dream outcome (launch this weekend), high perceived likelihood (2,500 others did it), low time delay (this weekend), low effort (pre-built everything), and zero risk (money-back guarantee).
 
