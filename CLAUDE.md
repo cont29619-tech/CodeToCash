@@ -157,9 +157,15 @@ Renders Markdown content via `BlogLayout.astro`. Uses `getStaticPaths()` with co
 ---
 
 ### `/playbooks` — playbooks/index.astro (Playbooks Index)
-Lists 8 planned playbooks as cards. Only 1 is implemented:
+Lists 8 playbooks as cards. All 8 are implemented:
 - ✅ `/playbooks/saas-landing-page` — "How to Write a SaaS Landing Page That Converts"
-- 🔒 7 others are listed but pages don't exist yet (coming soon state)
+- ✅ `/playbooks/email-launch-sequence` — "Email Launch Sequence for Developers"
+- ✅ `/playbooks/google-ads-100-budget` — "Your First Google Ad Campaign on a $100 Budget"
+- ✅ `/playbooks/copywriting-for-developers` — "Writing Copy When You Hate Writing Copy"
+- ✅ `/playbooks/pricing-dev-product` — "Pricing Your Dev Product for Maximum Revenue"
+- ✅ `/playbooks/building-in-public` — "Building in Public as a Marketing Strategy"
+- ✅ `/playbooks/ab-testing-guide` — "The Developer's A/B Testing Guide"
+- ✅ `/playbooks/cold-email-outreach` — "Cold Email Outreach for Dev Tools"
 
 ### `/playbooks/saas-landing-page` — playbooks/saas-landing-page.astro
 Long-form playbook using `PlaybookLayout.astro`. Beginner, 15 min read.
@@ -463,13 +469,13 @@ z.object({
 | Slug | Title | Status |
 |---|---|---|
 | `saas-landing-page` | "How to Write a SaaS Landing Page That Converts" | ✅ Live |
-| `email-launch-sequence` | "Email Launch Sequence for Developers" | 🔒 Not built |
-| `google-ads-100-budget` | "Your First Google Ad Campaign on a $100 Budget" | 🔒 Not built |
-| `copywriting-for-developers` | "Writing Copy When You Hate Writing Copy" | 🔒 Not built |
-| `pricing-dev-product` | "Pricing Your Dev Product for Maximum Revenue" | 🔒 Not built |
+| `email-launch-sequence` | "Email Launch Sequence for Developers" | ✅ Live |
+| `google-ads-100-budget` | "Your First Google Ad Campaign on a $100 Budget" | ✅ Live |
+| `copywriting-for-developers` | "Writing Copy When You Hate Writing Copy" | ✅ Live |
+| `pricing-dev-product` | "Pricing Your Dev Product for Maximum Revenue" | ✅ Live |
 | `building-in-public` | "Building in Public as a Marketing Strategy" | ✅ Live |
-| `ab-testing-guide` | "The Developer's A/B Testing Guide" | 🔒 Not built |
-| `cold-email-outreach` | "Cold Email Outreach for Dev Tools" | 🔒 Not built |
+| `ab-testing-guide` | "The Developer's A/B Testing Guide" | ✅ Live |
+| `cold-email-outreach` | "Cold Email Outreach for Dev Tools" | ✅ Live |
 
 ---
 
@@ -538,7 +544,7 @@ z.object({
 ## Known Issues / Tech Debt
 
 1. ~~**Buttondown forms**~~ — fully migrated to ConvertKit across all pages ✅
-2. **6 playbooks are planned but unbuilt** — `saas-landing-page` and `building-in-public` are live
+2. ~~**6 playbooks are planned but unbuilt**~~ — all 8 playbooks are now live ✅
 3. **No analytics** — no Plausible or Google Analytics configured
 4. **README.md is the default Astro starter template** — not updated for this project
 5. **No linter or formatter** — no ESLint/Prettier configured
