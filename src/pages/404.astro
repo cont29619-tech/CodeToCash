@@ -45,6 +45,31 @@ import Layout from '../layouts/Layout.astro';
           DRM 101 Guide
         </a>
       </div>
+
+      <!-- Newsletter CTA -->
+      <div class="mt-16 p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] max-w-md mx-auto">
+        <p class="text-sm font-mono text-coral uppercase tracking-widest mb-3">// while you're here</p>
+        <p class="text-white font-semibold mb-2">Get weekly DRM tactics for developers</p>
+        <p class="text-gray-400 text-sm mb-6">One actionable tactic every Tuesday. Free forever.</p>
+        <form class="ck-subscribe-form flex flex-col sm:flex-row gap-3">
+          <input
+            type="email"
+            name="email"
+            required
+            placeholder="you@email.com"
+            aria-label="Email address"
+            class="flex-1 min-w-0 px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white text-sm placeholder-gray-500 focus:outline-none focus:border-coral/50 focus:ring-2 focus:ring-coral/20 transition-all duration-200"
+          />
+          <button
+            type="submit"
+            aria-label="Subscribe to newsletter"
+            class="px-6 py-3 bg-coral text-white text-sm font-semibold rounded-lg hover:bg-coral/90 hover:-translate-y-0.5 transition-all duration-200 shadow-lg shadow-coral/20 shrink-0 cursor-pointer"
+          >
+            Subscribe
+          </button>
+        </form>
+        <p class="ck-subscribe-error mt-3 text-red-400 text-sm hidden" aria-live="polite" aria-atomic="true"></p>
+      </div>
     </div>
   </section>
 </Layout>

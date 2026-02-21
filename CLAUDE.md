@@ -136,7 +136,7 @@ The flagship content piece. ~45 min read. The complete DRM guide.
 Dedicated subscription page. Sections:
 1. **HERO** — "One Marketing Tactic. Every Week. Built for Developers." — Large heading with ConvertKit form
 2. **WHAT YOU GET** — Five benefit cards with SVG icons
-3. **BUILDING IN PUBLIC** — Honest stats section (3 articles, 8 of 8 playbooks live)
+3. **BUILDING IN PUBLIC** — Honest stats section (7 articles, 8 of 8 playbooks live)
 4. **SAMPLE ISSUE** — Email client UI mockup showing a real newsletter example
 5. **FINAL CTA** — Second signup form
 
@@ -481,6 +481,10 @@ z.object({
 | `what-is-direct-response-marketing-for-developers` | "What Is Direct Response Marketing? A Vibe Coder's Guide" | fundamentals | ⭐ yes |
 | `copywriting-frameworks-for-developers` | "5 Copywriting Frameworks Every Vibe Coder Should Know" | copywriting | no |
 | `marketing-for-vibe-coders` | "Marketing for Vibe Coders: How to Sell What You Build with AI" | strategy | no |
+| `drm-funnel-explained` | "The DRM Funnel Explained: Think of It as Your Sales API" | fundamentals | no |
+| `pas-copywriting-framework` | "PAS Framework: The Developer's Favorite Copywriting Formula" | copywriting | no |
+| `why-developer-products-fail-marketing` | "Why Most Developer Products Fail (And How DRM Fixes It)" | strategy | no |
+| `direct-response-vs-brand-marketing` | "Direct Response vs Brand Marketing: What Developers Need to Know" | fundamentals | no |
 
 ### Playbooks Status
 | Slug | Title | Status |
