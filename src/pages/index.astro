@@ -31,7 +31,7 @@ const schema = JSON.stringify({
       <p class="inline-block text-sm font-mono text-coral uppercase tracking-widest mb-6 animate-fade-in">// ship products, make money</p>
       <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.1] tracking-tight animate-fade-in-up">
         You Can Build Anything.<br />
-        <span class="text-coral">Now Learn to Sell It.</span>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-coral">Now Learn to Sell It.</span>
       </h1>
       <p class="mt-6 text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed animate-fade-in-up animation-delay-200">
         You shipped it. Now sell it. A free marketing guide for vibe coders and indie developers — built in public, written in plain English.
@@ -39,13 +39,13 @@ const schema = JSON.stringify({
       <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up animation-delay-400">
         <a
           href="/drm-101"
-          class="px-8 py-4 bg-coral text-white text-lg font-semibold rounded-lg hover:bg-coral/90 hover:scale-[1.02] transition-all duration-200 shadow-lg shadow-coral/20"
+          class="px-8 py-4 bg-coral text-white text-lg font-semibold rounded-lg hover:bg-coral/90 hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-coral/30"
         >
           Start the Free DRM 101 Guide
         </a>
         <a
           href="/newsletter"
-          class="px-8 py-4 border-2 border-coral/50 text-coral text-lg font-medium rounded-lg hover:bg-coral/10 hover:border-coral transition-all duration-200"
+          class="px-8 py-4 border-2 border-coral/50 text-coral text-lg font-medium rounded-lg hover:bg-coral/10 hover:border-coral hover:-translate-y-1 transition-all duration-300"
         >
           Get the Free Cheatsheet
         </a>
@@ -55,7 +55,7 @@ const schema = JSON.stringify({
 
 
   <!-- ============ PROBLEM SECTION ============ -->
-  <section class="relative px-4 py-24 sm:py-32 bg-navy-light/50">
+  <section class="relative px-4 py-24 sm:py-32 bg-navy-light/50 border-t border-white/[0.02]">
     <div class="max-w-6xl mx-auto">
       <div class="text-center max-w-3xl mx-auto mb-16 section-animate">
         <p class="text-sm font-mono text-coral uppercase tracking-widest mb-4">// the problem</p>
@@ -71,18 +71,18 @@ const schema = JSON.stringify({
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="group p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-coral/20 hover:bg-white/[0.04] transition-all duration-300 section-animate">
-          <div class="text-4xl mb-5" aria-hidden="true">🚀</div>
+        <div class="group p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-coral/40 hover:bg-white/[0.04] hover:shadow-lg hover:shadow-coral/10 hover:-translate-y-1 transition-all duration-300 section-animate">
+          <div class="text-4xl mb-5 group-hover:scale-110 transition-transform duration-300" aria-hidden="true">🚀</div>
           <h3 class="text-xl font-bold text-white mb-3">You Build, But Nobody Buys</h3>
           <p class="text-gray-400 leading-relaxed">Great product, zero revenue. You shipped something amazing but your launch got buried in the noise.</p>
         </div>
-        <div class="group p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-coral/20 hover:bg-white/[0.04] transition-all duration-300 section-animate">
-          <div class="text-4xl mb-5" aria-hidden="true">😬</div>
+        <div class="group p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-coral/40 hover:bg-white/[0.04] hover:shadow-lg hover:shadow-coral/10 hover:-translate-y-1 transition-all duration-300 section-animate">
+          <div class="text-4xl mb-5 group-hover:scale-110 transition-transform duration-300" aria-hidden="true">😬</div>
           <h3 class="text-xl font-bold text-white mb-3">Marketing Feels Sleazy</h3>
           <p class="text-gray-400 leading-relaxed">You'd rather write code than write copy. Every marketing tactic you've seen feels manipulative or cringe.</p>
         </div>
-        <div class="group p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-coral/20 hover:bg-white/[0.04] transition-all duration-300 section-animate">
-          <div class="text-4xl mb-5" aria-hidden="true">🎲</div>
+        <div class="group p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-coral/40 hover:bg-white/[0.04] hover:shadow-lg hover:shadow-coral/10 hover:-translate-y-1 transition-all duration-300 section-animate">
+          <div class="text-4xl mb-5 group-hover:scale-110 transition-transform duration-300" aria-hidden="true">🎲</div>
           <h3 class="text-xl font-bold text-white mb-3">No System, Just Hoping</h3>
           <p class="text-gray-400 leading-relaxed">Posting randomly and praying for sales. No funnel, no strategy, no repeatable process to grow revenue.</p>
         </div>
@@ -92,7 +92,7 @@ const schema = JSON.stringify({
 
 
   <!-- ============ SOLUTION SECTION ============ -->
-  <section class="relative px-4 py-24 sm:py-32">
+  <section class="relative px-4 py-24 sm:py-32 border-t border-white/[0.02]">
     <div class="max-w-6xl mx-auto">
       <div class="text-center max-w-3xl mx-auto mb-16 section-animate">
         <p class="text-sm font-mono text-coral uppercase tracking-widest mb-4">// the solution</p>
@@ -161,16 +161,16 @@ const schema = JSON.stringify({
         </div>
 
         <!-- Pipeline visual (mobile-friendly) -->
-        <div class="mt-10 flex flex-wrap items-center justify-center gap-3 text-sm font-mono section-animate">
-          <span class="px-4 py-2 rounded-lg bg-deep-blue/40 border border-deep-blue/60 text-gray-200">Traffic</span>
-          <span class="text-coral text-lg">→</span>
-          <span class="px-4 py-2 rounded-lg bg-deep-blue/40 border border-deep-blue/60 text-gray-200">Landing Page</span>
-          <span class="text-coral text-lg">→</span>
-          <span class="px-4 py-2 rounded-lg bg-deep-blue/40 border border-deep-blue/60 text-gray-200">Email Sequence</span>
-          <span class="text-coral text-lg">→</span>
-          <span class="px-4 py-2 rounded-lg bg-deep-blue/40 border border-deep-blue/60 text-gray-200">Offer</span>
-          <span class="text-coral text-lg">→</span>
-          <span class="px-4 py-2 rounded-lg bg-coral/20 border border-coral/40 text-coral font-semibold">Revenue</span>
+        <div class="mt-10 flex flex-wrap items-center justify-center gap-3 text-sm font-mono section-animate cursor-default">
+          <span class="px-4 py-2 rounded-lg bg-deep-blue/40 border border-deep-blue/60 text-gray-200 hover:scale-105 hover:border-coral/40 hover:-translate-y-1 hover:shadow-lg hover:shadow-coral/20 hover:text-white transition-all duration-300">Traffic</span>
+          <span class="text-coral text-lg animate-pulse">→</span>
+          <span class="px-4 py-2 rounded-lg bg-deep-blue/40 border border-deep-blue/60 text-gray-200 hover:scale-105 hover:border-coral/40 hover:-translate-y-1 hover:shadow-lg hover:shadow-coral/20 hover:text-white transition-all duration-300">Landing Page</span>
+          <span class="text-coral text-lg animate-pulse">→</span>
+          <span class="px-4 py-2 rounded-lg bg-deep-blue/40 border border-deep-blue/60 text-gray-200 hover:scale-105 hover:border-coral/40 hover:-translate-y-1 hover:shadow-lg hover:shadow-coral/20 hover:text-white transition-all duration-300">Email Sequence</span>
+          <span class="text-coral text-lg animate-pulse">→</span>
+          <span class="px-4 py-2 rounded-lg bg-deep-blue/40 border border-deep-blue/60 text-gray-200 hover:scale-105 hover:border-coral/40 hover:-translate-y-1 hover:shadow-lg hover:shadow-coral/20 hover:text-white transition-all duration-300">Offer</span>
+          <span class="text-coral text-lg animate-pulse">→</span>
+          <span class="px-4 py-2 rounded-lg bg-coral/20 border border-coral/40 text-coral font-semibold hover:scale-105 hover:bg-coral/30 hover:shadow-lg hover:shadow-coral/40 hover:-translate-y-1 transition-all duration-300">Revenue</span>
         </div>
       </div>
     </div>
@@ -178,7 +178,7 @@ const schema = JSON.stringify({
 
 
   <!-- ============ WHAT YOU'LL LEARN SECTION ============ -->
-  <section class="relative px-4 py-24 sm:py-32 bg-navy-light/50">
+  <section class="relative px-4 py-24 sm:py-32 bg-navy-light/50 border-t border-white/[0.02]">
     <div class="max-w-6xl mx-auto">
       <div class="text-center max-w-3xl mx-auto mb-16 section-animate">
         <p class="text-sm font-mono text-coral uppercase tracking-widest mb-4">// the curriculum</p>
@@ -242,7 +242,7 @@ const schema = JSON.stringify({
 
 
   <!-- ============ BUILDING IN PUBLIC SECTION ============ -->
-  <section class="relative px-4 py-24 sm:py-32">
+  <section class="relative px-4 py-24 sm:py-32 border-t border-white/[0.02]">
     <div class="max-w-6xl mx-auto">
       <div class="text-center max-w-3xl mx-auto mb-16 section-animate">
         <p class="text-sm font-mono text-coral uppercase tracking-widest mb-4">// built in public</p>
@@ -301,7 +301,7 @@ const schema = JSON.stringify({
 
 
   <!-- ============ NEWSLETTER SECTION ============ -->
-  <section class="relative px-4 py-24 sm:py-32 overflow-hidden">
+  <section class="relative px-4 py-24 sm:py-32 overflow-hidden border-t border-white/[0.02]">
     <!-- Gradient background -->
     <div class="absolute inset-0 bg-gradient-to-br from-deep-blue/30 via-navy-light to-coral/5 pointer-events-none" aria-hidden="true"></div>
     <div class="absolute inset-0 bg-navy-light/60 pointer-events-none" aria-hidden="true"></div>
@@ -335,7 +335,7 @@ const schema = JSON.stringify({
           Subscribe Free
         </button>
       </form>
-      <p class="ck-subscribe-error mt-3 text-red-400 text-sm hidden"></p>
+      <p class="ck-subscribe-error mt-3 text-red-400 text-sm hidden" aria-live="polite" aria-atomic="true"></p>
 
       <p class="mt-4 text-sm text-gray-500">
         No spam. No fake urgency. Just the frameworks that help developers sell what they build.
@@ -349,7 +349,7 @@ const schema = JSON.stringify({
 
 
   <!-- ============ FINAL CTA SECTION ============ -->
-  <section class="relative px-4 py-24 sm:py-32">
+  <section class="relative px-4 py-24 sm:py-32 border-t border-white/[0.02]">
     <div class="max-w-3xl mx-auto text-center section-animate">
       <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight">
         Ready to turn your code<br />into <span class="text-coral">cash</span>?

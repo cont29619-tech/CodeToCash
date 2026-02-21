@@ -69,6 +69,11 @@ const ogImageURL = new URL('/og-default.png', Astro.site);
     </style>
 
     {schema && <script type="application/ld+json" set:html={schema} />}
+
+    <!-- Plausible Analytics (production only) -->
+    {import.meta.env.PROD && (
+      <script defer data-domain="codetocash.dev" src="https://plausible.io/js/script.js"></script>
+    )}
   </head>
   <body class="bg-navy text-gray-100 font-sans antialiased min-h-screen flex flex-col">
     <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:px-4 focus:py-2 focus:bg-coral focus:text-white focus:rounded-lg focus:text-sm focus:font-semibold">

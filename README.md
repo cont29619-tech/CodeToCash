@@ -1,46 +1,122 @@
-# Astro Starter Kit: Basics
+# CodeToCash.dev
+
+Direct response marketing education for vibe coders and indie developers.
+
+**Live site**: https://codetocash.dev
+
+---
+
+## What This Is
+
+A static marketing education site that teaches developers DRM (Direct Response Marketing) as an engineering discipline — systematic, measurable, testable. Newsletter-first: subscribers get a free cheatsheet PDF on signup, then a 7-email welcome sequence, then weekly tactics every Tuesday.
+
+---
+
+## Tech Stack
+
+- **Astro 5** — static site generator
+- **Tailwind CSS v4** — styling
+- **ConvertKit** — newsletter subscriptions (Form ID: `9097989`)
+- **Vercel** — hosting, auto-deploys on push to `main`
+
+---
+
+## Getting Started
 
 ```sh
-npm create astro@latest -- --template basics
+# Install dependencies
+npm install
+
+# Copy env file and fill in your ConvertKit API key
+cp .env.example .env
+
+# Start dev server at localhost:4321
+npm run dev
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+### Environment Variables
 
-## 🚀 Project Structure
+| Variable | Description |
+|---|---|
+| `PUBLIC_CONVERTKIT_API_KEY` | ConvertKit API key — get it at convertkit.com → Account Settings → Advanced |
 
-Inside of your Astro project, you'll see the following folders and files:
+---
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+## Commands
+
+| Command | Action |
+|---|---|
+| `npm run dev` | Dev server at `localhost:4321` |
+| `npm run build` | Build to `./dist/` |
+| `npm run preview` | Preview the production build locally |
+
+---
+
+## Project Structure
+
+```
+src/
+├── components/
+│   ├── Navigation.astro
+│   └── Footer.astro
+├── content/
+│   └── blog/          # Markdown blog posts
+├── layouts/
+│   ├── Layout.astro         # Base HTML shell
+│   ├── BlogLayout.astro     # Blog article layout
+│   └── PlaybookLayout.astro # Playbook layout
+├── pages/
+│   ├── index.astro
+│   ├── drm-101.astro
+│   ├── newsletter.astro
+│   ├── welcome.astro
+│   ├── tools.astro
+│   ├── about.astro
+│   ├── 404.astro
+│   ├── blog/
+│   │   ├── index.astro
+│   │   └── [...slug].astro
+│   └── playbooks/
+│       ├── index.astro
+│       └── *.astro          # 8 live playbooks
+├── styles/
+│   └── global.css           # Tailwind v4 theme tokens + animations
+└── utils/
+    └── categoryColors.ts    # Shared blog category color map
+public/
+├── drm-cheatsheet.pdf       # Free download on signup
+└── og-default.png           # Default social share image
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+---
 
-## 🧞 Commands
+## Adding Content
 
-All commands are run from the root of the project, from a terminal:
+**New blog post**: Create `src/content/blog/your-slug.md` with frontmatter:
+```yaml
+---
+title: "Post Title"
+description: "One-sentence description"
+pubDate: 2026-01-01
+author: "CodeToCash Team"
+category: fundamentals  # fundamentals | copywriting | email | ads | analytics | strategy
+tags: ["tag1", "tag2"]
+readingTime: "5 min read"
+featured: false
+draft: false
+---
+```
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+**New playbook**: Create `src/pages/playbooks/your-slug.astro` using `PlaybookLayout.astro`, then update `src/pages/playbooks/index.astro` to link to it.
 
-## 👀 Want to learn more?
+---
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## Deployment
+
+Vercel auto-deploys on every push to `main`. Set `PUBLIC_CONVERTKIT_API_KEY` in Vercel → Project Settings → Environment Variables.
+
+---
+
+## Contact
+
+hello@codetocash.dev

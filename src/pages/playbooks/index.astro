@@ -91,7 +91,7 @@ const difficultyColors: Record<string, { bg: string; text: string; border: strin
         {playbooks.length} Playbooks
       </p>
       <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
-        Marketing Playbooks for <span class="text-coral">Vibe Coders</span>
+        Marketing Playbooks for <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-coral">Vibe Coders</span>
       </h1>
       <p class="text-xl md:text-2xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
         Step-by-step tactical guides you can implement today. No theory — just actionable systems.
@@ -140,8 +140,8 @@ const difficultyColors: Record<string, { bg: string; text: string; border: strin
   </section>
 
   <!-- Bottom CTA -->
-  <section class="max-w-3xl mx-auto px-6 pb-24 pt-8">
-    <div class="p-8 md:p-10 bg-gradient-to-br from-deep-blue/60 to-navy-light border border-coral/20 rounded-2xl text-center">
+  <section class="max-w-3xl mx-auto px-6 pb-24 pt-10 border-t border-white/[0.02]">
+    <div class="p-8 md:p-10 bg-gradient-to-br from-deep-blue/60 to-navy-light border border-coral/20 rounded-2xl text-center hover:-translate-y-1 hover:shadow-lg hover:shadow-coral/10 hover:border-coral/40 transition-all duration-300">
       <h3 class="text-2xl font-bold text-white mb-3">New Playbooks Every Month</h3>
       <p class="text-gray-400 mb-6 max-w-md mx-auto">
         Subscribe to get notified when we publish new tactical guides. No spam — just actionable marketing for developers.
@@ -155,11 +155,11 @@ const difficultyColors: Record<string, { bg: string; text: string; border: strin
           aria-label="Email address"
           class="flex-1 px-4 py-3 bg-navy border border-white/10 rounded-xl text-white placeholder:text-gray-500 focus:outline-none focus:border-coral/50 text-sm"
         />
-        <button type="submit" class="px-6 py-3 bg-coral hover:bg-coral/90 text-white font-semibold rounded-xl transition-colors text-sm whitespace-nowrap cursor-pointer">
+        <button type="submit" class="px-6 py-3 bg-coral hover:bg-coral/90 text-white font-semibold rounded-xl hover:-translate-y-1 hover:shadow-lg hover:shadow-coral/30 transition-all duration-300 text-sm whitespace-nowrap cursor-pointer">
           Notify Me
         </button>
       </form>
-      <p class="ck-subscribe-error mt-2 text-red-400 text-sm hidden"></p>
+      <p class="ck-subscribe-error mt-2 text-red-400 text-sm hidden" aria-live="polite" aria-atomic="true"></p>
       <p class="text-gray-500 text-xs">Building in public. Unsubscribe anytime.</p>
     </div>
   </section>

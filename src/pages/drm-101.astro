@@ -56,7 +56,7 @@ const schema = JSON.stringify({
         </span>
       </div>
       <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
-        DRM 101: The Vibe Coder's Complete Guide to <span class="text-coral">Direct Response Marketing</span>
+        DRM 101: The Vibe Coder's Complete Guide to <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-coral">Direct Response Marketing</span>
       </h1>
       <p class="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
         Everything you need to know to start selling what you build. No MBA required.
@@ -125,7 +125,7 @@ const schema = JSON.stringify({
       <article class="min-w-0 flex-1 max-w-[700px]">
 
         <!-- Chapter 1 -->
-        <section id="what-is-drm" class="drm-chapter mb-20 scroll-mt-24">
+        <section id="what-is-drm" class="drm-chapter mb-20 scroll-mt-24 pt-10 border-t border-white/[0.02]">
           <div class="flex items-center gap-3 mb-6">
             <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">01</span>
             <h2 class="text-2xl md:text-3xl font-bold">What Is Direct Response Marketing?</h2>
@@ -209,7 +209,7 @@ const schema = JSON.stringify({
         </section>
 
         <!-- CTA Block 1 -->
-        <div class="mb-20 p-8 bg-gradient-to-br from-deep-blue/60 to-navy-light border border-coral/20 rounded-2xl text-center">
+        <div class="mb-20 p-8 bg-gradient-to-br from-deep-blue/60 to-navy-light border border-coral/20 rounded-2xl text-center hover:-translate-y-1 hover:shadow-lg hover:shadow-coral/10 hover:border-coral/40 transition-all duration-300">
           <p class="text-lg font-semibold text-white mb-2">Want the quick-reference version?</p>
           <p class="text-gray-400 mb-6">Download <strong class="text-coral">The Developer's DRM Cheatsheet</strong> — all the frameworks, formulas, and templates from this guide on a single page.</p>
           <form class="drm-subscribe-form flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
@@ -221,15 +221,15 @@ const schema = JSON.stringify({
               aria-label="Email address"
               class="flex-1 px-4 py-3 bg-navy border border-white/10 rounded-xl text-white placeholder:text-gray-500 focus:outline-none focus:border-coral/50 text-sm"
             />
-            <button type="submit" class="px-6 py-3 bg-coral hover:bg-coral/90 text-white font-semibold rounded-xl transition-colors text-sm whitespace-nowrap cursor-pointer">
+            <button type="submit" class="px-6 py-3 bg-coral hover:bg-coral/90 text-white font-semibold rounded-xl hover:-translate-y-1 hover:shadow-lg hover:shadow-coral/30 transition-all duration-300 text-sm whitespace-nowrap cursor-pointer">
               Send Me the Cheatsheet
             </button>
           </form>
-          <p class="drm-subscribe-error mt-2 text-red-400 text-sm hidden"></p>
+          <p class="drm-subscribe-error mt-2 text-red-400 text-sm hidden" aria-live="polite" aria-atomic="true"></p>
         </div>
 
         <!-- Chapter 2 -->
-        <section id="the-drm-funnel" class="drm-chapter mb-20 scroll-mt-24">
+        <section id="the-drm-funnel" class="drm-chapter mb-20 scroll-mt-24 pt-10 border-t border-white/[0.02]">
           <div class="flex items-center gap-3 mb-6">
             <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">02</span>
             <h2 class="text-2xl md:text-3xl font-bold">The DRM Funnel — Your Sales Pipeline</h2>
@@ -248,7 +248,7 @@ const schema = JSON.stringify({
             <p class="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-6 text-center">The DRM Funnel → Developer Mental Model</p>
             <div class="space-y-3 max-w-lg mx-auto">
               <div class="relative">
-                <div class="bg-coral/15 border border-coral/30 rounded-xl px-5 py-4 text-center">
+                <div class="bg-coral/15 border border-coral/30 rounded-xl px-5 py-4 text-center hover:-translate-y-1 hover:shadow-lg hover:shadow-coral/20 hover:border-coral/50 transition-all duration-300">
                   <p class="font-mono text-coral text-sm font-bold">TRAFFIC</p>
                   <p class="text-gray-400 text-xs mt-1">Your public API endpoint — how people find you</p>
                 </div>
@@ -257,7 +257,7 @@ const schema = JSON.stringify({
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
               </div>
               <div class="relative mx-4">
-                <div class="bg-coral/10 border border-coral/20 rounded-xl px-5 py-4 text-center">
+                <div class="bg-coral/10 border border-coral/20 rounded-xl px-5 py-4 text-center hover:-translate-y-1 hover:shadow-lg hover:shadow-coral/20 hover:border-coral/50 transition-all duration-300">
                   <p class="font-mono text-coral text-sm font-bold">LANDING PAGE</p>
                   <p class="text-gray-400 text-xs mt-1">Your conversion function — <code class="text-coral/80 text-xs">f(visitor) → lead</code></p>
                 </div>
@@ -266,7 +266,7 @@ const schema = JSON.stringify({
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
               </div>
               <div class="relative mx-8">
-                <div class="bg-coral/8 border border-coral/15 rounded-xl px-5 py-4 text-center">
+                <div class="bg-coral/8 border border-coral/15 rounded-xl px-5 py-4 text-center hover:-translate-y-1 hover:shadow-lg hover:shadow-coral/20 hover:border-coral/50 transition-all duration-300">
                   <p class="font-mono text-coral text-sm font-bold">EMAIL SEQUENCE</p>
                   <p class="text-gray-400 text-xs mt-1">Your async message queue — nurtures over time</p>
                 </div>
@@ -275,7 +275,7 @@ const schema = JSON.stringify({
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
               </div>
               <div class="relative mx-12">
-                <div class="bg-coral/5 border border-coral/10 rounded-xl px-5 py-4 text-center">
+                <div class="bg-coral/5 border border-coral/10 rounded-xl px-5 py-4 text-center hover:-translate-y-1 hover:shadow-lg hover:shadow-coral/20 hover:border-coral/50 transition-all duration-300">
                   <p class="font-mono text-coral text-sm font-bold">OFFER / SALE</p>
                   <p class="text-gray-400 text-xs mt-1">Your value proposition — the conversion event</p>
                 </div>
@@ -284,7 +284,7 @@ const schema = JSON.stringify({
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
               </div>
               <div class="relative mx-16">
-                <div class="bg-white/[0.03] border border-white/10 rounded-xl px-5 py-4 text-center">
+                <div class="bg-white/[0.03] border border-white/10 rounded-xl px-5 py-4 text-center hover:-translate-y-1 hover:shadow-lg hover:shadow-coral/20 hover:border-coral/40 transition-all duration-300">
                   <p class="font-mono text-coral text-sm font-bold">RETENTION</p>
                   <p class="text-gray-400 text-xs mt-1">Your customer success loop — reduces churn</p>
                 </div>
@@ -338,18 +338,18 @@ const schema = JSON.stringify({
         </section>
 
         <!-- CTA Block 2 -->
-        <div class="mb-20 p-8 bg-gradient-to-br from-deep-blue/60 to-navy-light border border-coral/20 rounded-2xl text-center">
+        <div class="mb-20 p-8 bg-gradient-to-br from-deep-blue/60 to-navy-light border border-coral/20 rounded-2xl text-center hover:-translate-y-1 hover:shadow-lg hover:shadow-coral/10 hover:border-coral/40 transition-all duration-300">
           <p class="text-lg font-semibold text-white mb-2">Want the quick-reference version?</p>
           <p class="text-gray-400 mb-6">Download <strong class="text-coral">The Developer's DRM Cheatsheet</strong> — all the frameworks, formulas, and templates from this guide on a single page.</p>
           <form class="drm-subscribe-form flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
             <input type="email" name="email" required placeholder="you@example.com" class="flex-1 px-4 py-3 bg-navy border border-white/10 rounded-xl text-white placeholder:text-gray-500 focus:outline-none focus:border-coral/50 text-sm" />
-            <button type="submit" class="px-6 py-3 bg-coral hover:bg-coral/90 text-white font-semibold rounded-xl transition-colors text-sm whitespace-nowrap cursor-pointer">Send Me the Cheatsheet</button>
+            <button type="submit" class="px-6 py-3 bg-coral hover:bg-coral/90 text-white font-semibold rounded-xl hover:-translate-y-1 hover:shadow-lg hover:shadow-coral/30 transition-all duration-300 text-sm whitespace-nowrap cursor-pointer">Send Me the Cheatsheet</button>
           </form>
-          <p class="drm-subscribe-error mt-2 text-red-400 text-sm hidden"></p>
+          <p class="drm-subscribe-error mt-2 text-red-400 text-sm hidden" aria-live="polite" aria-atomic="true"></p>
         </div>
 
         <!-- Chapter 3 -->
-        <section id="irresistible-offer" class="drm-chapter mb-20 scroll-mt-24">
+        <section id="irresistible-offer" class="drm-chapter mb-20 scroll-mt-24 pt-10 border-t border-white/[0.02]">
           <div class="flex items-center gap-3 mb-6">
             <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">03</span>
             <h2 class="text-2xl md:text-3xl font-bold">Crafting an Irresistible Offer</h2>
@@ -477,18 +477,18 @@ const schema = JSON.stringify({
         </section>
 
         <!-- CTA Block 3 -->
-        <div class="mb-20 p-8 bg-gradient-to-br from-deep-blue/60 to-navy-light border border-coral/20 rounded-2xl text-center">
+        <div class="mb-20 p-8 bg-gradient-to-br from-deep-blue/60 to-navy-light border border-coral/20 rounded-2xl text-center hover:-translate-y-1 hover:shadow-lg hover:shadow-coral/10 hover:border-coral/40 transition-all duration-300">
           <p class="text-lg font-semibold text-white mb-2">Want the quick-reference version?</p>
           <p class="text-gray-400 mb-6">Download <strong class="text-coral">The Developer's DRM Cheatsheet</strong> — all the frameworks, formulas, and templates from this guide on a single page.</p>
           <form class="drm-subscribe-form flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
             <input type="email" name="email" required placeholder="you@example.com" class="flex-1 px-4 py-3 bg-navy border border-white/10 rounded-xl text-white placeholder:text-gray-500 focus:outline-none focus:border-coral/50 text-sm" />
-            <button type="submit" class="px-6 py-3 bg-coral hover:bg-coral/90 text-white font-semibold rounded-xl transition-colors text-sm whitespace-nowrap cursor-pointer">Send Me the Cheatsheet</button>
+            <button type="submit" class="px-6 py-3 bg-coral hover:bg-coral/90 text-white font-semibold rounded-xl hover:-translate-y-1 hover:shadow-lg hover:shadow-coral/30 transition-all duration-300 text-sm whitespace-nowrap cursor-pointer">Send Me the Cheatsheet</button>
           </form>
-          <p class="drm-subscribe-error mt-2 text-red-400 text-sm hidden"></p>
+          <p class="drm-subscribe-error mt-2 text-red-400 text-sm hidden" aria-live="polite" aria-atomic="true"></p>
         </div>
 
         <!-- Chapter 4 -->
-        <section id="copywriting" class="drm-chapter mb-20 scroll-mt-24">
+        <section id="copywriting" class="drm-chapter mb-20 scroll-mt-24 pt-10 border-t border-white/[0.02]">
           <div class="flex items-center gap-3 mb-6">
             <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">04</span>
             <h2 class="text-2xl md:text-3xl font-bold">Copywriting for Developers Who Hate Writing</h2>
@@ -599,18 +599,18 @@ const schema = JSON.stringify({
         </section>
 
         <!-- CTA Block 4 -->
-        <div class="mb-20 p-8 bg-gradient-to-br from-deep-blue/60 to-navy-light border border-coral/20 rounded-2xl text-center">
+        <div class="mb-20 p-8 bg-gradient-to-br from-deep-blue/60 to-navy-light border border-coral/20 rounded-2xl text-center hover:-translate-y-1 hover:shadow-lg hover:shadow-coral/10 hover:border-coral/40 transition-all duration-300">
           <p class="text-lg font-semibold text-white mb-2">Want the quick-reference version?</p>
           <p class="text-gray-400 mb-6">Download <strong class="text-coral">The Developer's DRM Cheatsheet</strong> — all the frameworks, formulas, and templates from this guide on a single page.</p>
           <form class="drm-subscribe-form flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
             <input type="email" name="email" required placeholder="you@example.com" class="flex-1 px-4 py-3 bg-navy border border-white/10 rounded-xl text-white placeholder:text-gray-500 focus:outline-none focus:border-coral/50 text-sm" />
-            <button type="submit" class="px-6 py-3 bg-coral hover:bg-coral/90 text-white font-semibold rounded-xl transition-colors text-sm whitespace-nowrap cursor-pointer">Send Me the Cheatsheet</button>
+            <button type="submit" class="px-6 py-3 bg-coral hover:bg-coral/90 text-white font-semibold rounded-xl hover:-translate-y-1 hover:shadow-lg hover:shadow-coral/30 transition-all duration-300 text-sm whitespace-nowrap cursor-pointer">Send Me the Cheatsheet</button>
           </form>
-          <p class="drm-subscribe-error mt-2 text-red-400 text-sm hidden"></p>
+          <p class="drm-subscribe-error mt-2 text-red-400 text-sm hidden" aria-live="polite" aria-atomic="true"></p>
         </div>
 
         <!-- Chapter 5 -->
-        <section id="landing-pages" class="drm-chapter mb-20 scroll-mt-24">
+        <section id="landing-pages" class="drm-chapter mb-20 scroll-mt-24 pt-10 border-t border-white/[0.02]">
           <div class="flex items-center gap-3 mb-6">
             <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">05</span>
             <h2 class="text-2xl md:text-3xl font-bold">Landing Pages That Convert</h2>
@@ -733,18 +733,18 @@ const schema = JSON.stringify({
         </section>
 
         <!-- CTA Block 5 -->
-        <div class="mb-20 p-8 bg-gradient-to-br from-deep-blue/60 to-navy-light border border-coral/20 rounded-2xl text-center">
+        <div class="mb-20 p-8 bg-gradient-to-br from-deep-blue/60 to-navy-light border border-coral/20 rounded-2xl text-center hover:-translate-y-1 hover:shadow-lg hover:shadow-coral/10 hover:border-coral/40 transition-all duration-300">
           <p class="text-lg font-semibold text-white mb-2">Want the quick-reference version?</p>
           <p class="text-gray-400 mb-6">Download <strong class="text-coral">The Developer's DRM Cheatsheet</strong> — all the frameworks, formulas, and templates from this guide on a single page.</p>
           <form class="drm-subscribe-form flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
             <input type="email" name="email" required placeholder="you@example.com" class="flex-1 px-4 py-3 bg-navy border border-white/10 rounded-xl text-white placeholder:text-gray-500 focus:outline-none focus:border-coral/50 text-sm" />
-            <button type="submit" class="px-6 py-3 bg-coral hover:bg-coral/90 text-white font-semibold rounded-xl transition-colors text-sm whitespace-nowrap cursor-pointer">Send Me the Cheatsheet</button>
+            <button type="submit" class="px-6 py-3 bg-coral hover:bg-coral/90 text-white font-semibold rounded-xl hover:-translate-y-1 hover:shadow-lg hover:shadow-coral/30 transition-all duration-300 text-sm whitespace-nowrap cursor-pointer">Send Me the Cheatsheet</button>
           </form>
-          <p class="drm-subscribe-error mt-2 text-red-400 text-sm hidden"></p>
+          <p class="drm-subscribe-error mt-2 text-red-400 text-sm hidden" aria-live="polite" aria-atomic="true"></p>
         </div>
 
         <!-- Chapter 6 -->
-        <section id="email-marketing" class="drm-chapter mb-20 scroll-mt-24">
+        <section id="email-marketing" class="drm-chapter mb-20 scroll-mt-24 pt-10 border-t border-white/[0.02]">
           <div class="flex items-center gap-3 mb-6">
             <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-coral/10 text-coral font-mono font-bold text-sm border border-coral/20">06</span>
             <h2 class="text-2xl md:text-3xl font-bold">Email Marketing for Developers</h2>
@@ -843,7 +843,7 @@ const schema = JSON.stringify({
             <input type="email" name="email" required placeholder="you@example.com" class="flex-1 px-4 py-3 bg-navy border border-white/10 rounded-xl text-white placeholder:text-gray-500 focus:outline-none focus:border-coral/50 text-sm" />
             <button type="submit" class="px-6 py-3 bg-coral hover:bg-coral/90 text-white font-semibold rounded-xl transition-colors text-sm whitespace-nowrap cursor-pointer">Send Me the Cheatsheet</button>
           </form>
-          <p class="drm-subscribe-error mt-2 text-red-400 text-sm hidden"></p>
+          <p class="drm-subscribe-error mt-2 text-red-400 text-sm hidden" aria-live="polite" aria-atomic="true"></p>
         </div>
 
         <!-- Chapter 7 -->
@@ -938,7 +938,7 @@ const schema = JSON.stringify({
             <input type="email" name="email" required placeholder="you@example.com" class="flex-1 px-4 py-3 bg-navy border border-white/10 rounded-xl text-white placeholder:text-gray-500 focus:outline-none focus:border-coral/50 text-sm" />
             <button type="submit" class="px-6 py-3 bg-coral hover:bg-coral/90 text-white font-semibold rounded-xl transition-colors text-sm whitespace-nowrap cursor-pointer">Send Me the Cheatsheet</button>
           </form>
-          <p class="drm-subscribe-error mt-2 text-red-400 text-sm hidden"></p>
+          <p class="drm-subscribe-error mt-2 text-red-400 text-sm hidden" aria-live="polite" aria-atomic="true"></p>
         </div>
 
         <!-- Chapter 8 -->
@@ -1132,7 +1132,7 @@ const schema = JSON.stringify({
               <input type="email" name="email" required placeholder="you@example.com" class="flex-1 px-4 py-3 bg-navy border border-white/10 rounded-xl text-white placeholder:text-gray-500 focus:outline-none focus:border-coral/50 text-sm" />
               <button type="submit" class="px-6 py-3 bg-coral hover:bg-coral/90 text-white font-semibold rounded-xl transition-colors text-sm whitespace-nowrap cursor-pointer">Subscribe Free</button>
             </form>
-            <p class="drm-subscribe-error mt-2 text-red-400 text-sm hidden"></p>
+            <p class="drm-subscribe-error mt-2 text-red-400 text-sm hidden" aria-live="polite" aria-atomic="true"></p>
             <p class="text-gray-500 text-xs">Building in public. No spam, unsubscribe anytime.</p>
           </div>
 

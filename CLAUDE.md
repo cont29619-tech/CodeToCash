@@ -30,6 +30,8 @@
 | TypeScript | Astro built-in | Strict mode, no separate tsconfig needed |
 | Vanilla JS | — | All interactivity via `<script>` tags in Astro components |
 | ConvertKit | API v3 | Newsletter subscriptions (Form ID: `9097989`) |
+| Plausible | — | Privacy-friendly analytics (production-only, `codetocash.dev`) |
+| Prettier | ^3.8.1 | Code formatter (devDependency) |
 
 **No**: React, Vue, Svelte, or any JS framework. No test framework. No ESLint.
 
@@ -42,6 +44,8 @@
 | `npm run dev` | Dev server at `localhost:4321` |
 | `npm run build` | Production build to `./dist/` |
 | `npm run preview` | Preview the built site locally |
+| `npm run format` | Format all files with Prettier |
+| `npm run format:check` | Check formatting without writing |
 
 ---
 
@@ -55,6 +59,7 @@ PUBLIC_CONVERTKIT_API_KEY=your_key_here
 - Must be prefixed `PUBLIC_` so Astro exposes it client-side
 - Set in Vercel dashboard: Project → Settings → Environment Variables
 - Required for all newsletter subscription forms to work
+- A `.env.example` file is committed to the repo as a reference template
 
 ---
 
@@ -131,11 +136,11 @@ The flagship content piece. ~45 min read. The complete DRM guide.
 Dedicated subscription page. Sections:
 1. **HERO** — "One Marketing Tactic. Every Week. Built for Developers." — Large heading with ConvertKit form
 2. **WHAT YOU GET** — Five benefit cards with SVG icons
-3. **TESTIMONIALS** — Three developer testimonials with star ratings
+3. **BUILDING IN PUBLIC** — Honest stats section (3 articles, 8 of 8 playbooks live)
 4. **SAMPLE ISSUE** — Email client UI mockup showing a real newsletter example
 5. **FINAL CTA** — Second signup form
 
-Both forms use ConvertKit API, redirect to `/welcome` on success.
+Both forms use class `ck-subscribe-form` — handled by the global handler in `Layout.astro`. Redirect to `/welcome` on success.
 
 ---
 
@@ -166,6 +171,8 @@ Lists 8 playbooks as cards. All 8 are implemented:
 - ✅ `/playbooks/building-in-public` — "Building in Public as a Marketing Strategy"
 - ✅ `/playbooks/ab-testing-guide` — "The Developer's A/B Testing Guide"
 - ✅ `/playbooks/cold-email-outreach` — "Cold Email Outreach for Dev Tools"
+
+All 8 playbooks include HowTo JSON-LD structured data.
 
 ### `/playbooks/saas-landing-page` — playbooks/saas-landing-page.astro
 Long-form playbook using `PlaybookLayout.astro`. Beginner, 15 min read.
@@ -199,7 +206,7 @@ Fixed top nav. No props.
 
 - **Logo**: "CodeToCash.dev" — coral color on `.dev`
 - **Desktop links**: Home, DRM 101, Playbooks, Tools, Blog, Newsletter
-- **Active state**: `bg-coral/10 text-coral` applied to current page link (checked via `Astro.url.pathname`)
+- **Active state**: `bg-coral/10 text-coral` applied to current page link. Uses prefix matching — `/blog/my-post` correctly highlights the Blog link, `/playbooks/saas-landing-page` highlights Playbooks. Home (`/`) uses exact match only.
 - **Subscribe button**: Coral filled button linking to `/newsletter`
 - **Mobile**: Hamburger button toggles a full-screen overlay menu. Uses `.open` class + `aria-expanded` for accessibility.
 
@@ -209,10 +216,8 @@ Site footer. No props.
 - **Brand column**: Logo + tagline
 - **Nav column**: Home, DRM 101, Playbooks, Blog
 - **Resources column**: Tools, Newsletter, About, Contact (mailto)
-- **Newsletter form**: Inline email signup form
+- **Newsletter form**: Inline email signup using `ck-subscribe-form` class
 - **Bottom bar**: Copyright
-
-> ⚠️ Footer still uses Buttondown form — should be migrated to ConvertKit.
 
 ---
 
@@ -230,11 +235,12 @@ Base wrapper for all pages.
 }
 ```
 
-Provides: charset/viewport, favicon, title, description, canonical URL, OG tags (og:type, og:url, og:title, og:description, og:image), Twitter Card tags, Google Fonts (Inter + JetBrains Mono, loaded async), Navigation, main slot, Footer, back-to-top button.
+Provides: charset/viewport, favicon, title, description, canonical URL, OG tags (og:type, og:url, og:title, og:description, og:image), Twitter Card tags, Google Fonts (Inter + JetBrains Mono, loaded async), Plausible analytics script (production-only), Navigation, main slot, Footer, back-to-top button, global `ck-subscribe-form` handler.
 
 - **Canonical**: `new URL(Astro.url.pathname, Astro.site)`
 - **OG Image**: `/og-default.png`
 - **Back-to-top**: Appears after 400px scroll, uses `requestAnimationFrame` for scroll performance
+- **Analytics**: Plausible script injected only when `import.meta.env.PROD === true` — dev traffic never pollutes stats
 
 ---
 
@@ -254,7 +260,7 @@ Wraps `Layout.astro` for blog posts.
 
 Provides: breadcrumb nav, article header (category badge, reading time, date, author), two-column layout (article content left, sticky sidebar right), TOC (h2 only), sidebar newsletter widget, related posts links, share buttons (Twitter, LinkedIn, copy link), related articles grid, newsletter CTA box, prev/next navigation.
 
-**Category badge colors**:
+**Category badge colors**: Defined in `src/utils/categoryColors.ts` (single source of truth).
 | Category | Color |
 |---|---|
 | fundamentals | blue #3b82f6 |
@@ -265,8 +271,6 @@ Provides: breadcrumb nav, article header (category badge, reading time, date, au
 | strategy | coral #E94560 |
 
 **Article prose styling**: Uses `.prose-blog` class with custom heading, paragraph, list, blockquote, code, and link styles.
-
-> ⚠️ Sidebar newsletter widget still uses Buttondown — should be migrated to ConvertKit.
 
 ---
 
@@ -423,7 +427,7 @@ async function handleSubscribe(form, errorEl) {
 ### Where ConvertKit Is Used
 | File | Forms | Class |
 |---|---|---|
-| `newsletter.astro` | 2 (hero + CTA) | inline IDs (`subscribe-form-hero`, `subscribe-form-cta`) |
+| `newsletter.astro` | 2 (hero + CTA) | `ck-subscribe-form` |
 | `drm-101.astro` | 8 inline CTAs | `drm-subscribe-form` |
 | `index.astro` | 1 newsletter section | `ck-subscribe-form` |
 | `Footer.astro` | 1 "Join" form | `ck-subscribe-form` |
@@ -435,8 +439,8 @@ async function handleSubscribe(form, errorEl) {
 **Zero Buttondown references remain in the codebase.**
 
 ### Two form class conventions
-- **`ck-subscribe-form`** — used for all standard forms. Handler lives in `Layout.astro` (runs on every page), targets all `.ck-subscribe-form` elements. Error `<p class="ck-subscribe-error">` must be the immediate next sibling of the form.
-- **`drm-subscribe-form`** — used only in `drm-101.astro`. Handler defined in that page's own `<script>` tag. Error `<p class="drm-subscribe-error">` must be the immediate next sibling.
+- **`ck-subscribe-form`** — used for all standard forms. Handler lives in `Layout.astro` (runs on every page), targets all `.ck-subscribe-form` elements. Error `<p class="ck-subscribe-error" aria-live="polite" aria-atomic="true">` must be the immediate next sibling of the form.
+- **`drm-subscribe-form`** — used only in `drm-101.astro`. Handler defined in that page's own `<script>` tag. Error `<p class="drm-subscribe-error" aria-live="polite" aria-atomic="true">` must be the immediate next sibling.
 
 ---
 
@@ -488,12 +492,15 @@ z.object({
 | `src/styles/global.css` | Tailwind v4 import, theme tokens, all custom animations |
 | `src/components/Navigation.astro` | Top nav with mobile hamburger menu |
 | `src/components/Footer.astro` | Footer with nav columns and newsletter form |
-| `src/layouts/Layout.astro` | Base HTML shell (SEO, fonts, nav, footer, back-to-top) |
+| `src/layouts/Layout.astro` | Base HTML shell (SEO, fonts, nav, footer, back-to-top, global CK handler) |
 | `src/layouts/BlogLayout.astro` | Blog article layout with TOC sidebar |
 | `src/layouts/PlaybookLayout.astro` | Playbook layout with numbered section sidebar |
+| `src/utils/categoryColors.ts` | Shared blog category color + label maps (single source of truth) |
 | `public/drm-cheatsheet.pdf` | Free cheatsheet PDF (~12KB), downloaded from `/welcome` |
 | `public/og-default.png` | Default OG image for social sharing |
 | `.env` | `PUBLIC_CONVERTKIT_API_KEY` — never commit, set in Vercel dashboard |
+| `.env.example` | Reference template for required env vars — safe to commit |
+| `.prettierrc` | Prettier config (single quotes, 2-space indent, 100 char width, astro plugin) |
 
 ---
 
@@ -525,7 +532,14 @@ z.object({
 1. Create `src/pages/playbooks/your-playbook.astro`
 2. Use `PlaybookLayout.astro` with all required props
 3. Define `sections` array for the TOC
-4. Update the playbooks index page to mark it as live
+4. Add HowTo JSON-LD schema (see existing playbooks for pattern)
+5. Update the playbooks index page to link to it
+
+### Adding a Subscribe Form
+1. Add `class="ck-subscribe-form"` to the `<form>` element
+2. Include an `<input type="email" name="email">` inside
+3. Add `<p class="ck-subscribe-error" aria-live="polite" aria-atomic="true">` as the immediate next sibling of the form
+4. The global handler in `Layout.astro` handles submission automatically — no page-level JS needed
 
 ### TypeScript
 - Strict mode — no `any` types
@@ -538,6 +552,7 @@ z.object({
 - Add `aria-expanded` to toggles
 - Add `alt` text to all images
 - Ensure focus states are visible
+- All form error `<p>` elements must have `aria-live="polite" aria-atomic="true"`
 
 ---
 
@@ -545,9 +560,10 @@ z.object({
 
 1. ~~**Buttondown forms**~~ — fully migrated to ConvertKit across all pages ✅
 2. ~~**6 playbooks are planned but unbuilt**~~ — all 8 playbooks are now live ✅
-3. **No analytics** — no Plausible or Google Analytics configured
-4. **README.md is the default Astro starter template** — not updated for this project
-5. **No linter or formatter** — no ESLint/Prettier configured
+3. ~~**No analytics**~~ — Plausible added (production-only) ✅
+4. ~~**README.md is the default Astro starter template**~~ — rewritten with project docs ✅
+5. ~~**No linter or formatter**~~ — Prettier configured with `prettier-plugin-astro` ✅
+6. **No custom OG images per page** — all pages share the same `/og-default.png`. Playbook and blog post shares on social show a generic image.
 
 ---
 
@@ -558,3 +574,4 @@ z.object({
 - **Mobile animations**: `animate-fade-in` and `animate-fade-in-up` disabled below 768px
 - **Back-to-top**: Scroll handler throttled with `requestAnimationFrame`
 - **No JS framework**: Zero framework overhead — every page is plain HTML with minimal vanilla JS
+- **Analytics**: Plausible only loads in production (`import.meta.env.PROD`) — zero dev overhead
