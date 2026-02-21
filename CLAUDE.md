@@ -209,6 +209,7 @@ Fixed top nav. No props.
 - **Active state**: `bg-coral/10 text-coral` applied to current page link. Uses prefix matching — `/blog/my-post` correctly highlights the Blog link, `/playbooks/saas-landing-page` highlights Playbooks. Home (`/`) uses exact match only.
 - **Subscribe button**: Coral filled button linking to `/newsletter`
 - **Mobile**: Hamburger button toggles a full-screen overlay menu. Uses `.open` class + `aria-expanded` for accessibility.
+- **Glassmorphism**: `bg-navy/70 backdrop-blur-xl border-b border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)]` — stronger blur and border than before (`backdrop-blur-md`, `border-white/5`)
 
 ### `Footer.astro`
 Site footer. No props.
@@ -347,13 +348,16 @@ document.querySelectorAll('.section-animate').forEach(el => observer.observe(el)
 **Cards**:
 ```html
 <div class="p-6 rounded-2xl bg-white/[0.02] border border-white/[0.06]
-            hover:border-coral/20 hover:bg-white/[0.04] transition-all duration-300">
+            hover:border-coral/40 hover:bg-white/[0.04] hover:shadow-lg hover:shadow-coral/10
+            hover:-translate-y-1 transition-all duration-300">
 ```
+
+Card emoji icons inside cards use `group-hover:scale-110 transition-transform duration-300` when the card has `group` class.
 
 **Primary Button**:
 ```html
 <button class="px-8 py-4 bg-coral text-white font-semibold rounded-lg
-               hover:bg-coral/90 hover:scale-[1.02] transition-all duration-200
+               hover:bg-coral/90 hover:-translate-y-1 transition-all duration-300
                shadow-lg shadow-coral/20 cursor-pointer">
 ```
 
@@ -369,6 +373,15 @@ document.querySelectorAll('.section-animate').forEach(el => observer.observe(el)
 ```html
 <p class="text-sm font-mono text-coral uppercase tracking-widest mb-4">// section name</p>
 ```
+
+**Gradient Text** (used on main hero headings):
+```html
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-coral">
+  Key phrase here.
+</span>
+```
+
+**Section Dividers**: All major `<section>` elements now use `border-t border-white/[0.02]` to add a subtle top border for visual hierarchy between sections.
 
 **Background Glow**:
 ```html
