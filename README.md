@@ -16,7 +16,7 @@ A static marketing education site that teaches developers DRM (Direct Response M
 
 - **Astro 5** — static site generator
 - **Tailwind CSS v4** — styling
-- **ConvertKit** — newsletter subscriptions (Form ID: `9097989`)
+- **ConvertKit** — newsletter subscriptions (Form ID: `9116297`)
 - **Vercel** — hosting, auto-deploys on push to `main`
 
 ---
