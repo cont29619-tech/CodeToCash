@@ -136,7 +136,7 @@ The flagship content piece. ~45 min read. The complete DRM guide.
 Dedicated subscription page. Sections:
 1. **HERO** — "One Marketing Tactic. Every Week. Built for Developers." — Large heading with ConvertKit form
 2. **WHAT YOU GET** — Five benefit cards with SVG icons
-3. **BUILDING IN PUBLIC** — Honest stats section (7 articles, 8 of 8 playbooks live)
+3. **BUILDING IN PUBLIC** — Honest stats section (12 articles, 8 of 8 playbooks live)
 4. **SAMPLE ISSUE** — Email client UI mockup showing a real newsletter example
 5. **FINAL CTA** — Second signup form
 
@@ -485,6 +485,11 @@ z.object({
 | `pas-copywriting-framework` | "PAS Framework: The Developer's Favorite Copywriting Formula" | copywriting | no |
 | `why-developer-products-fail-marketing` | "Why Most Developer Products Fail (And How DRM Fixes It)" | strategy | no |
 | `direct-response-vs-brand-marketing` | "Direct Response vs Brand Marketing: What Developers Need to Know" | fundamentals | no |
+| `saas-landing-page-copywriting` | "SaaS Landing Page Copywriting: The Developer's Framework for Words That Sell" | copywriting | no |
+| `email-marketing-for-saas-beginners` | "Email Marketing for SaaS Beginners: Build a System That Sells While You Sleep" | email | no |
+| `saas-pricing-strategy` | "SaaS Pricing Strategy: A Developer's Guide to Pricing for Maximum Revenue" | strategy | no |
+| `sell-software-built-with-ai` | "How to Sell Software Built with AI: A Vibe Coder's Marketing Playbook" | strategy | no |
+| `building-in-public-marketing` | "Build in Public Marketing Strategy: Turn Your Process Into Your Audience" | strategy | no |
 
 ### Playbooks Status
 | Slug | Title | Status |
@@ -513,6 +518,7 @@ z.object({
 | `src/layouts/BlogLayout.astro` | Blog article layout with TOC sidebar |
 | `src/layouts/PlaybookLayout.astro` | Playbook layout with numbered section sidebar |
 | `src/utils/categoryColors.ts` | Shared blog category color + label maps (single source of truth) |
+| `src/utils/getRelatedPosts.ts` | Priority-based related posts algorithm: same category → tag overlap → recency fallback. Used by `blog/[...slug].astro`. |
 | `public/drm-cheatsheet.pdf` | Free cheatsheet PDF (~12KB), downloaded from `/welcome` |
 | `public/og-default.png` | Default OG image for social sharing |
 | `.env` | `PUBLIC_CONVERTKIT_API_KEY` — never commit, set in Vercel dashboard |
