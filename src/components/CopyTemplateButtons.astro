@@ -1,0 +1,143 @@
+---
+// CopyTemplateButtons — globally included in Layout.
+// Attaches copy-to-clipboard buttons to:
+//   • [data-reading-content] divs with bg-[#0d0d20]      (dark framework boxes)
+//   • [data-reading-content] divs with bg-white/[0.03] + my-6  (fill-in-the-blank)
+//   • .prose-blog pre                                    (blog markdown code blocks)
+// Silent no-op on pages with none of those elements.
+---
+
+<style is:global>
+  /* Wrapper needs position:relative so the absolute button sits inside it */
+  .copy-btn-wrapper {
+    position: relative;
+  }
+  .copy-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 8px;
+    font-size: 11px;
+    font-family: ui-monospace, "JetBrains Mono", monospace;
+    font-weight: 500;
+    line-height: 1;
+    white-space: nowrap;
+    color: #6b7280;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    cursor: pointer;
+    /* Hidden by default, revealed on wrapper hover */
+    opacity: 0;
+    transition: opacity 0.15s ease, color 0.15s ease,
+                background-color 0.15s ease, border-color 0.15s ease;
+    z-index: 10;
+    user-select: none;
+    /* Stay above sibling text */
+    pointer-events: auto;
+  }
+  /* Show on hover of the parent block */
+  .copy-btn-wrapper:hover > .copy-btn,
+  .copy-btn:focus-visible {
+    opacity: 1;
+  }
+  .copy-btn:hover {
+    color: #e5e7eb;
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+  /* "Copied!" confirmation state — stays visible */
+  .copy-btn.is-copied {
+    opacity: 1;
+    color: #22c55e;
+    background: rgba(34, 197, 94, 0.08);
+    border-color: rgba(34, 197, 94, 0.3);
+  }
+</style>
+
+<script>
+  const COPY_SVG = `<svg width="11" height="11" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>`;
+  const CHECK_SVG = `<svg width="11" height="11" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>`;
+
+  function makeButton(textToCopy: string): HTMLButtonElement {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'copy-btn';
+    btn.setAttribute('aria-label', 'Copy to clipboard');
+    btn.innerHTML = `${COPY_SVG}<span>Copy</span>`;
+
+    btn.addEventListener('click', async (e) => {
+      e.stopPropagation();
+      try {
+        await navigator.clipboard.writeText(textToCopy);
+      } catch {
+        // Fallback for older / restricted environments
+        const ta = Object.assign(document.createElement('textarea'), {
+          value: textToCopy,
+          style: 'position:fixed;left:-9999px;',
+        });
+        document.body.appendChild(ta);
+        ta.select();
+        // eslint-disable-next-line @typescript-eslint/no-deprecated
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+      }
+      btn.classList.add('is-copied');
+      btn.innerHTML = `${CHECK_SVG}<span>Copied!</span>`;
+      setTimeout(() => {
+        btn.classList.remove('is-copied');
+        btn.innerHTML = `${COPY_SVG}<span>Copy</span>`;
+      }, 2000);
+    });
+
+    return btn;
+  }
+
+  // ── 1. Blog markdown code blocks (<pre> inside .prose-blog) ───────────────
+  // These have overflow-x: auto, so we WRAP the <pre> in a relative div
+  // and position the button in the wrapper (not inside the scrollable pre).
+  document.querySelectorAll<HTMLElement>('.prose-blog pre').forEach((pre) => {
+    const code = pre.querySelector('code');
+    const text = (code ?? pre).innerText.trim();
+    if (!text) return;
+
+    const wrapper = document.createElement('div');
+    wrapper.className = 'copy-btn-wrapper';
+    // Preserve the pre's margin by inheriting block layout
+    wrapper.style.cssText = 'position:relative;margin:1.5rem 0;';
+
+    pre.parentNode!.insertBefore(wrapper, pre);
+    // Reset pre's own margin since the wrapper now owns it
+    pre.style.margin = '0';
+    wrapper.appendChild(pre);
+    wrapper.appendChild(makeButton(text));
+  });
+
+  // ── 2. Template divs in long-form article pages ───────────────────────────
+  // Selects dark (bg-[#0d0d20]) and light fill-in-the-blank (bg-white/[0.03] + my-6).
+  // Adding the button INSIDE the div is safe: overflow is 'visible' on these divs.
+  const contentEl = document.querySelector<HTMLElement>('[data-reading-content]');
+  if (contentEl) {
+    contentEl.querySelectorAll<HTMLElement>('div').forEach((el) => {
+      const cls = el.getAttribute('class') ?? '';
+      const classes = new Set(cls.split(/\s+/));
+
+      const isDark  = cls.includes('bg-[#0d0d20]');
+      const isLight = cls.includes('bg-white/[0.03]') && classes.has('my-6');
+      if (!isDark && !isLight) return;
+
+      // Cache text content BEFORE appending the button
+      const text = el.innerText.trim();
+      if (!text) return;
+
+      el.classList.add('copy-btn-wrapper');
+      // Ensure relative positioning so the absolute button stays inside
+      if (getComputedStyle(el).position === 'static') el.style.position = 'relative';
+
+      el.appendChild(makeButton(text));
+    });
+  }
+</script>
