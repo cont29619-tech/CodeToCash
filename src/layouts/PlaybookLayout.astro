@@ -39,6 +39,9 @@ const {
   schema,
 } = Astro.props;
 
+const playbookSlug = Astro.url.pathname.split('/').filter(Boolean).pop();
+const ogImagePath = `/og/playbooks/${playbookSlug}.png`;
+
 const difficultyColors: Record<string, { bg: string; text: string; border: string }> = {
   Beginner:     { bg: 'bg-green-500/10', text: 'text-green-400', border: 'border-green-500/20' },
   Intermediate: { bg: 'bg-yellow-500/10', text: 'text-yellow-400', border: 'border-yellow-500/20' },
@@ -48,7 +51,7 @@ const difficultyColors: Record<string, { bg: string; text: string; border: strin
 const colors = difficultyColors[difficulty];
 ---
 
-<Layout title={metaTitle} description={metaDescription} schema={schema}>
+<Layout title={metaTitle} description={metaDescription} schema={schema} ogImage={ogImagePath}>
 
   <!-- Breadcrumb + Hero -->
   <section class="relative overflow-hidden pt-12 pb-16 md:pt-16 md:pb-20">

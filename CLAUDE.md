@@ -29,7 +29,7 @@
 | @astrojs/sitemap | ^3.7.0 | Auto-generates sitemap.xml |
 | TypeScript | Astro built-in | Strict mode, no separate tsconfig needed |
 | Vanilla JS | — | All interactivity via `<script>` tags in Astro components |
-| ConvertKit | API v3 | Newsletter subscriptions (Form ID: `9097989`) |
+| ConvertKit | API v3 | Newsletter subscriptions (Form ID: `9116297`) |
 | Plausible | — | Privacy-friendly analytics (production-only, `codetocash.dev`) |
 | Prettier | ^3.8.1 | Code formatter (devDependency) |
 
@@ -394,15 +394,15 @@ Card emoji icons inside cards use `group-hover:scale-110 transition-transform du
 ## ConvertKit Integration
 
 ### Configuration
-- **Form ID**: `9097989` (hardcoded everywhere)
+- **Form ID**: `9116297` (hardcoded everywhere)
 - **API Key**: `import.meta.env.PUBLIC_CONVERTKIT_API_KEY`
-- **API Endpoint**: `POST https://api.convertkit.com/v3/forms/9097989/subscribe`
+- **API Endpoint**: `POST https://api.convertkit.com/v3/forms/9116297/subscribe`
 - **Request body**: `{ api_key: string, email: string }`
 - **Success action**: `window.location.href = '/welcome'`
 
 ### Standard Subscribe Handler Pattern
 ```javascript
-const CONVERTKIT_FORM_ID = '9097989';
+const CONVERTKIT_FORM_ID = '9116297';
 const CONVERTKIT_API_KEY = import.meta.env.PUBLIC_CONVERTKIT_API_KEY;
 
 async function handleSubscribe(form, errorEl) {
@@ -580,7 +580,7 @@ z.object({
 3. ~~**No analytics**~~ — Plausible added (production-only) ✅
 4. ~~**README.md is the default Astro starter template**~~ — rewritten with project docs ✅
 5. ~~**No linter or formatter**~~ — Prettier configured with `prettier-plugin-astro` ✅
-6. **No custom OG images per page** — all pages share the same `/og-default.png`. Playbook and blog post shares on social show a generic image.
+6. ~~**No custom OG images per page**~~ — build-time OG images generated for all blog posts and playbooks via Satori + @resvg/resvg-js ✅
 
 ---
 

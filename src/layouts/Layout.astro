@@ -7,16 +7,18 @@ interface Props {
   title?: string;
   description?: string;
   schema?: string;
+  ogImage?: string;
 }
 
 const {
   title = 'CodeToCash.dev — Direct Response Marketing for Vibe Coders',
   description = 'Learn direct response marketing to sell what you ship. Education for vibe coders and indie developers.',
   schema,
+  ogImage,
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const ogImageURL = new URL('/og-default.png', Astro.site);
+const ogImageURL = new URL(ogImage ?? '/og-default.png', Astro.site);
 ---
 
 <!doctype html>
@@ -96,7 +98,7 @@ const ogImageURL = new URL('/og-default.png', Astro.site);
 
     <script>
       // ConvertKit handler for all .ck-subscribe-form forms
-      const CK_FORM_ID = '9097989';
+      const CK_FORM_ID = '9116297';
       const CK_API_KEY = import.meta.env.PUBLIC_CONVERTKIT_API_KEY;
 
       async function handleCkSubscribe(form: HTMLFormElement, errorEl: HTMLElement) {

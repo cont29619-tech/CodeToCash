@@ -13,6 +13,7 @@ interface Props {
 
 const { post, headings, relatedPosts, prevPost, nextPost } = Astro.props;
 const { title, description, pubDate, updatedDate, author, category, readingTime } = post.data;
+const ogImagePath = `/og/blog/${post.id}.png`;
 
 
 const colors = categoryColors[category] || categoryColors.fundamentals;
@@ -39,7 +40,7 @@ const schema = JSON.stringify({
 });
 ---
 
-<Layout title={`${title} | CodeToCash`} description={description} schema={schema}>
+<Layout title={`${title} | CodeToCash`} description={description} schema={schema} ogImage={ogImagePath}>
 
   <!-- Article Header -->
   <section class="relative overflow-hidden pt-12 pb-10 md:pt-16 md:pb-14">
