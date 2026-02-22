@@ -1,0 +1,108 @@
+---
+// ReadingProgress — include in any long-form page.
+// Requires an element with [data-reading-content] in the DOM.
+// Optional [data-reading-minutes="N"] on that element enables the time badge.
+// The badge itself needs <span id="reading-time-badge"> already in the TOC markup.
+---
+
+<!-- Fixed 3px coral progress bar at the very top of the viewport -->
+<div
+  id="reading-progress-bar"
+  aria-hidden="true"
+  style="position:fixed;top:0;left:0;right:0;height:3px;z-index:70;background:#E94560;transform:scaleX(0);transform-origin:left;pointer-events:none;will-change:transform;"
+></div>
+
+<script>
+  const bar     = document.getElementById('reading-progress-bar');
+  const content = document.querySelector('[data-reading-content]') as HTMLElement | null;
+
+  // Nothing to do on this page
+  if (!bar || !content) {
+    bar?.remove();
+  } else {
+    // Disable on mobile — skip JS entirely below md breakpoint
+    const isDesktop = window.matchMedia('(min-width: 768px)');
+
+    const badge        = document.getElementById('reading-time-badge') as HTMLElement | null;
+    const totalMinutes = parseInt(content.dataset.readingMinutes ?? '0') || null;
+
+    let articleTop    = 0;
+    let articleHeight = 0;
+
+    function measure() {
+      // offsetTop is from nearest positioned ancestor — use getBoundingClientRect + scrollY for accuracy
+      const rect    = content!.getBoundingClientRect();
+      articleTop    = rect.top + window.scrollY;
+      articleHeight = content!.offsetHeight;
+    }
+
+    function update() {
+      const end = articleTop + articleHeight - window.innerHeight;
+
+      const progress =
+        end <= articleTop
+          ? 1
+          : Math.max(0, Math.min(1, (window.scrollY - articleTop) / (end - articleTop)));
+
+      bar!.style.transform = `scaleX(${progress})`;
+
+      if (badge && totalMinutes) {
+        const remaining = Math.ceil(totalMinutes * (1 - progress));
+        badge.textContent  = remaining <= 0 ? 'Done ✓' : `${remaining} min left`;
+        badge.style.display = 'inline-block';
+      }
+    }
+
+    function init() {
+      if (!isDesktop.matches) {
+        // Hide bar and badge on mobile, bail out
+        bar!.style.display = 'none';
+        if (badge) badge.style.display = 'none';
+        return;
+      }
+
+      bar!.style.display = '';
+      measure();
+      update();
+
+      let ticking = false;
+      window.addEventListener(
+        'scroll',
+        () => {
+          if (!ticking) {
+            requestAnimationFrame(() => {
+              update();
+              ticking = false;
+            });
+            ticking = true;
+          }
+        },
+        { passive: true }
+      );
+
+      window.addEventListener(
+        'resize',
+        () => {
+          measure();
+          update();
+        },
+        { passive: true }
+      );
+    }
+
+    // Re-evaluate if viewport width crosses the mobile breakpoint
+    isDesktop.addEventListener('change', () => {
+      if (isDesktop.matches) {
+        bar!.style.display = '';
+        if (badge) badge.style.display = '';
+        measure();
+        update();
+      } else {
+        bar!.style.display = 'none';
+        if (badge) badge.style.display = 'none';
+      }
+    });
+
+    init();
+  }
+</script>

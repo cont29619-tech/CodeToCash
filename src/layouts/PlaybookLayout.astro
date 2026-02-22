@@ -1,5 +1,6 @@
 ---
 import Layout from './Layout.astro';
+import ReadingProgress from '../components/ReadingProgress.astro';
 
 interface Section {
   id: string;
@@ -39,8 +40,9 @@ const {
   schema,
 } = Astro.props;
 
-const playbookSlug = Astro.url.pathname.split('/').filter(Boolean).pop();
-const ogImagePath = `/og/playbooks/${playbookSlug}.png`;
+const playbookSlug   = Astro.url.pathname.split('/').filter(Boolean).pop();
+const ogImagePath    = `/og/playbooks/${playbookSlug}.png`;
+const readingMinutes = parseInt(readingTime) || 15;
 
 const difficultyColors: Record<string, { bg: string; text: string; border: string }> = {
   Beginner:     { bg: 'bg-green-500/10', text: 'text-green-400', border: 'border-green-500/20' },
@@ -52,6 +54,7 @@ const colors = difficultyColors[difficulty];
 ---
 
 <Layout title={metaTitle} description={metaDescription} schema={schema} ogImage={ogImagePath}>
+<ReadingProgress />
 
   <!-- Breadcrumb + Hero -->
   <section class="relative overflow-hidden pt-12 pb-16 md:pt-16 md:pb-20">
@@ -110,7 +113,10 @@ const colors = difficultyColors[difficulty];
       <!-- Sticky Sidebar TOC (Desktop) -->
       <aside class="hidden lg:block w-60 shrink-0">
         <nav id="toc-sidebar" class="sticky top-24">
-          <p class="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-4">In This Playbook</p>
+          <div class="flex items-center justify-between mb-4">
+            <p class="text-xs font-semibold uppercase tracking-wider text-gray-500">In This Playbook</p>
+            <span id="reading-time-badge" style="display:none;" class="text-[10px] font-mono text-coral px-1.5 py-0.5 rounded bg-coral/10 border border-coral/20 tabular-nums leading-none"></span>
+          </div>
           <ol class="space-y-1 text-sm">
             {sections.map((s, i) => (
               <li>
@@ -155,7 +161,7 @@ const colors = difficultyColors[difficulty];
       </div>
 
       <!-- Article Content -->
-      <article class="min-w-0 flex-1 max-w-[700px]">
+      <article class="min-w-0 flex-1 max-w-[700px]" data-reading-content data-reading-minutes={readingMinutes}>
         <slot />
 
         <!-- Newsletter CTA -->

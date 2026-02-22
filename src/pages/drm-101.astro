@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ReadingProgress from '../components/ReadingProgress.astro';
 
 const title = "DRM 101: Direct Response Marketing Guide for Developers & Vibe Coders";
 const description = "Learn direct response marketing from scratch. A step-by-step guide for vibe coders and indie developers who want to sell the products they build.";
@@ -38,6 +39,7 @@ const schema = JSON.stringify({
 ---
 
 <Layout title={title} description={description} schema={schema}>
+  <ReadingProgress />
   <!-- Hero -->
   <section class="relative overflow-hidden py-20 md:py-28">
     <div class="absolute inset-0 pointer-events-none">
@@ -71,7 +73,10 @@ const schema = JSON.stringify({
       <!-- Sticky Sidebar TOC (Desktop) -->
       <aside class="hidden lg:block w-64 shrink-0">
         <nav id="toc-sidebar" class="sticky top-24">
-          <p class="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-4">Table of Contents</p>
+          <div class="flex items-center justify-between mb-4">
+            <p class="text-xs font-semibold uppercase tracking-wider text-gray-500">Table of Contents</p>
+            <span id="reading-time-badge" style="display:none;" class="text-[10px] font-mono text-coral px-1.5 py-0.5 rounded bg-coral/10 border border-coral/20 tabular-nums leading-none"></span>
+          </div>
           <ol class="space-y-1 text-sm">
             {chapters.map((ch) => (
               <li>
@@ -122,7 +127,7 @@ const schema = JSON.stringify({
       </div>
 
       <!-- Article Content -->
-      <article class="min-w-0 flex-1 max-w-[700px]">
+      <article class="min-w-0 flex-1 max-w-[700px]" data-reading-content data-reading-minutes="45">
 
         <!-- Chapter 1 -->
         <section id="what-is-drm" class="drm-chapter mb-20 scroll-mt-24 pt-10 border-t border-white/[0.02]">
