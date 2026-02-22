@@ -133,7 +133,7 @@ Write one paragraph on your landing page using the PAS framework — Problem, Ag
 
 You'll know if it worked. You can improve it next week. That's direct response.
 
-For the complete foundation of DRM — what it is, how the funnel works, and how to implement every stage — start with our [DRM 101 guide](/drm-101). For a deeper exploration of what direct response marketing is specifically for developers, read [What Is Direct Response Marketing? A Vibe Coder's Guide](/blog/what-is-direct-response-marketing-for-developers).
+For the complete foundation of DRM — what it is, how the funnel works, and how to implement every stage — start with our [DRM 101 guide](/drm-101). For a deeper exploration of what direct response marketing is specifically for developers, read [What Is Direct Response Marketing? A Vibe Coder's Guide](/blog/what-is-direct-response-marketing-for-developers). To see how the full funnel connects, read [The DRM Funnel Explained](/blog/drm-funnel-explained) — it maps every stage from traffic to retention. And for hands-on copy templates you can use on your landing page today, the [SaaS Landing Page Playbook](/playbooks/saas-landing-page) walks you through every section.
 
 Stop building vague brand assets. Start building measurable DRM systems. The developers who understand this distinction are the ones who turn their builds into consistent revenue.
 

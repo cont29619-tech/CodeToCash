@@ -75,7 +75,7 @@ SOLUTION: [Your product + how it fixes the problem + speed/ease]
 
 The key to PAS is specificity. "Marketing is hard" is weak. "You spend 3 hours writing a blog post that gets 47 views" is strong. The more specific the problem, the more the reader thinks "this person gets me."
 
-For more copywriting techniques with full examples, see our [DRM 101 copywriting chapter](/drm-101#copywriting).
+For more copywriting techniques with full examples, see our [DRM 101 copywriting chapter](/drm-101#copywriting). For a full deep-dive into PAS — the most effective of the five for short-form copy — read [PAS Framework: The Developer's Favorite Copywriting Formula](/blog/pas-copywriting-framework).
 
 ## Framework 3: Before-After-Bridge (BAB)
 
@@ -198,6 +198,6 @@ Here's your action plan:
 4. **Ship the best one** and measure the conversion rate
 5. **Iterate** — test a new version next week
 
-For the complete guide to marketing your dev product, read our [DRM 101 guide](/drm-101). And if you want to see these frameworks applied to a full landing page, check out the [SaaS landing page playbook](/playbooks/saas-landing-page).
+For the complete guide to marketing your dev product, read our [DRM 101 guide](/drm-101). And if you want to see these frameworks applied to a full landing page, check out the [SaaS landing page playbook](/playbooks/saas-landing-page). If you're new to DRM entirely, start with [What Is Direct Response Marketing? A Vibe Coder's Guide](/blog/what-is-direct-response-marketing-for-developers) to understand the system these frameworks fit into.
 
 Want a weekly framework, template, or teardown delivered to your inbox? Subscribe to the CodeToCash newsletter — built for developers who ship.

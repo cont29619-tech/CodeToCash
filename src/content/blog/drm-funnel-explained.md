@@ -162,7 +162,7 @@ Here's where to start:
 2. **Fix the leakiest stage first.** Usually it's the landing page (too many visitors leaving without subscribing) or the email sequence (no sequence at all).
 3. **Measure conversion rates at every stage.** If you don't have numbers, you're guessing.
 
-For the complete DRM system from first principles, read our [DRM 101 guide](/drm-101). For specific help with your landing page — the highest-leverage stage for most developers — start with the [SaaS landing page playbook](/playbooks/saas-landing-page).
+For the complete DRM system from first principles, read our [DRM 101 guide](/drm-101). For specific help with your landing page — the highest-leverage stage for most developers — start with the [SaaS landing page playbook](/playbooks/saas-landing-page). Want to understand the broader philosophy behind why this system works? Start with [What Is Direct Response Marketing?](/blog/what-is-direct-response-marketing-for-developers). And if your product has been struggling to convert, [Why Most Developer Products Fail](/blog/why-developer-products-fail-marketing) diagnoses the five most common gaps in exactly this funnel.
 
 You've built complex systems before. This one has five functions. Start building it today.
 

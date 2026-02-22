@@ -102,7 +102,7 @@ The good news: every one of these failures has a clear, executable fix. None req
 
 For the complete playbook on building a marketing system from scratch — traffic, landing pages, email sequences, offers, and retention — read the [DRM 101 guide](/drm-101). It's the full curriculum, organized as an engineering handbook.
 
-For the specific angle of marketing as a developer building and shipping in 2026, read [marketing for vibe coders](/blog/marketing-for-vibe-coders) — it covers the unique challenges of building fast and selling even faster.
+For the specific angle of marketing as a developer building and shipping in 2026, read [marketing for vibe coders](/blog/marketing-for-vibe-coders) — it covers the unique challenges of building fast and selling even faster. And to see how the full funnel works as a connected system, [The DRM Funnel Explained](/blog/drm-funnel-explained) maps every stage from traffic to retention with a pipeline diagram you can use to audit your own product.
 
 The developers who succeed at marketing aren't more talented. They're more systematic. They've built the system that most developers skip entirely. Start building yours.
 

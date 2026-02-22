@@ -108,6 +108,8 @@ Here's what to do right now:
 2. **Pick ONE framework** from our [copywriting playbook](/blog/copywriting-frameworks-for-developers) and write copy for your product
 3. **Set up tracking** so you can measure what happens when people land on your page
 
+For a visual breakdown of how all these pieces connect, read [The DRM Funnel Explained](/blog/drm-funnel-explained) — it maps the complete pipeline from traffic to revenue. When you're ready to put it into practice, the [SaaS Landing Page Playbook](/playbooks/saas-landing-page) gives you step-by-step templates.
+
 The best time to start was when you launched your product. The second best time is today. Stop treating marketing as an afterthought and start treating it as the engineering problem it is.
 
 Want weekly DRM tactics delivered to your inbox? Subscribe to the CodeToCash newsletter — it's built specifically for developers who want to sell what they ship.

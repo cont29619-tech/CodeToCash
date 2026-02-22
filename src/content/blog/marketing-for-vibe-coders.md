@@ -186,6 +186,6 @@ The gap between building and selling is the biggest opportunity in the vibe code
 
 Start with the three fundamentals: offer, audience, channel. Use the launch framework. Leverage AI for the heavy lifting. And iterate every single week.
 
-For the complete system from first principles, start with our [DRM 101 guide](/drm-101) — it covers everything from funnel design to analytics. And for hands-on templates you can use today, browse our [marketing playbooks](/playbooks).
+For the complete system from first principles, start with our [DRM 101 guide](/drm-101) — it covers everything from funnel design to analytics. For hands-on templates you can use today, browse our [marketing playbooks](/playbooks). And if you've already shipped something that's not converting, [Why Most Developer Products Fail](/blog/why-developer-products-fail-marketing) diagnoses the five most common gaps and exactly how to fix them.
 
 Ready to turn your builds into revenue? Subscribe to the CodeToCash newsletter for weekly marketing tactics built specifically for vibe coders.
