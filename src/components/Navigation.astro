@@ -34,18 +34,46 @@ const navLinks = [
             {link.label}
           </a>
         ))}
+
+        <!-- Search button (desktop) -->
+        <button
+          id="search-btn-desktop"
+          aria-label="Search (Ctrl+K)"
+          class="ml-1 flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm text-gray-400 hover:text-white hover:bg-white/5 transition-colors duration-200 cursor-pointer"
+        >
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+          <kbd class="hidden lg:inline-flex items-center gap-0.5 px-1.5 py-0.5 bg-white/5 border border-white/10 rounded text-[11px] text-gray-500 font-mono leading-none">
+            ⌘K
+          </kbd>
+        </button>
+
         <a
           href="/newsletter"
-          class="ml-3 px-4 py-2 bg-coral text-white text-sm font-semibold rounded-lg hover:bg-coral/90 transition-colors duration-200"
+          class="ml-2 px-4 py-2 bg-coral text-white text-sm font-semibold rounded-lg hover:bg-coral/90 transition-colors duration-200"
         >
           Subscribe
         </a>
       </div>
 
+      <!-- Mobile right: search + hamburger -->
+      <div class="md:hidden flex items-center gap-1">
+        <!-- Search button (mobile) -->
+        <button
+          id="search-btn-mobile"
+          aria-label="Search"
+          class="flex items-center justify-center w-10 h-10 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors cursor-pointer"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+        </button>
+
       <!-- Mobile Hamburger -->
       <button
         id="mobile-menu-btn"
-        class="md:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5 group"
+        class="flex flex-col justify-center items-center w-10 h-10 gap-1.5 group"
         aria-label="Toggle menu"
         aria-expanded="false"
       >
@@ -53,6 +81,7 @@ const navLinks = [
         <span class="block w-6 h-0.5 bg-gray-300 transition-all duration-300 group-[.open]:opacity-0"></span>
         <span class="block w-6 h-0.5 bg-gray-300 transition-all duration-300 origin-center group-[.open]:-translate-y-2 group-[.open]:-rotate-45"></span>
       </button>
+      </div><!-- end mobile right -->
     </div>
   </div>
 </nav>
@@ -98,4 +127,11 @@ const navLinks = [
       menu.classList.remove('opacity-100', 'pointer-events-auto');
     }
   });
+
+  // Search buttons dispatch a custom event handled by SearchModal
+  function openSearch() {
+    window.dispatchEvent(new CustomEvent('search:open'));
+  }
+  document.getElementById('search-btn-desktop')?.addEventListener('click', openSearch);
+  document.getElementById('search-btn-mobile')?.addEventListener('click', openSearch);
 </script>

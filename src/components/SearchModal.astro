@@ -1,0 +1,368 @@
+---
+// SearchModal — self-contained. No props. Included once in Layout.astro.
+---
+
+<!-- Search Overlay -->
+<div
+  id="search-overlay"
+  class="fixed inset-0 z-[60] hidden"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Site search"
+>
+  <!-- Backdrop -->
+  <div id="search-backdrop" class="absolute inset-0 bg-navy/80 backdrop-blur-sm"></div>
+
+  <!-- Modal Panel -->
+  <div class="relative flex items-start justify-center pt-[12vh] px-4 pb-8">
+    <div
+      id="search-panel"
+      class="w-full max-w-xl bg-navy-light border border-white/10 rounded-2xl shadow-2xl shadow-black/60 overflow-hidden"
+    >
+      <!-- Input row -->
+      <div class="flex items-center gap-3 px-4 border-b border-white/[0.08]">
+        <svg class="w-4 h-4 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
+        <input
+          id="search-input"
+          type="text"
+          placeholder="Search posts, playbooks, pages…"
+          autocomplete="off"
+          spellcheck="false"
+          class="flex-1 py-4 bg-transparent text-white placeholder:text-gray-500 outline-none text-base"
+          aria-label="Search"
+          aria-autocomplete="list"
+          aria-controls="search-results"
+          aria-expanded="false"
+        />
+        <kbd class="hidden sm:inline-flex items-center px-2 py-1 bg-white/5 border border-white/10 rounded text-xs text-gray-500 font-mono shrink-0">
+          Esc
+        </kbd>
+      </div>
+
+      <!-- Results list -->
+      <div id="search-results" role="listbox" aria-label="Search results" class="max-h-[55vh] overflow-y-auto">
+        <!-- Populated by JS -->
+      </div>
+
+      <!-- Footer hints -->
+      <div class="px-4 py-2.5 border-t border-white/[0.08] flex items-center gap-5 text-[11px] text-gray-500 select-none">
+        <span><kbd class="font-mono">↑↓</kbd> Navigate</span>
+        <span><kbd class="font-mono">↵</kbd> Open</span>
+        <span><kbd class="font-mono">Esc</kbd> Close</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  interface SearchItem {
+    title: string;
+    description: string;
+    url: string;
+    type: string;
+    category: string;
+    tags?: string[];
+  }
+
+  // Category → hex color (for inline styles in dynamically generated HTML)
+  const CAT_COLOR: Record<string, string> = {
+    fundamentals: '#3b82f6',
+    copywriting:  '#a855f7',
+    email:        '#22c55e',
+    ads:          '#eab308',
+    analytics:    '#06b6d4',
+    strategy:     '#E94560',
+    playbook:     '#E94560',
+    guide:        '#E94560',
+    tools:        '#06b6d4',
+    newsletter:   '#22c55e',
+    blog:         '#3b82f6',
+    playbooks:    '#E94560',
+    about:        '#9ca3af',
+  };
+
+  const CAT_LABEL: Record<string, string> = {
+    fundamentals: 'Fundamentals',
+    copywriting:  'Copywriting',
+    email:        'Email',
+    ads:          'Ads',
+    analytics:    'Analytics',
+    strategy:     'Strategy',
+    playbook:     'Playbook',
+    guide:        'Guide',
+    tools:        'Tools',
+    newsletter:   'Newsletter',
+    blog:         'Blog',
+    playbooks:    'Playbooks',
+    about:        'About',
+  };
+
+  // State
+  let searchIndex: SearchItem[] | null = null;
+  let indexLoading = false;
+  let selectedIndex = -1;
+  let currentResults: SearchItem[] = [];
+
+  const overlay  = document.getElementById('search-overlay')!;
+  const backdrop = document.getElementById('search-backdrop')!;
+  const input    = document.getElementById('search-input') as HTMLInputElement;
+  const resultEl = document.getElementById('search-results')!;
+
+  // ── Open / close ──────────────────────────────────────────────────────────
+
+  function openSearch() {
+    // Close mobile menu if open
+    const mobileBtn  = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileBtn?.classList.contains('open')) {
+      mobileBtn.classList.remove('open');
+      mobileBtn.setAttribute('aria-expanded', 'false');
+      mobileMenu?.classList.add('opacity-0', 'pointer-events-none');
+      mobileMenu?.classList.remove('opacity-100', 'pointer-events-auto');
+    }
+
+    overlay.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+    input.value = '';
+    resultEl.innerHTML = '';
+    input.setAttribute('aria-expanded', 'false');
+    selectedIndex = -1;
+    currentResults = [];
+    input.focus();
+
+    if (!searchIndex && !indexLoading) loadIndex();
+  }
+
+  function closeSearch() {
+    overlay.classList.add('hidden');
+    document.body.style.overflow = '';
+  }
+
+  // ── Index loading ─────────────────────────────────────────────────────────
+
+  async function loadIndex() {
+    indexLoading = true;
+    try {
+      const res = await fetch('/search-index.json');
+      searchIndex = await res.json() as SearchItem[];
+      // Re-render if the user already typed something
+      if (input.value.trim()) renderResults(input.value);
+    } catch {
+      searchIndex = [];
+    } finally {
+      indexLoading = false;
+    }
+  }
+
+  // ── Fuzzy scoring ─────────────────────────────────────────────────────────
+
+  function scoreItem(item: SearchItem, query: string): number {
+    const q     = query.toLowerCase();
+    const title = (item.title       || '').toLowerCase();
+    const desc  = (item.description || '').toLowerCase();
+    const cat   = (item.category    || '').toLowerCase();
+    const tags  = (item.tags        || []).join(' ').toLowerCase();
+
+    let s = 0;
+
+    // Full-string matches in title
+    if (title === q)           s += 200;
+    if (title.startsWith(q))   s += 100;
+    if (title.includes(q))     s += 80;
+
+    // Description / meta matches
+    if (desc.includes(q))      s += 40;
+    if (cat.includes(q))       s += 30;
+    if (tags.includes(q))      s += 20;
+
+    // Word-by-word
+    const words = q.split(/\s+/).filter(Boolean);
+    for (const w of words) {
+      if (title.includes(w)) s += 30;
+      if (desc.includes(w))  s += 10;
+      if (cat.includes(w))   s += 15;
+      if (tags.includes(w))  s += 10;
+    }
+
+    // Fuzzy: every char of q appears in sequence in title
+    let idx = 0;
+    let fuzzyOk = true;
+    for (const ch of q) {
+      const pos = title.indexOf(ch, idx);
+      if (pos === -1) { fuzzyOk = false; break; }
+      idx = pos + 1;
+    }
+    if (fuzzyOk) s += 5;
+
+    return s;
+  }
+
+  // ── Helpers ───────────────────────────────────────────────────────────────
+
+  function esc(s: string): string {
+    return s
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  function escRe(s: string): string {
+    return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  }
+
+  function truncate(s: string, max: number): string {
+    return s.length <= max ? s : s.slice(0, max).trimEnd() + '…';
+  }
+
+  function highlight(text: string, query: string): string {
+    const safe = esc(text);
+    const q    = query.trim();
+    if (!q) return safe;
+    try {
+      const re = new RegExp(`(${escRe(q)})`, 'gi');
+      return safe.replace(re, '<mark style="background:rgba(233,69,96,0.2);color:#E94560;border-radius:2px;padding:0 2px;">$1</mark>');
+    } catch {
+      return safe;
+    }
+  }
+
+  // ── Render ────────────────────────────────────────────────────────────────
+
+  function renderResults(query: string) {
+    if (!searchIndex) {
+      resultEl.innerHTML = '<p style="padding:1.5rem 1rem;text-align:center;color:#6b7280;font-size:.875rem;">Loading…</p>';
+      return;
+    }
+
+    const q = query.trim();
+    if (!q) {
+      resultEl.innerHTML = '';
+      resultEl.innerHTML = renderEmpty();
+      input.setAttribute('aria-expanded', 'false');
+      selectedIndex = -1;
+      currentResults = [];
+      return;
+    }
+
+    currentResults = searchIndex
+      .map((item) => ({ item, s: scoreItem(item, q) }))
+      .filter(({ s }) => s > 0)
+      .sort((a, b) => b.s - a.s)
+      .slice(0, 8)
+      .map(({ item }) => item);
+
+    input.setAttribute('aria-expanded', currentResults.length > 0 ? 'true' : 'false');
+    selectedIndex = currentResults.length > 0 ? 0 : -1;
+
+    if (currentResults.length === 0) {
+      resultEl.innerHTML = `<p style="padding:1.5rem 1rem;text-align:center;color:#6b7280;font-size:.875rem;">No results for &ldquo;<span style="color:#fff;">${esc(q)}</span>&rdquo;</p>`;
+      return;
+    }
+
+    resultEl.innerHTML = currentResults
+      .map((item, i) => renderItem(item, i, q, i === selectedIndex))
+      .join('');
+  }
+
+  function renderEmpty(): string {
+    const popular = [
+      { label: 'DRM 101 Guide', url: '/drm-101' },
+      { label: 'Blog', url: '/blog' },
+      { label: 'Playbooks', url: '/playbooks' },
+    ];
+    return `
+      <div style="padding:1rem 0 0.5rem;">
+        <p style="padding:0 1rem 0.5rem;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:#6b7280;">Quick links</p>
+        ${popular.map(p => `
+          <a href="${esc(p.url)}" class="result-item" style="display:flex;align-items:center;gap:0.5rem;padding:0.625rem 1rem;color:#d1d5db;font-size:.875rem;text-decoration:none;transition:background .1s;" onmouseover="this.style.background='rgba(255,255,255,0.04)'" onmouseout="this.style.background=''">
+            <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color:#6b7280;flex-shrink:0;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+            ${esc(p.label)}
+          </a>
+        `).join('')}
+      </div>
+    `;
+  }
+
+  function renderItem(item: SearchItem, index: number, query: string, selected: boolean): string {
+    const color = CAT_COLOR[item.category] ?? '#6b7280';
+    const label = CAT_LABEL[item.category] ?? item.category;
+    const titleHtml = highlight(item.title, query);
+    const descHtml  = highlight(truncate(item.description || '', 120), query);
+    const bg        = selected ? 'rgba(255,255,255,0.06)' : '';
+    const typeIcon  = item.type === 'blog' ? '📝' : item.type === 'playbook' ? '📋' : '📄';
+
+    return `
+      <a
+        href="${esc(item.url)}"
+        class="result-item"
+        role="option"
+        aria-selected="${selected}"
+        data-result-index="${index}"
+        style="display:flex;flex-direction:column;gap:4px;padding:0.75rem 1rem;text-decoration:none;background:${bg};transition:background .1s;"
+        onmouseover="this.style.background='rgba(255,255,255,0.04)'"
+        onmouseout="this.style.background='${selected ? 'rgba(255,255,255,0.06)' : ''}'"
+      >
+        <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+          <span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;padding:2px 7px;border-radius:4px;color:${color};background:${color}22;border:1px solid ${color}44;flex-shrink:0;">${esc(label)}</span>
+          <span style="font-size:.875rem;font-weight:600;color:#fff;line-height:1.3;">${titleHtml}</span>
+        </div>
+        <p style="font-size:.75rem;color:#9ca3af;line-height:1.5;margin:0;">${descHtml}</p>
+      </a>
+    `;
+  }
+
+  function updateSelection() {
+    const items = resultEl.querySelectorAll<HTMLElement>('[data-result-index]');
+    items.forEach((el, i) => {
+      const isSelected = i === selectedIndex;
+      el.setAttribute('aria-selected', String(isSelected));
+      el.style.background = isSelected ? 'rgba(255,255,255,0.06)' : '';
+      // Update onmouseout to use correct background
+      el.setAttribute('onmouseout', `this.style.background='${isSelected ? 'rgba(255,255,255,0.06)' : ''}'`);
+      if (isSelected) el.scrollIntoView({ block: 'nearest' });
+    });
+  }
+
+  // ── Events ────────────────────────────────────────────────────────────────
+
+  // Global keyboard shortcut
+  document.addEventListener('keydown', (e) => {
+    // Cmd/Ctrl+K
+    if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+      e.preventDefault();
+      overlay.classList.contains('hidden') ? openSearch() : closeSearch();
+      return;
+    }
+
+    if (overlay.classList.contains('hidden')) return;
+
+    if (e.key === 'Escape') {
+      closeSearch();
+    } else if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      if (currentResults.length === 0) return;
+      selectedIndex = Math.min(selectedIndex + 1, currentResults.length - 1);
+      updateSelection();
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      if (currentResults.length === 0) return;
+      selectedIndex = Math.max(selectedIndex - 1, 0);
+      updateSelection();
+    } else if (e.key === 'Enter') {
+      if (selectedIndex >= 0 && currentResults[selectedIndex]) {
+        e.preventDefault();
+        window.location.href = currentResults[selectedIndex].url;
+      }
+    }
+  });
+
+  input.addEventListener('input', () => renderResults(input.value));
+
+  backdrop.addEventListener('click', closeSearch);
+
+  // Expose opener for nav button
+  window.addEventListener('search:open', openSearch);
+</script>
