@@ -156,6 +156,8 @@ CTA: Claim your [offer] — link repeated 2–3 times
 
 This sequence works because it mirrors how real buying decisions happen. Nobody converts on the first touch. By day 12, a subscriber has received seven targeted touchpoints, each building on the last. That is not spam — that is a sales process.
 
+Before you write email 7, make sure your offer and pricing are dialed in — a compelling sequence fails when it points to a confusing pricing page. Read [SaaS Pricing Strategy for Developers](/blog/saas-pricing-strategy) to avoid the most common pricing mistakes that kill email conversions.
+
 For a full implementation walkthrough with copy examples for each email, see the [Email Launch Sequence Playbook](/playbooks/email-launch-sequence).
 
 ## Writing Emails Developers Are Not Embarrassed to Send

@@ -99,7 +99,7 @@ Your email sequence is an asynchronous queue processor. A subscriber enters the 
 
 **What failure looks like:** You have a welcome email that delivers a freebie, and then nothing. Subscribers get one email and never hear from you again. When you finally send a promotional email six months later, they don't remember who you are. Your unsubscribe rate spikes. You wonder why nobody bought.
 
-**The fix:** Build a 7-email sequence. Email 1: deliver the freebie and set expectations. Email 2 (day 2): your origin story — why you built this, who it's for. Email 3 (day 4): a quick win — one actionable tip they can use today. Email 4 (day 6): dig deeper into the problem your product solves. Email 5 (day 8): soft pitch with social proof. Email 6 (day 10): address the top objection directly. Email 7 (day 12): direct offer with a clear CTA and a deadline or bonus.
+**The fix:** Build a 7-email sequence. Email 1: deliver the freebie and set expectations. Email 2 (day 2): your origin story — why you built this, who it's for. Email 3 (day 4): a quick win — one actionable tip they can use today. Email 4 (day 6): dig deeper into the problem your product solves. Email 5 (day 8): soft pitch with social proof. Email 6 (day 10): address the top objection directly. Email 7 (day 12): direct offer with a clear CTA and a deadline or bonus. For a complete implementation guide — subject lines, email length, and the metrics to track — read [Email Marketing for SaaS: The Developer's System](/blog/email-marketing-for-saas-beginners).
 
 ## Stage 4: Offer — The Value Transaction
 

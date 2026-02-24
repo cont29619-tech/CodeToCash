@@ -23,7 +23,7 @@ faq:
 
 If you're reading this, there's a reasonable chance you've shipped something that didn't sell. A SaaS app. A tool. A template. A course. You built it, launched it, tweeted about it, maybe posted on Product Hunt — and then watched the dashboard show three visitors a day, zero sign-ups, and a conversion rate that doesn't round up to 1%.
 
-Why developer products fail at marketing isn't a mystery. It's systematic, not random. The developers who can't sell aren't unlucky and they don't have bad products. They have specific, identifiable gaps in their marketing systems — gaps they've never been taught to diagnose. This is the post-mortem most developers never get.
+Why developer products fail at marketing isn't a mystery. It's systematic, not random. The developers who can't sell aren't unlucky and they don't have bad products. They have specific, identifiable gaps in their [direct response marketing system](/blog/what-is-direct-response-marketing-for-developers) — gaps they've never been taught to diagnose. This is the post-mortem most developers never get.
 
 Here are the five failure modes, in order of how often they appear.
 

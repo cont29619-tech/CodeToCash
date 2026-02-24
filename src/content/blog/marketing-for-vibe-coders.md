@@ -77,7 +77,7 @@ For vibe coders, the best audience is usually **people like you from six months 
 
 Don't try to be everywhere. Pick ONE channel and go deep. For most vibe coders, the best starting channels are:
 
-**Twitter/X + Building in Public** — Share your building journey. Post daily updates, revenue milestones, and lessons learned. This builds an audience of potential customers who root for you. It's free, it compounds over time, and the developer community is incredibly active there.
+**Twitter/X + Building in Public** — Share your building journey. Post daily updates, revenue milestones, and lessons learned. This builds an audience of potential customers who root for you. It's free, it compounds over time, and the developer community is incredibly active there. For the systematic approach to turning your build process into an audience, read [Building in Public as a Marketing Strategy](/blog/building-in-public-marketing).
 
 **Content Marketing (SEO)** — Write articles targeting the problems your product solves. "How to set up auth in Next.js" drives traffic to your auth tool. This is slower (3-6 months to see results) but creates free, compounding traffic.
 

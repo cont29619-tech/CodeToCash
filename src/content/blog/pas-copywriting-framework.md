@@ -220,7 +220,7 @@ Here's your next action:
 
 Do this for your hero headline, your email subject lines, and your first email in your welcome sequence. You'll have better copy for three channels in under an hour.
 
-If you want to see how PAS fits into the full DRM system — from traffic to retention — read our [DRM 101 guide](/drm-101). It covers everything from funnel design to optimization with developer-specific examples throughout. For PAS applied to a complete landing page, the [Copywriting for Developers Playbook](/playbooks/copywriting-for-developers) walks you through every section step by step. And to see how PAS compares to four other frameworks (AIDA, BAB, FAB, 4 U's), read [5 Copywriting Frameworks Every Vibe Coder Should Know](/blog/copywriting-frameworks-for-developers).
+If you want to see how PAS fits into the full DRM system — from traffic to retention — read our [DRM 101 guide](/drm-101). It covers everything from funnel design to optimization with developer-specific examples throughout. For PAS applied to a complete landing page, read [SaaS Landing Page Copywriting for Developers](/blog/saas-landing-page-copywriting) — it shows exactly how Problem, Agitate, and Solution map to every section of a real page. The [Copywriting for Developers Playbook](/playbooks/copywriting-for-developers) then gives you fill-in-the-blank templates for each section. And to see how PAS compares to four other frameworks (AIDA, BAB, FAB, 4 U's), read [5 Copywriting Frameworks Every Vibe Coder Should Know](/blog/copywriting-frameworks-for-developers).
 
 PAS is the framework that converts. Start using it today.
 

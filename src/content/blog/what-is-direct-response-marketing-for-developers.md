@@ -31,7 +31,7 @@ This isn't vague brand marketing where you spend thousands on awareness and hope
 
 Most developers try brand marketing without realizing it. They redesign their homepage for the fifth time, obsess over their logo, write vague tweets about their product, and wonder why nothing happens. That's brand marketing: building a vibe and hoping it converts.
 
-Brand marketing works for Apple and Nike because they have decades of momentum and billions to spend. It doesn't work for a solo developer with a $0 marketing budget and a product that launched last Tuesday.
+Brand marketing works for Apple and Nike because they have decades of momentum and billions to spend. It doesn't work for a solo developer with a $0 marketing budget and a product that launched last Tuesday. The full breakdown of [why direct response beats brand marketing for developers](/blog/direct-response-vs-brand-marketing) is worth understanding before you invest time in either.
 
 DRM flips the model. Instead of building awareness and hoping, you build a **system**:
 

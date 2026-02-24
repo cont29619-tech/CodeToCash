@@ -99,7 +99,7 @@ For more on how to apply this to your entire funnel, read [Marketing for Vibe Co
 
 You do not need a complex marketing setup to sell software built with AI. You need four things, and you can build all of them in a day.
 
-**1. A landing page with an outcome headline.** One page. One message. The headline states the result from the positioning statement. Below it: three problem points (so they feel understood), your core features framed as benefits, and one email capture CTA with a lead magnet (checklist, template, or demo access). That is the whole page. Do not overthink it. A live page converting at 3% beats a perfect page still in Notion.
+**1. A landing page with an outcome headline.** One page. One message. The headline states the result from the positioning statement. Below it: three problem points (so they feel understood), your core features framed as benefits, and one email capture CTA with a lead magnet (checklist, template, or demo access). That is the whole page. Do not overthink it. A live page converting at 3% beats a perfect page still in Notion. For the exact copy techniques that make each section of that page work, read [SaaS Landing Page Copywriting for Developers](/blog/saas-landing-page-copywriting).
 
 **2. An email tool with a welcome sequence.** ConvertKit's free tier handles everything you need up to 1,000 subscribers. Set up a 5-email welcome sequence before your first subscriber arrives. Email 1 delivers the lead magnet. Email 2 tells your origin story. Email 3 delivers a quick win. Email 4 handles the top objection. Email 5 makes the direct offer with a CTA. Five emails is enough to go from "stranger who gave me an email" to "customer."
 

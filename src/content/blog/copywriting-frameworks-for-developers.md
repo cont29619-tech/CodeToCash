@@ -150,7 +150,7 @@ BENEFIT:   [Why the buyer should care — the emotional/business impact]
 
 **Pro tip:** Every time you write a feature, ask "So what?" The answer is the advantage. Ask "So what?" again. That's the benefit. Keep asking until you reach something the buyer emotionally cares about — that's what belongs on your landing page.
 
-Use FAB to transform your entire feature list into compelling benefit-driven copy. For more on structuring an entire landing page, check out our [SaaS landing page playbook](/playbooks/saas-landing-page).
+Use FAB to transform your entire feature list into compelling benefit-driven copy. For more on structuring an entire landing page, check out our [SaaS landing page playbook](/playbooks/saas-landing-page). To go deeper on the actual words that make each section convert, read [SaaS Landing Page Copywriting for Developers](/blog/saas-landing-page-copywriting).
 
 ## Framework 5: The 4 U's (Urgent, Unique, Ultra-Specific, Useful)
 

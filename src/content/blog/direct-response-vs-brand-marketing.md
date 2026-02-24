@@ -112,7 +112,7 @@ TOTAL MEASURABILITY: Every step tracked
 TOTAL FEEDBACK LOOP: Days, not months
 ```
 
-Contrast this with what brand marketing would require at equivalent effectiveness: a sustained content creation budget, design budget for brand-consistent assets, a time horizon of 12–24+ months to see results, and distribution at a scale that creates real awareness. For most indie developers, none of that is viable.
+Contrast this with what brand marketing would require at equivalent effectiveness: a sustained content creation budget, design budget for brand-consistent assets, a time horizon of 12–24+ months to see results, and distribution at a scale that creates real awareness. For most indie developers, none of that is viable. For the complete DRM playbook built specifically for solo developers who ship fast, read [Marketing for Vibe Coders](/blog/marketing-for-vibe-coders).
 
 ## The Measurability Advantage
 

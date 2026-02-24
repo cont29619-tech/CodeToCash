@@ -21,7 +21,7 @@ faq:
     answer: "Most developers who build in public consistently for 3-6 months see meaningful audience growth and inbound interest. The compounding nature of content means early posts continue to attract followers over time. The developers who give up after 2-3 posts never experience the compounding — consistency over at least 90 days is the minimum viable commitment."
 ---
 
-Most developers build in private. Six months of work, hundreds of commits, a landing page built at 1 AM the week before launch, and a tweet that says "excited to finally share what I've been working on." The launch gets 200 views from friends and other developers. Then silence.
+Most developers build in private. Six months of work, hundreds of commits, a landing page built at 1 AM the week before launch, and a tweet that says "excited to finally share what I've been working on." The launch gets 200 views from friends and other developers. Then silence. [Building without an audience is the most common reason developer products fail to get customers](/blog/why-developer-products-fail-marketing) — and it's entirely avoidable.
 
 The build in public marketing strategy inverts this entirely. Instead of building in private and launching to silence, you build in public and launch to an audience that has been rooting for you for months. Your journey is the content. Your progress is the marketing. Your failures and pivots are the story people come back for.
 
