@@ -1,6 +1,6 @@
 ---
 title: "Marketing for Vibe Coders: How to Sell What You Build with AI"
-description: "A practical guide to marketing for vibe coders. Learn why building fast doesn't mean selling fast, the 3 fundamentals every vibe coder needs, and how to use AI tools for marketing."
+description: "You vibe coded a SaaS in a weekend. Now nobody's buying. Here's the exact marketing approach built for people who ship fast but have never had to sell before."
 pubDate: 2026-02-14
 author: "CodeToCash Team"
 category: "strategy"

@@ -1,6 +1,6 @@
 ---
 title: "5 Copywriting Frameworks Every Vibe Coder Should Know"
-description: "Learn the 5 most effective copywriting frameworks for developer products. Includes fill-in-the-blank templates for AIDA, PAS, BAB, FAB, and the 4 U's."
+description: "You don't need to be a writer to write copy that sells. These 5 fill-in-the-blank frameworks make copywriting feel like writing a function — with a predictable output."
 pubDate: 2026-02-12
 author: "CodeToCash Team"
 category: "copywriting"

@@ -1,6 +1,6 @@
 ---
 title: "Build in Public Marketing Strategy: Turn Your Process Into Your Audience"
-description: "Building in public is one of the highest-ROI marketing strategies for indie developers. Here's how to do it systematically — what to share, when, and how to turn followers into customers."
+description: "Building in public isn't just tweeting your progress. Done right, it's a compounding sales engine. Here's the strategy that turns your commits into customers."
 pubDate: 2026-02-26
 author: "CodeToCash Team"
 category: "strategy"

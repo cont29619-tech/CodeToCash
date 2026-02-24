@@ -1,6 +1,6 @@
 ---
 title: "How to Sell Software Built with AI: A Vibe Coder's Marketing Playbook"
-description: "You built it with Claude or Cursor in a weekend. Now how do you sell it? A practical marketing guide for developers shipping AI-built software."
+description: "AI helped you build it in days. Now what? Here's the marketing playbook for selling software you built with Cursor, Bolt, or Lovable — from $0 to first revenue."
 pubDate: 2026-02-25
 author: "CodeToCash Team"
 category: "strategy"

@@ -1,6 +1,6 @@
 ---
 title: "Direct Response vs Brand Marketing: What Developers Need to Know"
-description: "Nike does brand marketing. You shouldn't. Here's why direct response is the only marketing strategy that makes sense for indie developers."
+description: "Nike does brand marketing. You shouldn't. Here's the difference between brand and direct response marketing — and why DRM is the only one that makes sense for indie devs."
 pubDate: 2026-02-21
 author: "CodeToCash Team"
 category: "fundamentals"

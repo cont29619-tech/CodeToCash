@@ -1,6 +1,6 @@
 ---
 title: "What Is Direct Response Marketing? A Vibe Coder's Guide"
-description: "Direct response marketing explained for developers. Learn why DRM is the most effective marketing approach for indie devs and vibe coders who want to sell what they build."
+description: "Brand marketing is a prayer. DRM is a system. Here's what direct response marketing actually is, why it's perfect for developers, and how to start using it today."
 pubDate: 2026-02-10
 author: "CodeToCash Team"
 category: "fundamentals"

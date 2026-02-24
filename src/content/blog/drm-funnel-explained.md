@@ -1,6 +1,6 @@
 ---
 title: "The DRM Funnel Explained: Think of It as Your Sales API"
-description: "Most developers build great products but have no sales system. Here's how to think about your marketing funnel like an engineer."
+description: "Think of your marketing funnel as an API: visitor goes in, customer comes out. Here's how to build that function — step by step, with no marketing jargon."
 pubDate: 2026-02-17
 author: "CodeToCash Team"
 category: "fundamentals"

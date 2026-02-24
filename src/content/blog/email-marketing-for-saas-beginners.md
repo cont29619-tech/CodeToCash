@@ -1,6 +1,6 @@
 ---
 title: "Email Marketing for SaaS Beginners: Build a System That Sells While You Sleep"
-description: "A complete guide to email marketing for SaaS founders. Learn how to set up your welcome sequence, write emails that convert, and build a list from zero."
+description: "Email is the only marketing channel you actually own. Here's how to set up an email system that nurtures leads and drives SaaS revenue while you're coding."
 pubDate: 2026-02-23
 author: "CodeToCash Team"
 category: "email"

@@ -1,6 +1,6 @@
 ---
 title: "SaaS Landing Page Copywriting: The Developer's Framework for Words That Sell"
-description: "A step-by-step guide to writing SaaS landing page copy that converts. Includes fill-in-the-blank templates for every section — hero, problem, features, social proof, CTA."
+description: "Your landing page copy is killing your conversion rate. Here's the exact framework for writing words that sell — even if you hate writing and love shipping code."
 pubDate: 2026-02-22
 author: "CodeToCash Team"
 category: "copywriting"
