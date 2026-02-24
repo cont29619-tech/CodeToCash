@@ -1,0 +1,174 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+import { categoryColors, categoryLabels } from '../../utils/categoryColors';
+
+const categoryMeta = {
+  fundamentals: {
+    title: "DRM Fundamentals for Developers | CodeToCash Blog",
+    description: "Learn the core principles of direct response marketing. Foundational guides for developers who want to understand and apply DRM from scratch.",
+    h1: "DRM Fundamentals",
+    subtitle: "The core concepts every developer needs before writing a single word of copy or spending a dollar on ads.",
+  },
+  copywriting: {
+    title: "Copywriting for Developers | CodeToCash Blog",
+    description: "Copywriting frameworks, formulas, and fill-in-the-blank templates built for developers who'd rather write code than write copy.",
+    h1: "Copywriting for Developers",
+    subtitle: "Frameworks and formulas that make writing sales copy feel like filling in a template — not staring at a blank page.",
+  },
+  email: {
+    title: "Email Marketing for SaaS Developers | CodeToCash Blog",
+    description: "How to build email sequences that sell on autopilot. Guides for developers building welcome flows, launch sequences, and weekly newsletters.",
+    h1: "Email Marketing",
+    subtitle: "Build email systems that nurture leads and drive sales while you're busy shipping features.",
+  },
+  ads: {
+    title: "Paid Ads for Indie Developers | CodeToCash Blog",
+    description: "Google Ads, Twitter Ads, and retargeting guides for developers running their first campaigns on a tight budget.",
+    h1: "Paid Advertising",
+    subtitle: "Run your first ad campaigns without burning cash — step-by-step guides for developers new to paid traffic.",
+  },
+  analytics: {
+    title: "Marketing Analytics for Developers | CodeToCash Blog",
+    description: "A/B testing, conversion tracking, and data-driven marketing guides. Learn to measure what matters and optimize like an engineer.",
+    h1: "Analytics & Testing",
+    subtitle: "Track the right metrics, run A/B tests, and make marketing decisions with data — not guesses.",
+  },
+  strategy: {
+    title: "Developer Marketing Strategy | CodeToCash Blog",
+    description: "High-level marketing strategy for indie developers and vibe coders. From zero to your first $1K MRR and beyond.",
+    h1: "Marketing Strategy",
+    subtitle: "Big-picture marketing frameworks for developers figuring out how to position, launch, and grow their products.",
+  },
+} as const;
+
+type Category = keyof typeof categoryMeta;
+
+export async function getStaticPaths() {
+  const categories: Category[] = ['fundamentals', 'copywriting', 'email', 'ads', 'analytics', 'strategy'];
+  return categories.map(category => ({ params: { category } }));
+}
+
+const { category } = Astro.params as { category: Category };
+const meta = categoryMeta[category];
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft && data.category === category))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const allCategories: { id: Category; label: string }[] = [
+  { id: 'fundamentals', label: 'Fundamentals' },
+  { id: 'copywriting', label: 'Copywriting' },
+  { id: 'email', label: 'Email' },
+  { id: 'ads', label: 'Ads' },
+  { id: 'analytics', label: 'Analytics' },
+  { id: 'strategy', label: 'Strategy' },
+];
+---
+
+<Layout title={meta.title} description={meta.description}>
+
+  <!-- Breadcrumb -->
+  <nav class="max-w-5xl mx-auto px-6 pt-8 pb-0" aria-label="Breadcrumb">
+    <ol class="flex items-center gap-2 text-sm text-gray-500">
+      <li><a href="/" class="hover:text-coral transition-colors">Home</a></li>
+      <li><span class="text-gray-700">/</span></li>
+      <li><a href="/blog" class="hover:text-coral transition-colors">Blog</a></li>
+      <li><span class="text-gray-700">/</span></li>
+      <li class="text-gray-300">{meta.h1}</li>
+    </ol>
+  </nav>
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden py-16 md:py-20">
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute top-1/3 right-1/4 w-80 h-80 bg-coral/5 rounded-full blur-3xl"></div>
+    </div>
+    <div class="relative max-w-3xl mx-auto px-6 text-center">
+      <p class="text-sm font-mono text-coral uppercase tracking-widest mb-4">// {categoryLabels[category]}</p>
+      <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-6">
+        {meta.h1}
+      </h1>
+      <p class="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
+        {meta.subtitle}
+      </p>
+    </div>
+  </section>
+
+  <!-- Category Nav -->
+  <section class="max-w-5xl mx-auto px-6 mb-12">
+    <nav class="flex flex-wrap gap-2 justify-center" aria-label="Blog categories">
+      <a
+        href="/blog"
+        class="px-4 py-2 rounded-xl text-sm font-medium border transition-all bg-white/5 text-gray-400 border-white/10 hover:text-white hover:border-white/20"
+      >
+        All
+      </a>
+      {allCategories.map((cat) => (
+        <a
+          href={`/blog/${cat.id}`}
+          class={`px-4 py-2 rounded-xl text-sm font-medium border transition-all ${cat.id === category ? 'bg-coral/10 text-coral border-coral/20' : 'bg-white/5 text-gray-400 border-white/10 hover:text-white hover:border-white/20'}`}
+          aria-current={cat.id === category ? 'page' : undefined}
+        >
+          {cat.label}
+        </a>
+      ))}
+    </nav>
+  </section>
+
+  <div class="max-w-5xl mx-auto px-6 pb-24">
+    {posts.length > 0 ? (
+      <div class="grid gap-6 md:grid-cols-2">
+        {posts.map((post) => {
+          const pc = categoryColors[post.data.category] || categoryColors.fundamentals;
+          const date = post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+          return (
+            <a
+              href={`/blog/${post.id}`}
+              class="group flex flex-col p-6 bg-navy-light border border-white/5 rounded-2xl hover:border-coral/20 hover:bg-white/[0.03] transition-all duration-200 hover:-translate-y-0.5"
+            >
+              <div class="flex items-center gap-2 mb-3">
+                <span class={`inline-flex items-center px-2 py-0.5 rounded-md text-xs font-medium ${pc.bg} ${pc.text} border ${pc.border}`}>
+                  {categoryLabels[post.data.category]}
+                </span>
+                <span class="inline-flex items-center gap-1 text-xs text-gray-500">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                  {post.data.readingTime}
+                </span>
+              </div>
+              <h2 class="text-lg font-semibold text-white group-hover:text-coral transition-colors mb-2 leading-snug">
+                {post.data.title}
+              </h2>
+              <p class="text-sm text-gray-400 leading-relaxed flex-1 mb-4">{post.data.description}</p>
+              <div class="flex items-center justify-between pt-4 border-t border-white/5">
+                <span class="text-xs text-gray-500">{date}</span>
+                <span class="flex items-center text-sm text-coral/70 group-hover:text-coral transition-colors">
+                  Read
+                  <svg class="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                </span>
+              </div>
+            </a>
+          );
+        })}
+      </div>
+    ) : (
+      <div class="text-center py-20">
+        <p class="text-gray-400 text-lg mb-2">No posts in this category yet.</p>
+        <p class="text-gray-500 text-sm mb-8">We're working on it — check back soon.</p>
+        <a href="/blog" class="inline-flex items-center gap-2 px-6 py-3 bg-coral/10 text-coral border border-coral/20 rounded-xl hover:bg-coral/20 transition-all text-sm font-medium">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+          View all posts
+        </a>
+      </div>
+    )}
+
+    {posts.length > 0 && (
+      <div class="mt-12 pt-8 border-t border-white/5 text-center">
+        <a href="/blog" class="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-coral transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+          All Posts
+        </a>
+      </div>
+    )}
+  </div>
+
+</Layout>
