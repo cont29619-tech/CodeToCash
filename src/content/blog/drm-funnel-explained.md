@@ -8,6 +8,17 @@ tags: ["drm funnel", "marketing funnel", "sales pipeline", "developer marketing"
 readingTime: "8 min read"
 featured: false
 draft: false
+faq:
+  - question: "What are the stages of a direct response marketing funnel?"
+    answer: "The core stages are Traffic (how people discover you), Landing Page (where they convert to a lead or customer), Email Sequence (where trust is built over time), Offer (the sale itself), and Retention (keeping customers to reduce churn). Each stage has specific metrics you should track and specific tactics to improve conversion."
+  - question: "What is the most important part of a DRM funnel?"
+    answer: "The offer — what you're actually selling and how you present it. A weak offer with great traffic and a beautiful landing page will still fail. Before optimizing any other part of your funnel, make sure your offer is clear, specific, and solves a problem people are actively paying to solve."
+  - question: "How do I measure if my marketing funnel is working?"
+    answer: "Track the conversion rate at each stage: what percentage of visitors become leads, what percentage of leads open your emails, what percentage of email readers click through to your offer, and what percentage of offer page visitors purchase. If any stage has an unusually low rate, that's your bottleneck to fix first."
+  - question: "How long should a DRM email sequence be?"
+    answer: "For most developer tools and SaaS products, a welcome sequence of 5-7 emails sent over 10-14 days is the sweet spot. Enough to build trust and educate the prospect, short enough that most people stay subscribed. Each email should have one job — don't try to educate and pitch in the same email."
+  - question: "Can a developer run a DRM funnel without paid ads?"
+    answer: "Absolutely. Many successful indie developers run entirely organic funnels — driving traffic through content marketing, Twitter, Reddit, and Hacker News, then capturing leads via a newsletter or free tool, and converting via email sequences. Paid ads can accelerate a funnel that's already working organically, but they're not required to start."
 ---
 
 The direct response marketing funnel is the most important system you'll ever build for your product — and you've probably never built it intentionally. Most developers ship a product, throw up a landing page, and call it a funnel. That's not a funnel. That's a homepage with a prayer attached.

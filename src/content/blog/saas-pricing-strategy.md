@@ -8,6 +8,17 @@ tags: ["pricing", "saas", "strategy", "monetization", "revenue"]
 readingTime: "11 min read"
 featured: false
 draft: false
+faq:
+  - question: "Should my SaaS product have a free plan?"
+    answer: "It depends on your product and growth strategy. Free plans work well for product-led growth when the product has strong viral or network effects, and when the marginal cost of serving a free user is very low. Free plans can hurt you if they attract users who will never convert to paid, or if the free tier cannibalizes your paid tier by being too generous. A free trial with a hard end date is often better for conversion than a perpetual free plan."
+  - question: "How do I decide between monthly and annual pricing?"
+    answer: "Offer both, with a meaningful discount for annual (typically 20-40%). Annual pricing improves your cash flow and dramatically reduces churn because customers who pay upfront are far less likely to cancel month-to-month. To encourage annual plans, show the monthly equivalent cost ('just $X/month billed annually') and highlight the savings prominently on your pricing page."
+  - question: "Is it better to charge per seat or flat rate for a SaaS product?"
+    answer: "Per-seat pricing scales naturally with your customers' growth and is easy for customers to understand and budget for. Flat-rate pricing is simpler but caps your revenue from growing accounts. Usage-based pricing (charging per API call, per document, per event) has become increasingly popular because it aligns your revenue with the value customers receive, though it creates less predictable revenue for you."
+  - question: "How do I know if I'm pricing my SaaS too low?"
+    answer: "Key signals of underpricing: a very high free-to-paid conversion rate (over 15%), almost no price objections during sales conversations, customers who tell you the product is 'cheap for what it does,' and churn that happens for reasons other than price. Most indie developers underprice by 2-5x because they're comparing their price to their cost to build rather than to the value customers receive."
+  - question: "What is price anchoring and how does it work for SaaS?"
+    answer: "Price anchoring means presenting a high-priced option first so that subsequent options appear more affordable by comparison. On a SaaS pricing page, this means listing your most expensive plan first (or most prominently), then showing cheaper plans that feel like a bargain next to it. The 'recommended' badge on a middle tier also uses anchoring — it signals that most customers choose this option, making it feel safe and reasonably priced."
 ---
 
 Here is the most common SaaS pricing strategy mistake developers make: charging $9/month for something worth $79, because they are terrified of rejection. They call it "staying competitive." What it actually is: imposter syndrome with a price tag attached.

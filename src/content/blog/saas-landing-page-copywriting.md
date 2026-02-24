@@ -8,6 +8,17 @@ tags: ["landing pages", "copywriting", "saas", "templates", "conversion"]
 readingTime: "10 min read"
 featured: false
 draft: false
+faq:
+  - question: "What makes a SaaS landing page convert well?"
+    answer: "The highest-converting SaaS landing pages share five characteristics: a headline that states the outcome (not the feature), social proof near the top of the page, a product demo or screenshot that shows the product working, a single clear CTA repeated multiple times, and an FAQ section that handles objections before the prospect leaves. Most underperforming landing pages fail on the headline alone."
+  - question: "How long should a SaaS landing page be?"
+    answer: "Long enough to answer every question a skeptical buyer would have, and no longer. For a simple, low-priced tool, this might be 400 words. For a complex product or higher price point, it might be 2,000 words. A common mistake is making pages too short because the developer felt awkward writing more — if you have objections to overcome, the page needs to be long enough to overcome them."
+  - question: "What should the headline on a SaaS landing page say?"
+    answer: "The headline should state the primary outcome or transformation your product delivers, in plain language that your target audience would use. Avoid clever wordplay, technical jargon, or vague superlatives like 'the best platform for.' A simple formula: '[verb] [desired outcome] [timeframe or differentiator].' Example: 'Deploy your full-stack app in 60 seconds, not 60 minutes.'"
+  - question: "How many CTAs should a SaaS landing page have?"
+    answer: "One CTA — but repeated in multiple places. Having multiple different CTAs (Sign Up, Book a Demo, Watch Video, Contact Us) creates decision paralysis and reduces conversions. Pick one primary action you want visitors to take and repeat it at the top, middle, and bottom of the page. Every other link on the page is a distraction from that one action."
+  - question: "Does social proof matter for a brand new SaaS with no customers?"
+    answer: "Yes, but you have to get creative. Before you have paying customers, you can use: testimonials from beta users or free plan users, quotes from people you interviewed during validation, logos of companies your team members have worked at, a specific user count even if small ('47 developers already using this'), or a money-back guarantee that reduces risk. Some social proof, even imperfect, beats none."
 ---
 
 You can write a README. You can document an API. You can write a 400-line `CONTRIBUTING.md` that no one will ever read. But when someone asks you to write a landing page for your SaaS, your brain goes blank.

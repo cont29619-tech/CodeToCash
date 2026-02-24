@@ -8,6 +8,17 @@ tags: ["vibe coding", "ai marketing", "strategy", "beginner"]
 readingTime: "9 min read"
 featured: false
 draft: false
+faq:
+  - question: "What is vibe coding and why does it make marketing harder?"
+    answer: "Vibe coding refers to building software rapidly with AI tools like Cursor, Bolt, or Lovable — often without deep technical knowledge of every layer of the stack. It lowers the barrier to building but doesn't lower the barrier to selling. The result is more products entering the market with fewer founders who know how to market them."
+  - question: "What is the most important marketing skill for vibe coders to learn first?"
+    answer: "Copywriting — specifically learning to describe your product in terms of outcomes rather than features. Most vibe coders describe what their product does technically. Customers buy based on what the product does for them. Learning to translate features into benefits is the single highest-leverage marketing skill for anyone who builds software."
+  - question: "Should vibe coders build in public to market their products?"
+    answer: "Building in public is one of the most natural marketing strategies for vibe coders because it documents the journey that your target audience — other developers — is deeply interested in. Sharing your build process on Twitter/X creates an audience before you launch, which means you have warm leads waiting when you ship."
+  - question: "How much should a vibe coder spend on marketing their first product?"
+    answer: "As close to zero as possible in the beginning. Organic channels like Twitter/X, Reddit, Hacker News, and Product Hunt cost nothing but time and can drive significant early traction. Paid ads only make sense once you have a landing page that converts organically first — otherwise you're paying to send traffic to a leaky bucket."
+  - question: "What is the fastest way for a vibe coder to get their first paying customer?"
+    answer: "Direct outreach to people who have the problem your product solves. Find 20-30 people on Twitter, LinkedIn, or Reddit who have publicly complained about the exact problem you solve. Send them a short, personal message explaining what you built and offering a free trial. This is faster than any other channel for the first 1-10 customers."
 ---
 
 You can build a full SaaS app in a weekend with Claude or Cursor. You can ship a landing page before lunch and have a working payment flow by dinner. Marketing for vibe coders is the missing piece — because the same AI tools that make you fast at building can make you fast at selling. But there's a catch nobody talks about.

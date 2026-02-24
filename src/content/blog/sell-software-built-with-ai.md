@@ -8,6 +8,17 @@ tags: ["vibe coding", "ai", "selling", "marketing strategy", "indie hacker"]
 readingTime: "10 min read"
 featured: false
 draft: false
+faq:
+  - question: "Is it ethical to sell software built with AI tools?"
+    answer: "Yes — the value of software is in the problem it solves, not the tools used to write it. Customers pay for outcomes, not for your personal coding effort. Disclosing that you used AI tools is a matter of personal choice, not legal obligation in most contexts. What matters ethically is that your product does what you claim and delivers the value you promise."
+  - question: "Do I need to disclose that my product was built with AI?"
+    answer: "There is currently no general legal requirement to disclose AI use in software development in most jurisdictions. Many successful indie developers are transparent about using tools like Cursor or Claude as a selling point — it signals technical savvy and efficient execution. Whether to disclose is a business and personal ethics decision rather than a legal one."
+  - question: "How do I compete when anyone can build a similar product with AI?"
+    answer: "Distribution, brand, and customer trust are your moats — not the code itself. When building barriers are low for everyone, the winner is the person who markets best, builds an audience first, gets to customers first, and earns their loyalty. This is exactly why learning direct response marketing is more valuable now than it's ever been for developers."
+  - question: "What is the fastest way to validate a vibe-coded product before investing in marketing?"
+    answer: "Before building a landing page or running ads, find 10 people who fit your target customer profile and ask if they'd pay for what you're describing. If you can get 3 people to say 'yes, I'd pay $X for that' before you've written a line of code or a word of copy, you have enough validation to invest in marketing. This conversation costs nothing and filters out ideas that won't sell."
+  - question: "What marketing channel works best for AI-built SaaS products?"
+    answer: "The developer and indie hacker community on Twitter/X and Hacker News has a uniquely positive response to founders who build transparently with AI tools — it's a differentiator, not a liability, in that audience. Product Hunt also has a strong appetite for AI-built tools. Start with the organic channels where your transparency about the build process is itself a marketing asset."
 ---
 
 The internet is full of products built with Claude, Cursor, and Windsurf that work perfectly and sold nothing. Not because the products are bad. Because the developers who built them never learned how to sell software built with AI — or anything else.

@@ -8,6 +8,17 @@ tags: ["PAS framework", "copywriting for developers", "direct response copywriti
 readingTime: "6 min read"
 featured: false
 draft: false
+faq:
+  - question: "What does PAS stand for in copywriting?"
+    answer: "PAS stands for Problem, Agitate, Solution. It's a three-part copywriting framework where you first identify the specific problem your audience is experiencing, then intensify the emotional weight of that problem by describing its consequences, and finally present your product as the logical solution. It's one of the most widely used frameworks in direct response marketing."
+  - question: "Where can I use the PAS framework?"
+    answer: "PAS works in almost any marketing context: landing page hero sections, email subject lines and body copy, Twitter threads, cold outreach messages, ad copy, and even product descriptions. It's particularly effective in email marketing where you have a few seconds to convince someone to keep reading before they delete your message."
+  - question: "How long should each part of a PAS framework be?"
+    answer: "For a landing page hero, Problem is 1 sentence, Agitate is 2-3 sentences, and Solution is 1-2 sentences plus a CTA button. For a full email, each section can be a short paragraph. The Agitate section is where most beginners underinvest — it should make the reader feel the pain viscerally before you rescue them with the solution."
+  - question: "What is the difference between PAS and AIDA?"
+    answer: "PAS leads with the problem and works by creating emotional resonance with the reader's pain before introducing your product. AIDA leads with something attention-grabbing (which could be anything) and works by guiding the reader through a logical-emotional journey toward action. PAS tends to convert better for audiences with a specific known problem; AIDA is more versatile for cold audiences."
+  - question: "Is the PAS framework manipulative?"
+    answer: "No — when used ethically, PAS simply describes a real problem that real people have, explains why it matters, and shows how your product genuinely solves it. The framework becomes manipulative only if you exaggerate or fabricate the problem or promise a solution your product can't deliver. For developers with real products solving real problems, PAS is simply honest communication structured for clarity."
 ---
 
 If you could only learn one copywriting framework and use it for everything — your landing page, your emails, your Twitter threads, your product descriptions — the PAS copywriting framework would be the one to pick. Problem. Agitate. Solution. Three steps. Endlessly repeatable. Ruthlessly effective.

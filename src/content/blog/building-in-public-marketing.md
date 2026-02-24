@@ -8,6 +8,17 @@ tags: ["build in public", "twitter", "marketing strategy", "indie hacker", "tran
 readingTime: "11 min read"
 featured: false
 draft: false
+faq:
+  - question: "What does building in public mean?"
+    answer: "Building in public means sharing your product development journey openly — posting revenue numbers, sharing what's working and what isn't, documenting your mistakes and breakthroughs, and narrating your decisions in real time, typically on Twitter/X or a blog. It's a marketing strategy because transparency builds trust, creates a narrative people want to follow, and turns your process into content that attracts your target audience."
+  - question: "Does building in public actually help with sales?"
+    answer: "Yes — when done consistently and with genuine transparency. Developers who build in public typically launch to an engaged audience of hundreds or thousands of followers who have watched the product be built and feel invested in its success. This creates a built-in launch audience that converts at far higher rates than cold traffic from ads or cold outreach."
+  - question: "What should I share when building in public?"
+    answer: "The most engaging content is honest and specific: real revenue numbers (even if small or zero), specific challenges you're facing and how you solved them, decisions you made and why, metrics that show trajectory, and lessons learned from failures. Avoid generic motivation content or vague progress updates — your audience wants the numbers and the details."
+  - question: "Is building in public risky — will competitors copy my idea?"
+    answer: "The risk of a competitor stealing your idea is vastly overstated. Execution, distribution, and customer relationships are your real competitive advantages — not the idea itself. Meanwhile, the benefits of building in public (audience building, accountability, inbound opportunities, early customer discovery) are concrete and significant. The risk-reward calculation strongly favors transparency for indie developers."
+  - question: "How long does it take for building in public to generate meaningful traffic or sales?"
+    answer: "Most developers who build in public consistently for 3-6 months see meaningful audience growth and inbound interest. The compounding nature of content means early posts continue to attract followers over time. The developers who give up after 2-3 posts never experience the compounding — consistency over at least 90 days is the minimum viable commitment."
 ---
 
 Most developers build in private. Six months of work, hundreds of commits, a landing page built at 1 AM the week before launch, and a tweet that says "excited to finally share what I've been working on." The launch gets 200 views from friends and other developers. Then silence.

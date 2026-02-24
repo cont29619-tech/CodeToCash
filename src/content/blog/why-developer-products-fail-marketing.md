@@ -8,6 +8,17 @@ tags: ["developer marketing", "why saas fails", "vibe coding marketing", "indie 
 readingTime: "7 min read"
 featured: false
 draft: false
+faq:
+  - question: "Why do good developer products fail to get customers?"
+    answer: "The most common reason is that the product is marketed as a feature set rather than a solution to a specific problem. Developers naturally describe what their product does technically, but customers buy based on outcomes. A product that 'automatically syncs your database schema across environments' sells better as 'never break production with a schema mismatch again.'"
+  - question: "How important is the landing page for a developer product?"
+    answer: "It's critical — it's often the only chance you get to convert a visitor. Most developer product landing pages fail because they lead with technical specs, don't have a clear headline that states the outcome, have no social proof, and have a weak or confusing CTA. A poorly converting landing page means all your traffic — from SEO, Product Hunt, Hacker News — is wasted."
+  - question: "Should developers launch on Product Hunt?"
+    answer: "Product Hunt can generate a significant spike of traffic on launch day, but the conversion rate of that traffic is often low. It's worth doing as one part of a launch strategy, not as the entire strategy. The developers who get the most out of Product Hunt launches have warm email lists and communities they can mobilize to upvote on day one."
+  - question: "What is the number one marketing mistake indie developers make?"
+    answer: "Building without talking to potential customers first. Many developers build a product they think people want, launch it, get no customers, and conclude that marketing doesn't work — when the real issue is that the product wasn't validated against real demand. Talking to 20 potential customers before writing a line of code is the highest-ROI marketing activity you can do."
+  - question: "How do you market a developer tool with no budget?"
+    answer: "Start where your audience already is: Hacker News, Reddit (r/sideprojects, r/indiehackers, r/webdev), Twitter/X, and developer Discord communities. Post genuinely useful content related to the problem your tool solves — not promotional posts, but actual help. Build trust first, mention your product when it's genuinely relevant, and collect email addresses from day one."
 ---
 
 If you're reading this, there's a reasonable chance you've shipped something that didn't sell. A SaaS app. A tool. A template. A course. You built it, launched it, tweeted about it, maybe posted on Product Hunt — and then watched the dashboard show three visitors a day, zero sign-ups, and a conversion rate that doesn't round up to 1%.

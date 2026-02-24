@@ -8,6 +8,17 @@ tags: ["drm", "marketing basics", "beginner"]
 readingTime: "8 min read"
 featured: true
 draft: false
+faq:
+  - question: "What is the difference between direct response marketing and brand marketing?"
+    answer: "Brand marketing builds awareness and long-term perception — think Nike or Apple. Direct response marketing is designed to trigger an immediate, measurable action like a click, signup, or purchase. For indie developers and small teams, DRM is almost always the right choice because every result is trackable and every dollar spent can be justified."
+  - question: "Is direct response marketing effective for small SaaS products?"
+    answer: "Yes — in fact, DRM was practically invented for small operators. Because every campaign has a measurable call to action, you can run tests with a tiny budget, see what works, and scale only what converts. This makes it far more capital-efficient than brand marketing for solo developers and indie hackers."
+  - question: "Do developers need to hire a marketer to use direct response marketing?"
+    answer: "No. Direct response marketing is systematic enough that developers can learn and apply it themselves. The frameworks are logical and fill-in-the-blank — more like engineering templates than creative work. Most indie developers handle their own DRM, especially in the early stages."
+  - question: "What are the core principles of direct response marketing?"
+    answer: "Every piece of marketing must have one clear call to action, every result must be trackable, every element can be tested and improved, and copy drives action while data determines what stays. These four principles make DRM a measurable discipline rather than a guessing game."
+  - question: "How long does it take to see results from direct response marketing?"
+    answer: "Unlike SEO which can take months, some DRM tactics like email sequences and landing page tests can show results within days of launching. Paid DRM campaigns can be profitable within a week if the targeting and copy are right. The key is starting with a specific, measurable goal for each campaign."
 ---
 
 If you're a developer who has built something worth selling — a SaaS app, a template, a dev tool, an API — you've probably hit the same wall every builder hits: **how do you actually get people to buy it?** Direct response marketing for developers is the answer, and it might be the most important skill you never learned in a CS program.

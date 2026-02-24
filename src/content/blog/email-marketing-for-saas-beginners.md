@@ -8,6 +8,17 @@ tags: ["email marketing", "saas", "automation", "sequences", "beginners"]
 readingTime: "12 min read"
 featured: false
 draft: false
+faq:
+  - question: "What email marketing platform is best for indie developers and SaaS founders?"
+    answer: "ConvertKit (now Kit) is the most popular choice among indie developers and creators because it has a generous free tier, visual automation builder, and is designed for people who sell digital products. Buttondown is a great alternative for developers who prefer simplicity and Markdown. Resend is ideal if you want full API control and are comfortable writing your own templates."
+  - question: "How often should a SaaS company send marketing emails?"
+    answer: "For a new product with a small list, once a week is the sweet spot. Frequent enough to stay top of mind, infrequent enough that your emails feel like a valuable event rather than noise. The most important rule is consistency — irregular sending trains your audience to stop expecting you, which tanks your open rates over time."
+  - question: "What should a welcome email sequence include for a SaaS product?"
+    answer: "A 5-7 email welcome sequence should cover: Email 1 delivers the promised lead magnet and sets expectations; Email 2 tells your story and builds personal connection; Email 3 teaches your single most valuable insight; Email 4 provides a practical framework or template; Email 5 shares a relevant case study; Email 6 covers tool or resource recommendations; Email 7 is a soft pitch for your paid product or an ask to share."
+  - question: "What is a good email open rate for SaaS marketing emails?"
+    answer: "For a focused niche audience like developers, a 40-60% open rate is excellent. Industry averages across all sectors hover around 20-25%, but developer and tech audiences tend to be more engaged when content is genuinely useful and not spammy. If your open rate is below 20%, focus on improving your subject lines and cleaning inactive subscribers from your list."
+  - question: "How do I avoid my marketing emails going to spam?"
+    answer: "The most important factors are: using a custom domain for your sending address (not Gmail or Hotmail), authenticating your domain with SPF, DKIM, and DMARC records, avoiding spam trigger words in subject lines, maintaining a clean list by removing bounced and inactive subscribers, and — most importantly — sending genuinely valuable content that people want to receive and engage with."
 ---
 
 Email marketing for SaaS beginners sounds like a chore. One more thing to set up, one more tool to pay for, one more queue of tasks that probably will not ship this sprint. But here is the reality: email is the only marketing channel you actually own.
