@@ -273,7 +273,21 @@ Wraps `Layout.astro` for blog posts.
 }
 ```
 
-Provides: breadcrumb nav, article header (category badge, reading time, date, author), two-column layout (article content left, sticky sidebar right), TOC (h2 only), sidebar newsletter widget, related posts links, share buttons (Twitter, LinkedIn, copy link), related articles grid, newsletter CTA box, prev/next navigation.
+Provides: breadcrumb nav, article header (category badge, reading time, date, author), two-column layout (article content left, sticky sidebar right), TOC (h2 only), sidebar newsletter widget, related posts links, share buttons (Twitter, LinkedIn, copy link), related articles grid, FAQ accordion, newsletter CTA box, prev/next navigation.
+
+**FAQ accordion**: When a post has `faq` frontmatter, BlogLayout renders a `<details>`/`<summary>` accordion section above the newsletter CTA. No JS required — pure HTML. Styled with a coral eyebrow label, `border-white/[0.06]` dividers between questions, and a coral left border on expanded answers.
+
+**JSON-LD schema**: BlogLayout generates schema conditionally based on whether `faq` frontmatter is present:
+- **With FAQ**: `@graph` array combining `Article` + `FAQPage` schemas
+- **Without FAQ**: plain `Article` schema object
+
+```typescript
+// Simplified logic in BlogLayout.astro
+const hasFaq = !!(faq && faq.length > 0);
+const schema = hasFaq
+  ? JSON.stringify({ "@context": "https://schema.org", "@graph": [articleSchema, faqPageSchema] })
+  : JSON.stringify({ "@context": "https://schema.org", ...articleSchema });
+```
 
 **Category badge colors**: Defined in `src/utils/categoryColors.ts` (single source of truth).
 | Category | Color |
@@ -486,8 +500,14 @@ z.object({
   readingTime: z.string(),
   featured: z.boolean().default(false),
   draft: z.boolean().default(false),
+  faq: z.array(z.object({
+    question: z.string(),
+    answer: z.string(),
+  })).optional(),
 })
 ```
+
+All 12 published blog posts include `faq` frontmatter with 4–5 Q&A pairs each.
 
 ### Published Blog Posts
 | Slug | Title | Category | Featured |
@@ -563,8 +583,17 @@ z.object({
 
 ### Adding a New Blog Post
 1. Create `src/content/blog/your-post-slug.md`
-2. Add required frontmatter (title, description, pubDate, category, tags, readingTime)
-3. Write content in Markdown — it auto-renders via BlogLayout
+2. Add required frontmatter: `title`, `description`, `pubDate`, `category`, `tags`, `readingTime`
+3. Add optional `faq` frontmatter (4–5 Q&A pairs) — renders as an accordion and adds FAQPage JSON-LD:
+   ```yaml
+   faq:
+     - question: "Your question here?"
+       answer: "Your answer here."
+   ```
+4. Ensure the primary target keyword appears naturally within the first 100 words
+5. Include at least one link to `/drm-101` and 2–3 links to related posts by slug
+6. Write content in Markdown — it auto-renders via BlogLayout
+7. The post auto-appears in the correct `/blog/[category]` page and sitemap
 
 ### Adding a New Playbook
 1. Create `src/pages/playbooks/your-playbook.astro`
