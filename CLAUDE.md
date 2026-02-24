@@ -72,6 +72,7 @@ All pages are pre-rendered at build time to `./dist/`. No server-side rendering,
 File-based routing via `src/pages/`. Every `.astro` file becomes a URL:
 - `src/pages/index.astro` → `/`
 - `src/pages/drm-101.astro` → `/drm-101`
+- `src/pages/blog/[category].astro` → `/blog/[category]` (6 static category pages, uses `getStaticPaths()`)
 - `src/pages/blog/[...slug].astro` → `/blog/[slug]` (dynamic, uses `getStaticPaths()`)
 
 ### Layout Hierarchy
@@ -154,7 +155,20 @@ Shown after a successful subscription. Sections:
 ---
 
 ### `/blog` — blog/index.astro (Blog Index)
-Lists all published blog posts (draft: false). Category filter buttons. Post cards with category badge, reading time, title, description, date.
+Lists all published blog posts (draft: false). Anchor-link category nav with `// browse by category` label — each link navigates to the real `/blog/[category]` page (no JS filtering). Post cards with category badge, reading time, title, description, date. Featured post displayed above the grid.
+
+### `/blog/[category]` — blog/[category].astro (Category Pages)
+Six static category pages pre-rendered at build time via `getStaticPaths()`. Categories: `fundamentals`, `copywriting`, `email`, `ads`, `analytics`, `strategy`. Each page has:
+- Unique `<title>` and `<meta description>` per category for SEO
+- Breadcrumb: Home / Blog / [Category Name]
+- Category eyebrow label, H1, and subtitle
+- Category nav with `aria-current="page"` on the active category
+- Post grid using identical card markup to blog/index.astro
+- Graceful empty state for categories with no posts yet (`ads`, `analytics`)
+
+**Category metadata** (title, description, h1, subtitle) is defined as the `categoryMeta` const at the top of `blog/[category].astro`. All 6 URLs are auto-included in the sitemap via `@astrojs/sitemap`.
+
+Current post counts per category: fundamentals (3), copywriting (3), strategy (5), email (1), ads (0), analytics (0).
 
 ### `/blog/[slug]` — blog/[...slug].astro (Blog Post)
 Renders Markdown content via `BlogLayout.astro`. Uses `getStaticPaths()` with content collections.
@@ -517,6 +531,7 @@ z.object({
 | `src/layouts/Layout.astro` | Base HTML shell (SEO, fonts, nav, footer, back-to-top, global CK handler) |
 | `src/layouts/BlogLayout.astro` | Blog article layout with TOC sidebar |
 | `src/layouts/PlaybookLayout.astro` | Playbook layout with numbered section sidebar |
+| `src/pages/blog/[category].astro` | Six SEO category pages (fundamentals, copywriting, email, ads, analytics, strategy) |
 | `src/utils/categoryColors.ts` | Shared blog category color + label maps (single source of truth) |
 | `src/utils/getRelatedPosts.ts` | Priority-based related posts algorithm: same category → tag overlap → recency fallback. Used by `blog/[...slug].astro`. |
 | `public/drm-cheatsheet.pdf` | Free cheatsheet PDF (~12KB), downloaded from `/welcome` |
