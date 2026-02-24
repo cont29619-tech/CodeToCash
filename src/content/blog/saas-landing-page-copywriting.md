@@ -1,6 +1,6 @@
 ---
-title: "SaaS Landing Page Copywriting: The Developer's Framework for Words That Sell"
-description: "Your landing page copy is killing your conversion rate. Here's the exact framework for writing words that sell — even if you hate writing and love shipping code."
+title: "SaaS Landing Page Copywriting Guide for Developers"
+description: "Most developer landing pages don't convert. Here's the exact framework to fix yours — with headlines, CTAs, and section templates included."
 pubDate: 2026-02-22
 author: "CodeToCash Team"
 category: "copywriting"

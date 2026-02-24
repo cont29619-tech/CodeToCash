@@ -1,6 +1,6 @@
 ---
-title: "Build in Public Marketing Strategy: Turn Your Process Into Your Audience"
-description: "Building in public isn't just tweeting your progress. Done right, it's a compounding sales engine. Here's the strategy that turns your commits into customers."
+title: "Building in Public as a Marketing Strategy"
+description: "Building in public isn't just for clout — it's one of the highest-ROI marketing strategies for solo developers. Here's how to do it systematically."
 pubDate: 2026-02-26
 author: "CodeToCash Team"
 category: "strategy"

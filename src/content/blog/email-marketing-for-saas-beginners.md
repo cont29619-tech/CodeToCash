@@ -1,6 +1,6 @@
 ---
-title: "Email Marketing for SaaS Beginners: Build a System That Sells While You Sleep"
-description: "Email is the only marketing channel you actually own. Here's how to set up an email system that nurtures leads and drives SaaS revenue while you're coding."
+title: "Email Marketing for SaaS: The Developer's System"
+description: "Set up an email system that nurtures leads and drives sales automatically. Step-by-step guide built for developers who've never done email marketing."
 pubDate: 2026-02-23
 author: "CodeToCash Team"
 category: "email"
