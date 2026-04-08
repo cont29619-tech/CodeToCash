@@ -108,6 +108,7 @@ CONCIERGE CUSTOMER PLAYBOOK
 2. Post once in r/SideProject or r/indiehackers:
    "I built [product] to solve [problem]. First 10 customers get 50% off
    forever. Here's what it does and why I built it."
+   Reddit is one of the highest-converting channels for early-stage dev tools, but it requires genuine participation before self-promotion. The [Reddit marketing guide for developers](/blog/reddit-marketing-strategy-developers) covers how to build credibility in the right subreddits before your launch.
 
 3. Ask every trial user two questions after day 3:
    "What's the one thing this is missing for you?"
@@ -139,6 +140,7 @@ Most developers at this stage are still doing everything manually and inconsiste
 2. DOUBLE THE EMAIL LIST
    Set up a lead magnet directly related to your product's core problem.
    Target: 200+ subscribers before Phase 4.
+   For email platform recommendations at this stage, see the [marketing stack guide for indie developers](/blog/marketing-tools-for-indie-developers).
    Set up a 5-email welcome sequence. The sequence should:
      Email 1 (day 0): Deliver the lead magnet
      Email 2 (day 2): Share the biggest insight from customer research
@@ -163,7 +165,7 @@ Phase 4 is the first time you can responsibly spend money on marketing. Before t
 
 The three growth levers for Phase 4:
 
-**Paid ads (narrow targeting only).** If your best acquisition channel has been Reddit, test Reddit Ads in the relevant subreddits. If it's been organic search, test Google Ads on your highest-intent keywords. Start with $200–300/month. Measure cost per trial, cost per paid conversion. If the math works at small scale, double the budget. If it doesn't, fix the landing page conversion before increasing spend.
+**Paid ads (narrow targeting only).** If your best acquisition channel has been Reddit, test Reddit Ads in the relevant subreddits. If it's been organic search, test Google Ads on your highest-intent keywords. Start with $200–300/month. Measure cost per trial, cost per paid conversion. If the math works at small scale, double the budget. If it doesn't, fix the landing page conversion before increasing spend. Once paid campaigns are converting, add [retargeting ads](/blog/retargeting-ads-for-saas-beginners) to recapture the visitors who clicked but didn't convert — typically your most cost-efficient acquisition layer.
 
 **SEO content.** You are reading an example of this strategy. Blog posts targeting keywords your customers search for — like "how to [solve problem your tool solves]" — compound over time in a way ads don't. Write two posts per month, each targeting a specific long-tail keyword with commercial intent. This is the channel that makes $1K MRR feel stable rather than precarious. See [building in public marketing](/blog/building-in-public-marketing) for how content compounds alongside community presence.
 

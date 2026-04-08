@@ -112,3 +112,5 @@ Here's the testing roadmap I recommend for developer product landing pages, orde
 **Never testing at all.** The worst A/B testing mistake is not testing. Every day your landing page runs without a test, you're leaving data on the table. Even with modest traffic, testing two dramatically different approaches over a month gives you actionable information.
 
 A/B testing is the optimization layer of the [DRM funnel](/blog/drm-funnel-explained). It's how you systematically improve every element of your marketing until the whole system compounds. Start with your landing page headline this week, and let the data tell you what works.
+
+The same testing discipline applies beyond your landing page. Once your on-page conversion is solid, [retargeting ads](/blog/retargeting-ads-for-saas-beginners) give you another layer to optimize — reaching visitors who left without converting and testing different messages to bring them back.

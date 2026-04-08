@@ -269,6 +269,8 @@ When: Tag is added "power-user" → Start Referral Sequence
 
 **For non-ConvertKit tools** (Loops, Customer.io, Mailchimp, ActiveCampaign), the primitives are the same: triggers, delays, conditions, tags. The sequence logic doesn't change — only the UI does.
 
+If you haven't chosen your email platform yet, the [marketing stack guide for indie developers](/blog/marketing-tools-for-indie-developers) compares the most popular options with recommendations based on your stage and budget.
+
 **Behavioral segmentation note:** Most developers build these sequences and never add conditional logic. That's fine to start. But within 90 days, add exit conditions: "If subscriber upgrades to paid → remove from Trial Conversion Sequence." "If subscriber clicks any link in Win-Back sequence → remove from sequence and add tag `re-engaged`." Sending Email 6 of a win-back sequence to someone who already came back is a fast way to lose them again.
 
 For a fuller picture of how email fits into your overall direct response marketing funnel — from traffic to conversion — read [Email Marketing for SaaS Beginners](/blog/email-marketing-for-saas-beginners). It covers the foundational strategy behind everything in this guide.
@@ -286,5 +288,7 @@ Building all 7 sequences at once is ambitious. If you're starting from zero, bui
 The email sequences for SaaS that consistently outperform are the ones that treat subscribers like humans with a specific problem, not like email addresses waiting for a pitch. That means: value first, proof second, ask third. Every time.
 
 Each sequence you build is a compounding asset — it runs forever, improves with data, and works while you're shipping your next feature. That's the leverage most developers are leaving on the table.
+
+To reach prospects who haven't subscribed yet, pair your automated sequences with [cold email outreach](/blog/cold-email-templates-saas) — the two channels cover your entire pipeline: warm nurture for people on your list, cold prospecting for everyone else.
 
 Want more tactics like this? Subscribe to the [CodeToCash newsletter](/newsletter) — one direct response marketing tactic, every Tuesday, built for developers.

@@ -151,7 +151,7 @@ Cadence: one building-in-public post per week is enough. Pair it with 3–4 educ
 
 ## Converting Twitter Followers into Email Subscribers
 
-A Twitter following is rented audience. The platform can change the algorithm, change the pricing, or change the rules — and your distribution changes with it. Email is owned audience. Getting Twitter followers onto your email list converts a platform dependency into a durable asset.
+A Twitter following is rented audience. The platform can change the algorithm, change the pricing, or change the rules — and your distribution changes with it. Email is owned audience. Getting Twitter followers onto your email list converts a platform dependency into a durable asset. For the full playbook on growing that list from zero to 1,000 subscribers — including cross-promotions, community tactics, and keeping subscribers engaged — see the [developer newsletter growth guide](/blog/developer-newsletter-growth).
 
 The conversion mechanism is simple: every thread ends with a link to your newsletter or lead magnet. Your bio links to a page with email capture. Once a month, post a direct "here's what I send to 1,200 developers every Tuesday" tweet with a link. If you have a free resource — a PDF guide, a template, a checklist — mention it periodically with a plain link.
 
@@ -185,6 +185,8 @@ TWITTER-TO-EMAIL CONVERSION POINTS
 The benchmark: expect 1–3% of your followers to subscribe to your email list via Twitter over time. At 1,000 followers, that's 10–30 email subscribers. At 5,000 followers, it's 50–150. These are warm subscribers who already trust you — they convert to paid users at higher rates than cold traffic from ads.
 
 For the email strategy that sits behind this funnel, see [marketing for vibe coders](/blog/marketing-for-vibe-coders) — the Twitter channel feeds directly into the email → offer sequence described there.
+
+Twitter and [Reddit](/blog/reddit-marketing-strategy-developers) are natural companions for developer marketing: Twitter builds broad reach and ambient discovery, while Reddit drives high-intent traffic from people actively discussing the exact problem you solve.
 
 ## Engagement Tactics That Don't Feel Like Marketing
 

@@ -151,7 +151,7 @@ For GitHub repos: write a solid README with usage instructions. The README *is* 
 
 **Hour 4: Set up delivery**
 
-Upload to ConvertKit (or your email provider) as an incentive. Create a simple landing page or use your existing blog sidebar form. Set up the automated delivery email — keep it to three sentences: confirm the download, deliver the link, tell them what to expect next. Done. Ship it.
+Upload to ConvertKit (or your email provider) as an incentive. Create a simple landing page or use your existing blog sidebar form. Set up the automated delivery email — keep it to three sentences: confirm the download, deliver the link, tell them what to expect next. Done. Ship it. If you're still choosing between ConvertKit, Beehiiv, or Loops for delivery, the [marketing stack guide for indie developers](/blog/marketing-tools-for-indie-developers) compares them with pricing and use case recommendations.
 
 ---
 
@@ -179,7 +179,7 @@ Body:
 
 If you're using ConvertKit, set these up as a sequence attached to the form tag. Tag subscribers with the lead magnet name so you can segment later. Anyone who downloads your "Pre-Launch Security Checklist" is signaling they're close to shipping — that's a high-intent signal worth acting on. See the [email marketing for SaaS beginners guide](/blog/email-marketing-for-saas-beginners) for how to build out the full sequence after delivery.
 
-You can also see how we handle delivery on this site — the [CodeToCash newsletter](/newsletter) delivers a DRM cheatsheet immediately on signup, followed by a 7-email welcome sequence. That same pattern works for any developer tool lead magnet.
+You can also see how we handle delivery on this site — the [CodeToCash newsletter](/newsletter) delivers a DRM cheatsheet immediately on signup, followed by a 7-email welcome sequence. That same pattern works for any developer tool lead magnet. For the full playbook on growing that list from your first subscriber to 1,000, see [growing a developer newsletter to 1,000 subscribers](/blog/developer-newsletter-growth) — it covers cross-promotions, community tactics, and retention in detail.
 
 ---
 

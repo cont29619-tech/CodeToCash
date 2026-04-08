@@ -29,7 +29,7 @@ It is not. **SaaS landing page copywriting** is engineering applied to language.
 
 This guide gives you a complete system: the mental model, the section-by-section breakdown, fill-in-the-blank templates, and the exact copy patterns that convert. No filler. No "make sure your copy resonates with your audience." Actual templates you can use today.
 
-If you want the broader marketing context first, read the [DRM 101 guide](/drm-101) — it explains how landing pages fit into your sales pipeline. But if you are here to write copy right now, let us get into it.
+If you want the broader marketing context first, read the [DRM 101 guide](/drm-101) — it explains how landing pages fit into your sales pipeline. But if you are here to write copy right now, let us get into it. Before writing a word, make sure your value proposition is sharp — the [value proposition template for SaaS](/blog/value-proposition-template-saas) gives you a structured framework for defining exactly what outcome you deliver and for whom.
 
 ## The ONE Job of a Landing Page (It Is Not Explaining Features)
 
@@ -128,6 +128,8 @@ Visitors arrive skeptical. Social proof converts skeptics. But not all social pr
 Place social proof in two spots: immediately below the hero (to catch the skeptics early) and just above your final CTA (to convert the ones who almost signed up but needed one more push).
 
 If you are early-stage and have no testimonials yet, ask your beta users directly: "What would you tell a friend about this product?" One sentence from three real users beats a fake wall of five-star reviews.
+
+For turning customer success into structured, persuasive proof, the [case study copywriting guide](/blog/case-study-copywriting-saas) shows you how to interview customers and write case studies that are specific enough to actually drive conversion.
 
 For the complete copywriting toolkit — including how to structure testimonials and social proof within a broader copywriting system — see the [copywriting frameworks guide](/blog/copywriting-frameworks-for-developers).
 

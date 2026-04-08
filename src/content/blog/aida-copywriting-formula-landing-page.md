@@ -27,6 +27,8 @@ AIDA stands for **Attention, Interest, Desire, Action**. It was formalized in 18
 
 This guide shows you how to run each transition on a developer product landing page — with real before/after examples, templates you can copy, and a clear distinction between AIDA and its closest competitor, [PAS](/blog/pas-copywriting-framework). If you want the full marketing system that AIDA fits into, start with the [DRM 101 guide](/drm-101).
 
+One prerequisite before AIDA can work: a clear value proposition. If you don't know exactly what outcome your product delivers and for whom, the Attention step will fall flat. The [value proposition template for SaaS](/blog/value-proposition-template-saas) is worth 30 minutes before you write your first headline.
+
 ---
 
 ## What Is AIDA and Why Developers Love It
@@ -117,7 +119,7 @@ Social proof ranked by conversion effectiveness (from strongest to weakest):
 4. **Logo walls** — recognizable brands imply endorsement by association
 5. **Star ratings / review counts** — better than nothing, but weakest
 
-For indie devs who don't have a Stripe logo to drop in: a single real testimonial with a name, job title, and specific outcome beats a logo wall from companies you've never worked with. Specificity signals authenticity.
+For indie devs who don't have a Stripe logo to drop in: a single real testimonial with a name, job title, and specific outcome beats a logo wall from companies you've never worked with. Specificity signals authenticity. The [case study copywriting guide](/blog/case-study-copywriting-saas) shows how to interview customers and structure their results into the kind of specific, credible proof that the Desire section needs.
 
 Beyond social proof, the Desire section is where you paint the "after" picture. Not "our tool is fast" — but "imagine pushing to main at 5pm on a Friday and not even checking Slack on the way home, because you know the deployment will handle itself." You're selling a feeling that the feature enables, not the feature itself.
 

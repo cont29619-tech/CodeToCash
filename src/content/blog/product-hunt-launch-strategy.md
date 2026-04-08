@@ -41,7 +41,7 @@ The launch itself is 10% of the work. The other 90% happens before 12:01am on la
 
 **Weeks 3–4 before launch: build your notify list**
 
-Product Hunt has a "notify me" feature that lets people subscribe to be alerted when your product launches. This list is the single most valuable asset for launch day — every person on it gets an email the moment you go live. Promote your upcoming launch on Twitter/X, in relevant Slack communities, in your newsletter, and anywhere your target audience hangs out. Aim for 50–200 notify subscribers before you launch. At fewer than 20, you're going in cold.
+Product Hunt has a "notify me" feature that lets people subscribe to be alerted when your product launches. This list is the single most valuable asset for launch day — every person on it gets an email the moment you go live. Promote your upcoming launch on Twitter/X, in relevant Slack communities, in your newsletter, and anywhere your target audience hangs out. Aim for 50–200 notify subscribers before you launch. At fewer than 20, you're going in cold. If your email list is small, [cold outreach to relevant developers](/blog/cold-email-templates-saas) can fill the gap — a personal, specific email to 50 potential users often converts better than a mass community post.
 
 **Week 2 before launch: prepare your assets**
 
@@ -56,6 +56,8 @@ Product Hunt has a "notify me" feature that lets people subscribe to be alerted 
 Personally message 20–30 people who know your product and would genuinely find it useful. This means early users, beta testers, newsletter subscribers who've engaged, and developer friends who'd use it. Don't ask for upvotes — ask them to check it out and leave a comment if they find it interesting. Comments drive visibility in the algorithm as much as upvotes do.
 
 Draft your community posts — the messages you'll post in relevant Slack groups, Discord servers, subreddits, and IndieHackers on launch day. Write these in advance. You'll be too busy to write them from scratch at 9am.
+
+Reddit in particular requires a longer runway — you can't parachute in on launch day without existing credibility. The [Reddit marketing guide for developers](/blog/reddit-marketing-strategy-developers) covers how to build subreddit presence before you need to share anything.
 
 ```
 LAUNCH DAY COMMUNITY POST TEMPLATE
