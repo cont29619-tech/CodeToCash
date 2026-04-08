@@ -168,7 +168,7 @@ Six static category pages pre-rendered at build time via `getStaticPaths()`. Cat
 
 **Category metadata** (title, description, h1, subtitle) is defined as the `categoryMeta` const at the top of `blog/[category].astro`. All 6 URLs are auto-included in the sitemap via `@astrojs/sitemap`.
 
-Current post counts per category: fundamentals (4), copywriting (7), strategy (12), email (5), ads (2), analytics (3).
+Current post counts per category: fundamentals (4), copywriting (7), strategy (12), email (4), ads (2), analytics (3).
 
 ### `/blog/[slug]` — blog/[...slug].astro (Blog Post)
 Renders Markdown content via `BlogLayout.astro`. Uses `getStaticPaths()` with content collections.
@@ -543,7 +543,6 @@ All 12 published blog posts include `faq` frontmatter with 4–5 Q&A pairs each.
 | `sales-page-conversion-optimization` | "How to Create a Sales Page That Converts at 5%+" | copywriting | no |
 | `retargeting-ads-for-saas-beginners` | "Retargeting Ads for Developer Products: Beginner's Guide" | ads | no |
 | `seo-for-developer-blogs` | "SEO for Developer Blogs: Rank Without Being an SEO Expert" | analytics | no |
-| `email-subject-line-formulas` | "Email Subject Line Formulas That Get 40%+ Open Rates" | email | no |
 | `developer-newsletter-growth` | "Growing a Developer Newsletter to 1,000 Subscribers" | email | no |
 
 ### Playbooks Status
