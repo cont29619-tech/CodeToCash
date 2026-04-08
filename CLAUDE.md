@@ -168,7 +168,7 @@ Six static category pages pre-rendered at build time via `getStaticPaths()`. Cat
 
 **Category metadata** (title, description, h1, subtitle) is defined as the `categoryMeta` const at the top of `blog/[category].astro`. All 6 URLs are auto-included in the sitemap via `@astrojs/sitemap`.
 
-Current post counts per category: fundamentals (3), copywriting (3), strategy (5), email (1), ads (0), analytics (0).
+Current post counts per category: fundamentals (4), copywriting (7), strategy (12), email (5), ads (2), analytics (3).
 
 ### `/blog/[slug]` — blog/[...slug].astro (Blog Post)
 Renders Markdown content via `BlogLayout.astro`. Uses `getStaticPaths()` with content collections.
@@ -524,6 +524,27 @@ All 12 published blog posts include `faq` frontmatter with 4–5 Q&A pairs each.
 | `saas-pricing-strategy` | "SaaS Pricing Strategy: A Developer's Guide to Pricing for Maximum Revenue" | strategy | no |
 | `sell-software-built-with-ai` | "How to Sell Software Built with AI: A Vibe Coder's Marketing Playbook" | strategy | no |
 | `building-in-public-marketing` | "Build in Public Marketing Strategy: Turn Your Process Into Your Audience" | strategy | no |
+| `aida-copywriting-formula-landing-page` | "AIDA Formula for Developer Landing Pages: A Practical Guide" | copywriting | no |
+| `headline-copywriting-templates` | "How to Write Headlines That Convert: 30 Templates for Dev Tools" | copywriting | no |
+| `google-ads-for-saas-beginners` | "How to Run Google Ads for Your SaaS on a $100 Budget" | ads | no |
+| `email-sequences-for-saas` | "7 Email Sequences That Sell SaaS Products on Autopilot" | email | no |
+| `cold-email-templates-saas` | "Writing Cold Emails That Get Replies: Templates for Dev Tools" | email | no |
+| `ab-testing-landing-page-guide` | "The Developer's Guide to A/B Testing Landing Pages" | analytics | no |
+| `customer-acquisition-cost-saas` | "Customer Acquisition Cost: What Every Developer Should Know" | analytics | no |
+| `marketing-tools-for-indie-developers` | "Marketing Stack for Indie Developers: The Complete Tool Guide" | strategy | no |
+| `product-hunt-launch-strategy` | "How to Launch on Product Hunt: DRM Edition" | strategy | no |
+| `twitter-marketing-for-developers` | "How to Use Twitter/X to Market Your Developer Product" | strategy | no |
+| `value-proposition-template-saas` | "How to Write a Value Proposition for Your Dev Tool" | fundamentals | no |
+| `pricing-psychology-saas` | "The Psychology of SaaS Pricing: Why $49 Beats $50" | strategy | no |
+| `lead-magnet-ideas-for-saas` | "How to Create a Lead Magnet Developers Actually Want" | strategy | no |
+| `reddit-marketing-strategy-developers` | "Reddit Marketing for Developers (Without Getting Banned)" | strategy | no |
+| `0-to-1k-mrr-indie-developer` | "From $0 to $1K MRR: A Direct Response Marketing Roadmap" | strategy | no |
+| `case-study-copywriting-saas` | "How to Write Case Studies That Sell Your Dev Tool" | copywriting | no |
+| `sales-page-conversion-optimization` | "How to Create a Sales Page That Converts at 5%+" | copywriting | no |
+| `retargeting-ads-for-saas-beginners` | "Retargeting Ads for Developer Products: Beginner's Guide" | ads | no |
+| `seo-for-developer-blogs` | "SEO for Developer Blogs: Rank Without Being an SEO Expert" | analytics | no |
+| `email-subject-line-formulas` | "Email Subject Line Formulas That Get 40%+ Open Rates" | email | no |
+| `developer-newsletter-growth` | "Growing a Developer Newsletter to 1,000 Subscribers" | email | no |
 
 ### Playbooks Status
 | Slug | Title | Status |
