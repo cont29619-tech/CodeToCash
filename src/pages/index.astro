@@ -17,22 +17,19 @@ const schema = JSON.stringify({
 <Layout description="You can build it. But can you sell it? Free DRM frameworks for vibe coders and indie devs who ship great products and earn $0 from them. Change that today." schema={schema}>
 
   <!-- ============ HERO SECTION ============ -->
-  <section class="relative overflow-hidden min-h-[90vh] flex items-center justify-center px-4 py-24 bg-grid">
+  <section class="relative overflow-hidden min-h-[90vh] flex items-center justify-center px-4 py-24">
     <!-- Background glow (simplified on mobile for faster paint) -->
     <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
-      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[700px] bg-coral/[0.08] rounded-full blur-[100px] animate-pulse-slow"></div>
-      <div class="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-deep-blue/20 rounded-full hidden md:block blur-[80px] animate-pulse-slow animation-delay-2000"></div>
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-coral/5 rounded-full blur-[60px] md:blur-[120px] animate-pulse-slow"></div>
+      <div class="absolute top-1/3 left-1/3 w-[400px] h-[400px] bg-deep-blue/10 rounded-full hidden md:block blur-[100px] animate-pulse-slow animation-delay-2000"></div>
     </div>
     <!-- Faded code decoration (loaded after paint to avoid LCP penalty) -->
     <div id="code-decoration" class="absolute inset-0 pointer-events-none overflow-hidden opacity-0 select-none" aria-hidden="true">
     </div>
 
     <div class="relative z-10 max-w-4xl mx-auto text-center">
-      <p class="inline-flex items-center gap-2 text-sm font-mono text-coral uppercase tracking-widest mb-6 animate-fade-in border border-coral/20 bg-coral/[0.06] px-4 py-1.5 rounded-full">
-        <span class="w-1.5 h-1.5 rounded-full bg-coral animate-pulse inline-block"></span>
-        // ship products, make money
-      </p>
-      <h1 class="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.05] tracking-tight animate-fade-in-up">
+      <p class="inline-block text-sm font-mono text-coral uppercase tracking-widest mb-6 animate-fade-in">// ship products, make money</p>
+      <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.1] tracking-tight animate-fade-in-up">
         You Can Build Anything.<br />
         <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-coral">Now Learn to Sell It.</span>
       </h1>
@@ -42,7 +39,7 @@ const schema = JSON.stringify({
       <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up animation-delay-400">
         <a
           href="/drm-101"
-          class="btn-shimmer px-8 py-4 bg-coral text-white text-lg font-semibold rounded-lg hover:bg-coral/90 hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-coral/30 hover:shadow-xl"
+          class="px-8 py-4 bg-coral text-white text-lg font-semibold rounded-lg hover:bg-coral/90 hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-coral/30"
         >
           Start the Free DRM 101 Guide
         </a>
@@ -58,11 +55,11 @@ const schema = JSON.stringify({
 
 
   <!-- ============ PROBLEM SECTION ============ -->
-  <section class="relative px-4 py-24 sm:py-32 bg-navy-light/80 section-rule">
+  <section class="relative px-4 py-24 sm:py-32 bg-navy-light/50 border-t border-white/[0.02]">
     <div class="max-w-6xl mx-auto">
       <div class="text-center max-w-3xl mx-auto mb-16 section-animate">
         <p class="text-sm font-mono text-coral uppercase tracking-widest mb-4">// the problem</p>
-        <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight">
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight">
           The Vibe Coder's Marketing Problem
         </h2>
         <p class="mt-6 text-lg text-gray-400 leading-relaxed">
@@ -74,17 +71,17 @@ const schema = JSON.stringify({
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="group p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-coral/40 hover:bg-coral/[0.03] hover:shadow-[0_4px_24px_rgba(233,69,96,0.08),inset_0_1px_0_rgba(255,255,255,0.06)] hover:-translate-y-1 transition-all duration-300 section-animate">
+        <div class="group p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-coral/40 hover:bg-white/[0.04] hover:shadow-lg hover:shadow-coral/10 hover:-translate-y-1 transition-all duration-300 section-animate">
           <div class="text-4xl mb-5 group-hover:scale-110 transition-transform duration-300" aria-hidden="true">🚀</div>
           <h3 class="text-xl font-bold text-white mb-3">You Build, But Nobody Buys</h3>
           <p class="text-gray-400 leading-relaxed">Great product, zero revenue. You shipped something amazing but your launch got buried in the noise.</p>
         </div>
-        <div class="group p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-coral/40 hover:bg-coral/[0.03] hover:shadow-[0_4px_24px_rgba(233,69,96,0.08),inset_0_1px_0_rgba(255,255,255,0.06)] hover:-translate-y-1 transition-all duration-300 section-animate">
+        <div class="group p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-coral/40 hover:bg-white/[0.04] hover:shadow-lg hover:shadow-coral/10 hover:-translate-y-1 transition-all duration-300 section-animate">
           <div class="text-4xl mb-5 group-hover:scale-110 transition-transform duration-300" aria-hidden="true">😬</div>
           <h3 class="text-xl font-bold text-white mb-3">Marketing Feels Sleazy</h3>
           <p class="text-gray-400 leading-relaxed">You'd rather write code than write copy. Every marketing tactic you've seen feels manipulative or cringe.</p>
         </div>
-        <div class="group p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-coral/40 hover:bg-coral/[0.03] hover:shadow-[0_4px_24px_rgba(233,69,96,0.08),inset_0_1px_0_rgba(255,255,255,0.06)] hover:-translate-y-1 transition-all duration-300 section-animate">
+        <div class="group p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-coral/40 hover:bg-white/[0.04] hover:shadow-lg hover:shadow-coral/10 hover:-translate-y-1 transition-all duration-300 section-animate">
           <div class="text-4xl mb-5 group-hover:scale-110 transition-transform duration-300" aria-hidden="true">🎲</div>
           <h3 class="text-xl font-bold text-white mb-3">No System, Just Hoping</h3>
           <p class="text-gray-400 leading-relaxed">Posting randomly and praying for sales. No funnel, no strategy, no repeatable process to grow revenue.</p>
@@ -95,11 +92,11 @@ const schema = JSON.stringify({
 
 
   <!-- ============ SOLUTION SECTION ============ -->
-  <section class="relative px-4 py-24 sm:py-32 section-rule">
+  <section class="relative px-4 py-24 sm:py-32 border-t border-white/[0.02]">
     <div class="max-w-6xl mx-auto">
       <div class="text-center max-w-3xl mx-auto mb-16 section-animate">
         <p class="text-sm font-mono text-coral uppercase tracking-widest mb-4">// the solution</p>
-        <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight">
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight">
           Direct Response Marketing:<br />Your Sales Algorithm
         </h2>
         <p class="mt-6 text-lg text-gray-400 leading-relaxed">
@@ -109,9 +106,9 @@ const schema = JSON.stringify({
 
       <!-- DRM Pipeline -->
       <div class="max-w-4xl mx-auto section-animate">
-        <div class="card-featured overflow-hidden">
+        <div class="rounded-2xl bg-white/[0.02] border border-white/[0.06] overflow-hidden">
           <!-- Terminal header -->
-          <div class="flex items-center gap-2 px-5 py-3 bg-coral/[0.04] border-b border-coral/[0.15]">
+          <div class="flex items-center gap-2 px-5 py-3 bg-white/[0.03] border-b border-white/[0.06]">
             <span class="w-3 h-3 rounded-full bg-coral/60"></span>
             <span class="w-3 h-3 rounded-full bg-yellow-500/60"></span>
             <span class="w-3 h-3 rounded-full bg-green-500/60"></span>
@@ -181,59 +178,59 @@ const schema = JSON.stringify({
 
 
   <!-- ============ WHAT YOU'LL LEARN SECTION ============ -->
-  <section class="relative px-4 py-24 sm:py-32 bg-navy-light/80 section-rule">
+  <section class="relative px-4 py-24 sm:py-32 bg-navy-light/50 border-t border-white/[0.02]">
     <div class="max-w-6xl mx-auto">
       <div class="text-center max-w-3xl mx-auto mb-16 section-animate">
         <p class="text-sm font-mono text-coral uppercase tracking-widest mb-4">// the curriculum</p>
-        <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight">
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight">
           What You'll Learn at CodeToCash
         </h2>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <!-- Card 1 -->
-        <div class="group p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-coral/30 hover:bg-coral/[0.03] hover:shadow-[0_4px_24px_rgba(233,69,96,0.08),inset_0_1px_0_rgba(255,255,255,0.06)] hover:-translate-y-1 transition-all duration-300 section-animate">
-          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-coral/15 to-coral/5 flex items-center justify-center mb-5 group-hover:from-coral/25 group-hover:to-coral/10 transition-all duration-300">
+        <div class="group p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-coral/20 hover:bg-white/[0.04] hover:-translate-y-1 transition-all duration-300 section-animate">
+          <div class="w-12 h-12 rounded-xl bg-coral/10 flex items-center justify-center mb-5">
             <svg class="w-6 h-6 text-coral" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" /><path d="M3 9h18" /><path d="M9 21V9" /></svg>
           </div>
           <h3 class="text-lg font-bold text-white mb-2">Landing Pages That Convert</h3>
           <p class="text-gray-400 text-sm leading-relaxed">Turn visitors into customers with proven page structures and conversion-optimized layouts.</p>
         </div>
         <!-- Card 2 -->
-        <div class="group p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-coral/30 hover:bg-coral/[0.03] hover:shadow-[0_4px_24px_rgba(233,69,96,0.08),inset_0_1px_0_rgba(255,255,255,0.06)] hover:-translate-y-1 transition-all duration-300 section-animate">
-          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-coral/15 to-coral/5 flex items-center justify-center mb-5 group-hover:from-coral/25 group-hover:to-coral/10 transition-all duration-300">
+        <div class="group p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-coral/20 hover:bg-white/[0.04] hover:-translate-y-1 transition-all duration-300 section-animate">
+          <div class="w-12 h-12 rounded-xl bg-coral/10 flex items-center justify-center mb-5">
             <svg class="w-6 h-6 text-coral" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 20h9" /><path d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506l-2.872.838a.5.5 0 0 1-.62-.62l.838-2.872a2 2 0 0 1 .506-.854z" /></svg>
           </div>
           <h3 class="text-lg font-bold text-white mb-2">Copywriting for Developers</h3>
           <p class="text-gray-400 text-sm leading-relaxed">Frameworks that make writing sales copy feel like filling in a template. No creative writing degree needed.</p>
         </div>
         <!-- Card 3 -->
-        <div class="group p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-coral/30 hover:bg-coral/[0.03] hover:shadow-[0_4px_24px_rgba(233,69,96,0.08),inset_0_1px_0_rgba(255,255,255,0.06)] hover:-translate-y-1 transition-all duration-300 section-animate">
-          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-coral/15 to-coral/5 flex items-center justify-center mb-5 group-hover:from-coral/25 group-hover:to-coral/10 transition-all duration-300">
+        <div class="group p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-coral/20 hover:bg-white/[0.04] hover:-translate-y-1 transition-all duration-300 section-animate">
+          <div class="w-12 h-12 rounded-xl bg-coral/10 flex items-center justify-center mb-5">
             <svg class="w-6 h-6 text-coral" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2" /><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" /></svg>
           </div>
           <h3 class="text-lg font-bold text-white mb-2">Email Sequences That Sell</h3>
           <p class="text-gray-400 text-sm leading-relaxed">Automated email flows that nurture leads and drive revenue while you sleep. Set up once, iterate as you grow.</p>
         </div>
         <!-- Card 4 -->
-        <div class="group p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-coral/30 hover:bg-coral/[0.03] hover:shadow-[0_4px_24px_rgba(233,69,96,0.08),inset_0_1px_0_rgba(255,255,255,0.06)] hover:-translate-y-1 transition-all duration-300 section-animate">
-          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-coral/15 to-coral/5 flex items-center justify-center mb-5 group-hover:from-coral/25 group-hover:to-coral/10 transition-all duration-300">
+        <div class="group p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-coral/20 hover:bg-white/[0.04] hover:-translate-y-1 transition-all duration-300 section-animate">
+          <div class="w-12 h-12 rounded-xl bg-coral/10 flex items-center justify-center mb-5">
             <svg class="w-6 h-6 text-coral" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" /></svg>
           </div>
           <h3 class="text-lg font-bold text-white mb-2">Your First Ad Campaign</h3>
           <p class="text-gray-400 text-sm leading-relaxed">Run paid ads without burning cash, even on a tiny budget. Learn to test, measure, and scale what works.</p>
         </div>
         <!-- Card 5 -->
-        <div class="group p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-coral/30 hover:bg-coral/[0.03] hover:shadow-[0_4px_24px_rgba(233,69,96,0.08),inset_0_1px_0_rgba(255,255,255,0.06)] hover:-translate-y-1 transition-all duration-300 section-animate">
-          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-coral/15 to-coral/5 flex items-center justify-center mb-5 group-hover:from-coral/25 group-hover:to-coral/10 transition-all duration-300">
+        <div class="group p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-coral/20 hover:bg-white/[0.04] hover:-translate-y-1 transition-all duration-300 section-animate">
+          <div class="w-12 h-12 rounded-xl bg-coral/10 flex items-center justify-center mb-5">
             <svg class="w-6 h-6 text-coral" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23" /><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" /></svg>
           </div>
           <h3 class="text-lg font-bold text-white mb-2">Pricing Strategies</h3>
           <p class="text-gray-400 text-sm leading-relaxed">Price your SaaS, tool, or template to maximize revenue. Stop guessing and start using proven pricing models.</p>
         </div>
         <!-- Card 6 -->
-        <div class="group p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-coral/30 hover:bg-coral/[0.03] hover:shadow-[0_4px_24px_rgba(233,69,96,0.08),inset_0_1px_0_rgba(255,255,255,0.06)] hover:-translate-y-1 transition-all duration-300 section-animate">
-          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-coral/15 to-coral/5 flex items-center justify-center mb-5 group-hover:from-coral/25 group-hover:to-coral/10 transition-all duration-300">
+        <div class="group p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-coral/20 hover:bg-white/[0.04] hover:-translate-y-1 transition-all duration-300 section-animate">
+          <div class="w-12 h-12 rounded-xl bg-coral/10 flex items-center justify-center mb-5">
             <svg class="w-6 h-6 text-coral" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M3 3v16a2 2 0 0 0 2 2h16" /><path d="m19 9-5 5-4-4-3 3" /></svg>
           </div>
           <h3 class="text-lg font-bold text-white mb-2">Analytics & Testing</h3>
@@ -245,11 +242,11 @@ const schema = JSON.stringify({
 
 
   <!-- ============ BUILDING IN PUBLIC SECTION ============ -->
-  <section class="relative px-4 py-24 sm:py-32 section-rule">
+  <section class="relative px-4 py-24 sm:py-32 border-t border-white/[0.02]">
     <div class="max-w-6xl mx-auto">
       <div class="text-center max-w-3xl mx-auto mb-16 section-animate">
         <p class="text-sm font-mono text-coral uppercase tracking-widest mb-4">// built in public</p>
-        <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight">
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight">
           This Site Is a Work in Progress
         </h2>
         <p class="mt-6 text-lg text-gray-400 leading-relaxed">
@@ -264,21 +261,21 @@ const schema = JSON.stringify({
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
         <!-- Card 1 -->
-        <div class="p-8 rounded-2xl bg-white/[0.015] border border-white/[0.05] hover:bg-coral/[0.04] hover:border-coral/25 hover:-translate-y-1 transition-all duration-300 text-center section-animate">
+        <div class="p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-coral/20 hover:bg-white/[0.04] transition-all duration-300 text-center section-animate">
           <div class="text-4xl mb-4" aria-hidden="true">📝</div>
           <p class="text-sm text-gray-400 uppercase tracking-wide mb-2">Articles Published</p>
           <p class="text-5xl font-extrabold text-coral mb-2">12</p>
           <p class="text-sm text-gray-500">And growing every week</p>
         </div>
         <!-- Card 2 -->
-        <div class="p-8 rounded-2xl bg-white/[0.015] border border-white/[0.05] hover:bg-coral/[0.04] hover:border-coral/25 hover:-translate-y-1 transition-all duration-300 text-center section-animate">
+        <div class="p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-coral/20 hover:bg-white/[0.04] transition-all duration-300 text-center section-animate">
           <div class="text-4xl mb-4" aria-hidden="true">📬</div>
           <p class="text-sm text-gray-400 uppercase tracking-wide mb-2">Subscribers</p>
           <p class="text-5xl font-extrabold text-coral mb-2">Building</p>
           <p class="text-sm text-gray-500">Be one of the first</p>
         </div>
         <!-- Card 3 -->
-        <div class="p-8 rounded-2xl bg-white/[0.015] border border-white/[0.05] hover:bg-coral/[0.04] hover:border-coral/25 hover:-translate-y-1 transition-all duration-300 text-center section-animate">
+        <div class="p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-coral/20 hover:bg-white/[0.04] transition-all duration-300 text-center section-animate">
           <div class="text-4xl mb-4" aria-hidden="true">🛠️</div>
           <p class="text-sm text-gray-400 uppercase tracking-wide mb-2">Playbooks Live</p>
           <p class="text-5xl font-extrabold text-coral mb-2">8 of 8</p>
@@ -294,7 +291,7 @@ const schema = JSON.stringify({
         </p>
         <a
           href="/newsletter"
-          class="btn-shimmer inline-flex items-center px-8 py-4 bg-coral text-white text-lg font-semibold rounded-lg hover:bg-coral/90 hover:-translate-y-1 transition-all duration-300 shadow-lg shadow-coral/20 hover:shadow-coral/30 hover:shadow-xl"
+          class="inline-flex items-center px-8 py-4 bg-coral text-white text-lg font-semibold rounded-lg hover:bg-coral/90 hover:scale-[1.02] transition-all duration-200 shadow-lg shadow-coral/20"
         >
           Join Early — It's Free
         </a>
@@ -304,14 +301,14 @@ const schema = JSON.stringify({
 
 
   <!-- ============ NEWSLETTER SECTION ============ -->
-  <section class="relative px-4 py-24 sm:py-32 overflow-hidden section-rule">
+  <section class="relative px-4 py-24 sm:py-32 overflow-hidden border-t border-white/[0.02]">
     <!-- Gradient background -->
     <div class="absolute inset-0 bg-gradient-to-br from-deep-blue/30 via-navy-light to-coral/5 pointer-events-none" aria-hidden="true"></div>
     <div class="absolute inset-0 bg-navy-light/60 pointer-events-none" aria-hidden="true"></div>
 
     <div class="relative z-10 max-w-2xl mx-auto text-center section-animate">
       <p class="text-sm font-mono text-coral uppercase tracking-widest mb-4">// subscribe</p>
-      <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight">
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight">
         The Dev Marketing Newsletter
       </h2>
       <p class="mt-6 text-lg text-gray-400 leading-relaxed">
@@ -352,14 +349,14 @@ const schema = JSON.stringify({
 
 
   <!-- ============ FINAL CTA SECTION ============ -->
-  <section class="relative px-4 py-24 sm:py-32 section-rule">
+  <section class="relative px-4 py-24 sm:py-32 border-t border-white/[0.02]">
     <div class="max-w-3xl mx-auto text-center section-animate">
-      <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight">
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight">
         Ready to turn your code<br />into <span class="text-coral">cash</span>?
       </h2>
       <a
         href="/drm-101"
-        class="btn-shimmer mt-10 inline-flex items-center px-10 py-4 bg-coral text-white text-lg font-semibold rounded-lg hover:bg-coral/90 hover:-translate-y-1 transition-all duration-300 shadow-lg shadow-coral/20 hover:shadow-coral/30 hover:shadow-xl"
+        class="mt-10 inline-flex items-center px-10 py-4 bg-coral text-white text-lg font-semibold rounded-lg hover:bg-coral/90 hover:scale-[1.02] transition-all duration-200 shadow-lg shadow-coral/20"
       >
         Start the Free Marketing Guide
       </a>
