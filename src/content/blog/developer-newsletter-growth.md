@@ -57,7 +57,7 @@ Find newsletters with similar-sized audiences and complementary topics. Propose 
 
 Cross-promotions are the fastest growth tactic for small newsletters. A recommendation from a trusted newsletter converts at 20-40% because it carries the credibility of the recommending author.
 
-Start by subscribing to newsletters your audience likely reads. Engage genuinely — reply to issues, share them on social media. Then reach out with a specific, mutual-benefit proposal. When cold emailing newsletter authors, a well-crafted pitch is essential — [cold email templates for developer tools](/blog/cold-email-templates-saas) includes outreach frameworks that work for this kind of partnership ask.
+Start by subscribing to newsletters your audience likely reads. Engage genuinely — reply to issues, share them on social media. Then reach out with a specific, mutual-benefit proposal.
 
 ## Growth Channel 4: Launches and Events
 
@@ -75,7 +75,7 @@ Growth is useless if subscribers unsubscribe faster than they join. Focus on kee
 
 **Keep a consistent format.** Readers build habits around familiar structures. If your newsletter always has a hook, a tactic, an example, and a template, subscribers know what to expect and look forward to it.
 
-**Write compelling subject lines.** Your open rate is the first metric to optimize. Test different subject line formulas — curiosity gaps, specific numbers, personal story hooks — and track which ones resonate with your audience.
+**Write compelling [subject lines](/blog/email-subject-line-formulas.md).** Your open rate is the first metric to optimize. Test different subject line formulas and track which ones resonate with your audience.
 
 **Clean your list regularly.** Remove subscribers who haven't opened in 90 days after a re-engagement attempt. A smaller, engaged list has better deliverability and more accurate metrics.
 

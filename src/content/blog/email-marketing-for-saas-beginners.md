@@ -1,7 +1,8 @@
 ---
-title: "Email Marketing for SaaS: The Developer's System"
-description: "Set up an email system that nurtures leads and drives sales automatically. Step-by-step guide built for developers who've never done email marketing."
+title: "SaaS Email Marketing for Beginners — From Zero to Automated Sales"
+description: "Start email marketing for your SaaS from scratch. Set up welcome sequences, write emails that sell, and automate the whole system. Free templates included."
 pubDate: 2026-02-23
+updatedDate: 2026-04-17
 author: "CodeToCash Team"
 category: "email"
 tags: ["email marketing", "saas", "automation", "sequences", "beginners"]

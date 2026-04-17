@@ -1,7 +1,8 @@
 ---
-title: "SaaS Landing Page Copywriting Guide for Developers"
-description: "Most developer landing pages don't convert. Here's the exact framework to fix yours — with headlines, CTAs, and section templates included."
+title: "SaaS Landing Page Copywriting: 10-Section Blueprint + Templates"
+description: "Write a high-converting SaaS landing page section by section. Includes headline formulas, CTA templates, a 10-section blueprint, and real teardowns."
 pubDate: 2026-02-22
+updatedDate: 2026-04-17
 author: "CodeToCash Team"
 category: "copywriting"
 tags: ["landing pages", "copywriting", "saas", "templates", "conversion"]

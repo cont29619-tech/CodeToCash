@@ -1,7 +1,8 @@
 ---
-title: "5 Copywriting Frameworks Every Vibe Coder Should Know"
-description: "You don't need to be a writer to write copy that sells. These 5 fill-in-the-blank frameworks make copywriting feel like writing a function — with a predictable output."
+title: "5 Copywriting Tips for Developers (With Fill-in-the-Blank Templates)"
+description: "Copywriting tips built for developers, not marketers. Learn AIDA, PAS, and 3 more frameworks with copy-paste templates for your SaaS landing page and emails."
 pubDate: 2026-02-12
+updatedDate: 2026-04-17
 author: "CodeToCash Team"
 category: "copywriting"
 tags: ["copywriting", "frameworks", "templates"]

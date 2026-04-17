@@ -1,7 +1,8 @@
 ---
-title: "PAS Framework: The Developer's Favorite Copywriting Formula"
-description: "PAS is the simplest copywriting framework ever made — and it works on landing pages, emails, and ads. Here's how developers use it to write copy that converts."
+title: "PAS Copywriting Framework: The Simplest Formula That Converts"
+description: "PAS (Problem-Agitate-Solution) is the easiest copywriting framework to learn. See how developers use it for landing pages, emails, and ads — with templates."
 pubDate: 2026-02-18
+updatedDate: 2026-04-17
 author: "CodeToCash Team"
 category: "copywriting"
 tags: ["PAS framework", "copywriting for developers", "direct response copywriting"]
