@@ -27,6 +27,7 @@ const schema = JSON.stringify({
       <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-coral/5 rounded-full blur-[120px] animate-pulse-slow"></div>
       <div class="absolute top-1/3 left-1/4 w-[400px] h-[400px] bg-deep-blue/10 rounded-full blur-[100px] animate-pulse-slow animation-delay-2000"></div>
     </div>
+    <div class="absolute inset-0 pointer-events-none" style="background-image: radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px); background-size: 28px 28px;" aria-hidden="true"></div>
 
     <div class="relative z-10 max-w-3xl mx-auto text-center">
       <p class="inline-block text-sm font-mono text-coral uppercase tracking-widest mb-6 animate-fade-in">// weekly newsletter</p>
@@ -135,44 +136,59 @@ const schema = JSON.stringify({
 
 
   <!-- ============ BUILDING IN PUBLIC SECTION ============ -->
-  <section class="relative px-4 py-24 sm:py-32">
-    <div class="max-w-5xl mx-auto">
+  <section class="relative px-4 py-24 sm:py-32 overflow-hidden">
+    <!-- Green growth tint -->
+    <div class="absolute inset-0 bg-gradient-to-br from-navy via-navy-light/40 to-green-950/10 pointer-events-none" aria-hidden="true"></div>
+    <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-green-500/15 to-transparent" aria-hidden="true"></div>
+
+    <div class="relative z-10 max-w-5xl mx-auto">
       <div class="text-center mb-16 section-animate">
-        <p class="text-sm font-mono text-coral uppercase tracking-widest mb-4">// built in public</p>
+        <p class="text-sm font-mono text-green-400/70 uppercase tracking-widest mb-4">// built in public</p>
         <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight">
           Be One of the First<br />to Subscribe
         </h2>
         <p class="mt-6 text-lg text-gray-400 leading-relaxed max-w-2xl mx-auto">
-          We're building this newsletter in public. No fake metrics, no manufactured social proof. 
+          We're building this newsletter in public. No fake metrics, no manufactured social proof.
           Here's where things actually stand:
         </p>
       </div>
 
-      <!-- Honest Stats -->
+      <!-- Dashboard-style stat cards -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-        <div class="p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:-translate-y-1 hover:shadow-lg hover:shadow-coral/10 hover:border-coral/40 hover:bg-white/[0.04] transition-all duration-300 text-center section-animate">
-          <div class="text-4xl mb-4" aria-hidden="true">📝</div>
-          <p class="text-sm text-gray-400 uppercase tracking-wide mb-2">Articles Published</p>
-          <p class="text-5xl font-extrabold text-coral mb-2">12</p>
-          <p class="text-sm text-gray-500">And growing every week</p>
+        <div class="relative p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-coral/20 hover:bg-white/[0.04] transition-all duration-300 text-center section-animate overflow-hidden">
+          <div class="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-coral/60 to-transparent"></div>
+          <p class="text-xs font-mono text-gray-500 uppercase tracking-widest mb-4">Articles Published</p>
+          <p class="text-6xl font-extrabold text-white mb-1 tracking-tight">12</p>
+          <p class="text-sm font-mono text-coral/70">+ growing weekly</p>
+          <div class="mt-5 flex gap-1 justify-center">
+            {Array.from({length: 12}).map(() => (
+              <div class="w-1.5 h-1.5 rounded-full bg-coral/60"></div>
+            ))}
+          </div>
         </div>
-        <div class="p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:-translate-y-1 hover:shadow-lg hover:shadow-coral/10 hover:border-coral/40 hover:bg-white/[0.04] transition-all duration-300 text-center section-animate">
-          <div class="text-4xl mb-4" aria-hidden="true">📬</div>
-          <p class="text-sm text-gray-400 uppercase tracking-wide mb-2">Subscribers</p>
-          <p class="text-5xl font-extrabold text-coral mb-2">Building</p>
-          <p class="text-sm text-gray-500">Be one of the first</p>
+        <div class="relative p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-green-500/20 hover:bg-white/[0.04] transition-all duration-300 text-center section-animate overflow-hidden">
+          <div class="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-green-500/50 to-transparent"></div>
+          <p class="text-xs font-mono text-gray-500 uppercase tracking-widest mb-4">Subscribers</p>
+          <p class="text-6xl font-extrabold text-white mb-1 tracking-tight">Early</p>
+          <p class="text-sm font-mono text-green-400/70">be one of the first</p>
+          <div class="mt-5 h-1.5 rounded-full bg-white/[0.06] overflow-hidden">
+            <div class="h-full w-[15%] rounded-full bg-gradient-to-r from-green-500/60 to-green-400/40"></div>
+          </div>
         </div>
-        <div class="p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:-translate-y-1 hover:shadow-lg hover:shadow-coral/10 hover:border-coral/40 hover:bg-white/[0.04] transition-all duration-300 text-center section-animate">
-          <div class="text-4xl mb-4" aria-hidden="true">🛠️</div>
-          <p class="text-sm text-gray-400 uppercase tracking-wide mb-2">Playbooks Live</p>
-          <p class="text-5xl font-extrabold text-coral mb-2">8 of 8</p>
-          <p class="text-sm text-gray-500">New ones dropping monthly</p>
+        <div class="relative p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-blue-500/20 hover:bg-white/[0.04] transition-all duration-300 text-center section-animate overflow-hidden">
+          <div class="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-blue-400/50 to-transparent"></div>
+          <p class="text-xs font-mono text-gray-500 uppercase tracking-widest mb-4">Playbooks Live</p>
+          <p class="text-6xl font-extrabold text-white mb-1 tracking-tight">8<span class="text-3xl text-gray-600">/8</span></p>
+          <p class="text-sm font-mono text-blue-400/70">100% complete</p>
+          <div class="mt-5 h-1.5 rounded-full bg-white/[0.06] overflow-hidden">
+            <div class="h-full w-full rounded-full bg-gradient-to-r from-blue-500/60 to-blue-400/40"></div>
+          </div>
         </div>
       </div>
 
       <div class="text-center max-w-2xl mx-auto section-animate">
         <p class="text-gray-400 leading-relaxed mb-8">
-          If you subscribe now, you'll be getting in early — before the crowd, when it's still possible 
+          If you subscribe now, you'll be getting in early — before the crowd, when it's still possible
           to reply to an email and actually hear back. We share our real stats publicly as we grow.
         </p>
         <a
