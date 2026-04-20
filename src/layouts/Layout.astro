@@ -43,9 +43,11 @@ const ogImageURL = new URL(ogImage ?? '/og-default.png', Astro.site);
     <meta property="og:description" content={description} />
     <meta property="og:site_name" content="CodeToCash.dev" />
     <meta property="og:image" content={ogImageURL} />
+    <meta property="og:image:alt" content="CodeToCash.dev — Direct Response Marketing for Vibe Coders" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@codetocashdev" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImageURL} />
@@ -106,12 +108,20 @@ const ogImageURL = new URL(ogImage ?? '/og-default.png', Astro.site);
       const CK_API_KEY = import.meta.env.PUBLIC_CONVERTKIT_API_KEY;
 
       async function handleCkSubscribe(form: HTMLFormElement, errorEl: HTMLElement) {
-        const email = new FormData(form).get('email') as string;
+        const emailValue = new FormData(form).get('email');
+        const email = typeof emailValue === 'string' ? emailValue.trim() : '';
         const button = form.querySelector('button') as HTMLButtonElement;
         const originalText = button.textContent;
 
         errorEl.classList.add('hidden');
         errorEl.textContent = '';
+
+        if (!email) {
+          errorEl.textContent = 'Please enter a valid email address.';
+          errorEl.classList.remove('hidden');
+          return;
+        }
+
         button.disabled = true;
         button.textContent = 'Subscribing...';
 
@@ -138,33 +148,36 @@ const ogImageURL = new URL(ogImage ?? '/og-default.png', Astro.site);
       }
 
       document.querySelectorAll<HTMLFormElement>('.ck-subscribe-form').forEach((form) => {
-        const errorEl = form.nextElementSibling as HTMLElement;
+        const errorEl = form.nextElementSibling as HTMLElement | null;
+        if (!errorEl) return;
         form.addEventListener('submit', (e) => {
           e.preventDefault();
           handleCkSubscribe(form, errorEl);
         });
       });
 
-      const backToTop = document.getElementById('back-to-top')!;
-      let ticking = false;
-      window.addEventListener('scroll', () => {
-        if (!ticking) {
-          requestAnimationFrame(() => {
-            if (window.scrollY > 400) {
-              backToTop.classList.remove('opacity-0', 'pointer-events-none');
-              backToTop.classList.add('opacity-100', 'pointer-events-auto');
-            } else {
-              backToTop.classList.add('opacity-0', 'pointer-events-none');
-              backToTop.classList.remove('opacity-100', 'pointer-events-auto');
-            }
-            ticking = false;
-          });
-          ticking = true;
-        }
-      }, { passive: true });
-      backToTop.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
+      const backToTop = document.getElementById('back-to-top');
+      if (backToTop) {
+        let ticking = false;
+        window.addEventListener('scroll', () => {
+          if (!ticking) {
+            requestAnimationFrame(() => {
+              if (window.scrollY > 400) {
+                backToTop.classList.remove('opacity-0', 'pointer-events-none');
+                backToTop.classList.add('opacity-100', 'pointer-events-auto');
+              } else {
+                backToTop.classList.add('opacity-0', 'pointer-events-none');
+                backToTop.classList.remove('opacity-100', 'pointer-events-auto');
+              }
+              ticking = false;
+            });
+            ticking = true;
+          }
+        }, { passive: true });
+        backToTop.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
     </script>
   </body>
 </html>

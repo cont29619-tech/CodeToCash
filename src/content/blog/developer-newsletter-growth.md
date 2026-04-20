@@ -75,7 +75,7 @@ Growth is useless if subscribers unsubscribe faster than they join. Focus on kee
 
 **Keep a consistent format.** Readers build habits around familiar structures. If your newsletter always has a hook, a tactic, an example, and a template, subscribers know what to expect and look forward to it.
 
-**Write compelling [subject lines](/blog/email-subject-line-formulas.md).** Your open rate is the first metric to optimize. Test different subject line formulas and track which ones resonate with your audience.
+**Write compelling [subject lines](/blog/email-subject-line-formulas).** Your open rate is the first metric to optimize. Test different subject line formulas and track which ones resonate with your audience.
 
 **Clean your list regularly.** Remove subscribers who haven't opened in 90 days after a re-engagement attempt. A smaller, engaged list has better deliverability and more accurate metrics.
 

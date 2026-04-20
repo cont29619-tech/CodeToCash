@@ -168,7 +168,7 @@ Six static category pages pre-rendered at build time via `getStaticPaths()`. Cat
 
 **Category metadata** (title, description, h1, subtitle) is defined as the `categoryMeta` const at the top of `blog/[category].astro`. All 6 URLs are auto-included in the sitemap via `@astrojs/sitemap`.
 
-Current post counts per category: fundamentals (4), copywriting (7), strategy (12), email (4), ads (2), analytics (3).
+Current post counts per category: fundamentals (4), copywriting (7), strategy (12), email (5), ads (2), analytics (3).
 
 ### `/blog/[slug]` — blog/[...slug].astro (Blog Post)
 Renders Markdown content via `BlogLayout.astro`. Uses `getStaticPaths()` with content collections.
@@ -250,10 +250,11 @@ Base wrapper for all pages.
 }
 ```
 
-Provides: charset/viewport, favicon, title, description, canonical URL, OG tags (og:type, og:url, og:title, og:description, og:image), Twitter Card tags, Google Fonts (Inter + JetBrains Mono, loaded async), Plausible analytics script (production-only), Navigation, main slot, Footer, back-to-top button, global `ck-subscribe-form` handler.
+Provides: charset/viewport, favicon, title, description, canonical URL, OG tags (og:type, og:url, og:title, og:description, og:image, og:image:alt), Twitter Card tags (card, site, title, description, image), Google Fonts (Inter + JetBrains Mono, loaded async), Plausible analytics script (production-only), Navigation, main slot, Footer, back-to-top button, global `ck-subscribe-form` handler.
 
 - **Canonical**: `new URL(Astro.url.pathname, Astro.site)`
 - **OG Image**: `/og-default.png`
+- **Twitter account**: `@codetocashdev` (set via `twitter:site`)
 - **Back-to-top**: Appears after 400px scroll, uses `requestAnimationFrame` for scroll performance
 - **Analytics**: Plausible script injected only when `import.meta.env.PROD === true` — dev traffic never pollutes stats
 
@@ -434,11 +435,20 @@ const CONVERTKIT_FORM_ID = '9116297';
 const CONVERTKIT_API_KEY = import.meta.env.PUBLIC_CONVERTKIT_API_KEY;
 
 async function handleSubscribe(form, errorEl) {
-  const email = new FormData(form).get('email');
+  const emailValue = new FormData(form).get('email');
+  const email = typeof emailValue === 'string' ? emailValue.trim() : '';
   const button = form.querySelector('button');
   const originalText = button.textContent;
 
   errorEl.classList.add('hidden');
+  errorEl.textContent = '';
+
+  if (!email) {
+    errorEl.textContent = 'Please enter a valid email address.';
+    errorEl.classList.remove('hidden');
+    return;
+  }
+
   button.disabled = true;
   button.textContent = 'Subscribing...';
 
@@ -544,6 +554,7 @@ All 12 published blog posts include `faq` frontmatter with 4–5 Q&A pairs each.
 | `retargeting-ads-for-saas-beginners` | "Retargeting Ads for Developer Products: Beginner's Guide" | ads | no |
 | `seo-for-developer-blogs` | "SEO for Developer Blogs: Rank Without Being an SEO Expert" | analytics | no |
 | `developer-newsletter-growth` | "Growing a Developer Newsletter to 1,000 Subscribers" | email | no |
+| `email-subject-line-formulas` | "Email Subject Line Formulas That Get 40%+ Open Rates" | email | no |
 
 ### Playbooks Status
 | Slug | Title | Status |

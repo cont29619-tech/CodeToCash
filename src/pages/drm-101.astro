@@ -1230,12 +1230,20 @@ const schema = JSON.stringify({
     const CONVERTKIT_API_KEY = import.meta.env.PUBLIC_CONVERTKIT_API_KEY;
 
     async function handleDrmSubscribe(form: HTMLFormElement, errorEl: HTMLElement) {
-      const email = new FormData(form).get('email') as string;
+      const emailValue = new FormData(form).get('email');
+      const email = typeof emailValue === 'string' ? emailValue.trim() : '';
       const button = form.querySelector('button') as HTMLButtonElement;
       const originalText = button.textContent;
 
       errorEl.classList.add('hidden');
       errorEl.textContent = '';
+
+      if (!email) {
+        errorEl.textContent = 'Please enter a valid email address.';
+        errorEl.classList.remove('hidden');
+        return;
+      }
+
       button.disabled = true;
       button.textContent = 'Subscribing...';
 
@@ -1264,7 +1272,8 @@ const schema = JSON.stringify({
     }
 
     document.querySelectorAll<HTMLFormElement>('.drm-subscribe-form').forEach((form) => {
-      const errorEl = form.nextElementSibling as HTMLElement;
+      const errorEl = form.nextElementSibling as HTMLElement | null;
+      if (!errorEl) return;
       form.addEventListener('submit', (e) => {
         e.preventDefault();
         handleDrmSubscribe(form, errorEl);
