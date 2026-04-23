@@ -1,21 +1,21 @@
 ---
-title: "Email Subject Line Formulas That Get 40%+ Open Rates"
-description: "Proven email subject line formulas for developer newsletters and SaaS marketing. 20 templates with examples that consistently achieve high open rates."
+title: 'Email Subject Line Formulas That Get 40%+ Open Rates'
+description: 'Proven email subject line formulas for developer newsletters and SaaS marketing. 20 templates with examples that consistently achieve high open rates.'
 pubDate: 2026-05-04
-author: "CodeToCash Team"
-category: "email"
-tags: ["email marketing", "subject lines", "open rates", "templates", "newsletters"]
-readingTime: "9 min"
+author: 'CodeToCash Team'
+category: 'email'
+tags: ['email marketing', 'subject lines', 'open rates', 'templates', 'newsletters']
+readingTime: '9 min read'
 featured: false
-draft: false
+draft: true
 faq:
   - question: "What's a good email open rate for developer newsletters?"
-    answer: "30-40% is good for developer audiences. Above 40% is excellent. The industry average across all categories is around 20%, but developer-focused newsletters with engaged lists regularly exceed 35%."
-  - question: "How long should email subject lines be?"
-    answer: "Under 50 characters for maximum mobile visibility. Mobile email clients truncate around 35-40 characters, so front-load the most important words. Test short (3-5 words) versus medium (6-10 words) lengths."
-  - question: "Should I use emojis in subject lines?"
-    answer: "Test it with your audience. Some developer lists respond well to a single relevant emoji. Others find it unprofessional. Use sparingly — never more than one emoji, and only when it adds meaning."
-  - question: "How do I avoid spam filters with my subject lines?"
+    answer: '30-40% is good for developer audiences. Above 40% is excellent. The industry average across all categories is around 20%, but developer-focused newsletters with engaged lists regularly exceed 35%.'
+  - question: 'How long should email subject lines be?'
+    answer: 'Under 50 characters for maximum mobile visibility. Mobile email clients truncate around 35-40 characters, so front-load the most important words. Test short (3-5 words) versus medium (6-10 words) lengths.'
+  - question: 'Should I use emojis in subject lines?'
+    answer: 'Test it with your audience. Some developer lists respond well to a single relevant emoji. Others find it unprofessional. Use sparingly — never more than one emoji, and only when it adds meaning.'
+  - question: 'How do I avoid spam filters with my subject lines?'
     answer: "Avoid ALL CAPS, excessive punctuation (!!!), spam trigger words ('free money', 'act now', 'limited time'), and misleading Re: or Fwd: prefixes. Write subject lines as if you're emailing a colleague."
 ---
 

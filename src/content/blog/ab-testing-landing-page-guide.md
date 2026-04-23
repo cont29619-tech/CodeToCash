@@ -1,19 +1,19 @@
 ---
 title: "The Developer's Guide to A/B Testing Landing Pages"
-description: "How to set up and run statistically valid A/B tests on your landing page. Tools, methodology, sample size calculations, and common mistakes developers make when testing."
+description: 'How to set up and run statistically valid A/B tests on your landing page. Tools, methodology, sample size calculations, and common mistakes developers make when testing.'
 pubDate: 2026-03-11
-author: "CodeToCash Team"
-category: "analytics"
-tags: ["a/b testing", "analytics", "landing pages", "conversion optimization", "statistics"]
-readingTime: "13 min"
+author: 'CodeToCash Team'
+category: 'analytics'
+tags: ['a/b testing', 'analytics', 'landing pages', 'conversion optimization', 'statistics']
+readingTime: '13 min read'
 featured: false
 draft: false
 faq:
-  - question: "How much traffic do I need for A/B testing?"
-    answer: "For a statistically significant result at 95% confidence, you typically need 200-500 visitors per variation. With a 3% baseline conversion rate, expect to need roughly 1,000-2,500 total visitors for a meaningful test."
-  - question: "What should I A/B test first on my landing page?"
+  - question: 'How much traffic do I need for A/B testing?'
+    answer: 'For a statistically significant result at 95% confidence, you typically need 200-500 visitors per variation. With a 3% baseline conversion rate, expect to need roughly 1,000-2,500 total visitors for a meaningful test.'
+  - question: 'What should I A/B test first on my landing page?'
     answer: "Start with your headline. It's the highest-impact element and affects whether visitors see anything else on your page. After the headline, test your CTA button copy, then your social proof section."
-  - question: "How long should I run an A/B test?"
+  - question: 'How long should I run an A/B test?'
     answer: "Run tests for a minimum of 7 days to account for day-of-week variations, and until you reach statistical significance. Ending a test early because one variant 'looks like it's winning' is the most common A/B testing mistake."
   - question: "What's a good conversion rate improvement from A/B testing?"
     answer: "A 10-20% relative improvement is a solid win. If your baseline is 3%, reaching 3.5% is meaningful at scale. Occasionally you'll see 50%+ improvements from a headline or CTA change, but don't expect that on every test."

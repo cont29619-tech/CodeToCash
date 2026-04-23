@@ -24,6 +24,12 @@ const allPosts = await getCollection('blog', ({ data }) => !data.draft);
 const relatedPosts = getRelatedPosts(post, allPosts);
 ---
 
-<BlogLayout post={post} headings={headings} relatedPosts={relatedPosts} prevPost={prevPost} nextPost={nextPost}>
+<BlogLayout
+  post={post}
+  headings={headings}
+  relatedPosts={relatedPosts}
+  prevPost={prevPost}
+  nextPost={nextPost}
+>
   <Content />
 </BlogLayout>

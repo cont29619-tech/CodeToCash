@@ -1,23 +1,23 @@
 ---
-title: "How to Write Headlines That Convert: 30 Templates for Dev Tools"
+title: 'How to Write Headlines That Convert: 30 Templates for Dev Tools'
 description: "30 fill-in-the-blank headline copywriting templates built for developer tools and SaaS. Includes the 4 U's framework, before/after examples, and a grader checklist."
 pubDate: 2026-03-08
-author: "CodeToCash Team"
-category: "copywriting"
-tags: ["headlines", "copywriting", "templates", "conversion", "landing pages"]
-readingTime: "8 min read"
+author: 'CodeToCash Team'
+category: 'copywriting'
+tags: ['headlines', 'copywriting', 'templates', 'conversion', 'landing pages']
+readingTime: '8 min read'
 featured: false
 draft: false
 faq:
-  - question: "How long should a landing page headline be?"
-    answer: "6-12 words is the sweet spot. Long enough to convey the promise, short enough to read in a glance."
-  - question: "Should my headline mention my product name?"
+  - question: 'How long should a landing page headline be?'
+    answer: '6-12 words is the sweet spot. Long enough to convey the promise, short enough to read in a glance.'
+  - question: 'Should my headline mention my product name?'
     answer: "Usually no — especially in the hero. Lead with the outcome the user gets, not your product's name."
   - question: "What makes a headline 'urgent' without sounding spammy?"
     answer: "Specificity creates urgency. 'Deploy in 60 seconds' is urgent and credible. 'Act now!' is spam."
-  - question: "How many headlines should I test at once?"
-    answer: "Test one variable at a time. Run headline A vs headline B, with everything else identical, for at least 1,000 visitors."
-  - question: "Can I use the same headline formula for email subjects?"
+  - question: 'How many headlines should I test at once?'
+    answer: 'Test one variable at a time. Run headline A vs headline B, with everything else identical, for at least 1,000 visitors.'
+  - question: 'Can I use the same headline formula for email subjects?'
     answer: "Yes — the 4 U's and most formulas apply directly. Email subjects are just headlines with a 50-character limit."
 ---
 
@@ -35,7 +35,7 @@ Here's the engineering reason: attention is the bottleneck. A visitor arrives at
 
 Most developer-written headlines fail in one of two ways. The first is **product-centric framing**: "Introducing DeployBot 2.0" or "A New Way to Manage Your CI/CD Pipeline." This tells the visitor what you built. It doesn't tell them what it does for them. The second failure is **vague benefit language**: "The fastest way to ship code" or "Build better software." These are true of almost every dev tool in existence — they're so generic they're meaningless.
 
-The fix is the same in both cases: replace what the product *is* with what the visitor *gets*.
+The fix is the same in both cases: replace what the product _is_ with what the visitor _gets_.
 
 ---
 
@@ -76,6 +76,7 @@ The 4 U's also maps to how developers think about function signatures. A vague f
 These seven formulas account for the structure of most high-converting developer tool headlines. Each formula has a pattern and two filled-in examples.
 
 **Formula 1: The Outcome Number**
+
 ```
 "[Do X thing] [Y% faster / in Y minutes / with Y less code]"
 
@@ -84,6 +85,7 @@ These seven formulas account for the structure of most high-converting developer
 ```
 
 **Formula 2: The Negative Promise (Eliminate the Pain)**
+
 ```
 "Never [painful recurring problem] again"
 "Stop [painful activity] — [alternative]"
@@ -93,6 +95,7 @@ These seven formulas account for the structure of most high-converting developer
 ```
 
 **Formula 3: The How-To**
+
 ```
 "How to [achieve desirable outcome] [without painful trade-off]"
 
@@ -101,6 +104,7 @@ These seven formulas account for the structure of most high-converting developer
 ```
 
 **Formula 4: The Social Proof Hook**
+
 ```
 "[N] [audience type] use [product] to [achieve outcome]"
 "The [tool type] [audience] actually switch to"
@@ -110,6 +114,7 @@ These seven formulas account for the structure of most high-converting developer
 ```
 
 **Formula 5: The Specificity Statement**
+
 ```
 "[Specific outcome] for [specific audience] who [specific context]"
 
@@ -118,6 +123,7 @@ These seven formulas account for the structure of most high-converting developer
 ```
 
 **Formula 6: The Comparison**
+
 ```
 "[Your product] — [competitor/status quo] without [the downside]"
 
@@ -126,6 +132,7 @@ These seven formulas account for the structure of most high-converting developer
 ```
 
 **Formula 7: The Curiosity Gap**
+
 ```
 "The [unexpected thing] most [audience] don't know about [topic]"
 "Why [common assumption] is wrong — and what to do instead"
@@ -152,6 +159,7 @@ Grouped by intent. Replace the bracketed fields with specifics from your product
 ```
 
 Examples:
+
 ```
 1. "Monitor Your API in 5 Minutes — No Infrastructure Required"
 2. "Finally: Full CI/CD Without Writing a Single Pipeline Script"
@@ -173,6 +181,7 @@ Examples:
 ```
 
 Examples:
+
 ```
 7.  "Stop Debugging Config Files. Start Shipping Features."
 8.  "Never Wake Up to a Down Server Again"
@@ -194,6 +203,7 @@ Examples:
 ```
 
 Examples:
+
 ```
 13. "The Missing Metric That Predicts Churn 3 Weeks Early"
 14. "Why Most Dev Tools Fail at Marketing — And How to Avoid It"
@@ -215,6 +225,7 @@ Examples:
 ```
 
 Examples:
+
 ```
 19. "8,000 Indie Devs Already Replaced Their Cron Jobs With This"
 20. "Rated 4.9/5 by 600+ Developer Teams on G2"
@@ -236,6 +247,7 @@ Examples:
 ```
 
 Examples:
+
 ```
 25. "Full Observability Stack Running in 11 Minutes"
 26. "Set Up End-to-End Testing in 3 Steps"
@@ -252,6 +264,7 @@ Examples:
 These are real patterns from developer landing pages, anonymized and rewritten.
 
 **Case 1 — API monitoring tool**
+
 ```
 BEFORE: "Meridian — API Monitoring for Modern Teams"
 AFTER:  "Know Your API Is Down Before Your Users Do"
@@ -262,6 +275,7 @@ the category exists to deliver.
 ```
 
 **Case 2 — Code review automation**
+
 ```
 BEFORE: "Faster, Smarter Code Reviews"
 AFTER:  "Catch Security Vulnerabilities in PRs — Before They Hit Main"
@@ -272,6 +286,7 @@ and creates urgency by naming the risk.
 ```
 
 **Case 3 — SaaS analytics dashboard**
+
 ```
 BEFORE: "All Your Metrics in One Place"
 AFTER:  "See Exactly Why Users Churn — 2 Weeks Before They Cancel"

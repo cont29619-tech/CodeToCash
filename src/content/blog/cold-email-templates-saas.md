@@ -1,23 +1,23 @@
 ---
-title: "Writing Cold Emails That Get Replies: Templates for Dev Tools"
-description: "10 cold email templates for SaaS and dev tools that actually get replies — with targeting advice, personalization tactics, and follow-up sequences."
+title: 'Writing Cold Emails That Get Replies: Templates for Dev Tools'
+description: '10 cold email templates for SaaS and dev tools that actually get replies — with targeting advice, personalization tactics, and follow-up sequences.'
 pubDate: 2026-03-08
-author: "CodeToCash Team"
-category: "email"
-tags: ["cold email", "outreach", "saas", "templates", "b2b marketing"]
-readingTime: "8 min read"
+author: 'CodeToCash Team'
+category: 'email'
+tags: ['cold email', 'outreach', 'saas', 'templates', 'b2b marketing']
+readingTime: '8 min read'
 featured: false
 draft: false
 faq:
   - question: "What's a good reply rate for cold emails?"
-    answer: "5-10% is solid. 10-20% means your targeting and copy are excellent. Below 3% means something needs fixing."
-  - question: "How short should cold emails be?"
+    answer: '5-10% is solid. 10-20% means your targeting and copy are excellent. Below 3% means something needs fixing.'
+  - question: 'How short should cold emails be?'
     answer: "Under 150 words. If they can't read it in 30 seconds, they won't. One ask per email, always."
-  - question: "Should I use HTML or plain text for cold emails?"
-    answer: "Plain text. HTML looks like a newsletter. Plain text looks like a person wrote it — which is the entire point."
-  - question: "How many follow-ups should I send?"
+  - question: 'Should I use HTML or plain text for cold emails?'
+    answer: 'Plain text. HTML looks like a newsletter. Plain text looks like a person wrote it — which is the entire point.'
+  - question: 'How many follow-ups should I send?'
     answer: "3-5 total (initial + 2-4 follow-ups). Respect people's time. If they've read it twice and not replied, they're not interested."
-  - question: "Is cold email legal?"
+  - question: 'Is cold email legal?'
     answer: "In the US (CAN-SPAM), yes — with unsubscribe links and honest sender info. In the EU (GDPR), it's complex. Check local laws for B2C outreach."
 ---
 
@@ -72,7 +72,7 @@ For each template: use it as a starting point, not a script. The personalization
 
 **Template 1 — Cold Intro (B2B)**
 
-*When to use:* First contact with a potential customer at a company that fits your ICP.
+_When to use:_ First contact with a potential customer at a company that fits your ICP.
 
 ```
 Subject: [Product] for [their company]
@@ -93,13 +93,13 @@ to explore async.
 [Link]
 ```
 
-*Personalization note:* The "specific thing about their stack" line is everything. Pull it from their GitHub repos, job postings, recent blog posts, or LinkedIn activity.
+_Personalization note:_ The "specific thing about their stack" line is everything. Pull it from their GitHub repos, job postings, recent blog posts, or LinkedIn activity.
 
 ---
 
 **Template 2 — Partnership Request**
 
-*When to use:* Reaching out to a complementary product for a co-marketing, integration, or referral arrangement.
+_When to use:_ Reaching out to a complementary product for a co-marketing, integration, or referral arrangement.
 
 ```
 Subject: [Your product] + [Their product] — worth a chat?
@@ -119,13 +119,13 @@ building together?
 [Name]
 ```
 
-*Personalization note:* Name the specific feature or design decision you genuinely respect. Founders notice when it's real vs. generic flattery.
+_Personalization note:_ Name the specific feature or design decision you genuinely respect. Founders notice when it's real vs. generic flattery.
 
 ---
 
 **Template 3 — Guest Post Pitch**
 
-*When to use:* Pitching a piece of content to a developer blog, publication, or newsletter.
+_When to use:_ Pitching a piece of content to a developer blog, publication, or newsletter.
 
 ```
 Subject: Guest post idea for [Publication]
@@ -147,13 +147,13 @@ Interested?
 [Name]
 ```
 
-*Personalization note:* Cite a specific post they published and say something true about why it was good. Editors receive hundreds of pitches that don't mention a single piece of their work.
+_Personalization note:_ Cite a specific post they published and say something true about why it was good. Editors receive hundreds of pitches that don't mention a single piece of their work.
 
 ---
 
 **Template 4 — Integration Partner**
 
-*When to use:* Reaching out to request or propose a native integration with another tool.
+_When to use:_ Reaching out to request or propose a native integration with another tool.
 
 ```
 Subject: Integration idea — [Your product] + [Their product]
@@ -173,13 +173,13 @@ side and handle maintenance.
 [Your product] — [link]
 ```
 
-*Personalization note:* The user request count is the hook — it signals validated demand, not just wishful thinking. Use a real number.
+_Personalization note:_ The user request count is the hook — it signals validated demand, not just wishful thinking. Use a real number.
 
 ---
 
 **Template 5 — Early Beta Invite**
 
-*When to use:* Personally inviting a high-value target to test an unreleased feature or product.
+_When to use:_ Personally inviting a high-value target to test an unreleased feature or product.
 
 ```
 Subject: Want early access to [Feature]?
@@ -198,13 +198,13 @@ what we build. Interested?
 [Name]
 ```
 
-*Personalization note:* "Based on [X]" is the proof that this isn't a mass invite. Make X something real and specific.
+_Personalization note:_ "Based on [X]" is the proof that this isn't a mass invite. Make X something real and specific.
 
 ---
 
 **Template 6 — Customer Case Study Request**
 
-*When to use:* Asking a happy customer to participate in a case study or testimonial.
+_When to use:_ Asking a happy customer to participate in a case study or testimonial.
 
 ```
 Subject: Quick ask — share your [Product] story?
@@ -222,13 +222,13 @@ Would you be up for it?
 [Name]
 ```
 
-*Personalization note:* This works best sent from the founder personally, not a marketing address. The informality ("nothing formal") removes the biggest objection.
+_Personalization note:_ This works best sent from the founder personally, not a marketing address. The informality ("nothing formal") removes the biggest objection.
 
 ---
 
 **Template 7 — Investor Intro**
 
-*When to use:* Warm-ish outreach to an angel or early-stage investor with a portfolio that signals fit.
+_When to use:_ Warm-ish outreach to an angel or early-stage investor with a portfolio that signals fit.
 
 ```
 Subject: [Your product] — [one-line traction stat]
@@ -247,13 +247,13 @@ more useful.
 [Name]
 ```
 
-*Personalization note:* The portfolio reference shows you did your research. If you can't find a specific portfolio company that's relevant, don't send the email yet.
+_Personalization note:_ The portfolio reference shows you did your research. If you can't find a specific portfolio company that's relevant, don't send the email yet.
 
 ---
 
 **Template 8 — Podcast Guest**
 
-*When to use:* Pitching yourself as a guest on a developer or indie hacker podcast.
+_When to use:_ Pitching yourself as a guest on a developer or indie hacker podcast.
 
 ```
 Subject: Guest idea for [Podcast]
@@ -274,13 +274,13 @@ useful. Worth considering?
 [Link to writing/content that proves you can deliver]
 ```
 
-*Personalization note:* "Not pitching the product" reduces perceived risk. Include a link to a sample of your writing or past appearance so they can vet you without a call.
+_Personalization note:_ "Not pitching the product" reduces perceived risk. Include a link to a sample of your writing or past appearance so they can vet you without a call.
 
 ---
 
 **Template 9 — Backlink Request**
 
-*When to use:* Asking a site to link to a specific piece of your content where you've earned it.
+_When to use:_ Asking a site to link to a specific piece of your content where you've earned it.
 
 ```
 Subject: Broken/missing link on [their page]
@@ -298,13 +298,13 @@ Happy to return the favor if you have any content on [related topic].
 [Name]
 ```
 
-*Personalization note:* The broken link angle is the highest-conversion backlink outreach approach because it opens with a favor, not a request.
+_Personalization note:_ The broken link angle is the highest-conversion backlink outreach approach because it opens with a favor, not a request.
 
 ---
 
 **Template 10 — Community Collaboration**
 
-*When to use:* Reaching out to a community organizer (Discord, Slack, forum) about contributing value to their members.
+_When to use:_ Reaching out to a community organizer (Discord, Slack, forum) about contributing value to their members.
 
 ```
 Subject: Contribution idea for [Community]
@@ -323,7 +323,7 @@ Would that be welcome?
 [Name]
 ```
 
-*Personalization note:* Community organizers are protective of their members and allergic to spam. The "no pitch" commitment needs to be real — if you show up and immediately sell, you'll burn the relationship and get banned.
+_Personalization note:_ Community organizers are protective of their members and allergic to spam. The "no pitch" commitment needs to be real — if you show up and immediately sell, you'll burn the relationship and get banned.
 
 ## Personalization at Scale: Not an Oxymoron
 

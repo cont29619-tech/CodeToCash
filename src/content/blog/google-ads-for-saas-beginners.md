@@ -1,22 +1,22 @@
 ---
-title: "How to Run Google Ads for Your SaaS on a $100 Budget"
-description: "A step-by-step guide to launching your first Google Ads campaign for your SaaS product without burning cash. Budget allocation, targeting, and optimization for developers."
+title: 'How to Run Google Ads for Your SaaS on a $100 Budget'
+description: 'A step-by-step guide to launching your first Google Ads campaign for your SaaS product without burning cash. Budget allocation, targeting, and optimization for developers.'
 pubDate: 2026-03-02
-author: "CodeToCash Team"
-category: "ads"
-tags: ["google ads", "saas marketing", "paid advertising", "ppc", "budget marketing"]
-readingTime: "14 min"
+author: 'CodeToCash Team'
+category: 'ads'
+tags: ['google ads', 'saas marketing', 'paid advertising', 'ppc', 'budget marketing']
+readingTime: '14 min read'
 featured: false
 draft: false
 faq:
-  - question: "How much should I spend on Google Ads for a new SaaS?"
-    answer: "Start with $100 over two weeks. This gives you enough data to identify winning keywords without risking significant money. Once you find keywords converting under your target CAC, scale gradually."
-  - question: "Should I use Google Ads or SEO first for my SaaS?"
-    answer: "Google Ads gives you immediate data on which keywords convert, which you can then target with SEO for long-term organic traffic. Running both simultaneously is ideal if budget allows."
+  - question: 'How much should I spend on Google Ads for a new SaaS?'
+    answer: 'Start with $100 over two weeks. This gives you enough data to identify winning keywords without risking significant money. Once you find keywords converting under your target CAC, scale gradually.'
+  - question: 'Should I use Google Ads or SEO first for my SaaS?'
+    answer: 'Google Ads gives you immediate data on which keywords convert, which you can then target with SEO for long-term organic traffic. Running both simultaneously is ideal if budget allows.'
   - question: "What's a good click-through rate for SaaS Google Ads?"
     answer: "The average CTR for SaaS Google Ads is around 2-3%. Anything above 4% is strong. If you're below 1.5%, your ad copy or keyword targeting needs work."
-  - question: "How long before Google Ads become profitable for a SaaS?"
-    answer: "Most SaaS products need 2-4 weeks of data collection before you can optimize effectively. Profitability depends on your price point, but expect to spend 2-3x your target CAC during the learning phase."
+  - question: 'How long before Google Ads become profitable for a SaaS?'
+    answer: 'Most SaaS products need 2-4 weeks of data collection before you can optimize effectively. Profitability depends on your price point, but expect to spend 2-3x your target CAC during the learning phase.'
 ---
 
 Running Google Ads for your SaaS on a small budget isn't just possible — it's one of the smartest moves you can make as an indie developer. While everyone else is hoping for organic traffic, you can start collecting real conversion data in 24 hours. Here's how to launch your first Google Ads campaign on just $100 without burning through it on irrelevant clicks.

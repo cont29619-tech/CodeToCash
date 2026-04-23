@@ -1,24 +1,24 @@
 ---
-title: "How to Launch on Product Hunt: DRM Edition"
-description: "A complete product hunt launch strategy for indie developers — pre-launch checklist, launch day timeline, listing copy tips, and honest numbers on what to expect."
+title: 'How to Launch on Product Hunt: DRM Edition'
+description: 'A complete product hunt launch strategy for indie developers — pre-launch checklist, launch day timeline, listing copy tips, and honest numbers on what to expect.'
 pubDate: 2026-03-08
-author: "CodeToCash Team"
-category: "strategy"
-tags: ["product hunt", "launch strategy", "marketing", "indie hackers", "distribution"]
-readingTime: "8 min read"
+author: 'CodeToCash Team'
+category: 'strategy'
+tags: ['product hunt', 'launch strategy', 'marketing', 'indie hackers', 'distribution']
+readingTime: '8 min read'
 featured: false
 draft: false
 faq:
-  - question: "What day should I launch on Product Hunt?"
-    answer: "Tuesday or Wednesday. Avoid Monday (weekend hangover) and Friday (low engagement). Launch at 12:01am PST to maximize the 24-hour window."
-  - question: "Do I need a big following to succeed on Product Hunt?"
-    answer: "No, but you need a list. Email your subscribers, post in your communities, and reach out to early users personally on launch day."
-  - question: "How important is the tagline on Product Hunt?"
+  - question: 'What day should I launch on Product Hunt?'
+    answer: 'Tuesday or Wednesday. Avoid Monday (weekend hangover) and Friday (low engagement). Launch at 12:01am PST to maximize the 24-hour window.'
+  - question: 'Do I need a big following to succeed on Product Hunt?'
+    answer: 'No, but you need a list. Email your subscribers, post in your communities, and reach out to early users personally on launch day.'
+  - question: 'How important is the tagline on Product Hunt?'
     answer: "Extremely. It's the first thing people read. Use the PAS framework: name the audience, state the problem, hint at the solution. Under 60 characters."
-  - question: "Should I offer a launch discount on Product Hunt?"
+  - question: 'Should I offer a launch discount on Product Hunt?'
     answer: "Yes — a 20-30% 'Hunter Special' discount drives conversions. DRM principle: give a clear reason to act now."
   - question: "What's a realistic outcome from a Product Hunt launch?"
-    answer: "Top 5: 500-2,000 visitors. Top 1 (Product of the Day): 2,000-8,000 visitors. Most convert 1-3% to signups."
+    answer: 'Top 5: 500-2,000 visitors. Top 1 (Product of the Day): 2,000-8,000 visitors. Most convert 1-3% to signups.'
 ---
 
 A Product Hunt launch is one of the few marketing channels where a solo indie developer can get 2,000 targeted visitors in a single day with zero ad spend. But most developers treat it as a submit-and-pray event rather than a campaign. A proper **product hunt launch strategy** applies the same direct response principles you'd use on any landing page — clear hook, social proof, specific CTA, prepared audience — just compressed into a 24-hour window. This guide walks through the full playbook, from 30 days out to the morning after.
@@ -171,12 +171,12 @@ Product Hunt launches surface usability friction fast. You'll see where users ge
 
 Here's what a realistic Product Hunt launch actually delivers, based on aggregate data from indie developers who've documented their launches publicly:
 
-| Finish | Upvotes | Day-1 Visitors | Signups (1–3% conversion) | Revenue Impact |
-|---|---|---|---|---|
-| Top 1 (POTD) | 500+ | 3,000–8,000 | 30–240 signups | Varies widely |
-| Top 3 | 300–500 | 1,500–3,000 | 15–90 signups | Varies widely |
-| Top 5–10 | 150–300 | 500–1,500 | 5–45 signups | Usually modest |
-| Outside top 10 | < 150 | 100–500 | 1–15 signups | Minimal |
+| Finish         | Upvotes | Day-1 Visitors | Signups (1–3% conversion) | Revenue Impact |
+| -------------- | ------- | -------------- | ------------------------- | -------------- |
+| Top 1 (POTD)   | 500+    | 3,000–8,000    | 30–240 signups            | Varies widely  |
+| Top 3          | 300–500 | 1,500–3,000    | 15–90 signups             | Varies widely  |
+| Top 5–10       | 150–300 | 500–1,500      | 5–45 signups              | Usually modest |
+| Outside top 10 | < 150   | 100–500        | 1–15 signups              | Minimal        |
 
 Revenue impact is listed as "varies widely" because it depends almost entirely on your product's price point, your landing page conversion rate, and your onboarding. A $99/month tool converting 2% of 2,000 visitors to trials, then converting 20% of trials to paid, generates about $8,000 in potential ARR from a single launch day. A free tool with no paid tier generates exposure but no revenue.
 

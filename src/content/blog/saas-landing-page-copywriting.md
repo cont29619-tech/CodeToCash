@@ -1,24 +1,24 @@
 ---
-title: "SaaS Landing Page Copywriting: 10-Section Blueprint + Templates"
-description: "Write a high-converting SaaS landing page section by section. Includes headline formulas, CTA templates, a 10-section blueprint, and real teardowns."
+title: 'SaaS Landing Page Copywriting: 10-Section Blueprint + Templates'
+description: 'Write a high-converting SaaS landing page section by section. Includes headline formulas, CTA templates, a 10-section blueprint, and real teardowns.'
 pubDate: 2026-02-22
 updatedDate: 2026-04-17
-author: "CodeToCash Team"
-category: "copywriting"
-tags: ["landing pages", "copywriting", "saas", "templates", "conversion"]
-readingTime: "10 min read"
+author: 'CodeToCash Team'
+category: 'copywriting'
+tags: ['landing pages', 'copywriting', 'saas', 'templates', 'conversion']
+readingTime: '10 min read'
 featured: false
 draft: false
 faq:
-  - question: "What makes a SaaS landing page convert well?"
-    answer: "The highest-converting SaaS landing pages share five characteristics: a headline that states the outcome (not the feature), social proof near the top of the page, a product demo or screenshot that shows the product working, a single clear CTA repeated multiple times, and an FAQ section that handles objections before the prospect leaves. Most underperforming landing pages fail on the headline alone."
-  - question: "How long should a SaaS landing page be?"
-    answer: "Long enough to answer every question a skeptical buyer would have, and no longer. For a simple, low-priced tool, this might be 400 words. For a complex product or higher price point, it might be 2,000 words. A common mistake is making pages too short because the developer felt awkward writing more — if you have objections to overcome, the page needs to be long enough to overcome them."
-  - question: "What should the headline on a SaaS landing page say?"
+  - question: 'What makes a SaaS landing page convert well?'
+    answer: 'The highest-converting SaaS landing pages share five characteristics: a headline that states the outcome (not the feature), social proof near the top of the page, a product demo or screenshot that shows the product working, a single clear CTA repeated multiple times, and an FAQ section that handles objections before the prospect leaves. Most underperforming landing pages fail on the headline alone.'
+  - question: 'How long should a SaaS landing page be?'
+    answer: 'Long enough to answer every question a skeptical buyer would have, and no longer. For a simple, low-priced tool, this might be 400 words. For a complex product or higher price point, it might be 2,000 words. A common mistake is making pages too short because the developer felt awkward writing more — if you have objections to overcome, the page needs to be long enough to overcome them.'
+  - question: 'What should the headline on a SaaS landing page say?'
     answer: "The headline should state the primary outcome or transformation your product delivers, in plain language that your target audience would use. Avoid clever wordplay, technical jargon, or vague superlatives like 'the best platform for.' A simple formula: '[verb] [desired outcome] [timeframe or differentiator].' Example: 'Deploy your full-stack app in 60 seconds, not 60 minutes.'"
-  - question: "How many CTAs should a SaaS landing page have?"
-    answer: "One CTA — but repeated in multiple places. Having multiple different CTAs (Sign Up, Book a Demo, Watch Video, Contact Us) creates decision paralysis and reduces conversions. Pick one primary action you want visitors to take and repeat it at the top, middle, and bottom of the page. Every other link on the page is a distraction from that one action."
-  - question: "Does social proof matter for a brand new SaaS with no customers?"
+  - question: 'How many CTAs should a SaaS landing page have?'
+    answer: 'One CTA — but repeated in multiple places. Having multiple different CTAs (Sign Up, Book a Demo, Watch Video, Contact Us) creates decision paralysis and reduces conversions. Pick one primary action you want visitors to take and repeat it at the top, middle, and bottom of the page. Every other link on the page is a distraction from that one action.'
+  - question: 'Does social proof matter for a brand new SaaS with no customers?'
     answer: "Yes, but you have to get creative. Before you have paying customers, you can use: testimonials from beta users or free plan users, quotes from people you interviewed during validation, logos of companies your team members have worked at, a specific user count even if small ('47 developers already using this'), or a money-back guarantee that reduces risk. Some social proof, even imperfect, beats none."
 ---
 
@@ -69,6 +69,7 @@ The difference: the bad headline describes a category. The good headline describ
 Formula: `[Achieve Desired Outcome] Without [Biggest Pain Point]`
 
 More examples:
+
 - "Get Your First 1,000 Newsletter Subscribers Without Running Ads"
 - "Close Enterprise Deals Without a Sales Team"
 - "Deploy to Production Without Touching a Config File"
@@ -116,12 +117,14 @@ A note on specificity: numbers win. "Saves time" is weak. "Saves an average of 4
 Visitors arrive skeptical. Social proof converts skeptics. But not all social proof works equally well.
 
 **What works:**
+
 - Testimonials that describe a before/after ("Before GitDeploy, I spent 45 minutes per deploy. Now it is two minutes.")
 - Specific outcomes ("Used this to go from 0 to 200 paying customers in 90 days")
 - Logos from companies your target customer respects
 - Usage numbers ("14,000 developers use GitDeploy every week")
 
 **What does not work:**
+
 - "Great product!" — no context, no specificity, no believability
 - Stock photo testimonials — everyone knows they are fake
 - Logos from companies no one has heard of, listed without context

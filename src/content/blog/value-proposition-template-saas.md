@@ -1,23 +1,23 @@
 ---
-title: "How to Write a Value Proposition for Your Dev Tool"
-description: "Learn how to write a value proposition for your SaaS or dev tool with 5 fill-in-the-blank templates, real examples, and a validation test."
+title: 'How to Write a Value Proposition for Your Dev Tool'
+description: 'Learn how to write a value proposition for your SaaS or dev tool with 5 fill-in-the-blank templates, real examples, and a validation test.'
 pubDate: 2026-03-08
-author: "CodeToCash Team"
-category: "fundamentals"
-tags: ["value proposition", "copywriting", "saas", "positioning", "messaging"]
-readingTime: "6 min read"
+author: 'CodeToCash Team'
+category: 'fundamentals'
+tags: ['value proposition', 'copywriting', 'saas', 'positioning', 'messaging']
+readingTime: '6 min read'
 featured: false
 draft: false
 faq:
   - question: "What's the difference between a value proposition and a tagline?"
     answer: "A value prop is internal — it's your positioning foundation. A tagline is the external, shortened, creative version of it."
-  - question: "How long should a value proposition be?"
+  - question: 'How long should a value proposition be?'
     answer: "One sentence, ideally under 15 words. If you can't explain your value in one sentence, your positioning isn't clear yet."
-  - question: "Can I have different value propositions for different audiences?"
-    answer: "Yes — and you should. A time-saving tool means different things to a solo dev vs an engineering team. Segment your messaging."
-  - question: "How do I know if my value proposition is good?"
+  - question: 'Can I have different value propositions for different audiences?'
+    answer: 'Yes — and you should. A time-saving tool means different things to a solo dev vs an engineering team. Segment your messaging.'
+  - question: 'How do I know if my value proposition is good?'
     answer: "Show it to someone in your target audience who knows nothing about your product. If they immediately understand who it's for and what it does, you're close."
-  - question: "Should my value proposition focus on features or outcomes?"
+  - question: 'Should my value proposition focus on features or outcomes?'
     answer: "Outcomes, always. 'Automated deploy previews' is a feature. 'Ship faster with zero deploy anxiety' is a value proposition."
 ---
 
@@ -31,7 +31,7 @@ A value proposition is not your tagline. It's not your elevator pitch. It's not 
 
 **A value proposition is a single, clear statement that explains who your product is for, what it does for them, and why it's better than the alternative.**
 
-The confusion is understandable. Developers spend months building features. Those features feel important — because they are. But your users don't care about your features. They care about what those features do *for them*. "Automated deploy previews" is a feature. "Ship without breaking production" is a value proposition.
+The confusion is understandable. Developers spend months building features. Those features feel important — because they are. But your users don't care about your features. They care about what those features do _for them_. "Automated deploy previews" is a feature. "Ship without breaking production" is a value proposition.
 
 Think of your value prop like a function signature. The inputs are your customer's pain and goals. The output is the specific result you deliver. If the function signature is ambiguous, nobody knows how to call it. Clear signatures get used. Vague ones get skipped.
 
@@ -64,11 +64,13 @@ The Value Proposition Canvas (originally by Strategyzer) is a framework for mapp
 The canvas has two sides:
 
 **Customer Profile (the left side):**
+
 - **Customer jobs** — What tasks are they trying to accomplish? (e.g., "deploy my app without downtime," "track errors in production")
 - **Pains** — What frustrates or blocks them? (e.g., "I break things on Friday deploys," "I find out about errors from users")
 - **Gains** — What does success look like? (e.g., "confident deploys," "catching bugs before users do")
 
 **Value Map (the right side):**
+
 - **Products & services** — What you actually offer
 - **Pain relievers** — How your product eliminates specific pains
 - **Gain creators** — How your product delivers the gains your customer wants
@@ -189,6 +191,7 @@ Writing a value prop is 20% of the work. Validating it is the other 80%. Here ar
 **The 5-second test**
 
 Show your homepage (or just your hero section as a screenshot) to someone in your target audience. After 5 seconds, hide it and ask:
+
 - What does this product do?
 - Who is it for?
 - Would you use it?

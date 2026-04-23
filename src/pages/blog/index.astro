@@ -3,14 +3,16 @@ import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 import { categoryColors, categoryLabels } from '../../utils/categoryColors';
 
-const title = "Blog — Marketing Tactics for Vibe Coders | CodeToCash";
-const description = "Actionable marketing articles for developers. Learn DRM, copywriting, email marketing, and growth strategies.";
+const title = 'Blog — Marketing Tactics for Vibe Coders | CodeToCash';
+const description =
+  'Actionable marketing articles for developers. Learn DRM, copywriting, email marketing, and growth strategies.';
 
-const allPosts = (await getCollection('blog', ({ data }) => !data.draft))
-  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const allPosts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
 
-const featuredPost = allPosts.find(p => p.data.featured) || allPosts[0];
-const regularPosts = allPosts.filter(p => p.id !== featuredPost?.id);
+const featuredPost = allPosts.find((p) => p.data.featured) || allPosts[0];
+const regularPosts = allPosts.filter((p) => p.id !== featuredPost?.id);
 
 const categories = [
   { id: 'all', label: 'All' },
@@ -24,104 +26,167 @@ const categories = [
 ---
 
 <Layout title={title} description={description}>
-
   <!-- Hero -->
   <section class="relative overflow-hidden py-20 md:py-24">
     <div class="absolute inset-0 pointer-events-none">
       <div class="absolute top-1/3 right-1/4 w-80 h-80 bg-coral/5 rounded-full blur-3xl"></div>
     </div>
-    <div class="absolute inset-0 pointer-events-none" style="background-image: radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px); background-size: 28px 28px;" aria-hidden="true"></div>
+    <div
+      class="absolute inset-0 pointer-events-none"
+      style="background-image: radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px); background-size: 28px 28px;"
+      aria-hidden="true"
+    >
+    </div>
     <div class="relative max-w-3xl mx-auto px-6 text-center">
       <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
         Blog — Marketing Tactics for <span class="text-coral">Vibe Coders</span>
       </h1>
       <p class="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
-        Actionable articles on direct response marketing, copywriting, and growth strategies for developers who ship.
+        Actionable articles on direct response marketing, copywriting, and growth strategies for
+        developers who ship.
       </p>
     </div>
   </section>
 
   <!-- Browse by Category -->
   <section class="max-w-5xl mx-auto px-6 mb-12">
-    <p class="text-center text-sm font-mono text-coral uppercase tracking-widest mb-4">// browse by category</p>
+    <p class="text-center text-sm font-mono text-coral uppercase tracking-widest mb-4">
+      // browse by category
+    </p>
     <nav class="flex flex-wrap gap-2 justify-center" aria-label="Blog categories">
-      {categories.map((cat) => (
-        <a
-          href={cat.id === 'all' ? '/blog' : `/blog/${cat.id}`}
-          class={`px-4 py-2 rounded-xl text-sm font-medium border transition-all ${cat.id === 'all' ? 'bg-coral/10 text-coral border-coral/20' : 'bg-white/5 text-gray-400 border-white/10 hover:text-white hover:border-white/20'}`}
-          aria-current={cat.id === 'all' ? 'page' : undefined}
-        >
-          {cat.label}
-        </a>
-      ))}
+      {
+        categories.map((cat) => (
+          <a
+            href={cat.id === 'all' ? '/blog' : `/blog/${cat.id}`}
+            class={`px-4 py-2 rounded-xl text-sm font-medium border transition-all ${cat.id === 'all' ? 'bg-coral/10 text-coral border-coral/20' : 'bg-white/5 text-gray-400 border-white/10 hover:text-white hover:border-white/20'}`}
+            aria-current={cat.id === 'all' ? 'page' : undefined}
+          >
+            {cat.label}
+          </a>
+        ))
+      }
     </nav>
   </section>
 
   <div class="max-w-5xl mx-auto px-6 pb-24">
     <!-- Featured Post -->
-    {featuredPost && (() => {
-      const fc = categoryColors[featuredPost.data.category] || categoryColors.fundamentals;
-      return (
-        <a
-          href={`/blog/${featuredPost.id}`}
-          class={`group relative block mb-14 p-6 md:p-8 rounded-2xl border-l-4 ${fc.borderLeft} border border-white/[0.08] bg-gradient-to-br from-white/[0.03] to-white/[0.01] ${fc.hoverBorder} ${fc.hoverBg} hover:shadow-xl ${fc.hoverShadow} transition-all duration-300 overflow-hidden`}
-        >
-          <div class={`absolute top-0 right-0 w-[400px] h-[300px] rounded-full blur-[100px] pointer-events-none opacity-30 ${fc.bg}`} aria-hidden="true"></div>
-          <div class="relative z-10">
-            <div class="flex items-center gap-3 mb-4">
-              <span class="px-2.5 py-1 rounded-md text-xs font-bold uppercase tracking-wide bg-coral/20 text-coral border border-coral/30">Featured</span>
-              <span class={`px-2 py-0.5 rounded-md text-xs font-medium ${fc.bg} ${fc.text} border ${fc.border}`}>
-                {categoryLabels[featuredPost.data.category]}
-              </span>
-              <span class="text-xs text-gray-500">{featuredPost.data.readingTime}</span>
-            </div>
-            <h2 class="text-2xl md:text-3xl font-bold text-white group-hover:text-coral transition-colors mb-3 leading-tight">
-              {featuredPost.data.title}
-            </h2>
-            <p class="text-gray-400 leading-relaxed mb-4 max-w-2xl">{featuredPost.data.description}</p>
-            <div class="flex items-center text-sm text-coral/70 group-hover:text-coral transition-colors font-medium">
-              Read article
-              <svg class="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
-            </div>
-          </div>
-        </a>
-      );
-    })()}
+    {
+      featuredPost &&
+        (() => {
+          const fc = categoryColors[featuredPost.data.category] || categoryColors.fundamentals;
+          return (
+            <a
+              href={`/blog/${featuredPost.id}`}
+              class={`group relative block mb-14 p-6 md:p-8 rounded-2xl border-l-4 ${fc.borderLeft} border border-white/[0.08] bg-gradient-to-br from-white/[0.03] to-white/[0.01] ${fc.hoverBorder} ${fc.hoverBg} hover:shadow-xl ${fc.hoverShadow} transition-all duration-300 overflow-hidden`}
+            >
+              <div
+                class={`absolute top-0 right-0 w-[400px] h-[300px] rounded-full blur-[100px] pointer-events-none opacity-30 ${fc.bg}`}
+                aria-hidden="true"
+              />
+              <div class="relative z-10">
+                <div class="flex items-center gap-3 mb-4">
+                  <span class="px-2.5 py-1 rounded-md text-xs font-bold uppercase tracking-wide bg-coral/20 text-coral border border-coral/30">
+                    Featured
+                  </span>
+                  <span
+                    class={`px-2 py-0.5 rounded-md text-xs font-medium ${fc.bg} ${fc.text} border ${fc.border}`}
+                  >
+                    {categoryLabels[featuredPost.data.category]}
+                  </span>
+                  <span class="text-xs text-gray-500">{featuredPost.data.readingTime}</span>
+                </div>
+                <h2 class="text-2xl md:text-3xl font-bold text-white group-hover:text-coral transition-colors mb-3 leading-tight">
+                  {featuredPost.data.title}
+                </h2>
+                <p class="text-gray-400 leading-relaxed mb-4 max-w-2xl">
+                  {featuredPost.data.description}
+                </p>
+                <div class="flex items-center text-sm text-coral/70 group-hover:text-coral transition-colors font-medium">
+                  Read article
+                  <svg
+                    class="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </a>
+          );
+        })()
+    }
 
     <!-- Post Grid -->
     <div class="grid gap-6 md:grid-cols-2">
-      {regularPosts.map((post) => {
-        const pc = categoryColors[post.data.category] || categoryColors.fundamentals;
-        const date = post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
-        return (
-          <a
-            href={`/blog/${post.id}`}
-            class={`group relative flex flex-col p-6 bg-navy-light border border-white/[0.06] border-l-2 ${pc.borderLeft} rounded-2xl ${pc.hoverBorder} ${pc.hoverBg} hover:shadow-lg ${pc.hoverShadow} transition-all duration-300 hover:-translate-y-0.5 overflow-hidden`}
-          >
-            <div class="flex items-center gap-2 mb-3">
-              <span class={`inline-flex items-center px-2 py-0.5 rounded-md text-xs font-medium ${pc.bg} ${pc.text} border ${pc.border}`}>
-                {categoryLabels[post.data.category]}
-              </span>
-              <span class="inline-flex items-center gap-1 text-xs text-gray-500">
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                {post.data.readingTime}
-              </span>
-            </div>
-            <h2 class="text-lg font-semibold text-white group-hover:text-coral transition-colors mb-2 leading-snug">
-              {post.data.title}
-            </h2>
-            <p class="text-sm text-gray-400 leading-relaxed flex-1 mb-4">{post.data.description}</p>
-            <div class="flex items-center justify-between pt-4 border-t border-white/5">
-              <span class="text-xs text-gray-500">{date}</span>
-              <span class={`flex items-center text-sm ${pc.text} opacity-70 group-hover:opacity-100 transition-all`}>
-                Read
-                <svg class="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
-              </span>
-            </div>
-          </a>
-        );
-      })}
+      {
+        regularPosts.map((post) => {
+          const pc = categoryColors[post.data.category] || categoryColors.fundamentals;
+          const date = post.data.pubDate.toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric',
+          });
+          return (
+            <a
+              href={`/blog/${post.id}`}
+              class={`group relative flex flex-col p-6 bg-navy-light border border-white/[0.06] border-l-2 ${pc.borderLeft} rounded-2xl ${pc.hoverBorder} ${pc.hoverBg} hover:shadow-lg ${pc.hoverShadow} transition-all duration-300 hover:-translate-y-0.5 overflow-hidden`}
+            >
+              <div class="flex items-center gap-2 mb-3">
+                <span
+                  class={`inline-flex items-center px-2 py-0.5 rounded-md text-xs font-medium ${pc.bg} ${pc.text} border ${pc.border}`}
+                >
+                  {categoryLabels[post.data.category]}
+                </span>
+                <span class="inline-flex items-center gap-1 text-xs text-gray-500">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                  {post.data.readingTime}
+                </span>
+              </div>
+              <h2 class="text-lg font-semibold text-white group-hover:text-coral transition-colors mb-2 leading-snug">
+                {post.data.title}
+              </h2>
+              <p class="text-sm text-gray-400 leading-relaxed flex-1 mb-4">
+                {post.data.description}
+              </p>
+              <div class="flex items-center justify-between pt-4 border-t border-white/5">
+                <span class="text-xs text-gray-500">{date}</span>
+                <span
+                  class={`flex items-center text-sm ${pc.text} opacity-70 group-hover:opacity-100 transition-all`}
+                >
+                  Read
+                  <svg
+                    class="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-1"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </a>
+          );
+        })
+      }
     </div>
   </div>
-
 </Layout>

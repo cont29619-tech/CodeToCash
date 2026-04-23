@@ -24,7 +24,7 @@ export const GET: APIRoute = async ({ params }) => {
     readingTime: post.data.readingTime,
   });
 
-  return new Response(png, {
+  return new Response(Buffer.from(png), {
     status: 200,
     headers: {
       'Content-Type': 'image/png',

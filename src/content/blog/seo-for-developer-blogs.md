@@ -1,21 +1,21 @@
 ---
-title: "SEO for Developer Blogs: Rank Without Being an SEO Expert"
-description: "A practical SEO guide for developer blogs. Keyword research, on-page optimization, internal linking, and content strategy that drives organic traffic to your dev product."
+title: 'SEO for Developer Blogs: Rank Without Being an SEO Expert'
+description: 'A practical SEO guide for developer blogs. Keyword research, on-page optimization, internal linking, and content strategy that drives organic traffic to your dev product.'
 pubDate: 2026-04-08
-author: "CodeToCash Team"
-category: "analytics"
-tags: ["seo", "content marketing", "blogging", "organic traffic", "developer blog"]
-readingTime: "14 min"
+author: 'CodeToCash Team'
+category: 'analytics'
+tags: ['seo', 'content marketing', 'blogging', 'organic traffic', 'developer blog']
+readingTime: '14 min read'
 featured: false
 draft: false
 faq:
-  - question: "How long does SEO take to work for a new developer blog?"
+  - question: 'How long does SEO take to work for a new developer blog?'
     answer: "Expect 3-6 months before you see significant organic traffic. New domains need time to build authority. Focus on long-tail keywords initially — they're less competitive and can rank within weeks."
-  - question: "How many blog posts do I need for SEO to work?"
-    answer: "Quality over quantity, but aim for 15-20 well-optimized posts as a foundation. Each post should target a specific keyword cluster and link to related content on your site. Consistent publishing (2-3 posts per month) signals freshness to search engines."
-  - question: "Do I need to pay for SEO tools?"
+  - question: 'How many blog posts do I need for SEO to work?'
+    answer: 'Quality over quantity, but aim for 15-20 well-optimized posts as a foundation. Each post should target a specific keyword cluster and link to related content on your site. Consistent publishing (2-3 posts per month) signals freshness to search engines.'
+  - question: 'Do I need to pay for SEO tools?'
     answer: "Not initially. Google Search Console (free) gives you keyword data, indexing status, and performance metrics. Google Keyword Planner (free with a Google Ads account) provides search volume estimates. Paid tools like Ahrefs or Semrush help at scale but aren't necessary for the first 6 months."
-  - question: "Should I focus on SEO or social media first?"
+  - question: 'Should I focus on SEO or social media first?'
     answer: "Both, but for different reasons. Social media gives immediate traffic and feedback. SEO gives compounding traffic over time. Write for SEO (keyword-targeted content) and distribute via social media. They're complementary, not competing."
 ---
 

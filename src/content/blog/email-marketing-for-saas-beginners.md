@@ -1,25 +1,25 @@
 ---
-title: "SaaS Email Marketing for Beginners — From Zero to Automated Sales"
-description: "Start email marketing for your SaaS from scratch. Set up welcome sequences, write emails that sell, and automate the whole system. Free templates included."
+title: 'SaaS Email Marketing for Beginners — From Zero to Automated Sales'
+description: 'Start email marketing for your SaaS from scratch. Set up welcome sequences, write emails that sell, and automate the whole system. Free templates included.'
 pubDate: 2026-02-23
 updatedDate: 2026-04-17
-author: "CodeToCash Team"
-category: "email"
-tags: ["email marketing", "saas", "automation", "sequences", "beginners"]
-readingTime: "12 min read"
+author: 'CodeToCash Team'
+category: 'email'
+tags: ['email marketing', 'saas', 'automation', 'sequences', 'beginners']
+readingTime: '12 min read'
 featured: false
 draft: false
 faq:
-  - question: "What email marketing platform is best for indie developers and SaaS founders?"
-    answer: "ConvertKit (now Kit) is the most popular choice among indie developers and creators because it has a generous free tier, visual automation builder, and is designed for people who sell digital products. Buttondown is a great alternative for developers who prefer simplicity and Markdown. Resend is ideal if you want full API control and are comfortable writing your own templates."
-  - question: "How often should a SaaS company send marketing emails?"
-    answer: "For a new product with a small list, once a week is the sweet spot. Frequent enough to stay top of mind, infrequent enough that your emails feel like a valuable event rather than noise. The most important rule is consistency — irregular sending trains your audience to stop expecting you, which tanks your open rates over time."
-  - question: "What should a welcome email sequence include for a SaaS product?"
-    answer: "A 5-7 email welcome sequence should cover: Email 1 delivers the promised lead magnet and sets expectations; Email 2 tells your story and builds personal connection; Email 3 teaches your single most valuable insight; Email 4 provides a practical framework or template; Email 5 shares a relevant case study; Email 6 covers tool or resource recommendations; Email 7 is a soft pitch for your paid product or an ask to share."
-  - question: "What is a good email open rate for SaaS marketing emails?"
-    answer: "For a focused niche audience like developers, a 40-60% open rate is excellent. Industry averages across all sectors hover around 20-25%, but developer and tech audiences tend to be more engaged when content is genuinely useful and not spammy. If your open rate is below 20%, focus on improving your subject lines and cleaning inactive subscribers from your list."
-  - question: "How do I avoid my marketing emails going to spam?"
-    answer: "The most important factors are: using a custom domain for your sending address (not Gmail or Hotmail), authenticating your domain with SPF, DKIM, and DMARC records, avoiding spam trigger words in subject lines, maintaining a clean list by removing bounced and inactive subscribers, and — most importantly — sending genuinely valuable content that people want to receive and engage with."
+  - question: 'What email marketing platform is best for indie developers and SaaS founders?'
+    answer: 'ConvertKit (now Kit) is the most popular choice among indie developers and creators because it has a generous free tier, visual automation builder, and is designed for people who sell digital products. Buttondown is a great alternative for developers who prefer simplicity and Markdown. Resend is ideal if you want full API control and are comfortable writing your own templates.'
+  - question: 'How often should a SaaS company send marketing emails?'
+    answer: 'For a new product with a small list, once a week is the sweet spot. Frequent enough to stay top of mind, infrequent enough that your emails feel like a valuable event rather than noise. The most important rule is consistency — irregular sending trains your audience to stop expecting you, which tanks your open rates over time.'
+  - question: 'What should a welcome email sequence include for a SaaS product?'
+    answer: 'A 5-7 email welcome sequence should cover: Email 1 delivers the promised lead magnet and sets expectations; Email 2 tells your story and builds personal connection; Email 3 teaches your single most valuable insight; Email 4 provides a practical framework or template; Email 5 shares a relevant case study; Email 6 covers tool or resource recommendations; Email 7 is a soft pitch for your paid product or an ask to share.'
+  - question: 'What is a good email open rate for SaaS marketing emails?'
+    answer: 'For a focused niche audience like developers, a 40-60% open rate is excellent. Industry averages across all sectors hover around 20-25%, but developer and tech audiences tend to be more engaged when content is genuinely useful and not spammy. If your open rate is below 20%, focus on improving your subject lines and cleaning inactive subscribers from your list.'
+  - question: 'How do I avoid my marketing emails going to spam?'
+    answer: 'The most important factors are: using a custom domain for your sending address (not Gmail or Hotmail), authenticating your domain with SPF, DKIM, and DMARC records, avoiding spam trigger words in subject lines, maintaining a clean list by removing bounced and inactive subscribers, and — most importantly — sending genuinely valuable content that people want to receive and engage with.'
 ---
 
 Email marketing for SaaS beginners sounds like a chore. One more thing to set up, one more tool to pay for, one more queue of tasks that probably will not ship this sprint. But here is the reality: email is the only marketing channel you actually own.
@@ -58,6 +58,7 @@ You do not need a fancy setup. You need three things: a tool, a form, and a reas
 **The lead magnet approach.** "Sign up for updates" is a terrible reason to give someone your email address. "Get the free checklist / cheatsheet / template" is a much better reason. Your lead magnet should be a single, specific, immediately useful thing that solves one problem your ideal customer has right now.
 
 Good lead magnets for SaaS:
+
 - A one-page checklist ("10 things to audit before your next launch")
 - A swipe file ("15 subject lines that got 40%+ open rates")
 - A short PDF guide
@@ -170,6 +171,7 @@ Most developers hate writing because they think emails need to sound like market
 **The subject line formula.** Your subject line has one job: get the open. Keep it under 50 characters. Avoid exclamation marks. Use curiosity, specificity, or both.
 
 Formats that work:
+
 - Curiosity gap: "The landing page mistake I kept making"
 - Specific benefit: "Cut your churn rate by 15% with this"
 - Story opener: "Why I almost killed the product"
@@ -185,12 +187,12 @@ Formats that work:
 
 Do not track vanity metrics. Track the numbers that tell you whether the system is working.
 
-| Metric | What It Measures | SaaS Benchmark |
-|---|---|---|
-| Open rate | Subject line quality + list health | 25–35% |
-| Click-through rate | Email body effectiveness | 3–6% |
-| List growth rate | Opt-in funnel performance | 2–5% per month |
-| Conversion rate | Emails to trials or purchases | 0.5–2% of list |
+| Metric             | What It Measures                   | SaaS Benchmark |
+| ------------------ | ---------------------------------- | -------------- |
+| Open rate          | Subject line quality + list health | 25–35%         |
+| Click-through rate | Email body effectiveness           | 3–6%           |
+| List growth rate   | Opt-in funnel performance          | 2–5% per month |
+| Conversion rate    | Emails to trials or purchases      | 0.5–2% of list |
 
 **Open rate below 20%?** Your subject lines need work, or your list has gone cold. Run a re-engagement campaign first — email everyone who has not opened in 90 days with a blunt subject like "Should I keep sending you emails?" — then cut the non-responders. Clean lists perform better than large lists.
 

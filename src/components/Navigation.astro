@@ -11,7 +11,10 @@ const navLinks = [
 ];
 ---
 
-<nav aria-label="Main navigation" class="fixed top-0 left-0 right-0 z-50 bg-navy/70 backdrop-blur-xl border-b border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)]">
+<nav
+  aria-label="Main navigation"
+  class="fixed top-0 left-0 right-0 z-50 bg-navy/70 backdrop-blur-xl border-b border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)]"
+>
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16">
       <!-- Logo -->
@@ -21,19 +24,28 @@ const navLinks = [
 
       <!-- Desktop Nav -->
       <div class="hidden md:flex items-center gap-1">
-        {navLinks.map((link) => (
-          <a
-            href={link.href}
-            class:list={[
-              'px-3 py-2 rounded-lg text-sm font-medium transition-colors duration-200',
-              (link.href === '/' ? currentPath === '/' : currentPath === link.href || currentPath.startsWith(link.href + '/'))
-                ? 'text-coral bg-coral/10'
-                : 'text-gray-300 hover:text-white hover:bg-white/5',
-            ]}
-          >
-            {link.label}
-          </a>
-        ))}
+        {
+          navLinks.map((link) => {
+            const isActive =
+              link.href === '/'
+                ? currentPath === '/'
+                : currentPath === link.href || currentPath.startsWith(link.href + '/');
+            return (
+              <a
+                href={link.href}
+                aria-current={isActive ? 'page' : undefined}
+                class:list={[
+                  'px-3 py-2 rounded-lg text-sm font-medium transition-colors duration-200',
+                  isActive
+                    ? 'text-coral bg-coral/10'
+                    : 'text-gray-300 hover:text-white hover:bg-white/5',
+                ]}
+              >
+                {link.label}
+              </a>
+            );
+          })
+        }
 
         <!-- Search button (desktop) -->
         <button
@@ -41,10 +53,22 @@ const navLinks = [
           aria-label="Search (Ctrl+K)"
           class="ml-1 flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm text-gray-400 hover:text-white hover:bg-white/5 transition-colors duration-200 cursor-pointer"
         >
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          <svg
+            class="w-4 h-4"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
           </svg>
-          <kbd class="hidden lg:inline-flex items-center gap-0.5 px-1.5 py-0.5 bg-white/5 border border-white/10 rounded text-[11px] text-gray-500 font-mono leading-none">
+          <kbd
+            class="hidden lg:inline-flex items-center gap-0.5 px-1.5 py-0.5 bg-white/5 border border-white/10 rounded text-[11px] text-gray-500 font-mono leading-none"
+          >
             ⌘K
           </kbd>
         </button>
@@ -65,22 +89,38 @@ const navLinks = [
           aria-label="Search"
           class="flex items-center justify-center w-10 h-10 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors cursor-pointer"
         >
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          <svg
+            class="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
           </svg>
         </button>
 
-      <!-- Mobile Hamburger -->
-      <button
-        id="mobile-menu-btn"
-        class="flex flex-col justify-center items-center w-10 h-10 gap-1.5 group"
-        aria-label="Toggle menu"
-        aria-expanded="false"
-      >
-        <span class="block w-6 h-0.5 bg-gray-300 transition-all duration-300 origin-center group-[.open]:translate-y-2 group-[.open]:rotate-45"></span>
-        <span class="block w-6 h-0.5 bg-gray-300 transition-all duration-300 group-[.open]:opacity-0"></span>
-        <span class="block w-6 h-0.5 bg-gray-300 transition-all duration-300 origin-center group-[.open]:-translate-y-2 group-[.open]:-rotate-45"></span>
-      </button>
+        <!-- Mobile Hamburger -->
+        <button
+          id="mobile-menu-btn"
+          class="flex flex-col justify-center items-center w-10 h-10 gap-1.5 group"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+        >
+          <span
+            class="block w-6 h-0.5 bg-gray-300 transition-all duration-300 origin-center group-[.open]:translate-y-2 group-[.open]:rotate-45"
+          ></span>
+          <span
+            class="block w-6 h-0.5 bg-gray-300 transition-all duration-300 group-[.open]:opacity-0"
+          ></span>
+          <span
+            class="block w-6 h-0.5 bg-gray-300 transition-all duration-300 origin-center group-[.open]:-translate-y-2 group-[.open]:-rotate-45"
+          ></span>
+        </button>
       </div><!-- end mobile right -->
     </div>
   </div>
@@ -89,21 +129,28 @@ const navLinks = [
 <!-- Mobile Overlay -->
 <div
   id="mobile-menu"
-  class="fixed inset-0 z-40 bg-navy/95 backdrop-blur-lg flex flex-col items-center justify-center gap-6 transition-opacity duration-300 opacity-0 pointer-events-none md:hidden"
+  class="fixed inset-0 z-[55] bg-navy/95 backdrop-blur-lg flex flex-col items-center justify-center gap-6 transition-opacity duration-300 opacity-0 pointer-events-none md:hidden"
 >
-  {navLinks.map((link) => (
-    <a
-      href={link.href}
-      class:list={[
-        'text-2xl font-medium transition-colors duration-200',
-        (link.href === '/' ? currentPath === '/' : currentPath === link.href || currentPath.startsWith(link.href + '/'))
-          ? 'text-coral'
-          : 'text-gray-200 hover:text-coral',
-      ]}
-    >
-      {link.label}
-    </a>
-  ))}
+  {
+    navLinks.map((link) => {
+      const isActive =
+        link.href === '/'
+          ? currentPath === '/'
+          : currentPath === link.href || currentPath.startsWith(link.href + '/');
+      return (
+        <a
+          href={link.href}
+          aria-current={isActive ? 'page' : undefined}
+          class:list={[
+            'text-2xl font-medium transition-colors duration-200',
+            isActive ? 'text-coral' : 'text-gray-200 hover:text-coral',
+          ]}
+        >
+          {link.label}
+        </a>
+      );
+    })
+  }
   <a
     href="/newsletter"
     class="mt-4 px-8 py-3 bg-coral text-white text-lg font-semibold rounded-lg hover:bg-coral/90 transition-colors duration-200"
@@ -116,15 +163,50 @@ const navLinks = [
   const btn = document.getElementById('mobile-menu-btn')!;
   const menu = document.getElementById('mobile-menu')!;
 
+  function openMenu() {
+    btn.classList.add('open');
+    btn.setAttribute('aria-expanded', 'true');
+    menu.classList.remove('opacity-0', 'pointer-events-none');
+    menu.classList.add('opacity-100', 'pointer-events-auto');
+    document.body.style.overflow = 'hidden';
+    const firstLink = menu.querySelector('a');
+    if (firstLink) firstLink.focus();
+  }
+
+  function closeMenu() {
+    btn.classList.remove('open');
+    btn.setAttribute('aria-expanded', 'false');
+    menu.classList.add('opacity-0', 'pointer-events-none');
+    menu.classList.remove('opacity-100', 'pointer-events-auto');
+    document.body.style.overflow = '';
+    btn.focus();
+  }
+
   btn.addEventListener('click', () => {
-    const isOpen = btn.classList.toggle('open');
-    btn.setAttribute('aria-expanded', String(isOpen));
-    if (isOpen) {
-      menu.classList.remove('opacity-0', 'pointer-events-none');
-      menu.classList.add('opacity-100', 'pointer-events-auto');
-    } else {
-      menu.classList.add('opacity-0', 'pointer-events-none');
-      menu.classList.remove('opacity-100', 'pointer-events-auto');
+    btn.classList.contains('open') ? closeMenu() : openMenu();
+  });
+
+  menu.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', closeMenu);
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key !== 'Escape' || !btn.classList.contains('open')) return;
+    closeMenu();
+  });
+
+  menu.addEventListener('keydown', (e) => {
+    if (e.key !== 'Tab') return;
+    const focusable = [...menu.querySelectorAll<HTMLElement>('a, button')];
+    if (!focusable.length) return;
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
     }
   });
 

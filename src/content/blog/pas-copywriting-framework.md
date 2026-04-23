@@ -1,24 +1,24 @@
 ---
-title: "PAS Copywriting Framework: The Simplest Formula That Converts"
-description: "PAS (Problem-Agitate-Solution) is the easiest copywriting framework to learn. See how developers use it for landing pages, emails, and ads — with templates."
+title: 'PAS Copywriting Framework: The Simplest Formula That Converts'
+description: 'PAS (Problem-Agitate-Solution) is the easiest copywriting framework to learn. See how developers use it for landing pages, emails, and ads — with templates.'
 pubDate: 2026-02-18
 updatedDate: 2026-04-17
-author: "CodeToCash Team"
-category: "copywriting"
-tags: ["PAS framework", "copywriting for developers", "direct response copywriting"]
-readingTime: "6 min read"
+author: 'CodeToCash Team'
+category: 'copywriting'
+tags: ['PAS framework', 'copywriting for developers', 'direct response copywriting']
+readingTime: '6 min read'
 featured: false
 draft: false
 faq:
-  - question: "What does PAS stand for in copywriting?"
+  - question: 'What does PAS stand for in copywriting?'
     answer: "PAS stands for Problem, Agitate, Solution. It's a three-part copywriting framework where you first identify the specific problem your audience is experiencing, then intensify the emotional weight of that problem by describing its consequences, and finally present your product as the logical solution. It's one of the most widely used frameworks in direct response marketing."
-  - question: "Where can I use the PAS framework?"
+  - question: 'Where can I use the PAS framework?'
     answer: "PAS works in almost any marketing context: landing page hero sections, email subject lines and body copy, Twitter threads, cold outreach messages, ad copy, and even product descriptions. It's particularly effective in email marketing where you have a few seconds to convince someone to keep reading before they delete your message."
-  - question: "How long should each part of a PAS framework be?"
-    answer: "For a landing page hero, Problem is 1 sentence, Agitate is 2-3 sentences, and Solution is 1-2 sentences plus a CTA button. For a full email, each section can be a short paragraph. The Agitate section is where most beginners underinvest — it should make the reader feel the pain viscerally before you rescue them with the solution."
-  - question: "What is the difference between PAS and AIDA?"
+  - question: 'How long should each part of a PAS framework be?'
+    answer: 'For a landing page hero, Problem is 1 sentence, Agitate is 2-3 sentences, and Solution is 1-2 sentences plus a CTA button. For a full email, each section can be a short paragraph. The Agitate section is where most beginners underinvest — it should make the reader feel the pain viscerally before you rescue them with the solution.'
+  - question: 'What is the difference between PAS and AIDA?'
     answer: "PAS leads with the problem and works by creating emotional resonance with the reader's pain before introducing your product. AIDA leads with something attention-grabbing (which could be anything) and works by guiding the reader through a logical-emotional journey toward action. PAS tends to convert better for audiences with a specific known problem; AIDA is more versatile for cold audiences."
-  - question: "Is the PAS framework manipulative?"
+  - question: 'Is the PAS framework manipulative?'
     answer: "No — when used ethically, PAS simply describes a real problem that real people have, explains why it matters, and shows how your product genuinely solves it. The framework becomes manipulative only if you exaggerate or fabricate the problem or promise a solution your product can't deliver. For developers with real products solving real problems, PAS is simply honest communication structured for clarity."
 ---
 
@@ -34,7 +34,7 @@ The PAS framework works because it maps exactly onto how buying decisions are ma
 
 **Step 1 — Problem:** You prove you understand the reader's situation better than they do. This creates instant rapport. When someone reads a problem statement and thinks "how did they know that's exactly what I'm dealing with?" — you have their full attention.
 
-**Step 2 — Agitate:** Most developers skip this step and jump straight to the solution. That's a mistake. Agitation is where the copy does its heaviest lifting. You're not making the problem worse — you're making the reader *feel* the problem. You're connecting the surface-level frustration to the deeper consequences they're afraid of. The business implications. The time cost. The opportunity cost. The emotional toll. This is what creates urgency.
+**Step 2 — Agitate:** Most developers skip this step and jump straight to the solution. That's a mistake. Agitation is where the copy does its heaviest lifting. You're not making the problem worse — you're making the reader _feel_ the problem. You're connecting the surface-level frustration to the deeper consequences they're afraid of. The business implications. The time cost. The opportunity cost. The emotional toll. This is what creates urgency.
 
 **Step 3 — Solution:** After the reader is fully feeling the problem and its consequences, your product appears as relief. Not a feature list — relief. The solution step isn't "here's everything our product does." It's "here's exactly how this makes the pain stop." The reader is primed. They want the fix. You provide it cleanly.
 
@@ -49,12 +49,14 @@ Developers are problem-solvers. By instinct, the moment you identify a problem, 
 Here's the difference in practice:
 
 **Without agitation (weak):**
+
 ```
 PROBLEM:  "Deploying your app is complicated."
 SOLUTION: "DeployKit makes deployment simple."
 ```
 
 **With agitation (strong):**
+
 ```
 PROBLEM:  "Deploying your app is complicated."
 
@@ -182,12 +184,14 @@ CTA:
 The two most common DRM copywriting frameworks are PAS and AIDA (Attention → Interest → Desire → Action). They're complementary, not competing. Here's how to decide:
 
 **Use PAS when:**
+
 - Writing short-form copy: email subject lines, tweets, ad headlines, landing page sections
 - The pain point is the strongest angle (tools that solve obvious, felt problems)
 - You need to move fast — PAS is tighter and quicker to write
 - Your audience is pain-aware (they know they have the problem, they don't have the fix)
 
 **Use AIDA when:**
+
 - Writing longer copy: full landing pages, long-form emails, sales pages
 - The product category is new (readers need more education before they're ready to buy)
 - You're writing to a cold audience that doesn't yet recognize the problem

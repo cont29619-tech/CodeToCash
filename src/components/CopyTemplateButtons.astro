@@ -21,7 +21,7 @@
     gap: 4px;
     padding: 3px 8px;
     font-size: 11px;
-    font-family: ui-monospace, "JetBrains Mono", monospace;
+    font-family: ui-monospace, 'JetBrains Mono', monospace;
     font-weight: 500;
     line-height: 1;
     white-space: nowrap;
@@ -32,8 +32,11 @@
     cursor: pointer;
     /* Hidden by default, revealed on wrapper hover */
     opacity: 0;
-    transition: opacity 0.15s ease, color 0.15s ease,
-                background-color 0.15s ease, border-color 0.15s ease;
+    transition:
+      opacity 0.15s ease,
+      color 0.15s ease,
+      background-color 0.15s ease,
+      border-color 0.15s ease;
     z-index: 10;
     user-select: none;
     /* Stay above sibling text */
@@ -125,7 +128,7 @@
       const cls = el.getAttribute('class') ?? '';
       const classes = new Set(cls.split(/\s+/));
 
-      const isDark  = cls.includes('bg-[#0d0d20]');
+      const isDark = cls.includes('bg-[#0d0d20]');
       const isLight = cls.includes('bg-white/[0.03]') && classes.has('my-6');
       if (!isDark && !isLight) return;
 

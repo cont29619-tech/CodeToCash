@@ -1,24 +1,24 @@
 ---
-title: "From $0 to $1K MRR: A Direct Response Marketing Roadmap"
-description: "The complete roadmap from $0 to $1K MRR for indie developers — validation, first customers, DRM tactics, and a proven 12-week action plan."
+title: 'From $0 to $1K MRR: A Direct Response Marketing Roadmap'
+description: 'The complete roadmap from $0 to $1K MRR for indie developers — validation, first customers, DRM tactics, and a proven 12-week action plan.'
 pubDate: 2026-03-08
-author: "CodeToCash Team"
-category: "strategy"
-tags: ["mrr", "indie developer", "revenue", "roadmap", "saas growth"]
-readingTime: "12 min read"
+author: 'CodeToCash Team'
+category: 'strategy'
+tags: ['mrr', 'indie developer', 'revenue', 'roadmap', 'saas growth']
+readingTime: '12 min read'
 featured: false
 draft: false
 faq:
-  - question: "How long does it take to reach $1K MRR as an indie developer?"
-    answer: "Median is 6-18 months. With existing audience or an existing problem, 3-6 months is achievable. Without either, budget 12 months of consistent effort."
+  - question: 'How long does it take to reach $1K MRR as an indie developer?'
+    answer: 'Median is 6-18 months. With existing audience or an existing problem, 3-6 months is achievable. Without either, budget 12 months of consistent effort.'
   - question: "What's the most common reason developers fail to reach $1K MRR?"
-    answer: "Building without validating. They spend 3 months coding, then discover nobody will pay. Talk to customers before writing a line of code."
-  - question: "Do I need to quit my job to reach $1K MRR?"
-    answer: "No. $1K MRR is achievable part-time with 10-15 hours/week of consistent effort over 6-12 months. Many developers hit it while employed."
-  - question: "What pricing gets to $1K MRR fastest?"
-    answer: "Fewer, higher-value customers. 10 customers at $100/mo is easier than 100 customers at $10/mo. Higher prices also signal quality."
-  - question: "Should I focus on marketing or product when starting out?"
-    answer: "Both, in parallel. Ship an MVP in 4 weeks, start marketing immediately. Most developers spend 90% on product and 10% on marketing — it should be 50/50."
+    answer: 'Building without validating. They spend 3 months coding, then discover nobody will pay. Talk to customers before writing a line of code.'
+  - question: 'Do I need to quit my job to reach $1K MRR?'
+    answer: 'No. $1K MRR is achievable part-time with 10-15 hours/week of consistent effort over 6-12 months. Many developers hit it while employed.'
+  - question: 'What pricing gets to $1K MRR fastest?'
+    answer: 'Fewer, higher-value customers. 10 customers at $100/mo is easier than 100 customers at $10/mo. Higher prices also signal quality.'
+  - question: 'Should I focus on marketing or product when starting out?'
+    answer: 'Both, in parallel. Ship an MVP in 4 weeks, start marketing immediately. Most developers spend 90% on product and 10% on marketing — it should be 50/50.'
 ---
 
 $1K MRR is not a large number. It's 10 customers at $100/month, or 20 at $50, or 100 at $10. On paper, it's approachable. In practice, the **journey from $0 to $1K MRR as an indie developer** breaks down almost every time at the same place: marketing. The product gets built. The launch goes live. Nothing happens. This roadmap is built specifically for that problem — using Direct Response Marketing principles to move systematically from zero to your first $1,000 in monthly recurring revenue, with a clear focus at each stage and a 12-week action plan you can start this week.
@@ -119,7 +119,7 @@ CONCIERGE CUSTOMER PLAYBOOK
    "Can I quote you on that? Would love to share it on the site."
 ```
 
-Success criteria to move to Phase 3: 3+ paying customers, at least one renewal (month 2), and you can clearly articulate *who* your customer is and *why* they pay.
+Success criteria to move to Phase 3: 3+ paying customers, at least one renewal (month 2), and you can clearly articulate _who_ your customer is and _why_ they pay.
 
 ---
 
@@ -241,20 +241,20 @@ PHASE 4 MISTAKES
 
 This is the 12-week execution plan for a developer starting at $0 with a product idea but no customers. Adjust the timeline based on how many hours per week you can commit.
 
-| Week | Phase | Focus | Deliverable |
-|------|-------|-------|-------------|
-| 1 | Validate | Build the landing page | Live waitlist page, 1 hero headline, 1 CTA |
-| 2 | Validate | Cold outreach batch 1 | 50 personalised outreach messages sent |
-| 3 | Validate | Cold outreach batch 2 + calls | 50 more messages, 5+ customer calls booked |
-| 4 | Validate | Run calls + interpret signals | Call notes doc, go/no-go decision made |
-| 5 | Build | MVP development | Smallest viable version of core feature |
-| 6 | Build | MVP development + beta invites | Product live, 5 beta users onboarded manually |
-| 7 | First Customers | Concierge sales | 3+ paying customers, onboarding calls done |
-| 8 | First Customers | Collect feedback + testimonials | 2+ testimonials live on site, landing page updated |
-| 9 | Find Channel | Lead magnet + email setup | Lead magnet live, welcome sequence (5 emails) active |
-| 10 | Find Channel | Channel analysis | Best acquisition channel identified, doubled down |
-| 11 | Find Channel | Content or community push | 1 SEO blog post published OR 1 community thread |
-| 12 | Scale | First paid experiment | $200 ad spend OR referral program live |
+| Week | Phase           | Focus                           | Deliverable                                          |
+| ---- | --------------- | ------------------------------- | ---------------------------------------------------- |
+| 1    | Validate        | Build the landing page          | Live waitlist page, 1 hero headline, 1 CTA           |
+| 2    | Validate        | Cold outreach batch 1           | 50 personalised outreach messages sent               |
+| 3    | Validate        | Cold outreach batch 2 + calls   | 50 more messages, 5+ customer calls booked           |
+| 4    | Validate        | Run calls + interpret signals   | Call notes doc, go/no-go decision made               |
+| 5    | Build           | MVP development                 | Smallest viable version of core feature              |
+| 6    | Build           | MVP development + beta invites  | Product live, 5 beta users onboarded manually        |
+| 7    | First Customers | Concierge sales                 | 3+ paying customers, onboarding calls done           |
+| 8    | First Customers | Collect feedback + testimonials | 2+ testimonials live on site, landing page updated   |
+| 9    | Find Channel    | Lead magnet + email setup       | Lead magnet live, welcome sequence (5 emails) active |
+| 10   | Find Channel    | Channel analysis                | Best acquisition channel identified, doubled down    |
+| 11   | Find Channel    | Content or community push       | 1 SEO blog post published OR 1 community thread      |
+| 12   | Scale           | First paid experiment           | $200 ad spend OR referral program live               |
 
 **Key milestones to hit before the next phase:**
 

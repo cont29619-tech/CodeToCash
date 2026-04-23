@@ -21,17 +21,17 @@
 
 ## Tech Stack
 
-| Technology | Version | Role |
-|---|---|---|
-| Astro | ^5.17.1 | Static site generator (SSG) |
-| Tailwind CSS | ^4.1.18 | CSS framework |
-| @tailwindcss/vite | ^4.1.18 | Tailwind v4 Vite plugin |
-| @astrojs/sitemap | ^3.7.0 | Auto-generates sitemap.xml |
-| TypeScript | Astro built-in | Strict mode, no separate tsconfig needed |
-| Vanilla JS | — | All interactivity via `<script>` tags in Astro components |
-| ConvertKit | API v3 | Newsletter subscriptions (Form ID: `9116297`) |
-| Plausible | — | Privacy-friendly analytics (production-only, `codetocash.dev`) |
-| Prettier | ^3.8.1 | Code formatter (devDependency) |
+| Technology        | Version        | Role                                                           |
+| ----------------- | -------------- | -------------------------------------------------------------- |
+| Astro             | ^5.17.1        | Static site generator (SSG)                                    |
+| Tailwind CSS      | ^4.1.18        | CSS framework                                                  |
+| @tailwindcss/vite | ^4.1.18        | Tailwind v4 Vite plugin                                        |
+| @astrojs/sitemap  | ^3.7.0         | Auto-generates sitemap.xml                                     |
+| TypeScript        | Astro built-in | Strict mode, no separate tsconfig needed                       |
+| Vanilla JS        | —              | All interactivity via `<script>` tags in Astro components      |
+| ConvertKit        | API v3         | Newsletter subscriptions (Form ID: `9116297`)                  |
+| Plausible         | —              | Privacy-friendly analytics (production-only, `codetocash.dev`) |
+| Prettier          | ^3.8.1         | Code formatter (devDependency)                                 |
 
 **No**: React, Vue, Svelte, or any JS framework. No test framework. No ESLint.
 
@@ -39,12 +39,12 @@
 
 ## Commands
 
-| Command | Action |
-|---|---|
-| `npm run dev` | Dev server at `localhost:4321` |
-| `npm run build` | Production build to `./dist/` |
-| `npm run preview` | Preview the built site locally |
-| `npm run format` | Format all files with Prettier |
+| Command                | Action                           |
+| ---------------------- | -------------------------------- |
+| `npm run dev`          | Dev server at `localhost:4321`   |
+| `npm run build`        | Production build to `./dist/`    |
+| `npm run preview`      | Preview the built site locally   |
+| `npm run format`       | Format all files with Prettier   |
 | `npm run format:check` | Check formatting without writing |
 
 ---
@@ -66,16 +66,20 @@ PUBLIC_CONVERTKIT_API_KEY=your_key_here
 ## Architecture
 
 ### Static Site Generation (SSG)
+
 All pages are pre-rendered at build time to `./dist/`. No server-side rendering, no API endpoints, no edge functions. The site is pure static HTML/CSS/JS.
 
 ### Routing
+
 File-based routing via `src/pages/`. Every `.astro` file becomes a URL:
+
 - `src/pages/index.astro` → `/`
 - `src/pages/drm-101.astro` → `/drm-101`
 - `src/pages/blog/[category].astro` → `/blog/[category]` (6 static category pages, uses `getStaticPaths()`)
 - `src/pages/blog/[...slug].astro` → `/blog/[slug]` (dynamic, uses `getStaticPaths()`)
 
 ### Layout Hierarchy
+
 ```
 Layout.astro          ← base HTML shell, used by every page
 ├── BlogLayout.astro  ← wraps Layout, adds TOC sidebar + blog-specific features
@@ -83,9 +87,11 @@ Layout.astro          ← base HTML shell, used by every page
 ```
 
 ### Content Collections
+
 Blog posts live in `src/content/blog/` as Markdown files. Schema validated by Zod in `src/content.config.ts`. Uses Astro 5's glob loader.
 
 ### Deployment
+
 Connected to Vercel via GitHub. Every push to `main` auto-deploys.
 
 ---
@@ -93,7 +99,9 @@ Connected to Vercel via GitHub. Every push to `main` auto-deploys.
 ## Pages
 
 ### `/` — index.astro (Home)
+
 Marketing landing page. Sections:
+
 1. **HERO** — "You Can Build Anything. Now Learn to Sell It." — code decoration injected via `requestAnimationFrame` post-paint to protect LCP
 2. **PROBLEM** — Three problem cards ("You Build But Nobody Buys", "Marketing Feels Sleazy", "No System, Just Hoping")
 3. **SOLUTION** — DRM pipeline visualised as a code pipeline: `Traffic → Landing Page → Email Sequence → Offer → Revenue`
@@ -107,9 +115,11 @@ Includes WebSite schema JSON-LD. Uses `IntersectionObserver` for `.section-anima
 ---
 
 ### `/drm-101` — drm-101.astro (Long-Form Guide)
+
 The flagship content piece. ~45 min read. The complete DRM guide.
 
 **Structure**:
+
 - Hero with reading time + last updated badges
 - Sticky desktop TOC sidebar (8 chapters + summary)
 - Collapsible mobile TOC button
@@ -118,6 +128,7 @@ The flagship content piece. ~45 min read. The complete DRM guide.
 - Final related playbooks section
 
 **Chapters**:
+
 1. What Is Direct Response Marketing?
 2. The DRM Funnel — Your Sales Pipeline
 3. Crafting an Irresistible Offer
@@ -134,7 +145,9 @@ The flagship content piece. ~45 min read. The complete DRM guide.
 ---
 
 ### `/newsletter` — newsletter.astro (Newsletter Signup)
+
 Dedicated subscription page. Sections:
+
 1. **HERO** — "One Marketing Tactic. Every Week. Built for Developers." — Large heading with ConvertKit form
 2. **WHAT YOU GET** — Five benefit cards with SVG icons
 3. **BUILDING IN PUBLIC** — Honest stats section (12 articles, 8 of 8 playbooks live)
@@ -146,7 +159,9 @@ Both forms use class `ck-subscribe-form` — handled by the global handler in `L
 ---
 
 ### `/welcome` — welcome.astro (Post-Subscription Thank You)
+
 Shown after a successful subscription. Sections:
+
 1. **SUCCESS HERO** — Green checkmark, "You're in! Welcome to CodeToCash."
 2. **CHEATSHEET DOWNLOAD** — Download button → `/drm-cheatsheet.pdf`
 3. **EMAIL SEQUENCE PREVIEW** — 5 emails listed (sent over 11 days)
@@ -155,10 +170,13 @@ Shown after a successful subscription. Sections:
 ---
 
 ### `/blog` — blog/index.astro (Blog Index)
+
 Lists all published blog posts (draft: false). Anchor-link category nav with `// browse by category` label — each link navigates to the real `/blog/[category]` page (no JS filtering). Post cards with category badge, reading time, title, description, date. Featured post displayed above the grid.
 
 ### `/blog/[category]` — blog/[category].astro (Category Pages)
+
 Six static category pages pre-rendered at build time via `getStaticPaths()`. Categories: `fundamentals`, `copywriting`, `email`, `ads`, `analytics`, `strategy`. Each page has:
+
 - Unique `<title>` and `<meta description>` per category for SEO
 - Breadcrumb: Home / Blog / [Category Name]
 - Category eyebrow label, H1, and subtitle
@@ -171,12 +189,15 @@ Six static category pages pre-rendered at build time via `getStaticPaths()`. Cat
 Current post counts per category: fundamentals (4), copywriting (7), strategy (12), email (5), ads (2), analytics (3).
 
 ### `/blog/[slug]` — blog/[...slug].astro (Blog Post)
+
 Renders Markdown content via `BlogLayout.astro`. Uses `getStaticPaths()` with content collections.
 
 ---
 
 ### `/playbooks` — playbooks/index.astro (Playbooks Index)
+
 Lists 8 playbooks as cards. All 8 are implemented:
+
 - ✅ `/playbooks/saas-landing-page` — "How to Write a SaaS Landing Page That Converts"
 - ✅ `/playbooks/email-launch-sequence` — "Email Launch Sequence for Developers"
 - ✅ `/playbooks/google-ads-100-budget` — "Your First Google Ad Campaign on a $100 Budget"
@@ -189,12 +210,15 @@ Lists 8 playbooks as cards. All 8 are implemented:
 All 8 playbooks include HowTo JSON-LD structured data.
 
 ### `/playbooks/saas-landing-page` — playbooks/saas-landing-page.astro
+
 Long-form playbook using `PlaybookLayout.astro`. Beginner, 15 min read.
 
 ---
 
 ### `/tools` — tools.astro (Marketing Tools)
+
 Curated tool reviews for developers. Features:
+
 - Category filter buttons (JS-powered)
 - Tool cards with pros, cons, pricing, "best for" tags
 - Three recommended stacks:
@@ -206,9 +230,11 @@ Curated tool reviews for developers. Features:
 ---
 
 ### `/about` — about.astro (About Page)
+
 Brand story and values. Sections: Hero, Story timeline, What We Believe (4 values), What We Offer (6 resource cards), Contact.
 
 ### `/404` — 404.astro (Error Page)
+
 Themed 404 with a code snippet: `throw new Error("404: This page doesn't exist")`. Three nav buttons: Home, Blog, DRM 101.
 
 ---
@@ -216,6 +242,7 @@ Themed 404 with a code snippet: `throw new Error("404: This page doesn't exist")
 ## Components
 
 ### `Navigation.astro`
+
 Fixed top nav. No props.
 
 - **Logo**: "CodeToCash.dev" — coral color on `.dev`
@@ -226,6 +253,7 @@ Fixed top nav. No props.
 - **Glassmorphism**: `bg-navy/70 backdrop-blur-xl border-b border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)]` — stronger blur and border than before (`backdrop-blur-md`, `border-white/5`)
 
 ### `Footer.astro`
+
 Site footer. No props.
 
 - **Brand column**: Logo + tagline
@@ -239,9 +267,11 @@ Site footer. No props.
 ## Layouts
 
 ### `Layout.astro`
+
 Base wrapper for all pages.
 
 **Props**:
+
 ```typescript
 {
   title?: string        // <title> tag
@@ -261,9 +291,11 @@ Provides: charset/viewport, favicon, title, description, canonical URL, OG tags 
 ---
 
 ### `BlogLayout.astro`
+
 Wraps `Layout.astro` for blog posts.
 
 **Props**:
+
 ```typescript
 {
   post: CollectionEntry<'blog'>
@@ -279,6 +311,7 @@ Provides: breadcrumb nav, article header (category badge, reading time, date, au
 **FAQ accordion**: When a post has `faq` frontmatter, BlogLayout renders a `<details>`/`<summary>` accordion section above the newsletter CTA. No JS required — pure HTML. Styled with a coral eyebrow label, `border-white/[0.06]` dividers between questions, and a coral left border on expanded answers.
 
 **JSON-LD schema**: BlogLayout generates schema conditionally based on whether `faq` frontmatter is present:
+
 - **With FAQ**: `@graph` array combining `Article` + `FAQPage` schemas
 - **Without FAQ**: plain `Article` schema object
 
@@ -286,8 +319,8 @@ Provides: breadcrumb nav, article header (category badge, reading time, date, au
 // Simplified logic in BlogLayout.astro
 const hasFaq = !!(faq && faq.length > 0);
 const schema = hasFaq
-  ? JSON.stringify({ "@context": "https://schema.org", "@graph": [articleSchema, faqPageSchema] })
-  : JSON.stringify({ "@context": "https://schema.org", ...articleSchema });
+  ? JSON.stringify({ '@context': 'https://schema.org', '@graph': [articleSchema, faqPageSchema] })
+  : JSON.stringify({ '@context': 'https://schema.org', ...articleSchema });
 ```
 
 **Category badge colors**: Defined in `src/utils/categoryColors.ts` (single source of truth).
@@ -305,9 +338,11 @@ const schema = hasFaq
 ---
 
 ### `PlaybookLayout.astro`
+
 Wraps `Layout.astro` for playbooks.
 
 **Props**:
+
 ```typescript
 {
   title: string
@@ -336,12 +371,12 @@ Provides: breadcrumb, hero with difficulty badge + reading time + last updated, 
 
 ```css
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, monospace;
-  --color-coral: #E94560;       /* Primary accent — CTAs, highlights, active states */
-  --color-deep-blue: #0F3460;   /* Secondary — gradient backgrounds */
-  --color-navy: #0A0A1A;        /* Background base */
-  --color-navy-light: #111127;  /* Slightly lighter background for section contrast */
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --color-coral: #e94560; /* Primary accent — CTAs, highlights, active states */
+  --color-deep-blue: #0f3460; /* Secondary — gradient backgrounds */
+  --color-navy: #0a0a1a; /* Background base */
+  --color-navy-light: #111127; /* Slightly lighter background for section contrast */
 }
 ```
 
@@ -349,61 +384,74 @@ Use these as Tailwind classes: `text-coral`, `bg-navy`, `border-deep-blue`, `bg-
 
 ### Animations
 
-| Class | Description |
-|---|---|
-| `.animate-fade-in` | 0.8s opacity fade from 0→1 |
-| `.animate-fade-in-up` | 0.8s fade + translateY(20px→0) |
-| `.animate-pulse-slow` | 6s slow opacity pulse (for background glows) |
-| `.animation-delay-200` | 200ms animation delay |
-| `.animation-delay-400` | 400ms animation delay |
-| `.animation-delay-2000` | 2s animation delay |
-| `.section-animate` | Scroll-triggered: hidden by default, add `.visible` to reveal |
+| Class                   | Description                                                   |
+| ----------------------- | ------------------------------------------------------------- |
+| `.animate-fade-in`      | 0.8s opacity fade from 0→1                                    |
+| `.animate-fade-in-up`   | 0.8s fade + translateY(20px→0)                                |
+| `.animate-pulse-slow`   | 6s slow opacity pulse (for background glows)                  |
+| `.animation-delay-200`  | 200ms animation delay                                         |
+| `.animation-delay-400`  | 400ms animation delay                                         |
+| `.animation-delay-2000` | 2s animation delay                                            |
+| `.section-animate`      | Scroll-triggered: hidden by default, add `.visible` to reveal |
 
 **Mobile optimization**: `animate-fade-in` and `animate-fade-in-up` are disabled at `max-width: 767px` — animations are `none` on mobile for faster LCP.
 
 **Reduced motion**: All animations disabled when `prefers-reduced-motion: reduce`.
 
 ### Scroll Animation Pattern
+
 ```javascript
 const observer = new IntersectionObserver(
-  (entries) => entries.forEach(e => e.isIntersecting && e.target.classList.add('visible')),
+  (entries) => entries.forEach((e) => e.isIntersecting && e.target.classList.add('visible')),
   { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
 );
-document.querySelectorAll('.section-animate').forEach(el => observer.observe(el));
+document.querySelectorAll('.section-animate').forEach((el) => observer.observe(el));
 ```
 
 ### Common UI Patterns
 
 **Cards**:
+
 ```html
-<div class="p-6 rounded-2xl bg-white/[0.02] border border-white/[0.06]
+<div
+  class="p-6 rounded-2xl bg-white/[0.02] border border-white/[0.06]
             hover:border-coral/40 hover:bg-white/[0.04] hover:shadow-lg hover:shadow-coral/10
-            hover:-translate-y-1 transition-all duration-300">
+            hover:-translate-y-1 transition-all duration-300"
+></div>
 ```
 
 Card emoji icons inside cards use `group-hover:scale-110 transition-transform duration-300` when the card has `group` class.
 
 **Primary Button**:
+
 ```html
-<button class="px-8 py-4 bg-coral text-white font-semibold rounded-lg
+<button
+  class="px-8 py-4 bg-coral text-white font-semibold rounded-lg
                hover:bg-coral/90 hover:-translate-y-1 transition-all duration-300
-               shadow-lg shadow-coral/20 cursor-pointer">
+               shadow-lg shadow-coral/20 cursor-pointer"
+></button>
 ```
 
 **Email Input**:
+
 ```html
-<input type="email" class="flex-1 px-5 py-4 bg-white/5 border border-white/10 rounded-lg
+<input
+  type="email"
+  class="flex-1 px-5 py-4 bg-white/5 border border-white/10 rounded-lg
                             text-white placeholder-gray-500
                             focus:outline-none focus:border-coral/50 focus:ring-2 focus:ring-coral/20
-                            transition-all duration-200" />
+                            transition-all duration-200"
+/>
 ```
 
 **Section Label** (eyebrow text):
+
 ```html
 <p class="text-sm font-mono text-coral uppercase tracking-widest mb-4">// section name</p>
 ```
 
 **Gradient Text** (used on main hero headings):
+
 ```html
 <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-coral">
   Key phrase here.
@@ -413,9 +461,12 @@ Card emoji icons inside cards use `group-hover:scale-110 transition-transform du
 **Section Dividers**: All major `<section>` elements now use `border-t border-white/[0.02]` to add a subtle top border for visual hierarchy between sections.
 
 **Background Glow**:
+
 ```html
-<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
-            w-[800px] h-[600px] bg-coral/5 rounded-full blur-[120px] animate-pulse-slow">
+<div
+  class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+            w-[800px] h-[600px] bg-coral/5 rounded-full blur-[120px] animate-pulse-slow"
+></div>
 ```
 
 ---
@@ -423,6 +474,7 @@ Card emoji icons inside cards use `group-hover:scale-110 transition-transform du
 ## ConvertKit Integration
 
 ### Configuration
+
 - **Form ID**: `9116297` (hardcoded everywhere)
 - **API Key**: `import.meta.env.PUBLIC_CONVERTKIT_API_KEY`
 - **API Endpoint**: `POST https://api.convertkit.com/v3/forms/9116297/subscribe`
@@ -430,6 +482,7 @@ Card emoji icons inside cards use `group-hover:scale-110 transition-transform du
 - **Success action**: `window.location.href = '/welcome'`
 
 ### Standard Subscribe Handler Pattern
+
 ```javascript
 const CONVERTKIT_FORM_ID = '9116297';
 const CONVERTKIT_API_KEY = import.meta.env.PUBLIC_CONVERTKIT_API_KEY;
@@ -453,14 +506,11 @@ async function handleSubscribe(form, errorEl) {
   button.textContent = 'Subscribing...';
 
   try {
-    const res = await fetch(
-      `https://api.convertkit.com/v3/forms/${CONVERTKIT_FORM_ID}/subscribe`,
-      {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ api_key: CONVERTKIT_API_KEY, email }),
-      }
-    );
+    const res = await fetch(`https://api.convertkit.com/v3/forms/${CONVERTKIT_FORM_ID}/subscribe`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ api_key: CONVERTKIT_API_KEY, email }),
+    });
     if (!res.ok) {
       const data = await res.json().catch(() => null);
       throw new Error(data?.message || 'Subscription failed. Please try again.');
@@ -476,20 +526,22 @@ async function handleSubscribe(form, errorEl) {
 ```
 
 ### Where ConvertKit Is Used
-| File | Forms | Class |
-|---|---|---|
-| `newsletter.astro` | 2 (hero + CTA) | `ck-subscribe-form` |
-| `drm-101.astro` | 8 inline CTAs | `drm-subscribe-form` |
-| `index.astro` | 1 newsletter section | `ck-subscribe-form` |
-| `Footer.astro` | 1 "Join" form | `ck-subscribe-form` |
-| `BlogLayout.astro` | 2 (sidebar widget + bottom CTA) | `ck-subscribe-form` |
-| `PlaybookLayout.astro` | 1 bottom CTA | `ck-subscribe-form` |
-| `tools.astro` | 1 "Get Recommendations" form | `ck-subscribe-form` |
-| `playbooks/index.astro` | 1 "Notify Me" form | `ck-subscribe-form` |
+
+| File                    | Forms                           | Class                |
+| ----------------------- | ------------------------------- | -------------------- |
+| `newsletter.astro`      | 2 (hero + CTA)                  | `ck-subscribe-form`  |
+| `drm-101.astro`         | 8 inline CTAs                   | `drm-subscribe-form` |
+| `index.astro`           | 1 newsletter section            | `ck-subscribe-form`  |
+| `Footer.astro`          | 1 "Join" form                   | `ck-subscribe-form`  |
+| `BlogLayout.astro`      | 2 (sidebar widget + bottom CTA) | `ck-subscribe-form`  |
+| `PlaybookLayout.astro`  | 1 bottom CTA                    | `ck-subscribe-form`  |
+| `tools.astro`           | 1 "Get Recommendations" form    | `ck-subscribe-form`  |
+| `playbooks/index.astro` | 1 "Notify Me" form              | `ck-subscribe-form`  |
 
 **Zero Buttondown references remain in the codebase.**
 
 ### Two form class conventions
+
 - **`ck-subscribe-form`** — used for all standard forms. Handler lives in `Layout.astro` (runs on every page), targets all `.ck-subscribe-form` elements. Error `<p class="ck-subscribe-error" aria-live="polite" aria-atomic="true">` must be the immediate next sibling of the form.
 - **`drm-subscribe-form`** — used only in `drm-101.astro`. Handler defined in that page's own `<script>` tag. Error `<p class="drm-subscribe-error" aria-live="polite" aria-atomic="true">` must be the immediate next sibling.
 
@@ -498,6 +550,7 @@ async function handleSubscribe(form, errorEl) {
 ## Content Collections
 
 ### Blog Schema (`src/content.config.ts`)
+
 ```typescript
 z.object({
   title: z.string(),
@@ -510,116 +563,126 @@ z.object({
   readingTime: z.string(),
   featured: z.boolean().default(false),
   draft: z.boolean().default(false),
-  faq: z.array(z.object({
-    question: z.string(),
-    answer: z.string(),
-  })).optional(),
-})
+  faq: z
+    .array(
+      z.object({
+        question: z.string(),
+        answer: z.string(),
+      })
+    )
+    .optional(),
+});
 ```
 
 All 12 published blog posts include `faq` frontmatter with 4–5 Q&A pairs each.
 
 ### Published Blog Posts
-| Slug | Title | Category | Featured |
-|---|---|---|---|
-| `what-is-direct-response-marketing-for-developers` | "What Is Direct Response Marketing? A Vibe Coder's Guide" | fundamentals | ⭐ yes |
-| `copywriting-frameworks-for-developers` | "5 Copywriting Frameworks Every Vibe Coder Should Know" | copywriting | no |
-| `marketing-for-vibe-coders` | "Marketing for Vibe Coders: How to Sell What You Build with AI" | strategy | no |
-| `drm-funnel-explained` | "The DRM Funnel Explained: Think of It as Your Sales API" | fundamentals | no |
-| `pas-copywriting-framework` | "PAS Framework: The Developer's Favorite Copywriting Formula" | copywriting | no |
-| `why-developer-products-fail-marketing` | "Why Most Developer Products Fail (And How DRM Fixes It)" | strategy | no |
-| `direct-response-vs-brand-marketing` | "Direct Response vs Brand Marketing: What Developers Need to Know" | fundamentals | no |
-| `saas-landing-page-copywriting` | "SaaS Landing Page Copywriting: The Developer's Framework for Words That Sell" | copywriting | no |
-| `email-marketing-for-saas-beginners` | "Email Marketing for SaaS Beginners: Build a System That Sells While You Sleep" | email | no |
-| `saas-pricing-strategy` | "SaaS Pricing Strategy: A Developer's Guide to Pricing for Maximum Revenue" | strategy | no |
-| `sell-software-built-with-ai` | "How to Sell Software Built with AI: A Vibe Coder's Marketing Playbook" | strategy | no |
-| `building-in-public-marketing` | "Build in Public Marketing Strategy: Turn Your Process Into Your Audience" | strategy | no |
-| `aida-copywriting-formula-landing-page` | "AIDA Formula for Developer Landing Pages: A Practical Guide" | copywriting | no |
-| `headline-copywriting-templates` | "How to Write Headlines That Convert: 30 Templates for Dev Tools" | copywriting | no |
-| `google-ads-for-saas-beginners` | "How to Run Google Ads for Your SaaS on a $100 Budget" | ads | no |
-| `email-sequences-for-saas` | "7 Email Sequences That Sell SaaS Products on Autopilot" | email | no |
-| `cold-email-templates-saas` | "Writing Cold Emails That Get Replies: Templates for Dev Tools" | email | no |
-| `ab-testing-landing-page-guide` | "The Developer's Guide to A/B Testing Landing Pages" | analytics | no |
-| `customer-acquisition-cost-saas` | "Customer Acquisition Cost: What Every Developer Should Know" | analytics | no |
-| `marketing-tools-for-indie-developers` | "Marketing Stack for Indie Developers: The Complete Tool Guide" | strategy | no |
-| `product-hunt-launch-strategy` | "How to Launch on Product Hunt: DRM Edition" | strategy | no |
-| `twitter-marketing-for-developers` | "How to Use Twitter/X to Market Your Developer Product" | strategy | no |
-| `value-proposition-template-saas` | "How to Write a Value Proposition for Your Dev Tool" | fundamentals | no |
-| `pricing-psychology-saas` | "The Psychology of SaaS Pricing: Why $49 Beats $50" | strategy | no |
-| `lead-magnet-ideas-for-saas` | "How to Create a Lead Magnet Developers Actually Want" | strategy | no |
-| `reddit-marketing-strategy-developers` | "Reddit Marketing for Developers (Without Getting Banned)" | strategy | no |
-| `0-to-1k-mrr-indie-developer` | "From $0 to $1K MRR: A Direct Response Marketing Roadmap" | strategy | no |
-| `case-study-copywriting-saas` | "How to Write Case Studies That Sell Your Dev Tool" | copywriting | no |
-| `sales-page-conversion-optimization` | "How to Create a Sales Page That Converts at 5%+" | copywriting | no |
-| `retargeting-ads-for-saas-beginners` | "Retargeting Ads for Developer Products: Beginner's Guide" | ads | no |
-| `seo-for-developer-blogs` | "SEO for Developer Blogs: Rank Without Being an SEO Expert" | analytics | no |
-| `developer-newsletter-growth` | "Growing a Developer Newsletter to 1,000 Subscribers" | email | no |
-| `email-subject-line-formulas` | "Email Subject Line Formulas That Get 40%+ Open Rates" | email | no |
+
+| Slug                                               | Title                                                                           | Category     | Featured |
+| -------------------------------------------------- | ------------------------------------------------------------------------------- | ------------ | -------- |
+| `what-is-direct-response-marketing-for-developers` | "What Is Direct Response Marketing? A Vibe Coder's Guide"                       | fundamentals | ⭐ yes   |
+| `copywriting-frameworks-for-developers`            | "5 Copywriting Frameworks Every Vibe Coder Should Know"                         | copywriting  | no       |
+| `marketing-for-vibe-coders`                        | "Marketing for Vibe Coders: How to Sell What You Build with AI"                 | strategy     | no       |
+| `drm-funnel-explained`                             | "The DRM Funnel Explained: Think of It as Your Sales API"                       | fundamentals | no       |
+| `pas-copywriting-framework`                        | "PAS Framework: The Developer's Favorite Copywriting Formula"                   | copywriting  | no       |
+| `why-developer-products-fail-marketing`            | "Why Most Developer Products Fail (And How DRM Fixes It)"                       | strategy     | no       |
+| `direct-response-vs-brand-marketing`               | "Direct Response vs Brand Marketing: What Developers Need to Know"              | fundamentals | no       |
+| `saas-landing-page-copywriting`                    | "SaaS Landing Page Copywriting: The Developer's Framework for Words That Sell"  | copywriting  | no       |
+| `email-marketing-for-saas-beginners`               | "Email Marketing for SaaS Beginners: Build a System That Sells While You Sleep" | email        | no       |
+| `saas-pricing-strategy`                            | "SaaS Pricing Strategy: A Developer's Guide to Pricing for Maximum Revenue"     | strategy     | no       |
+| `sell-software-built-with-ai`                      | "How to Sell Software Built with AI: A Vibe Coder's Marketing Playbook"         | strategy     | no       |
+| `building-in-public-marketing`                     | "Build in Public Marketing Strategy: Turn Your Process Into Your Audience"      | strategy     | no       |
+| `aida-copywriting-formula-landing-page`            | "AIDA Formula for Developer Landing Pages: A Practical Guide"                   | copywriting  | no       |
+| `headline-copywriting-templates`                   | "How to Write Headlines That Convert: 30 Templates for Dev Tools"               | copywriting  | no       |
+| `google-ads-for-saas-beginners`                    | "How to Run Google Ads for Your SaaS on a $100 Budget"                          | ads          | no       |
+| `email-sequences-for-saas`                         | "7 Email Sequences That Sell SaaS Products on Autopilot"                        | email        | no       |
+| `cold-email-templates-saas`                        | "Writing Cold Emails That Get Replies: Templates for Dev Tools"                 | email        | no       |
+| `ab-testing-landing-page-guide`                    | "The Developer's Guide to A/B Testing Landing Pages"                            | analytics    | no       |
+| `customer-acquisition-cost-saas`                   | "Customer Acquisition Cost: What Every Developer Should Know"                   | analytics    | no       |
+| `marketing-tools-for-indie-developers`             | "Marketing Stack for Indie Developers: The Complete Tool Guide"                 | strategy     | no       |
+| `product-hunt-launch-strategy`                     | "How to Launch on Product Hunt: DRM Edition"                                    | strategy     | no       |
+| `twitter-marketing-for-developers`                 | "How to Use Twitter/X to Market Your Developer Product"                         | strategy     | no       |
+| `value-proposition-template-saas`                  | "How to Write a Value Proposition for Your Dev Tool"                            | fundamentals | no       |
+| `pricing-psychology-saas`                          | "The Psychology of SaaS Pricing: Why $49 Beats $50"                             | strategy     | no       |
+| `lead-magnet-ideas-for-saas`                       | "How to Create a Lead Magnet Developers Actually Want"                          | strategy     | no       |
+| `reddit-marketing-strategy-developers`             | "Reddit Marketing for Developers (Without Getting Banned)"                      | strategy     | no       |
+| `0-to-1k-mrr-indie-developer`                      | "From $0 to $1K MRR: A Direct Response Marketing Roadmap"                       | strategy     | no       |
+| `case-study-copywriting-saas`                      | "How to Write Case Studies That Sell Your Dev Tool"                             | copywriting  | no       |
+| `sales-page-conversion-optimization`               | "How to Create a Sales Page That Converts at 5%+"                               | copywriting  | no       |
+| `retargeting-ads-for-saas-beginners`               | "Retargeting Ads for Developer Products: Beginner's Guide"                      | ads          | no       |
+| `seo-for-developer-blogs`                          | "SEO for Developer Blogs: Rank Without Being an SEO Expert"                     | analytics    | no       |
+| `developer-newsletter-growth`                      | "Growing a Developer Newsletter to 1,000 Subscribers"                           | email        | no       |
+| `email-subject-line-formulas`                      | "Email Subject Line Formulas That Get 40%+ Open Rates"                          | email        | no       |
 
 ### Playbooks Status
-| Slug | Title | Status |
-|---|---|---|
-| `saas-landing-page` | "How to Write a SaaS Landing Page That Converts" | ✅ Live |
-| `email-launch-sequence` | "Email Launch Sequence for Developers" | ✅ Live |
-| `google-ads-100-budget` | "Your First Google Ad Campaign on a $100 Budget" | ✅ Live |
-| `copywriting-for-developers` | "Writing Copy When You Hate Writing Copy" | ✅ Live |
-| `pricing-dev-product` | "Pricing Your Dev Product for Maximum Revenue" | ✅ Live |
-| `building-in-public` | "Building in Public as a Marketing Strategy" | ✅ Live |
-| `ab-testing-guide` | "The Developer's A/B Testing Guide" | ✅ Live |
-| `cold-email-outreach` | "Cold Email Outreach for Dev Tools" | ✅ Live |
+
+| Slug                         | Title                                            | Status  |
+| ---------------------------- | ------------------------------------------------ | ------- |
+| `saas-landing-page`          | "How to Write a SaaS Landing Page That Converts" | ✅ Live |
+| `email-launch-sequence`      | "Email Launch Sequence for Developers"           | ✅ Live |
+| `google-ads-100-budget`      | "Your First Google Ad Campaign on a $100 Budget" | ✅ Live |
+| `copywriting-for-developers` | "Writing Copy When You Hate Writing Copy"        | ✅ Live |
+| `pricing-dev-product`        | "Pricing Your Dev Product for Maximum Revenue"   | ✅ Live |
+| `building-in-public`         | "Building in Public as a Marketing Strategy"     | ✅ Live |
+| `ab-testing-guide`           | "The Developer's A/B Testing Guide"              | ✅ Live |
+| `cold-email-outreach`        | "Cold Email Outreach for Dev Tools"              | ✅ Live |
 
 ---
 
 ## Key Files Reference
 
-| File | Purpose |
-|---|---|
-| `astro.config.mjs` | Site URL, Vite plugins (Tailwind), sitemap integration |
-| `src/content.config.ts` | Blog collection Zod schema |
-| `src/styles/global.css` | Tailwind v4 import, theme tokens, all custom animations |
-| `src/components/Navigation.astro` | Top nav with mobile hamburger menu |
-| `src/components/Footer.astro` | Footer with nav columns and newsletter form |
-| `src/layouts/Layout.astro` | Base HTML shell (SEO, fonts, nav, footer, back-to-top, global CK handler) |
-| `src/layouts/BlogLayout.astro` | Blog article layout with TOC sidebar |
-| `src/layouts/PlaybookLayout.astro` | Playbook layout with numbered section sidebar |
-| `src/pages/blog/[category].astro` | Six SEO category pages (fundamentals, copywriting, email, ads, analytics, strategy) |
-| `src/utils/categoryColors.ts` | Shared blog category color + label maps (single source of truth) |
-| `src/utils/getRelatedPosts.ts` | Priority-based related posts algorithm: same category → tag overlap → recency fallback. Used by `blog/[...slug].astro`. |
-| `public/drm-cheatsheet.pdf` | Free cheatsheet PDF (~12KB), downloaded from `/welcome` |
-| `public/og-default.png` | Default OG image for social sharing |
-| `.env` | `PUBLIC_CONVERTKIT_API_KEY` — never commit, set in Vercel dashboard |
-| `.env.example` | Reference template for required env vars — safe to commit |
-| `.prettierrc` | Prettier config (single quotes, 2-space indent, 100 char width, astro plugin) |
+| File                               | Purpose                                                                                                                 |
+| ---------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| `astro.config.mjs`                 | Site URL, Vite plugins (Tailwind), sitemap integration                                                                  |
+| `src/content.config.ts`            | Blog collection Zod schema                                                                                              |
+| `src/styles/global.css`            | Tailwind v4 import, theme tokens, all custom animations                                                                 |
+| `src/components/Navigation.astro`  | Top nav with mobile hamburger menu                                                                                      |
+| `src/components/Footer.astro`      | Footer with nav columns and newsletter form                                                                             |
+| `src/layouts/Layout.astro`         | Base HTML shell (SEO, fonts, nav, footer, back-to-top, global CK handler)                                               |
+| `src/layouts/BlogLayout.astro`     | Blog article layout with TOC sidebar                                                                                    |
+| `src/layouts/PlaybookLayout.astro` | Playbook layout with numbered section sidebar                                                                           |
+| `src/pages/blog/[category].astro`  | Six SEO category pages (fundamentals, copywriting, email, ads, analytics, strategy)                                     |
+| `src/utils/categoryColors.ts`      | Shared blog category color + label maps (single source of truth)                                                        |
+| `src/utils/getRelatedPosts.ts`     | Priority-based related posts algorithm: same category → tag overlap → recency fallback. Used by `blog/[...slug].astro`. |
+| `public/drm-cheatsheet.pdf`        | Free cheatsheet PDF (~12KB), downloaded from `/welcome`                                                                 |
+| `public/og-default.png`            | Default OG image for social sharing                                                                                     |
+| `.env`                             | `PUBLIC_CONVERTKIT_API_KEY` — never commit, set in Vercel dashboard                                                     |
+| `.env.example`                     | Reference template for required env vars — safe to commit                                                               |
+| `.prettierrc`                      | Prettier config (single quotes, 2-space indent, 100 char width, astro plugin)                                           |
 
 ---
 
 ## Conventions & Patterns
 
 ### File Naming
+
 - **Components**: `PascalCase.astro`
 - **Pages**: `kebab-case.astro`
 - **Blog posts**: `kebab-case.md` (filename = URL slug)
 
 ### Tailwind Usage
+
 - Use theme tokens: `text-coral`, `bg-navy`, `bg-navy-light`, `text-deep-blue`
 - Opacity variants for subtle tints: `bg-coral/10`, `border-white/[0.06]`
 - Responsive: `sm:`, `md:`, `lg:` prefixes
 - Never write custom CSS if a Tailwind class exists
 
 ### Adding a New Page
+
 1. Create `src/pages/your-page.astro`
 2. Import and use `Layout.astro` with `title`, `description` props
 3. Set your own canonical URL, OG tags via Layout props
 4. Add to Navigation links if it should appear in nav
 
 ### Adding a New Blog Post
+
 1. Create `src/content/blog/your-post-slug.md`
 2. Add required frontmatter: `title`, `description`, `pubDate`, `category`, `tags`, `readingTime`
 3. Add optional `faq` frontmatter (4–5 Q&A pairs) — renders as an accordion and adds FAQPage JSON-LD:
    ```yaml
    faq:
-     - question: "Your question here?"
-       answer: "Your answer here."
+     - question: 'Your question here?'
+       answer: 'Your answer here.'
    ```
 4. Ensure the primary target keyword appears naturally within the first 100 words
 5. Include at least one link to `/drm-101` and 2–3 links to related posts by slug
@@ -627,6 +690,7 @@ All 12 published blog posts include `faq` frontmatter with 4–5 Q&A pairs each.
 7. The post auto-appears in the correct `/blog/[category]` page and sitemap
 
 ### Adding a New Playbook
+
 1. Create `src/pages/playbooks/your-playbook.astro`
 2. Use `PlaybookLayout.astro` with all required props
 3. Define `sections` array for the TOC
@@ -634,17 +698,20 @@ All 12 published blog posts include `faq` frontmatter with 4–5 Q&A pairs each.
 5. Update the playbooks index page to link to it
 
 ### Adding a Subscribe Form
+
 1. Add `class="ck-subscribe-form"` to the `<form>` element
 2. Include an `<input type="email" name="email">` inside
 3. Add `<p class="ck-subscribe-error" aria-live="polite" aria-atomic="true">` as the immediate next sibling of the form
 4. The global handler in `Layout.astro` handles submission automatically — no page-level JS needed
 
 ### TypeScript
+
 - Strict mode — no `any` types
 - Props interfaces defined in layout frontmatter with `interface Props {}`
 - Content collection entries typed as `CollectionEntry<'blog'>`
 
 ### Accessibility Checklist
+
 - Use semantic HTML: `<nav>`, `<main>`, `<article>`, `<section>`
 - Add `aria-label` to icon-only buttons
 - Add `aria-expanded` to toggles

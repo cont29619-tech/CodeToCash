@@ -1,21 +1,21 @@
 ---
-title: "How to Write Case Studies That Sell Your Dev Tool"
-description: "A framework for writing compelling SaaS case studies. Structure, interview questions, writing tips, and how to turn customer success into conversion content."
+title: 'How to Write Case Studies That Sell Your Dev Tool'
+description: 'A framework for writing compelling SaaS case studies. Structure, interview questions, writing tips, and how to turn customer success into conversion content.'
 pubDate: 2026-04-06
-author: "CodeToCash Team"
-category: "copywriting"
-tags: ["case studies", "content marketing", "saas", "social proof", "copywriting"]
-readingTime: "10 min"
+author: 'CodeToCash Team'
+category: 'copywriting'
+tags: ['case studies', 'content marketing', 'saas', 'social proof', 'copywriting']
+readingTime: '10 min read'
 featured: false
 draft: false
 faq:
-  - question: "How many case studies do I need?"
-    answer: "Start with three. One for each major use case or customer segment. Three case studies cover most visitor scenarios and give you enough social proof for your landing page, emails, and ads."
+  - question: 'How many case studies do I need?'
+    answer: 'Start with three. One for each major use case or customer segment. Three case studies cover most visitor scenarios and give you enough social proof for your landing page, emails, and ads.'
   - question: "What if my customers don't want to be featured?"
     answer: "Offer anonymized case studies — 'A Series A SaaS company' instead of naming them. Many customers are comfortable sharing results without their name. You can also use metrics-only proof: 'One customer reduced churn by 40%.'"
-  - question: "Should case studies go on my landing page or a separate page?"
-    answer: "Both. Use brief excerpts (2-3 sentences with a key metric) on your landing page, and link to the full case study on a dedicated page. Full case studies on dedicated pages also help with SEO."
-  - question: "When should I start writing case studies?"
+  - question: 'Should case studies go on my landing page or a separate page?'
+    answer: 'Both. Use brief excerpts (2-3 sentences with a key metric) on your landing page, and link to the full case study on a dedicated page. Full case studies on dedicated pages also help with SEO.'
+  - question: 'When should I start writing case studies?'
     answer: "As soon as you have one customer with measurable results. Even early-stage results are compelling when presented honestly — 'In the first month, Team X reduced their deployment time from 45 minutes to 3 minutes.'"
 ---
 

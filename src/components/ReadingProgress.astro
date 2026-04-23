@@ -10,10 +10,11 @@
   id="reading-progress-bar"
   aria-hidden="true"
   style="position:fixed;top:0;left:0;right:0;height:3px;z-index:70;background:#E94560;transform:scaleX(0);transform-origin:left;pointer-events:none;will-change:transform;"
-></div>
+>
+</div>
 
 <script>
-  const bar     = document.getElementById('reading-progress-bar');
+  const bar = document.getElementById('reading-progress-bar');
   const content = document.querySelector('[data-reading-content]') as HTMLElement | null;
 
   // Nothing to do on this page
@@ -23,16 +24,16 @@
     // Disable on mobile — skip JS entirely below md breakpoint
     const isDesktop = window.matchMedia('(min-width: 768px)');
 
-    const badge        = document.getElementById('reading-time-badge') as HTMLElement | null;
+    const badge = document.getElementById('reading-time-badge') as HTMLElement | null;
     const totalMinutes = parseInt(content.dataset.readingMinutes ?? '0') || null;
 
-    let articleTop    = 0;
+    let articleTop = 0;
     let articleHeight = 0;
 
     function measure() {
       // offsetTop is from nearest positioned ancestor — use getBoundingClientRect + scrollY for accuracy
-      const rect    = content!.getBoundingClientRect();
-      articleTop    = rect.top + window.scrollY;
+      const rect = content!.getBoundingClientRect();
+      articleTop = rect.top + window.scrollY;
       articleHeight = content!.offsetHeight;
     }
 
@@ -48,7 +49,7 @@
 
       if (badge && totalMinutes) {
         const remaining = Math.ceil(totalMinutes * (1 - progress));
-        badge.textContent  = remaining <= 0 ? 'Done ✓' : `${remaining} min left`;
+        badge.textContent = remaining <= 0 ? 'Done ✓' : `${remaining} min left`;
         badge.style.display = 'inline-block';
       }
     }

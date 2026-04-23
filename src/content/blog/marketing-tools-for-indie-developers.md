@@ -1,24 +1,24 @@
 ---
-title: "Marketing Stack for Indie Developers: The Complete Tool Guide"
-description: "The best marketing tools for indie developers — free, $30, and $100/month stacks with honest recommendations, comparison tables, and a no-BS decision framework."
+title: 'Marketing Stack for Indie Developers: The Complete Tool Guide'
+description: 'The best marketing tools for indie developers — free, $30, and $100/month stacks with honest recommendations, comparison tables, and a no-BS decision framework.'
 pubDate: 2026-03-08
-author: "CodeToCash Team"
-category: "strategy"
-tags: ["marketing tools", "indie developers", "tech stack", "saas tools", "email marketing"]
-readingTime: "10 min read"
+author: 'CodeToCash Team'
+category: 'strategy'
+tags: ['marketing tools', 'indie developers', 'tech stack', 'saas tools', 'email marketing']
+readingTime: '10 min read'
 featured: false
 draft: false
 faq:
   - question: "What's the minimum marketing stack to launch a SaaS?"
     answer: "Email tool (Buttondown or ConvertKit free) + analytics (Plausible or free PostHog) + your own landing page. That's genuinely enough to start."
-  - question: "Should I build my own email tool or use a service?"
-    answer: "Use a service. The deliverability, compliance, and infrastructure costs of self-hosting email far outweigh the SaaS fee."
-  - question: "Is Google Analytics worth setting up for a new site?"
-    answer: "Plausible or Fathom are better for most indie devs — simpler, privacy-compliant, and the data is more actionable."
-  - question: "When should I start paying for marketing tools?"
+  - question: 'Should I build my own email tool or use a service?'
+    answer: 'Use a service. The deliverability, compliance, and infrastructure costs of self-hosting email far outweigh the SaaS fee.'
+  - question: 'Is Google Analytics worth setting up for a new site?'
+    answer: 'Plausible or Fathom are better for most indie devs — simpler, privacy-compliant, and the data is more actionable.'
+  - question: 'When should I start paying for marketing tools?'
     answer: "When you're generating revenue. Until then, exhaust free tiers. Most tools have generous free plans for early-stage products."
-  - question: "What marketing tool gives the best ROI for indie developers?"
-    answer: "Email marketing tools. ROI on email consistently runs at 36:1 — nothing else comes close for the money."
+  - question: 'What marketing tool gives the best ROI for indie developers?'
+    answer: 'Email marketing tools. ROI on email consistently runs at 36:1 — nothing else comes close for the money.'
 ---
 
 Most indie developers overthink their marketing tools. They either spend hours evaluating every option before shipping, or they just grab whatever's free and wonder why nothing works. The right marketing tools for indie developers aren't the most powerful ones — they're the ones you'll actually use, that integrate cleanly, and that don't charge you enterprise prices before you have enterprise revenue.
@@ -41,13 +41,13 @@ One more thing: **switching costs are real**. Moving your email list from one pr
 **Who it's for**: Pre-revenue, pre-launch, or validating an idea before committing budget
 **Watch out**: Free tiers have limits. You'll eventually hit subscriber caps, traffic limits, or feature walls — plan your upgrade path before you need it.
 
-| Role | Tool | Free Tier Limit |
-|---|---|---|
-| Email marketing | ConvertKit Free | 1,000 subscribers, unlimited sends |
-| Analytics | PostHog | 1M events/month |
-| Landing page | Astro + Netlify/Vercel | Static, unlimited |
-| Copywriting aid | Claude / ChatGPT | Daily limits on free tier |
-| A/B testing | PostHog feature flags | Included in free tier |
+| Role            | Tool                   | Free Tier Limit                    |
+| --------------- | ---------------------- | ---------------------------------- |
+| Email marketing | ConvertKit Free        | 1,000 subscribers, unlimited sends |
+| Analytics       | PostHog                | 1M events/month                    |
+| Landing page    | Astro + Netlify/Vercel | Static, unlimited                  |
+| Copywriting aid | Claude / ChatGPT       | Daily limits on free tier          |
+| A/B testing     | PostHog feature flags  | Included in free tier              |
 
 **ConvertKit Free** is the best free email tool for indie developers. The UI is clean, the API is documented, deliverability is solid, and upgrading to paid is a straight line with no migration required. Alternatives like Mailchimp have historically been hostile to small senders (suspending accounts for low engagement), and their free tier now has significant limitations.
 
@@ -61,12 +61,12 @@ One more thing: **switching costs are real**. Moving your email list from one pr
 **Who it's for**: Early revenue ($500–$5,000 MRR), growing email list (500–5,000 subscribers), ready to invest in cleaner data
 **Watch out**: This tier is additive — you're paying for better UX and cleaner integrations, not fundamentally different capabilities. Don't upgrade until the free tier is genuinely limiting you.
 
-| Role | Tool | Cost |
-|---|---|---|
+| Role            | Tool               | Cost                         |
+| --------------- | ------------------ | ---------------------------- |
 | Email marketing | ConvertKit Creator | $25/month (up to 1,000 subs) |
-| Analytics | Plausible | $9/month |
-| Landing page | Framer | $5/month (mini) |
-| **Total** | | ~$39/month |
+| Analytics       | Plausible          | $9/month                     |
+| Landing page    | Framer             | $5/month (mini)              |
+| **Total**       |                    | ~$39/month                   |
 
 **ConvertKit Creator** unlocks automations and sequences — the things that make email marketing compound. Without automations, you're sending newsletters manually. With automations, you have a welcome sequence running, a lead magnet delivering itself, and follow-ups triggering based on behavior. This is when email starts to feel like infrastructure rather than manual labor.
 
@@ -82,14 +82,14 @@ For a deeper breakdown of tools at this tier with pros, cons, and alternatives, 
 **Who it's for**: $5,000+ MRR, 5,000+ email subscribers, running paid traffic, need reliable attribution
 **Watch out**: At this tier, the tools cost more but the mistakes cost more too. Bad attribution data at scale causes you to cut campaigns that work and double down on ones that don't. Invest in understanding your tools before turning on paid spend.
 
-| Role | Tool | Cost |
-|---|---|---|
-| Email marketing | ConvertKit Creator Pro | $50/month (5k subs) |
-| Analytics | Plausible + PostHog | $9 + $0 (or $20 paid) |
-| Landing page | Framer | $19/month (basic) |
-| Ad management | Google Ads | Budget-based (minimum ~$10/day suggested) |
-| CRO / session recording | PostHog | Free tier or $20/month |
-| **Total** | | ~$98/month + ad spend |
+| Role                    | Tool                   | Cost                                      |
+| ----------------------- | ---------------------- | ----------------------------------------- |
+| Email marketing         | ConvertKit Creator Pro | $50/month (5k subs)                       |
+| Analytics               | Plausible + PostHog    | $9 + $0 (or $20 paid)                     |
+| Landing page            | Framer                 | $19/month (basic)                         |
+| Ad management           | Google Ads             | Budget-based (minimum ~$10/day suggested) |
+| CRO / session recording | PostHog                | Free tier or $20/month                    |
+| **Total**               |                        | ~$98/month + ad spend                     |
 
 At this tier, **ConvertKit Creator Pro** adds subscriber scoring, newsletter referral tracking, and advanced reporting. The newsletter referral system is legitimately good — it turns your existing subscribers into a growth channel without requiring separate tooling.
 
@@ -103,13 +103,13 @@ If you're running Google Ads, read the [Google Ads playbook](/playbooks/google-a
 
 Email is the highest-ROI channel in your marketing stack, consistently returning $36 for every $1 spent. If you're going to spend money on one tool category, spend it here. See [email marketing for SaaS beginners](/blog/email-marketing-for-saas-beginners) for the strategy — this section is tool comparison only.
 
-| Tool | Free Tier | Paid Starting At | API Quality | Deliverability | Best For |
-|---|---|---|---|---|---|
-| ConvertKit | 1,000 subs | $25/month | ★★★★☆ | Excellent | Indie devs, creators |
-| Buttondown | 100 subs | $9/month | ★★★★★ | Excellent | Developers who want simplicity |
-| Mailchimp | 500 contacts | $13/month | ★★★☆☆ | Good | Legacy integrations |
-| Loops | None | $49/month | ★★★★★ | Excellent | SaaS product emails |
-| Resend | 3,000 emails/month | $20/month | ★★★★★ | Excellent | Transactional + marketing combined |
+| Tool       | Free Tier          | Paid Starting At | API Quality | Deliverability | Best For                           |
+| ---------- | ------------------ | ---------------- | ----------- | -------------- | ---------------------------------- |
+| ConvertKit | 1,000 subs         | $25/month        | ★★★★☆       | Excellent      | Indie devs, creators               |
+| Buttondown | 100 subs           | $9/month         | ★★★★★       | Excellent      | Developers who want simplicity     |
+| Mailchimp  | 500 contacts       | $13/month        | ★★★☆☆       | Good           | Legacy integrations                |
+| Loops      | None               | $49/month        | ★★★★★       | Excellent      | SaaS product emails                |
+| Resend     | 3,000 emails/month | $20/month        | ★★★★★       | Excellent      | Transactional + marketing combined |
 
 **Buttondown** deserves special mention. It's built by a solo developer, has the best API in the category, charges per subscriber (not per send), and the docs are genuinely good. If you value developer experience over marketing features, Buttondown is the pick. The trade-off is fewer automation options compared to ConvertKit.
 
@@ -119,13 +119,13 @@ Email is the highest-ROI channel in your marketing stack, consistently returning
 
 ### Analytics
 
-| Tool | Free Tier | Paid Starting At | Setup Complexity | Privacy Compliant | Best For |
-|---|---|---|---|---|---|
-| Plausible | 30-day trial | $9/month | 5 min | Yes | Marketing sites, indie SaaS |
-| PostHog | 1M events/month | $20/month | 30 min | Configurable | Product analytics + marketing |
-| Fathom | None | $14/month | 5 min | Yes | Simplest possible setup |
-| Google Analytics 4 | Unlimited | Free | 2+ hours | No (GDPR risk) | Large teams, complex attribution |
-| Simple Analytics | None | $9/month | 5 min | Yes | Ultra-minimal |
+| Tool               | Free Tier       | Paid Starting At | Setup Complexity | Privacy Compliant | Best For                         |
+| ------------------ | --------------- | ---------------- | ---------------- | ----------------- | -------------------------------- |
+| Plausible          | 30-day trial    | $9/month         | 5 min            | Yes               | Marketing sites, indie SaaS      |
+| PostHog            | 1M events/month | $20/month        | 30 min           | Configurable      | Product analytics + marketing    |
+| Fathom             | None            | $14/month        | 5 min            | Yes               | Simplest possible setup          |
+| Google Analytics 4 | Unlimited       | Free             | 2+ hours         | No (GDPR risk)    | Large teams, complex attribution |
+| Simple Analytics   | None            | $9/month         | 5 min            | Yes               | Ultra-minimal                    |
 
 **Google Analytics 4 is not recommended for most indie developers.** The data model changed significantly from UA, the interface requires training to interpret, GDPR compliance requires a cookie consent banner (which tanks conversions), and the data you get isn't meaningfully more actionable than Plausible for a typical indie dev use case. The exception: if you're planning to run Google Ads, the GA4/Google Ads integration for conversion tracking is genuinely useful — it's hard to replicate cleanly with other tools.
 

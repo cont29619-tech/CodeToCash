@@ -16,14 +16,25 @@ const resourceLinks = [
 
 <footer class="border-t border-white/5">
   <!-- Newsletter CTA — the hero of the footer -->
-  <div class="relative overflow-hidden bg-gradient-to-br from-deep-blue/40 via-navy-light to-coral/5">
-    <div class="absolute inset-0 pointer-events-none" style="background-image: radial-gradient(circle, rgba(255,255,255,0.02) 1px, transparent 1px); background-size: 24px 24px;" aria-hidden="true"></div>
-    <div class="absolute top-0 right-0 w-[400px] h-[300px] bg-coral/6 rounded-full blur-[100px] pointer-events-none" aria-hidden="true"></div>
+  <div
+    class="relative overflow-hidden bg-gradient-to-br from-deep-blue/40 via-navy-light to-coral/5"
+  >
+    <div
+      class="absolute inset-0 pointer-events-none"
+      style="background-image: radial-gradient(circle, rgba(255,255,255,0.02) 1px, transparent 1px); background-size: 24px 24px;"
+      aria-hidden="true"
+    >
+    </div>
+    <div
+      class="absolute top-0 right-0 w-[400px] h-[300px] bg-coral/6 rounded-full blur-[100px] pointer-events-none"
+      aria-hidden="true"
+    >
+    </div>
     <div class="relative z-10 max-w-3xl mx-auto px-6 py-14 text-center">
-      <p class="text-xs font-mono text-coral/70 uppercase tracking-widest mb-3">// don't miss out</p>
-      <h3 class="text-2xl sm:text-3xl font-bold text-white mb-3">
-        Get the free DRM Cheatsheet
-      </h3>
+      <p class="text-xs font-mono text-coral/70 uppercase tracking-widest mb-3">
+        // don't miss out
+      </p>
+      <h3 class="text-2xl sm:text-3xl font-bold text-white mb-3">Get the free DRM Cheatsheet</h3>
       <p class="text-sm text-gray-400 mb-6 max-w-md mx-auto leading-relaxed">
         Subscribe and get the cheatsheet + weekly marketing tactics — built for developers who ship.
       </p>
@@ -34,7 +45,7 @@ const resourceLinks = [
           required
           placeholder="you@email.com"
           aria-label="Email address"
-          class="flex-1 min-w-0 px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-sm text-white placeholder-gray-500 focus:outline-none focus:border-coral/50 focus:ring-2 focus:ring-coral/20 transition-all duration-200"
+          class="flex-1 min-w-0 px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-base text-white placeholder-gray-500 focus:outline-none focus:border-coral/50 focus:ring-2 focus:ring-coral/20 transition-all duration-200"
         />
         <button
           type="submit"
@@ -43,7 +54,12 @@ const resourceLinks = [
           Subscribe Free
         </button>
       </form>
-      <p class="ck-subscribe-error mt-2 text-red-400 text-xs hidden" aria-live="polite" aria-atomic="true"></p>
+      <p
+        class="ck-subscribe-error mt-2 text-red-400 text-xs hidden"
+        aria-live="polite"
+        aria-atomic="true"
+      >
+      </p>
       <p class="mt-3 text-xs text-gray-500">No spam. Unsubscribe anytime.</p>
     </div>
   </div>
@@ -55,7 +71,10 @@ const resourceLinks = [
         <!-- Brand -->
         <div class="md:max-w-xs">
           <a href="/" class="text-xl font-bold tracking-tight">
-            <span class="text-white">CodeToCash</span><span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-coral">.dev</span>
+            <span class="text-white">CodeToCash</span><span
+              class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-coral"
+              >.dev</span
+            >
           </a>
           <p class="mt-2 text-sm text-gray-500 leading-relaxed">
             Direct response marketing education for vibe coders and indie developers.
@@ -67,25 +86,37 @@ const resourceLinks = [
           <div>
             <h4 class="text-xs font-mono text-gray-500 uppercase tracking-widest mb-3">Navigate</h4>
             <ul class="space-y-2">
-              {navLinks.map((link) => (
-                <li>
-                  <a href={link.href} class="text-sm text-gray-400 hover:text-white transition-colors duration-200">
-                    {link.label}
-                  </a>
-                </li>
-              ))}
+              {
+                navLinks.map((link) => (
+                  <li>
+                    <a
+                      href={link.href}
+                      class="text-sm text-gray-400 hover:text-white transition-colors duration-200"
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ))
+              }
             </ul>
           </div>
           <div>
-            <h4 class="text-xs font-mono text-gray-500 uppercase tracking-widest mb-3">Resources</h4>
+            <h4 class="text-xs font-mono text-gray-500 uppercase tracking-widest mb-3">
+              Resources
+            </h4>
             <ul class="space-y-2">
-              {resourceLinks.map((link) => (
-                <li>
-                  <a href={link.href} class="text-sm text-gray-400 hover:text-white transition-colors duration-200">
-                    {link.label}
-                  </a>
-                </li>
-              ))}
+              {
+                resourceLinks.map((link) => (
+                  <li>
+                    <a
+                      href={link.href}
+                      class="text-sm text-gray-400 hover:text-white transition-colors duration-200"
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ))
+              }
             </ul>
           </div>
         </div>
@@ -94,13 +125,11 @@ const resourceLinks = [
 
     <!-- Bottom Bar -->
     <div class="border-t border-white/[0.04]">
-      <div class="max-w-5xl mx-auto px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-2">
-        <p class="text-xs text-gray-600">
-          &copy; 2026 CodeToCash.dev
-        </p>
-        <p class="text-xs text-gray-600">
-          Built for vibe coders who want to sell what they ship.
-        </p>
+      <div
+        class="max-w-5xl mx-auto px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-2"
+      >
+        <p class="text-xs text-gray-600">&copy; {new Date().getFullYear()} CodeToCash.dev</p>
+        <p class="text-xs text-gray-600">Built for vibe coders who want to sell what they ship.</p>
       </div>
     </div>
   </div>

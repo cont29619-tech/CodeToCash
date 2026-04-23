@@ -10,6 +10,9 @@ interface Props {
   description?: string;
   schema?: string;
   ogImage?: string;
+  ogType?: string;
+  ogImageAlt?: string;
+  articleMeta?: { publishedTime: string; modifiedTime?: string; author: string };
 }
 
 const {
@@ -17,6 +20,9 @@ const {
   description = 'Learn direct response marketing to sell what you ship. Education for vibe coders and indie developers.',
   schema,
   ogImage,
+  ogType = 'website',
+  ogImageAlt = 'CodeToCash.dev — Direct Response Marketing for Vibe Coders',
+  articleMeta,
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -28,6 +34,7 @@ const ogImageURL = new URL(ogImage ?? '/og-default.png', Astro.site);
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script is:inline>document.documentElement.classList.add('js')</script>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
@@ -37,13 +44,20 @@ const ogImageURL = new URL(ogImage ?? '/og-default.png', Astro.site);
     <link rel="canonical" href={canonicalURL} />
 
     <!-- Open Graph -->
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:site_name" content="CodeToCash.dev" />
+    <meta property="og:locale" content="en_US" />
     <meta property="og:image" content={ogImageURL} />
-    <meta property="og:image:alt" content="CodeToCash.dev — Direct Response Marketing for Vibe Coders" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:alt" content={ogImageAlt} />
+    {articleMeta && <meta property="article:published_time" content={articleMeta.publishedTime} />}
+    {articleMeta?.modifiedTime && <meta property="article:modified_time" content={articleMeta.modifiedTime} />}
+    {articleMeta && <meta property="article:author" content={articleMeta.author} />}
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -51,6 +65,9 @@ const ogImageURL = new URL(ogImage ?? '/og-default.png', Astro.site);
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImageURL} />
+    <meta name="twitter:image:alt" content={ogImageAlt} />
+
+    <meta name="theme-color" content="#0a0a1a" />
 
     <!-- Google Fonts (non-render-blocking) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -69,20 +86,35 @@ const ogImageURL = new URL(ogImage ?? '/og-default.png', Astro.site);
 
     <!-- Critical inline styles for instant first paint -->
     <style>
-      body{background:#0A0A1A;color:#f3f4f6;font-family:Inter,ui-sans-serif,system-ui,sans-serif;-webkit-font-smoothing:antialiased;margin:0;min-height:100vh;display:flex;flex-direction:column}
-      nav.top-nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(10,10,26,.8);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.05);height:4rem}
-      main{flex:1;padding-top:4rem}
+      body {
+        background: #0a0a1a;
+        color: #f3f4f6;
+        font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      main {
+        flex: 1;
+      }
     </style>
 
     {schema && <script type="application/ld+json" set:html={schema} />}
 
     <!-- Plausible Analytics (production only) -->
-    {import.meta.env.PROD && (
-      <script defer data-domain="codetocash.dev" src="https://plausible.io/js/script.js"></script>
-    )}
+    {
+      import.meta.env.PROD && (
+        <script defer data-domain="codetocash.dev" src="https://plausible.io/js/script.js" />
+      )
+    }
   </head>
   <body class="bg-navy text-gray-100 font-sans antialiased min-h-screen flex flex-col">
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:px-4 focus:py-2 focus:bg-coral focus:text-white focus:rounded-lg focus:text-sm focus:font-semibold">
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:px-4 focus:py-2 focus:bg-coral focus:text-white focus:rounded-lg focus:text-sm focus:font-semibold"
+    >
       Skip to content
     </a>
     <Navigation />
@@ -99,7 +131,9 @@ const ogImageURL = new URL(ogImage ?? '/og-default.png', Astro.site);
       aria-label="Back to top"
       class="fixed bottom-6 right-6 z-50 w-10 h-10 bg-coral/80 hover:bg-coral text-white rounded-full shadow-lg flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 cursor-pointer"
     >
-      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" /></svg>
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"
+        ><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"></path></svg
+      >
     </button>
 
     <script>
@@ -126,21 +160,19 @@ const ogImageURL = new URL(ogImage ?? '/og-default.png', Astro.site);
         button.textContent = 'Subscribing...';
 
         try {
-          const res = await fetch(
-            `https://api.convertkit.com/v3/forms/${CK_FORM_ID}/subscribe`,
-            {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ api_key: CK_API_KEY, email }),
-            }
-          );
+          const res = await fetch(`https://api.convertkit.com/v3/forms/${CK_FORM_ID}/subscribe`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ api_key: CK_API_KEY, email }),
+          });
           if (!res.ok) {
             const data = await res.json().catch(() => null);
             throw new Error(data?.message || 'Subscription failed. Please try again.');
           }
           window.location.href = '/welcome';
         } catch (err) {
-          errorEl.textContent = err instanceof Error ? err.message : 'Something went wrong. Please try again.';
+          errorEl.textContent =
+            err instanceof Error ? err.message : 'Something went wrong. Please try again.';
           errorEl.classList.remove('hidden');
           button.disabled = false;
           button.textContent = originalText;
@@ -150,30 +182,39 @@ const ogImageURL = new URL(ogImage ?? '/og-default.png', Astro.site);
       document.querySelectorAll<HTMLFormElement>('.ck-subscribe-form').forEach((form) => {
         const errorEl = form.nextElementSibling as HTMLElement | null;
         if (!errorEl) return;
+        let submitting = false;
         form.addEventListener('submit', (e) => {
           e.preventDefault();
-          handleCkSubscribe(form, errorEl);
+          if (submitting) return;
+          submitting = true;
+          handleCkSubscribe(form, errorEl).finally(() => {
+            submitting = false;
+          });
         });
       });
 
       const backToTop = document.getElementById('back-to-top');
       if (backToTop) {
         let ticking = false;
-        window.addEventListener('scroll', () => {
-          if (!ticking) {
-            requestAnimationFrame(() => {
-              if (window.scrollY > 400) {
-                backToTop.classList.remove('opacity-0', 'pointer-events-none');
-                backToTop.classList.add('opacity-100', 'pointer-events-auto');
-              } else {
-                backToTop.classList.add('opacity-0', 'pointer-events-none');
-                backToTop.classList.remove('opacity-100', 'pointer-events-auto');
-              }
-              ticking = false;
-            });
-            ticking = true;
-          }
-        }, { passive: true });
+        window.addEventListener(
+          'scroll',
+          () => {
+            if (!ticking) {
+              requestAnimationFrame(() => {
+                if (window.scrollY > 400) {
+                  backToTop.classList.remove('opacity-0', 'pointer-events-none');
+                  backToTop.classList.add('opacity-100', 'pointer-events-auto');
+                } else {
+                  backToTop.classList.add('opacity-0', 'pointer-events-none');
+                  backToTop.classList.remove('opacity-100', 'pointer-events-auto');
+                }
+                ticking = false;
+              });
+              ticking = true;
+            }
+          },
+          { passive: true }
+        );
         backToTop.addEventListener('click', () => {
           window.scrollTo({ top: 0, behavior: 'smooth' });
         });

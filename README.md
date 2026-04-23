@@ -36,18 +36,18 @@ npm run dev
 
 ### Environment Variables
 
-| Variable | Description |
-|---|---|
+| Variable                    | Description                                                                 |
+| --------------------------- | --------------------------------------------------------------------------- |
 | `PUBLIC_CONVERTKIT_API_KEY` | ConvertKit API key — get it at convertkit.com → Account Settings → Advanced |
 
 ---
 
 ## Commands
 
-| Command | Action |
-|---|---|
-| `npm run dev` | Dev server at `localhost:4321` |
-| `npm run build` | Build to `./dist/` |
+| Command           | Action                               |
+| ----------------- | ------------------------------------ |
+| `npm run dev`     | Dev server at `localhost:4321`       |
+| `npm run build`   | Build to `./dist/`                   |
 | `npm run preview` | Preview the production build locally |
 
 ---
@@ -93,15 +93,16 @@ public/
 ## Adding Content
 
 **New blog post**: Create `src/content/blog/your-slug.md` with frontmatter:
+
 ```yaml
 ---
-title: "Post Title"
-description: "One-sentence description"
+title: 'Post Title'
+description: 'One-sentence description'
 pubDate: 2026-01-01
-author: "CodeToCash Team"
-category: fundamentals  # fundamentals | copywriting | email | ads | analytics | strategy
-tags: ["tag1", "tag2"]
-readingTime: "5 min read"
+author: 'CodeToCash Team'
+category: fundamentals # fundamentals | copywriting | email | ads | analytics | strategy
+tags: ['tag1', 'tag2']
+readingTime: '5 min read'
 featured: false
 draft: false
 ---

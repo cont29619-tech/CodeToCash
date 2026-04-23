@@ -1,24 +1,25 @@
 ---
-title: "Reddit Marketing for Developers (Without Getting Banned)"
-description: "The Reddit marketing strategy for developers who want real traction — without the ban. Subreddits, soft sells, market research, and a 30-day plan."
+title: 'Reddit Marketing for Developers (Without Getting Banned)'
+description: 'The Reddit marketing strategy for developers who want real traction — without the ban. Subreddits, soft sells, market research, and a 30-day plan.'
 pubDate: 2026-03-08
-author: "CodeToCash Team"
-category: "strategy"
-tags: ["reddit", "community marketing", "organic marketing", "indie hackers", "developer communities"]
-readingTime: "8 min read"
+author: 'CodeToCash Team'
+category: 'strategy'
+tags:
+  ['reddit', 'community marketing', 'organic marketing', 'indie hackers', 'developer communities']
+readingTime: '8 min read'
 featured: false
 draft: false
 faq:
-  - question: "Can I promote my product on Reddit?"
-    answer: "Yes, but only after building genuine karma in a community. Direct promotion as a first post will get you banned. Earn trust first."
-  - question: "Which subreddits are best for developer product marketing?"
+  - question: 'Can I promote my product on Reddit?'
+    answer: 'Yes, but only after building genuine karma in a community. Direct promotion as a first post will get you banned. Earn trust first.'
+  - question: 'Which subreddits are best for developer product marketing?'
     answer: "r/SideProject, r/indiehackers, r/webdev, r/programming, r/SaaS, r/startups, and niche subreddits specific to your tool's category."
-  - question: "How do I mention my product without it looking like spam?"
+  - question: 'How do I mention my product without it looking like spam?'
     answer: "Answer the question fully first, then add 'I built [product] to solve exactly this — happy to share more if useful.' Relevance + helpfulness = acceptable."
-  - question: "What kind of posts perform best on developer subreddits?"
-    answer: "Show HN-style launches, honest postmortems, milestone posts (first $1K MRR), and genuinely useful tutorials. Authenticity is rewarded."
-  - question: "Are Reddit Ads worth it for a developer SaaS?"
-    answer: "For niche technical subreddits, they can work. CPMs are low. Target by subreddit + interest. Test with $200 before scaling."
+  - question: 'What kind of posts perform best on developer subreddits?'
+    answer: 'Show HN-style launches, honest postmortems, milestone posts (first $1K MRR), and genuinely useful tutorials. Authenticity is rewarded.'
+  - question: 'Are Reddit Ads worth it for a developer SaaS?'
+    answer: 'For niche technical subreddits, they can work. CPMs are low. Target by subreddit + interest. Test with $200 before scaling.'
 ---
 
 Reddit is where developers tell the truth. No LinkedIn humblebrags, no Twitter performance. Real frustrations, real problems, real opinions — posted anonymously to communities that will ruthlessly downvote anything that smells like marketing. That's exactly what makes it valuable. A solid **reddit marketing strategy for developers** is not about promotion — it's about finding the people who have the exact problem your product solves, earning their trust, and letting them discover your product themselves. This guide shows you how to do that without getting banned in the first week.

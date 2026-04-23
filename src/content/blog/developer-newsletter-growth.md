@@ -1,22 +1,22 @@
 ---
-title: "Growing a Developer Newsletter to 1,000 Subscribers"
-description: "A tactical guide to building your email list from zero to 1,000 developer subscribers. Signup incentives, growth channels, content strategy, and retention tactics."
+title: 'Growing a Developer Newsletter to 1,000 Subscribers'
+description: 'A tactical guide to building your email list from zero to 1,000 developer subscribers. Signup incentives, growth channels, content strategy, and retention tactics.'
 pubDate: 2026-05-11
-author: "CodeToCash Team"
-category: "email"
-tags: ["newsletter", "email list", "growth", "subscribers", "content marketing"]
-readingTime: "11 min"
+author: 'CodeToCash Team'
+category: 'email'
+tags: ['newsletter', 'email list', 'growth', 'subscribers', 'content marketing']
+readingTime: '11 min read'
 featured: false
-draft: false
+draft: true
 faq:
-  - question: "How long does it take to reach 1,000 newsletter subscribers?"
-    answer: "With consistent effort, 3-6 months. The first 100 subscribers are the hardest because you have no social proof. Growth accelerates after 200-300 subscribers as word of mouth and content compounding kick in."
-  - question: "What should a developer newsletter cover?"
+  - question: 'How long does it take to reach 1,000 newsletter subscribers?'
+    answer: 'With consistent effort, 3-6 months. The first 100 subscribers are the hardest because you have no social proof. Growth accelerates after 200-300 subscribers as word of mouth and content compounding kick in.'
+  - question: 'What should a developer newsletter cover?'
     answer: "Pick a focused topic at the intersection of your expertise and your audience's needs. 'Marketing tactics for developers' is better than 'tech news.' Specificity builds a loyal audience faster than breadth."
-  - question: "Should I publish weekly or biweekly?"
-    answer: "Weekly. Consistency builds habit and trust. A weekly newsletter that subscribers expect and look forward to every Tuesday grows faster than a sporadic one. If weekly feels like too much, biweekly is fine — just stick to the schedule."
-  - question: "How do I monetize a newsletter with 1,000 subscribers?"
-    answer: "1,000 engaged subscribers is enough to sell a digital product ($29-99), offer a paid newsletter tier ($10/month), or promote affiliate products. Sponsorships typically require 5,000+ subscribers to attract advertiser interest."
+  - question: 'Should I publish weekly or biweekly?'
+    answer: 'Weekly. Consistency builds habit and trust. A weekly newsletter that subscribers expect and look forward to every Tuesday grows faster than a sporadic one. If weekly feels like too much, biweekly is fine — just stick to the schedule.'
+  - question: 'How do I monetize a newsletter with 1,000 subscribers?'
+    answer: '1,000 engaged subscribers is enough to sell a digital product ($29-99), offer a paid newsletter tier ($10/month), or promote affiliate products. Sponsorships typically require 5,000+ subscribers to attract advertiser interest.'
 ---
 
 Your email list is the most valuable marketing asset you can build. Unlike social media followers, email subscribers are people who explicitly asked to hear from you. At 1,000 subscribers with strong engagement, you have enough audience to launch products, test ideas, and generate revenue. Here's the tactical playbook for getting there.

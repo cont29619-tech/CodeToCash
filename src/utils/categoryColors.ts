@@ -1,13 +1,16 @@
-export const categoryColors: Record<string, {
-  bg: string;
-  text: string;
-  border: string;
-  borderLeft: string;
-  hoverBorder: string;
-  hoverBg: string;
-  hoverShadow: string;
-  navActive: string;
-}> = {
+export const categoryColors: Record<
+  string,
+  {
+    bg: string;
+    text: string;
+    border: string;
+    borderLeft: string;
+    hoverBorder: string;
+    hoverBg: string;
+    hoverShadow: string;
+    navActive: string;
+  }
+> = {
   fundamentals: {
     bg: 'bg-blue-500/10',
     text: 'text-blue-400',
@@ -72,9 +75,9 @@ export const categoryColors: Record<string, {
 
 export const categoryLabels: Record<string, string> = {
   fundamentals: 'Fundamentals',
-  copywriting:  'Copywriting',
-  email:        'Email',
-  ads:          'Ads',
-  analytics:    'Analytics',
-  strategy:     'Strategy',
+  copywriting: 'Copywriting',
+  email: 'Email',
+  ads: 'Ads',
+  analytics: 'Analytics',
+  strategy: 'Strategy',
 };

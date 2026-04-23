@@ -1,21 +1,21 @@
 ---
-title: "How to Create a Sales Page That Converts at 5%+"
-description: "Advanced sales page tactics that push conversion rates above 5%. Long-form structure, objection handling, urgency triggers, and the psychology of high-converting pages."
+title: 'How to Create a Sales Page That Converts at 5%+'
+description: 'Advanced sales page tactics that push conversion rates above 5%. Long-form structure, objection handling, urgency triggers, and the psychology of high-converting pages.'
 pubDate: 2026-04-20
-author: "CodeToCash Team"
-category: "copywriting"
-tags: ["sales page", "conversion", "copywriting", "landing page", "optimization"]
-readingTime: "13 min"
+author: 'CodeToCash Team'
+category: 'copywriting'
+tags: ['sales page', 'conversion', 'copywriting', 'landing page', 'optimization']
+readingTime: '13 min read'
 featured: false
 draft: false
 faq:
   - question: "What's the difference between a landing page and a sales page?"
-    answer: "A landing page is any page designed for conversion — including email signups and free trial starts. A sales page specifically asks for a purchase. Sales pages are typically longer because they need to overcome more objections before asking for money."
-  - question: "How long should a sales page be?"
-    answer: "As long as necessary to address every objection. For products under $50, 1,500-3,000 words is typical. For products $100+, 3,000-5,000 words or more. The rule of thumb: higher price = longer page."
-  - question: "Is a 5% conversion rate realistic?"
-    answer: "For warm traffic (email subscribers, retargeted visitors, referrals), 5-10% is achievable. For cold traffic (paid ads, organic search), 1-3% is more typical. The traffic source matters as much as the page itself."
-  - question: "Should I use video on my sales page?"
+    answer: 'A landing page is any page designed for conversion — including email signups and free trial starts. A sales page specifically asks for a purchase. Sales pages are typically longer because they need to overcome more objections before asking for money.'
+  - question: 'How long should a sales page be?'
+    answer: 'As long as necessary to address every objection. For products under $50, 1,500-3,000 words is typical. For products $100+, 3,000-5,000 words or more. The rule of thumb: higher price = longer page.'
+  - question: 'Is a 5% conversion rate realistic?'
+    answer: 'For warm traffic (email subscribers, retargeted visitors, referrals), 5-10% is achievable. For cold traffic (paid ads, organic search), 1-3% is more typical. The traffic source matters as much as the page itself.'
+  - question: 'Should I use video on my sales page?'
     answer: "A short product demo (under 2 minutes) can significantly increase conversion. But it should complement the written copy, not replace it. Many visitors won't watch video but will scan written content."
 ---
 

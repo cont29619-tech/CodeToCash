@@ -1,27 +1,27 @@
 ---
-title: "The Psychology of SaaS Pricing: Why $49 Beats $50"
-description: "Discover how pricing psychology boosts SaaS conversions — charm pricing, anchoring, decoy tiers, and a practical decision framework for dev tools."
+title: 'The Psychology of SaaS Pricing: Why $49 Beats $50'
+description: 'Discover how pricing psychology boosts SaaS conversions — charm pricing, anchoring, decoy tiers, and a practical decision framework for dev tools.'
 pubDate: 2026-03-08
-author: "CodeToCash Team"
-category: "strategy"
-tags: ["pricing", "psychology", "saas", "conversion", "revenue"]
-readingTime: "7 min read"
+author: 'CodeToCash Team'
+category: 'strategy'
+tags: ['pricing', 'psychology', 'saas', 'conversion', 'revenue']
+readingTime: '7 min read'
 featured: false
 draft: false
 faq:
-  - question: "Does charm pricing ($49 vs $50) actually work for SaaS?"
-    answer: "Yes, research consistently shows a 20-30% conversion increase. The psychological gap between $49 and $50 is disproportionate to the $1 difference."
-  - question: "How many pricing tiers should a SaaS have?"
-    answer: "Three is optimal. One looks cheap. Two forces a binary choice. Four-plus creates analysis paralysis. Three lets you use the decoy effect."
-  - question: "Should I show pricing on my landing page?"
-    answer: "Yes, for self-serve SaaS. Hiding pricing filters out motivated buyers and attracts unqualified leads. Transparency builds trust."
+  - question: 'Does charm pricing ($49 vs $50) actually work for SaaS?'
+    answer: 'Yes, research consistently shows a 20-30% conversion increase. The psychological gap between $49 and $50 is disproportionate to the $1 difference.'
+  - question: 'How many pricing tiers should a SaaS have?'
+    answer: 'Three is optimal. One looks cheap. Two forces a binary choice. Four-plus creates analysis paralysis. Three lets you use the decoy effect.'
+  - question: 'Should I show pricing on my landing page?'
+    answer: 'Yes, for self-serve SaaS. Hiding pricing filters out motivated buyers and attracts unqualified leads. Transparency builds trust.'
   - question: "What's the best free trial length for a developer tool?"
     answer: "14 days for simple tools, 30 days for complex ones. The goal is getting to the 'aha moment' — time the trial around that."
   - question: "How do I know if I'm underpricing my product?"
     answer: "If fewer than 15% of your leads push back on price, you're probably underpriced. Price resistance at 20-30% is healthy."
 ---
 
-Most developers treat pricing like a math problem: calculate costs, add a margin, pick a round number. That's not pricing — that's guessing with a spreadsheet. **Pricing psychology for SaaS** is a different discipline entirely. It's about how your price *feels* to the buyer, not just what it calculates to. The difference between $49 and $50 is $1. The difference in conversion rate can be 25%. This guide breaks down the psychological levers behind SaaS pricing so you can treat price as what it actually is: a variable you test and optimize, not a decision you make once and forget.
+Most developers treat pricing like a math problem: calculate costs, add a margin, pick a round number. That's not pricing — that's guessing with a spreadsheet. **Pricing psychology for SaaS** is a different discipline entirely. It's about how your price _feels_ to the buyer, not just what it calculates to. The difference between $49 and $50 is $1. The difference in conversion rate can be 25%. This guide breaks down the psychological levers behind SaaS pricing so you can treat price as what it actually is: a variable you test and optimize, not a decision you make once and forget.
 
 ---
 
@@ -37,7 +37,7 @@ The second mistake is picking a price and never changing it. In software, pricin
 
 ## Charm Pricing: The $49 vs $50 Effect
 
-Charm pricing — ending a price in 9 — is the most studied phenomenon in pricing psychology. Research from MIT and the University of Chicago found that prices ending in 9 consistently outperform round numbers, sometimes by 20–30%, even when the charm price is *higher* than the control.
+Charm pricing — ending a price in 9 — is the most studied phenomenon in pricing psychology. Research from MIT and the University of Chicago found that prices ending in 9 consistently outperform round numbers, sometimes by 20–30%, even when the charm price is _higher_ than the control.
 
 The mechanism is left-digit anchoring. When a human brain reads $49, it registers the leftmost digit — 4 — before processing the rest. The mental category is "forty-something," not "basically fifty." It's a cognitive shortcut, and it's deeply hardwired. $50 reads as "fifty dollars." $49 reads as "in the forties." That single-digit gap maps to a meaningful psychological category shift.
 
@@ -111,6 +111,7 @@ Free tiers and free trials feel generous. They're also a trap if you don't under
 **Freemium only works at scale.** The industry average free-to-paid conversion rate for SaaS freemium models is 2–5%. That means for every 100 free users, you're converting 2 to 5 paying customers. If your free tier costs you $0.50/month per user in infrastructure (storage, compute, email), you're spending $100/month on 200 free users to convert 4 paying customers. At $19/month, that's $76 in revenue against $100 in cost. You're losing money before you account for support time.
 
 Freemium makes sense when:
+
 - Your product has strong viral or network effects (free users attract paid users)
 - Your free tier costs you nearly nothing to run
 - Your free-to-paid conversion rate is 2%+ (measure this before assuming it)

@@ -1,22 +1,22 @@
 ---
-title: "Customer Acquisition Cost: What Every Developer Should Know"
-description: "How to calculate, track, and reduce your customer acquisition cost (CAC). The most important SaaS metric explained for indie developers with practical optimization tactics."
+title: 'Customer Acquisition Cost: What Every Developer Should Know'
+description: 'How to calculate, track, and reduce your customer acquisition cost (CAC). The most important SaaS metric explained for indie developers with practical optimization tactics.'
 pubDate: 2026-03-23
-author: "CodeToCash Team"
-category: "analytics"
-tags: ["cac", "metrics", "saas", "analytics", "unit economics"]
-readingTime: "11 min"
+author: 'CodeToCash Team'
+category: 'analytics'
+tags: ['cac', 'metrics', 'saas', 'analytics', 'unit economics']
+readingTime: '11 min read'
 featured: false
 draft: false
 faq:
   - question: "What's a good CAC for a SaaS product?"
-    answer: "Your CAC should be less than one-third of your customer lifetime value (LTV). If a customer is worth $300 over their lifetime, aim for a CAC under $100. The ideal LTV:CAC ratio is 3:1 or better."
-  - question: "How do I calculate CAC with multiple marketing channels?"
-    answer: "Divide total marketing spend across all channels by total new customers acquired in the same period. For channel-specific CAC, isolate spending and attributable customers per channel."
-  - question: "Should I include my time in CAC calculations?"
-    answer: "Yes, especially as a solo developer. If you spend 10 hours per week on marketing, assign an hourly rate to that time. Ignoring your labor cost makes unprofitable channels look profitable."
-  - question: "How can I reduce CAC without reducing quality?"
-    answer: "Focus on organic channels like SEO and content marketing, which have high upfront costs but near-zero marginal cost per customer. Optimize your conversion funnel to get more customers from the same traffic."
+    answer: 'Your CAC should be less than one-third of your customer lifetime value (LTV). If a customer is worth $300 over their lifetime, aim for a CAC under $100. The ideal LTV:CAC ratio is 3:1 or better.'
+  - question: 'How do I calculate CAC with multiple marketing channels?'
+    answer: 'Divide total marketing spend across all channels by total new customers acquired in the same period. For channel-specific CAC, isolate spending and attributable customers per channel.'
+  - question: 'Should I include my time in CAC calculations?'
+    answer: 'Yes, especially as a solo developer. If you spend 10 hours per week on marketing, assign an hourly rate to that time. Ignoring your labor cost makes unprofitable channels look profitable.'
+  - question: 'How can I reduce CAC without reducing quality?'
+    answer: 'Focus on organic channels like SEO and content marketing, which have high upfront costs but near-zero marginal cost per customer. Optimize your conversion funnel to get more customers from the same traffic.'
 ---
 
 Customer acquisition cost is the metric that determines whether your SaaS business is actually viable. You can have great retention, a fantastic product, and happy customers — but if it costs you more to acquire a customer than they'll ever pay you, you're running an expensive charity. Here's how to calculate, track, and systematically reduce your CAC as an indie developer.

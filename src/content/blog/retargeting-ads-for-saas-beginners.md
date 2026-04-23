@@ -1,21 +1,21 @@
 ---
 title: "Retargeting Ads for Developer Products: Beginner's Guide"
-description: "How to set up retargeting ads for your SaaS product. Pixel setup, audience segmentation, ad creative, and budget strategy for developers new to retargeting."
+description: 'How to set up retargeting ads for your SaaS product. Pixel setup, audience segmentation, ad creative, and budget strategy for developers new to retargeting.'
 pubDate: 2026-04-03
-author: "CodeToCash Team"
-category: "ads"
-tags: ["retargeting", "paid ads", "saas marketing", "facebook ads", "google ads"]
-readingTime: "11 min"
+author: 'CodeToCash Team'
+category: 'ads'
+tags: ['retargeting', 'paid ads', 'saas marketing', 'facebook ads', 'google ads']
+readingTime: '11 min read'
 featured: false
 draft: false
 faq:
-  - question: "How much should I spend on retargeting ads?"
+  - question: 'How much should I spend on retargeting ads?'
     answer: "Start with $5-10 per day. Retargeting audiences are small (only people who've already visited your site), so budgets stay modest. Most indie developers spend $150-300/month on retargeting effectively."
-  - question: "Which platform is best for retargeting developer products?"
+  - question: 'Which platform is best for retargeting developer products?'
     answer: "Google Display Network has the broadest reach. Twitter ads let you retarget people who've visited your site while they browse developer conversations. Test both with small budgets and see which converts for your specific product."
-  - question: "How long should I retarget someone after they visit my site?"
-    answer: "30 days is a good default for most SaaS products. Beyond 30 days, the visitor has likely moved on or found an alternative. For high-ticket products ($100+/month), extend to 60-90 days."
-  - question: "Is retargeting worth it for a product with low traffic?"
+  - question: 'How long should I retarget someone after they visit my site?'
+    answer: '30 days is a good default for most SaaS products. Beyond 30 days, the visitor has likely moved on or found an alternative. For high-ticket products ($100+/month), extend to 60-90 days.'
+  - question: 'Is retargeting worth it for a product with low traffic?'
     answer: "Only if you're getting at least 500 unique visitors per month. Below that, your retargeting audiences are too small for ad platforms to deliver effectively. Focus on growing traffic first."
 ---
 

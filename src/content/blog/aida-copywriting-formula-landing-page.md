@@ -1,24 +1,24 @@
 ---
-title: "AIDA Formula for Developer Landing Pages: A Practical Guide"
-description: "Learn how to apply the AIDA copywriting formula to your developer landing page and turn visitors into paying customers. With templates and examples."
+title: 'AIDA Formula for Developer Landing Pages: A Practical Guide'
+description: 'Learn how to apply the AIDA copywriting formula to your developer landing page and turn visitors into paying customers. With templates and examples.'
 pubDate: 2026-03-08
-author: "CodeToCash Team"
-category: "copywriting"
-tags: ["aida", "copywriting", "landing pages", "conversion", "frameworks"]
-readingTime: "7 min read"
+author: 'CodeToCash Team'
+category: 'copywriting'
+tags: ['aida', 'copywriting', 'landing pages', 'conversion', 'frameworks']
+readingTime: '7 min read'
 featured: false
 draft: false
 faq:
-  - question: "Is AIDA still relevant in 2025?"
+  - question: 'Is AIDA still relevant in 2025?'
     answer: "Absolutely. Human psychology hasn't changed. AIDA is still the skeleton of nearly every high-converting landing page."
-  - question: "How long should each AIDA section be on a landing page?"
-    answer: "Attention (headline): 1 sentence. Interest: 2-4 sentences. Desire: 3-5 bullets or short paragraphs. Action: 1-2 sentences + button."
-  - question: "Can I use AIDA for email subjects and ad copy?"
-    answer: "Yes — AIDA scales to any length. A subject line is pure Attention. A good ad does Attention + Interest in 2 lines."
+  - question: 'How long should each AIDA section be on a landing page?'
+    answer: 'Attention (headline): 1 sentence. Interest: 2-4 sentences. Desire: 3-5 bullets or short paragraphs. Action: 1-2 sentences + button.'
+  - question: 'Can I use AIDA for email subjects and ad copy?'
+    answer: 'Yes — AIDA scales to any length. A subject line is pure Attention. A good ad does Attention + Interest in 2 lines.'
   - question: "What's the difference between AIDA and PAS?"
-    answer: "AIDA builds aspiration. PAS amplifies pain. For cold audiences (ads), AIDA often works better. For warm audiences (email), PAS converts well."
-  - question: "Do I have to follow AIDA in order?"
-    answer: "Generally yes — it mirrors how humans make decisions. Breaking the sequence usually hurts conversions."
+    answer: 'AIDA builds aspiration. PAS amplifies pain. For cold audiences (ads), AIDA often works better. For warm audiences (email), PAS converts well.'
+  - question: 'Do I have to follow AIDA in order?'
+    answer: 'Generally yes — it mirrors how humans make decisions. Breaking the sequence usually hurts conversions.'
 ---
 
 Most developer landing pages read like a README. They list what the product does, drop in a GitHub star count, and end with a "Get Started" button that nobody clicks. The AIDA copywriting formula landing page approach fixes exactly this — by mapping your copy to how a human brain actually decides to buy something.
@@ -50,21 +50,24 @@ Where developers usually go wrong is shipping a product page that's great at Att
 
 ## A — Attention: Stopping the Scroll
 
-You have three seconds. That's not a metaphor — eye-tracking studies consistently show that visitors decide whether to stay or leave in under three seconds. Your headline is doing 90% of that work, so it cannot be clever, it cannot be vague, and it absolutely cannot describe what your product *is* rather than what it *does for the user*.
+You have three seconds. That's not a metaphor — eye-tracking studies consistently show that visitors decide whether to stay or leave in under three seconds. Your headline is doing 90% of that work, so it cannot be clever, it cannot be vague, and it absolutely cannot describe what your product _is_ rather than what it _does for the user_.
 
 The three headline formulas that reliably stop developers:
 
 **1. The outcome number**
+
 > "Deploy to 12 servers in 47 seconds — without touching a config file"
 
 Numbers are specific, specific is credible. "Faster deploys" is forgettable. "47 seconds" creates a concrete image.
 
 **2. The negative / what you eliminate**
+
 > "Never debug a failed deployment at 2am again"
 
 Negatives work because loss aversion is twice as powerful as equivalent gain. Developers have deep emotional memory around painful incidents. Pointing at the pain directly earns attention.
 
 **3. The outcome + audience**
+
 > "The deployment tool built for solo founders who can't afford downtime"
 
 Specificity of audience triggers an involuntary "that's me" response. Generic headlines slide off the brain. Specific ones stick.
@@ -140,7 +143,7 @@ Each bullet should describe a result, not a feature. If your bullet starts with 
 
 This is where developers go conservative right when they should go specific. The CTA is the last gate between Desire and conversion, and it fails in two ways: it's vague ("Submit", "Learn More") or it introduces friction ("Schedule a Call", "Fill Out This Form").
 
-CTA button psychology follows one rule: **the button text should complete the sentence "I want to ___"**.
+CTA button psychology follows one rule: **the button text should complete the sentence "I want to \_\_\_"**.
 
 > "I want to **start my free trial**" ✅
 > "I want to **submit**" ❌
@@ -197,10 +200,12 @@ Subhead: "Ready to [main outcome]?"
 **Before/After Example — DeployBot**
 
 Before (typical dev landing page):
+
 > **DeployBot** — A deployment automation platform. Supports AWS, GCP, and Azure. Configurable pipelines. Rollback support. CLI and web UI.
 > [Get Started]
 
 After (AIDA):
+
 > **Ship to production in under 60 seconds — without writing another deploy script**
 > DeployBot connects to your repo and handles the entire pipeline. Push to main, and it's live.
 >
@@ -225,11 +230,13 @@ The before version describes a product. The after version sells an outcome. Same
 Both AIDA and [PAS (Problem-Agitate-Solve)](/blog/pas-copywriting-framework) are covered in the [copywriting frameworks overview](/blog/copywriting-frameworks-for-developers). Here's the practical distinction for landing pages:
 
 **Use AIDA when:**
+
 - Your audience is cold (paid ads, cold traffic)
 - Your product has a clear, aspirational "after" state
 - You want to lead with possibility rather than pain
 
 **Use PAS when:**
+
 - Your audience is warm (email list, retargeting)
 - The pain is acute and well-understood by the reader
 - You want to amplify urgency before presenting the solution
