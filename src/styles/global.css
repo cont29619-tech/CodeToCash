@@ -95,12 +95,12 @@ html.js .section-animate {
     opacity 0.7s ease-out,
     transform 0.7s ease-out;
 }
-.section-animate.visible {
+html.js .section-animate.visible {
   opacity: 1;
   transform: translateY(0);
 }
 @media (prefers-reduced-motion: reduce) {
-  .section-animate {
+  html.js .section-animate {
     opacity: 1;
     transform: none;
   }
