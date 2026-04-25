@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import NewsletterForm from '../components/NewsletterForm.astro';
 import { getCollection } from 'astro:content';
 
 const publishedPosts = await getCollection('blog', ({ data }) => !data.draft);
@@ -74,33 +75,13 @@ const schema = JSON.stringify({
         > free instantly.
       </p>
 
-      <form
+      <NewsletterForm
+        size="lg"
         id="subscribe-form-hero"
-        class="ck-subscribe-form flex flex-col sm:flex-row gap-3 max-w-xl mx-auto animate-fade-in-up animation-delay-400"
-      >
-        <input
-          type="email"
-          name="email"
-          required
-          placeholder="you@email.com"
-          aria-label="Email address"
-          class="flex-1 min-w-0 px-5 py-4 bg-white/5 border border-white/10 rounded-lg text-white text-lg placeholder-gray-500 focus:outline-none focus:border-coral/50 focus:ring-2 focus:ring-coral/20 transition-all duration-200"
-        />
-        <button
-          type="submit"
-          aria-label="Subscribe to newsletter and get the cheatsheet"
-          class="px-8 py-4 bg-coral text-white text-lg font-semibold rounded-lg hover:bg-coral/90 hover:-translate-y-1 transition-all duration-300 shadow-lg shadow-coral/20 shrink-0 cursor-pointer"
-        >
-          Subscribe &amp; Get the Cheatsheet
-        </button>
-      </form>
-      <p
-        id="subscribe-error-hero"
-        class="ck-subscribe-error mt-3 text-red-400 text-sm hidden"
-        aria-live="polite"
-        aria-atomic="true"
-      >
-      </p>
+        buttonText="Subscribe & Get the Cheatsheet"
+        buttonAriaLabel="Subscribe to newsletter and get the cheatsheet"
+        class="max-w-xl mx-auto animate-fade-in-up animation-delay-400"
+      />
     </div>
   </section>
 
@@ -459,33 +440,13 @@ const schema = JSON.stringify({
         One email per week. Unsubscribe in one click.
       </p>
 
-      <form
+      <NewsletterForm
+        size="lg"
         id="subscribe-form-cta"
-        class="ck-subscribe-form mt-10 flex flex-col sm:flex-row gap-3 max-w-xl mx-auto"
-      >
-        <input
-          type="email"
-          name="email"
-          required
-          placeholder="you@email.com"
-          aria-label="Email address"
-          class="flex-1 min-w-0 px-5 py-4 bg-white/5 border border-white/10 rounded-lg text-white text-lg placeholder-gray-500 focus:outline-none focus:border-coral/50 focus:ring-2 focus:ring-coral/20 transition-all duration-200"
-        />
-        <button
-          type="submit"
-          aria-label="Subscribe to newsletter and get the cheatsheet"
-          class="px-8 py-4 bg-coral text-white text-lg font-semibold rounded-lg hover:bg-coral/90 hover:-translate-y-1 transition-all duration-300 shadow-lg shadow-coral/20 shrink-0 cursor-pointer"
-        >
-          Subscribe &amp; Get the Cheatsheet
-        </button>
-      </form>
-      <p
-        id="subscribe-error-cta"
-        class="ck-subscribe-error mt-3 text-red-400 text-sm hidden"
-        aria-live="polite"
-        aria-atomic="true"
-      >
-      </p>
+        buttonText="Subscribe & Get the Cheatsheet"
+        buttonAriaLabel="Subscribe to newsletter and get the cheatsheet"
+        class="mt-10 max-w-xl mx-auto"
+      />
     </div>
   </section>
 </Layout>

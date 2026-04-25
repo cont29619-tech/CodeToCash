@@ -1,0 +1,60 @@
+---
+interface Props {
+  size?: 'lg' | 'md' | 'compact';
+  buttonText?: string;
+  class?: string;
+  id?: string;
+  placeholder?: string;
+  buttonAriaLabel?: string;
+}
+
+const {
+  size = 'md',
+  buttonText = 'Subscribe Free',
+  class: className = '',
+  id,
+  placeholder = 'you@email.com',
+  buttonAriaLabel,
+} = Astro.props;
+
+const formClasses: Record<string, string> = {
+  lg: 'flex flex-col sm:flex-row gap-3',
+  md: 'flex flex-col sm:flex-row gap-3',
+  compact: 'space-y-2',
+};
+
+const inputClasses: Record<string, string> = {
+  lg: 'flex-1 min-w-0 px-5 py-4 bg-white/5 border border-white/10 rounded-lg text-white text-lg placeholder-gray-400 focus:outline-none focus:border-coral/50 focus:ring-2 focus:ring-coral/20 transition-all duration-200',
+  md: 'flex-1 px-4 py-3 bg-navy border border-white/10 rounded-xl text-white placeholder:text-gray-400 focus:outline-none focus:border-coral/50 text-sm',
+  compact:
+    'w-full px-3 py-2 bg-navy border border-white/10 rounded-lg text-white placeholder:text-gray-400 focus:outline-none focus:border-coral/50 text-sm lg:text-base',
+};
+
+const buttonClasses: Record<string, string> = {
+  lg: 'px-8 py-4 bg-coral text-white text-lg font-semibold rounded-lg hover:bg-coral/90 hover:-translate-y-1 transition-all duration-300 shadow-lg shadow-coral/20 shrink-0 cursor-pointer',
+  md: 'px-6 py-3 bg-coral hover:bg-coral/90 text-white font-semibold rounded-xl hover:-translate-y-1 hover:shadow-lg hover:shadow-coral/30 transition-all duration-300 text-sm whitespace-nowrap cursor-pointer',
+  compact:
+    'w-full px-3 py-2 bg-coral hover:bg-coral/90 text-white font-semibold rounded-lg transition-colors text-xs cursor-pointer',
+};
+
+const errorClasses: Record<string, string> = {
+  lg: 'ck-subscribe-error mt-3 text-red-400 text-sm hidden',
+  md: 'ck-subscribe-error mt-2 text-red-400 text-sm hidden',
+  compact: 'ck-subscribe-error mt-2 text-red-400 text-xs hidden',
+};
+---
+
+<form id={id} class:list={['ck-subscribe-form', formClasses[size], className]}>
+  <input
+    type="email"
+    name="email"
+    required
+    placeholder={placeholder}
+    aria-label="Email address"
+    class={inputClasses[size]}
+  />
+  <button type="submit" class={buttonClasses[size]} aria-label={buttonAriaLabel}>
+    {buttonText}
+  </button>
+</form>
+<p class={errorClasses[size]} aria-live="polite" aria-atomic="true"></p>

@@ -3,6 +3,7 @@ import Layout from './Layout.astro';
 import type { CollectionEntry } from 'astro:content';
 import { categoryColors, categoryLabels } from '../utils/categoryColors';
 import ReadingProgress from '../components/ReadingProgress.astro';
+import NewsletterForm from '../components/NewsletterForm.astro';
 
 interface Props {
   post: CollectionEntry<'blog'>;
@@ -231,27 +232,7 @@ const schema = hasFaq
           <div class="p-5 bg-navy-light border border-white/10 rounded-xl">
             <p class="text-sm font-semibold text-white mb-2">Stay in the loop</p>
             <p class="text-xs text-gray-400 mb-3">Weekly DRM tactics for developers.</p>
-            <form class="ck-subscribe-form space-y-2">
-              <input
-                type="email"
-                name="email"
-                required
-                placeholder="you@example.com"
-                aria-label="Email address"
-                class="w-full px-3 py-2 bg-navy border border-white/10 rounded-lg text-white placeholder:text-gray-500 focus:outline-none focus:border-coral/50 text-sm lg:text-base"
-              />
-              <button
-                type="submit"
-                class="w-full px-3 py-2 bg-coral hover:bg-coral/90 text-white font-semibold rounded-lg transition-colors text-xs cursor-pointer"
-                >Subscribe</button
-              >
-            </form>
-            <p
-              class="ck-subscribe-error mt-2 text-red-400 text-xs hidden"
-              aria-live="polite"
-              aria-atomic="true"
-            >
-            </p>
+            <NewsletterForm size="compact" buttonText="Subscribe" />
           </div>
 
         </div>
@@ -386,27 +367,7 @@ const schema = hasFaq
             Subscribe to the CodeToCash newsletter for weekly articles, playbooks, and DRM
             strategies for developer entrepreneurs.
           </p>
-          <form class="ck-subscribe-form flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-3">
-            <input
-              type="email"
-              name="email"
-              required
-              placeholder="you@example.com"
-              aria-label="Email address"
-              class="flex-1 px-4 py-3 bg-navy border border-white/10 rounded-xl text-white placeholder:text-gray-500 focus:outline-none focus:border-coral/50 text-sm"
-            />
-            <button
-              type="submit"
-              class="px-6 py-3 bg-coral hover:bg-coral/90 text-white font-semibold rounded-xl transition-colors text-sm whitespace-nowrap cursor-pointer"
-              >Subscribe Free</button
-            >
-          </form>
-          <p
-            class="ck-subscribe-error mt-2 text-red-400 text-sm hidden"
-            aria-live="polite"
-            aria-atomic="true"
-          >
-          </p>
+          <NewsletterForm size="md" buttonText="Subscribe Free" class="max-w-md mx-auto mb-3" />
           <p class="text-gray-400 text-xs">Building in public. No spam, unsubscribe anytime.</p>
         </div>
 

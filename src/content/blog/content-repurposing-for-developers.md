@@ -1,13 +1,13 @@
 ---
 title: 'Content Repurposing: Turn One Blog Post Into 10 Pieces of Marketing'
 description: 'How to repurpose a single blog post into Twitter threads, email newsletters, LinkedIn posts, video scripts, and more. Maximum reach from minimum writing.'
-pubDate: 2026-05-08
+pubDate: 2026-04-25
 author: 'CodeToCash Team'
 category: 'strategy'
 tags: ['content marketing', 'repurposing', 'social media', 'productivity', 'distribution']
 readingTime: '9 min read'
 featured: false
-draft: true
+draft: false
 faq:
   - question: "Isn't repurposing just posting the same thing everywhere?"
     answer: "No. Repurposing means adapting the core idea for each platform's format and audience. A blog post becomes a Twitter thread with different structure, a newsletter with added personal commentary, and a LinkedIn post with a professional angle. Same insight, different delivery."

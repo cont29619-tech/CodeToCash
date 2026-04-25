@@ -42,6 +42,7 @@ const ogImageURL = new URL(ogImage ?? '/og-default.png', Astro.site);
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalURL} />
+    <link rel="alternate" type="application/rss+xml" title="CodeToCash" href="/rss.xml" />
 
     <!-- Open Graph -->
     <meta property="og:type" content={ogType} />

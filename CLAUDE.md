@@ -31,7 +31,11 @@
 | Vanilla JS        | —              | All interactivity via `<script>` tags in Astro components      |
 | ConvertKit        | API v3         | Newsletter subscriptions (Form ID: `9116297`)                  |
 | Plausible         | —              | Privacy-friendly analytics (production-only, `codetocash.dev`) |
+| Satori            | ^0.19.2        | Build-time OG image SVG generation                             |
+| @resvg/resvg-js   | ^2.6.2         | SVG-to-PNG conversion for OG images                            |
+| @astrojs/rss      | ^4.0.11        | RSS feed generation at `/rss.xml`                              |
 | Prettier          | ^3.8.1         | Code formatter (devDependency)                                 |
+| TypeScript        | ^5.9.3         | Type checking (devDependency)                                  |
 
 **No**: React, Vue, Svelte, or any JS framework. No test framework. No ESLint.
 
@@ -150,7 +154,7 @@ Dedicated subscription page. Sections:
 
 1. **HERO** — "One Marketing Tactic. Every Week. Built for Developers." — Large heading with ConvertKit form
 2. **WHAT YOU GET** — Five benefit cards with SVG icons
-3. **BUILDING IN PUBLIC** — Honest stats section (12 articles, 8 of 8 playbooks live)
+3. **BUILDING IN PUBLIC** — Honest stats section (38 articles, 8 of 8 playbooks live)
 4. **SAMPLE ISSUE** — Email client UI mockup showing a real newsletter example
 5. **FINAL CTA** — Second signup form
 
@@ -182,11 +186,11 @@ Six static category pages pre-rendered at build time via `getStaticPaths()`. Cat
 - Category eyebrow label, H1, and subtitle
 - Category nav with `aria-current="page"` on the active category
 - Post grid using identical card markup to blog/index.astro
-- Graceful empty state for categories with no posts yet (`ads`, `analytics`)
+- Graceful empty state for categories with no published posts
 
 **Category metadata** (title, description, h1, subtitle) is defined as the `categoryMeta` const at the top of `blog/[category].astro`. All 6 URLs are auto-included in the sitemap via `@astrojs/sitemap`.
 
-Current post counts per category: fundamentals (4), copywriting (7), strategy (12), email (5), ads (2), analytics (3).
+Current post counts per category: strategy (15), copywriting (7), email (5), analytics (5), fundamentals (4), ads (2).
 
 ### `/blog/[slug]` — blog/[...slug].astro (Blog Post)
 
@@ -252,6 +256,38 @@ Fixed top nav. No props.
 - **Mobile**: Hamburger button toggles a full-screen overlay menu. Uses `.open` class + `aria-expanded` for accessibility.
 - **Glassmorphism**: `bg-navy/70 backdrop-blur-xl border-b border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)]` — stronger blur and border than before (`backdrop-blur-md`, `border-white/5`)
 
+### `NewsletterForm.astro`
+
+Reusable newsletter subscribe form component. Used across all pages to eliminate form duplication.
+
+**Props**:
+
+```typescript
+{
+  size?: 'lg' | 'md' | 'compact'  // Visual size variant (default: 'md')
+  buttonText?: string              // Button label (default: 'Subscribe Free')
+  class?: string                   // Extra classes on the form wrapper
+  id?: string                      // Optional form ID
+  placeholder?: string             // Email placeholder (default: 'you@email.com')
+  buttonAriaLabel?: string         // Optional aria-label for the button
+}
+```
+
+- **`lg`**: Large inputs/buttons (px-5 py-4, text-lg) — used on newsletter hero, index CTA
+- **`md`**: Standard size (px-4 py-3, text-sm) — used on most CTAs, footer, playbooks, tools
+- **`compact`**: Stacked vertical layout (w-full, text-xs button) — used in blog sidebar widget
+
+Emits `ck-subscribe-form` class — handled by the global handler in `Layout.astro`.
+
+### `SearchModal.astro`
+
+Site-wide search overlay. No props — included once in `Layout.astro`.
+
+- **Trigger**: `Cmd+K` (Mac) / `Ctrl+K` (Windows/Linux), or clicking a search button
+- **Data source**: Fetches `/search-index.json` (generated at build time from all blogs, playbooks, and pages)
+- **UI**: Modal dialog with `role="dialog"`, `aria-modal="true"`, input with `aria-autocomplete="list"`, results as `role="listbox"`
+- **Client-side**: Fuzzy matching against title, description, and category fields
+
 ### `Footer.astro`
 
 Site footer. No props.
@@ -280,7 +316,7 @@ Base wrapper for all pages.
 }
 ```
 
-Provides: charset/viewport, favicon, title, description, canonical URL, OG tags (og:type, og:url, og:title, og:description, og:image, og:image:alt), Twitter Card tags (card, site, title, description, image), Google Fonts (Inter + JetBrains Mono, loaded async), Plausible analytics script (production-only), Navigation, main slot, Footer, back-to-top button, global `ck-subscribe-form` handler.
+Provides: charset/viewport, favicon, title, description, canonical URL, OG tags (og:type, og:url, og:title, og:description, og:image, og:image:alt), Twitter Card tags (card, site, title, description, image), Google Fonts (Inter + JetBrains Mono, loaded async), Plausible analytics script (production-only), Navigation, SearchModal, main slot, Footer, back-to-top button, global `ck-subscribe-form` handler.
 
 - **Canonical**: `new URL(Astro.url.pathname, Astro.site)`
 - **OG Image**: `/og-default.png`
@@ -527,23 +563,23 @@ async function handleSubscribe(form, errorEl) {
 
 ### Where ConvertKit Is Used
 
-| File                    | Forms                           | Class                |
-| ----------------------- | ------------------------------- | -------------------- |
-| `newsletter.astro`      | 2 (hero + CTA)                  | `ck-subscribe-form`  |
-| `drm-101.astro`         | 8 inline CTAs                   | `drm-subscribe-form` |
-| `index.astro`           | 1 newsletter section            | `ck-subscribe-form`  |
-| `Footer.astro`          | 1 "Join" form                   | `ck-subscribe-form`  |
-| `BlogLayout.astro`      | 2 (sidebar widget + bottom CTA) | `ck-subscribe-form`  |
-| `PlaybookLayout.astro`  | 1 bottom CTA                    | `ck-subscribe-form`  |
-| `tools.astro`           | 1 "Get Recommendations" form    | `ck-subscribe-form`  |
-| `playbooks/index.astro` | 1 "Notify Me" form              | `ck-subscribe-form`  |
+All subscribe forms use the `NewsletterForm.astro` component, which emits the `ck-subscribe-form` class.
 
-**Zero Buttondown references remain in the codebase.**
+| File                    | Forms                           | Component Size |
+| ----------------------- | ------------------------------- | -------------- |
+| `newsletter.astro`      | 2 (hero + CTA)                  | `lg`           |
+| `drm-101.astro`         | 8 inline CTAs + 1 bottom        | `md`           |
+| `index.astro`           | 1 newsletter section            | `lg`           |
+| `Footer.astro`          | 1 "Join" form                   | `md`           |
+| `BlogLayout.astro`      | 2 (sidebar widget + bottom CTA) | `compact` + `md` |
+| `PlaybookLayout.astro`  | 1 bottom CTA                    | `md`           |
+| `tools.astro`           | 1 "Get Recommendations" form    | `md`           |
+| `playbooks/index.astro` | 1 "Notify Me" form              | `md`           |
+| `404.astro`             | 1 subscribe form                | `md`           |
 
-### Two form class conventions
+### Form handler
 
-- **`ck-subscribe-form`** — used for all standard forms. Handler lives in `Layout.astro` (runs on every page), targets all `.ck-subscribe-form` elements. Error `<p class="ck-subscribe-error" aria-live="polite" aria-atomic="true">` must be the immediate next sibling of the form.
-- **`drm-subscribe-form`** — used only in `drm-101.astro`. Handler defined in that page's own `<script>` tag. Error `<p class="drm-subscribe-error" aria-live="polite" aria-atomic="true">` must be the immediate next sibling.
+- **`ck-subscribe-form`** — single class for all forms. Handler lives in `Layout.astro` (runs on every page), targets all `.ck-subscribe-form` elements. Error `<p class="ck-subscribe-error" aria-live="polite" aria-atomic="true">` is rendered by the `NewsletterForm` component as the immediate next sibling of the form.
 
 ---
 
@@ -574,24 +610,24 @@ z.object({
 });
 ```
 
-All 12 published blog posts include `faq` frontmatter with 4–5 Q&A pairs each.
+All 38 published blog posts include `faq` frontmatter with 4–5 Q&A pairs each.
 
 ### Published Blog Posts
 
 | Slug                                               | Title                                                                           | Category     | Featured |
 | -------------------------------------------------- | ------------------------------------------------------------------------------- | ------------ | -------- |
 | `what-is-direct-response-marketing-for-developers` | "What Is Direct Response Marketing? A Vibe Coder's Guide"                       | fundamentals | ⭐ yes   |
-| `copywriting-frameworks-for-developers`            | "5 Copywriting Frameworks Every Vibe Coder Should Know"                         | copywriting  | no       |
-| `marketing-for-vibe-coders`                        | "Marketing for Vibe Coders: How to Sell What You Build with AI"                 | strategy     | no       |
+| `copywriting-frameworks-for-developers`            | "5 Copywriting Tips for Developers (With Fill-in-the-Blank Templates)"          | copywriting  | no       |
+| `marketing-for-vibe-coders`                        | "Marketing for Vibe Coders: Sell What You Build"                                | strategy     | no       |
 | `drm-funnel-explained`                             | "The DRM Funnel Explained: Think of It as Your Sales API"                       | fundamentals | no       |
-| `pas-copywriting-framework`                        | "PAS Framework: The Developer's Favorite Copywriting Formula"                   | copywriting  | no       |
+| `pas-copywriting-framework`                        | "PAS Copywriting Framework: The Simplest Formula That Converts"                 | copywriting  | no       |
 | `why-developer-products-fail-marketing`            | "Why Most Developer Products Fail (And How DRM Fixes It)"                       | strategy     | no       |
-| `direct-response-vs-brand-marketing`               | "Direct Response vs Brand Marketing: What Developers Need to Know"              | fundamentals | no       |
-| `saas-landing-page-copywriting`                    | "SaaS Landing Page Copywriting: The Developer's Framework for Words That Sell"  | copywriting  | no       |
-| `email-marketing-for-saas-beginners`               | "Email Marketing for SaaS Beginners: Build a System That Sells While You Sleep" | email        | no       |
-| `saas-pricing-strategy`                            | "SaaS Pricing Strategy: A Developer's Guide to Pricing for Maximum Revenue"     | strategy     | no       |
-| `sell-software-built-with-ai`                      | "How to Sell Software Built with AI: A Vibe Coder's Marketing Playbook"         | strategy     | no       |
-| `building-in-public-marketing`                     | "Build in Public Marketing Strategy: Turn Your Process Into Your Audience"      | strategy     | no       |
+| `direct-response-vs-brand-marketing`               | "Direct Response vs Brand Marketing for Developers"                             | fundamentals | no       |
+| `saas-landing-page-copywriting`                    | "SaaS Landing Page Copywriting: 10-Section Blueprint + Templates"               | copywriting  | no       |
+| `email-marketing-for-saas-beginners`               | "SaaS Email Marketing for Beginners — From Zero to Automated Sales"             | email        | no       |
+| `saas-pricing-strategy`                            | "SaaS Pricing Strategy for Developers: Full Guide"                              | strategy     | no       |
+| `sell-software-built-with-ai`                      | "How to Sell AI-Built Software: Vibe Coder's Guide"                             | strategy     | no       |
+| `building-in-public-marketing`                     | "Building in Public as a Marketing Strategy"                                    | strategy     | no       |
 | `aida-copywriting-formula-landing-page`            | "AIDA Formula for Developer Landing Pages: A Practical Guide"                   | copywriting  | no       |
 | `headline-copywriting-templates`                   | "How to Write Headlines That Convert: 30 Templates for Dev Tools"               | copywriting  | no       |
 | `google-ads-for-saas-beginners`                    | "How to Run Google Ads for Your SaaS on a $100 Budget"                          | ads          | no       |
@@ -613,6 +649,12 @@ All 12 published blog posts include `faq` frontmatter with 4–5 Q&A pairs each.
 | `seo-for-developer-blogs`                          | "SEO for Developer Blogs: Rank Without Being an SEO Expert"                     | analytics    | no       |
 | `developer-newsletter-growth`                      | "Growing a Developer Newsletter to 1,000 Subscribers"                           | email        | no       |
 | `email-subject-line-formulas`                      | "Email Subject Line Formulas That Get 40%+ Open Rates"                          | email        | no       |
+| `affiliate-program-saas-setup`                     | "Affiliate Programs for Dev Tools: Complete Setup Guide"                        | strategy     | no       |
+| `marketing-automation-solo-developer`              | "Marketing Automation for Solo Developers"                                      | strategy     | no       |
+| `reduce-churn-saas-tactics`                        | "Churn Reduction: DRM Tactics to Keep Customers"                                | analytics    | no       |
+
+| `saas-free-trial-optimization`                     | "Free Trial Optimization: Convert More Trialers to Paying Customers"            | analytics    | no       |
+| `content-repurposing-for-developers`               | "Content Repurposing: Turn One Blog Post Into 10 Pieces of Marketing"           | strategy     | no       |
 
 ### Playbooks Status
 
@@ -642,8 +684,15 @@ All 12 published blog posts include `faq` frontmatter with 4–5 Q&A pairs each.
 | `src/layouts/BlogLayout.astro`     | Blog article layout with TOC sidebar                                                                                    |
 | `src/layouts/PlaybookLayout.astro` | Playbook layout with numbered section sidebar                                                                           |
 | `src/pages/blog/[category].astro`  | Six SEO category pages (fundamentals, copywriting, email, ads, analytics, strategy)                                     |
+| `src/components/NewsletterForm.astro` | Reusable subscribe form (3 size variants: lg, md, compact)                                                           |
+| `src/components/SearchModal.astro` | Site-wide search modal (Cmd+K / Ctrl+K), loaded in Layout.astro                                                         |
+| `src/pages/rss.xml.ts`            | RSS feed endpoint — auto-generates from published blog posts                                                            |
+| `src/pages/search-index.json.ts`   | JSON search index endpoint for blogs, playbooks, and pages                                                              |
+| `src/pages/og/blog/[...slug].png.ts` | Build-time OG image generation for blog posts (Satori + resvg)                                                        |
+| `src/pages/og/playbooks/[...slug].png.ts` | Build-time OG image generation for playbooks                                                                      |
 | `src/utils/categoryColors.ts`      | Shared blog category color + label maps (single source of truth)                                                        |
 | `src/utils/getRelatedPosts.ts`     | Priority-based related posts algorithm: same category → tag overlap → recency fallback. Used by `blog/[...slug].astro`. |
+| `src/utils/ogImageRenderer.ts`     | Shared Satori/resvg rendering functions for OG images                                                                   |
 | `public/drm-cheatsheet.pdf`        | Free cheatsheet PDF (~12KB), downloaded from `/welcome`                                                                 |
 | `public/og-default.png`            | Default OG image for social sharing                                                                                     |
 | `.env`                             | `PUBLIC_CONVERTKIT_API_KEY` — never commit, set in Vercel dashboard                                                     |
@@ -699,10 +748,9 @@ All 12 published blog posts include `faq` frontmatter with 4–5 Q&A pairs each.
 
 ### Adding a Subscribe Form
 
-1. Add `class="ck-subscribe-form"` to the `<form>` element
-2. Include an `<input type="email" name="email">` inside
-3. Add `<p class="ck-subscribe-error" aria-live="polite" aria-atomic="true">` as the immediate next sibling of the form
-4. The global handler in `Layout.astro` handles submission automatically — no page-level JS needed
+1. Import `NewsletterForm` from `../components/NewsletterForm.astro`
+2. Add `<NewsletterForm size="md" buttonText="Subscribe Free" />` — adjust `size` (`lg`, `md`, `compact`) and `buttonText` as needed
+3. The component handles all markup, error elements, and accessibility — the global handler in `Layout.astro` handles submission automatically
 
 ### TypeScript
 
@@ -723,12 +771,22 @@ All 12 published blog posts include `faq` frontmatter with 4–5 Q&A pairs each.
 
 ## Known Issues / Tech Debt
 
+### Resolved
+
 1. ~~**Buttondown forms**~~ — fully migrated to ConvertKit across all pages ✅
 2. ~~**6 playbooks are planned but unbuilt**~~ — all 8 playbooks are now live ✅
 3. ~~**No analytics**~~ — Plausible added (production-only) ✅
 4. ~~**README.md is the default Astro starter template**~~ — rewritten with project docs ✅
 5. ~~**No linter or formatter**~~ — Prettier configured with `prettier-plugin-astro` ✅
 6. ~~**No custom OG images per page**~~ — build-time OG images generated for all blog posts and playbooks via Satori + @resvg/resvg-js ✅
+
+7. ~~**No RSS feed**~~ — added `@astrojs/rss`, RSS feed at `/rss.xml` ✅
+8. ~~**Newsletter form duplication**~~ — extracted into `NewsletterForm.astro` component with 3 size variants ✅
+9. ~~**2 draft posts ready for review**~~ — both published (pubDate set to 2026-04-25) ✅
+
+### Open
+
+10. **Ads category underrepresented** — only 2 published posts in the `ads` category vs 15 in `strategy`.
 
 ---
 

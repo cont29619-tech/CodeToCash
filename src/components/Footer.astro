@@ -1,4 +1,6 @@
 ---
+import NewsletterForm from './NewsletterForm.astro';
+
 const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/drm-101', label: 'DRM 101' },
@@ -38,28 +40,7 @@ const resourceLinks = [
       <p class="text-sm text-gray-400 mb-6 max-w-md mx-auto leading-relaxed">
         Subscribe and get the cheatsheet + weekly marketing tactics — built for developers who ship.
       </p>
-      <form class="ck-subscribe-form flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-        <input
-          type="email"
-          name="email"
-          required
-          placeholder="you@email.com"
-          aria-label="Email address"
-          class="flex-1 min-w-0 px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-base text-white placeholder-gray-500 focus:outline-none focus:border-coral/50 focus:ring-2 focus:ring-coral/20 transition-all duration-200"
-        />
-        <button
-          type="submit"
-          class="px-6 py-3 bg-coral text-white text-sm font-semibold rounded-lg hover:bg-coral/90 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-coral/30 transition-all duration-300 cursor-pointer whitespace-nowrap"
-        >
-          Subscribe Free
-        </button>
-      </form>
-      <p
-        class="ck-subscribe-error mt-2 text-red-400 text-xs hidden"
-        aria-live="polite"
-        aria-atomic="true"
-      >
-      </p>
+      <NewsletterForm size="md" buttonText="Subscribe Free" class="max-w-md mx-auto" />
       <p class="mt-3 text-xs text-gray-500">No spam. Unsubscribe anytime.</p>
     </div>
   </div>
