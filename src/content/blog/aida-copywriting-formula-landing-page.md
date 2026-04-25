@@ -52,7 +52,7 @@ Where developers usually go wrong is shipping a product page that's great at Att
 
 You have three seconds. That's not a metaphor — eye-tracking studies consistently show that visitors decide whether to stay or leave in under three seconds. Your headline is doing 90% of that work, so it cannot be clever, it cannot be vague, and it absolutely cannot describe what your product _is_ rather than what it _does for the user_.
 
-The three headline formulas that reliably stop developers:
+For a deeper dive into headline writing with 30 fill-in-the-blank templates, see the [headline copywriting templates guide](/blog/headline-copywriting-templates). Here are the three headline formulas that reliably stop developers:
 
 **1. The outcome number**
 
@@ -245,7 +245,7 @@ The structural difference: AIDA leads with a hook that promises something good. 
 
 In practice, many high-converting landing pages run a hybrid: AIDA structure with a PAS-style Interest section. The headline is aspirational (Attention), the body copy digs into the problem (PAS's Agitate), and then the solution, proof, and CTA follow the AIDA sequence through Desire and Action.
 
-The [DRM 101 guide](/drm-101) covers how AIDA and PAS fit into the broader funnel — including which framework to use at each stage of your email sequence, not just on landing pages.
+The [DRM 101 guide](/drm-101) covers how AIDA and PAS fit into the broader funnel — including which framework to use at each stage of your email sequence, not just on landing pages. For a hands-on walkthrough of applying these frameworks section by section, the [developer copywriting playbook](/playbooks/copywriting-for-developers) gives you fill-in-the-blank templates you can use today.
 
 ---
 

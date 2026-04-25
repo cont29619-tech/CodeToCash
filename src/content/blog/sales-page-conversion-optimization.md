@@ -47,7 +47,7 @@ A sales page that converts at 5%+ follows a specific psychological sequence. Eac
 
 **Future pacing.** Help readers visualize life after buying. "Imagine opening your analytics dashboard next month and seeing a 5% conversion rate. Imagine the Stripe notifications. Imagine what that revenue means for your runway." This technique makes the outcome feel achievable and imminent.
 
-**Specificity everywhere.** "47 video lessons" converts better than "dozens of videos." "Used by 832 developers" beats "used by hundreds." "Average 40% increase" outperforms "significant improvement." Every vague claim is a conversion leak.
+**Specificity everywhere.** "47 video lessons" converts better than "dozens of videos." "Used by 832 developers" beats "used by hundreds." "Average 40% increase" outperforms "significant improvement." Every vague claim is a conversion leak. The [developer copywriting playbook](/playbooks/copywriting-for-developers) walks through how to write each section with this level of specificity.
 
 **Social proof placement.** Don't cluster all testimonials in one section. Sprinkle them throughout the page — a testimonial after the problem section, another after the offer breakdown, another near the CTA. Each one arrives at the moment of doubt and resolves it.
 
@@ -55,7 +55,7 @@ A sales page that converts at 5%+ follows a specific psychological sequence. Eac
 
 No sales page hits 5% on the first try. You iterate there through [systematic A/B testing](/blog/ab-testing-landing-page-guide).
 
-Test in this order: headline (biggest impact), offer/price (second biggest), CTA copy and placement, social proof format, page length, and guarantee wording. Test one element at a time and run tests long enough for statistical significance.
+Test in this order: headline (biggest impact — see our [headline copywriting templates](/blog/headline-copywriting-templates) for formulas), offer/price (second biggest), CTA copy and placement, social proof format, page length, and guarantee wording. Test one element at a time and run tests long enough for statistical significance.
 
 Track not just the conversion rate but the quality of conversions. A page that converts at 7% but attracts customers who churn in 30 days is worse than a page that converts at 4% with customers who stay for 12 months. Connect your sales page data to your [LTV and churn metrics](/blog/reduce-churn-saas-tactics) for the full picture.
 

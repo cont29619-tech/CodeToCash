@@ -51,7 +51,7 @@ Score each on 1-5:
 Total = 3 minimum to ship. 12-15 = high-converting asset.
 ```
 
-**Specificity** is the most important. "Email marketing tips" scores a 1. "A 7-email welcome sequence template for SaaS founders" scores a 5. The more narrowly you define the problem, the more intensely the right person wants the solution.
+**Specificity** is the most important. "Email marketing tips" scores a 1. "A 7-email welcome sequence template for SaaS founders" scores a 5. The more narrowly you define the problem, the more intensely the right person wants the solution. The same specificity principle applies to the copy on your opt-in page — the [developer copywriting playbook](/playbooks/copywriting-for-developers) shows how to write headlines and CTAs that convert browsers into subscribers.
 
 **Speed** is about time-to-value. An ebook takes hours. A Notion template takes minutes to copy. A code snippet takes seconds to paste. The faster a subscriber can use your lead magnet, the more they associate your brand with "this actually works" — which is exactly the feeling you want before you ask them to buy something.
 

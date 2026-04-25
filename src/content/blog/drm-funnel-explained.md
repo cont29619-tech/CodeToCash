@@ -87,7 +87,7 @@ Your landing page is a function: it takes a stranger as input and returns a subs
 
 **What failure looks like:** Your landing page reads like your README file. It lists features, mentions the tech stack, and ends with a GitHub link. Nobody subscribes. Nobody buys. They came, got confused about what the thing actually does for them, and left.
 
-**The fix:** Lead with the outcome, not the feature. "Deploy in one click" not "Kubernetes-based container orchestration platform." Make the headline answer "what's in it for me" in under 10 words. Put the email capture above the fold. Remove every element that doesn't directly support the conversion. For the complete playbook on building a landing page that converts, read our [SaaS landing page playbook](/playbooks/saas-landing-page).
+**The fix:** Lead with the outcome, not the feature. "Deploy in one click" not "Kubernetes-based container orchestration platform." Make the headline answer "what's in it for me" in under 10 words. Put the email capture above the fold. Remove every element that doesn't directly support the conversion. For the complete playbook on building a landing page that converts, read our [SaaS landing page playbook](/playbooks/saas-landing-page). For the words themselves, the [developer copywriting playbook](/playbooks/copywriting-for-developers) gives you fill-in-the-blank templates for every section.
 
 ## Stage 3: Email Sequence — The Async Queue
 
@@ -111,7 +111,7 @@ The offer is the transaction at the heart of the entire funnel. Everything befor
 
 **What failure looks like:** Your product has a "Start Free Trial" button on a pricing page with three tiers. There's no mention of what happens when the trial ends, no guarantee, no explanation of what makes this different from the 47 other tools in the space. Your trial-to-paid conversion is 2% when industry average for developer tools is 15–25%.
 
-**The fix:** Explicitly answer five questions on your offer page: What exactly do they get? What specific result can they expect, and how fast? What does it cost? What's the guarantee? Remove risk (money-back guarantee), add value (bonuses, templates, onboarding), and create urgency (founding price, limited seats). The offer becomes a no-brainer when the perceived value dramatically exceeds the price and the risk is effectively zero.
+**The fix:** Explicitly answer five questions on your offer page: What exactly do they get? What specific result can they expect, and how fast? What does it cost? What's the guarantee? Remove risk (money-back guarantee), add value (bonuses, templates, onboarding), and create urgency (founding price, limited seats). The offer becomes a no-brainer when the perceived value dramatically exceeds the price and the risk is effectively zero. For the advanced playbook on structuring a sales page that converts at 5%+, read the [sales page conversion optimization guide](/blog/sales-page-conversion-optimization).
 
 ## Stage 5: Retention — The Health Check Loop
 

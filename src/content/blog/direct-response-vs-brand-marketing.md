@@ -140,7 +140,7 @@ The comparison between direct response vs brand marketing for indie developers i
 
 Here's one action you can take today that is pure, measurable direct response:
 
-Write one paragraph on your landing page using the PAS framework — Problem, Agitate, Solution. Name the specific problem your product solves. Make the reader feel the cost of that problem. Position your product as the fix. That's it. One paragraph. Deploy it. Check your conversion rate in 48 hours.
+Write one paragraph on your landing page using the PAS framework — Problem, Agitate, Solution. Name the specific problem your product solves. Make the reader feel the cost of that problem. Position your product as the fix. That's it. One paragraph. Deploy it. Check your conversion rate in 48 hours. If you need help with the actual words, the [developer copywriting playbook](/playbooks/copywriting-for-developers) walks you through it with templates.
 
 You'll know if it worked. You can improve it next week. That's direct response.
 

@@ -43,12 +43,12 @@ One useful reframe: stop thinking about what you would pay, and start thinking a
 
 Price is not just the number on your pricing page. It is a signal. Customers use price as a proxy for quality, especially for products they have not used before.
 
-This is counterintuitive, but measurable. ProfitWell (now Paddle) has published [extensive research on SaaS pricing](https://www.paddle.com/blog/saas-pricing-strategies) showing that increasing price often increases conversion rate, because higher prices attract customers who are serious about solving the problem. They have budget. They do the ROI calculation. They commit.
+This is counterintuitive, but measurable. ProfitWell (now Paddle) has published [extensive research on SaaS pricing](https://www.paddle.com/blog/saas-pricing-strategies) showing that increasing price often increases conversion rate, because higher prices attract customers who are serious about solving the problem. For a deeper look at the specific psychological mechanisms behind this — charm pricing, anchoring, decoy tiers — read [the psychology of SaaS pricing](/blog/pricing-psychology-saas). They have budget. They do the ROI calculation. They commit.
 
 The low-price customer is often the worst customer:
 
 - Higher support burden (they need more hand-holding to extract value)
-- Higher churn (they leave when the next cheaper thing appears)
+- Higher churn (they leave when the next cheaper thing appears) — see the [churn reduction tactics guide](/blog/reduce-churn-saas-tactics) for how to diagnose and fix retention
 - Lower expansion revenue (they will not upgrade)
 - Lower referral rate (they do not brag about bargains, they brag about tools that transformed their work)
 

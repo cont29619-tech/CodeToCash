@@ -296,7 +296,7 @@ The rewrite names the specific insight (churn) with
 a specific timeframe (2 weeks) — a concrete, credible claim.
 ```
 
-The pattern in every "after": specificity replaces generality, outcome replaces feature description, and the reader's goal replaces the product's capabilities. The [copywriting frameworks guide](/blog/copywriting-frameworks-for-developers) covers more structural patterns you can apply beyond headlines — and the [SaaS landing page playbook](/playbooks/saas-landing-page) shows how to carry this specificity through the rest of the page.
+The pattern in every "after": specificity replaces generality, outcome replaces feature description, and the reader's goal replaces the product's capabilities. The [copywriting frameworks guide](/blog/copywriting-frameworks-for-developers) covers more structural patterns you can apply beyond headlines, the [developer copywriting playbook](/playbooks/copywriting-for-developers) gives you fill-in-the-blank templates for every section of your page, and the [SaaS landing page playbook](/playbooks/saas-landing-page) shows how to carry this specificity through the rest of the page.
 
 ---
 

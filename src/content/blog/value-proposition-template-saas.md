@@ -162,7 +162,7 @@ The weak version says nothing. Every SaaS says "comprehensive." The strong versi
 
 The weak version is a generic superlative. The strong version names the exact pain (leaked keys in GitHub) and the exact tradeoff users worry about (slowing down workflow).
 
-Notice what all the strong versions have in common: they're specific, they speak to fear or desire, and they don't waste words. For more on writing copy that converts, see the [SaaS Landing Page Copywriting guide](/blog/saas-landing-page-copywriting).
+Notice what all the strong versions have in common: they're specific, they speak to fear or desire, and they don't waste words. For more on writing copy that converts, see the [SaaS Landing Page Copywriting guide](/blog/saas-landing-page-copywriting). The [developer copywriting playbook](/playbooks/copywriting-for-developers) then gives you fill-in-the-blank templates for turning your value proposition into full page copy.
 
 ---
 

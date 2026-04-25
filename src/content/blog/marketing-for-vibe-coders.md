@@ -46,7 +46,7 @@ The good news? You can use systematic frameworks to speed this up dramatically. 
 
 ## The 3 Marketing Fundamentals Every Vibe Coder Needs
 
-Before you touch a landing page, an ad campaign, or a Twitter thread, you need to get three things right. Get these wrong and no amount of marketing effort will save you. Get them right and even basic marketing will work.
+Before you touch a landing page, an ad campaign, or a Twitter thread, you need to get three things right. Get these wrong and no amount of marketing effort will save you. Get them right and even basic marketing will work. If you want the deeper breakdown of why DRM is the right approach over brand marketing for developers with limited budgets, read [direct response vs brand marketing](/blog/direct-response-vs-brand-marketing).
 
 ### Fundamental 1: A Clear Offer
 
@@ -181,7 +181,7 @@ AI can help you find topics, write outlines, and draft articles:
 
 The key insight: **AI handles the 80% that's structural, you handle the 20% that's personal**. Add your own experience, specific examples, and authentic voice on top of the AI-generated structure.
 
-For the complete copywriting framework reference, read our guide on [copywriting frameworks for developers](/blog/copywriting-frameworks-for-developers).
+For the complete copywriting framework reference, read our guide on [copywriting frameworks for developers](/blog/copywriting-frameworks-for-developers). For hands-on templates you can fill in right now, the [developer copywriting playbook](/playbooks/copywriting-for-developers) walks you through each section of your landing page and emails.
 
 ## The Vibe Coder's Marketing Mindset
 

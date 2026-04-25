@@ -7,7 +7,7 @@ category: 'email'
 tags: ['email marketing', 'subject lines', 'open rates', 'templates', 'newsletters']
 readingTime: '9 min read'
 featured: false
-draft: true
+draft: false
 faq:
   - question: "What's a good email open rate for developer newsletters?"
     answer: '30-40% is good for developer audiences. Above 40% is excellent. The industry average across all categories is around 20%, but developer-focused newsletters with engaged lists regularly exceed 35%.'

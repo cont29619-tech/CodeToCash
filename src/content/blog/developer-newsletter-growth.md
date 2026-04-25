@@ -7,7 +7,7 @@ category: 'email'
 tags: ['newsletter', 'email list', 'growth', 'subscribers', 'content marketing']
 readingTime: '11 min read'
 featured: false
-draft: true
+draft: false
 faq:
   - question: 'How long does it take to reach 1,000 newsletter subscribers?'
     answer: 'With consistent effort, 3-6 months. The first 100 subscribers are the hardest because you have no social proof. Growth accelerates after 200-300 subscribers as word of mouth and content compounding kick in.'

@@ -89,7 +89,7 @@ Always check for segment differences. Maybe Variant B performs better on mobile 
 
 Here's the testing roadmap I recommend for developer product landing pages, ordered by typical impact.
 
-**Test 1: Headline.** Write three to five dramatically different headlines using the templates from our [headline copywriting guide](/blog/headline-copywriting-templates). Test the two most different ones first. Headline tests often produce the largest improvements because they affect whether anyone reads the rest of your page.
+**Test 1: Headline.** Write three to five dramatically different headlines using the templates from our [headline copywriting guide](/blog/headline-copywriting-templates) and the [developer copywriting playbook](/playbooks/copywriting-for-developers). Test the two most different ones first. Headline tests often produce the largest improvements because they affect whether anyone reads the rest of your page.
 
 **Test 2: CTA copy and placement.** Test different action verbs, different value propositions in the button text, and adding a second CTA higher on the page. "Start Free Trial" versus "See It In Action" versus "Get Your Dashboard" can produce very different results.
 

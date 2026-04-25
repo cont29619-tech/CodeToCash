@@ -100,7 +100,7 @@ The build in public strategy should be designed to funnel social audience into e
 
 **The beta access approach.** When you are approaching launch, offer your followers early access via your email list. "I'm opening 50 beta spots next week. Getting on the list means you get first access and founding member pricing." This converts followers to email subscribers in a natural, value-aligned way — they get something real in exchange.
 
-**The soft launch to your list.** Before you publicly launch, send your email list a "soft launch" email — a full explanation of what you built, why, who it is for, and a link to try it. Ask them to share feedback. Ask them to share the product if it solves a problem they have seen others struggle with. Your email list is your most engaged audience. The soft launch converts more than any Product Hunt post.
+**The soft launch to your list.** Before you publicly launch, send your email list a "soft launch" email — a full explanation of what you built, why, who it is for, and a link to try it. Ask them to share feedback. Ask them to share the product if it solves a problem they have seen others struggle with. Your email list is your most engaged audience. The soft launch converts more than any Product Hunt post. When you're ready for a full public launch, the [Product Hunt launch strategy guide](/blog/product-hunt-launch-strategy) gives you the 30-day pre-launch checklist, hour-by-hour launch day timeline, and realistic numbers on what to expect.
 
 For a step-by-step system on converting your build-in-public audience into product customers, the [Building in Public Playbook](/playbooks/building-in-public) walks through the full process from first tweet to paying customer.
 

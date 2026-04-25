@@ -50,7 +50,7 @@ CTA:        [One action, frictionless]
 Signature:  [Name, title, company, link]
 ```
 
-The subject line is the open rate. The opening line is the reply rate. Everything else is logistics. If your subject sounds like a marketing email, it gets treated like one. "Quick question" beats "Exciting partnership opportunity" every time — not because it's clever, but because it's honest about what the email is.
+The subject line is the open rate — see our [email subject line formulas](/blog/email-subject-line-formulas) for templates that consistently beat 40% open rates. The opening line is the reply rate. Everything else is logistics. If your subject sounds like a marketing email, it gets treated like one. "Quick question" beats "Exciting partnership opportunity" every time — not because it's clever, but because it's honest about what the email is.
 
 The opening line is where most cold emails collapse. "My name is [X] and I'm the founder of [Y]" is a delete. The reader doesn't care about you yet. Instead, lead with something specific about them: a blog post they wrote, a product they shipped, a problem you noticed in their workflow. That first sentence signals that this email was written for this person — not copy-pasted to 500 people.
 

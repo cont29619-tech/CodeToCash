@@ -184,7 +184,7 @@ GREAT: "Ship 10x Faster: The Only Email API Built for Next.js"
 
 **How to use it:** Write your headline or subject line. Score it against all 4 U's. If it's below 3/4, rewrite it. This is a quick quality filter that prevents you from shipping weak copy.
 
-The 4 U's framework is especially powerful when combined with other frameworks. Write your landing page body using AIDA or PAS, then score your headline with the 4 U's to make sure it's strong enough to stop the scroll.
+The 4 U's framework is especially powerful when combined with other frameworks. Write your landing page body using AIDA or PAS, then score your headline with the 4 U's to make sure it's strong enough to stop the scroll. For 30 ready-to-use headline templates built on these formulas, see the [headline copywriting templates guide](/blog/headline-copywriting-templates).
 
 ## How to Choose the Right Framework
 
@@ -195,6 +195,8 @@ You don't need all five frameworks for every piece of marketing. Here's when to 
 - **BAB** — Welcome emails, case studies, before/after comparisons. When the transformation is your strongest angle.
 - **FAB** — Feature sections, product pages, comparison content. When you need to translate tech specs into value.
 - **4 U's** — Headlines, subject lines, ad copy. Whenever you're writing anything under 15 words.
+
+To see these frameworks applied to a full sales page — with long-form structure, objection handling sequences, and urgency triggers — read the [sales page conversion optimization guide](/blog/sales-page-conversion-optimization).
 
 The best approach: write your first draft using whichever framework feels natural, then score it against the others. You'll often find that combining two frameworks (like PAS for the hook + FAB for the features) produces the strongest copy.
 
@@ -210,6 +212,6 @@ Here's your action plan:
 4. **Ship the best one** and measure the conversion rate
 5. **Iterate** — test a new version next week
 
-For the complete guide to marketing your dev product, read our [DRM 101 guide](/drm-101). And if you want to see these frameworks applied to a full landing page, check out the [SaaS landing page playbook](/playbooks/saas-landing-page). If you're new to DRM entirely, start with [What Is Direct Response Marketing? A Vibe Coder's Guide](/blog/what-is-direct-response-marketing-for-developers) to understand the system these frameworks fit into.
+For the complete guide to marketing your dev product, read our [DRM 101 guide](/drm-101). The [developer copywriting playbook](/playbooks/copywriting-for-developers) gives you fill-in-the-blank templates for applying these frameworks to real pages. And if you want to see them applied to a full landing page, check out the [SaaS landing page playbook](/playbooks/saas-landing-page). If you're new to DRM entirely, start with [What Is Direct Response Marketing? A Vibe Coder's Guide](/blog/what-is-direct-response-marketing-for-developers) to understand the system these frameworks fit into.
 
 Want a weekly framework, template, or teardown delivered to your inbox? Subscribe to the CodeToCash newsletter — built for developers who ship.

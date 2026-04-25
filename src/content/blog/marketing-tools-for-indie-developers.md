@@ -91,7 +91,7 @@ For a deeper breakdown of tools at this tier with pros, cons, and alternatives, 
 | CRO / session recording | PostHog                | Free tier or $20/month                    |
 | **Total**               |                        | ~$98/month + ad spend                     |
 
-At this tier, **ConvertKit Creator Pro** adds subscriber scoring, newsletter referral tracking, and advanced reporting. The newsletter referral system is legitimately good — it turns your existing subscribers into a growth channel without requiring separate tooling.
+At this tier, **ConvertKit Creator Pro** adds subscriber scoring, newsletter referral tracking, and advanced reporting. The newsletter referral system is legitimately good — it turns your existing subscribers into a growth channel without requiring separate tooling. If you want to go further and build a structured affiliate program for your product, the [affiliate program setup guide](/blog/affiliate-program-saas-setup) covers commission structures, tracking platforms like Rewardful and FirstPromoter, and how to recruit affiliates.
 
 The **dual analytics setup** (Plausible for top-of-funnel, PostHog for in-product behavior) gives you clean attribution at each layer. Plausible tells you which traffic sources convert. PostHog tells you what those users do inside your product. Together, they close the loop between marketing spend and product behavior.
 

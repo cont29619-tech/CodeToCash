@@ -41,7 +41,7 @@ For developer-specific keyword research, browse forums where your audience asks 
 
 Each blog post needs these elements optimized for its target keyword. This isn't about keyword stuffing — it's about signaling relevance to Google while writing naturally for humans.
 
-**Title tag.** Include your primary keyword in the first 60 characters. Make it compelling — your title competes with nine other results for the click. "[How to X]" and "[X]: A Complete Guide" formats work well.
+**Title tag.** Include your primary keyword in the first 60 characters. Make it compelling — your title competes with nine other results for the click. "[How to X]" and "[X]: A Complete Guide" formats work well. The [headline copywriting templates](/blog/headline-copywriting-templates) work just as well for title tags as they do for landing pages.
 
 **Meta description.** Write 150-160 characters that function like ad copy. Include your keyword and a reason to click. This doesn't directly affect ranking, but a better meta description means a higher click-through rate, which does affect ranking.
 

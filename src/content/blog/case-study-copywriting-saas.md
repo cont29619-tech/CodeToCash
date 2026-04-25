@@ -71,4 +71,4 @@ On [Twitter](/blog/twitter-marketing-for-developers), turn the key metrics into 
 
 For [Google Ads](/blog/google-ads-for-saas-beginners), use the key metric as ad copy: "See how [Customer Type] reduced [pain] by [percentage]."
 
-Case studies are the proof layer of your marketing. Everything else — your headlines, your copywriting, your pricing — makes promises. Case studies prove you can deliver. Start collecting customer stories today, even if your product is young. Early success stories, presented honestly, are some of the most powerful conversion content you can create.
+Case studies are the proof layer of your marketing. Everything else — your [headlines](/blog/headline-copywriting-templates), your copywriting, your pricing — makes promises. Case studies prove you can deliver. If you need help writing the copy around your case studies, the [developer copywriting playbook](/playbooks/copywriting-for-developers) covers how to frame customer results persuasively. Start collecting customer stories today, even if your product is young. Early success stories, presented honestly, are some of the most powerful conversion content you can create.

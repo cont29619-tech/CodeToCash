@@ -69,17 +69,17 @@ Shorter payback periods are always better. You can improve payback by reducing C
 
 ## Seven Tactics to Reduce CAC
 
-**1. Improve your conversion rate.** If your landing page converts at 2% instead of 1%, you get twice the customers from the same traffic at the same cost. Landing page optimization has the highest ROI of any CAC reduction tactic. Start with our [landing page copywriting guide](/blog/saas-landing-page-copywriting) and [headline templates](/blog/headline-copywriting-templates).
+**1. Improve your conversion rate.** If your landing page converts at 2% instead of 1%, you get twice the customers from the same traffic at the same cost. Landing page optimization has the highest ROI of any CAC reduction tactic. Start with our [landing page copywriting guide](/blog/saas-landing-page-copywriting), [headline templates](/blog/headline-copywriting-templates), and the [developer copywriting playbook](/playbooks/copywriting-for-developers).
 
 **2. Invest in content marketing.** Blog posts, guides, and tutorials have a high upfront cost but near-zero marginal cost. A blog post that ranks on Google sends you traffic for years without additional spend. Over time, content marketing typically produces the lowest CAC of any channel.
 
-**3. Build a referral system.** Customers who refer other customers have a near-zero acquisition cost. Offer incentives for referrals — a free month, a permanent discount, or exclusive features. Even a simple "Share with a friend" prompt in your product can drive referrals.
+**3. Build a referral system.** Customers who refer other customers have a near-zero acquisition cost. Offer incentives for referrals — a free month, a permanent discount, or exclusive features. Even a simple "Share with a friend" prompt in your product can drive referrals. For the full setup process — commission structures, tracking platforms, and recruiting strategies — see the [affiliate program guide for dev tools](/blog/affiliate-program-saas-setup).
 
 **4. Optimize your email sequences.** Your [welcome email sequence](/blog/email-sequences-for-saas) converts subscribers into customers at essentially zero marginal cost. Every percentage point improvement in email conversion directly reduces blended CAC.
 
 **5. Focus on high-intent channels.** Google Search ads targeting "[competitor] alternative" keywords reach people actively looking for a product like yours. These high-intent visitors convert at 3-5x the rate of awareness-level traffic, dramatically lowering CAC.
 
-**6. Reduce churn.** This doesn't reduce CAC directly, but it improves LTV, which improves your LTV:CAC ratio just as effectively. A customer who stays 12 months instead of 6 doubles their lifetime value without any increase in acquisition cost.
+**6. Reduce churn.** This doesn't reduce CAC directly, but it improves LTV, which improves your LTV:CAC ratio just as effectively. A customer who stays 12 months instead of 6 doubles their lifetime value without any increase in acquisition cost. The [churn reduction tactics guide](/blog/reduce-churn-saas-tactics) covers onboarding fixes, re-engagement emails, and exit surveys that keep customers longer.
 
 **7. Build in public.** Sharing your journey on Twitter and other platforms attracts customers who already feel connected to you and your product. These customers convert faster, pay more willingly, and churn less — all of which improve your effective CAC. Read our guide on [building in public as a marketing strategy](/blog/building-in-public-marketing) for tactical details.
 

@@ -54,7 +54,7 @@ You already A/B test. In DRM, you test headlines, prices, email subject lines, a
 
 You already read dashboards. DRM lives and dies by metrics: conversion rates, click-through rates, customer acquisition cost, lifetime value. If you can read a Grafana dashboard, you can read a marketing dashboard.
 
-The developers who struggle with marketing are usually the ones trying to be "creative" instead of systematic. DRM gives you a framework. Frameworks are what developers do best.
+The developers who struggle with marketing are usually the ones trying to be "creative" instead of systematic. DRM gives you a framework. Frameworks are what developers do best. If you're building with AI tools like Claude or Cursor, the same DRM system applies — the [guide to selling AI-built software](/blog/sell-software-built-with-ai) adapts these principles for vibe coders specifically.
 
 ## 3 Real Examples of DRM for Dev Products
 

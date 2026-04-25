@@ -52,7 +52,7 @@ This is the gap we are closing.
 
 Eighty percent of visitors never scroll past the hero. If your headline does not hook them in under five seconds, you lost them. The hero section is your highest-leverage piece of SaaS landing page copywriting.
 
-A hero needs three things:
+If you want to understand how your hero section maps to the AIDA psychological framework, the [AIDA formula guide for developer landing pages](/blog/aida-copywriting-formula-landing-page) breaks down each stage in detail. A hero needs three things:
 
 1. **Headline** — what the visitor gets
 2. **Subheadline** — who it is for and why it works
@@ -135,7 +135,7 @@ If you are early-stage and have no testimonials yet, ask your beta users directl
 
 For turning customer success into structured, persuasive proof, the [case study copywriting guide](/blog/case-study-copywriting-saas) shows you how to interview customers and write case studies that are specific enough to actually drive conversion.
 
-For the complete copywriting toolkit — including how to structure testimonials and social proof within a broader copywriting system — see the [copywriting frameworks guide](/blog/copywriting-frameworks-for-developers).
+For the complete copywriting toolkit — including how to structure testimonials and social proof within a broader copywriting system — see the [copywriting frameworks guide](/blog/copywriting-frameworks-for-developers). The [developer copywriting playbook](/playbooks/copywriting-for-developers) walks you through each section with fill-in-the-blank templates.
 
 ## The Complete Fill-in-the-Blank Landing Page Copy Template
 
@@ -283,8 +283,8 @@ You now have everything you need: the mental model (one job), the section struct
 
 The only thing left is to actually write it. Open a text editor, paste the template, and fill in your specifics. Do not wait until it is perfect. A mediocre landing page that is live beats a perfect landing page still sitting in a Notion doc.
 
-Once your copy is drafted, run it through the [SaaS landing page playbook](/playbooks/saas-landing-page) — it covers the full page structure including layout decisions, above-the-fold optimization, and what to A/B test first.
+Once your copy is drafted, run it through the [SaaS landing page playbook](/playbooks/saas-landing-page) — it covers the full page structure including layout decisions, above-the-fold optimization, and what to A/B test first. If you're ready to push past the 3–5% average and into 5%+ territory, the [sales page conversion optimization guide](/blog/sales-page-conversion-optimization) covers long-form structure, objection handling, and urgency triggers for higher-priced offers.
 
-SaaS landing page copywriting is a skill. Like any skill, you are bad at it the first time and better every iteration after that. Ship the page. Read the heatmaps. Rewrite the headline. Repeat.
+SaaS landing page copywriting is a skill. Like any skill, you are bad at it the first time and better every iteration after that. Ship the page. Read the heatmaps. Rewrite the headline. Repeat. For a systematic approach to that iteration process — including sample size calculations, statistical significance, and what to test first — read the [developer's guide to A/B testing landing pages](/blog/ab-testing-landing-page-guide).
 
 Your README is not going to sell your product. Your landing page will.

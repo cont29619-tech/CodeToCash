@@ -118,7 +118,7 @@ The most important thing you can do on launch day is respond to comments immedia
 
 Your Product Hunt listing is a landing page. Apply the same principles you'd apply to any conversion-focused page — clear headline, specific audience, concrete benefit, social proof, strong CTA. Everything in the [DRM 101 playbook](/drm-101) applies here, compressed into a 500-character description and a 60-character tagline.
 
-**The tagline** is the highest-leverage line you'll write for this launch. It appears in search results, social shares, and the leaderboard itself. Under 60 characters. Name the audience or the problem, not just the product. Avoid generic descriptions like "the best tool for X" — be specific.
+**The tagline** is the highest-leverage line you'll write for this launch. It appears in search results, social shares, and the leaderboard itself. Under 60 characters. Name the audience or the problem, not just the product. Avoid generic descriptions like "the best tool for X" — be specific. The [headline copywriting templates](/blog/headline-copywriting-templates) and the [developer copywriting playbook](/playbooks/copywriting-for-developers) both have formulas you can adapt for 60-character taglines.
 
 ```
 TAGLINE FRAMEWORK (PAS compressed)

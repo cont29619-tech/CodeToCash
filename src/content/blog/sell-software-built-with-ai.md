@@ -35,7 +35,7 @@ Here is the problem in one sentence: AI made building 10x faster, but it did not
 
 In 2020, the bottleneck for an indie developer was engineering velocity. Could you build a working product fast enough before running out of runway? AI largely solved that. In 2026, most vibe coders can ship a production-ready SaaS in a weekend. The bottleneck is now distribution, positioning, and trust.
 
-This creates a new kind of developer. They ship constantly — a new product every few weeks — and each one gets a Product Hunt post, a tweet, maybe a Hacker News comment. Most get 50–200 visitors and then nothing. The developer assumes the market does not want this product. They move to the next idea. Repeat.
+This creates a new kind of developer. They ship constantly — a new product every few weeks — and each one gets a [Product Hunt post](/blog/product-hunt-launch-strategy), a tweet, maybe a Hacker News comment. Most get 50–200 visitors and then nothing. The developer assumes the market does not want this product. They move to the next idea. Repeat.
 
 The actual problem: they never built a marketing system. Every product launch started from zero — no audience, no email list, no positioning, no follow-up. They were building new products faster than they were learning to sell any of them.
 
@@ -99,7 +99,7 @@ For more on how to apply this to your entire funnel, read [Marketing for Vibe Co
 
 You do not need a complex marketing setup to sell software built with AI. You need four things, and you can build all of them in a day.
 
-**1. A landing page with an outcome headline.** One page. One message. The headline states the result from the positioning statement. Below it: three problem points (so they feel understood), your core features framed as benefits, and one email capture CTA with a lead magnet (checklist, template, or demo access). That is the whole page. Do not overthink it. A live page converting at 3% beats a perfect page still in Notion. For the exact copy techniques that make each section of that page work, read [SaaS Landing Page Copywriting for Developers](/blog/saas-landing-page-copywriting).
+**1. A landing page with an outcome headline.** One page. One message. The headline states the result from the positioning statement. Below it: three problem points (so they feel understood), your core features framed as benefits, and one email capture CTA with a lead magnet (checklist, template, or demo access). That is the whole page. Do not overthink it. A live page converting at 3% beats a perfect page still in Notion. For the exact copy techniques that make each section of that page work, read [SaaS Landing Page Copywriting for Developers](/blog/saas-landing-page-copywriting) and the [developer copywriting playbook](/playbooks/copywriting-for-developers).
 
 **2. An email tool with a welcome sequence.** ConvertKit's free tier handles everything you need up to 1,000 subscribers. Set up a 5-email welcome sequence before your first subscriber arrives. Email 1 delivers the lead magnet. Email 2 tells your origin story. Email 3 delivers a quick win. Email 4 handles the top objection. Email 5 makes the direct offer with a CTA. Five emails is enough to go from "stranger who gave me an email" to "customer."
 
