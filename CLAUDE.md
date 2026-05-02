@@ -242,6 +242,19 @@ Free headline scoring tool. Paste a headline, get a 0-100 score with breakdowns 
 
 Built with vanilla JS, no framework. Includes a rewrite suggestion engine and shareable score cards.
 
+### `/tools/email-subject-line-tester` — tools/email-subject-line-tester.astro (Interactive Tool)
+
+Free email subject line tester. Paste a subject line, get a spam score and open-rate prediction with breakdowns for:
+- Length (mobile truncation at ~40 chars, desktop at ~60)
+- Spam trigger words (FREE, URGENT, ACT NOW, etc.)
+- Front-loaded value (hook in first 20 characters)
+- Curiosity gap (questions, numbers, "How I..." patterns)
+- Personalization tokens ({first_name}, {{name}}, etc.)
+- Power words optimized for inbox context
+- Word efficiency (ideal: 5-10 words)
+
+Built with vanilla JS, no framework. Links to the email subject line formulas guide.
+
 ---
 
 ### `/about` — about.astro (About Page)
@@ -702,6 +715,7 @@ All 42 published blog posts include `faq` frontmatter with 4–5 Q&A pairs each.
 | `src/pages/og/blog/[...slug].png.ts` | Build-time OG image generation for blog posts (Satori + resvg)                                                        |
 | `src/pages/og/playbooks/[...slug].png.ts` | Build-time OG image generation for playbooks                                                                      |
 | `src/pages/tools/headline-grader.astro` | Interactive headline scoring tool with shareable score cards                                                    |
+| `src/pages/tools/email-subject-line-tester.astro` | Interactive email subject line tester with spam score and open-rate prediction                          |
 | `src/utils/categoryColors.ts`      | Shared blog category color + label maps (single source of truth)                                                        |
 | `src/utils/getRelatedPosts.ts`     | Priority-based related posts algorithm: same category → tag overlap → recency fallback. Used by `blog/[...slug].astro`. |
 | `src/utils/ogImageRenderer.ts`     | Shared Satori/resvg rendering functions for OG images                                                                   |

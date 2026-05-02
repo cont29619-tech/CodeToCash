@@ -1,0 +1,566 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const title = 'Free Email Subject Line Tester | CodeToCash';
+const description =
+  'Test your email subject line before you send. Get a spam score, readability rating, and actionable fixes to boost open rates.';
+
+const schema = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: 'Email Subject Line Tester',
+  url: 'https://codetocash.dev/tools/email-subject-line-tester',
+  applicationCategory: 'MarketingApplication',
+  operatingSystem: 'Any',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  description,
+});
+---
+
+<Layout title={title} description={description} schema={schema}>
+  <!-- HERO -->
+  <section class="relative pt-32 pb-20 px-6 overflow-hidden">
+    <div
+      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-coral/5 rounded-full blur-[120px] animate-pulse-slow"
+    >
+    </div>
+    <div class="relative z-10 max-w-3xl mx-auto text-center">
+      <p class="text-sm font-mono text-coral uppercase tracking-widest mb-4">// free tool</p>
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight mb-6">
+        Subject Line
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-coral">
+          Tester
+        </span>
+      </h1>
+      <p class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
+        Paste your subject line, get a spam score and open-rate prediction. Built on the frameworks
+        from our
+        <a href="/blog/email-subject-line-formulas" class="text-coral hover:underline"
+          >email subject line formulas</a
+        > guide.
+      </p>
+    </div>
+  </section>
+
+  <!-- TESTER -->
+  <section class="relative pb-24 px-6">
+    <div class="max-w-3xl mx-auto">
+      <!-- Input -->
+      <div
+        class="p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] mb-8"
+        id="tester-card"
+      >
+        <label for="subject-input" class="block text-sm font-mono text-gray-500 mb-3">
+          $ enter your subject line
+        </label>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <input
+            id="subject-input"
+            type="text"
+            placeholder='e.g. The 3-email sequence that doubled our MRR'
+            maxlength="120"
+            class="flex-1 px-5 py-4 bg-white/5 border border-white/10 rounded-lg text-white text-lg placeholder-gray-600 focus:outline-none focus:border-coral/50 focus:ring-2 focus:ring-coral/20 transition-all duration-200"
+          />
+          <button
+            id="test-btn"
+            class="px-8 py-4 bg-coral text-white font-semibold rounded-lg hover:bg-coral/90 hover:-translate-y-1 transition-all duration-300 shadow-lg shadow-coral/20 cursor-pointer whitespace-nowrap"
+          >
+            Test It
+          </button>
+        </div>
+        <p class="mt-3 text-xs text-gray-600" id="char-count">0 / 120 characters</p>
+      </div>
+
+      <!-- Results (hidden until tested) -->
+      <div id="results" class="hidden">
+        <!-- Overall Score -->
+        <div
+          class="p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] mb-6 text-center"
+          id="score-card"
+        >
+          <p class="text-sm font-mono text-gray-500 uppercase tracking-widest mb-4">
+            // subject line score
+          </p>
+          <div class="relative inline-flex items-center justify-center mb-4">
+            <svg width="160" height="160" viewBox="0 0 160 160" id="score-ring">
+              <circle
+                cx="80"
+                cy="80"
+                r="70"
+                fill="none"
+                stroke="rgba(255,255,255,0.06)"
+                stroke-width="8"></circle>
+              <circle
+                id="score-arc"
+                cx="80"
+                cy="80"
+                r="70"
+                fill="none"
+                stroke="#E94560"
+                stroke-width="8"
+                stroke-linecap="round"
+                stroke-dasharray="439.82"
+                stroke-dashoffset="439.82"
+                transform="rotate(-90 80 80)"
+                style="transition: stroke-dashoffset 1s ease-out, stroke 0.5s ease;"></circle>
+            </svg>
+            <span
+              id="score-number"
+              class="absolute text-5xl font-extrabold text-white"
+              style="transition: color 0.5s ease;">0</span
+            >
+          </div>
+          <p id="score-label" class="text-lg font-semibold text-gray-400"></p>
+          <p id="score-subject" class="mt-3 text-white/60 font-mono text-sm break-words"></p>
+        </div>
+
+        <!-- Factor Breakdown -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6" id="factors-grid"></div>
+
+        <!-- Suggestions -->
+        <div
+          class="p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] mb-6"
+          id="suggestions-card"
+        >
+          <p class="text-sm font-mono text-coral uppercase tracking-widest mb-4">
+            // how to improve
+          </p>
+          <ul id="suggestions-list" class="space-y-3"></ul>
+        </div>
+
+        <!-- Try Again -->
+        <div class="text-center mb-16">
+          <button
+            id="try-again-btn"
+            class="px-6 py-3 border border-white/10 text-gray-400 rounded-lg hover:border-coral/40 hover:text-white transition-all duration-300 cursor-pointer"
+          >
+            Test Another Subject Line
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIPS -->
+  <section class="relative py-24 px-6 border-t border-white/[0.02]">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-16">
+        <p class="text-sm font-mono text-coral uppercase tracking-widest mb-4">
+          // what gets emails opened
+        </p>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white">
+          The Science Behind High-Open Subject Lines
+        </h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div
+          class="group p-6 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-coral/40 hover:bg-white/[0.04] transition-all duration-300"
+        >
+          <span class="text-3xl mb-4 block group-hover:scale-110 transition-transform duration-300"
+            >📱</span
+          >
+          <h3 class="text-lg font-bold text-white mb-2">Mobile-First Length</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            iPhone shows ~40 characters. Gmail on desktop shows ~60. Front-load your value — the
+            most important words must appear in the first 30 characters or they get cut off.
+          </p>
+        </div>
+        <div
+          class="group p-6 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-coral/40 hover:bg-white/[0.04] transition-all duration-300"
+        >
+          <span class="text-3xl mb-4 block group-hover:scale-110 transition-transform duration-300"
+            >🎯</span
+          >
+          <h3 class="text-lg font-bold text-white mb-2">Curiosity, Not Clickbait</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            "You won't believe what happened" gets clicks but kills trust. "The pricing mistake that
+            cost us $12K" creates curiosity while promising value. Always deliver what the subject
+            line implies.
+          </p>
+        </div>
+        <div
+          class="group p-6 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-coral/40 hover:bg-white/[0.04] transition-all duration-300"
+        >
+          <span class="text-3xl mb-4 block group-hover:scale-110 transition-transform duration-300"
+            >🚫</span
+          >
+          <h3 class="text-lg font-bold text-white mb-2">Spam Filter Avoidance</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            ALL CAPS, multiple exclamation marks, and words like "FREE," "URGENT," or "ACT NOW"
+            train spam filters to bury your email. One power word is persuasive. Three looks like a
+            scam.
+          </p>
+        </div>
+      </div>
+      <div class="text-center mt-10">
+        <a
+          href="/blog/email-subject-line-formulas"
+          class="text-coral hover:underline text-sm font-medium"
+        >
+          Read the full subject line formulas guide →
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  const SPAM_WORDS = [
+    'free', 'urgent', 'act now', 'limited time', 'exclusive deal',
+    'click here', 'order now', 'call now', 'buy now', 'get it now',
+    'double your', 'earn extra cash', 'make money', 'cash bonus',
+    'extra income', 'earn dollars', '100 percent free', '100 percent satisfied',
+    'act immediately', 'call free', 'call now', 'cheap', 'click below',
+    'congratulations', 'credit card offers', 'deal', 'dear friend',
+    'direct email', 'do it today', 'for free', 'free access',
+    'free consultation', 'free gift', 'free hosting', 'free info',
+    'free investment', 'free membership', 'free money', 'free preview',
+    'free quote', 'free trial', 'full refund', 'get paid', 'giveaway',
+    'great offer', 'guarantee', 'guaranteed', 'incredible deal',
+    'limited time only', 'no catch', 'no experience', 'no obligation',
+    'no purchase necessary', 'not junk', 'not spam', 'offer expires',
+    'once in lifetime', 'one time', 'order status', 'please read',
+    'risk free', 'satisfaction guaranteed', 'see for yourself',
+    'special promotion', 'take action', 'this is not spam',
+    'this is not junk', 'winner', 'winning', 'you are a winner',
+    'you have been selected', 'zero risk',
+  ];
+
+  const POWER_WORDS = [
+    'proven', 'secret', 'ultimate', 'exclusive', 'guaranteed', 'instant',
+    'effortless', 'powerful', 'complete', 'essential', 'definitive', 'simple',
+    'easy', 'fast', 'quick', 'step-by-step', 'actionable', 'practical',
+    'comprehensive', 'insider', 'hack', 'hacks', 'boost', 'skyrocket',
+    'double', 'triple', 'maximize', 'transform', 'master', 'dominate',
+    'crush', 'unlock', 'discover', 'reveal', 'mistakes', 'avoid', 'stop',
+    'never', 'surprising', 'shocking', 'remarkable', 'incredible', 'breakthrough',
+  ];
+
+  const CURIOSITY_PATTERNS = [
+    /how\s+i\b/i, /how\s+we\b/i, /the\s+real\s+reason/i,
+    /what\s+i\s+learned/i, /what\s+we\s+learned/i, /the\s+truth\s+about/i,
+    /why\s+.*?(doesnt|dont|not)/i, /.*\?$/,
+  ];
+
+  const PERSONALIZATION_PATTERNS = [
+    /\{\{.*?\}\}/g, /\[\[.*?\]\]/g, /\{first_name\}/gi,
+    /\{name\}/gi, /\{company\}/gi, /\[first name\]/gi,
+    /\[name\]/gi, /\[company\]/gi,
+  ];
+
+  interface Factor {
+    name: string;
+    score: number;
+    max: number;
+    detail: string;
+    status: 'good' | 'ok' | 'bad';
+  }
+
+  function analyzeSubjectLine(subject: string) {
+    const trimmed = subject.trim();
+    const charCount = trimmed.length;
+    const lower = trimmed.toLowerCase();
+    const words = trimmed.split(/\s+/).filter((w) => w.length > 0);
+    const wordCount = words.length;
+    const suggestions: string[] = [];
+    const factors: Factor[] = [];
+
+    // 1. Character length (max 25)
+    let charScore: number;
+    if (charCount >= 30 && charCount <= 50) {
+      charScore = 25;
+    } else if (charCount >= 20 && charCount <= 60) {
+      charScore = 18;
+    } else if (charCount >= 10 && charCount <= 70) {
+      charScore = 10;
+    } else {
+      charScore = 3;
+    }
+
+    if (charCount < 20) {
+      suggestions.push('Too short at ' + charCount + ' chars. Add 2-3 more words to create curiosity or promise value.');
+    } else if (charCount > 60) {
+      suggestions.push('At ' + charCount + ' chars, this gets truncated on most devices. Trim to under 50 for mobile safety.');
+    }
+
+    factors.push({
+      name: 'Length',
+      score: charScore,
+      max: 25,
+      detail: charCount + ' chars (ideal: 30-50)',
+      status: charScore >= 20 ? 'good' : charScore >= 12 ? 'ok' : 'bad',
+    });
+
+    // 2. Spam risk (max 20)
+    let spamScore = 20;
+    const foundSpam = SPAM_WORDS.filter((w) => lower.includes(w.toLowerCase()));
+    const uniqueSpam = [...new Set(foundSpam)];
+    const allCapsWords = words.filter(
+      (w) => w.length > 2 && w === w.toUpperCase() && /[A-Z]/.test(w)
+    );
+    const exclamationCount = (trimmed.match(/!/g) || []).length;
+    const dollarCount = (trimmed.match(/\$/g) || []).length;
+
+    if (uniqueSpam.length > 0) {
+      spamScore -= uniqueSpam.length * 4;
+      suggestions.push('Spam trigger' + (uniqueSpam.length > 1 ? 's' : '') + ' detected: "' + uniqueSpam.slice(0, 3).join('", "') + '". Replace with softer alternatives.');
+    }
+    if (allCapsWords.length > 0) {
+      spamScore -= allCapsWords.length * 3;
+      suggestions.push('ALL CAPS words (' + allCapsWords.join(', ') + ') trigger spam filters. Use sentence case instead.');
+    }
+    if (exclamationCount > 1) {
+      spamScore -= (exclamationCount - 1) * 3;
+      suggestions.push(exclamationCount + ' exclamation marks look spammy. One is plenty - zero is often better.');
+    }
+    if (dollarCount > 0) {
+      spamScore -= 2;
+      suggestions.push('The "$" symbol raises spam flags. Write the amount in words if possible.');
+    }
+    spamScore = Math.max(0, spamScore);
+
+    factors.push({
+      name: 'Spam Risk',
+      score: spamScore,
+      max: 20,
+      detail: uniqueSpam.length > 0
+        ? uniqueSpam.length + ' trigger' + (uniqueSpam.length > 1 ? 's' : '') + ' found'
+        : allCapsWords.length > 0
+          ? 'ALL CAPS detected'
+          : exclamationCount > 1
+            ? 'Multiple exclamation marks detected'
+            : 'Clean',
+      status: spamScore >= 16 ? 'good' : spamScore >= 10 ? 'ok' : 'bad',
+    });
+
+    // 3. Front-loaded value (max 15)
+    const first20 = lower.slice(0, 20);
+    const hasValueInFront =
+      /\d/.test(first20) ||
+      /^(how|why|what|the|stop|never|get|build|grow|start|make|create|learn|write|use|turn|avoid|master|ship)/i.test(trimmed);
+    const frontLoadScore = hasValueInFront ? 15 : 6;
+
+    if (!hasValueInFront) {
+      suggestions.push('The first 20 characters do not contain a hook. Lead with a number, "How to", or a bold claim.');
+    }
+
+    factors.push({
+      name: 'Front-Loaded Value',
+      score: frontLoadScore,
+      max: 15,
+      detail: hasValueInFront ? 'Strong opening' : 'Weak opening - hook missing',
+      status: frontLoadScore >= 12 ? 'good' : 'bad',
+    });
+
+    // 4. Curiosity gap (max 15)
+    let curiosityScore = 0;
+    const hasQuestion = trimmed.endsWith('?');
+    const hasCuriosityPattern = CURIOSITY_PATTERNS.some((p) => p.test(trimmed));
+    const hasNumber = /\d/.test(trimmed);
+
+    if (hasCuriosityPattern) curiosityScore += 10;
+    if (hasQuestion) curiosityScore += 5;
+    if (hasNumber && !hasCuriosityPattern) curiosityScore += 5;
+    curiosityScore = Math.min(15, curiosityScore);
+
+    if (!hasCuriosityPattern && !hasQuestion && !hasNumber) {
+      suggestions.push('No curiosity mechanism detected. Try a question, a number, or "How I..." format.');
+    }
+
+    factors.push({
+      name: 'Curiosity',
+      score: curiosityScore,
+      max: 15,
+      detail: hasCuriosityPattern
+        ? 'Curiosity pattern detected'
+        : hasQuestion
+          ? 'Question format'
+          : hasNumber
+            ? 'Number hook'
+            : 'No curiosity trigger',
+      status: curiosityScore >= 12 ? 'good' : curiosityScore >= 6 ? 'ok' : 'bad',
+    });
+
+    // 5. Personalization (max 10)
+    const hasPersonalization = PERSONALIZATION_PATTERNS.some((p) => p.test(trimmed));
+    const personalizationScore = hasPersonalization ? 10 : 0;
+
+    if (!hasPersonalization) {
+      suggestions.push('No personalization token. Adding {first_name} can increase open rates by 20-26%.');
+    }
+
+    factors.push({
+      name: 'Personalization',
+      score: personalizationScore,
+      max: 10,
+      detail: hasPersonalization ? 'Token detected' : 'No token - consider adding {first_name}',
+      status: personalizationScore >= 8 ? 'good' : 'ok',
+    });
+
+    // 6. Power words (max 10)
+    const foundPower = words
+      .map((w) => w.toLowerCase().replace(/[^a-z0-9]/g, ''))
+      .filter((w) => POWER_WORDS.includes(w));
+    const uniquePower = [...new Set(foundPower)];
+    let powerScore: number;
+    if (uniquePower.length >= 2) {
+      powerScore = 10;
+    } else if (uniquePower.length === 1) {
+      powerScore = 6;
+    } else {
+      powerScore = 0;
+    }
+
+    if (uniquePower.length === 0) {
+      suggestions.push('No power words. Try "proven," "step-by-step," or "mistakes" to trigger action.');
+    }
+
+    factors.push({
+      name: 'Power Words',
+      score: powerScore,
+      max: 10,
+      detail: uniquePower.length > 0
+        ? 'Found: ' + uniquePower.map((w) => '"' + w + '"').join(', ')
+        : 'None found',
+      status: powerScore >= 8 ? 'good' : powerScore >= 4 ? 'ok' : 'bad',
+    });
+
+    // 7. Word count efficiency (max 5)
+    let wordEffScore: number;
+    if (wordCount >= 5 && wordCount <= 10) {
+      wordEffScore = 5;
+    } else if (wordCount >= 3 && wordCount <= 12) {
+      wordEffScore = 3;
+    } else {
+      wordEffScore = 1;
+    }
+
+    factors.push({
+      name: 'Word Efficiency',
+      score: wordEffScore,
+      max: 5,
+      detail: wordCount + ' words (ideal: 5-10)',
+      status: wordEffScore >= 4 ? 'good' : wordEffScore >= 2 ? 'ok' : 'bad',
+    });
+
+    const totalScore = factors.reduce((sum, f) => sum + f.score, 0);
+
+    if (suggestions.length === 0) {
+      suggestions.push('Strong subject line. A/B test it against a variant with a different curiosity angle to find your ceiling.');
+    }
+
+    return { score: totalScore, factors, suggestions };
+  }
+
+  function getScoreColor(score: number): string {
+    if (score >= 80) return '#22c55e';
+    if (score >= 60) return '#eab308';
+    if (score >= 40) return '#f97316';
+    return '#ef4444';
+  }
+
+  function getScoreLabel(score: number): string {
+    if (score >= 80) return 'Excellent - inbox-friendly';
+    if (score >= 60) return 'Good - solid open-rate potential';
+    if (score >= 40) return 'Decent - fix spam risks first';
+    if (score >= 20) return 'Weak - likely to get filtered';
+    return 'Spam folder bound - rewrite completely';
+  }
+
+  function getFactorStatusColor(status: 'good' | 'ok' | 'bad'): string {
+    if (status === 'good') return 'border-green-500/30 bg-green-500/5';
+    if (status === 'ok') return 'border-yellow-500/30 bg-yellow-500/5';
+    return 'border-red-500/30 bg-red-500/5';
+  }
+
+  function getFactorDotColor(status: 'good' | 'ok' | 'bad'): string {
+    if (status === 'good') return 'bg-green-500';
+    if (status === 'ok') return 'bg-yellow-500';
+    return 'bg-red-500';
+  }
+
+  const input = document.getElementById('subject-input') as HTMLInputElement;
+  const testBtn = document.getElementById('test-btn') as HTMLButtonElement;
+  const charCount = document.getElementById('char-count') as HTMLElement;
+  const results = document.getElementById('results') as HTMLElement;
+  const scoreArc = document.getElementById('score-arc') as SVGCircleElement;
+  const scoreNumber = document.getElementById('score-number') as HTMLElement;
+  const scoreLabel = document.getElementById('score-label') as HTMLElement;
+  const scoreSubject = document.getElementById('score-subject') as HTMLElement;
+  const factorsGrid = document.getElementById('factors-grid') as HTMLElement;
+  const suggestionsList = document.getElementById('suggestions-list') as HTMLElement;
+  const tryAgainBtn = document.getElementById('try-again-btn') as HTMLButtonElement;
+
+  input.addEventListener('input', () => {
+    charCount.textContent = input.value.length + ' / 120 characters';
+  });
+
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') runTester();
+  });
+
+  testBtn.addEventListener('click', runTester);
+
+  tryAgainBtn.addEventListener('click', () => {
+    results.classList.add('hidden');
+    input.value = '';
+    input.focus();
+    charCount.textContent = '0 / 120 characters';
+  });
+
+  function runTester() {
+    const subject = input.value.trim();
+    if (!subject) {
+      input.focus();
+      return;
+    }
+
+    const { score, factors, suggestions } = analyzeSubjectLine(subject);
+    const color = getScoreColor(score);
+    const circumference = 2 * Math.PI * 70;
+
+    scoreArc.style.stroke = color;
+    scoreArc.style.strokeDashoffset = String(circumference - (score / 100) * circumference);
+    scoreNumber.style.color = color;
+
+    let current = 0;
+    const step = Math.max(1, Math.floor(score / 30));
+    const counter = setInterval(() => {
+      current = Math.min(current + step, score);
+      scoreNumber.textContent = String(current);
+      if (current >= score) clearInterval(counter);
+    }, 30);
+
+    scoreLabel.textContent = getScoreLabel(score);
+    scoreSubject.textContent = '"' + subject + '"';
+
+    factorsGrid.innerHTML = factors
+      .map(
+        (f) =>
+          '<div class="p-4 rounded-xl border ' + getFactorStatusColor(f.status) + ' transition-all duration-300">' +
+          '<div class="flex items-center justify-between mb-2">' +
+          '<span class="text-sm font-semibold text-white">' + f.name + '</span>' +
+          '<span class="text-xs font-mono text-gray-400">' + f.score + '/' + f.max + '</span>' +
+          '</div>' +
+          '<div class="w-full h-1.5 rounded-full bg-white/[0.06] mb-2">' +
+          '<div class="h-full rounded-full transition-all duration-700" style="width:' + (f.score / f.max) * 100 + '%;background:' + (f.status === 'good' ? '#22c55e' : f.status === 'ok' ? '#eab308' : '#ef4444') + '"></div>' +
+          '</div>' +
+          '<p class="text-xs text-gray-400">' + f.detail + '</p>' +
+          '</div>'
+      )
+      .join('');
+
+    suggestionsList.innerHTML = suggestions
+      .map(
+        (s) =>
+          '<li class="flex items-start gap-3">' +
+          '<span class="mt-1 w-1.5 h-1.5 rounded-full bg-coral shrink-0"></span>' +
+          '<span class="text-gray-300 text-sm leading-relaxed">' + s + '</span>' +
+          '</li>'
+      )
+      .join('');
+
+    results.classList.remove('hidden');
+    results.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+</script>
