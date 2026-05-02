@@ -1,0 +1,688 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const title = 'Free Headline Grader for Developers | CodeToCash';
+const description =
+  'Score your headline in seconds. Get actionable feedback on length, power words, clarity, and emotional impact — built for devs who sell software.';
+
+const schema = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: 'Headline Grader',
+  url: 'https://codetocash.dev/tools/headline-grader',
+  applicationCategory: 'MarketingApplication',
+  operatingSystem: 'Any',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  description,
+});
+---
+
+<Layout title={title} description={description} schema={schema}>
+  <!-- HERO -->
+  <section class="relative pt-32 pb-20 px-6 overflow-hidden">
+    <div
+      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-coral/5 rounded-full blur-[120px] animate-pulse-slow"
+    >
+    </div>
+    <div class="relative z-10 max-w-3xl mx-auto text-center">
+      <p class="text-sm font-mono text-coral uppercase tracking-widest mb-4">// free tool</p>
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight mb-6">
+        Headline
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-coral">
+          Grader
+        </span>
+      </h1>
+      <p class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
+        Paste your headline, get a score out of 100 with specific fixes. Built on the copywriting
+        frameworks from our
+        <a href="/playbooks/copywriting-for-developers" class="text-coral hover:underline"
+          >copywriting playbook</a
+        >.
+      </p>
+    </div>
+  </section>
+
+  <!-- GRADER -->
+  <section class="relative pb-24 px-6">
+    <div class="max-w-3xl mx-auto">
+      <!-- Input -->
+      <div
+        class="p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] mb-8"
+        id="grader-card"
+      >
+        <label for="headline-input" class="block text-sm font-mono text-gray-500 mb-3">
+          $ enter your headline
+        </label>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <input
+            id="headline-input"
+            type="text"
+            placeholder="e.g. How to Double Your SaaS Revenue in 90 Days"
+            maxlength="200"
+            class="flex-1 px-5 py-4 bg-white/5 border border-white/10 rounded-lg text-white text-lg placeholder-gray-600 focus:outline-none focus:border-coral/50 focus:ring-2 focus:ring-coral/20 transition-all duration-200"
+          />
+          <button
+            id="grade-btn"
+            class="px-8 py-4 bg-coral text-white font-semibold rounded-lg hover:bg-coral/90 hover:-translate-y-1 transition-all duration-300 shadow-lg shadow-coral/20 cursor-pointer whitespace-nowrap"
+          >
+            Grade It
+          </button>
+        </div>
+        <p class="mt-3 text-xs text-gray-600" id="char-count">0 / 200 characters</p>
+      </div>
+
+      <!-- Results (hidden until graded) -->
+      <div id="results" class="hidden">
+        <!-- Overall Score -->
+        <div
+          class="p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] mb-6 text-center"
+          id="score-card"
+        >
+          <p class="text-sm font-mono text-gray-500 uppercase tracking-widest mb-4">
+            // headline score
+          </p>
+          <div class="relative inline-flex items-center justify-center mb-4">
+            <svg width="160" height="160" viewBox="0 0 160 160" id="score-ring">
+              <circle
+                cx="80"
+                cy="80"
+                r="70"
+                fill="none"
+                stroke="rgba(255,255,255,0.06)"
+                stroke-width="8"></circle>
+              <circle
+                id="score-arc"
+                cx="80"
+                cy="80"
+                r="70"
+                fill="none"
+                stroke="#E94560"
+                stroke-width="8"
+                stroke-linecap="round"
+                stroke-dasharray="439.82"
+                stroke-dashoffset="439.82"
+                transform="rotate(-90 80 80)"
+                style="transition: stroke-dashoffset 1s ease-out, stroke 0.5s ease;"></circle>
+            </svg>
+            <span
+              id="score-number"
+              class="absolute text-5xl font-extrabold text-white"
+              style="transition: color 0.5s ease;">0</span
+            >
+          </div>
+          <p id="score-label" class="text-lg font-semibold text-gray-400"></p>
+          <p id="score-headline" class="mt-3 text-white/60 font-mono text-sm break-words"></p>
+        </div>
+
+        <!-- Factor Breakdown -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6" id="factors-grid"></div>
+
+        <!-- Suggestions -->
+        <div
+          class="p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] mb-6"
+          id="suggestions-card"
+        >
+          <p class="text-sm font-mono text-coral uppercase tracking-widest mb-4">
+            // how to improve
+          </p>
+          <ul id="suggestions-list" class="space-y-3"></ul>
+        </div>
+
+        <!-- Try Again -->
+        <div class="text-center mb-16">
+          <button
+            id="try-again-btn"
+            class="px-6 py-3 border border-white/10 text-gray-400 rounded-lg hover:border-coral/40 hover:text-white transition-all duration-300 cursor-pointer"
+          >
+            Grade Another Headline
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIPS -->
+  <section class="relative py-24 px-6 border-t border-white/[0.02]">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-16">
+        <p class="text-sm font-mono text-coral uppercase tracking-widest mb-4">
+          // what makes a headline convert
+        </p>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white">
+          The Science Behind High-Scoring Headlines
+        </h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div
+          class="group p-6 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-coral/40 hover:bg-white/[0.04] transition-all duration-300"
+        >
+          <span class="text-3xl mb-4 block group-hover:scale-110 transition-transform duration-300"
+            >📏</span
+          >
+          <h3 class="text-lg font-bold text-white mb-2">Optimal Length</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            6–12 words, 50–70 characters. Long enough to be specific, short enough to scan. This
+            range fits search results, social cards, and email subject lines without truncation.
+          </p>
+        </div>
+        <div
+          class="group p-6 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-coral/40 hover:bg-white/[0.04] transition-all duration-300"
+        >
+          <span class="text-3xl mb-4 block group-hover:scale-110 transition-transform duration-300"
+            >⚡</span
+          >
+          <h3 class="text-lg font-bold text-white mb-2">Power Words</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            Words like "free," "proven," "step-by-step," and "ultimate" trigger emotional responses.
+            One or two per headline is the sweet spot — more feels spammy.
+          </p>
+        </div>
+        <div
+          class="group p-6 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-coral/40 hover:bg-white/[0.04] transition-all duration-300"
+        >
+          <span class="text-3xl mb-4 block group-hover:scale-110 transition-transform duration-300"
+            >🔢</span
+          >
+          <h3 class="text-lg font-bold text-white mb-2">Numbers & Specifics</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            "5 Ways" beats "Several Ways." Numbers signal structure and set expectations. Odd numbers
+            slightly outperform even ones in click-through tests.
+          </p>
+        </div>
+      </div>
+      <div class="text-center mt-10">
+        <a
+          href="/playbooks/copywriting-for-developers"
+          class="text-coral hover:underline text-sm font-medium"
+        >
+          Read the full copywriting playbook →
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<script>
+  const POWER_WORDS = [
+    'free',
+    'proven',
+    'secret',
+    'ultimate',
+    'exclusive',
+    'guaranteed',
+    'instant',
+    'effortless',
+    'powerful',
+    'complete',
+    'essential',
+    'definitive',
+    'simple',
+    'easy',
+    'fast',
+    'quick',
+    'step-by-step',
+    'actionable',
+    'practical',
+    'comprehensive',
+    'insider',
+    'hack',
+    'hacks',
+    'boost',
+    'skyrocket',
+    'double',
+    'triple',
+    'maximize',
+    'transform',
+    'master',
+    'dominate',
+    'crush',
+    'unlock',
+    'discover',
+    'reveal',
+    'mistakes',
+    'avoid',
+    'stop',
+    'never',
+    'worst',
+    'dangerous',
+    'warning',
+    'urgent',
+    'critical',
+    'surprising',
+    'shocking',
+    'remarkable',
+    'incredible',
+    'unbelievable',
+    'stunning',
+    'breakthrough',
+    'revolutionary',
+  ];
+
+  const EMOTIONAL_WORDS = [
+    'love',
+    'hate',
+    'fear',
+    'worry',
+    'struggle',
+    'fail',
+    'success',
+    'win',
+    'lose',
+    'risk',
+    'pain',
+    'frustrating',
+    'annoying',
+    'exciting',
+    'thrilling',
+    'boring',
+    'brilliant',
+    'stupid',
+    'crazy',
+    'obsessed',
+    'desperate',
+    'confident',
+    'afraid',
+    'angry',
+    'happy',
+    'sad',
+    'overwhelmed',
+    'burned',
+    'tired',
+    'sick',
+    'dead',
+    'alive',
+    'broken',
+  ];
+
+  const WEAK_OPENERS = [
+    'this',
+    'that',
+    'it',
+    'there',
+    'here',
+    'these',
+    'those',
+    'a',
+    'an',
+    'the',
+    'i',
+    'we',
+    'my',
+    'our',
+  ];
+
+  interface Factor {
+    name: string;
+    score: number;
+    max: number;
+    detail: string;
+    status: 'good' | 'ok' | 'bad';
+  }
+
+  function analyzeHeadline(headline: string): {
+    score: number;
+    factors: Factor[];
+    suggestions: string[];
+  } {
+    const trimmed = headline.trim();
+    const words = trimmed.split(/\s+/).filter((w) => w.length > 0);
+    const wordCount = words.length;
+    const charCount = trimmed.length;
+    const lowerWords = words.map((w) => w.toLowerCase().replace(/[^a-z0-9'-]/g, ''));
+    const lowerHeadline = trimmed.toLowerCase();
+
+    const factors: Factor[] = [];
+    const suggestions: string[] = [];
+
+    // 1. Word count (max 20)
+    let wordScore: number;
+    if (wordCount >= 6 && wordCount <= 12) {
+      wordScore = 20;
+    } else if (wordCount >= 4 && wordCount <= 14) {
+      wordScore = 14;
+    } else if (wordCount >= 2 && wordCount <= 18) {
+      wordScore = 8;
+    } else {
+      wordScore = 3;
+    }
+
+    if (wordCount < 6) {
+      suggestions.push(
+        `Add ${6 - wordCount} more word${6 - wordCount > 1 ? 's' : ''}. Headlines with 6–12 words get the highest click-through rates.`
+      );
+    } else if (wordCount > 12) {
+      suggestions.push(
+        `Cut ${wordCount - 12} word${wordCount - 12 > 1 ? 's' : ''}. Headlines over 12 words get truncated in search results and social cards.`
+      );
+    }
+
+    factors.push({
+      name: 'Word Count',
+      score: wordScore,
+      max: 20,
+      detail: `${wordCount} words (ideal: 6–12)`,
+      status: wordScore >= 18 ? 'good' : wordScore >= 12 ? 'ok' : 'bad',
+    });
+
+    // 2. Character count (max 15)
+    let charScore: number;
+    if (charCount >= 40 && charCount <= 70) {
+      charScore = 15;
+    } else if (charCount >= 30 && charCount <= 90) {
+      charScore = 10;
+    } else if (charCount >= 15 && charCount <= 120) {
+      charScore = 5;
+    } else {
+      charScore = 2;
+    }
+
+    if (charCount < 40) {
+      suggestions.push(
+        "Your headline is very short. Add specifics — a number, a timeframe, or who it's for."
+      );
+    } else if (charCount > 70) {
+      suggestions.push(
+        `At ${charCount} characters, this will get truncated on Google (max ~60) and social cards. Tighten it up.`
+      );
+    }
+
+    factors.push({
+      name: 'Character Length',
+      score: charScore,
+      max: 15,
+      detail: `${charCount} chars (ideal: 40–70)`,
+      status: charScore >= 13 ? 'good' : charScore >= 8 ? 'ok' : 'bad',
+    });
+
+    // 3. Power words (max 15)
+    const foundPower = lowerWords.filter((w) => POWER_WORDS.includes(w));
+    const uniquePower = [...new Set(foundPower)];
+    let powerScore: number;
+    if (uniquePower.length >= 2) {
+      powerScore = 15;
+    } else if (uniquePower.length === 1) {
+      powerScore = 10;
+    } else {
+      powerScore = 0;
+    }
+
+    if (uniquePower.length === 0) {
+      const examples = ['proven', 'free', 'step-by-step', 'complete', 'simple'];
+      suggestions.push(
+        `No power words detected. Try adding one: "${examples[Math.floor(Math.random() * examples.length)]}" — these trigger clicks.`
+      );
+    }
+
+    factors.push({
+      name: 'Power Words',
+      score: powerScore,
+      max: 15,
+      detail:
+        uniquePower.length > 0
+          ? `Found: ${uniquePower.map((w) => `"${w}"`).join(', ')}`
+          : 'None found',
+      status: powerScore >= 13 ? 'good' : powerScore >= 8 ? 'ok' : 'bad',
+    });
+
+    // 4. Numbers (max 10)
+    const hasNumber = /\d/.test(trimmed);
+    const numberScore = hasNumber ? 10 : 0;
+    if (!hasNumber) {
+      suggestions.push(
+        'Add a number. "5 Ways to…" outperforms "Ways to…" — numbers set expectations and signal value.'
+      );
+    }
+
+    factors.push({
+      name: 'Numbers',
+      score: numberScore,
+      max: 10,
+      detail: hasNumber ? 'Contains a number ✓' : 'No numbers found',
+      status: hasNumber ? 'good' : 'bad',
+    });
+
+    // 5. Emotional appeal (max 10)
+    const foundEmotional = lowerWords.filter((w) => EMOTIONAL_WORDS.includes(w));
+    const uniqueEmotional = [...new Set(foundEmotional)];
+    const emotionalScore = Math.min(10, uniqueEmotional.length * 5);
+    if (uniqueEmotional.length === 0 && uniquePower.length === 0) {
+      suggestions.push(
+        'The headline feels neutral. Tap into a feeling — frustration, curiosity, ambition — to make readers care.'
+      );
+    }
+
+    factors.push({
+      name: 'Emotional Appeal',
+      score: emotionalScore,
+      max: 10,
+      detail:
+        uniqueEmotional.length > 0
+          ? `Found: ${uniqueEmotional.map((w) => `"${w}"`).join(', ')}`
+          : 'Neutral tone',
+      status: emotionalScore >= 8 ? 'good' : emotionalScore >= 4 ? 'ok' : 'bad',
+    });
+
+    // 6. Structure / format (max 15)
+    let structureScore = 0;
+    const startsWithNumber = /^\d/.test(trimmed);
+    const isHowTo = /^how\s+to\b/i.test(trimmed);
+    const isQuestion = /\?$/.test(trimmed);
+    const isListFormat = /^\d+\s/.test(trimmed);
+    const hasColon = trimmed.includes(':');
+    const hasDash = / [—–-] /.test(trimmed);
+
+    if (isHowTo) structureScore += 8;
+    if (isListFormat) structureScore += 8;
+    if (startsWithNumber && !isListFormat) structureScore += 5;
+    if (isQuestion) structureScore += 5;
+    if (hasColon || hasDash) structureScore += 4;
+
+    structureScore = Math.min(15, structureScore);
+
+    const formats: string[] = [];
+    if (isHowTo) formats.push('How-to');
+    if (isListFormat) formats.push('List');
+    if (isQuestion) formats.push('Question');
+    if (hasColon || hasDash) formats.push('Segmented');
+    if (formats.length === 0 && !startsWithNumber) {
+      suggestions.push(
+        'Try a proven format: "How to [Goal]", "N Ways to [Goal]", or "Why [Problem] (And How to Fix It)".'
+      );
+    }
+
+    factors.push({
+      name: 'Structure',
+      score: structureScore,
+      max: 15,
+      detail: formats.length > 0 ? `Format: ${formats.join(' + ')}` : 'No proven format detected',
+      status: structureScore >= 12 ? 'good' : structureScore >= 6 ? 'ok' : 'bad',
+    });
+
+    // 7. Opening word (max 10)
+    const firstWord = lowerWords[0] || '';
+    const hasWeakOpener = WEAK_OPENERS.includes(firstWord);
+    const hasStrongOpener = startsWithNumber || isHowTo || /^(why|what|when|stop|never|get|build|grow|start|make|create|learn|write|use|turn|avoid|master|ship)$/i.test(firstWord);
+    let openerScore: number;
+    if (hasStrongOpener) {
+      openerScore = 10;
+    } else if (!hasWeakOpener) {
+      openerScore = 6;
+    } else {
+      openerScore = 2;
+    }
+
+    if (hasWeakOpener) {
+      suggestions.push(
+        `"${words[0]}" is a weak opener. Lead with a number, "How to", or an action verb to grab attention instantly.`
+      );
+    }
+
+    factors.push({
+      name: 'Opening Word',
+      score: openerScore,
+      max: 10,
+      detail: hasStrongOpener
+        ? `Strong opener: "${words[0]}"`
+        : hasWeakOpener
+          ? `Weak opener: "${words[0]}"`
+          : `Opener: "${words[0]}"`,
+      status: openerScore >= 8 ? 'good' : openerScore >= 5 ? 'ok' : 'bad',
+    });
+
+    // 8. Clarity — penalize jargon density and all-caps (max 5)
+    const allCapsWords = words.filter((w) => w.length > 2 && w === w.toUpperCase() && /[A-Z]/.test(w));
+    const longWords = words.filter((w) => w.replace(/[^a-zA-Z]/g, '').length > 12);
+    let clarityScore = 5;
+    if (allCapsWords.length > 1) {
+      clarityScore -= 2;
+      suggestions.push(
+        'Multiple ALL-CAPS words look spammy. Use one at most for emphasis.'
+      );
+    }
+    if (longWords.length > 1) {
+      clarityScore -= 2;
+      suggestions.push(
+        'Some words are very long. Simpler words scan faster and convert better.'
+      );
+    }
+    clarityScore = Math.max(0, clarityScore);
+
+    factors.push({
+      name: 'Clarity',
+      score: clarityScore,
+      max: 5,
+      detail:
+        clarityScore >= 4
+          ? 'Clear and scannable'
+          : 'Could be simpler',
+      status: clarityScore >= 4 ? 'good' : clarityScore >= 2 ? 'ok' : 'bad',
+    });
+
+    const totalScore = factors.reduce((sum, f) => sum + f.score, 0);
+
+    if (suggestions.length === 0) {
+      suggestions.push(
+        'This is a strong headline. Test it against a variant with a different number or power word to see which converts better.'
+      );
+    }
+
+    return { score: totalScore, factors, suggestions };
+  }
+
+  function getScoreColor(score: number): string {
+    if (score >= 80) return '#22c55e';
+    if (score >= 60) return '#eab308';
+    if (score >= 40) return '#f97316';
+    return '#ef4444';
+  }
+
+  function getScoreLabel(score: number): string {
+    if (score >= 80) return 'Excellent — ready to ship';
+    if (score >= 60) return 'Good — a few tweaks away';
+    if (score >= 40) return 'Decent — needs work';
+    if (score >= 20) return 'Weak — rewrite recommended';
+    return 'Needs a full rethink';
+  }
+
+  function getFactorStatusColor(status: 'good' | 'ok' | 'bad'): string {
+    if (status === 'good') return 'border-green-500/30 bg-green-500/5';
+    if (status === 'ok') return 'border-yellow-500/30 bg-yellow-500/5';
+    return 'border-red-500/30 bg-red-500/5';
+  }
+
+  function getFactorDotColor(status: 'good' | 'ok' | 'bad'): string {
+    if (status === 'good') return 'bg-green-500';
+    if (status === 'ok') return 'bg-yellow-500';
+    return 'bg-red-500';
+  }
+
+  const input = document.getElementById('headline-input') as HTMLInputElement;
+  const gradeBtn = document.getElementById('grade-btn') as HTMLButtonElement;
+  const charCount = document.getElementById('char-count') as HTMLElement;
+  const results = document.getElementById('results') as HTMLElement;
+  const scoreArc = document.getElementById('score-arc') as SVGCircleElement;
+  const scoreNumber = document.getElementById('score-number') as HTMLElement;
+  const scoreLabel = document.getElementById('score-label') as HTMLElement;
+  const scoreHeadline = document.getElementById('score-headline') as HTMLElement;
+  const factorsGrid = document.getElementById('factors-grid') as HTMLElement;
+  const suggestionsList = document.getElementById('suggestions-list') as HTMLElement;
+  const tryAgainBtn = document.getElementById('try-again-btn') as HTMLButtonElement;
+
+  input.addEventListener('input', () => {
+    charCount.textContent = `${input.value.length} / 200 characters`;
+  });
+
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') runGrader();
+  });
+
+  gradeBtn.addEventListener('click', runGrader);
+
+  tryAgainBtn.addEventListener('click', () => {
+    results.classList.add('hidden');
+    input.value = '';
+    input.focus();
+    charCount.textContent = '0 / 200 characters';
+  });
+
+  function runGrader() {
+    const headline = input.value.trim();
+    if (!headline) {
+      input.focus();
+      return;
+    }
+
+    const { score, factors, suggestions } = analyzeHeadline(headline);
+    const color = getScoreColor(score);
+    const circumference = 2 * Math.PI * 70;
+
+    // Score ring animation
+    scoreArc.style.stroke = color;
+    scoreArc.style.strokeDashoffset = String(circumference - (score / 100) * circumference);
+    scoreNumber.style.color = color;
+
+    // Animate number counting up
+    let current = 0;
+    const step = Math.max(1, Math.floor(score / 30));
+    const counter = setInterval(() => {
+      current = Math.min(current + step, score);
+      scoreNumber.textContent = String(current);
+      if (current >= score) clearInterval(counter);
+    }, 30);
+
+    scoreLabel.textContent = getScoreLabel(score);
+    scoreHeadline.textContent = `"${headline}"`;
+
+    // Factor cards
+    factorsGrid.innerHTML = factors
+      .map(
+        (f) => `
+      <div class="p-4 rounded-xl border ${getFactorStatusColor(f.status)} transition-all duration-300">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-sm font-semibold text-white">${f.name}</span>
+          <span class="text-xs font-mono text-gray-400">${f.score}/${f.max}</span>
+        </div>
+        <div class="w-full h-1.5 rounded-full bg-white/[0.06] mb-2">
+          <div class="h-full rounded-full transition-all duration-700" style="width:${(f.score / f.max) * 100}%;background:${f.status === 'good' ? '#22c55e' : f.status === 'ok' ? '#eab308' : '#ef4444'}"></div>
+        </div>
+        <p class="text-xs text-gray-400">${f.detail}</p>
+      </div>`
+      )
+      .join('');
+
+    // Suggestions
+    suggestionsList.innerHTML = suggestions
+      .map(
+        (s) => `
+      <li class="flex items-start gap-3">
+        <span class="mt-1 w-1.5 h-1.5 rounded-full bg-coral shrink-0"></span>
+        <span class="text-gray-300 text-sm leading-relaxed">${s}</span>
+      </li>`
+      )
+      .join('');
+
+    results.classList.remove('hidden');
+    results.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+</script>

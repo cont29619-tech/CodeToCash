@@ -510,16 +510,15 @@ const schema = JSON.stringify({
     <div class="relative z-10 max-w-6xl mx-auto">
       <div class="text-center max-w-3xl mx-auto mb-16 section-animate">
         <p class="text-sm font-mono text-green-400/70 uppercase tracking-widest mb-4">
-          // built in public
+          // real numbers, no fluff
         </p>
         <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight">
-          This Site Is a Work in Progress
+          What You're Getting Access To
         </h2>
         <p class="mt-6 text-lg text-gray-400 leading-relaxed">
-          We're building CodeToCash in public. That means no fake metrics, no manufactured social
-          proof, and no pretending we have thousands of readers when we're just getting started.
+          Every article, playbook, and template on this site is free — and we're adding more every
+          week. Here's the library so far:
         </p>
-        <p class="mt-4 text-lg text-gray-300 font-medium">Here's where things actually stand:</p>
       </div>
 
       <!-- Dashboard-style stat cards -->
@@ -545,7 +544,7 @@ const schema = JSON.stringify({
             }
           </div>
         </div>
-        <!-- Stat 2: Subscribers -->
+        <!-- Stat 2: Free Templates -->
         <div
           class="relative p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-green-500/20 hover:bg-white/[0.04] transition-all duration-300 text-center section-animate overflow-hidden"
         >
@@ -553,14 +552,15 @@ const schema = JSON.stringify({
             class="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-green-500/50 to-transparent"
           >
           </div>
-          <p class="text-xs font-mono text-gray-500 uppercase tracking-widest mb-4">Subscribers</p>
-          <p class="text-6xl font-extrabold text-white mb-1 tracking-tight">Early</p>
-          <p class="text-sm font-mono text-green-400/70">be one of the first</p>
-          <div class="mt-5 h-1.5 rounded-full bg-white/[0.06] overflow-hidden">
-            <div
-              class="h-full w-[15%] rounded-full bg-gradient-to-r from-green-500/60 to-green-400/40"
-            >
-            </div>
+          <p class="text-xs font-mono text-gray-500 uppercase tracking-widest mb-4">Free Templates</p>
+          <p class="text-6xl font-extrabold text-white mb-1 tracking-tight">50+</p>
+          <p class="text-sm font-mono text-green-400/70">copy & paste ready</p>
+          <div class="mt-5 flex gap-1 justify-center flex-wrap">
+            {
+              Array.from({ length: 12 }).map(() => (
+                <div class="w-1.5 h-1.5 rounded-full bg-green-500/60" />
+              ))
+            }
           </div>
         </div>
         <!-- Stat 3: Playbooks -->
@@ -589,15 +589,14 @@ const schema = JSON.stringify({
 
       <div class="text-center max-w-2xl mx-auto section-animate">
         <p class="text-gray-400 leading-relaxed mb-8">
-          If you subscribe now, you'll be getting in early — before the crowd, before the waitlists,
-          when it's still possible to reply to an email and actually hear back. We share our real
-          stats publicly as we grow.
+          New articles and playbooks drop every week. Subscribe to get one actionable DRM
+          tactic every Tuesday — plus the free cheatsheet with every framework and template on one page.
         </p>
         <a
           href="/newsletter"
           class="inline-flex items-center px-8 py-4 bg-coral text-white text-lg font-semibold rounded-lg hover:bg-coral/90 hover:-translate-y-1 transition-all duration-300 shadow-lg shadow-coral/20"
         >
-          Join Early — It's Free
+          Get the Free Cheatsheet
         </a>
       </div>
     </div>

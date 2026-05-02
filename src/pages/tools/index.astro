@@ -1,6 +1,6 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import NewsletterForm from '../components/NewsletterForm.astro';
+import Layout from '../../layouts/Layout.astro';
+import NewsletterForm from '../../components/NewsletterForm.astro';
 
 const title = 'Marketing Tools for Developers & Vibe Coders | CodeToCash';
 const description =
@@ -556,6 +556,31 @@ const stacks = [
     </div>
   </section>
 
+  <!-- Interactive Tools -->
+  <section class="max-w-5xl mx-auto px-6 py-24 border-t border-white/[0.02]">
+    <div class="text-center mb-10">
+      <p class="text-sm font-mono text-coral uppercase tracking-widest mb-4">// interactive tools</p>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Try Our Free Tools</h2>
+    </div>
+    <a
+      href="/tools/headline-grader"
+      class="group block max-w-2xl mx-auto p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-coral/40 hover:bg-white/[0.04] hover:-translate-y-1 hover:shadow-lg hover:shadow-coral/10 transition-all duration-300"
+    >
+      <div class="flex items-start gap-5">
+        <span class="text-4xl group-hover:scale-110 transition-transform duration-300">📝</span>
+        <div>
+          <h3 class="text-xl font-bold text-white mb-2 group-hover:text-coral transition-colors duration-300">
+            Headline Grader
+          </h3>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            Score your headline out of 100 and get specific feedback on length, power words,
+            emotional appeal, and structure. Paste, grade, improve.
+          </p>
+        </div>
+      </div>
+    </a>
+  </section>
+
   <!-- Bottom CTA -->
   <section class="max-w-3xl mx-auto px-6 pb-24 pt-10 border-t border-white/[0.02]">
     <div
@@ -567,7 +592,6 @@ const stacks = [
         reviews and marketing tactics.
       </p>
       <NewsletterForm size="md" buttonText="Get Recommendations" class="max-w-md mx-auto mb-3" />
-      </p>
       <p class="text-gray-500 text-xs">Building in public. No spam, unsubscribe anytime.</p>
     </div>
   </section>
