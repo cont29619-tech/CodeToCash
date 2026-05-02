@@ -219,7 +219,7 @@ Long-form playbook using `PlaybookLayout.astro`. Beginner, 15 min read.
 
 ---
 
-### `/tools` — tools.astro (Marketing Tools)
+### `/tools` — tools/index.astro (Marketing Tools)
 
 Curated tool reviews for developers. Features:
 
@@ -230,6 +230,17 @@ Curated tool reviews for developers. Features:
   - **The Sweet Spot** (~$30/mo): Framer, ConvertKit, Plausible, PostHog ← highlighted
   - **The Growth Stack** (~$100/mo): Next.js + Vercel, Loops, PostHog, Unbounce
 - Newsletter CTA at bottom
+
+### `/tools/headline-grader` — tools/headline-grader.astro (Interactive Tool)
+
+Free headline scoring tool. Paste a headline, get a 0-100 score with breakdowns for:
+- Length (optimal: 6-12 words)
+- Power words (presence of high-emotion verbs)
+- Specificity (numbers, metrics, timeframes)
+- Clarity (readability score)
+- Emotional impact (positive/negative sentiment)
+
+Built with vanilla JS, no framework. Includes a rewrite suggestion engine and shareable score cards.
 
 ---
 
@@ -573,7 +584,7 @@ All subscribe forms use the `NewsletterForm.astro` component, which emits the `c
 | `Footer.astro`          | 1 "Join" form                   | `md`           |
 | `BlogLayout.astro`      | 2 (sidebar widget + bottom CTA) | `compact` + `md` |
 | `PlaybookLayout.astro`  | 1 bottom CTA                    | `md`           |
-| `tools.astro`           | 1 "Get Recommendations" form    | `md`           |
+| `tools/index.astro`     | 1 "Get Recommendations" form    | `md`           |
 | `playbooks/index.astro` | 1 "Notify Me" form              | `md`           |
 | `404.astro`             | 1 subscribe form                | `md`           |
 
@@ -690,6 +701,7 @@ All 42 published blog posts include `faq` frontmatter with 4–5 Q&A pairs each.
 | `src/pages/search-index.json.ts`   | JSON search index endpoint for blogs, playbooks, and pages                                                              |
 | `src/pages/og/blog/[...slug].png.ts` | Build-time OG image generation for blog posts (Satori + resvg)                                                        |
 | `src/pages/og/playbooks/[...slug].png.ts` | Build-time OG image generation for playbooks                                                                      |
+| `src/pages/tools/headline-grader.astro` | Interactive headline scoring tool with shareable score cards                                                    |
 | `src/utils/categoryColors.ts`      | Shared blog category color + label maps (single source of truth)                                                        |
 | `src/utils/getRelatedPosts.ts`     | Priority-based related posts algorithm: same category → tag overlap → recency fallback. Used by `blog/[...slug].astro`. |
 | `src/utils/ogImageRenderer.ts`     | Shared Satori/resvg rendering functions for OG images                                                                   |
