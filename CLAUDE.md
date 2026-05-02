@@ -154,7 +154,7 @@ Dedicated subscription page. Sections:
 
 1. **HERO** — "One Marketing Tactic. Every Week. Built for Developers." — Large heading with ConvertKit form
 2. **WHAT YOU GET** — Five benefit cards with SVG icons
-3. **BUILDING IN PUBLIC** — Honest stats section (38 articles, 8 of 8 playbooks live)
+3. **BUILDING IN PUBLIC** — Honest stats section (42 articles, 8 of 8 playbooks live)
 4. **SAMPLE ISSUE** — Email client UI mockup showing a real newsletter example
 5. **FINAL CTA** — Second signup form
 
@@ -190,7 +190,7 @@ Six static category pages pre-rendered at build time via `getStaticPaths()`. Cat
 
 **Category metadata** (title, description, h1, subtitle) is defined as the `categoryMeta` const at the top of `blog/[category].astro`. All 6 URLs are auto-included in the sitemap via `@astrojs/sitemap`.
 
-Current post counts per category: strategy (15), copywriting (7), email (5), analytics (5), fundamentals (4), ads (2).
+Current post counts per category: strategy (15), copywriting (7), email (5), analytics (5), fundamentals (4), ads (6).
 
 ### `/blog/[slug]` — blog/[...slug].astro (Blog Post)
 
@@ -610,7 +610,7 @@ z.object({
 });
 ```
 
-All 38 published blog posts include `faq` frontmatter with 4–5 Q&A pairs each.
+All 42 published blog posts include `faq` frontmatter with 4–5 Q&A pairs each.
 
 ### Published Blog Posts
 
@@ -786,7 +786,7 @@ All 38 published blog posts include `faq` frontmatter with 4–5 Q&A pairs each.
 
 ### Open
 
-10. **Ads category underrepresented** — only 2 published posts in the `ads` category vs 15 in `strategy`.
+10. ~~**Ads category underrepresented**~~ — expanded from 2 to 6 posts with dedicated guides for Twitter, Reddit, LinkedIn, and ad copywriting templates. Now on par with email (5) and analytics (5).
 
 ---
 
