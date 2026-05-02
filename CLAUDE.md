@@ -255,6 +255,19 @@ Free email subject line tester. Paste a subject line, get a spam score and open-
 
 Built with vanilla JS, no framework. Links to the email subject line formulas guide.
 
+### `/tools/cac-ltv-calculator` — tools/cac-ltv-calculator.astro (Interactive Tool)
+
+Free SaaS economics calculator. Enter 6 numbers and get:
+- **Customer Acquisition Cost (CAC)** — cost per paying customer
+- **Lifetime Value (LTV)** — revenue per customer before churn
+- **LTV/CAC Ratio** — the golden metric (healthy ≥ 3:1)
+- **CAC Payback Period** — months to break even on acquisition spend
+- **Customers for $1K MRR** — paying customers needed to hit $1,000/month
+- **Monthly New Customers** — expected from current traffic and conversion rates
+
+Color-coded verdict: Healthy (scale), Warning (optimize first), Danger (stop spending).
+Built with vanilla JS, no framework. Links to the customer acquisition cost guide.
+
 ---
 
 ### `/about` — about.astro (About Page)
@@ -716,6 +729,7 @@ All 42 published blog posts include `faq` frontmatter with 4–5 Q&A pairs each.
 | `src/pages/og/playbooks/[...slug].png.ts` | Build-time OG image generation for playbooks                                                                      |
 | `src/pages/tools/headline-grader.astro` | Interactive headline scoring tool with shareable score cards                                                    |
 | `src/pages/tools/email-subject-line-tester.astro` | Interactive email subject line tester with spam score and open-rate prediction                          |
+| `src/pages/tools/cac-ltv-calculator.astro` | Interactive SaaS economics calculator with CAC, LTV, payback period, and verdict                          |
 | `src/utils/categoryColors.ts`      | Shared blog category color + label maps (single source of truth)                                                        |
 | `src/utils/getRelatedPosts.ts`     | Priority-based related posts algorithm: same category → tag overlap → recency fallback. Used by `blog/[...slug].astro`. |
 | `src/utils/ogImageRenderer.ts`     | Shared Satori/resvg rendering functions for OG images                                                                   |

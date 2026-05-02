@@ -1,0 +1,510 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const title = 'Free CAC/LTV Calculator for SaaS | CodeToCash';
+const description =
+  'Know if your SaaS economics work. Calculate customer acquisition cost, lifetime value, payback period, and break-even customers in seconds.';
+
+const schema = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: 'CAC/LTV Calculator',
+  url: 'https://codetocash.dev/tools/cac-ltv-calculator',
+  applicationCategory: 'MarketingApplication',
+  operatingSystem: 'Any',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  description,
+});
+---
+
+<Layout title={title} description={description} schema={schema}>
+  <!-- HERO -->
+  <section class="relative pt-32 pb-20 px-6 overflow-hidden">
+    <div
+      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-coral/5 rounded-full blur-[120px] animate-pulse-slow"
+    >
+    </div>
+    <div class="relative z-10 max-w-3xl mx-auto text-center">
+      <p class="text-sm font-mono text-coral uppercase tracking-widest mb-4">// free tool</p>
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight mb-6">
+        CAC / LTV
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-coral">
+          Calculator
+        </span>
+      </h1>
+      <p class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
+        Enter 6 numbers. Know if your SaaS is profitable, how long it takes to break even, and how
+        many customers you need to hit $1K MRR. Based on our
+        <a href="/blog/customer-acquisition-cost-saas" class="text-coral hover:underline"
+          >customer acquisition cost guide</a
+        >.
+      </p>
+    </div>
+  </section>
+
+  <!-- CALCULATOR -->
+  <section class="relative pb-24 px-6">
+    <div class="max-w-3xl mx-auto">
+      <!-- Inputs -->
+      <div
+        class="p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] mb-8"
+        id="calc-card"
+      >
+        <p class="text-xs font-mono text-coral uppercase tracking-widest mb-6">
+          // enter your numbers
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div>
+            <label for="ad-spend" class="block text-sm text-gray-400 mb-2">
+              Monthly Ad Spend ($)
+            </label>
+            <input
+              id="ad-spend"
+              type="number"
+              min="0"
+              placeholder="500"
+              class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-600 focus:outline-none focus:border-coral/50 focus:ring-2 focus:ring-coral/20 transition-all duration-200"
+            />
+          </div>
+          <div>
+            <label for="visitors" class="block text-sm text-gray-400 mb-2">
+              Monthly Website Visitors
+            </label>
+            <input
+              id="visitors"
+              type="number"
+              min="0"
+              placeholder="2000"
+              class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-600 focus:outline-none focus:border-coral/50 focus:ring-2 focus:ring-coral/20 transition-all duration-200"
+            />
+          </div>
+          <div>
+            <label for="trial-rate" class="block text-sm text-gray-400 mb-2">
+              Trial Signup Rate (%)
+            </label>
+            <input
+              id="trial-rate"
+              type="number"
+              min="0"
+              max="100"
+              step="0.1"
+              placeholder="5"
+              class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-600 focus:outline-none focus:border-coral/50 focus:ring-2 focus:ring-coral/20 transition-all duration-200"
+            />
+          </div>
+          <div>
+            <label for="paid-rate" class="block text-sm text-gray-400 mb-2">
+              Trial-to-Paid Conversion (%)
+            </label>
+            <input
+              id="paid-rate"
+              type="number"
+              min="0"
+              max="100"
+              step="0.1"
+              placeholder="15"
+              class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-600 focus:outline-none focus:border-coral/50 focus:ring-2 focus:ring-coral/20 transition-all duration-200"
+            />
+          </div>
+          <div>
+            <label for="price" class="block text-sm text-gray-400 mb-2">
+              Monthly Subscription Price ($)
+            </label>
+            <input
+              id="price"
+              type="number"
+              min="0"
+              placeholder="29"
+              class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-600 focus:outline-none focus:border-coral/50 focus:ring-2 focus:ring-coral/20 transition-all duration-200"
+            />
+          </div>
+          <div>
+            <label for="churn" class="block text-sm text-gray-400 mb-2">
+              Monthly Churn Rate (%)
+            </label>
+            <input
+              id="churn"
+              type="number"
+              min="0"
+              max="100"
+              step="0.1"
+              placeholder="5"
+              class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-600 focus:outline-none focus:border-coral/50 focus:ring-2 focus:ring-coral/20 transition-all duration-200"
+            />
+          </div>
+        </div>
+        <div class="mt-6">
+          <button
+            id="calc-btn"
+            class="w-full sm:w-auto px-8 py-4 bg-coral text-white font-semibold rounded-lg hover:bg-coral/90 hover:-translate-y-1 transition-all duration-300 shadow-lg shadow-coral/20 cursor-pointer"
+          >
+            Calculate
+          </button>
+          <button
+            id="reset-btn"
+            class="ml-0 sm:ml-3 mt-3 sm:mt-0 px-6 py-4 border border-white/10 text-gray-400 rounded-lg hover:border-coral/40 hover:text-white transition-all duration-300 cursor-pointer"
+          >
+            Reset
+          </button>
+        </div>
+      </div>
+
+      <!-- Results (hidden until calculated) -->
+      <div id="results" class="hidden space-y-6">
+        <!-- Verdict Banner -->
+        <div
+          id="verdict-card"
+          class="p-8 rounded-2xl border text-center transition-all duration-300"
+        >
+          <p class="text-sm font-mono uppercase tracking-widest mb-3" id="verdict-label"></p>
+          <h2 class="text-3xl sm:text-4xl font-extrabold mb-2" id="verdict-title"></h2>
+          <p class="text-gray-400" id="verdict-desc"></p>
+        </div>
+
+        <!-- Metric Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4" id="metrics-grid"></div>
+
+        <!-- Suggestions -->
+        <div
+          class="p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06]"
+          id="suggestions-card"
+        >
+          <p class="text-sm font-mono text-coral uppercase tracking-widest mb-4">
+            // what to do next
+          </p>
+          <ul id="suggestions-list" class="space-y-3"></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section class="relative py-24 px-6 border-t border-white/[0.02]">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-16">
+        <p class="text-sm font-mono text-coral uppercase tracking-widest mb-4">
+          // the math behind saas economics
+        </p>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white">
+          Why These Numbers Matter
+        </h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div
+          class="group p-6 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-coral/40 hover:bg-white/[0.04] transition-all duration-300"
+        >
+          <span class="text-3xl mb-4 block group-hover:scale-110 transition-transform duration-300"
+            >💰</span
+          >
+          <h3 class="text-lg font-bold text-white mb-2">Customer Acquisition Cost</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            CAC is what you spend to get one paying customer. If you spend $500 on ads and get 10
+            customers, your CAC is $50. The lower your CAC, the faster you grow.
+          </p>
+        </div>
+        <div
+          class="group p-6 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-coral/40 hover:bg-white/[0.04] transition-all duration-300"
+        >
+          <span class="text-3xl mb-4 block group-hover:scale-110 transition-transform duration-300"
+            >📈</span
+          >
+          <h3 class="text-lg font-bold text-white mb-2">Lifetime Value</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            LTV is how much revenue one customer generates before they churn. At $29/month with 5%
+            churn, LTV is $580. A customer who stays 20 months is worth 20x their monthly price.
+          </p>
+        </div>
+        <div
+          class="group p-6 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-coral/40 hover:bg-white/[0.04] transition-all duration-300"
+        >
+          <span class="text-3xl mb-4 block group-hover:scale-110 transition-transform duration-300"
+            >⚖️</span
+          >
+          <h3 class="text-lg font-bold text-white mb-2">The Golden Ratio</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            LTV should be at least 3x CAC. Anything below 2:1 means you are losing money on every
+            customer. Above 5:1 means you are probably under-investing in growth.
+          </p>
+        </div>
+      </div>
+      <div class="text-center mt-10">
+        <a
+          href="/blog/customer-acquisition-cost-saas"
+          class="text-coral hover:underline text-sm font-medium"
+        >
+          Read the full CAC guide for developers →
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  const inputs = {
+    adSpend: document.getElementById('ad-spend') as HTMLInputElement,
+    visitors: document.getElementById('visitors') as HTMLInputElement,
+    trialRate: document.getElementById('trial-rate') as HTMLInputElement,
+    paidRate: document.getElementById('paid-rate') as HTMLInputElement,
+    price: document.getElementById('price') as HTMLInputElement,
+    churn: document.getElementById('churn') as HTMLInputElement,
+  };
+
+  const calcBtn = document.getElementById('calc-btn') as HTMLButtonElement;
+  const resetBtn = document.getElementById('reset-btn') as HTMLButtonElement;
+  const results = document.getElementById('results') as HTMLElement;
+  const verdictCard = document.getElementById('verdict-card') as HTMLElement;
+  const verdictLabel = document.getElementById('verdict-label') as HTMLElement;
+  const verdictTitle = document.getElementById('verdict-title') as HTMLElement;
+  const verdictDesc = document.getElementById('verdict-desc') as HTMLElement;
+  const metricsGrid = document.getElementById('metrics-grid') as HTMLElement;
+  const suggestionsList = document.getElementById('suggestions-list') as HTMLElement;
+
+  function getValue(el: HTMLInputElement): number {
+    const v = parseFloat(el.value);
+    return isNaN(v) ? 0 : v;
+  }
+
+  function formatCurrency(n: number): string {
+    return '$' + n.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  }
+
+  function formatNumber(n: number): string {
+    return n.toFixed(1).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  }
+
+  interface MetricResult {
+    label: string;
+    value: string;
+    detail: string;
+    status: 'good' | 'ok' | 'bad';
+  }
+
+  function calculate(): {
+    cac: number;
+    ltv: number;
+    ratio: number;
+    paybackMonths: number;
+    customersFor1k: number;
+    monthlyCustomers: number;
+    metrics: MetricResult[];
+    suggestions: string[];
+    verdict: 'healthy' | 'warning' | 'danger';
+  } | null {
+    const adSpend = getValue(inputs.adSpend);
+    const visitors = getValue(inputs.visitors);
+    const trialRate = getValue(inputs.trialRate) / 100;
+    const paidRate = getValue(inputs.paidRate) / 100;
+    const price = getValue(inputs.price);
+    const churn = getValue(inputs.churn) / 100;
+
+    if (adSpend <= 0 || visitors <= 0 || price <= 0) {
+      return null;
+    }
+
+    const trials = visitors * trialRate;
+    const customers = trials * paidRate;
+    const cac = customers > 0 ? adSpend / customers : 0;
+    const ltv = churn > 0 ? price / churn : 0;
+    const ratio = cac > 0 ? ltv / cac : 0;
+    const paybackMonths = price > 0 ? cac / price : 0;
+    const customersFor1k = price > 0 ? 1000 / price : 0;
+
+    const metrics: MetricResult[] = [];
+
+    // CAC
+    let cacStatus: 'good' | 'ok' | 'bad' = 'bad';
+    if (cac < 30) cacStatus = 'good';
+    else if (cac < 80) cacStatus = 'ok';
+    metrics.push({
+      label: 'Customer Acquisition Cost',
+      value: cac > 0 ? formatCurrency(cac) : 'N/A',
+      detail: cac > 0 ? 'Per paying customer' : 'No conversions at current rates',
+      status: cacStatus,
+    });
+
+    // LTV
+    let ltvStatus: 'good' | 'ok' | 'bad' = 'bad';
+    if (ltv > 500) ltvStatus = 'good';
+    else if (ltv > 200) ltvStatus = 'ok';
+    metrics.push({
+      label: 'Lifetime Value',
+      value: ltv > 0 ? formatCurrency(ltv) : 'N/A',
+      detail: ltv > 0 ? 'Revenue per customer before churn' : 'Churn rate is 0% — check your input',
+      status: ltvStatus,
+    });
+
+    // Ratio
+    let ratioStatus: 'good' | 'ok' | 'bad' = 'bad';
+    if (ratio >= 3) ratioStatus = 'good';
+    else if (ratio >= 2) ratioStatus = 'ok';
+    metrics.push({
+      label: 'LTV / CAC Ratio',
+      value: ratio > 0 ? ratio.toFixed(2) + ':1' : 'N/A',
+      detail: ratio >= 3 ? 'Healthy — invest in growth' : ratio >= 2 ? 'Marginal — optimize before scaling' : 'Unsustainable — fix before spending more',
+      status: ratioStatus,
+    });
+
+    // Payback
+    let paybackStatus: 'good' | 'ok' | 'bad' = 'bad';
+    if (paybackMonths <= 6) paybackStatus = 'good';
+    else if (paybackMonths <= 12) paybackStatus = 'ok';
+    metrics.push({
+      label: 'CAC Payback Period',
+      value: paybackMonths > 0 ? formatNumber(paybackMonths) + ' months' : 'N/A',
+      detail: paybackMonths <= 6 ? 'Cash flow friendly' : paybackMonths <= 12 ? 'Acceptable for bootstrapped SaaS' : 'Too long — you run out of cash before breaking even',
+      status: paybackStatus,
+    });
+
+    // Customers for $1K MRR
+    metrics.push({
+      label: 'Customers for $1K MRR',
+      value: customersFor1k > 0 ? Math.ceil(customersFor1k).toLocaleString() : 'N/A',
+      detail: 'Paying customers needed to hit $1,000/month',
+      status: 'good',
+    });
+
+    // Monthly customers from current traffic
+    metrics.push({
+      label: 'Monthly New Customers',
+      value: customers > 0 ? Math.floor(customers).toLocaleString() : '0',
+      detail: 'Expected from current traffic and conversion rates',
+      status: customers > 0 ? 'good' : 'bad',
+    });
+
+    const suggestions: string[] = [];
+
+    if (ratio < 2) {
+      suggestions.push('Your LTV/CAC ratio is below 2:1. This is unsustainable. Either reduce CAC (better targeting, higher conversion) or increase LTV (raise prices, reduce churn).');
+    } else if (ratio < 3) {
+      suggestions.push('Your ratio is between 2:1 and 3:1. This is workable but not ideal. Focus on improving one metric — either conversion rate or churn — before scaling ad spend.');
+    }
+
+    if (paybackMonths > 12) {
+      suggestions.push('Your CAC payback period is over 12 months. For bootstrapped SaaS, aim for under 6 months. Consider annual plans to collect cash upfront.');
+    }
+
+    if (trialRate < 0.03) {
+      suggestions.push('Trial signup rate is below 3%. Your landing page or offer is not compelling enough. Test a stronger headline or a lower-friction CTA.');
+    }
+
+    if (paidRate < 0.10) {
+      suggestions.push('Trial-to-paid conversion is below 10%. The problem is usually onboarding — users do not experience the "aha" moment fast enough. Simplify your trial setup.');
+    }
+
+    if (churn > 0.08) {
+      suggestions.push('Monthly churn is above 8%. At this rate you are losing almost half your customers every year. Focus on retention before acquisition. Read our churn reduction guide.');
+    }
+
+    if (price < 20) {
+      suggestions.push('Your price is under $20/month. Consider raising it — most indie developers underprice out of fear. Even a $5 increase cuts your customer target by 20%.');
+    }
+
+    if (suggestions.length === 0) {
+      suggestions.push('Your economics look solid. LTV/CAC is healthy, payback is reasonable, and conversion rates are strong. The next step: scale your best acquisition channel and track these metrics weekly.');
+    }
+
+    let verdict: 'healthy' | 'warning' | 'danger';
+    if (ratio >= 3 && paybackMonths <= 6) {
+      verdict = 'healthy';
+    } else if (ratio >= 2 && paybackMonths <= 12) {
+      verdict = 'warning';
+    } else {
+      verdict = 'danger';
+    }
+
+    return { cac, ltv, ratio, paybackMonths, customersFor1k, monthlyCustomers: customers, metrics, suggestions, verdict };
+  }
+
+  function getVerdictStyles(verdict: 'healthy' | 'warning' | 'danger') {
+    if (verdict === 'healthy') {
+      return {
+        border: 'border-green-500/30',
+        bg: 'bg-green-500/5',
+        label: 'Healthy Economics',
+        title: 'This SaaS Can Scale',
+        desc: 'Your LTV/CAC ratio and payback period are in a range where paid acquisition is profitable. Focus on scaling your best channel.',
+        labelColor: 'text-green-400',
+        titleColor: 'text-green-400',
+      };
+    }
+    if (verdict === 'warning') {
+      return {
+        border: 'border-yellow-500/30',
+        bg: 'bg-yellow-500/5',
+        label: 'Workable But Tight',
+        title: 'Optimize Before Scaling',
+        desc: 'Your economics are sustainable but not great. Fix one bottleneck — conversion rate, churn, or pricing — before increasing ad spend.',
+        labelColor: 'text-yellow-400',
+        titleColor: 'text-yellow-400',
+      };
+    }
+    return {
+      border: 'border-red-500/30',
+      bg: 'bg-red-500/5',
+      label: 'Unsustainable',
+      title: 'Fix the Math First',
+      desc: 'You are losing money on every customer. Stop spending on ads. Fix conversion, churn, or pricing before acquiring more users.',
+      labelColor: 'text-red-400',
+      titleColor: 'text-red-400',
+    };
+  }
+
+  function getMetricColor(status: 'good' | 'ok' | 'bad'): string {
+    if (status === 'good') return 'border-green-500/30 bg-green-500/5';
+    if (status === 'ok') return 'border-yellow-500/30 bg-yellow-500/5';
+    return 'border-red-500/30 bg-red-500/5';
+  }
+
+  calcBtn.addEventListener('click', () => {
+    const result = calculate();
+    if (!result) {
+      alert('Please fill in at least Monthly Ad Spend, Website Visitors, and Subscription Price.');
+      return;
+    }
+
+    const styles = getVerdictStyles(result.verdict);
+    verdictCard.className = 'p-8 rounded-2xl border text-center transition-all duration-300 ' + styles.border + ' ' + styles.bg;
+    verdictLabel.textContent = styles.label;
+    verdictLabel.className = 'text-sm font-mono uppercase tracking-widest mb-3 ' + styles.labelColor;
+    verdictTitle.textContent = styles.title;
+    verdictTitle.className = 'text-3xl sm:text-4xl font-extrabold mb-2 ' + styles.titleColor;
+    verdictDesc.textContent = styles.desc;
+
+    metricsGrid.innerHTML = result.metrics
+      .map(
+        (m) =>
+          '<div class="p-5 rounded-xl border ' + getMetricColor(m.status) + ' transition-all duration-300">' +
+          '<p class="text-xs text-gray-500 mb-1">' + m.label + '</p>' +
+          '<p class="text-2xl font-extrabold text-white mb-1">' + m.value + '</p>' +
+          '<p class="text-xs text-gray-400">' + m.detail + '</p>' +
+          '</div>'
+      )
+      .join('');
+
+    suggestionsList.innerHTML = result.suggestions
+      .map(
+        (s) =>
+          '<li class="flex items-start gap-3">' +
+          '<span class="mt-1 w-1.5 h-1.5 rounded-full bg-coral shrink-0"></span>' +
+          '<span class="text-gray-300 text-sm leading-relaxed">' + s + '</span>' +
+          '</li>'
+      )
+      .join('');
+
+    results.classList.remove('hidden');
+    results.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+
+  resetBtn.addEventListener('click', () => {
+    Object.values(inputs).forEach((el) => (el.value = ''));
+    results.classList.add('hidden');
+    inputs.adSpend.focus();
+  });
+
+  // Allow Enter key to calculate
+  Object.values(inputs).forEach((el) => {
+    el.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') calcBtn.click();
+    });
+  });
+</script>
