@@ -4,6 +4,7 @@ import type { CollectionEntry } from 'astro:content';
 import { categoryColors, categoryLabels } from '../utils/categoryColors';
 import ReadingProgress from '../components/ReadingProgress.astro';
 import NewsletterForm from '../components/NewsletterForm.astro';
+import GiscusComments from '../components/GiscusComments.astro';
 
 interface Props {
   post: CollectionEntry<'blog'>;
@@ -168,8 +169,18 @@ const schema = hasFaq
               class="w-full flex items-center justify-between px-4 py-3 bg-navy-light border border-white/10 rounded-xl text-sm font-medium text-gray-300"
             >
               <span class="flex items-center gap-2">
-                <svg class="w-4 h-4 text-coral" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                <svg
+                  class="w-4 h-4 text-coral"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
                 </svg>
                 On This Page
               </span>
@@ -180,10 +191,19 @@ const schema = hasFaq
                 stroke="currentColor"
                 viewBox="0 0 24 24"
               >
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
               </svg>
             </button>
-            <nav id="mobile-toc" aria-label="Table of contents" class="hidden mt-2 p-4 bg-navy-light border border-white/10 rounded-xl">
+            <nav
+              id="mobile-toc"
+              aria-label="Table of contents"
+              class="hidden mt-2 p-4 bg-navy-light border border-white/10 rounded-xl"
+            >
               <ol class="space-y-1 text-sm">
                 {tocHeadings.map((h) => (
                   <li>
@@ -232,9 +252,12 @@ const schema = hasFaq
           <div class="p-5 bg-navy-light border border-white/10 rounded-xl">
             <p class="text-sm font-semibold text-white mb-2">Stay in the loop</p>
             <p class="text-xs text-gray-400 mb-3">Weekly DRM tactics for developers.</p>
-            <NewsletterForm size="compact" buttonText="Subscribe" />
+            <NewsletterForm
+              size="compact"
+              buttonText="Subscribe"
+              microcopy="No spam. Unsubscribe anytime."
+            />
           </div>
-
         </div>
       </aside>
 
@@ -290,6 +313,25 @@ const schema = hasFaq
             </button>
           </div>
         </div>
+
+        <!-- Tags -->
+        {
+          post.data.tags.length > 0 && (
+            <div class="mt-8 pt-6 border-t border-white/10">
+              <p class="text-sm font-semibold text-gray-400 mb-3">Topics</p>
+              <div class="flex flex-wrap gap-2">
+                {post.data.tags.map((tag) => (
+                  <a
+                    href={`/blog/tag/${tag.toLowerCase().replace(/\s+/g, '-')}`}
+                    class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs text-gray-400 hover:text-coral hover:border-coral/30 hover:bg-coral/5 transition-all"
+                  >
+                    {tag}
+                  </a>
+                ))}
+              </div>
+            </div>
+          )
+        }
 
         <!-- Related Posts Grid -->
         {
@@ -367,8 +409,12 @@ const schema = hasFaq
             Subscribe to the CodeToCash newsletter for weekly articles, playbooks, and DRM
             strategies for developer entrepreneurs.
           </p>
-          <NewsletterForm size="md" buttonText="Subscribe Free" class="max-w-md mx-auto mb-3" />
-          <p class="text-gray-400 text-xs">Building in public. No spam, unsubscribe anytime.</p>
+          <NewsletterForm
+            size="md"
+            buttonText="Subscribe Free"
+            class="max-w-md mx-auto mb-3"
+            microcopy="Trusted by indie developers shipping SaaS, tools, and templates. No spam."
+          />
         </div>
 
         <!-- Prev / Next -->
@@ -400,6 +446,9 @@ const schema = hasFaq
             )
           }
         </nav>
+
+        <!-- Comments -->
+        <GiscusComments />
       </article>
     </div>
   </div>
@@ -490,7 +539,7 @@ const schema = hasFaq
 
 <style is:global>
   .prose-blog {
-    color: #d1d5db;
+    color: #a8a8b8;
     line-height: 1.8;
     font-size: 1rem;
   }

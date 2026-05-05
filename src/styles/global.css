@@ -26,6 +26,7 @@ html {
   --color-deep-blue: #0f3460;
   --color-navy: #0a0a1a;
   --color-navy-light: #111127;
+  --color-body: #a8a8b8;
 }
 
 /* Animations */
@@ -104,4 +105,23 @@ html.js .section-animate.visible {
     opacity: 1;
     transform: none;
   }
+}
+
+/* Global focus states */
+:focus-visible {
+  outline: 2px solid #e94560;
+  outline-offset: 2px;
+}
+
+/* Remove default outline when our custom focus-visible is active */
+a:focus,
+button:focus,
+input:focus {
+  outline: none;
+}
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid #e94560;
+  outline-offset: 2px;
 }

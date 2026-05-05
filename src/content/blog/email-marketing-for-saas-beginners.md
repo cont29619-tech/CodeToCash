@@ -5,7 +5,19 @@ pubDate: 2026-02-23
 updatedDate: 2026-04-23
 author: 'CodeToCash Team'
 category: 'email'
-tags: ['email marketing', 'saas', 'saas email marketing', 'email sequences', 'welcome sequence', 'email automation', 'direct response marketing', 'automation', 'sequences', 'beginners']
+tags:
+  [
+    'email marketing',
+    'saas',
+    'saas email marketing',
+    'email sequences',
+    'welcome sequence',
+    'email automation',
+    'direct response marketing',
+    'automation',
+    'sequences',
+    'beginners',
+  ]
 readingTime: '12 min read'
 featured: false
 draft: false

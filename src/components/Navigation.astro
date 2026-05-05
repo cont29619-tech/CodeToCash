@@ -12,8 +12,9 @@ const navLinks = [
 ---
 
 <nav
+  id="main-nav"
   aria-label="Main navigation"
-  class="fixed top-0 left-0 right-0 z-50 bg-navy/70 backdrop-blur-xl border-b border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)]"
+  class="fixed top-0 left-0 right-0 z-50 bg-navy/70 backdrop-blur-xl border-b border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)] transition-transform duration-300"
 >
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16">
@@ -216,4 +217,75 @@ const navLinks = [
   }
   document.getElementById('search-btn-desktop')?.addEventListener('click', openSearch);
   document.getElementById('search-btn-mobile')?.addEventListener('click', openSearch);
+
+  // Mobile: hide nav on scroll down, show on scroll up
+  const nav = document.getElementById('main-nav');
+  if (nav) {
+    const isMobile = window.matchMedia('(max-width: 767px)');
+    let lastScrollY = window.scrollY;
+    let scrollThreshold = 40;
+    let scrollStart = 0;
+    let isHidden = false;
+
+    function handleScroll() {
+      if (!isMobile.matches) {
+        if (isHidden) {
+          nav.style.transform = '';
+          isHidden = false;
+        }
+        lastScrollY = window.scrollY;
+        return;
+      }
+
+      const currentScrollY = window.scrollY;
+      const delta = currentScrollY - lastScrollY;
+
+      // Scrolling down
+      if (delta > 0 && !isHidden) {
+        if (scrollStart === 0) scrollStart = lastScrollY;
+        if (currentScrollY - scrollStart > scrollThreshold && currentScrollY > 100) {
+          nav.style.transform = 'translateY(-100%)';
+          isHidden = true;
+        }
+      }
+      // Scrolling up
+      else if (delta < 0 && isHidden) {
+        if (scrollStart === 0) scrollStart = lastScrollY;
+        if (scrollStart - currentScrollY > scrollThreshold) {
+          nav.style.transform = '';
+          isHidden = false;
+          scrollStart = 0;
+        }
+      }
+      // Direction changed, reset anchor
+      else if ((delta > 0 && isHidden) || (delta < 0 && !isHidden)) {
+        scrollStart = lastScrollY;
+      }
+
+      lastScrollY = currentScrollY;
+    }
+
+    let ticking = false;
+    window.addEventListener(
+      'scroll',
+      () => {
+        if (!ticking) {
+          requestAnimationFrame(() => {
+            handleScroll();
+            ticking = false;
+          });
+          ticking = true;
+        }
+      },
+      { passive: true }
+    );
+
+    // Reset on resize crossing breakpoint
+    isMobile.addEventListener('change', () => {
+      if (!isMobile.matches && isHidden) {
+        nav.style.transform = '';
+        isHidden = false;
+      }
+    });
+  }
 </script>

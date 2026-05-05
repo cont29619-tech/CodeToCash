@@ -108,6 +108,7 @@ Example:
 "Most engineering teams track 15+ metrics but only 3 actually predict delivery delays. We analyzed 200+ engineering teams and identified the metrics that matter. Download the free framework."
 
 This works because it:
+
 - Names a specific pain (too many metrics, no signal)
 - Offers credibility (200+ teams analyzed)
 - Promises a concrete deliverable (framework)

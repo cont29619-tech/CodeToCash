@@ -46,10 +46,7 @@ const schema = JSON.stringify({
   <section class="relative pb-24 px-6">
     <div class="max-w-3xl mx-auto">
       <!-- Input -->
-      <div
-        class="p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] mb-8"
-        id="grader-card"
-      >
+      <div class="p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] mb-8" id="grader-card">
         <label for="headline-input" class="block text-sm font-mono text-gray-500 mb-3">
           $ enter your headline
         </label>
@@ -185,8 +182,8 @@ const schema = JSON.stringify({
           >
           <h3 class="text-lg font-bold text-white mb-2">Numbers & Specifics</h3>
           <p class="text-gray-400 text-sm leading-relaxed">
-            "5 Ways" beats "Several Ways." Numbers signal structure and set expectations. Odd numbers
-            slightly outperform even ones in click-through tests.
+            "5 Ways" beats "Several Ways." Numbers signal structure and set expectations. Odd
+            numbers slightly outperform even ones in click-through tests.
           </p>
         </div>
       </div>
@@ -200,7 +197,6 @@ const schema = JSON.stringify({
       </div>
     </div>
   </section>
-
 </Layout>
 
 <script>
@@ -502,7 +498,12 @@ const schema = JSON.stringify({
     // 7. Opening word (max 10)
     const firstWord = lowerWords[0] || '';
     const hasWeakOpener = WEAK_OPENERS.includes(firstWord);
-    const hasStrongOpener = startsWithNumber || isHowTo || /^(why|what|when|stop|never|get|build|grow|start|make|create|learn|write|use|turn|avoid|master|ship)$/i.test(firstWord);
+    const hasStrongOpener =
+      startsWithNumber ||
+      isHowTo ||
+      /^(why|what|when|stop|never|get|build|grow|start|make|create|learn|write|use|turn|avoid|master|ship)$/i.test(
+        firstWord
+      );
     let openerScore: number;
     if (hasStrongOpener) {
       openerScore = 10;
@@ -531,20 +532,18 @@ const schema = JSON.stringify({
     });
 
     // 8. Clarity — penalize jargon density and all-caps (max 5)
-    const allCapsWords = words.filter((w) => w.length > 2 && w === w.toUpperCase() && /[A-Z]/.test(w));
+    const allCapsWords = words.filter(
+      (w) => w.length > 2 && w === w.toUpperCase() && /[A-Z]/.test(w)
+    );
     const longWords = words.filter((w) => w.replace(/[^a-zA-Z]/g, '').length > 12);
     let clarityScore = 5;
     if (allCapsWords.length > 1) {
       clarityScore -= 2;
-      suggestions.push(
-        'Multiple ALL-CAPS words look spammy. Use one at most for emphasis.'
-      );
+      suggestions.push('Multiple ALL-CAPS words look spammy. Use one at most for emphasis.');
     }
     if (longWords.length > 1) {
       clarityScore -= 2;
-      suggestions.push(
-        'Some words are very long. Simpler words scan faster and convert better.'
-      );
+      suggestions.push('Some words are very long. Simpler words scan faster and convert better.');
     }
     clarityScore = Math.max(0, clarityScore);
 
@@ -552,10 +551,7 @@ const schema = JSON.stringify({
       name: 'Clarity',
       score: clarityScore,
       max: 5,
-      detail:
-        clarityScore >= 4
-          ? 'Clear and scannable'
-          : 'Could be simpler',
+      detail: clarityScore >= 4 ? 'Clear and scannable' : 'Could be simpler',
       status: clarityScore >= 4 ? 'good' : clarityScore >= 2 ? 'ok' : 'bad',
     });
 

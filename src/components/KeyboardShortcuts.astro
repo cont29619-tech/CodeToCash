@@ -1,0 +1,149 @@
+---
+// KeyboardShortcuts — globally included in Layout.
+// Press "?" to open a modal showing available keyboard shortcuts.
+---
+
+<div
+  id="shortcuts-modal"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Keyboard shortcuts"
+  class="fixed inset-0 z-[60] flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-200"
+>
+  <!-- Backdrop -->
+  <div
+    id="shortcuts-backdrop"
+    class="absolute inset-0 bg-navy/80 backdrop-blur-sm"
+    aria-hidden="true"
+  >
+  </div>
+
+  <!-- Modal -->
+  <div
+    class="relative w-full max-w-md mx-4 p-6 rounded-2xl bg-navy-light border border-white/10 shadow-2xl transform scale-95 transition-transform duration-200"
+    id="shortcuts-panel"
+  >
+    <div class="flex items-center justify-between mb-6">
+      <h2 class="text-lg font-bold text-white">Keyboard Shortcuts</h2>
+      <button
+        id="shortcuts-close"
+        aria-label="Close"
+        class="w-8 h-8 flex items-center justify-center rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors cursor-pointer"
+      >
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+          ><path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"></path></svg
+        >
+      </button>
+    </div>
+
+    <div class="space-y-3">
+      <div class="flex items-center justify-between py-2 border-b border-white/[0.04]">
+        <span class="text-sm text-gray-300">Open search</span>
+        <kbd
+          class="inline-flex items-center gap-1 px-2 py-1 bg-white/5 border border-white/10 rounded text-xs text-gray-400 font-mono"
+        >
+          <span class="shortcut-mod">Ctrl</span> + K
+        </kbd>
+      </div>
+      <div class="flex items-center justify-between py-2 border-b border-white/[0.04]">
+        <span class="text-sm text-gray-300">Close modal / menu</span>
+        <kbd
+          class="inline-flex items-center gap-1 px-2 py-1 bg-white/5 border border-white/10 rounded text-xs text-gray-400 font-mono"
+        >
+          Esc
+        </kbd>
+      </div>
+      <div class="flex items-center justify-between py-2 border-b border-white/[0.04]">
+        <span class="text-sm text-gray-300">Show this help</span>
+        <kbd
+          class="inline-flex items-center gap-1 px-2 py-1 bg-white/5 border border-white/10 rounded text-xs text-gray-400 font-mono"
+        >
+          ?
+        </kbd>
+      </div>
+      <div class="flex items-center justify-between py-2">
+        <span class="text-sm text-gray-300">Focus search input</span>
+        <kbd
+          class="inline-flex items-center gap-1 px-2 py-1 bg-white/5 border border-white/10 rounded text-xs text-gray-400 font-mono"
+        >
+          <span class="shortcut-mod">/</span>
+        </kbd>
+      </div>
+    </div>
+
+    <p class="mt-5 text-xs text-gray-500">Press any key to close.</p>
+  </div>
+</div>
+
+<script>
+  (function () {
+    const modal = document.getElementById('shortcuts-modal');
+    const panel = document.getElementById('shortcuts-panel');
+    const closeBtn = document.getElementById('shortcuts-close');
+    const backdrop = document.getElementById('shortcuts-backdrop');
+    if (!modal || !panel) return;
+
+    let isOpen = false;
+
+    function open() {
+      if (isOpen) return;
+      // Don't open if user is typing in an input
+      const active = document.activeElement;
+      if (
+        active &&
+        (active.tagName === 'INPUT' ||
+          active.tagName === 'TEXTAREA' ||
+          active.getAttribute('contenteditable') === 'true')
+      ) {
+        return;
+      }
+      isOpen = true;
+      modal.classList.remove('opacity-0', 'pointer-events-none');
+      modal.classList.add('opacity-100', 'pointer-events-auto');
+      panel.classList.remove('scale-95');
+      panel.classList.add('scale-100');
+      closeBtn?.focus();
+    }
+
+    function close() {
+      if (!isOpen) return;
+      isOpen = false;
+      modal.classList.add('opacity-0', 'pointer-events-none');
+      modal.classList.remove('opacity-100', 'pointer-events-auto');
+      panel.classList.add('scale-95');
+      panel.classList.remove('scale-100');
+    }
+
+    document.addEventListener('keydown', (e) => {
+      // Ignore if modals/search are already open
+      const searchModal = document.querySelector('[role="dialog"][aria-modal="true"]');
+      if (
+        searchModal &&
+        searchModal.id !== 'shortcuts-modal' &&
+        searchModal.classList.contains('opacity-100')
+      ) {
+        return;
+      }
+
+      if (e.key === '?' && !e.ctrlKey && !e.metaKey && !e.altKey) {
+        e.preventDefault();
+        open();
+      } else if (e.key === 'Escape' && isOpen) {
+        e.preventDefault();
+        close();
+      }
+    });
+
+    closeBtn?.addEventListener('click', close);
+    backdrop?.addEventListener('click', close);
+
+    // Close on click outside panel
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) close();
+    });
+  })();
+</script>

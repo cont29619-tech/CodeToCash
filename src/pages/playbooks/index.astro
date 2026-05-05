@@ -30,7 +30,7 @@ const playbooks = [
     icon: '📈',
     title: 'Your First Google Ad Campaign on a $100 Budget',
     description:
-      'Get your first paying customers from Google Ads without burning cash. You\'ll have a live campaign running by the end.',
+      "Get your first paying customers from Google Ads without burning cash. You'll have a live campaign running by the end.",
     difficulty: 'Intermediate',
     time: '18 min',
   },
@@ -185,8 +185,12 @@ const difficultyColors: Record<string, { bg: string; text: string; border: strin
         Subscribe to get notified when we publish new tactical guides. No spam — just actionable
         marketing for developers.
       </p>
-      <NewsletterForm size="md" buttonText="Notify Me" class="max-w-md mx-auto mb-3" />
-      <p class="text-gray-500 text-xs">Building in public. Unsubscribe anytime.</p>
+      <NewsletterForm
+        size="md"
+        buttonText="Notify Me"
+        class="max-w-md mx-auto mb-3"
+        microcopy="Trusted by indie developers shipping SaaS, tools, and templates. No spam."
+      />
     </div>
   </section>
 </Layout>

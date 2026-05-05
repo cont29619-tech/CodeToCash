@@ -46,10 +46,7 @@ const schema = JSON.stringify({
   <section class="relative pb-24 px-6">
     <div class="max-w-3xl mx-auto">
       <!-- Input -->
-      <div
-        class="p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] mb-8"
-        id="tester-card"
-      >
+      <div class="p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] mb-8" id="tester-card">
         <label for="subject-input" class="block text-sm font-mono text-gray-500 mb-3">
           $ enter your subject line
         </label>
@@ -57,7 +54,7 @@ const schema = JSON.stringify({
           <input
             id="subject-input"
             type="text"
-            placeholder='e.g. The 3-email sequence that doubled our MRR'
+            placeholder="e.g. The 3-email sequence that doubled our MRR"
             maxlength="120"
             class="flex-1 px-5 py-4 bg-white/5 border border-white/10 rounded-lg text-white text-lg placeholder-gray-600 focus:outline-none focus:border-coral/50 focus:ring-2 focus:ring-coral/20 transition-all duration-200"
           />
@@ -206,46 +203,146 @@ const schema = JSON.stringify({
 
 <script>
   const SPAM_WORDS = [
-    'free', 'urgent', 'act now', 'limited time', 'exclusive deal',
-    'click here', 'order now', 'call now', 'buy now', 'get it now',
-    'double your', 'earn extra cash', 'make money', 'cash bonus',
-    'extra income', 'earn dollars', '100 percent free', '100 percent satisfied',
-    'act immediately', 'call free', 'call now', 'cheap', 'click below',
-    'congratulations', 'credit card offers', 'deal', 'dear friend',
-    'direct email', 'do it today', 'for free', 'free access',
-    'free consultation', 'free gift', 'free hosting', 'free info',
-    'free investment', 'free membership', 'free money', 'free preview',
-    'free quote', 'free trial', 'full refund', 'get paid', 'giveaway',
-    'great offer', 'guarantee', 'guaranteed', 'incredible deal',
-    'limited time only', 'no catch', 'no experience', 'no obligation',
-    'no purchase necessary', 'not junk', 'not spam', 'offer expires',
-    'once in lifetime', 'one time', 'order status', 'please read',
-    'risk free', 'satisfaction guaranteed', 'see for yourself',
-    'special promotion', 'take action', 'this is not spam',
-    'this is not junk', 'winner', 'winning', 'you are a winner',
-    'you have been selected', 'zero risk',
+    'free',
+    'urgent',
+    'act now',
+    'limited time',
+    'exclusive deal',
+    'click here',
+    'order now',
+    'call now',
+    'buy now',
+    'get it now',
+    'double your',
+    'earn extra cash',
+    'make money',
+    'cash bonus',
+    'extra income',
+    'earn dollars',
+    '100 percent free',
+    '100 percent satisfied',
+    'act immediately',
+    'call free',
+    'call now',
+    'cheap',
+    'click below',
+    'congratulations',
+    'credit card offers',
+    'deal',
+    'dear friend',
+    'direct email',
+    'do it today',
+    'for free',
+    'free access',
+    'free consultation',
+    'free gift',
+    'free hosting',
+    'free info',
+    'free investment',
+    'free membership',
+    'free money',
+    'free preview',
+    'free quote',
+    'free trial',
+    'full refund',
+    'get paid',
+    'giveaway',
+    'great offer',
+    'guarantee',
+    'guaranteed',
+    'incredible deal',
+    'limited time only',
+    'no catch',
+    'no experience',
+    'no obligation',
+    'no purchase necessary',
+    'not junk',
+    'not spam',
+    'offer expires',
+    'once in lifetime',
+    'one time',
+    'order status',
+    'please read',
+    'risk free',
+    'satisfaction guaranteed',
+    'see for yourself',
+    'special promotion',
+    'take action',
+    'this is not spam',
+    'this is not junk',
+    'winner',
+    'winning',
+    'you are a winner',
+    'you have been selected',
+    'zero risk',
   ];
 
   const POWER_WORDS = [
-    'proven', 'secret', 'ultimate', 'exclusive', 'guaranteed', 'instant',
-    'effortless', 'powerful', 'complete', 'essential', 'definitive', 'simple',
-    'easy', 'fast', 'quick', 'step-by-step', 'actionable', 'practical',
-    'comprehensive', 'insider', 'hack', 'hacks', 'boost', 'skyrocket',
-    'double', 'triple', 'maximize', 'transform', 'master', 'dominate',
-    'crush', 'unlock', 'discover', 'reveal', 'mistakes', 'avoid', 'stop',
-    'never', 'surprising', 'shocking', 'remarkable', 'incredible', 'breakthrough',
+    'proven',
+    'secret',
+    'ultimate',
+    'exclusive',
+    'guaranteed',
+    'instant',
+    'effortless',
+    'powerful',
+    'complete',
+    'essential',
+    'definitive',
+    'simple',
+    'easy',
+    'fast',
+    'quick',
+    'step-by-step',
+    'actionable',
+    'practical',
+    'comprehensive',
+    'insider',
+    'hack',
+    'hacks',
+    'boost',
+    'skyrocket',
+    'double',
+    'triple',
+    'maximize',
+    'transform',
+    'master',
+    'dominate',
+    'crush',
+    'unlock',
+    'discover',
+    'reveal',
+    'mistakes',
+    'avoid',
+    'stop',
+    'never',
+    'surprising',
+    'shocking',
+    'remarkable',
+    'incredible',
+    'breakthrough',
   ];
 
   const CURIOSITY_PATTERNS = [
-    /how\s+i\b/i, /how\s+we\b/i, /the\s+real\s+reason/i,
-    /what\s+i\s+learned/i, /what\s+we\s+learned/i, /the\s+truth\s+about/i,
-    /why\s+.*?(doesnt|dont|not)/i, /.*\?$/,
+    /how\s+i\b/i,
+    /how\s+we\b/i,
+    /the\s+real\s+reason/i,
+    /what\s+i\s+learned/i,
+    /what\s+we\s+learned/i,
+    /the\s+truth\s+about/i,
+    /why\s+.*?(doesnt|dont|not)/i,
+    /.*\?$/,
   ];
 
   const PERSONALIZATION_PATTERNS = [
-    /\{\{.*?\}\}/g, /\[\[.*?\]\]/g, /\{first_name\}/gi,
-    /\{name\}/gi, /\{company\}/gi, /\[first name\]/gi,
-    /\[name\]/gi, /\[company\]/gi,
+    /\{\{.*?\}\}/g,
+    /\[\[.*?\]\]/g,
+    /\{first_name\}/gi,
+    /\{name\}/gi,
+    /\{company\}/gi,
+    /\[first name\]/gi,
+    /\[name\]/gi,
+    /\[company\]/gi,
   ];
 
   interface Factor {
@@ -278,9 +375,17 @@ const schema = JSON.stringify({
     }
 
     if (charCount < 20) {
-      suggestions.push('Too short at ' + charCount + ' chars. Add 2-3 more words to create curiosity or promise value.');
+      suggestions.push(
+        'Too short at ' +
+          charCount +
+          ' chars. Add 2-3 more words to create curiosity or promise value.'
+      );
     } else if (charCount > 60) {
-      suggestions.push('At ' + charCount + ' chars, this gets truncated on most devices. Trim to under 50 for mobile safety.');
+      suggestions.push(
+        'At ' +
+          charCount +
+          ' chars, this gets truncated on most devices. Trim to under 50 for mobile safety.'
+      );
     }
 
     factors.push({
@@ -303,15 +408,27 @@ const schema = JSON.stringify({
 
     if (uniqueSpam.length > 0) {
       spamScore -= uniqueSpam.length * 4;
-      suggestions.push('Spam trigger' + (uniqueSpam.length > 1 ? 's' : '') + ' detected: "' + uniqueSpam.slice(0, 3).join('", "') + '". Replace with softer alternatives.');
+      suggestions.push(
+        'Spam trigger' +
+          (uniqueSpam.length > 1 ? 's' : '') +
+          ' detected: "' +
+          uniqueSpam.slice(0, 3).join('", "') +
+          '". Replace with softer alternatives.'
+      );
     }
     if (allCapsWords.length > 0) {
       spamScore -= allCapsWords.length * 3;
-      suggestions.push('ALL CAPS words (' + allCapsWords.join(', ') + ') trigger spam filters. Use sentence case instead.');
+      suggestions.push(
+        'ALL CAPS words (' +
+          allCapsWords.join(', ') +
+          ') trigger spam filters. Use sentence case instead.'
+      );
     }
     if (exclamationCount > 1) {
       spamScore -= (exclamationCount - 1) * 3;
-      suggestions.push(exclamationCount + ' exclamation marks look spammy. One is plenty - zero is often better.');
+      suggestions.push(
+        exclamationCount + ' exclamation marks look spammy. One is plenty - zero is often better.'
+      );
     }
     if (dollarCount > 0) {
       spamScore -= 2;
@@ -323,13 +440,14 @@ const schema = JSON.stringify({
       name: 'Spam Risk',
       score: spamScore,
       max: 20,
-      detail: uniqueSpam.length > 0
-        ? uniqueSpam.length + ' trigger' + (uniqueSpam.length > 1 ? 's' : '') + ' found'
-        : allCapsWords.length > 0
-          ? 'ALL CAPS detected'
-          : exclamationCount > 1
-            ? 'Multiple exclamation marks detected'
-            : 'Clean',
+      detail:
+        uniqueSpam.length > 0
+          ? uniqueSpam.length + ' trigger' + (uniqueSpam.length > 1 ? 's' : '') + ' found'
+          : allCapsWords.length > 0
+            ? 'ALL CAPS detected'
+            : exclamationCount > 1
+              ? 'Multiple exclamation marks detected'
+              : 'Clean',
       status: spamScore >= 16 ? 'good' : spamScore >= 10 ? 'ok' : 'bad',
     });
 
@@ -337,11 +455,15 @@ const schema = JSON.stringify({
     const first20 = lower.slice(0, 20);
     const hasValueInFront =
       /\d/.test(first20) ||
-      /^(how|why|what|the|stop|never|get|build|grow|start|make|create|learn|write|use|turn|avoid|master|ship)/i.test(trimmed);
+      /^(how|why|what|the|stop|never|get|build|grow|start|make|create|learn|write|use|turn|avoid|master|ship)/i.test(
+        trimmed
+      );
     const frontLoadScore = hasValueInFront ? 15 : 6;
 
     if (!hasValueInFront) {
-      suggestions.push('The first 20 characters do not contain a hook. Lead with a number, "How to", or a bold claim.');
+      suggestions.push(
+        'The first 20 characters do not contain a hook. Lead with a number, "How to", or a bold claim.'
+      );
     }
 
     factors.push({
@@ -364,7 +486,9 @@ const schema = JSON.stringify({
     curiosityScore = Math.min(15, curiosityScore);
 
     if (!hasCuriosityPattern && !hasQuestion && !hasNumber) {
-      suggestions.push('No curiosity mechanism detected. Try a question, a number, or "How I..." format.');
+      suggestions.push(
+        'No curiosity mechanism detected. Try a question, a number, or "How I..." format.'
+      );
     }
 
     factors.push({
@@ -386,7 +510,9 @@ const schema = JSON.stringify({
     const personalizationScore = hasPersonalization ? 10 : 0;
 
     if (!hasPersonalization) {
-      suggestions.push('No personalization token. Adding {first_name} can increase open rates by 20-26%.');
+      suggestions.push(
+        'No personalization token. Adding {first_name} can increase open rates by 20-26%.'
+      );
     }
 
     factors.push({
@@ -412,16 +538,19 @@ const schema = JSON.stringify({
     }
 
     if (uniquePower.length === 0) {
-      suggestions.push('No power words. Try "proven," "step-by-step," or "mistakes" to trigger action.');
+      suggestions.push(
+        'No power words. Try "proven," "step-by-step," or "mistakes" to trigger action.'
+      );
     }
 
     factors.push({
       name: 'Power Words',
       score: powerScore,
       max: 10,
-      detail: uniquePower.length > 0
-        ? 'Found: ' + uniquePower.map((w) => '"' + w + '"').join(', ')
-        : 'None found',
+      detail:
+        uniquePower.length > 0
+          ? 'Found: ' + uniquePower.map((w) => '"' + w + '"').join(', ')
+          : 'None found',
       status: powerScore >= 8 ? 'good' : powerScore >= 4 ? 'ok' : 'bad',
     });
 
@@ -446,7 +575,9 @@ const schema = JSON.stringify({
     const totalScore = factors.reduce((sum, f) => sum + f.score, 0);
 
     if (suggestions.length === 0) {
-      suggestions.push('Strong subject line. A/B test it against a variant with a different curiosity angle to find your ceiling.');
+      suggestions.push(
+        'Strong subject line. A/B test it against a variant with a different curiosity angle to find your ceiling.'
+      );
     }
 
     return { score: totalScore, factors, suggestions };
@@ -537,15 +668,29 @@ const schema = JSON.stringify({
     factorsGrid.innerHTML = factors
       .map(
         (f) =>
-          '<div class="p-4 rounded-xl border ' + getFactorStatusColor(f.status) + ' transition-all duration-300">' +
+          '<div class="p-4 rounded-xl border ' +
+          getFactorStatusColor(f.status) +
+          ' transition-all duration-300">' +
           '<div class="flex items-center justify-between mb-2">' +
-          '<span class="text-sm font-semibold text-white">' + f.name + '</span>' +
-          '<span class="text-xs font-mono text-gray-400">' + f.score + '/' + f.max + '</span>' +
+          '<span class="text-sm font-semibold text-white">' +
+          f.name +
+          '</span>' +
+          '<span class="text-xs font-mono text-gray-400">' +
+          f.score +
+          '/' +
+          f.max +
+          '</span>' +
           '</div>' +
           '<div class="w-full h-1.5 rounded-full bg-white/[0.06] mb-2">' +
-          '<div class="h-full rounded-full transition-all duration-700" style="width:' + (f.score / f.max) * 100 + '%;background:' + (f.status === 'good' ? '#22c55e' : f.status === 'ok' ? '#eab308' : '#ef4444') + '"></div>' +
+          '<div class="h-full rounded-full transition-all duration-700" style="width:' +
+          (f.score / f.max) * 100 +
+          '%;background:' +
+          (f.status === 'good' ? '#22c55e' : f.status === 'ok' ? '#eab308' : '#ef4444') +
+          '"></div>' +
           '</div>' +
-          '<p class="text-xs text-gray-400">' + f.detail + '</p>' +
+          '<p class="text-xs text-gray-400">' +
+          f.detail +
+          '</p>' +
           '</div>'
       )
       .join('');
@@ -555,7 +700,9 @@ const schema = JSON.stringify({
         (s) =>
           '<li class="flex items-start gap-3">' +
           '<span class="mt-1 w-1.5 h-1.5 rounded-full bg-coral shrink-0"></span>' +
-          '<span class="text-gray-300 text-sm leading-relaxed">' + s + '</span>' +
+          '<span class="text-gray-300 text-sm leading-relaxed">' +
+          s +
+          '</span>' +
           '</li>'
       )
       .join('');

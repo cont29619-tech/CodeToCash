@@ -4,7 +4,14 @@ description: 'Fill-in-the-blank ad copy templates for Google, Twitter, LinkedIn,
 pubDate: 2026-05-05
 author: 'CodeToCash Team'
 category: 'ads'
-tags: ['ad copywriting', 'copywriting templates', 'saas marketing', 'paid advertising', 'conversion copywriting']
+tags:
+  [
+    'ad copywriting',
+    'copywriting templates',
+    'saas marketing',
+    'paid advertising',
+    'conversion copywriting',
+  ]
 readingTime: '14 min read'
 featured: false
 draft: false
@@ -38,6 +45,7 @@ Your headline is the only part of your ad most people will read. It has one job:
 `[Achieve desired outcome] without [biggest pain point]`
 
 Examples:
+
 - "Ship to production without touching a config file"
 - "Get paid faster without chasing clients"
 - "Monitor every error without drowning in alerts"
@@ -49,6 +57,7 @@ This is the most reliable formula for developer products because it promises a r
 `[Specific metric or result] with [product category or approach]`
 
 Examples:
+
 - "Cut deployment time by 73% with automated rollbacks"
 - "Reduce churn 40% with behavior-based emails"
 - "Generate 3x more leads with developer-focused landing pages"
@@ -60,6 +69,7 @@ Developers trust numbers. A specific metric beats a vague superlative every time
 `[Question that names a pain or challenges an assumption]?`
 
 Examples:
+
 - "Why do 90% of SaaS landing pages convert below 2%?"
 - "Is your CI pipeline actually saving time or just hiding problems?"
 - "What if your analytics tool is tracking the wrong metrics?"
@@ -71,6 +81,7 @@ Questions create curiosity gaps. The reader needs to know the answer, which mean
 `[Established category] was built for [old audience]. We built it for [new audience].`
 
 Examples:
+
 - "Project management was built for marketers. We built it for engineers."
 - "Analytics was built for growth teams. We built it for developers who hate dashboards."
 - "Email marketing was built for e-commerce. We built it for SaaS."
@@ -82,6 +93,7 @@ This formula positions your product as the alternative to an incumbent. It works
 `[Number] [target customers] use [product] to [outcome]`
 
 Examples:
+
 - "2,400 engineering teams use DeployFlow to ship 4x faster"
 - "14,000 developers track errors with LogSense instead of Sentry"
 - "300 indie hackers launched on Product Hunt using this template"
@@ -93,6 +105,7 @@ Social proof reduces skepticism immediately. This formula works best when you ha
 `[Task that takes long time] in [short time]`
 
 Examples:
+
 - "Write a month of email sequences in 20 minutes"
 - "Set up infrastructure monitoring in 90 seconds"
 - "Build a pricing page that converts in under an hour"
@@ -266,17 +279,20 @@ Why it works: Specific before/after, concrete mechanism, native tone, soft CTA.
 The wrong CTA kills conversions even when the headline and body are perfect. Match your CTA to where the reader is in their journey.
 
 **Cold traffic (first exposure):**
+
 - "See how it works"
 - "Download the free guide"
 - "Get the template"
 - "Watch the 2-minute demo"
 
 **Warm traffic (retargeting, email subscribers):**
+
 - "Start your free trial"
 - "Book a quick demo"
 - "Try it free for 14 days"
 
 **Hot traffic (pricing page visitors, trial users):**
+
 - "Get started"
 - "Upgrade now"
 - "Claim your discount"

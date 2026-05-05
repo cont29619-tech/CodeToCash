@@ -4,6 +4,7 @@ import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
 import SearchModal from '../components/SearchModal.astro';
 import CopyTemplateButtons from '../components/CopyTemplateButtons.astro';
+import KeyboardShortcuts from '../components/KeyboardShortcuts.astro';
 
 interface Props {
   title?: string;
@@ -34,7 +35,9 @@ const ogImageURL = new URL(ogImage ?? '/og-default.png', Astro.site);
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script is:inline>document.documentElement.classList.add('js')</script>
+    <script is:inline>
+      document.documentElement.classList.add('js');
+    </script>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
@@ -57,7 +60,11 @@ const ogImageURL = new URL(ogImage ?? '/og-default.png', Astro.site);
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:alt" content={ogImageAlt} />
     {articleMeta && <meta property="article:published_time" content={articleMeta.publishedTime} />}
-    {articleMeta?.modifiedTime && <meta property="article:modified_time" content={articleMeta.modifiedTime} />}
+    {
+      articleMeta?.modifiedTime && (
+        <meta property="article:modified_time" content={articleMeta.modifiedTime} />
+      )
+    }
     {articleMeta && <meta property="article:author" content={articleMeta.author} />}
 
     <!-- Twitter -->
@@ -121,6 +128,7 @@ const ogImageURL = new URL(ogImage ?? '/og-default.png', Astro.site);
     <Navigation />
     <SearchModal />
     <CopyTemplateButtons />
+    <KeyboardShortcuts />
     <main id="main-content" class="flex-1 pt-16">
       <slot />
     </main>
@@ -146,14 +154,29 @@ const ogImageURL = new URL(ogImage ?? '/og-default.png', Astro.site);
         const emailValue = new FormData(form).get('email');
         const email = typeof emailValue === 'string' ? emailValue.trim() : '';
         const button = form.querySelector('button') as HTMLButtonElement;
+        const input = form.querySelector('.ck-subscribe-input') as HTMLInputElement;
         const originalText = button.textContent;
+        const errorTextEl = errorEl.querySelector('.ck-subscribe-error-text') as HTMLElement | null;
 
+        // Reset error state
         errorEl.classList.add('hidden');
-        errorEl.textContent = '';
+        errorEl.classList.remove('opacity-100');
+        if (errorTextEl) errorTextEl.textContent = '';
+        if (input) {
+          input.classList.remove('border-red-500', 'ring-2', 'ring-red-500/20');
+        }
 
         if (!email) {
-          errorEl.textContent = 'Please enter a valid email address.';
+          const msg = 'Please enter a valid email address.';
+          if (errorTextEl) errorTextEl.textContent = msg;
           errorEl.classList.remove('hidden');
+          // Trigger reflow for transition
+          void errorEl.offsetWidth;
+          errorEl.classList.add('opacity-100');
+          if (input) {
+            input.classList.add('border-red-500', 'ring-2', 'ring-red-500/20');
+            input.focus();
+          }
           return;
         }
 
@@ -172,9 +195,16 @@ const ogImageURL = new URL(ogImage ?? '/og-default.png', Astro.site);
           }
           window.location.href = '/welcome';
         } catch (err) {
-          errorEl.textContent =
+          const msg =
             err instanceof Error ? err.message : 'Something went wrong. Please try again.';
+          if (errorTextEl) errorTextEl.textContent = msg;
           errorEl.classList.remove('hidden');
+          void errorEl.offsetWidth;
+          errorEl.classList.add('opacity-100');
+          if (input) {
+            input.classList.add('border-red-500', 'ring-2', 'ring-red-500/20');
+            input.focus();
+          }
           button.disabled = false;
           button.textContent = originalText;
         }
@@ -220,6 +250,34 @@ const ogImageURL = new URL(ogImage ?? '/og-default.png', Astro.site);
           window.scrollTo({ top: 0, behavior: 'smooth' });
         });
       }
+
+      // Plausible custom events
+      function track(eventName: string, props?: Record<string, string>) {
+        const plausible = (window as any).plausible;
+        if (typeof plausible === 'function') {
+          plausible(eventName, { props });
+        }
+      }
+
+      // Track newsletter subscriptions
+      document.querySelectorAll('.ck-subscribe-form').forEach((form) => {
+        form.addEventListener('submit', () => {
+          track('Subscribe', { location: window.location.pathname });
+        });
+      });
+
+      // Track copy button clicks (delegated)
+      document.addEventListener('click', (e) => {
+        const btn = (e.target as HTMLElement).closest('.copy-btn');
+        if (btn) {
+          track('Copy Content', { location: window.location.pathname });
+        }
+      });
+
+      // Track search opens
+      window.addEventListener('search:open', () => {
+        track('Open Search');
+      });
     </script>
   </body>
 </html>

@@ -46,10 +46,7 @@ const schema = JSON.stringify({
   <section class="relative pb-24 px-6">
     <div class="max-w-3xl mx-auto">
       <!-- Inputs -->
-      <div
-        class="p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] mb-8"
-        id="calc-card"
-      >
+      <div class="p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] mb-8" id="calc-card">
         <p class="text-xs font-mono text-coral uppercase tracking-widest mb-6">
           // enter your numbers
         </p>
@@ -185,9 +182,7 @@ const schema = JSON.stringify({
         <p class="text-sm font-mono text-coral uppercase tracking-widest mb-4">
           // the math behind saas economics
         </p>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-white">
-          Why These Numbers Matter
-        </h2>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Why These Numbers Matter</h2>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div
@@ -340,7 +335,12 @@ const schema = JSON.stringify({
     metrics.push({
       label: 'LTV / CAC Ratio',
       value: ratio > 0 ? ratio.toFixed(2) + ':1' : 'N/A',
-      detail: ratio >= 3 ? 'Healthy — invest in growth' : ratio >= 2 ? 'Marginal — optimize before scaling' : 'Unsustainable — fix before spending more',
+      detail:
+        ratio >= 3
+          ? 'Healthy — invest in growth'
+          : ratio >= 2
+            ? 'Marginal — optimize before scaling'
+            : 'Unsustainable — fix before spending more',
       status: ratioStatus,
     });
 
@@ -351,7 +351,12 @@ const schema = JSON.stringify({
     metrics.push({
       label: 'CAC Payback Period',
       value: paybackMonths > 0 ? formatNumber(paybackMonths) + ' months' : 'N/A',
-      detail: paybackMonths <= 6 ? 'Cash flow friendly' : paybackMonths <= 12 ? 'Acceptable for bootstrapped SaaS' : 'Too long — you run out of cash before breaking even',
+      detail:
+        paybackMonths <= 6
+          ? 'Cash flow friendly'
+          : paybackMonths <= 12
+            ? 'Acceptable for bootstrapped SaaS'
+            : 'Too long — you run out of cash before breaking even',
       status: paybackStatus,
     });
 
@@ -374,33 +379,49 @@ const schema = JSON.stringify({
     const suggestions: string[] = [];
 
     if (ratio < 2) {
-      suggestions.push('Your LTV/CAC ratio is below 2:1. This is unsustainable. Either reduce CAC (better targeting, higher conversion) or increase LTV (raise prices, reduce churn).');
+      suggestions.push(
+        'Your LTV/CAC ratio is below 2:1. This is unsustainable. Either reduce CAC (better targeting, higher conversion) or increase LTV (raise prices, reduce churn).'
+      );
     } else if (ratio < 3) {
-      suggestions.push('Your ratio is between 2:1 and 3:1. This is workable but not ideal. Focus on improving one metric — either conversion rate or churn — before scaling ad spend.');
+      suggestions.push(
+        'Your ratio is between 2:1 and 3:1. This is workable but not ideal. Focus on improving one metric — either conversion rate or churn — before scaling ad spend.'
+      );
     }
 
     if (paybackMonths > 12) {
-      suggestions.push('Your CAC payback period is over 12 months. For bootstrapped SaaS, aim for under 6 months. Consider annual plans to collect cash upfront.');
+      suggestions.push(
+        'Your CAC payback period is over 12 months. For bootstrapped SaaS, aim for under 6 months. Consider annual plans to collect cash upfront.'
+      );
     }
 
     if (trialRate < 0.03) {
-      suggestions.push('Trial signup rate is below 3%. Your landing page or offer is not compelling enough. Test a stronger headline or a lower-friction CTA.');
+      suggestions.push(
+        'Trial signup rate is below 3%. Your landing page or offer is not compelling enough. Test a stronger headline or a lower-friction CTA.'
+      );
     }
 
-    if (paidRate < 0.10) {
-      suggestions.push('Trial-to-paid conversion is below 10%. The problem is usually onboarding — users do not experience the "aha" moment fast enough. Simplify your trial setup.');
+    if (paidRate < 0.1) {
+      suggestions.push(
+        'Trial-to-paid conversion is below 10%. The problem is usually onboarding — users do not experience the "aha" moment fast enough. Simplify your trial setup.'
+      );
     }
 
     if (churn > 0.08) {
-      suggestions.push('Monthly churn is above 8%. At this rate you are losing almost half your customers every year. Focus on retention before acquisition. Read our churn reduction guide.');
+      suggestions.push(
+        'Monthly churn is above 8%. At this rate you are losing almost half your customers every year. Focus on retention before acquisition. Read our churn reduction guide.'
+      );
     }
 
     if (price < 20) {
-      suggestions.push('Your price is under $20/month. Consider raising it — most indie developers underprice out of fear. Even a $5 increase cuts your customer target by 20%.');
+      suggestions.push(
+        'Your price is under $20/month. Consider raising it — most indie developers underprice out of fear. Even a $5 increase cuts your customer target by 20%.'
+      );
     }
 
     if (suggestions.length === 0) {
-      suggestions.push('Your economics look solid. LTV/CAC is healthy, payback is reasonable, and conversion rates are strong. The next step: scale your best acquisition channel and track these metrics weekly.');
+      suggestions.push(
+        'Your economics look solid. LTV/CAC is healthy, payback is reasonable, and conversion rates are strong. The next step: scale your best acquisition channel and track these metrics weekly.'
+      );
     }
 
     let verdict: 'healthy' | 'warning' | 'danger';
@@ -412,7 +433,17 @@ const schema = JSON.stringify({
       verdict = 'danger';
     }
 
-    return { cac, ltv, ratio, paybackMonths, customersFor1k, monthlyCustomers: customers, metrics, suggestions, verdict };
+    return {
+      cac,
+      ltv,
+      ratio,
+      paybackMonths,
+      customersFor1k,
+      monthlyCustomers: customers,
+      metrics,
+      suggestions,
+      verdict,
+    };
   }
 
   function getVerdictStyles(verdict: 'healthy' | 'warning' | 'danger') {
@@ -463,9 +494,14 @@ const schema = JSON.stringify({
     }
 
     const styles = getVerdictStyles(result.verdict);
-    verdictCard.className = 'p-8 rounded-2xl border text-center transition-all duration-300 ' + styles.border + ' ' + styles.bg;
+    verdictCard.className =
+      'p-8 rounded-2xl border text-center transition-all duration-300 ' +
+      styles.border +
+      ' ' +
+      styles.bg;
     verdictLabel.textContent = styles.label;
-    verdictLabel.className = 'text-sm font-mono uppercase tracking-widest mb-3 ' + styles.labelColor;
+    verdictLabel.className =
+      'text-sm font-mono uppercase tracking-widest mb-3 ' + styles.labelColor;
     verdictTitle.textContent = styles.title;
     verdictTitle.className = 'text-3xl sm:text-4xl font-extrabold mb-2 ' + styles.titleColor;
     verdictDesc.textContent = styles.desc;
@@ -473,10 +509,18 @@ const schema = JSON.stringify({
     metricsGrid.innerHTML = result.metrics
       .map(
         (m) =>
-          '<div class="p-5 rounded-xl border ' + getMetricColor(m.status) + ' transition-all duration-300">' +
-          '<p class="text-xs text-gray-500 mb-1">' + m.label + '</p>' +
-          '<p class="text-2xl font-extrabold text-white mb-1">' + m.value + '</p>' +
-          '<p class="text-xs text-gray-400">' + m.detail + '</p>' +
+          '<div class="p-5 rounded-xl border ' +
+          getMetricColor(m.status) +
+          ' transition-all duration-300">' +
+          '<p class="text-xs text-gray-500 mb-1">' +
+          m.label +
+          '</p>' +
+          '<p class="text-2xl font-extrabold text-white mb-1">' +
+          m.value +
+          '</p>' +
+          '<p class="text-xs text-gray-400">' +
+          m.detail +
+          '</p>' +
           '</div>'
       )
       .join('');
@@ -486,7 +530,9 @@ const schema = JSON.stringify({
         (s) =>
           '<li class="flex items-start gap-3">' +
           '<span class="mt-1 w-1.5 h-1.5 rounded-full bg-coral shrink-0"></span>' +
-          '<span class="text-gray-300 text-sm leading-relaxed">' + s + '</span>' +
+          '<span class="text-gray-300 text-sm leading-relaxed">' +
+          s +
+          '</span>' +
           '</li>'
       )
       .join('');

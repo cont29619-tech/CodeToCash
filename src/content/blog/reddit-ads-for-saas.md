@@ -4,7 +4,8 @@ description: 'A tactical guide to advertising your SaaS on Reddit. Subreddit tar
 pubDate: 2026-04-30
 author: 'CodeToCash Team'
 category: 'ads'
-tags: ['reddit ads', 'saas marketing', 'paid advertising', 'community marketing', 'developer marketing']
+tags:
+  ['reddit ads', 'saas marketing', 'paid advertising', 'community marketing', 'developer marketing']
 readingTime: '12 min read'
 featured: false
 draft: false

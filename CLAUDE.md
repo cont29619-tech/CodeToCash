@@ -154,7 +154,7 @@ Dedicated subscription page. Sections:
 
 1. **HERO** — "One Marketing Tactic. Every Week. Built for Developers." — Large heading with ConvertKit form
 2. **WHAT YOU GET** — Five benefit cards with SVG icons
-3. **BUILDING IN PUBLIC** — Honest stats section (42 articles, 8 of 8 playbooks live)
+3. **BUILDING IN PUBLIC** — Honest stats section (47 articles, 8 of 8 playbooks live)
 4. **SAMPLE ISSUE** — Email client UI mockup showing a real newsletter example
 5. **FINAL CTA** — Second signup form
 
@@ -190,7 +190,7 @@ Six static category pages pre-rendered at build time via `getStaticPaths()`. Cat
 
 **Category metadata** (title, description, h1, subtitle) is defined as the `categoryMeta` const at the top of `blog/[category].astro`. All 6 URLs are auto-included in the sitemap via `@astrojs/sitemap`.
 
-Current post counts per category: strategy (15), copywriting (7), email (5), analytics (5), fundamentals (4), ads (6).
+Current post counts per category: strategy (15), copywriting (8), email (6), analytics (6), fundamentals (6), ads (6).
 
 ### `/blog/[slug]` — blog/[...slug].astro (Blog Post)
 
@@ -234,6 +234,7 @@ Curated tool reviews for developers. Features:
 ### `/tools/headline-grader` — tools/headline-grader.astro (Interactive Tool)
 
 Free headline scoring tool. Paste a headline, get a 0-100 score with breakdowns for:
+
 - Length (optimal: 6-12 words)
 - Power words (presence of high-emotion verbs)
 - Specificity (numbers, metrics, timeframes)
@@ -245,6 +246,7 @@ Built with vanilla JS, no framework. Includes a rewrite suggestion engine and sh
 ### `/tools/email-subject-line-tester` — tools/email-subject-line-tester.astro (Interactive Tool)
 
 Free email subject line tester. Paste a subject line, get a spam score and open-rate prediction with breakdowns for:
+
 - Length (mobile truncation at ~40 chars, desktop at ~60)
 - Spam trigger words (FREE, URGENT, ACT NOW, etc.)
 - Front-loaded value (hook in first 20 characters)
@@ -258,6 +260,7 @@ Built with vanilla JS, no framework. Links to the email subject line formulas gu
 ### `/tools/cac-ltv-calculator` — tools/cac-ltv-calculator.astro (Interactive Tool)
 
 Free SaaS economics calculator. Enter 6 numbers and get:
+
 - **Customer Acquisition Cost (CAC)** — cost per paying customer
 - **Lifetime Value (LTV)** — revenue per customer before churn
 - **LTV/CAC Ratio** — the golden metric (healthy ≥ 3:1)
@@ -602,17 +605,17 @@ async function handleSubscribe(form, errorEl) {
 
 All subscribe forms use the `NewsletterForm.astro` component, which emits the `ck-subscribe-form` class.
 
-| File                    | Forms                           | Component Size |
-| ----------------------- | ------------------------------- | -------------- |
-| `newsletter.astro`      | 2 (hero + CTA)                  | `lg`           |
-| `drm-101.astro`         | 8 inline CTAs + 1 bottom        | `md`           |
-| `index.astro`           | 1 newsletter section            | `lg`           |
-| `Footer.astro`          | 1 "Join" form                   | `md`           |
+| File                    | Forms                           | Component Size   |
+| ----------------------- | ------------------------------- | ---------------- |
+| `newsletter.astro`      | 2 (hero + CTA)                  | `lg`             |
+| `drm-101.astro`         | 8 inline CTAs + 1 bottom        | `md`             |
+| `index.astro`           | 1 newsletter section            | `lg`             |
+| `Footer.astro`          | 1 "Join" form                   | `md`             |
 | `BlogLayout.astro`      | 2 (sidebar widget + bottom CTA) | `compact` + `md` |
-| `PlaybookLayout.astro`  | 1 bottom CTA                    | `md`           |
-| `tools/index.astro`     | 1 "Get Recommendations" form    | `md`           |
-| `playbooks/index.astro` | 1 "Notify Me" form              | `md`           |
-| `404.astro`             | 1 subscribe form                | `md`           |
+| `PlaybookLayout.astro`  | 1 bottom CTA                    | `md`             |
+| `tools/index.astro`     | 1 "Get Recommendations" form    | `md`             |
+| `playbooks/index.astro` | 1 "Notify Me" form              | `md`             |
+| `404.astro`             | 1 subscribe form                | `md`             |
 
 ### Form handler
 
@@ -647,51 +650,56 @@ z.object({
 });
 ```
 
-All 42 published blog posts include `faq` frontmatter with 4–5 Q&A pairs each.
+All 47 published blog posts include `faq` frontmatter with 4–5 Q&A pairs each.
 
 ### Published Blog Posts
 
-| Slug                                               | Title                                                                           | Category     | Featured |
-| -------------------------------------------------- | ------------------------------------------------------------------------------- | ------------ | -------- |
-| `what-is-direct-response-marketing-for-developers` | "What Is Direct Response Marketing? A Vibe Coder's Guide"                       | fundamentals | ⭐ yes   |
-| `copywriting-frameworks-for-developers`            | "5 Copywriting Tips for Developers (With Fill-in-the-Blank Templates)"          | copywriting  | no       |
-| `marketing-for-vibe-coders`                        | "Marketing for Vibe Coders: Sell What You Build"                                | strategy     | no       |
-| `drm-funnel-explained`                             | "The DRM Funnel Explained: Think of It as Your Sales API"                       | fundamentals | no       |
-| `pas-copywriting-framework`                        | "PAS Copywriting Framework: The Simplest Formula That Converts"                 | copywriting  | no       |
-| `why-developer-products-fail-marketing`            | "Why Most Developer Products Fail (And How DRM Fixes It)"                       | strategy     | no       |
-| `direct-response-vs-brand-marketing`               | "Direct Response vs Brand Marketing for Developers"                             | fundamentals | no       |
-| `saas-landing-page-copywriting`                    | "SaaS Landing Page Copywriting: 10-Section Blueprint + Templates"               | copywriting  | no       |
-| `email-marketing-for-saas-beginners`               | "SaaS Email Marketing for Beginners — From Zero to Automated Sales"             | email        | no       |
-| `saas-pricing-strategy`                            | "SaaS Pricing Strategy for Developers: Full Guide"                              | strategy     | no       |
-| `sell-software-built-with-ai`                      | "How to Sell AI-Built Software: Vibe Coder's Guide"                             | strategy     | no       |
-| `building-in-public-marketing`                     | "Building in Public as a Marketing Strategy"                                    | strategy     | no       |
-| `aida-copywriting-formula-landing-page`            | "AIDA Formula for Developer Landing Pages: A Practical Guide"                   | copywriting  | no       |
-| `headline-copywriting-templates`                   | "How to Write Headlines That Convert: 30 Templates for Dev Tools"               | copywriting  | no       |
-| `google-ads-for-saas-beginners`                    | "How to Run Google Ads for Your SaaS on a $100 Budget"                          | ads          | no       |
-| `email-sequences-for-saas`                         | "7 Email Sequences That Sell SaaS Products on Autopilot"                        | email        | no       |
-| `cold-email-templates-saas`                        | "Writing Cold Emails That Get Replies: Templates for Dev Tools"                 | email        | no       |
-| `ab-testing-landing-page-guide`                    | "The Developer's Guide to A/B Testing Landing Pages"                            | analytics    | no       |
-| `customer-acquisition-cost-saas`                   | "Customer Acquisition Cost: What Every Developer Should Know"                   | analytics    | no       |
-| `marketing-tools-for-indie-developers`             | "Marketing Stack for Indie Developers: The Complete Tool Guide"                 | strategy     | no       |
-| `product-hunt-launch-strategy`                     | "How to Launch on Product Hunt: DRM Edition"                                    | strategy     | no       |
-| `twitter-marketing-for-developers`                 | "How to Use Twitter/X to Market Your Developer Product"                         | strategy     | no       |
-| `value-proposition-template-saas`                  | "How to Write a Value Proposition for Your Dev Tool"                            | fundamentals | no       |
-| `pricing-psychology-saas`                          | "The Psychology of SaaS Pricing: Why $49 Beats $50"                             | strategy     | no       |
-| `lead-magnet-ideas-for-saas`                       | "How to Create a Lead Magnet Developers Actually Want"                          | strategy     | no       |
-| `reddit-marketing-strategy-developers`             | "Reddit Marketing for Developers (Without Getting Banned)"                      | strategy     | no       |
-| `0-to-1k-mrr-indie-developer`                      | "From $0 to $1K MRR: A Direct Response Marketing Roadmap"                       | strategy     | no       |
-| `case-study-copywriting-saas`                      | "How to Write Case Studies That Sell Your Dev Tool"                             | copywriting  | no       |
-| `sales-page-conversion-optimization`               | "How to Create a Sales Page That Converts at 5%+"                               | copywriting  | no       |
-| `retargeting-ads-for-saas-beginners`               | "Retargeting Ads for Developer Products: Beginner's Guide"                      | ads          | no       |
-| `seo-for-developer-blogs`                          | "SEO for Developer Blogs: Rank Without Being an SEO Expert"                     | analytics    | no       |
-| `developer-newsletter-growth`                      | "Growing a Developer Newsletter to 1,000 Subscribers"                           | email        | no       |
-| `email-subject-line-formulas`                      | "Email Subject Line Formulas That Get 40%+ Open Rates"                          | email        | no       |
-| `affiliate-program-saas-setup`                     | "Affiliate Programs for Dev Tools: Complete Setup Guide"                        | strategy     | no       |
-| `marketing-automation-solo-developer`              | "Marketing Automation for Solo Developers"                                      | strategy     | no       |
-| `reduce-churn-saas-tactics`                        | "Churn Reduction: DRM Tactics to Keep Customers"                                | analytics    | no       |
+| Slug                                               | Title                                                                  | Category     | Featured |
+| -------------------------------------------------- | ---------------------------------------------------------------------- | ------------ | -------- |
+| `what-is-direct-response-marketing-for-developers` | "What Is Direct Response Marketing? A Vibe Coder's Guide"              | fundamentals | ⭐ yes   |
+| `copywriting-frameworks-for-developers`            | "5 Copywriting Tips for Developers (With Fill-in-the-Blank Templates)" | copywriting  | no       |
+| `marketing-for-vibe-coders`                        | "Marketing for Vibe Coders: Sell What You Build"                       | strategy     | no       |
+| `drm-funnel-explained`                             | "The DRM Funnel Explained: Think of It as Your Sales API"              | fundamentals | no       |
+| `pas-copywriting-framework`                        | "PAS Copywriting Framework: The Simplest Formula That Converts"        | copywriting  | no       |
+| `why-developer-products-fail-marketing`            | "Why Most Developer Products Fail (And How DRM Fixes It)"              | strategy     | no       |
+| `direct-response-vs-brand-marketing`               | "Direct Response vs Brand Marketing for Developers"                    | fundamentals | no       |
+| `saas-landing-page-copywriting`                    | "SaaS Landing Page Copywriting: 10-Section Blueprint + Templates"      | copywriting  | no       |
+| `email-marketing-for-saas-beginners`               | "SaaS Email Marketing for Beginners — From Zero to Automated Sales"    | email        | no       |
+| `saas-pricing-strategy`                            | "SaaS Pricing Strategy for Developers: Full Guide"                     | strategy     | no       |
+| `sell-software-built-with-ai`                      | "How to Sell AI-Built Software: Vibe Coder's Guide"                    | strategy     | no       |
+| `building-in-public-marketing`                     | "Building in Public as a Marketing Strategy"                           | strategy     | no       |
+| `aida-copywriting-formula-landing-page`            | "AIDA Formula for Developer Landing Pages: A Practical Guide"          | copywriting  | no       |
+| `headline-copywriting-templates`                   | "How to Write Headlines That Convert: 30 Templates for Dev Tools"      | copywriting  | no       |
+| `google-ads-for-saas-beginners`                    | "How to Run Google Ads for Your SaaS on a $100 Budget"                 | ads          | no       |
+| `email-sequences-for-saas`                         | "7 Email Sequences That Sell SaaS Products on Autopilot"               | email        | no       |
+| `cold-email-templates-saas`                        | "Writing Cold Emails That Get Replies: Templates for Dev Tools"        | email        | no       |
+| `ab-testing-landing-page-guide`                    | "The Developer's Guide to A/B Testing Landing Pages"                   | analytics    | no       |
+| `customer-acquisition-cost-saas`                   | "Customer Acquisition Cost: What Every Developer Should Know"          | analytics    | no       |
+| `marketing-tools-for-indie-developers`             | "Marketing Stack for Indie Developers: The Complete Tool Guide"        | strategy     | no       |
+| `product-hunt-launch-strategy`                     | "How to Launch on Product Hunt: DRM Edition"                           | strategy     | no       |
+| `twitter-marketing-for-developers`                 | "How to Use Twitter/X to Market Your Developer Product"                | strategy     | no       |
+| `value-proposition-template-saas`                  | "How to Write a Value Proposition for Your Dev Tool"                   | fundamentals | no       |
+| `pricing-psychology-saas`                          | "The Psychology of SaaS Pricing: Why $49 Beats $50"                    | strategy     | no       |
+| `lead-magnet-ideas-for-saas`                       | "How to Create a Lead Magnet Developers Actually Want"                 | strategy     | no       |
+| `reddit-marketing-strategy-developers`             | "Reddit Marketing for Developers (Without Getting Banned)"             | strategy     | no       |
+| `0-to-1k-mrr-indie-developer`                      | "From $0 to $1K MRR: A Direct Response Marketing Roadmap"              | strategy     | no       |
+| `case-study-copywriting-saas`                      | "How to Write Case Studies That Sell Your Dev Tool"                    | copywriting  | no       |
+| `sales-page-conversion-optimization`               | "How to Create a Sales Page That Converts at 5%+"                      | copywriting  | no       |
+| `retargeting-ads-for-saas-beginners`               | "Retargeting Ads for Developer Products: Beginner's Guide"             | ads          | no       |
+| `seo-for-developer-blogs`                          | "SEO for Developer Blogs: Rank Without Being an SEO Expert"            | analytics    | no       |
+| `developer-newsletter-growth`                      | "Growing a Developer Newsletter to 1,000 Subscribers"                  | email        | no       |
+| `email-subject-line-formulas`                      | "Email Subject Line Formulas That Get 40%+ Open Rates"                 | email        | no       |
+| `affiliate-program-saas-setup`                     | "Affiliate Programs for Dev Tools: Complete Setup Guide"               | strategy     | no       |
+| `marketing-automation-solo-developer`              | "Marketing Automation for Solo Developers"                             | strategy     | no       |
+| `reduce-churn-saas-tactics`                        | "Churn Reduction: DRM Tactics to Keep Customers"                       | analytics    | no       |
 
-| `saas-free-trial-optimization`                     | "Free Trial Optimization: Convert More Trialers to Paying Customers"            | analytics    | no       |
-| `content-repurposing-for-developers`               | "Content Repurposing: Turn One Blog Post Into 10 Pieces of Marketing"           | strategy     | no       |
+| `saas-free-trial-optimization` | "Free Trial Optimization: Convert More Trialers to Paying Customers" | analytics | no |
+| `content-repurposing-for-developers` | "Content Repurposing: Turn One Blog Post Into 10 Pieces of Marketing" | strategy | no |
+| `jobs-to-be-done-framework-developers` | "Jobs-to-be-Done Framework for Developer Products" | fundamentals | no |
+| `freemium-vs-free-trial-vs-demo` | "Freemium vs Free Trial vs Demo: Which Model Converts Best?" | fundamentals | no |
+| `developer-onboarding-email-sequence` | "The Developer Onboarding Email Sequence (With Templates)" | email | no |
+| `write-vs-page-competitor-traffic` | "How to Write a VS Page That Steals Competitor Traffic" | copywriting | no |
+| `cohort-analysis-for-developers` | "Cohort Analysis for Developers: Track Retention Without a Data Team" | analytics | no |
 
 ### Playbooks Status
 
@@ -710,34 +718,34 @@ All 42 published blog posts include `faq` frontmatter with 4–5 Q&A pairs each.
 
 ## Key Files Reference
 
-| File                               | Purpose                                                                                                                 |
-| ---------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| `astro.config.mjs`                 | Site URL, Vite plugins (Tailwind), sitemap integration                                                                  |
-| `src/content.config.ts`            | Blog collection Zod schema                                                                                              |
-| `src/styles/global.css`            | Tailwind v4 import, theme tokens, all custom animations                                                                 |
-| `src/components/Navigation.astro`  | Top nav with mobile hamburger menu                                                                                      |
-| `src/components/Footer.astro`      | Footer with nav columns and newsletter form                                                                             |
-| `src/layouts/Layout.astro`         | Base HTML shell (SEO, fonts, nav, footer, back-to-top, global CK handler)                                               |
-| `src/layouts/BlogLayout.astro`     | Blog article layout with TOC sidebar                                                                                    |
-| `src/layouts/PlaybookLayout.astro` | Playbook layout with numbered section sidebar                                                                           |
-| `src/pages/blog/[category].astro`  | Six SEO category pages (fundamentals, copywriting, email, ads, analytics, strategy)                                     |
-| `src/components/NewsletterForm.astro` | Reusable subscribe form (3 size variants: lg, md, compact)                                                           |
-| `src/components/SearchModal.astro` | Site-wide search modal (Cmd+K / Ctrl+K), loaded in Layout.astro                                                         |
-| `src/pages/rss.xml.ts`            | RSS feed endpoint — auto-generates from published blog posts                                                            |
-| `src/pages/search-index.json.ts`   | JSON search index endpoint for blogs, playbooks, and pages                                                              |
-| `src/pages/og/blog/[...slug].png.ts` | Build-time OG image generation for blog posts (Satori + resvg)                                                        |
-| `src/pages/og/playbooks/[...slug].png.ts` | Build-time OG image generation for playbooks                                                                      |
-| `src/pages/tools/headline-grader.astro` | Interactive headline scoring tool with shareable score cards                                                    |
-| `src/pages/tools/email-subject-line-tester.astro` | Interactive email subject line tester with spam score and open-rate prediction                          |
-| `src/pages/tools/cac-ltv-calculator.astro` | Interactive SaaS economics calculator with CAC, LTV, payback period, and verdict                          |
-| `src/utils/categoryColors.ts`      | Shared blog category color + label maps (single source of truth)                                                        |
-| `src/utils/getRelatedPosts.ts`     | Priority-based related posts algorithm: same category → tag overlap → recency fallback. Used by `blog/[...slug].astro`. |
-| `src/utils/ogImageRenderer.ts`     | Shared Satori/resvg rendering functions for OG images                                                                   |
-| `public/drm-cheatsheet.pdf`        | Free cheatsheet PDF (~12KB), downloaded from `/welcome`                                                                 |
-| `public/og-default.png`            | Default OG image for social sharing                                                                                     |
-| `.env`                             | `PUBLIC_CONVERTKIT_API_KEY` — never commit, set in Vercel dashboard                                                     |
-| `.env.example`                     | Reference template for required env vars — safe to commit                                                               |
-| `.prettierrc`                      | Prettier config (single quotes, 2-space indent, 100 char width, astro plugin)                                           |
+| File                                              | Purpose                                                                                                                 |
+| ------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| `astro.config.mjs`                                | Site URL, Vite plugins (Tailwind), sitemap integration                                                                  |
+| `src/content.config.ts`                           | Blog collection Zod schema                                                                                              |
+| `src/styles/global.css`                           | Tailwind v4 import, theme tokens, all custom animations                                                                 |
+| `src/components/Navigation.astro`                 | Top nav with mobile hamburger menu                                                                                      |
+| `src/components/Footer.astro`                     | Footer with nav columns and newsletter form                                                                             |
+| `src/layouts/Layout.astro`                        | Base HTML shell (SEO, fonts, nav, footer, back-to-top, global CK handler)                                               |
+| `src/layouts/BlogLayout.astro`                    | Blog article layout with TOC sidebar                                                                                    |
+| `src/layouts/PlaybookLayout.astro`                | Playbook layout with numbered section sidebar                                                                           |
+| `src/pages/blog/[category].astro`                 | Six SEO category pages (fundamentals, copywriting, email, ads, analytics, strategy)                                     |
+| `src/components/NewsletterForm.astro`             | Reusable subscribe form (3 size variants: lg, md, compact)                                                              |
+| `src/components/SearchModal.astro`                | Site-wide search modal (Cmd+K / Ctrl+K), loaded in Layout.astro                                                         |
+| `src/pages/rss.xml.ts`                            | RSS feed endpoint — auto-generates from published blog posts                                                            |
+| `src/pages/search-index.json.ts`                  | JSON search index endpoint for blogs, playbooks, and pages                                                              |
+| `src/pages/og/blog/[...slug].png.ts`              | Build-time OG image generation for blog posts (Satori + resvg)                                                          |
+| `src/pages/og/playbooks/[...slug].png.ts`         | Build-time OG image generation for playbooks                                                                            |
+| `src/pages/tools/headline-grader.astro`           | Interactive headline scoring tool with shareable score cards                                                            |
+| `src/pages/tools/email-subject-line-tester.astro` | Interactive email subject line tester with spam score and open-rate prediction                                          |
+| `src/pages/tools/cac-ltv-calculator.astro`        | Interactive SaaS economics calculator with CAC, LTV, payback period, and verdict                                        |
+| `src/utils/categoryColors.ts`                     | Shared blog category color + label maps (single source of truth)                                                        |
+| `src/utils/getRelatedPosts.ts`                    | Priority-based related posts algorithm: same category → tag overlap → recency fallback. Used by `blog/[...slug].astro`. |
+| `src/utils/ogImageRenderer.ts`                    | Shared Satori/resvg rendering functions for OG images                                                                   |
+| `public/drm-cheatsheet.pdf`                       | Free cheatsheet PDF (~12KB), downloaded from `/welcome`                                                                 |
+| `public/og-default.png`                           | Default OG image for social sharing                                                                                     |
+| `.env`                                            | `PUBLIC_CONVERTKIT_API_KEY` — never commit, set in Vercel dashboard                                                     |
+| `.env.example`                                    | Reference template for required env vars — safe to commit                                                               |
+| `.prettierrc`                                     | Prettier config (single quotes, 2-space indent, 100 char width, astro plugin)                                           |
 
 ---
 
@@ -824,9 +832,11 @@ All 42 published blog posts include `faq` frontmatter with 4–5 Q&A pairs each.
 8. ~~**Newsletter form duplication**~~ — extracted into `NewsletterForm.astro` component with 3 size variants ✅
 9. ~~**2 draft posts ready for review**~~ — both published (pubDate set to 2026-04-25) ✅
 
+10. ~~**Ads category underrepresented**~~ — expanded from 2 to 6 posts with dedicated guides for Twitter, Reddit, LinkedIn, and ad copywriting templates. All categories now have 6+ posts. ✅
+
 ### Open
 
-10. ~~**Ads category underrepresented**~~ — expanded from 2 to 6 posts with dedicated guides for Twitter, Reddit, LinkedIn, and ad copywriting templates. Now on par with email (5) and analytics (5).
+No open issues at this time.
 
 ---
 

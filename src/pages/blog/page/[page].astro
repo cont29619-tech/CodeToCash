@@ -1,0 +1,143 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import NewsletterForm from '../../../components/NewsletterForm.astro';
+import BlogPostGrid from '../../../components/BlogPostGrid.astro';
+import { getCollection } from 'astro:content';
+import { categoryLabels } from '../../../utils/categoryColors';
+
+export async function getStaticPaths() {
+  const allPosts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
+    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+  );
+  const POSTS_PER_PAGE = 12;
+  const totalPages = Math.ceil(allPosts.length / POSTS_PER_PAGE);
+
+  return Array.from({ length: totalPages - 1 }, (_, i) => {
+    const page = i + 2;
+    const start = (page - 1) * POSTS_PER_PAGE;
+    const end = start + POSTS_PER_PAGE;
+    return {
+      params: { page: String(page) },
+      props: {
+        posts: allPosts.slice(start, end),
+        page,
+        totalPages,
+        totalPosts: allPosts.length,
+      },
+    };
+  });
+}
+
+const { posts, page, totalPages, totalPosts } = Astro.props;
+
+const title = `Blog — Page ${page} | CodeToCash`;
+const description = `Page ${page} of ${totalPages}. Actionable marketing articles for developers who ship.`;
+
+const categories = [
+  { id: 'all', label: 'All' },
+  { id: 'fundamentals', label: 'Fundamentals' },
+  { id: 'copywriting', label: 'Copywriting' },
+  { id: 'email', label: 'Email' },
+  { id: 'ads', label: 'Ads' },
+  { id: 'analytics', label: 'Analytics' },
+  { id: 'strategy', label: 'Strategy' },
+];
+---
+
+<Layout title={title} description={description}>
+  <!-- Hero -->
+  <section class="relative overflow-hidden py-20 md:py-24">
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute top-1/3 right-1/4 w-80 h-80 bg-coral/5 rounded-full blur-3xl"></div>
+    </div>
+    <div class="relative max-w-3xl mx-auto px-6 text-center">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
+        Blog — Marketing Tactics for <span class="text-coral">Vibe Coders</span>
+      </h1>
+      <p class="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
+        Actionable articles on direct response marketing, copywriting, and growth strategies for
+        developers who ship.
+      </p>
+    </div>
+  </section>
+
+  <!-- Browse by Category -->
+  <section class="max-w-5xl mx-auto px-6 mb-12">
+    <p class="text-center text-sm font-mono text-coral uppercase tracking-widest mb-4">
+      // browse by category
+    </p>
+    <nav class="flex flex-wrap gap-2 justify-center" aria-label="Blog categories">
+      {
+        categories.map((cat) => (
+          <a
+            href={cat.id === 'all' ? '/blog' : `/blog/${cat.id}`}
+            class={`px-4 py-2 rounded-xl text-sm font-medium border transition-all ${cat.id === 'all' ? 'bg-coral/10 text-coral border-coral/20' : 'bg-white/5 text-gray-400 border-white/10 hover:text-white hover:border-white/20'}`}
+          >
+            {cat.label}
+          </a>
+        ))
+      }
+    </nav>
+  </section>
+
+  <div class="max-w-5xl mx-auto px-6 pb-24">
+    <p class="text-sm text-gray-500 mb-6 text-center">
+      Showing {posts.length} of {totalPosts} articles
+    </p>
+
+    <!-- Post Grid -->
+    <BlogPostGrid posts={posts} showFeatured={false} />
+
+    <!-- Pagination -->
+    <nav aria-label="Blog pagination" class="mt-12 flex items-center justify-center gap-2">
+      {
+        page > 2 ? (
+          <a
+            href={`/blog/page/${page - 1}`}
+            class="px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-gray-300 text-sm font-medium hover:bg-white/10 hover:text-white hover:border-white/20 transition-all"
+            aria-label="Previous page"
+          >
+            ← Prev
+          </a>
+        ) : (
+          <a
+            href="/blog"
+            class="px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-gray-300 text-sm font-medium hover:bg-white/10 hover:text-white hover:border-white/20 transition-all"
+            aria-label="Previous page"
+          >
+            ← Prev
+          </a>
+        )
+      }
+      <span class="text-sm text-gray-500 mx-2">
+        Page {page} of {totalPages}
+      </span>
+      {
+        page < totalPages && (
+          <a
+            href={`/blog/page/${page + 1}`}
+            class="px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-gray-300 text-sm font-medium hover:bg-white/10 hover:text-white hover:border-white/20 transition-all"
+            aria-label="Next page"
+          >
+            Next →
+          </a>
+        )
+      }
+    </nav>
+
+    <!-- Newsletter CTA -->
+    <div
+      class="mt-16 p-8 md:p-10 bg-gradient-to-br from-coral/10 to-deep-blue/30 border border-coral/20 rounded-2xl text-center"
+    >
+      <p class="text-sm font-mono text-coral uppercase tracking-widest mb-3">
+        // never miss a post
+      </p>
+      <h3 class="text-2xl font-bold text-white mb-3">Get New Articles in Your Inbox</h3>
+      <p class="text-gray-400 mb-6 max-w-md mx-auto">
+        One email every Tuesday with actionable marketing tactics for developers. Plus the free DRM
+        Cheatsheet — every framework and template on one page.
+      </p>
+      <NewsletterForm size="md" buttonText="Subscribe Free" class="max-w-md mx-auto" />
+    </div>
+  </div>
+</Layout>
