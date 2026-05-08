@@ -1,0 +1,346 @@
+---
+import Layout from '../layouts/Layout.astro';
+import NewsletterForm from '../components/NewsletterForm.astro';
+
+const title = 'Start Here — Your First 30 Minutes | CodeToCash';
+const description =
+  'New to CodeToCash? Follow this step-by-step path to learn direct response marketing, download free templates, and start selling what you build.';
+
+const steps = [
+  {
+    number: 1,
+    title: 'Read the DRM 101 Guide',
+    duration: '45 min',
+    description:
+      'The complete foundation. Learn what direct response marketing is, how the funnel works, and why developers are naturally good at it.',
+    cta: { text: 'Start DRM 101', href: '/drm-101' },
+    icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>`,
+  },
+  {
+    number: 2,
+    title: 'Try a Free Tool',
+    duration: '5 min',
+    description:
+      'See DRM in action. Grade a headline, test an email subject line, or calculate your SaaS economics. No signup required.',
+    cta: { text: 'Browse Tools', href: '/tools' },
+    icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>`,
+  },
+  {
+    number: 3,
+    title: 'Download the DRM Cheatsheet',
+    duration: 'Instant',
+    description:
+      'One page with every framework, formula, and fill-in-the-blank template from the guide. Print it, bookmark it, tape it next to your monitor.',
+    cta: { text: 'Get the Cheatsheet', href: '/newsletter' },
+    icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>`,
+  },
+  {
+    number: 4,
+    title: 'Read the 5 Most Popular Posts',
+    duration: '30 min',
+    description:
+      'The posts other developers bookmarked. Copywriting frameworks, landing page blueprints, email sequences, and pricing psychology.',
+    cta: { text: 'Read the Blog', href: '/blog' },
+    icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg>`,
+  },
+  {
+    number: 5,
+    title: 'Get One Tactic Every Week',
+    duration: '2 min / week',
+    description:
+      'Subscribe to the newsletter. One actionable DRM tactic every Tuesday, with a template you can use the same day.',
+    cta: { text: 'Subscribe Free', href: '/newsletter' },
+    icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>`,
+  },
+];
+
+const popularPosts = [
+  {
+    title: '5 Copywriting Tips for Developers (With Fill-in-the-Blank Templates)',
+    slug: 'copywriting-frameworks-for-developers',
+    category: 'copywriting',
+    readingTime: '8 min read',
+  },
+  {
+    title: 'SaaS Landing Page Copywriting: 10-Section Blueprint + Templates',
+    slug: 'saas-landing-page-copywriting',
+    category: 'copywriting',
+    readingTime: '12 min read',
+  },
+  {
+    title: 'SaaS Email Marketing for Beginners — From Zero to Automated Sales',
+    slug: 'email-marketing-for-saas-beginners',
+    category: 'email',
+    readingTime: '10 min read',
+  },
+  {
+    title: 'The DRM Funnel Explained: Think of It as Your Sales API',
+    slug: 'drm-funnel-explained',
+    category: 'fundamentals',
+    readingTime: '7 min read',
+  },
+  {
+    title: 'SaaS Pricing Strategy for Developers: Full Guide',
+    slug: 'saas-pricing-strategy',
+    category: 'strategy',
+    readingTime: '11 min read',
+  },
+];
+
+const faq = [
+  {
+    question: 'How long does it take to go through this path?',
+    answer:
+      'About 90 minutes total if you do it in one sitting. But most people spread it across a few days. Step 1 (DRM 101) is the longest at 45 minutes. The rest are quick wins.',
+  },
+  {
+    question: 'Do I need a marketing background?',
+    answer:
+      'No. Everything on this site is written for developers who have never done marketing before. We use developer metaphors — APIs, functions, pipelines, debugging — to explain marketing concepts.',
+  },
+  {
+    question: 'Is everything really free?',
+    answer:
+      'Yes. All articles, playbooks, tools, and templates are free. The newsletter is free. The only thing we ask is your email address if you want the cheatsheet and weekly updates.',
+  },
+  {
+    question: 'What if I already have a product?',
+    answer:
+      'Skip to Step 2 (Tools) and Step 4 (Popular Posts). The headline grader and email subject line tester will give you immediate improvements you can ship today.',
+  },
+];
+---
+
+<Layout title={title} description={description}>
+  <!-- Hero -->
+  <section class="relative overflow-hidden py-20 md:py-28">
+    <div class="absolute inset-0 pointer-events-none">
+      <div
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-coral/5 rounded-full blur-[120px]"
+      >
+      </div>
+    </div>
+    <div class="relative max-w-3xl mx-auto px-6 text-center">
+      <p class="text-sm font-mono text-coral uppercase tracking-widest mb-4">// new here?</p>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
+        Start Here.<br />
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-coral">
+          Sell What You Build.
+        </span>
+      </h1>
+      <p class="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
+        A 5-step path to go from "I built something" to "I have paying customers." No marketing
+        degree required. About 90 minutes total.
+      </p>
+      <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a
+          href="#the-path"
+          class="px-8 py-4 bg-coral text-white text-lg font-semibold rounded-lg hover:bg-coral/90 hover:-translate-y-1 transition-all duration-300 shadow-lg shadow-coral/20"
+        >
+          Start the Path
+        </a>
+        <a
+          href="/drm-101"
+          class="px-8 py-4 border border-white/20 text-gray-300 text-lg font-medium rounded-lg hover:border-coral/40 hover:text-white hover:-translate-y-1 transition-all duration-300"
+        >
+          Skip to DRM 101
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Path -->
+  <section id="the-path" class="relative px-4 py-24 sm:py-32 border-t border-white/[0.02]">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-16 section-animate">
+        <p class="text-sm font-mono text-coral uppercase tracking-widest mb-4">// the path</p>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight">
+          5 Steps to Your First Sale
+        </h2>
+        <p class="mt-4 text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed">
+          Do them in order, or skip around. Each step builds on the last.
+        </p>
+      </div>
+
+      <div class="space-y-8">
+        {
+          steps.map((step) => (
+            <div class="group relative flex flex-col sm:flex-row gap-6 p-6 md:p-8 rounded-2xl bg-navy-light border border-white/[0.06] hover:border-coral/30 hover:bg-white/[0.03] hover:-translate-y-1 hover:shadow-lg hover:shadow-coral/10 transition-all duration-300 section-animate">
+              <div class="shrink-0">
+                <span class="flex items-center justify-center w-14 h-14 rounded-xl bg-coral/10 text-coral font-mono font-bold text-xl border border-coral/20 group-hover:bg-coral/20 transition-colors">
+                  {step.number}
+                </span>
+              </div>
+              <div class="flex-1 min-w-0">
+                <div class="flex flex-wrap items-center gap-3 mb-2">
+                  <h3 class="text-xl font-bold text-white group-hover:text-coral transition-colors leading-snug">
+                    {step.title}
+                  </h3>
+                  <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-xs font-medium bg-white/5 text-gray-400 border border-white/10">
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+                    {step.duration}
+                  </span>
+                </div>
+                <p class="text-gray-400 leading-relaxed mb-4">{step.description}</p>
+                <a
+                  href={step.cta.href}
+                  class="inline-flex items-center gap-2 px-5 py-2.5 bg-coral/10 border border-coral/20 text-coral text-sm font-semibold rounded-lg hover:bg-coral hover:text-white hover:border-coral transition-all duration-200"
+                >
+                  <span set:html={step.icon} />
+                  {step.cta.text}
+                </a>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Popular Posts Shortcut -->
+  <section class="relative px-4 py-24 sm:py-32 border-t border-white/[0.02] bg-navy-light/30">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-12 section-animate">
+        <p class="text-sm font-mono text-coral uppercase tracking-widest mb-4">
+          // reader favorites
+        </p>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white leading-tight">
+          The 5 Posts Everyone Reads First
+        </h2>
+      </div>
+
+      <div class="space-y-3">
+        {
+          popularPosts.map((post, i) => (
+            <a
+              href={`/blog/${post.slug}`}
+              class="group flex items-start gap-4 p-4 rounded-xl bg-navy-light border border-white/[0.06] hover:border-coral/30 hover:bg-white/[0.03] transition-all duration-200 section-animate"
+            >
+              <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-coral/10 text-coral font-bold text-sm font-mono shrink-0 mt-0.5">
+                {i + 1}
+              </span>
+              <div class="min-w-0">
+                <h3 class="text-base font-semibold text-white group-hover:text-coral transition-colors leading-snug mb-1">
+                  {post.title}
+                </h3>
+                <div class="flex items-center gap-2 text-xs text-gray-500">
+                  <span class="capitalize">{post.category}</span>
+                  <span>·</span>
+                  <span>{post.readingTime}</span>
+                </div>
+              </div>
+              <svg
+                class="w-5 h-5 text-gray-600 group-hover:text-coral transition-colors ml-auto shrink-0 mt-1"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="relative px-4 py-24 sm:py-32 border-t border-white/[0.02]">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-12 section-animate">
+        <p class="text-sm font-mono text-coral uppercase tracking-widest mb-4">// questions</p>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white leading-tight">
+          Common Questions
+        </h2>
+      </div>
+
+      <div class="space-y-4">
+        {
+          faq.map((item) => (
+            <details class="group bg-navy-light border border-white/[0.06] rounded-xl overflow-hidden section-animate">
+              <summary class="flex items-center justify-between gap-4 p-5 cursor-pointer list-none text-white font-semibold hover:text-coral transition-colors">
+                {item.question}
+                <svg
+                  class="w-5 h-5 shrink-0 text-gray-500 group-open:rotate-180 transition-transform duration-200"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </summary>
+              <div class="px-5 pb-5">
+                <p class="text-gray-400 leading-relaxed pl-4 border-l-2 border-coral/40">
+                  {item.answer}
+                </p>
+              </div>
+            </details>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="relative px-4 py-28 sm:py-36 overflow-hidden border-t border-white/[0.02]">
+    <div
+      class="absolute inset-0 bg-gradient-to-br from-coral/15 via-navy to-deep-blue/30 pointer-events-none"
+    >
+    </div>
+    <div
+      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-coral/10 rounded-full blur-[120px] pointer-events-none"
+    >
+    </div>
+
+    <div class="relative z-10 max-w-2xl mx-auto text-center section-animate">
+      <p class="text-sm font-mono text-coral uppercase tracking-widest mb-4">// ready?</p>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight mb-4">
+        Let's turn your code into cash.
+      </h2>
+      <p class="text-lg text-gray-400 leading-relaxed mb-8">
+        Subscribe to get the DRM Cheatsheet instantly — plus one actionable tactic every Tuesday.
+      </p>
+      <NewsletterForm
+        size="lg"
+        buttonText="Subscribe & Get the Cheatsheet"
+        class="max-w-xl mx-auto"
+        microcopy="Trusted by indie developers shipping SaaS, tools, and templates. No spam."
+      />
+    </div>
+  </section>
+</Layout>
+
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+  );
+
+  document.querySelectorAll('.section-animate').forEach((el) => {
+    observer.observe(el);
+  });
+</script>
