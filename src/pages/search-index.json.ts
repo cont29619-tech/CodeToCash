@@ -15,6 +15,14 @@ export interface SearchItem {
 
 const staticPages: SearchItem[] = [
   {
+    title: 'Start Here — Your First 30 Minutes',
+    description:
+      'New to CodeToCash? Follow this step-by-step path to learn direct response marketing, download free templates, and start selling what you build.',
+    url: '/start',
+    type: 'page',
+    category: 'guide',
+  },
+  {
     title: 'DRM 101: The Complete Guide',
     description:
       'The complete direct response marketing guide for developers. 8 chapters covering the full DRM funnel.',
@@ -35,6 +43,14 @@ const staticPages: SearchItem[] = [
     description:
       'One marketing tactic every week, built for developers. Subscribe free and get the DRM cheatsheet.',
     url: '/newsletter',
+    type: 'page',
+    category: 'newsletter',
+  },
+  {
+    title: 'Newsletter Archive',
+    description:
+      'Every issue of the CodeToCash newsletter. Actionable DRM tactics, copywriting frameworks, and marketing strategies for developers who ship.',
+    url: '/newsletter/archive',
     type: 'page',
     category: 'newsletter',
   },

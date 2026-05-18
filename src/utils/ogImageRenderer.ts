@@ -420,3 +420,183 @@ export async function renderPlaybookOgImage(data: PlaybookOgData): Promise<Uint8
 
   return svgToPng(svg);
 }
+
+export interface PageOgData {
+  title: string;
+  subtitle: string;
+}
+
+export async function renderPageOgImage(data: PageOgData): Promise<Uint8Array> {
+  const { title, subtitle } = data;
+  const fonts = await getFonts();
+
+  const svg = await satori(
+    {
+      type: 'div',
+      props: {
+        style: {
+          width: 1200,
+          height: 630,
+          display: 'flex',
+          flexDirection: 'column',
+          backgroundColor: '#0A0A1A',
+          fontFamily: 'Inter',
+          position: 'relative',
+          overflow: 'hidden',
+        },
+        children: [
+          // Coral glow top-right
+          {
+            type: 'div',
+            props: {
+              style: {
+                position: 'absolute',
+                top: -100,
+                right: -100,
+                width: 500,
+                height: 500,
+                borderRadius: '50%',
+                background: 'radial-gradient(circle, rgba(233,69,96,0.2) 0%, transparent 70%)',
+              },
+            },
+          },
+          // Deep-blue glow bottom-left
+          {
+            type: 'div',
+            props: {
+              style: {
+                position: 'absolute',
+                bottom: -80,
+                left: -80,
+                width: 400,
+                height: 400,
+                borderRadius: '50%',
+                background: 'radial-gradient(circle, rgba(15,52,96,0.4) 0%, transparent 70%)',
+              },
+            },
+          },
+          // Content area
+          {
+            type: 'div',
+            props: {
+              style: {
+                display: 'flex',
+                flexDirection: 'column',
+                padding: '56px 72px',
+                flex: 1,
+              },
+              children: [
+                // Top branding
+                {
+                  type: 'div',
+                  props: {
+                    style: {
+                      display: 'flex',
+                      alignItems: 'center',
+                      marginBottom: 48,
+                    },
+                    children: [
+                      {
+                        type: 'span',
+                        props: {
+                          style: { color: '#9ca3af', fontSize: 20, fontWeight: 400 },
+                          children: 'CodeToCash',
+                        },
+                      },
+                      {
+                        type: 'span',
+                        props: {
+                          style: { color: '#E94560', fontSize: 20, fontWeight: 700 },
+                          children: '.dev',
+                        },
+                      },
+                    ],
+                  },
+                },
+                // Subtitle label
+                {
+                  type: 'div',
+                  props: {
+                    style: {
+                      display: 'flex',
+                      alignItems: 'center',
+                      marginBottom: 24,
+                    },
+                    children: [
+                      {
+                        type: 'span',
+                        props: {
+                          style: {
+                            backgroundColor: 'rgba(233,69,96,0.13)',
+                            color: '#E94560',
+                            border: '1px solid rgba(233,69,96,0.27)',
+                            borderRadius: 8,
+                            padding: '6px 14px',
+                            fontSize: 16,
+                            fontWeight: 700,
+                            textTransform: 'uppercase',
+                            letterSpacing: '0.1em',
+                          },
+                          children: subtitle,
+                        },
+                      },
+                    ],
+                  },
+                },
+                // Title
+                {
+                  type: 'div',
+                  props: {
+                    style: {
+                      color: '#ffffff',
+                      fontSize: 56,
+                      fontWeight: 700,
+                      lineHeight: 1.15,
+                      marginBottom: 'auto',
+                      maxWidth: 950,
+                    },
+                    children: title,
+                  },
+                },
+                // Bottom tagline
+                {
+                  type: 'div',
+                  props: {
+                    style: {
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: 12,
+                      marginTop: 40,
+                      color: '#6b7280',
+                      fontSize: 22,
+                    },
+                    children: [
+                      { type: 'span', props: { children: 'Direct Response Marketing for Vibe Coders' } },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+          // Coral gradient bar at bottom
+          {
+            type: 'div',
+            props: {
+              style: {
+                position: 'absolute',
+                bottom: 0,
+                left: 0,
+                right: 0,
+                height: 6,
+                background: 'linear-gradient(to right, #E94560, #0F3460)',
+              },
+            },
+          },
+        ],
+      },
+    },
+    { width: 1200, height: 630, fonts }
+  );
+
+  return svgToPng(svg);
+}

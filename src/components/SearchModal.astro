@@ -372,6 +372,26 @@
       return;
     }
 
+    // / — focus search input (opens if closed)
+    if (e.key === '/' && !e.ctrlKey && !e.metaKey && !e.altKey) {
+      const active = document.activeElement;
+      if (
+        active &&
+        (active.tagName === 'INPUT' ||
+          active.tagName === 'TEXTAREA' ||
+          active.getAttribute('contenteditable') === 'true')
+      ) {
+        return;
+      }
+      e.preventDefault();
+      if (overlay.classList.contains('hidden')) {
+        openSearch();
+      } else {
+        input.focus();
+      }
+      return;
+    }
+
     if (overlay.classList.contains('hidden')) return;
 
     if (e.key === 'Tab') {
