@@ -20,6 +20,13 @@ const JOURNEY = {
     tools: 3,
   },
 
+  // Signal: what the data is telling us right now
+  signal: {
+    trend: 'up',
+    title: 'Impressions trending up',
+    detail: 'Daily impressions grew from ~10-15/day in March to 40-60/day in May. Google is showing us to more people. The bottleneck now isn\'t visibility — it\'s click-through rate. People see us on page 2 but don\'t click. Fix: better meta titles and descriptions.',
+  },
+
   revenueMilestones: [
     { amount: 0, label: 'Launch', reached: true },
     { amount: 100, label: 'Covers costs', reached: false },
@@ -31,67 +38,67 @@ const JOURNEY = {
     {
       id: 'feb-2026',
       month: 'Feb 2026',
-      title: 'Month -1 — First Signals',
+      title: 'Month 0 — Launch',
       status: 'done',
-      impressions: 80,
-      clicks: 1,
-      ctr: '1.25%',
-      position: 28.0,
+      impressions: 120,
+      clicks: 3,
+      ctr: '2.5%',
+      position: 22.0,
       revenue: 0,
       subs: 0,
       summary:
-        'Domain registered, Search Console connected, first pages started getting indexed. Minimal traffic — just early signals that the domain is alive and Google is crawling.',
-      applied: 'Basic site setup, sitemap submission, Search Console verification.',
-      keyNumbers: ['Domain live', 'Search Console connected', 'First impressions recorded'],
+        'Site went live on February 15th. Built with Astro + Tailwind. First articles published, DRM 101 guide drafted. Google started crawling. One early spike of 3 clicks on Feb 24 — then silence.',
+      applied: 'Nothing yet. Just shipped and prayed.',
+      keyNumbers: ['Site launched Feb 15', 'First articles live', '3-click spike day one week in'],
     },
     {
       id: 'mar-2026',
       month: 'Mar 2026',
-      title: 'Month 0 — Foundation',
+      title: 'Month 1 — Content Sprint',
       status: 'done',
-      impressions: 500,
-      clicks: 2,
-      ctr: '0.4%',
-      position: 18.5,
+      impressions: 450,
+      clicks: 1,
+      ctr: '0.22%',
+      position: 17.5,
       revenue: 0,
       subs: 0,
       summary:
-        'Built the site from scratch with Astro + Tailwind. Wrote the DRM 101 guide, first batch of articles, and set up the newsletter pipeline with ConvertKit. Zero marketing — pure building mode.',
-      applied: 'Nothing yet. Just shipped content.',
-      keyNumbers: ['25+ articles written', 'DRM 101 guide live', '8 playbooks planned'],
+        'Massive content push. Wrote the bulk of all articles, published the DRM 101 flagship guide, and set up the newsletter pipeline with ConvertKit. Impressions steady at 10-20/day. Google indexing but ranking on page 3-4.',
+      applied: 'SEO basics — meta descriptions, internal linking structure.',
+      keyNumbers: ['30+ articles written', 'DRM 101 guide live', 'Newsletter pipeline set up'],
     },
     {
       id: 'apr-2026',
       month: 'Apr 2026',
-      title: 'Month 1 — Content Machine',
+      title: 'Month 2 — Full Library',
       status: 'done',
-      impressions: 540,
+      impressions: 700,
       clicks: 2,
-      ctr: '0.37%',
-      position: 15.8,
+      ctr: '0.29%',
+      position: 15.0,
       revenue: 0,
       subs: 0,
       summary:
-        'Hit 51 articles. All 8 playbooks live. Launched 3 interactive tools (Headline Grader, Email Subject Line Tester, CAC/LTV Calculator). Google continued indexing pages. Still no active marketing.',
-      applied: 'SEO basics — meta descriptions, internal linking, FAQ schema on every post.',
-      keyNumbers: ['51 articles published', '8/8 playbooks complete', '3 free tools launched'],
+        'Hit 51 articles. All 8 playbooks live. Launched 3 interactive tools (Headline Grader, Email Subject Line Tester, CAC/LTV Calculator). Impressions climbing to 30-50/day. Position improved from page 3 to page 2. FAQ schema added to every post.',
+      applied: 'SEO — FAQ structured data on all 47 blog posts, internal linking, OG image generation.',
+      keyNumbers: ['51 articles published', '8/8 playbooks complete', '3 free tools launched', 'Position: page 3 → page 2'],
     },
     {
       id: 'may-2026',
       month: 'May 2026',
-      title: 'Month 2 — Building in Public',
+      title: 'Month 3 — Building in Public',
       status: 'current',
-      impressions: 670,
-      clicks: 2,
-      ctr: '0.3%',
+      impressions: 520,
+      clicks: 1,
+      ctr: '0.19%',
       position: 14.2,
       revenue: 0,
       subs: 0,
       summary:
-        'Started documenting the journey publicly. Applying my own DRM frameworks on the site. This page goes live. The real experiment begins.',
+        'Impressions hitting 40-60/day — the highest yet. But clicks are nearly zero. The diagnosis: we rank on page 2, people see us in search results but don\'t click. Started documenting the journey publicly. This page goes live. The real experiment begins.',
       applied:
         'Building in Public playbook — using my own framework to turn transparency into a growth channel.',
-      keyNumbers: ['This page launched', 'Social content started', 'First DRM self-test'],
+      keyNumbers: ['40-60 impressions/day', 'This page launched', 'Social content started', 'Impressions 4x vs. Month 0'],
     },
   ],
 
@@ -191,7 +198,7 @@ const description =
               >{d.metrics.impressions.toLocaleString()}</span
             >
             <span class="font-mono text-xs text-white/50 block mt-1.5"
-              >Google Search</span
+              >40-60/day · trending up</span
             >
           </div>
           <!-- Clicks -->
@@ -273,6 +280,39 @@ const description =
           </div>
         </div>
       </section>
+
+      <!-- SIGNAL — what the data says -->
+      {
+        d.signal && (
+          <section class="py-6">
+            <div
+              class:list={[
+                'p-[18px_22px] rounded-xl flex gap-3.5 items-start',
+                d.signal.trend === 'up'
+                  ? 'bg-green-400/[0.05] border border-green-400/15'
+                  : 'bg-red-400/[0.05] border border-red-400/15',
+              ]}
+            >
+              <span class="text-xl shrink-0 mt-0.5">
+                {d.signal.trend === 'up' ? '📈' : '📉'}
+              </span>
+              <div>
+                <span
+                  class:list={[
+                    'font-mono text-[13px] font-semibold block mb-1.5',
+                    d.signal.trend === 'up' ? 'text-green-400' : 'text-red-400',
+                  ]}
+                >
+                  {d.signal.title}
+                </span>
+                <p class="text-sm leading-[1.7] text-white/55">
+                  {d.signal.detail}
+                </p>
+              </div>
+            </div>
+          </section>
+        )
+      }
 
       <!-- REVENUE TRACKER -->
       <section class="pt-10 pb-6">
@@ -551,14 +591,14 @@ const description =
           class="text-[clamp(24px,4vw,32px)] font-semibold mb-4 tracking-[-0.01em] leading-[1.2]"
         >
           I teach developers marketing.<br />
-          <span class="text-white/55">I have 7 clicks.</span>
+          <span class="text-white/55">I have 7 clicks in 3 months.</span>
         </h2>
         <p
           class="text-[15px] leading-[1.8] text-white/55 mb-3.5 max-w-[560px]"
         >
           The irony isn't lost on me. I built a site with 51 articles, 8
           playbooks, 50+ templates, and 3 free tools about how to sell software
-          — and right now it earns nothing.
+          — and after 96 days it earns nothing.
         </p>
         <p
           class="text-[15px] leading-[1.8] text-white/55 mb-3.5 max-w-[560px]"
