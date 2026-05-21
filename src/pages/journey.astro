@@ -142,14 +142,14 @@ const description =
             class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-coral"
             >$0 to Profitable.</span
           ><br />
-          <span class="text-white/35 font-normal">Tracked in real time.</span>
+          <span class="text-white/60 font-normal">Tracked in real time.</span>
         </h1>
         <p class="text-[17px] leading-[1.8] text-white/50 max-w-[560px] mb-3">
           CodeToCash teaches developers how to sell what they build. This page
           tracks whether those same frameworks actually work — applied to this
           very site. Every metric is real. Every failure is documented.
         </p>
-        <p class="font-mono text-[13px] text-white/20">
+        <p class="font-mono text-[13px] text-white/45">
           Started {d.startDate} · Day {d.dayCount} · Last updated {d.lastUpdated}
         </p>
       </header>
@@ -167,14 +167,14 @@ const description =
             class="group p-5 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:bg-white/[0.04] hover:border-coral/40 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-coral/10 transition-all duration-300"
           >
             <span
-              class="font-mono text-[11px] text-white/35 uppercase tracking-wider block mb-2"
+              class="font-mono text-[11px] text-white/60 uppercase tracking-wider block mb-2"
               >Impressions</span
             >
             <span
               class="font-mono text-[28px] font-bold text-white block leading-[1.1]"
               >{d.metrics.impressions.toLocaleString()}</span
             >
-            <span class="font-mono text-xs text-white/25 block mt-1.5"
+            <span class="font-mono text-xs text-white/50 block mt-1.5"
               >Google Search</span
             >
           </div>
@@ -183,14 +183,14 @@ const description =
             class="group p-5 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:bg-white/[0.04] hover:border-coral/40 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-coral/10 transition-all duration-300"
           >
             <span
-              class="font-mono text-[11px] text-white/35 uppercase tracking-wider block mb-2"
+              class="font-mono text-[11px] text-white/60 uppercase tracking-wider block mb-2"
               >Clicks</span
             >
             <span
               class="font-mono text-[28px] font-bold text-white block leading-[1.1]"
               >{d.metrics.clicks}</span
             >
-            <span class="font-mono text-xs text-white/25 block mt-1.5"
+            <span class="font-mono text-xs text-white/50 block mt-1.5"
               >{d.metrics.ctr} CTR</span
             >
           </div>
@@ -199,14 +199,14 @@ const description =
             class="group p-5 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:bg-white/[0.04] hover:border-coral/40 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-coral/10 transition-all duration-300"
           >
             <span
-              class="font-mono text-[11px] text-white/35 uppercase tracking-wider block mb-2"
+              class="font-mono text-[11px] text-white/60 uppercase tracking-wider block mb-2"
               >Avg Position</span
             >
             <span
               class="font-mono text-[28px] font-bold text-white block leading-[1.1]"
               >{d.metrics.avgPosition}</span
             >
-            <span class="font-mono text-xs text-white/25 block mt-1.5"
+            <span class="font-mono text-xs text-white/50 block mt-1.5"
               >page 2 → goal: page 1</span
             >
           </div>
@@ -215,14 +215,14 @@ const description =
             class="group p-5 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:bg-white/[0.04] hover:border-coral/40 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-coral/10 transition-all duration-300"
           >
             <span
-              class="font-mono text-[11px] text-white/35 uppercase tracking-wider block mb-2"
+              class="font-mono text-[11px] text-white/60 uppercase tracking-wider block mb-2"
               >Revenue</span
             >
             <span
               class="font-mono text-[28px] font-bold text-white block leading-[1.1]"
               >${d.metrics.revenue}</span
             >
-            <span class="font-mono text-xs text-white/25 block mt-1.5"
+            <span class="font-mono text-xs text-white/50 block mt-1.5"
               >total to date</span
             >
           </div>
@@ -231,7 +231,7 @@ const description =
             class="group p-5 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:bg-white/[0.04] hover:border-coral/40 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-coral/10 transition-all duration-300"
           >
             <span
-              class="font-mono text-[11px] text-white/35 uppercase tracking-wider block mb-2"
+              class="font-mono text-[11px] text-white/60 uppercase tracking-wider block mb-2"
               >Subscribers</span
             >
             <span
@@ -244,14 +244,14 @@ const description =
             class="group p-5 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:bg-white/[0.04] hover:border-coral/40 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-coral/10 transition-all duration-300"
           >
             <span
-              class="font-mono text-[11px] text-white/35 uppercase tracking-wider block mb-2"
+              class="font-mono text-[11px] text-white/60 uppercase tracking-wider block mb-2"
               >Content</span
             >
             <span
               class="font-mono text-[28px] font-bold text-white block leading-[1.1]"
               >{d.metrics.articles}</span
             >
-            <span class="font-mono text-xs text-white/25 block mt-1.5"
+            <span class="font-mono text-xs text-white/50 block mt-1.5"
               >+ {d.metrics.playbooks} playbooks · {d.metrics.tools} tools</span
             >
           </div>
@@ -269,7 +269,7 @@ const description =
           <div
             class="flex justify-between items-baseline mb-5 flex-wrap gap-2"
           >
-            <span class="font-mono text-sm text-white/35"
+            <span class="font-mono text-sm text-white/60"
               >Monthly Recurring Revenue</span
             >
             <span
@@ -301,7 +301,7 @@ const description =
                 <span
                   class="font-mono text-[11px] leading-[1.4] flex-1"
                   class:list={[
-                    m.reached ? 'text-coral' : 'text-white/20',
+                    m.reached ? 'text-coral' : 'text-white/45',
                     i === 0 ? 'text-left' : i === d.revenueMilestones.length - 1 ? 'text-right' : 'text-center',
                   ]}
                 >
@@ -329,7 +329,7 @@ const description =
               class="font-mono text-xs text-coral font-bold tracking-wider"
               >● {d.experiment.status}</span
             >
-            <span class="font-mono text-xs text-white/25"
+            <span class="font-mono text-xs text-white/50"
               >{d.experiment.duration} · started {d.experiment.started}</span
             >
           </div>
@@ -341,7 +341,7 @@ const description =
             class="grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))] gap-6"
           >
             <div>
-              <span class="font-mono text-xs text-white/20"
+              <span class="font-mono text-xs text-white/45"
                 >// hypothesis</span
               >
               <p class="text-sm leading-[1.7] text-white/50 mt-2">
@@ -349,7 +349,7 @@ const description =
               </p>
             </div>
             <div>
-              <span class="font-mono text-xs text-white/20"
+              <span class="font-mono text-xs text-white/45"
                 >// tracking</span
               >
               <div class="mt-2">
@@ -378,7 +378,7 @@ const description =
           // eating my own cooking
         </p>
         <p
-          class="text-[15px] leading-[1.7] text-white/40 mb-5 max-w-[560px]"
+          class="text-[15px] leading-[1.7] text-white/55 mb-5 max-w-[560px]"
         >
           Every framework on this site was written to help developers sell.
           Here's what I'm currently applying to CodeToCash itself:
@@ -393,7 +393,7 @@ const description =
                 <span class="font-mono text-sm text-coral font-medium group-hover:text-coral/80 transition-colors">
                   {a.framework} →
                 </span>
-                <p class="text-sm text-white/40 mt-1.5 leading-[1.6]">
+                <p class="text-sm text-white/55 mt-1.5 leading-[1.6]">
                   {a.what}
                 </p>
               </a>
@@ -437,7 +437,7 @@ const description =
                   >
                     <div class="flex justify-between items-start flex-wrap gap-2">
                       <div>
-                        <span class="font-mono text-xs text-white/30">
+                        <span class="font-mono text-xs text-white/55">
                           {m.month}
                         </span>
                         <h3 class="text-lg font-semibold text-white mt-1">
@@ -446,12 +446,12 @@ const description =
                       </div>
                       <div class="flex gap-1.5 items-center flex-wrap">
                         <span
-                          class="text-[11px] font-mono px-2.5 py-0.5 rounded-md bg-white/5 text-white/40"
+                          class="text-[11px] font-mono px-2.5 py-0.5 rounded-md bg-white/5 text-white/55"
                         >
                           {m.impressions.toLocaleString()} imp
                         </span>
                         <span
-                          class="text-[11px] font-mono px-2.5 py-0.5 rounded-md bg-white/5 text-white/40"
+                          class="text-[11px] font-mono px-2.5 py-0.5 rounded-md bg-white/5 text-white/55"
                         >
                           {m.clicks} clicks
                         </span>
@@ -461,7 +461,7 @@ const description =
                         >
                           ${m.revenue}
                         </span>
-                        <span class="font-mono text-base text-white/20 ml-1 journey-toggle">
+                        <span class="font-mono text-base text-white/45 ml-1 journey-toggle">
                           {isCurrent ? '−' : '+'}
                         </span>
                       </div>
@@ -482,7 +482,7 @@ const description =
                           ['Subscribers', m.subs],
                         ].map(([label, value]) => (
                           <div class="min-w-[80px]">
-                            <span class="font-mono text-[10px] text-white/25 uppercase tracking-wider block">
+                            <span class="font-mono text-[10px] text-white/50 uppercase tracking-wider block">
                               {label}
                             </span>
                             <span class="font-mono text-lg font-semibold text-white">
@@ -501,7 +501,7 @@ const description =
                       </div>
 
                       <div class="mb-3.5">
-                        <span class="font-mono text-xs text-white/20">
+                        <span class="font-mono text-xs text-white/45">
                           // what happened
                         </span>
                         <p class="text-sm leading-[1.7] text-white/55 mt-1.5">
@@ -510,7 +510,7 @@ const description =
                       </div>
 
                       <div>
-                        <span class="font-mono text-xs text-white/20">
+                        <span class="font-mono text-xs text-white/45">
                           // drm applied
                         </span>
                         <p class="text-sm leading-[1.7] text-white/55 mt-1.5">
@@ -535,24 +535,24 @@ const description =
           class="text-[clamp(24px,4vw,32px)] font-semibold mb-4 tracking-[-0.01em] leading-[1.2]"
         >
           I teach developers marketing.<br />
-          <span class="text-white/30">I have 7 clicks.</span>
+          <span class="text-white/55">I have 7 clicks.</span>
         </h2>
         <p
-          class="text-[15px] leading-[1.8] text-white/40 mb-3.5 max-w-[560px]"
+          class="text-[15px] leading-[1.8] text-white/55 mb-3.5 max-w-[560px]"
         >
           The irony isn't lost on me. I built a site with 51 articles, 8
           playbooks, 50+ templates, and 3 free tools about how to sell software
           — and right now it earns nothing.
         </p>
         <p
-          class="text-[15px] leading-[1.8] text-white/40 mb-3.5 max-w-[560px]"
+          class="text-[15px] leading-[1.8] text-white/55 mb-3.5 max-w-[560px]"
         >
           So I'm doing the one thing most people won't: showing the actual
           numbers while I figure it out. If my own frameworks work, you'll see
           the revenue climb month by month on this page. If they don't, you'll
           see that too.
         </p>
-        <p class="text-[15px] leading-[1.8] text-white/40 max-w-[560px]">
+        <p class="text-[15px] leading-[1.8] text-white/55 max-w-[560px]">
           This is accountability through radical transparency.
         </p>
       </section>
@@ -570,7 +570,7 @@ const description =
           Watch this unfold in real time.
         </h2>
         <p
-          class="text-[15px] leading-[1.7] text-white/40 max-w-[460px] mx-auto mb-8"
+          class="text-[15px] leading-[1.7] text-white/55 max-w-[460px] mx-auto mb-8"
         >
           Subscribe for weekly updates with real numbers, experiments, and
           lessons — plus the free DRM Cheatsheet with every framework on one
