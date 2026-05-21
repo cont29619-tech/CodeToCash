@@ -1,0 +1,613 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const JOURNEY = {
+  startDate: 'March 2026',
+  dayCount: 1,
+  lastUpdated: 'May 21, 2026',
+
+  metrics: {
+    impressions: 1720,
+    clicks: 7,
+    ctr: '0.41%',
+    avgPosition: 14.2,
+    revenue: 0,
+    mrr: 0,
+    newsletterSubs: 0,
+    articles: 51,
+    playbooks: 8,
+    templates: 50,
+    tools: 3,
+  },
+
+  revenueMilestones: [
+    { amount: 0, label: 'Launch', reached: true },
+    { amount: 100, label: 'Covers costs', reached: false },
+    { amount: 500, label: 'Side income', reached: false },
+    { amount: 1000, label: '$1K MRR', reached: false },
+  ],
+
+  months: [
+    {
+      id: 'mar-2026',
+      month: 'Mar 2026',
+      title: 'Month 0 — Foundation',
+      status: 'done',
+      impressions: 580,
+      clicks: 2,
+      ctr: '0.34%',
+      position: 18.5,
+      revenue: 0,
+      subs: 0,
+      summary:
+        'Built the site from scratch with Astro + Tailwind. Wrote the DRM 101 guide, first batch of articles, and set up the newsletter pipeline with ConvertKit. Zero marketing — pure building mode.',
+      applied: 'Nothing yet. Just shipped content.',
+      keyNumbers: ['25+ articles written', 'DRM 101 guide live', '8 playbooks planned'],
+    },
+    {
+      id: 'apr-2026',
+      month: 'Apr 2026',
+      title: 'Month 1 — Content Machine',
+      status: 'done',
+      impressions: 620,
+      clicks: 2,
+      ctr: '0.32%',
+      position: 15.8,
+      revenue: 0,
+      subs: 0,
+      summary:
+        'Hit 51 articles. All 8 playbooks live. Launched 3 interactive tools (Headline Grader, Email Subject Line Tester, CAC/LTV Calculator). Google started indexing pages. Still no active marketing.',
+      applied: 'SEO basics — meta descriptions, internal linking, FAQ schema on every post.',
+      keyNumbers: ['51 articles published', '8/8 playbooks complete', '3 free tools launched'],
+    },
+    {
+      id: 'may-2026',
+      month: 'May 2026',
+      title: 'Month 2 — Building in Public',
+      status: 'current',
+      impressions: 520,
+      clicks: 3,
+      ctr: '0.58%',
+      position: 14.2,
+      revenue: 0,
+      subs: 0,
+      summary:
+        'Started documenting the journey publicly. Applying my own DRM frameworks on the site. This page goes live. The real experiment begins.',
+      applied:
+        'Building in Public playbook — using my own framework to turn transparency into a growth channel.',
+      keyNumbers: ['This page launched', 'Social content started', 'First DRM self-test'],
+    },
+  ],
+
+  experiment: {
+    name: 'Building in Public as a Growth Channel',
+    status: 'LIVE',
+    started: 'May 2026',
+    duration: '4 weeks',
+    hypothesis:
+      'Documenting the journey from $0 to profitable — with real metrics, real failures — will drive more traffic and trust than SEO alone.',
+    tracking: [
+      'Weekly site traffic from social referrals',
+      'Newsletter signups',
+      'Engagement on social posts',
+    ],
+    playbook: '/playbooks/building-in-public',
+  },
+
+  applying: [
+    {
+      framework: 'Building in Public Playbook',
+      link: '/playbooks/building-in-public',
+      what: 'Using transparency and real metrics as the primary trust-building mechanism.',
+    },
+    {
+      framework: 'Email Launch Sequence',
+      link: '/playbooks/email-launch-sequence',
+      what: 'Setting up the 7-email welcome sequence to convert subscribers into engaged readers.',
+    },
+    {
+      framework: 'SEO for Developer Blogs',
+      link: '/blog/seo-for-developer-blogs',
+      what: 'Optimizing existing content to move from position 14.2 to page 1.',
+    },
+  ],
+};
+
+const d = JOURNEY;
+const revenuePercent = Math.max((d.metrics.revenue / 1000) * 100, 0.5);
+
+const title = 'From $0 to Profitable — The CodeToCash Journey';
+const description =
+  'Follow the real-time journey of building CodeToCash from zero to profitable. Every metric, every failure, every framework applied — documented openly.';
+---
+
+<Layout {title} {description}>
+  <div class="relative overflow-hidden">
+    <!-- Background glow -->
+    <div
+      class="absolute top-[5%] left-1/2 -translate-x-1/2 w-[900px] h-[600px] rounded-full bg-coral/[0.03] blur-[120px] pointer-events-none"
+    >
+    </div>
+
+    <div class="max-w-[820px] mx-auto px-6 relative z-10">
+      <!-- HERO -->
+      <header class="pt-20 pb-12 border-t border-white/[0.02]">
+        <p class="text-sm font-mono text-coral uppercase tracking-[2px] mb-4">
+          // the journey
+        </p>
+        <h1
+          class="text-[clamp(32px,5vw,52px)] font-bold leading-[1.1] mb-5 tracking-[-0.02em]"
+        >
+          From <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-coral"
+            >$0 to Profitable.</span
+          ><br />
+          <span class="text-white/35 font-normal">Tracked in real time.</span>
+        </h1>
+        <p class="text-[17px] leading-[1.8] text-white/50 max-w-[560px] mb-3">
+          CodeToCash teaches developers how to sell what they build. This page
+          tracks whether those same frameworks actually work — applied to this
+          very site. Every metric is real. Every failure is documented.
+        </p>
+        <p class="font-mono text-[13px] text-white/20">
+          Started {d.startDate} · Day {d.dayCount} · Last updated {d.lastUpdated}
+        </p>
+      </header>
+
+      <!-- LIVE METRICS -->
+      <section class="pt-14 pb-6">
+        <p class="text-sm font-mono text-coral uppercase tracking-[2px] mb-4">
+          // live metrics
+        </p>
+        <div
+          class="grid grid-cols-[repeat(auto-fill,minmax(180px,1fr))] gap-3"
+        >
+          <!-- Impressions -->
+          <div
+            class="group p-5 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:bg-white/[0.04] hover:border-coral/40 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-coral/10 transition-all duration-300"
+          >
+            <span
+              class="font-mono text-[11px] text-white/35 uppercase tracking-wider block mb-2"
+              >Impressions</span
+            >
+            <span
+              class="font-mono text-[28px] font-bold text-white block leading-[1.1]"
+              >{d.metrics.impressions.toLocaleString()}</span
+            >
+            <span class="font-mono text-xs text-white/25 block mt-1.5"
+              >Google Search</span
+            >
+          </div>
+          <!-- Clicks -->
+          <div
+            class="group p-5 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:bg-white/[0.04] hover:border-coral/40 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-coral/10 transition-all duration-300"
+          >
+            <span
+              class="font-mono text-[11px] text-white/35 uppercase tracking-wider block mb-2"
+              >Clicks</span
+            >
+            <span
+              class="font-mono text-[28px] font-bold text-white block leading-[1.1]"
+              >{d.metrics.clicks}</span
+            >
+            <span class="font-mono text-xs text-white/25 block mt-1.5"
+              >{d.metrics.ctr} CTR</span
+            >
+          </div>
+          <!-- Avg Position -->
+          <div
+            class="group p-5 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:bg-white/[0.04] hover:border-coral/40 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-coral/10 transition-all duration-300"
+          >
+            <span
+              class="font-mono text-[11px] text-white/35 uppercase tracking-wider block mb-2"
+              >Avg Position</span
+            >
+            <span
+              class="font-mono text-[28px] font-bold text-white block leading-[1.1]"
+              >{d.metrics.avgPosition}</span
+            >
+            <span class="font-mono text-xs text-white/25 block mt-1.5"
+              >page 2 → goal: page 1</span
+            >
+          </div>
+          <!-- Revenue -->
+          <div
+            class="group p-5 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:bg-white/[0.04] hover:border-coral/40 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-coral/10 transition-all duration-300"
+          >
+            <span
+              class="font-mono text-[11px] text-white/35 uppercase tracking-wider block mb-2"
+              >Revenue</span
+            >
+            <span
+              class="font-mono text-[28px] font-bold text-white block leading-[1.1]"
+              >${d.metrics.revenue}</span
+            >
+            <span class="font-mono text-xs text-white/25 block mt-1.5"
+              >total to date</span
+            >
+          </div>
+          <!-- Subscribers -->
+          <div
+            class="group p-5 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:bg-white/[0.04] hover:border-coral/40 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-coral/10 transition-all duration-300"
+          >
+            <span
+              class="font-mono text-[11px] text-white/35 uppercase tracking-wider block mb-2"
+              >Subscribers</span
+            >
+            <span
+              class="font-mono text-[28px] font-bold text-white block leading-[1.1]"
+              >{d.metrics.newsletterSubs}</span
+            >
+          </div>
+          <!-- Content -->
+          <div
+            class="group p-5 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:bg-white/[0.04] hover:border-coral/40 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-coral/10 transition-all duration-300"
+          >
+            <span
+              class="font-mono text-[11px] text-white/35 uppercase tracking-wider block mb-2"
+              >Content</span
+            >
+            <span
+              class="font-mono text-[28px] font-bold text-white block leading-[1.1]"
+              >{d.metrics.articles}</span
+            >
+            <span class="font-mono text-xs text-white/25 block mt-1.5"
+              >+ {d.metrics.playbooks} playbooks · {d.metrics.tools} tools</span
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- REVENUE TRACKER -->
+      <section class="pt-10 pb-6">
+        <p class="text-sm font-mono text-coral uppercase tracking-[2px] mb-4">
+          // revenue progress
+        </p>
+        <div
+          class="p-7 rounded-2xl bg-white/[0.02] border border-white/[0.06]"
+        >
+          <div
+            class="flex justify-between items-baseline mb-5 flex-wrap gap-2"
+          >
+            <span class="font-mono text-sm text-white/35"
+              >Monthly Recurring Revenue</span
+            >
+            <span
+              class="font-mono text-4xl font-bold"
+              class:list={d.metrics.mrr > 0 ? 'text-green-400' : 'text-red-400'}
+              >${d.metrics.mrr}</span
+            >
+          </div>
+          <div
+            class="w-full h-1.5 bg-white/5 rounded-full relative mb-5 overflow-hidden"
+          >
+            <div
+              class="h-full rounded-full transition-all duration-1000 ease-out"
+              style={`width: ${revenuePercent}%; background: linear-gradient(90deg, #E94560, #4ade80);`}
+            >
+            </div>
+            {
+              d.revenueMilestones.map((m, i) => (
+                <div
+                  class="absolute top-1/2 -translate-y-1/2 w-4 h-4 rounded-full border-2 border-navy -translate-x-1/2"
+                  style={`left: ${(m.amount / 1000) * 100}%; background: ${m.reached ? '#E94560' : 'rgba(255,255,255,0.08)'}; box-shadow: ${m.reached ? '0 0 8px rgba(233,69,96,0.27)' : 'none'};`}
+                />
+              ))
+            }
+          </div>
+          <div class="flex justify-between">
+            {
+              d.revenueMilestones.map((m, i) => (
+                <span
+                  class="font-mono text-[11px] leading-[1.4] flex-1"
+                  class:list={[
+                    m.reached ? 'text-coral' : 'text-white/20',
+                    i === 0 ? 'text-left' : i === d.revenueMilestones.length - 1 ? 'text-right' : 'text-center',
+                  ]}
+                >
+                  ${m.amount}
+                  <br />{m.label}
+                </span>
+              ))
+            }
+          </div>
+        </div>
+      </section>
+
+      <!-- CURRENT EXPERIMENT -->
+      <section class="pt-10 pb-6">
+        <p class="text-sm font-mono text-coral uppercase tracking-[2px] mb-4">
+          // current experiment
+        </p>
+        <div
+          class="p-7 rounded-2xl bg-coral/[0.04] border border-coral/20"
+        >
+          <div
+            class="flex justify-between items-center mb-4 flex-wrap gap-2"
+          >
+            <span
+              class="font-mono text-xs text-coral font-bold tracking-wider"
+              >● {d.experiment.status}</span
+            >
+            <span class="font-mono text-xs text-white/25"
+              >{d.experiment.duration} · started {d.experiment.started}</span
+            >
+          </div>
+          <h3 class="text-[22px] font-semibold mb-5">
+            {d.experiment.name}
+          </h3>
+
+          <div
+            class="grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))] gap-6"
+          >
+            <div>
+              <span class="font-mono text-xs text-white/20"
+                >// hypothesis</span
+              >
+              <p class="text-sm leading-[1.7] text-white/50 mt-2">
+                {d.experiment.hypothesis}
+              </p>
+            </div>
+            <div>
+              <span class="font-mono text-xs text-white/20"
+                >// tracking</span
+              >
+              <div class="mt-2">
+                {
+                  d.experiment.tracking.map((t) => (
+                    <p class="text-sm text-white/50 leading-[1.8]">→ {t}</p>
+                  ))
+                }
+              </div>
+            </div>
+          </div>
+          <div class="mt-5 pt-4 border-t border-coral/[0.12]">
+            <a
+              href={d.experiment.playbook}
+              class="font-mono text-[13px] text-coral border-b border-dashed border-coral/30 pb-0.5 hover:text-coral/80 transition-colors"
+            >
+              → Read the Building in Public Playbook
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- EATING MY OWN COOKING -->
+      <section class="pt-10 pb-6">
+        <p class="text-sm font-mono text-coral uppercase tracking-[2px] mb-4">
+          // eating my own cooking
+        </p>
+        <p
+          class="text-[15px] leading-[1.7] text-white/40 mb-5 max-w-[560px]"
+        >
+          Every framework on this site was written to help developers sell.
+          Here's what I'm currently applying to CodeToCash itself:
+        </p>
+        <div class="flex flex-col gap-2.5">
+          {
+            d.applying.map((a) => (
+              <a
+                href={a.link}
+                class="block p-[18px_22px] rounded-xl bg-white/[0.02] border border-white/[0.06] hover:border-coral/30 transition-all duration-300 group"
+              >
+                <span class="font-mono text-sm text-coral font-medium group-hover:text-coral/80 transition-colors">
+                  {a.framework} →
+                </span>
+                <p class="text-sm text-white/40 mt-1.5 leading-[1.6]">
+                  {a.what}
+                </p>
+              </a>
+            ))
+          }
+        </div>
+      </section>
+
+      <!-- TIMELINE -->
+      <section class="pt-10 pb-6">
+        <p class="text-sm font-mono text-coral uppercase tracking-[2px] mb-4">
+          // monthly log
+        </p>
+        <div id="journey-timeline">
+          {
+            d.months.map((m, i) => {
+              const isCurrent = m.status === 'current';
+              const isLast = i === d.months.length - 1;
+              return (
+                <div class="flex gap-5">
+                  <!-- Timeline line + dot -->
+                  <div class="flex flex-col items-center w-4 shrink-0 pt-6">
+                    <div
+                      class="rounded-full shrink-0"
+                      style={`width: ${isCurrent ? '14px' : '10px'}; height: ${isCurrent ? '14px' : '10px'}; background: ${isCurrent ? '#E94560' : 'rgba(255,255,255,0.15)'}; box-shadow: ${isCurrent ? '0 0 16px rgba(233,69,96,0.4)' : 'none'};`}
+                    />
+                    {!isLast && (
+                      <div class="w-0.5 flex-1 bg-white/[0.06] mt-2" />
+                    )}
+                  </div>
+
+                  <!-- Month card -->
+                  <div
+                    class="journey-month flex-1 p-5 px-6 rounded-2xl mb-4 cursor-pointer transition-all duration-300"
+                    class:list={[
+                      isCurrent
+                        ? 'bg-coral/[0.04] border border-coral/20'
+                        : 'bg-white/[0.02] border border-white/[0.06] hover:border-coral/40',
+                    ]}
+                    data-month-id={m.id}
+                  >
+                    <div class="flex justify-between items-start flex-wrap gap-2">
+                      <div>
+                        <span class="font-mono text-xs text-white/30">
+                          {m.month}
+                        </span>
+                        <h3 class="text-lg font-semibold text-white mt-1">
+                          {m.title}
+                        </h3>
+                      </div>
+                      <div class="flex gap-1.5 items-center flex-wrap">
+                        <span
+                          class="text-[11px] font-mono px-2.5 py-0.5 rounded-md bg-white/5 text-white/40"
+                        >
+                          {m.impressions.toLocaleString()} imp
+                        </span>
+                        <span
+                          class="text-[11px] font-mono px-2.5 py-0.5 rounded-md bg-white/5 text-white/40"
+                        >
+                          {m.clicks} clicks
+                        </span>
+                        <span
+                          class="text-[11px] font-mono px-2.5 py-0.5 rounded-md"
+                          style={`background: ${m.revenue > 0 ? 'rgba(74,222,128,0.1)' : 'rgba(248,113,113,0.1)'}; color: ${m.revenue > 0 ? '#4ade80' : '#f87171'};`}
+                        >
+                          ${m.revenue}
+                        </span>
+                        <span class="font-mono text-base text-white/20 ml-1 journey-toggle">
+                          {isCurrent ? '−' : '+'}
+                        </span>
+                      </div>
+                    </div>
+
+                    <!-- Expandable details -->
+                    <div
+                      class="journey-details mt-5 pt-4 border-t border-white/[0.06]"
+                      style={`display: ${isCurrent ? 'block' : 'none'};`}
+                    >
+                      <div class="flex gap-6 flex-wrap mb-5">
+                        {[
+                          ['Impressions', m.impressions.toLocaleString()],
+                          ['Clicks', m.clicks],
+                          ['CTR', m.ctr],
+                          ['Avg Position', m.position],
+                          ['Revenue', `$${m.revenue}`],
+                          ['Subscribers', m.subs],
+                        ].map(([label, value]) => (
+                          <div class="min-w-[80px]">
+                            <span class="font-mono text-[10px] text-white/25 uppercase tracking-wider block">
+                              {label}
+                            </span>
+                            <span class="font-mono text-lg font-semibold text-white">
+                              {value}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+
+                      <div class="flex gap-2 flex-wrap mb-4">
+                        {m.keyNumbers.map((n) => (
+                          <span class="text-xs font-mono text-coral bg-coral/10 px-2.5 py-1 rounded-md">
+                            {n}
+                          </span>
+                        ))}
+                      </div>
+
+                      <div class="mb-3.5">
+                        <span class="font-mono text-xs text-white/20">
+                          // what happened
+                        </span>
+                        <p class="text-sm leading-[1.7] text-white/55 mt-1.5">
+                          {m.summary}
+                        </p>
+                      </div>
+
+                      <div>
+                        <span class="font-mono text-xs text-white/20">
+                          // drm applied
+                        </span>
+                        <p class="text-sm leading-[1.7] text-white/55 mt-1.5">
+                          {m.applied}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })
+          }
+        </div>
+      </section>
+
+      <!-- WHY -->
+      <section class="pt-10 pb-6 border-t border-white/[0.02]">
+        <p class="text-sm font-mono text-coral uppercase tracking-[2px] mb-4">
+          // why public
+        </p>
+        <h2
+          class="text-[clamp(24px,4vw,32px)] font-semibold mb-4 tracking-[-0.01em] leading-[1.2]"
+        >
+          I teach developers marketing.<br />
+          <span class="text-white/30">I have 7 clicks.</span>
+        </h2>
+        <p
+          class="text-[15px] leading-[1.8] text-white/40 mb-3.5 max-w-[560px]"
+        >
+          The irony isn't lost on me. I built a site with 51 articles, 8
+          playbooks, 50+ templates, and 3 free tools about how to sell software
+          — and right now it earns nothing.
+        </p>
+        <p
+          class="text-[15px] leading-[1.8] text-white/40 mb-3.5 max-w-[560px]"
+        >
+          So I'm doing the one thing most people won't: showing the actual
+          numbers while I figure it out. If my own frameworks work, you'll see
+          the revenue climb month by month on this page. If they don't, you'll
+          see that too.
+        </p>
+        <p class="text-[15px] leading-[1.8] text-white/40 max-w-[560px]">
+          This is accountability through radical transparency.
+        </p>
+      </section>
+
+      <!-- CTA -->
+      <section
+        class="pt-12 pb-24 text-center border-t border-white/[0.02]"
+      >
+        <p class="text-sm font-mono text-coral uppercase tracking-[2px] mb-4">
+          // follow the journey
+        </p>
+        <h2
+          class="text-[clamp(24px,4vw,32px)] font-semibold mt-2 mb-3"
+        >
+          Watch this unfold in real time.
+        </h2>
+        <p
+          class="text-[15px] leading-[1.7] text-white/40 max-w-[460px] mx-auto mb-8"
+        >
+          Subscribe for weekly updates with real numbers, experiments, and
+          lessons — plus the free DRM Cheatsheet with every framework on one
+          page.
+        </p>
+        <div class="flex gap-3 justify-center flex-wrap">
+          <a
+            href="/newsletter"
+            class="inline-block px-8 py-3.5 bg-coral text-white rounded-lg text-[15px] font-semibold shadow-lg shadow-coral/20 hover:bg-coral/90 hover:-translate-y-0.5 transition-all duration-300"
+          >
+            Get the Free Cheatsheet
+          </a>
+          <a
+            href="https://x.com/codetocashdev"
+            target="_blank"
+            rel="noopener"
+            class="inline-block px-8 py-3.5 bg-transparent text-white/55 border border-white/10 rounded-lg text-[15px] hover:text-white hover:border-white/20 transition-all duration-300"
+          >
+            Follow on X →
+          </a>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script>
+    // Accordion toggle for month entries
+    document.querySelectorAll('.journey-month').forEach((card) => {
+      card.addEventListener('click', () => {
+        const details = card.querySelector('.journey-details') as HTMLElement;
+        const toggle = card.querySelector('.journey-toggle') as HTMLElement;
+        if (!details || !toggle) return;
+
+        const isOpen = details.style.display === 'block';
+        details.style.display = isOpen ? 'none' : 'block';
+        toggle.textContent = isOpen ? '+' : '−';
+      });
+    });
+  </script>
+</Layout>

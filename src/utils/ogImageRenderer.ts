@@ -571,7 +571,10 @@ export async function renderPageOgImage(data: PageOgData): Promise<Uint8Array> {
                       fontSize: 22,
                     },
                     children: [
-                      { type: 'span', props: { children: 'Direct Response Marketing for Vibe Coders' } },
+                      {
+                        type: 'span',
+                        props: { children: 'Direct Response Marketing for Vibe Coders' },
+                      },
                     ],
                   },
                 },

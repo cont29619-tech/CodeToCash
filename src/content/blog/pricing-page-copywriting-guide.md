@@ -1,10 +1,17 @@
 ---
-title: 'How to Write a Pricing Page That Converts: A Developer''s Guide'
+title: "How to Write a Pricing Page That Converts: A Developer's Guide"
 description: 'The exact structure, copy, and design decisions that turn pricing page visitors into paying customers. Built for developers who treat conversion like a bug to fix.'
 pubDate: 2026-05-13
 author: 'CodeToCash Team'
 category: 'copywriting'
-tags: ['pricing page', 'landing page copy', 'conversion copywriting', 'saas pricing', 'developer marketing']
+tags:
+  [
+    'pricing page',
+    'landing page copy',
+    'conversion copywriting',
+    'saas pricing',
+    'developer marketing',
+  ]
 readingTime: '10 min read'
 featured: false
 draft: false
@@ -130,6 +137,7 @@ Name tiers by the user type, not by quality level. Bad: "Basic / Pro / Enterpris
 - "[Capability] — no [common limitation]"
 
 Examples:
+
 - "Deploy to production in one click with our CLI and GitHub integration"
 - "REST API and webhooks so you can automate your entire workflow"
 - "Real-time team sync — no manual exports or version conflicts"

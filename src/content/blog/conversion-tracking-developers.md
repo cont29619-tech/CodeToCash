@@ -4,7 +4,14 @@ description: 'How to set up conversion tracking that actually works. Event instr
 pubDate: 2026-05-13
 author: 'CodeToCash Team'
 category: 'analytics'
-tags: ['conversion tracking', 'funnel analytics', 'event tracking', 'attribution', 'developer analytics']
+tags:
+  [
+    'conversion tracking',
+    'funnel analytics',
+    'event tracking',
+    'attribution',
+    'developer analytics',
+  ]
 readingTime: '11 min read'
 featured: false
 draft: false
@@ -158,7 +165,7 @@ Store UTM parameters in sessionStorage when the user first lands. Pass them thro
 
 ```javascript
 const params = new URLSearchParams(window.location.search);
-['utm_source', 'utm_medium', 'utm_campaign', 'utm_content'].forEach(key => {
+['utm_source', 'utm_medium', 'utm_campaign', 'utm_content'].forEach((key) => {
   const value = params.get(key);
   if (value) sessionStorage.setItem(key, value);
 });
@@ -187,13 +194,13 @@ A funnel is just a sequence of events where each step is a subset of the previou
 
 ### The Standard SaaS Funnel
 
-| Step | Event | Typical Drop-Off |
-|---|---|---|
-| Site Visit | pageview | — |
-| Signup Started | sign_up_started | 60-70% |
-| Signup Completed | sign_up_completed | 30-40% |
-| Product Activated | feature_used_core | 40-50% |
-| Trial Converted | subscription_created | 15-25% |
+| Step              | Event                | Typical Drop-Off |
+| ----------------- | -------------------- | ---------------- |
+| Site Visit        | pageview             | —                |
+| Signup Started    | sign_up_started      | 60-70%           |
+| Signup Completed  | sign_up_completed    | 30-40%           |
+| Product Activated | feature_used_core    | 40-50%           |
+| Trial Converted   | subscription_created | 15-25%           |
 
 If your drop-off at any step is significantly worse than these benchmarks, that's your optimization priority.
 
