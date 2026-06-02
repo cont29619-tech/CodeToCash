@@ -6,12 +6,17 @@ import type { CollectionEntry } from 'astro:content';
 interface Props {
   posts: CollectionEntry<'blog'>[];
   showFeatured?: boolean;
+  // Optional explicit hero post. When omitted, falls back to the flagged featured post
+  // (or the first post). Passing this lets a caller feature a post that isn't in `posts`.
+  featuredPost?: CollectionEntry<'blog'>;
 }
 
-const { posts, showFeatured = true } = Astro.props;
+const { posts, showFeatured = true, featuredPost: explicitFeatured } = Astro.props;
 
-const featuredPost = showFeatured ? posts.find((p) => p.data.featured) || posts[0] : null;
-const regularPosts = showFeatured ? posts.filter((p) => p.id !== featuredPost?.id) : posts;
+const featuredPost = showFeatured
+  ? explicitFeatured || posts.find((p) => p.data.featured) || posts[0]
+  : null;
+const regularPosts = featuredPost ? posts.filter((p) => p.id !== featuredPost.id) : posts;
 ---
 
 {

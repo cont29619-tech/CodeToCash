@@ -2,6 +2,7 @@
 import Layout from './Layout.astro';
 import type { CollectionEntry } from 'astro:content';
 import { categoryColors, categoryLabels } from '../utils/categoryColors';
+import { slugifyTag } from '../utils/tags';
 import ReadingProgress from '../components/ReadingProgress.astro';
 import NewsletterForm from '../components/NewsletterForm.astro';
 import GiscusComments from '../components/GiscusComments.astro';
@@ -12,9 +13,10 @@ interface Props {
   relatedPosts: CollectionEntry<'blog'>[];
   prevPost?: CollectionEntry<'blog'>;
   nextPost?: CollectionEntry<'blog'>;
+  linkableTags?: Set<string>;
 }
 
-const { post, headings, relatedPosts, prevPost, nextPost } = Astro.props;
+const { post, headings, relatedPosts, prevPost, nextPost, linkableTags } = Astro.props;
 const { title, description, pubDate, updatedDate, author, category, readingTime, faq } = post.data;
 const ogImagePath = `/og/blog/${post.id}.png`;
 
@@ -33,8 +35,9 @@ const articleSchema = {
   description: description,
   image: new URL(ogImagePath, Astro.site).href,
   author: {
-    '@type': 'Person',
+    '@type': 'Organization',
     name: author,
+    url: 'https://codetocash.dev',
   },
   datePublished: pubDate.toISOString(),
   ...(updatedDate && { dateModified: updatedDate.toISOString() }),
@@ -320,14 +323,20 @@ const schema = hasFaq
             <div class="mt-8 pt-6 border-t border-white/10">
               <p class="text-sm font-semibold text-gray-400 mb-3">Topics</p>
               <div class="flex flex-wrap gap-2">
-                {post.data.tags.map((tag) => (
-                  <a
-                    href={`/blog/tag/${tag.toLowerCase().replace(/\s+/g, '-')}`}
-                    class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs text-gray-400 hover:text-coral hover:border-coral/30 hover:bg-coral/5 transition-all"
-                  >
-                    {tag}
-                  </a>
-                ))}
+                {post.data.tags.map((tag) =>
+                  linkableTags?.has(slugifyTag(tag)) ? (
+                    <a
+                      href={`/blog/tag/${slugifyTag(tag)}`}
+                      class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs text-gray-400 hover:text-coral hover:border-coral/30 hover:bg-coral/5 transition-all"
+                    >
+                      {tag}
+                    </a>
+                  ) : (
+                    <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs text-gray-500">
+                      {tag}
+                    </span>
+                  )
+                )}
               </div>
             </div>
           )
