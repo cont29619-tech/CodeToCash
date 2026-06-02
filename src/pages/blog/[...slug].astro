@@ -2,6 +2,7 @@
 import { getCollection, render } from 'astro:content';
 import BlogLayout from '../../layouts/BlogLayout.astro';
 import { getRelatedPosts } from '../../utils/getRelatedPosts';
+import { getLinkableTagSlugs } from '../../utils/tags';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog', ({ data }) => !data.draft);
@@ -22,6 +23,7 @@ const { Content, headings } = await render(post);
 
 const allPosts = await getCollection('blog', ({ data }) => !data.draft);
 const relatedPosts = getRelatedPosts(post, allPosts);
+const linkableTags = getLinkableTagSlugs(allPosts);
 ---
 
 <BlogLayout
@@ -30,6 +32,7 @@ const relatedPosts = getRelatedPosts(post, allPosts);
   relatedPosts={relatedPosts}
   prevPost={prevPost}
   nextPost={nextPost}
+  linkableTags={linkableTags}
 >
   <Content />
 </BlogLayout>

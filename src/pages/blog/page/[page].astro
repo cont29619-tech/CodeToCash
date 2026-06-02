@@ -2,45 +2,47 @@
 import Layout from '../../../layouts/Layout.astro';
 import NewsletterForm from '../../../components/NewsletterForm.astro';
 import BlogPostGrid from '../../../components/BlogPostGrid.astro';
+import Pagination from '../../../components/Pagination.astro';
 import { getCollection } from 'astro:content';
-import { categoryLabels } from '../../../utils/categoryColors';
+import { getBlogPagination, getPageStreamSlice } from '../../../utils/blogPagination';
 
 export async function getStaticPaths() {
-  const allPosts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
-    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-  );
-  const POSTS_PER_PAGE = 12;
-  const totalPages = Math.ceil(allPosts.length / POSTS_PER_PAGE);
+  const allPosts = await getCollection('blog', ({ data }) => !data.draft);
+  const { stream, totalPages, totalPosts } = getBlogPagination(allPosts);
+
+  const categoryCounts = allPosts.reduce<Record<string, number>>((acc, p) => {
+    acc[p.data.category] = (acc[p.data.category] || 0) + 1;
+    return acc;
+  }, {});
 
   return Array.from({ length: totalPages - 1 }, (_, i) => {
     const page = i + 2;
-    const start = (page - 1) * POSTS_PER_PAGE;
-    const end = start + POSTS_PER_PAGE;
     return {
       params: { page: String(page) },
       props: {
-        posts: allPosts.slice(start, end),
+        posts: getPageStreamSlice(stream, page),
         page,
         totalPages,
-        totalPosts: allPosts.length,
+        totalPosts,
+        categoryCounts,
       },
     };
   });
 }
 
-const { posts, page, totalPages, totalPosts } = Astro.props;
+const { posts, page, totalPages, totalPosts, categoryCounts } = Astro.props;
 
 const title = `Blog — Page ${page} | CodeToCash`;
 const description = `Page ${page} of ${totalPages}. Actionable marketing articles for developers who ship.`;
 
 const categories = [
-  { id: 'all', label: 'All' },
-  { id: 'fundamentals', label: 'Fundamentals' },
-  { id: 'copywriting', label: 'Copywriting' },
-  { id: 'email', label: 'Email' },
-  { id: 'ads', label: 'Ads' },
-  { id: 'analytics', label: 'Analytics' },
-  { id: 'strategy', label: 'Strategy' },
+  { id: 'all', label: 'All', count: totalPosts },
+  { id: 'fundamentals', label: 'Fundamentals', count: categoryCounts.fundamentals || 0 },
+  { id: 'copywriting', label: 'Copywriting', count: categoryCounts.copywriting || 0 },
+  { id: 'email', label: 'Email', count: categoryCounts.email || 0 },
+  { id: 'ads', label: 'Ads', count: categoryCounts.ads || 0 },
+  { id: 'analytics', label: 'Analytics', count: categoryCounts.analytics || 0 },
+  { id: 'strategy', label: 'Strategy', count: categoryCounts.strategy || 0 },
 ];
 ---
 
@@ -71,9 +73,10 @@ const categories = [
         categories.map((cat) => (
           <a
             href={cat.id === 'all' ? '/blog' : `/blog/${cat.id}`}
-            class={`px-4 py-2 rounded-xl text-sm font-medium border transition-all ${cat.id === 'all' ? 'bg-coral/10 text-coral border-coral/20' : 'bg-white/5 text-gray-400 border-white/10 hover:text-white hover:border-white/20'}`}
+            class={`inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-sm font-medium border transition-all ${cat.id === 'all' ? 'bg-coral/10 text-coral border-coral/20' : 'bg-white/5 text-gray-400 border-white/10 hover:text-white hover:border-white/20'}`}
           >
             {cat.label}
+            <span class="text-xs opacity-60">{cat.count}</span>
           </a>
         ))
       }
@@ -89,41 +92,7 @@ const categories = [
     <BlogPostGrid posts={posts} showFeatured={false} />
 
     <!-- Pagination -->
-    <nav aria-label="Blog pagination" class="mt-12 flex items-center justify-center gap-2">
-      {
-        page > 2 ? (
-          <a
-            href={`/blog/page/${page - 1}`}
-            class="px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-gray-300 text-sm font-medium hover:bg-white/10 hover:text-white hover:border-white/20 transition-all"
-            aria-label="Previous page"
-          >
-            ← Prev
-          </a>
-        ) : (
-          <a
-            href="/blog"
-            class="px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-gray-300 text-sm font-medium hover:bg-white/10 hover:text-white hover:border-white/20 transition-all"
-            aria-label="Previous page"
-          >
-            ← Prev
-          </a>
-        )
-      }
-      <span class="text-sm text-gray-500 mx-2">
-        Page {page} of {totalPages}
-      </span>
-      {
-        page < totalPages && (
-          <a
-            href={`/blog/page/${page + 1}`}
-            class="px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-gray-300 text-sm font-medium hover:bg-white/10 hover:text-white hover:border-white/20 transition-all"
-            aria-label="Next page"
-          >
-            Next →
-          </a>
-        )
-      }
-    </nav>
+    <Pagination currentPage={page} totalPages={totalPages} />
 
     <!-- Newsletter CTA -->
     <div
