@@ -110,7 +110,7 @@ Marketing landing page. Sections:
 2. **PROBLEM** — Three problem cards ("You Build But Nobody Buys", "Marketing Feels Sleazy", "No System, Just Hoping")
 3. **SOLUTION** — DRM pipeline visualised as a code pipeline: `Traffic → Landing Page → Email Sequence → Offer → Revenue`
 4. **CURRICULUM** — Six feature cards (Landing Pages, Copywriting, Email Sequences, Ads, Pricing, Analytics)
-5. **SOCIAL PROOF** — Three testimonials
+5. **BUILDING IN PUBLIC** — Three honest stat cards (Articles Published — derived live from the blog collection via `{articleCount}`, Free Templates, Playbooks Live 8/8). No fabricated testimonials.
 6. **NEWSLETTER CTA** — Email signup
 7. **FINAL CTA** — Link to DRM 101 guide
 
@@ -154,8 +154,8 @@ Dedicated subscription page. Sections:
 
 1. **HERO** — "One Marketing Tactic. Every Week. Built for Developers." — Large heading with ConvertKit form
 2. **WHAT YOU GET** — Five benefit cards with SVG icons
-3. **BUILDING IN PUBLIC** — Honest stats section (47 articles, 8 of 8 playbooks live)
-4. **SAMPLE ISSUE** — Email client UI mockup showing a real newsletter example
+3. **BUILDING IN PUBLIC** — Honest stats section (article count, 8 of 8 playbooks live)
+4. **SAMPLE ISSUE** — Email client UI mockup labeled "Sample issue" — an illustrative preview, **not** a claim of past sent issues (the newsletter is pre-launch with 0 subscribers, per `/journey`)
 5. **FINAL CTA** — Second signup form
 
 Both forms use class `ck-subscribe-form` — handled by the global handler in `Layout.astro`. Redirect to `/welcome` on success.
@@ -190,7 +190,7 @@ Six static category pages pre-rendered at build time via `getStaticPaths()`. Cat
 
 **Category metadata** (title, description, h1, subtitle) is defined as the `categoryMeta` const at the top of `blog/[category].astro`. All 6 URLs are auto-included in the sitemap via `@astrojs/sitemap`.
 
-Current post counts per category: strategy (15), copywriting (8), email (6), analytics (6), fundamentals (6), ads (6).
+Current post counts per category: strategy (23), copywriting (9), ads (8), analytics (8), email (8), fundamentals (8). Total: 64 published posts. (Counts drift as posts are added — treat `src/content/blog/` as the source of truth, not this line.)
 
 ### `/blog/[slug]` — blog/[...slug].astro (Blog Post)
 
@@ -283,6 +283,26 @@ Themed 404 with a code snippet: `throw new Error("404: This page doesn't exist")
 
 ---
 
+### `/journey` — journey.astro (Building-in-Public Dashboard)
+
+Public, honest progress dashboard linked in the main nav. Shows real metrics (impressions, clicks, CTR, position, revenue $0, MRR $0, newsletter subscribers 0) plus monthly milestone narrative. The article count metric is **derived at build time** from the blog collection (`getCollection('blog', ({ data }) => !data.draft)`) so it never goes stale. This page is the canonical "honest state" of the project — other pages must not contradict it with fabricated stats.
+
+### `/start` — start.astro (Start-Here Onboarding Path)
+
+Step-by-step "first 30 minutes" path for new visitors: read DRM 101 → try a free tool → download the cheatsheet → subscribe. Uses `NewsletterForm`.
+
+### `/blog/page/[page]` — blog/page/[page].astro (Blog Pagination)
+
+Paginated blog listing via `getStaticPaths()`. Uses `src/utils/blogPagination.ts` helpers (`getBlogPagination`, `getPageStreamSlice`) and the `Pagination.astro` component.
+
+### `/blog/tag/[tag]` — blog/tag/[tag].astro (Tag Pages)
+
+Per-tag listing pages via `getStaticPaths()`, built from `src/utils/tags.ts`. Linked from post tag chips.
+
+> **Note:** A `/newsletter/archive` page previously existed but was removed — it contained fabricated past issues while the newsletter is pre-launch. Re-add it (with `src/data/newsletterIssues.ts`) only once real issues have actually been sent.
+
+---
+
 ## Components
 
 ### `Navigation.astro`
@@ -334,9 +354,33 @@ Site footer. No props.
 
 - **Brand column**: Logo + tagline
 - **Nav column**: Home, DRM 101, Playbooks, Blog
-- **Resources column**: Tools, Newsletter, About, Contact (mailto)
+- **Resources column**: Tools, Newsletter, About, Contact (mailto), Twitter/X, RSS Feed
 - **Newsletter form**: Inline email signup using `ck-subscribe-form` class
 - **Bottom bar**: Copyright
+
+### `BlogPostGrid.astro`
+
+Renders the shared post-card grid used by `blog/index.astro`, `blog/[category].astro`, `blog/[tag].astro`, and the pagination pages. Single source of truth for post-card markup.
+
+### `Pagination.astro`
+
+Prev/next + numbered page navigation for paginated blog listings. Driven by `src/utils/blogPagination.ts`.
+
+### `ReadingProgress.astro`
+
+Top-of-viewport scroll progress bar for long-form reading (blog posts / playbooks).
+
+### `KeyboardShortcuts.astro`
+
+Global keyboard-shortcut handling/overlay. Included once in `Layout.astro`.
+
+### `CopyTemplateButtons.astro`
+
+Global handler (included once in `Layout.astro`) that powers "copy to clipboard" buttons on template/snippet blocks across playbooks and posts.
+
+### `GiscusComments.astro`
+
+GitHub-Discussions-backed comments (Giscus), rendered inside `BlogLayout.astro`. Wired to repo `cont29619-tech/codetocash-comments`, category "Blog Comments". Comment data lives in that repo's Discussions.
 
 ---
 
@@ -650,56 +694,11 @@ z.object({
 });
 ```
 
-All 47 published blog posts include `faq` frontmatter with 4–5 Q&A pairs each.
+All 64 published blog posts include `faq` frontmatter with 4–5 Q&A pairs each.
 
 ### Published Blog Posts
 
-| Slug                                               | Title                                                                  | Category     | Featured |
-| -------------------------------------------------- | ---------------------------------------------------------------------- | ------------ | -------- |
-| `what-is-direct-response-marketing-for-developers` | "What Is Direct Response Marketing? A Vibe Coder's Guide"              | fundamentals | ⭐ yes   |
-| `copywriting-frameworks-for-developers`            | "5 Copywriting Tips for Developers (With Fill-in-the-Blank Templates)" | copywriting  | no       |
-| `marketing-for-vibe-coders`                        | "Marketing for Vibe Coders: Sell What You Build"                       | strategy     | no       |
-| `drm-funnel-explained`                             | "The DRM Funnel Explained: Think of It as Your Sales API"              | fundamentals | no       |
-| `pas-copywriting-framework`                        | "PAS Copywriting Framework: The Simplest Formula That Converts"        | copywriting  | no       |
-| `why-developer-products-fail-marketing`            | "Why Most Developer Products Fail (And How DRM Fixes It)"              | strategy     | no       |
-| `direct-response-vs-brand-marketing`               | "Direct Response vs Brand Marketing for Developers"                    | fundamentals | no       |
-| `saas-landing-page-copywriting`                    | "SaaS Landing Page Copywriting: 10-Section Blueprint + Templates"      | copywriting  | no       |
-| `email-marketing-for-saas-beginners`               | "SaaS Email Marketing for Beginners — From Zero to Automated Sales"    | email        | no       |
-| `saas-pricing-strategy`                            | "SaaS Pricing Strategy for Developers: Full Guide"                     | strategy     | no       |
-| `sell-software-built-with-ai`                      | "How to Sell AI-Built Software: Vibe Coder's Guide"                    | strategy     | no       |
-| `building-in-public-marketing`                     | "Building in Public as a Marketing Strategy"                           | strategy     | no       |
-| `aida-copywriting-formula-landing-page`            | "AIDA Formula for Developer Landing Pages: A Practical Guide"          | copywriting  | no       |
-| `headline-copywriting-templates`                   | "How to Write Headlines That Convert: 30 Templates for Dev Tools"      | copywriting  | no       |
-| `google-ads-for-saas-beginners`                    | "How to Run Google Ads for Your SaaS on a $100 Budget"                 | ads          | no       |
-| `email-sequences-for-saas`                         | "7 Email Sequences That Sell SaaS Products on Autopilot"               | email        | no       |
-| `cold-email-templates-saas`                        | "Writing Cold Emails That Get Replies: Templates for Dev Tools"        | email        | no       |
-| `ab-testing-landing-page-guide`                    | "The Developer's Guide to A/B Testing Landing Pages"                   | analytics    | no       |
-| `customer-acquisition-cost-saas`                   | "Customer Acquisition Cost: What Every Developer Should Know"          | analytics    | no       |
-| `marketing-tools-for-indie-developers`             | "Marketing Stack for Indie Developers: The Complete Tool Guide"        | strategy     | no       |
-| `product-hunt-launch-strategy`                     | "How to Launch on Product Hunt: DRM Edition"                           | strategy     | no       |
-| `twitter-marketing-for-developers`                 | "How to Use Twitter/X to Market Your Developer Product"                | strategy     | no       |
-| `value-proposition-template-saas`                  | "How to Write a Value Proposition for Your Dev Tool"                   | fundamentals | no       |
-| `pricing-psychology-saas`                          | "The Psychology of SaaS Pricing: Why $49 Beats $50"                    | strategy     | no       |
-| `lead-magnet-ideas-for-saas`                       | "How to Create a Lead Magnet Developers Actually Want"                 | strategy     | no       |
-| `reddit-marketing-strategy-developers`             | "Reddit Marketing for Developers (Without Getting Banned)"             | strategy     | no       |
-| `0-to-1k-mrr-indie-developer`                      | "From $0 to $1K MRR: A Direct Response Marketing Roadmap"              | strategy     | no       |
-| `case-study-copywriting-saas`                      | "How to Write Case Studies That Sell Your Dev Tool"                    | copywriting  | no       |
-| `sales-page-conversion-optimization`               | "How to Create a Sales Page That Converts at 5%+"                      | copywriting  | no       |
-| `retargeting-ads-for-saas-beginners`               | "Retargeting Ads for Developer Products: Beginner's Guide"             | ads          | no       |
-| `seo-for-developer-blogs`                          | "SEO for Developer Blogs: Rank Without Being an SEO Expert"            | analytics    | no       |
-| `developer-newsletter-growth`                      | "Growing a Developer Newsletter to 1,000 Subscribers"                  | email        | no       |
-| `email-subject-line-formulas`                      | "Email Subject Line Formulas That Get 40%+ Open Rates"                 | email        | no       |
-| `affiliate-program-saas-setup`                     | "Affiliate Programs for Dev Tools: Complete Setup Guide"               | strategy     | no       |
-| `marketing-automation-solo-developer`              | "Marketing Automation for Solo Developers"                             | strategy     | no       |
-| `reduce-churn-saas-tactics`                        | "Churn Reduction: DRM Tactics to Keep Customers"                       | analytics    | no       |
-
-| `saas-free-trial-optimization` | "Free Trial Optimization: Convert More Trialers to Paying Customers" | analytics | no |
-| `content-repurposing-for-developers` | "Content Repurposing: Turn One Blog Post Into 10 Pieces of Marketing" | strategy | no |
-| `jobs-to-be-done-framework-developers` | "Jobs-to-be-Done Framework for Developer Products" | fundamentals | no |
-| `freemium-vs-free-trial-vs-demo` | "Freemium vs Free Trial vs Demo: Which Model Converts Best?" | fundamentals | no |
-| `developer-onboarding-email-sequence` | "The Developer Onboarding Email Sequence (With Templates)" | email | no |
-| `write-vs-page-competitor-traffic` | "How to Write a VS Page That Steals Competitor Traffic" | copywriting | no |
-| `cohort-analysis-for-developers` | "Cohort Analysis for Developers: Track Retention Without a Data Team" | analytics | no |
+**64 published posts** (none in draft) live in `src/content/blog/` as Markdown. The full per-post list is **not enumerated here** — it drifted out of date previously. Treat `src/content/blog/` as the source of truth; run `ls src/content/blog/*.md | wc -l` for the count and `grep -h '^category:' src/content/blog/*.md | sort | uniq -c` for the per-category breakdown. The featured post is `what-is-direct-response-marketing-for-developers` (`featured: true`).
 
 ### Playbooks Status
 
@@ -741,6 +740,10 @@ All 47 published blog posts include `faq` frontmatter with 4–5 Q&A pairs each.
 | `src/utils/categoryColors.ts`                     | Shared blog category color + label maps (single source of truth)                                                        |
 | `src/utils/getRelatedPosts.ts`                    | Priority-based related posts algorithm: same category → tag overlap → recency fallback. Used by `blog/[...slug].astro`. |
 | `src/utils/ogImageRenderer.ts`                    | Shared Satori/resvg rendering functions for OG images                                                                   |
+| `src/utils/blogPagination.ts`                     | Pagination helpers (`getBlogPagination`, `getPageStreamSlice`) for `blog/page/[page].astro`                             |
+| `src/utils/tags.ts`                               | Tag extraction/aggregation helpers powering `blog/tag/[tag].astro`                                                      |
+| `src/data/playbooksMeta.ts`                       | Playbook metadata (titles, slugs, order) — single source for the playbooks index and prev/next nav                      |
+| `src/pages/og/[page].png.ts`                      | Build-time OG image generation for standalone pages                                                                     |
 | `public/drm-cheatsheet.pdf`                       | Free cheatsheet PDF (~12KB), downloaded from `/welcome`                                                                 |
 | `public/og-default.png`                           | Default OG image for social sharing                                                                                     |
 | `.env`                                            | `PUBLIC_CONVERTKIT_API_KEY` — never commit, set in Vercel dashboard                                                     |

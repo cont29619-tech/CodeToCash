@@ -1,5 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+// Derive the live article count from the blog collection so it never goes stale.
+const articleCount = (await getCollection('blog', ({ data }) => !data.draft)).length;
 
 const JOURNEY = {
   startDate: 'February 2026',
@@ -14,7 +18,7 @@ const JOURNEY = {
     revenue: 0,
     mrr: 0,
     newsletterSubs: 0,
-    articles: 51,
+    articles: articleCount,
     playbooks: 8,
     templates: 50,
     tools: 3,
@@ -80,7 +84,7 @@ const JOURNEY = {
       subs: 0,
       summary:
         'Hit 51 articles. All 8 playbooks live. Launched 3 interactive tools (Headline Grader, Email Subject Line Tester, CAC/LTV Calculator). Impressions climbing to 30-50/day. Position improved from page 3 to page 2. FAQ schema added to every post.',
-      applied: 'SEO — FAQ structured data on all 47 blog posts, internal linking, OG image generation.',
+      applied: 'SEO — FAQ structured data on all 51 blog posts, internal linking, OG image generation.',
       keyNumbers: ['51 articles published', '8/8 playbooks complete', '3 free tools launched', 'Position: page 3 → page 2'],
     },
     {
@@ -596,7 +600,7 @@ const description =
         <p
           class="text-[15px] leading-[1.8] text-white/55 mb-3.5 max-w-[560px]"
         >
-          The irony isn't lost on me. I built a site with 51 articles, 8
+          The irony isn't lost on me. I built a site with {articleCount} articles, 8
           playbooks, 50+ templates, and 3 free tools about how to sell software
           — and after 96 days it earns nothing.
         </p>

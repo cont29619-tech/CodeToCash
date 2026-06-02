@@ -47,14 +47,6 @@ const staticPages: SearchItem[] = [
     category: 'newsletter',
   },
   {
-    title: 'Newsletter Archive',
-    description:
-      'Every issue of the CodeToCash newsletter. Actionable DRM tactics, copywriting frameworks, and marketing strategies for developers who ship.',
-    url: '/newsletter/archive',
-    type: 'page',
-    category: 'newsletter',
-  },
-  {
     title: 'Blog',
     description: 'Articles on direct response marketing for developers and indie hackers.',
     url: '/blog',
