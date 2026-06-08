@@ -27,3 +27,6 @@ pnpm-debug.log*
 .agents/
 .claude/
 skills-lock.json
+
+# paid digital product — keep source + PDF out of the public repo until checkout-gated
+digital-product/

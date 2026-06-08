@@ -1,0 +1,433 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const PRICE = '19';
+
+const categories = [
+  {
+    n: '5 templates',
+    title: 'Value Proposition',
+    desc: 'Five fill-in-the-blank formulas to nail who it’s for and what they get — in one sentence.',
+    color: 'blue',
+  },
+  {
+    n: '37 templates',
+    title: 'Headlines',
+    desc: '7 proven formulas + 30 fill-in-the-blank headlines + the 4 U’s grading rubric.',
+    color: 'purple',
+  },
+  {
+    n: '5 frameworks',
+    title: 'Copywriting Frameworks',
+    desc: 'PAS, AIDA, BAB, FAB, and the 4 U’s — each with a worked developer example.',
+    color: 'coral',
+  },
+  {
+    n: 'Full blueprint',
+    title: 'Landing Pages',
+    desc: 'A complete section-by-section page you drop your product into. Hero to final CTA.',
+    color: 'green',
+  },
+  {
+    n: 'Copy blocks',
+    title: 'Pricing Pages',
+    desc: 'Headlines, tier names, feature bullets, CTA copy, and a pricing micro-FAQ.',
+    color: 'yellow',
+  },
+  {
+    n: '27 templates',
+    title: 'Email Subject Lines',
+    desc: '7 formulas + 20 fill-in-the-blank subject lines built for 40%+ open rates.',
+    color: 'cyan',
+  },
+  {
+    n: '7 sequences',
+    title: 'Email Sequences',
+    desc: 'Welcome, free-trial, launch, win-back & more — with full email copy and timing.',
+    color: 'blue',
+  },
+  {
+    n: '5 templates',
+    title: 'Cold Email & Outreach',
+    desc: 'Intro, partnership, case-study, and integration emails + a follow-up sequence.',
+    color: 'purple',
+  },
+  {
+    n: '4 platforms',
+    title: 'Ad Copy',
+    desc: 'Google, Twitter/X, LinkedIn, and Reddit templates + 6 headline formulas.',
+    color: 'yellow',
+  },
+  {
+    n: 'Structure + Qs',
+    title: 'Case Studies',
+    desc: 'A proven case-study structure plus the 5 interview questions that surface it.',
+    color: 'green',
+  },
+  {
+    n: 'Formula + 15',
+    title: 'CTA Buttons',
+    desc: 'The “I want to ___” formula, 15 examples, and friction-reducing micro-copy.',
+    color: 'coral',
+  },
+];
+
+const colorMap: Record<string, { card: string; badge: string }> = {
+  blue: {
+    card: 'hover:border-blue-500/30 hover:bg-blue-950/10 hover:shadow-blue-900/20',
+    badge: 'text-blue-400 bg-blue-500/10 border-blue-500/20',
+  },
+  purple: {
+    card: 'hover:border-purple-500/30 hover:bg-purple-950/10 hover:shadow-purple-900/20',
+    badge: 'text-purple-400 bg-purple-500/10 border-purple-500/20',
+  },
+  green: {
+    card: 'hover:border-green-500/30 hover:bg-green-950/10 hover:shadow-green-900/20',
+    badge: 'text-green-400 bg-green-500/10 border-green-500/20',
+  },
+  yellow: {
+    card: 'hover:border-yellow-500/30 hover:bg-yellow-950/10 hover:shadow-yellow-900/20',
+    badge: 'text-yellow-400 bg-yellow-500/10 border-yellow-500/20',
+  },
+  cyan: {
+    card: 'hover:border-cyan-500/30 hover:bg-cyan-950/10 hover:shadow-cyan-900/20',
+    badge: 'text-cyan-400 bg-cyan-500/10 border-cyan-500/20',
+  },
+  coral: {
+    card: 'hover:border-coral/30 hover:bg-coral/[0.06] hover:shadow-coral/20',
+    badge: 'text-coral bg-coral/10 border-coral/20',
+  },
+};
+
+const checklist = [
+  '50+ copy-paste templates across 11 categories',
+  'Headlines, landing pages, emails, ads & more',
+  'Every template: when to use it + fill-in guide',
+  'Instant PDF download — 19 pages, print-ready',
+  'Lifetime free updates as the pack grows',
+];
+
+const schema = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'Product',
+  name: "The Developer's Copy-Paste Marketing Pack",
+  description:
+    '50+ fill-in-the-blank marketing templates for developers — headlines, landing pages, emails, ads, cold outreach, pricing, and more. Instant PDF download.',
+  brand: { '@type': 'Brand', name: 'CodeToCash.dev' },
+  offers: {
+    '@type': 'Offer',
+    price: '19.00',
+    priceCurrency: 'USD',
+    availability: 'https://schema.org/InStock',
+    url: 'https://codetocash.dev/copy-paste-pack',
+  },
+});
+---
+
+<Layout
+  title="The Developer's Copy-Paste Marketing Pack — 50+ Templates for $19 | CodeToCash"
+  description="Save hours writing copy that sells. 50+ fill-in-the-blank marketing templates for developers — headlines, landing pages, emails, ads, pricing, and more. Instant PDF, $19."
+  schema={schema}
+>
+  <!-- ============ HERO ============ -->
+  <section class="relative overflow-hidden px-4 py-24 sm:py-32 flex items-center justify-center">
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+      <div
+        class="absolute top-1/3 left-1/2 -translate-x-1/2 w-[900px] h-[600px] bg-coral/6 rounded-full blur-[80px] md:blur-[140px] animate-pulse-slow"
+      >
+      </div>
+      <div
+        class="absolute bottom-0 left-1/4 w-[500px] h-[400px] bg-deep-blue/15 rounded-full hidden md:block blur-[120px] animate-pulse-slow animation-delay-2000"
+      >
+      </div>
+    </div>
+
+    <div class="relative z-10 max-w-3xl mx-auto text-center">
+      <p
+        class="inline-block text-sm font-mono text-coral uppercase tracking-widest mb-6 animate-fade-in"
+      >
+        // digital product · instant download
+      </p>
+      <h1
+        class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-[1.1] tracking-tight animate-fade-in-up"
+      >
+        Save Hours Writing<br />
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-coral"
+          >Copy That Actually Sells.</span
+        >
+      </h1>
+      <p
+        class="mt-6 text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed animate-fade-in-up animation-delay-200"
+      >
+        50+ fill-in-the-blank marketing templates for developers. Headlines, landing pages, emails,
+        ads, cold outreach — paste a template, swap in your product, ship it the same day.
+      </p>
+
+      <div class="mt-10 flex flex-col items-center gap-4 animate-fade-in-up animation-delay-400">
+        <div class="flex items-baseline gap-2">
+          <span class="text-5xl font-extrabold text-white tracking-tight">${PRICE}</span>
+          <span class="text-sm font-mono text-gray-500">one-time · lifetime updates</span>
+        </div>
+        <button
+          type="button"
+          data-buy
+          class="px-10 py-4 bg-coral text-white text-lg font-semibold rounded-lg hover:bg-coral/90 hover:-translate-y-1 transition-all duration-300 shadow-xl shadow-coral/25 hover:shadow-coral/40 cursor-pointer"
+        >
+          Buy the Pack — ${PRICE}
+        </button>
+        <p class="text-sm text-gray-500 font-mono">PDF · 19 pages · no subscription</p>
+        <a href="#whats-inside" class="text-sm text-gray-400 hover:text-coral transition-colors"
+          >See what's inside ↓</a
+        >
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BENEFITS ============ -->
+  <section class="relative px-4 py-24 sm:py-32 border-t border-white/[0.02] overflow-hidden">
+    <div
+      class="absolute inset-0 bg-gradient-to-b from-navy-light/70 to-navy pointer-events-none"
+      aria-hidden="true"
+    >
+    </div>
+    <div
+      class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/5 to-transparent"
+      aria-hidden="true"
+    >
+    </div>
+
+    <div class="relative z-10 max-w-5xl mx-auto">
+      <div class="text-center max-w-3xl mx-auto mb-16 section-animate">
+        <p class="text-sm font-mono text-coral uppercase tracking-widest mb-4">// what you get</p>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight">
+          You Built the Product. This Sells It.
+        </h2>
+        <p class="mt-6 text-lg text-gray-400 leading-relaxed">
+          You can ship a SaaS in a weekend. Writing the words that make people buy it shouldn't take
+          another one. Here's what the pack does for you:
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div
+          class="group p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-coral/30 hover:bg-coral/[0.04] hover:-translate-y-1 hover:shadow-lg hover:shadow-coral/10 transition-all duration-300 section-animate"
+        >
+          <div
+            class="text-4xl mb-5 group-hover:scale-110 transition-transform duration-300"
+            aria-hidden="true"
+          >
+            ⏱️
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Launch in an Afternoon</h3>
+          <p class="text-gray-400 leading-relaxed">
+            Stop losing weekends to the blank page. Paste a template, fill in your product, and your
+            landing page or launch email is done before dinner.
+          </p>
+        </div>
+        <div
+          class="group p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-coral/30 hover:bg-coral/[0.04] hover:-translate-y-1 hover:shadow-lg hover:shadow-coral/10 transition-all duration-300 section-animate"
+        >
+          <div
+            class="text-4xl mb-5 group-hover:scale-110 transition-transform duration-300"
+            aria-hidden="true"
+          >
+            🧠
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Never Start From Scratch</h3>
+          <p class="text-gray-400 leading-relaxed">
+            Every headline, email, and section is already structured. You only swap in the brackets —
+            the persuasion is built in, so you never face an empty editor again.
+          </p>
+        </div>
+        <div
+          class="group p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-coral/30 hover:bg-coral/[0.04] hover:-translate-y-1 hover:shadow-lg hover:shadow-coral/10 transition-all duration-300 section-animate"
+        >
+          <div
+            class="text-4xl mb-5 group-hover:scale-110 transition-transform duration-300"
+            aria-hidden="true"
+          >
+            🎯
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Convert Without Being a "Marketer"</h3>
+          <p class="text-gray-400 leading-relaxed">
+            Proven direct-response structures (PAS, AIDA, FAB) do the selling. Your copy reads like a
+            pro wrote it — even if you'd rather be writing code.
+          </p>
+        </div>
+        <div
+          class="group p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-coral/30 hover:bg-coral/[0.04] hover:-translate-y-1 hover:shadow-lg hover:shadow-coral/10 transition-all duration-300 section-animate"
+        >
+          <div
+            class="text-4xl mb-5 group-hover:scale-110 transition-transform duration-300"
+            aria-hidden="true"
+          >
+            🧩
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Cover Your Whole Funnel</h3>
+          <p class="text-gray-400 leading-relaxed">
+            Landing page, pricing, email sequences, ads, cold outreach — one file for every place you
+            need words that sell. No more piecing it together from ten blog posts.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHAT'S INSIDE ============ -->
+  <section
+    id="whats-inside"
+    class="relative px-4 py-24 sm:py-32 border-t border-white/[0.02] overflow-hidden scroll-mt-24"
+  >
+    <div
+      class="absolute inset-0 bg-gradient-to-br from-deep-blue/15 via-navy to-navy pointer-events-none"
+      aria-hidden="true"
+    >
+    </div>
+    <div
+      class="absolute inset-0 pointer-events-none"
+      style="background-image: radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px); background-size: 28px 28px;"
+      aria-hidden="true"
+    >
+    </div>
+    <div
+      class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-deep-blue/60 to-transparent"
+      aria-hidden="true"
+    >
+    </div>
+
+    <div class="relative z-10 max-w-6xl mx-auto">
+      <div class="text-center max-w-3xl mx-auto mb-16 section-animate">
+        <p class="text-sm font-mono text-coral uppercase tracking-widest mb-4">
+          // what's in the pack
+        </p>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight">
+          50+ Templates, Organized by Category
+        </h2>
+        <p class="mt-6 text-lg text-gray-400 leading-relaxed">
+          11 sections covering every place you need copy that sells. Each template comes with
+          <span class="text-white font-medium"> when to use it</span>, the ready-to-copy text, and
+          clear fill-in instructions.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {
+          categories.map((c) => (
+            <div
+              class:list={[
+                'group p-7 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:-translate-y-1 hover:shadow-lg transition-all duration-300 section-animate',
+                colorMap[c.color].card,
+              ]}
+            >
+              <span
+                class:list={[
+                  'inline-block text-xs font-mono px-2.5 py-1 rounded-md border mb-4',
+                  colorMap[c.color].badge,
+                ]}
+              >
+                {c.n}
+              </span>
+              <h3 class="text-lg font-bold text-white mb-2">{c.title}</h3>
+              <p class="text-gray-400 text-sm leading-relaxed">{c.desc}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRICING / BUY CTA ============ -->
+  <section class="relative px-4 py-28 sm:py-36 overflow-hidden border-t border-white/[0.02]">
+    <div
+      class="absolute inset-0 bg-gradient-to-br from-coral/15 via-navy to-deep-blue/30 pointer-events-none"
+      aria-hidden="true"
+    >
+    </div>
+    <div
+      class="absolute inset-0 bg-gradient-to-t from-navy/80 to-transparent pointer-events-none"
+      aria-hidden="true"
+    >
+    </div>
+    <div
+      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-coral/10 rounded-full blur-[120px] pointer-events-none animate-pulse-slow"
+      aria-hidden="true"
+    >
+    </div>
+    <div
+      class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-coral/30 to-transparent"
+      aria-hidden="true"
+    >
+    </div>
+
+    <div class="relative z-10 max-w-xl mx-auto section-animate">
+      <div
+        class="rounded-2xl bg-white/[0.03] border border-white/[0.08] shadow-2xl shadow-coral/10 p-8 sm:p-10 text-center"
+      >
+        <p class="text-sm font-mono text-coral uppercase tracking-widest mb-4">// get the pack</p>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white leading-tight">
+          Everything You Need to Sell Your Product
+        </h2>
+
+        <div class="mt-8 flex items-baseline justify-center gap-2">
+          <span class="text-6xl font-extrabold text-white tracking-tight">${PRICE}</span>
+          <span class="text-base font-mono text-gray-500">one-time</span>
+        </div>
+
+        <ul class="mt-8 space-y-3 text-left max-w-sm mx-auto">
+          {
+            checklist.map((item) => (
+              <li class="flex items-start gap-3 text-gray-300">
+                <svg
+                  class="w-5 h-5 text-coral shrink-0 mt-0.5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  aria-hidden="true"
+                >
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>{item}</span>
+              </li>
+            ))
+          }
+        </ul>
+
+        <button
+          type="button"
+          data-buy
+          class="mt-10 w-full px-10 py-5 bg-coral text-white text-xl font-bold rounded-lg hover:bg-coral/90 hover:-translate-y-1 transition-all duration-300 shadow-xl shadow-coral/25 hover:shadow-coral/40 cursor-pointer"
+        >
+          Buy the Pack — ${PRICE}
+        </button>
+        <p data-buy-note class="mt-4 text-sm text-gray-500">
+          Secure checkout · instant download · no subscription
+        </p>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+  );
+  document.querySelectorAll('.section-animate').forEach((el) => observer.observe(el));
+
+  // Placeholder buy buttons — wire up to a real checkout (Stripe / Gumroad / Lemon Squeezy) later.
+  document.querySelectorAll('[data-buy]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const note = document.querySelector('[data-buy-note]');
+      if (note) note.textContent = 'Checkout link coming soon — wiring up payment.';
+      (window as any).plausible?.('Buy Click', { props: { product: 'copy-paste-pack' } });
+    });
+  });
+</script>
