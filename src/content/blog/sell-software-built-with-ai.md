@@ -1,6 +1,6 @@
 ---
-title: "How to Sell AI-Built Software: Vibe Coder's Guide"
-description: "You can build a SaaS in a weekend with AI. Selling it is the hard part. Here's the direct response marketing playbook for vibe coders."
+title: "Sell the SaaS You Built With AI: A Vibe Coder's Playbook"
+description: "You built a SaaS in a weekend with AI — selling it is the hard part. Here's the direct response playbook that gets vibe coders their first paying customers."
 pubDate: 2026-02-25
 author: 'CodeToCash Team'
 category: 'strategy'

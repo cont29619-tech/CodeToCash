@@ -1,6 +1,6 @@
 ---
-title: '5 Copywriting Tips for Developers (With Fill-in-the-Blank Templates)'
-description: 'Copywriting tips built for developers, not marketers. Learn AIDA, PAS, and 3 more frameworks with copy-paste templates for your SaaS landing page and emails.'
+title: 'Copywriting Frameworks for Developers: 5 That Convert'
+description: '5 copywriting frameworks (AIDA, PAS + 3 more) with copy-paste templates for your SaaS landing page and emails. Built for developers, not marketers.'
 pubDate: 2026-02-12
 updatedDate: 2026-04-17
 author: 'CodeToCash Team'

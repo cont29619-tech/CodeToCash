@@ -1,6 +1,6 @@
 ---
-title: 'SaaS Email Marketing for Beginners — From Zero to Automated Sales'
-description: 'Start email marketing for your SaaS from scratch. Set up welcome sequences, write emails that sell, and automate the whole system. Free templates included.'
+title: 'SaaS Email Marketing for Beginners: Zero to Sales'
+description: 'Start SaaS email marketing from scratch. Set up a welcome sequence, write emails that sell, and automate it all — with free templates to copy.'
 pubDate: 2026-02-23
 updatedDate: 2026-04-23
 author: 'CodeToCash Team'

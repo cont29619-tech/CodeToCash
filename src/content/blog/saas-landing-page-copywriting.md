@@ -1,6 +1,6 @@
 ---
-title: 'SaaS Landing Page Copywriting: 10-Section Blueprint + Templates'
-description: 'Write a high-converting SaaS landing page section by section. Includes headline formulas, CTA templates, a 10-section blueprint, and real teardowns.'
+title: 'SaaS Landing Page Copy That Converts: 10-Section Guide'
+description: 'Write a SaaS landing page that converts, section by section. Steal headline formulas, CTA templates, a 10-section blueprint, and real teardowns.'
 pubDate: 2026-02-22
 updatedDate: 2026-04-17
 author: 'CodeToCash Team'
