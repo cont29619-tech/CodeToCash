@@ -43,6 +43,9 @@ const categories = [
   { id: 'analytics', label: 'Analytics', count: categoryCounts.analytics || 0 },
   { id: 'strategy', label: 'Strategy', count: categoryCounts.strategy || 0 },
 ];
+
+// GEO / AI Search is a tag-based hub (not a fixed category), surfaced as its own chip.
+const geoCount = allPosts.filter((p) => p.data.tags.includes('geo')).length;
 ---
 
 <Layout title={title} description={description} ogImage="/og/blog.png">
@@ -97,6 +100,17 @@ const categories = [
             <span class="text-xs opacity-60">{cat.count}</span>
           </a>
         ))
+      }
+      {
+        geoCount > 0 && (
+          <a
+            href="/blog/tag/geo"
+            class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-sm font-medium border transition-all bg-coral/10 text-coral border-coral/30 hover:bg-coral/20 hover:border-coral/50"
+          >
+            GEO / AI Search
+            <span class="text-xs opacity-60">{geoCount}</span>
+          </a>
+        )
       }
     </nav>
   </section>
