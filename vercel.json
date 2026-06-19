@@ -11,7 +11,7 @@
       "permanent": true
     },
     {
-      "source": "/blog/tag/:slug((?!analytics/?$|audience-building/?$|automation/?$|beginner/?$|churn/?$|content-marketing/?$|conversion/?$|copywriting/?$|developer-marketing/?$|email-marketing/?$|email-sequences/?$|free-trial/?$|growth/?$|landing-pages/?$|launch/?$|marketing-strategy/?$|messaging/?$|onboarding/?$|paid-acquisition/?$|paid-advertising/?$|positioning/?$|retention/?$|revenue/?$|saas/?$|saas-growth/?$|saas-marketing/?$|seo/?$|social-media/?$|templates/?$).+)",
+      "source": "/blog/tag/:slug((?!ai-search/?$|analytics/?$|audience-building/?$|automation/?$|beginner/?$|churn/?$|content-marketing/?$|conversion/?$|copywriting/?$|developer-marketing/?$|email-marketing/?$|email-sequences/?$|free-trial/?$|geo/?$|growth/?$|indie-hacking/?$|landing-pages/?$|launch/?$|marketing-strategy/?$|messaging/?$|onboarding/?$|organic-traffic/?$|paid-acquisition/?$|paid-advertising/?$|positioning/?$|retention/?$|revenue/?$|saas/?$|saas-growth/?$|saas-marketing/?$|seo/?$|social-media/?$|technical-seo/?$|templates/?$|tools/?$).+)",
       "destination": "/blog",
       "permanent": true
     }
