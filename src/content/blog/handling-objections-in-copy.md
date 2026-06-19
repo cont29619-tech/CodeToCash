@@ -1,5 +1,6 @@
 ---
 title: 'Handling Objections in Your Copy: The 5 Big Nos and How to Answer Them'
+seoTitle: "Handling Objections in Your Copy: The 5 Big Nos"
 description: 'Every visitor who does not buy has a reason. Here are the five objections killing your conversions — and the exact copy patterns that answer each one before it stops the sale.'
 pubDate: 2026-06-12
 author: 'CodeToCash Team'

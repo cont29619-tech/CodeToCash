@@ -1,5 +1,6 @@
 ---
 title: "YouTube Ads for SaaS: A Developer's Guide to the Most Underpriced Channel"
+seoTitle: "YouTube Ads for SaaS: A Developer's Guide"
 description: 'YouTube ads are the best-kept secret in SaaS marketing. Lower CPMs than Meta, higher intent than TikTok, and a format that lets you demo your product before they click. Here is how to run them profitably on a small budget.'
 pubDate: 2026-05-19
 author: 'CodeToCash Team'

@@ -1,5 +1,6 @@
 ---
 title: 'Customer Discovery for Indie Developers: Find Product-Market Fit Before You Market'
+seoTitle: 'Customer Discovery for Indie Developers: A Guide'
 description: "Most developers build first and market later. That's backwards. Here's how to validate demand, understand your customer, and find product-market fit before you write your first line of marketing copy."
 pubDate: 2026-05-19
 author: 'CodeToCash Team'
@@ -183,3 +184,5 @@ Customer discovery is not a phase. It is a habit. The best indie developers neve
 By the end of day 2, you will know more about your potential customers than 90% of indie developers ever do. You will have the language for your landing page, the validation to keep building, or the clarity to pivot before you waste months on the wrong idea.
 
 The best marketing in the world cannot sell a product nobody needs. But a product built on real customer pain, described in the customer's own words, practically sells itself. Start with discovery. The rest follows.
+
+Once discovery validates the problem, use what you learned to [position your product as the only choice](/blog/developer-product-positioning) and to [land your first 100 users](/blog/first-100-users-saas).

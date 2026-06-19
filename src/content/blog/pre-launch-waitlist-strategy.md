@@ -1,5 +1,6 @@
 ---
 title: 'Pre-Launch Waitlist Strategy: Build an Audience Before You Ship'
+seoTitle: "Pre-Launch Waitlist Strategy for Developers"
 description: 'A waitlist is not a vanity metric — done right, it is validation, a launch-day audience, and a feedback loop you build before writing the final line of code. Here is the system.'
 pubDate: 2026-06-01
 author: 'CodeToCash Team'

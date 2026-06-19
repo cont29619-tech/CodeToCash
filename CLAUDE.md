@@ -674,6 +674,7 @@ All subscribe forms use the `NewsletterForm.astro` component, which emits the `c
 ```typescript
 z.object({
   title: z.string(),
+  seoTitle: z.string().optional(), // ≤60-char <title> override; see note below
   description: z.string(),
   pubDate: z.coerce.date(),
   updatedDate: z.coerce.date().optional(),
@@ -694,7 +695,11 @@ z.object({
 });
 ```
 
-All 64 published blog posts include `faq` frontmatter with 4–5 Q&A pairs each.
+All published blog posts include `faq` frontmatter with 4–5 Q&A pairs each.
+
+**`seoTitle` (optional):** SERPs truncate the `<title>` around 60 chars. `BlogLayout.astro` renders `seoTitle` when present, otherwise falls back to `title`, and only appends the ` | CodeToCash` suffix when the chosen title is ≤47 chars (so the suffix still fits in ~60). Add a tight, keyword-front-loaded `seoTitle` to any post whose `title` exceeds 60 chars. See `SEO-ROADMAP.md` for the broader impressions plan.
+
+**Sitemap `lastmod`:** `astro.config.mjs` reads blog frontmatter at build time and emits an accurate per-post `<lastmod>` (`updatedDate` ?? `pubDate`) plus `changefreq`/`priority`, so updated posts get recrawled.
 
 ### Published Blog Posts
 

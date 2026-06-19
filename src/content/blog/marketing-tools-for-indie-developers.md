@@ -1,5 +1,6 @@
 ---
 title: 'Marketing Stack for Indie Developers: The Complete Tool Guide'
+seoTitle: "Marketing Stack for Indie Developers: Tool Guide"
 description: 'The best marketing tools for indie developers — free, $30, and $100/month stacks with honest recommendations, comparison tables, and a no-BS decision framework.'
 pubDate: 2026-03-08
 author: 'CodeToCash Team'

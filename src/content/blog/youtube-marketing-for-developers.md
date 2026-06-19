@@ -1,5 +1,6 @@
 ---
 title: 'YouTube Marketing for Developers: Build an Audience With Video'
+seoTitle: "YouTube Marketing for Developers: Build an Audience"
 description: 'Organic YouTube is the most underused channel for dev tools. Here is how to build an audience, rank technical content, and turn views into trial signups.'
 pubDate: 2026-06-12
 author: 'CodeToCash Team'

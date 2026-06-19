@@ -1,5 +1,6 @@
 ---
 title: 'Reddit Ads for SaaS: How to Advertise Without Getting Roasted'
+seoTitle: "Reddit Ads for SaaS: A No-Nonsense Guide"
 description: 'A tactical guide to advertising your SaaS on Reddit. Subreddit targeting, ad creative that respects the community, budget strategy, and how to avoid the mistakes that make developers angry.'
 pubDate: 2026-04-30
 author: 'CodeToCash Team'

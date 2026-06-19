@@ -1,5 +1,6 @@
 ---
 title: 'How to Get Your First 100 Users: A DRM Playbook for Developers'
+seoTitle: "How to Get Your First 100 Users: A DRM Playbook"
 description: 'The first 100 users do not come from ads or virality — they come from doing things that do not scale, systematically. Here is the direct response playbook to get there.'
 pubDate: 2026-05-28
 author: 'CodeToCash Team'

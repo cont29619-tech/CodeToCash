@@ -1,5 +1,6 @@
 ---
 title: 'Writing Cold Emails That Get Replies: Templates for Dev Tools'
+seoTitle: "Cold Email Templates for Dev Tools That Get Replies"
 description: '10 cold email templates for SaaS and dev tools that actually get replies — with targeting advice, personalization tactics, and follow-up sequences.'
 pubDate: 2026-03-08
 author: 'CodeToCash Team'

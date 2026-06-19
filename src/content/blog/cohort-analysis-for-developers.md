@@ -1,5 +1,6 @@
 ---
 title: 'Cohort Analysis for Developers: Track Retention Without a Data Team'
+seoTitle: "Cohort Analysis for Developers: Track Retention"
 description: 'Learn cohort analysis with Google Sheets templates and SQL queries. Measure retention, identify churn patterns, and make data-driven decisions without expensive analytics tools.'
 pubDate: 2026-05-06
 author: 'CodeToCash Team'

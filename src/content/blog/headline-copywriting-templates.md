@@ -1,5 +1,6 @@
 ---
 title: 'How to Write Headlines That Convert: 30 Templates for Dev Tools'
+seoTitle: "Headline Copywriting: 30 Templates for Dev Tools"
 description: "30 fill-in-the-blank headline copywriting templates built for developer tools and SaaS. Includes the 4 U's framework, before/after examples, and a grader checklist."
 pubDate: 2026-03-08
 author: 'CodeToCash Team'

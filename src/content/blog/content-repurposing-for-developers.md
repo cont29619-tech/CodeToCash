@@ -1,5 +1,6 @@
 ---
 title: 'Content Repurposing: Turn One Blog Post Into 10 Pieces of Marketing'
+seoTitle: "Content Repurposing: 1 Blog Post Into 10 Pieces"
 description: 'How to repurpose a single blog post into Twitter threads, email newsletters, LinkedIn posts, video scripts, and more. Maximum reach from minimum writing.'
 pubDate: 2026-04-25
 author: 'CodeToCash Team'

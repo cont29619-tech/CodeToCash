@@ -17,8 +17,15 @@ interface Props {
 }
 
 const { post, headings, relatedPosts, prevPost, nextPost, linkableTags } = Astro.props;
-const { title, description, pubDate, updatedDate, author, category, readingTime, faq } = post.data;
+const { title, seoTitle, description, pubDate, updatedDate, author, category, readingTime, faq } =
+  post.data;
 const ogImagePath = `/og/blog/${post.id}.png`;
+
+// SERPs truncate titles around 60 chars. Use an explicit seoTitle when provided,
+// otherwise fall back to the post title — and only append the brand suffix when
+// it still fits, to avoid pushing the keyword-bearing title out of view.
+const baseTitle = seoTitle || title;
+const pageTitle = baseTitle.length <= 47 ? `${baseTitle} | CodeToCash` : baseTitle;
 
 const colors = categoryColors[category] || categoryColors.fundamentals;
 const formattedDate = pubDate.toLocaleDateString('en-US', {
@@ -72,7 +79,7 @@ const schema = hasFaq
 ---
 
 <Layout
-  title={`${title} | CodeToCash`}
+  title={pageTitle}
   description={description}
   schema={schema}
   ogImage={ogImagePath}

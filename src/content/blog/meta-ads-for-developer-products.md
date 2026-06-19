@@ -1,5 +1,6 @@
 ---
 title: 'Meta Ads for Developer Products: Facebook & Instagram on a Budget'
+seoTitle: "Meta Ads for Developer Products: FB & Instagram"
 description: 'Most developers assume Facebook and Instagram ads are for e-commerce, not dev tools. They are wrong. Here is how to run profitable Meta ads for a technical product on a small budget — targeting, creative, and the math that keeps you from burning cash.'
 pubDate: 2026-06-17
 author: 'CodeToCash Team'

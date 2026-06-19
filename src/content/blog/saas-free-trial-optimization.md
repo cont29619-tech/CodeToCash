@@ -1,5 +1,6 @@
 ---
 title: 'Free Trial Optimization: Convert More Trialers to Paying Customers'
+seoTitle: "Free Trial Optimization for SaaS: Convert More"
 description: 'How to optimize your SaaS free trial for maximum conversion. Trial length, onboarding, activation metrics, and the emails that turn free users into paying customers.'
 pubDate: 2026-04-25
 author: 'CodeToCash Team'

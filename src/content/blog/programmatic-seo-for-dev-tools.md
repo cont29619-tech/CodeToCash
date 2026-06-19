@@ -1,5 +1,6 @@
 ---
 title: 'Programmatic SEO for Dev Tools: Rank for Thousands of Queries'
+seoTitle: "Programmatic SEO for Dev Tools: Rank at Scale"
 description: 'Developers have an unfair SEO advantage: you can generate pages from data with code. Here is how to use programmatic SEO to rank for thousands of long-tail queries — without writing thin junk.'
 pubDate: 2026-06-02
 author: 'CodeToCash Team'

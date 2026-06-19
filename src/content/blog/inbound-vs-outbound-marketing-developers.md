@@ -1,5 +1,6 @@
 ---
 title: 'Inbound vs Outbound Marketing for Developers: Which to Start With'
+seoTitle: "Inbound vs Outbound Marketing for Developers"
 description: 'Inbound pulls customers to you; outbound reaches out to them. Most developers pick wrong for their stage and stall. Here is a clear framework for choosing your first channel — and when to add the second.'
 pubDate: 2026-06-17
 author: 'CodeToCash Team'

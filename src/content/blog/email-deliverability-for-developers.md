@@ -1,5 +1,6 @@
 ---
 title: 'Email Deliverability for Developers: Why Your Emails Land in Spam'
+seoTitle: "Email Deliverability for Developers: Avoid Spam"
 description: 'You can write the perfect email sequence and still fail if it lands in spam. Here is the technical and content side of deliverability — SPF, DKIM, DMARC, warmup, and the rules that keep you in the inbox.'
 pubDate: 2026-06-12
 author: 'CodeToCash Team'
