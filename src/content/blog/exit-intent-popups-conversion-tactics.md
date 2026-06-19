@@ -1,5 +1,6 @@
 ---
 title: 'Exit-Intent Popups and On-Page Conversion Tactics for Developers'
+seoTitle: "Exit-Intent Popups & Conversion Tactics for Devs"
 description: 'Most of your traffic leaves without converting. Here are the on-page tactics — exit-intent, scroll triggers, sticky CTAs — that recover those visitors without being sleazy.'
 pubDate: 2026-06-12
 author: 'CodeToCash Team'

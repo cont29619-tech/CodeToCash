@@ -1,5 +1,6 @@
 ---
 title: 'LinkedIn Marketing for Developers: How to Sell Your Dev Tool on the Platform That Pays'
+seoTitle: "LinkedIn Marketing for Developers: A Practical Guide"
 description: 'LinkedIn marketing for developers: grow a technical audience, write posts that convert, and turn professional connections into email subscribers and customers.'
 pubDate: 2026-05-20
 author: 'CodeToCash Team'

@@ -1,5 +1,6 @@
 ---
 title: 'Conversion Tracking for Developers: From Zero to Full Funnel Visibility'
+seoTitle: "Conversion Tracking for Developers: Full-Funnel Guide"
 description: 'How to set up conversion tracking that actually works. Event instrumentation, attribution models, and funnel analytics for developers who want data they can trust.'
 pubDate: 2026-05-13
 author: 'CodeToCash Team'

@@ -1,5 +1,6 @@
 ---
 title: 'North Star Metrics for SaaS: How to Pick the One Number That Guides Every Decision'
+seoTitle: 'North Star Metrics for SaaS: Pick the One Number'
 description: 'Indie developers drown in dashboards. Here is how to choose a North Star metric that aligns your team, focuses your marketing, and tells you whether your SaaS is actually growing in the right direction.'
 pubDate: 2026-05-19
 author: 'CodeToCash Team'
@@ -229,3 +230,5 @@ Indie developers are drowning in data because the tools make it easy to track ev
 Pick your North Star metric this week. Write it down. Put it somewhere you will see it daily. Share it with anyone you work with. When a decision feels ambiguous, ask: "Which option moves the North Star more?"
 
 That one question will cut through more noise than any dashboard ever built.
+
+Your North Star is the measurement layer of a larger marketing system. For how it connects to traffic, offers, and conversion, see the [DRM 101 guide](/drm-101).

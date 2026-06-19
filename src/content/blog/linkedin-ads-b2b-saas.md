@@ -1,5 +1,6 @@
 ---
 title: 'LinkedIn Ads for B2B SaaS: Targeting Developers & Engineering Teams'
+seoTitle: "LinkedIn Ads for B2B SaaS: A Developer's Guide"
 description: 'How to run profitable LinkedIn ads for developer tools and B2B SaaS. Job title targeting, budget strategy, creative rules, and how to make LinkedIn work on an indie budget.'
 pubDate: 2026-05-03
 author: 'CodeToCash Team'

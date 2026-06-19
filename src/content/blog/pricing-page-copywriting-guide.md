@@ -1,5 +1,6 @@
 ---
 title: "How to Write a Pricing Page That Converts: A Developer's Guide"
+seoTitle: "Pricing Page Copywriting: A Developer's Guide"
 description: 'The exact structure, copy, and design decisions that turn pricing page visitors into paying customers. Built for developers who treat conversion like a bug to fix.'
 pubDate: 2026-05-13
 author: 'CodeToCash Team'

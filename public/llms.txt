@@ -1,0 +1,44 @@
+# CodeToCash.dev
+
+> Direct Response Marketing (DRM) education for vibe coders and indie developers — marketing taught as an engineering discipline: systematic, measurable, and testable, with frameworks, templates, and real examples for selling the software you ship.
+
+CodeToCash.dev teaches developers how to market and sell their products. Content is organized into a flagship long-form guide (DRM 101), step-by-step playbooks, free interactive tools, and a deep blog covering copywriting, email, ads, pricing, analytics, SEO/AI search, and growth strategy.
+
+## Start Here
+
+- [DRM 101: The Complete Direct Response Marketing Guide](https://codetocash.dev/drm-101): The flagship ~45-minute guide covering the entire DRM system — funnel, offer, copywriting, landing pages, email, traffic, and analytics.
+- [Start Here: Your First 30 Minutes](https://codetocash.dev/start): A guided onboarding path for new visitors.
+- [Newsletter](https://codetocash.dev/newsletter): One DRM marketing tactic every week, built for developers.
+
+## Playbooks
+
+- [How to Write a SaaS Landing Page That Converts](https://codetocash.dev/playbooks/saas-landing-page): Headline formulas, social proof, CTAs, and pricing sections.
+- [Email Launch Sequence for Developers](https://codetocash.dev/playbooks/email-launch-sequence): A proven 7-email launch sequence with subject lines, timing, and templates.
+- [Your First Google Ad Campaign on a $100 Budget](https://codetocash.dev/playbooks/google-ads-100-budget): Keyword research, ad copy, bidding, and conversion tracking on a tiny budget.
+- [Writing Copy When You Hate Writing Copy](https://codetocash.dev/playbooks/copywriting-for-developers): PAS, AIDA, and other fill-in-the-blank copywriting formulas for developers.
+- [Pricing Your Dev Product for Maximum Revenue](https://codetocash.dev/playbooks/pricing-dev-product): Tiers, anchoring, and psychological pricing tactics.
+- [Building in Public as a Marketing Strategy](https://codetocash.dev/playbooks/building-in-public): Turn your build process into a marketing channel with built-in demand.
+- [The Developer's A/B Testing Guide](https://codetocash.dev/playbooks/ab-testing-guide): Test design, statistical significance, and analysis for pages, emails, and ads.
+- [Cold Email Outreach for Dev Tools](https://codetocash.dev/playbooks/cold-email-outreach): Personalization at scale, sequences, and follow-ups that get replies.
+
+## Tools
+
+- [Headline Grader](https://codetocash.dev/tools/headline-grader): Free tool that scores a headline 0–100 on length, power words, specificity, clarity, and emotional impact.
+- [Email Subject Line Tester](https://codetocash.dev/tools/email-subject-line-tester): Free tool that predicts spam risk and open rate for an email subject line.
+- [CAC/LTV Calculator](https://codetocash.dev/tools/cac-ltv-calculator): Free SaaS economics calculator for CAC, LTV, LTV/CAC ratio, and payback period.
+
+## Key Guides
+
+- [What Is Direct Response Marketing? A Vibe Coder's Guide](https://codetocash.dev/blog/what-is-direct-response-marketing-for-developers): The foundational explainer of DRM for developers.
+- [Generative Engine Optimization (GEO) for Dev Tools](https://codetocash.dev/blog/generative-engine-optimization-dev-tools): How to get your developer product cited by ChatGPT, Claude, Perplexity, and Google AI Overviews.
+- [How to Get Your Content Cited by ChatGPT](https://codetocash.dev/blog/get-cited-by-chatgpt): A practical playbook for earning AI citations.
+- [How to Show Up in Google AI Overviews](https://codetocash.dev/blog/google-ai-overviews-saas): Earning a spot in Google's AI answer box.
+- [SEO for Developer Blogs](https://codetocash.dev/blog/seo-for-developer-blogs): Keyword research, on-page SEO, and internal linking that drive organic traffic.
+- [How to Get Your First 100 Users](https://codetocash.dev/blog/first-100-users-saas): A DRM playbook for early traction.
+- [SaaS Pricing Strategy](https://codetocash.dev/blog/saas-pricing-strategy): How to structure tiers and price a developer product.
+
+## Optional
+
+- [Blog](https://codetocash.dev/blog): The full archive of DRM articles across copywriting, email, ads, analytics, and strategy.
+- [About](https://codetocash.dev/about): The CodeToCash story and values.
+- [Journey](https://codetocash.dev/journey): The public, honest building-in-public progress dashboard.

@@ -169,6 +169,8 @@ PRICING HEALTH CHECKLIST
 
 Every item on that checklist is a testable hypothesis. Run through it once a quarter. The goal of **pricing psychology for SaaS** isn't to trick buyers — it's to communicate value clearly enough that the right price feels obvious to the right customer.
 
+Once the psychology is right, make sure the page itself sells it — see the [pricing page copywriting guide](/blog/pricing-page-copywriting-guide).
+
 ---
 
 Want more tactics like this? Subscribe to the CodeToCash newsletter — one Direct Response Marketing tactic, every Tuesday, built for developers.

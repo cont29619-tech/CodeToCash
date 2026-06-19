@@ -101,4 +101,8 @@ Set up Google Search Console and check it weekly. The key metrics are impression
 
 Focus on "striking distance" keywords — queries where you're ranking on positions 5-20. These are the keywords where a small improvement in content quality, internal linking, or backlinks can push you to page one, resulting in a significant traffic increase.
 
+## Go Deeper on Each Piece
+
+This guide is the overview; each part has a dedicated deep dive: [keyword research for developers](/blog/keyword-research-for-developers) to find searches you can win, [topic clusters](/blog/topic-clusters-seo) to structure your content for authority, [technical SEO for static sites](/blog/technical-seo-for-static-sites) to keep your pages crawlable and fast, [backlinks for indie hackers](/blog/backlinks-for-indie-hackers) to earn the links that move you to page one, and [getting your first SaaS customers with SEO](/blog/seo-first-saas-customers) to turn rankings into revenue. For visibility in AI search, pair all of it with [GEO for dev tools](/blog/generative-engine-optimization-dev-tools).
+
 SEO is a compounding investment. Each post you publish, each backlink you earn, and each technical improvement you make builds on everything before it. The developers who succeed with SEO are the ones who treat it like shipping code — consistent, iterative, and data-driven. Start by targeting one long-tail keyword this week, and the [DRM 101 guide](/drm-101) gives you the broader context for how SEO fits into your complete marketing system.

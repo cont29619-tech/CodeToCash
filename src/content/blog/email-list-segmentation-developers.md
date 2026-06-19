@@ -1,5 +1,6 @@
 ---
 title: 'Email List Segmentation for Developers: Send Less, Convert More'
+seoTitle: "Email List Segmentation for Developers: A Guide"
 description: 'Blasting every email to your whole list is the email equivalent of a global variable. Here is how to segment your list the way you would structure data — so the right message reaches the right person and your open rates climb instead of decay.'
 pubDate: 2026-06-17
 author: 'CodeToCash Team'

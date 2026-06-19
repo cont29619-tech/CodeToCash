@@ -1,5 +1,6 @@
 ---
 title: 'Docs-Led Growth: How Documentation Becomes Your Best Marketing Channel'
+seoTitle: "Docs-Led Growth: Documentation as Marketing"
 description: 'For developer products, documentation is not an afterthought — it is a top-of-funnel acquisition channel, a sales page, and an onboarding flow at once. Here is how to make your docs sell.'
 pubDate: 2026-05-30
 author: 'CodeToCash Team'

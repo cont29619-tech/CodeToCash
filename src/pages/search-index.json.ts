@@ -1,6 +1,7 @@
 import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
 import { playbooksMeta } from '../data/playbooksMeta';
+import { glossary } from '../data/glossary';
 
 export const prerender = true;
 
@@ -68,6 +69,14 @@ const staticPages: SearchItem[] = [
     type: 'page',
     category: 'about',
   },
+  {
+    title: 'Marketing Glossary for Developers',
+    description:
+      'Plain-English definitions of the marketing terms developers need — CAC, LTV, churn, conversion rate, SEO, GEO, and more.',
+    url: '/glossary',
+    type: 'page',
+    category: 'glossary',
+  },
 ];
 
 export const GET: APIRoute = async () => {
@@ -91,7 +100,15 @@ export const GET: APIRoute = async () => {
     tags: [p.difficulty, p.readingTime],
   }));
 
-  const index: SearchItem[] = [...blogItems, ...playbookItems, ...staticPages];
+  const glossaryItems: SearchItem[] = glossary.map((t) => ({
+    title: t.term,
+    description: t.short,
+    url: `/glossary/${t.slug}`,
+    type: 'page',
+    category: 'glossary',
+  }));
+
+  const index: SearchItem[] = [...blogItems, ...playbookItems, ...glossaryItems, ...staticPages];
 
   return new Response(JSON.stringify(index), {
     headers: { 'Content-Type': 'application/json' },

@@ -1,5 +1,6 @@
 ---
 title: 'Product-Led Growth for Developers: Make Your Product Do the Marketing'
+seoTitle: "Product-Led Growth for Developers: A Guide"
 description: 'How to turn your product into your best marketing channel. Viral loops, freemium conversion, self-serve onboarding, and growth mechanics built for developers who hate selling.'
 pubDate: 2026-05-13
 author: 'CodeToCash Team'

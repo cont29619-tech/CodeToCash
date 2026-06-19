@@ -1,5 +1,6 @@
 ---
 title: 'GitHub as a Marketing Channel: How Open Source Projects Drive Paid Conversions'
+seoTitle: "GitHub as a Marketing Channel for Dev Tools"
 description: 'Turn your GitHub repository into a customer acquisition engine. README optimization, release note strategy, and the exact playbook for converting stars into revenue.'
 pubDate: 2026-05-22
 author: 'CodeToCash Team'
