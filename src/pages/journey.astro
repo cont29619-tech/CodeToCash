@@ -7,14 +7,14 @@ const articleCount = (await getCollection('blog', ({ data }) => !data.draft)).le
 
 const JOURNEY = {
   startDate: 'February 2026',
-  dayCount: 96,
-  lastUpdated: 'May 21, 2026',
+  dayCount: 125,
+  lastUpdated: 'June 20, 2026',
 
   metrics: {
-    impressions: 1790,
-    clicks: 7,
-    ctr: '0.4%',
-    avgPosition: 14.2,
+    impressions: 2130,
+    clicks: 10,
+    ctr: '0.5%',
+    avgPosition: 13,
     revenue: 0,
     mrr: 0,
     newsletterSubs: 0,
@@ -27,8 +27,8 @@ const JOURNEY = {
   // Signal: what the data is telling us right now
   signal: {
     trend: 'up',
-    title: 'Impressions trending up',
-    detail: 'Daily impressions grew from ~10-15/day in March to 40-60/day in May. Google is showing us to more people. The bottleneck now isn\'t visibility — it\'s click-through rate. People see us on page 2 but don\'t click. Fix: better meta titles and descriptions.',
+    title: 'Position improving, CTR still the gap',
+    detail: 'Impressions reached 2.13K total and average position improved from 14.2 to 13 — we\'re inching toward page 1. But clicks barely moved: 7 to 10 in a month. The bottleneck is unchanged — people see us in search and don\'t click. The fix is still better meta titles and descriptions, and that\'s the focus now.',
   },
 
   revenueMilestones: [
@@ -91,11 +91,11 @@ const JOURNEY = {
       id: 'may-2026',
       month: 'May 2026',
       title: 'Month 3 — Building in Public',
-      status: 'current',
-      impressions: 520,
-      clicks: 1,
-      ctr: '0.19%',
-      position: 14.2,
+      status: 'done',
+      impressions: 580,
+      clicks: 2,
+      ctr: '0.34%',
+      position: 13.8,
       revenue: 0,
       subs: 0,
       summary:
@@ -104,13 +104,30 @@ const JOURNEY = {
         'Building in Public playbook — using my own framework to turn transparency into a growth channel.',
       keyNumbers: ['40-60 impressions/day', 'This page launched', 'Social content started', 'Impressions 4x vs. Month 0'],
     },
+    {
+      id: 'jun-2026',
+      month: 'Jun 2026',
+      title: 'Month 4 — Closing the CTR Gap',
+      status: 'current',
+      impressions: 280,
+      clicks: 2,
+      ctr: '0.71%',
+      position: 13.0,
+      revenue: 0,
+      subs: 0,
+      summary:
+        'Impressions reached 2.13K total and average position improved from 14.2 to 13 — inching toward page 1. But only 3 new clicks all month. The bottleneck is still CTR: people see us in search and don\'t click. So the work now is rewriting meta titles and descriptions to earn the click we\'re already in position to get.',
+      applied:
+        'SEO for Developer Blogs — rewriting meta titles and descriptions to lift click-through on page-2 rankings.',
+      keyNumbers: ['2.13K total impressions', 'Position 14.2 → 13', 'Still only 10 total clicks', 'CTR is the bottleneck'],
+    },
   ],
 
   experiment: {
     name: 'Building in Public as a Growth Channel',
     status: 'LIVE',
     started: 'May 2026',
-    duration: '4 weeks',
+    duration: 'ongoing',
     hypothesis:
       'Documenting the journey from $0 to profitable — with real metrics, real failures — will drive more traffic and trust than SEO alone.',
     tracking: [
@@ -135,7 +152,7 @@ const JOURNEY = {
     {
       framework: 'SEO for Developer Blogs',
       link: '/blog/seo-for-developer-blogs',
-      what: 'Optimizing existing content to move from position 14.2 to page 1.',
+      what: 'Optimizing existing content to move from position 13 to page 1.',
     },
   ],
 };
@@ -202,7 +219,7 @@ const description =
               >{d.metrics.impressions.toLocaleString()}</span
             >
             <span class="font-mono text-xs text-white/50 block mt-1.5"
-              >40-60/day · trending up</span
+              >trending up · nearing page 1</span
             >
           </div>
           <!-- Clicks -->
@@ -595,14 +612,14 @@ const description =
           class="text-[clamp(24px,4vw,32px)] font-semibold mb-4 tracking-[-0.01em] leading-[1.2]"
         >
           I teach developers marketing.<br />
-          <span class="text-white/55">I have 7 clicks in 3 months.</span>
+          <span class="text-white/55">I have 10 clicks in 4 months.</span>
         </h2>
         <p
           class="text-[15px] leading-[1.8] text-white/55 mb-3.5 max-w-[560px]"
         >
           The irony isn't lost on me. I built a site with {articleCount} articles, 8
           playbooks, 50+ templates, and 3 free tools about how to sell software
-          — and after 96 days it earns nothing.
+          — and after 125 days it earns nothing.
         </p>
         <p
           class="text-[15px] leading-[1.8] text-white/55 mb-3.5 max-w-[560px]"
